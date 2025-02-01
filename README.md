@@ -1,4 +1,4 @@
-# SERENA (Systematic Extraction and Reconstruction for Enhanced A2P Message Forensics)
+[DFRWS USA 2025] SERENA (Systematic Extraction and Reconstruction for Enhanced A2P Message Forensics)
 
 📄 Official repository for our research paper submitted to DFRWS 2025 USA
 
