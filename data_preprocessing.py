@@ -102,7 +102,7 @@ def split_messagingapp_files(input_directory, output_directory):
     """
     os.makedirs(output_directory, exist_ok=True)
 
-    date_pattern = r"(--------------- \d{4}년 \d{1,2}월 \d{1,2}일 [가-힣]+ ---------------)"
+    date_pattern = r"(--------------- \d{4}Year \d{1,2}Month \d{1,2}Day [A-Z]+ ---------------)"
 
     for file_name in (f for f in os.listdir(input_directory) if f.endswith(".txt")):
         file_path = os.path.join(input_directory, file_name)
