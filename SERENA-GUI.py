@@ -73,7 +73,7 @@ class TextToHtmlApp:
 
         # Right Panel (HTML Viewer & JSON Table)
         self.html_viewer = HtmlFrame(self.right_frame)
-        self.html_viewer.pack(fill="both", expand=False, pady=5, ipady=30)  # ✅ HTML Viewer 높이 더 줄임
+        self.html_viewer.pack(fill="both", expand=False, pady=5, ipady=30)  
 
         # ✅ Added Horizontal Legend Below HTML Viewer
         self.legend_frame = self.create_legend(self.right_frame)
@@ -87,7 +87,7 @@ class TextToHtmlApp:
             self.right_frame, text="📥 Load JSON Data", command=self.load_json_table,
             bg="#FF9800", fg="white", font=("Arial", 10, "bold"), padx=10, pady=5
         )
-        self.load_json_button.pack(pady=(5, 5))  # ✅ 버튼이 JSON Table 위쪽으로 올라감
+        self.load_json_button.pack(pady=(5, 5))  
 
         # ✅ Create the JSON Table (Only Once)
         self.json_table = self.create_json_table(self.right_frame)
