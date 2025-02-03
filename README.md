@@ -37,7 +37,7 @@ SERENA (Systematic Extraction and Reconstruction for Enhanced A2P Message Forens
 ## 📌 How to Run the Tool on a Git Repository
 To ensure the tool works correctly, the selected folder must contain the following subfolders:
 
-📂 emls/ (For processing email data)
-📂 messagingapp/ (For chat and messaging app logs)
-📂 textmessage/ (For SMS and text message logs)
+- **`📂 emls/ (For processing email data)`** 
+- **`📂 messagingapp/ (For chat and messaging app logs)`** 
+- **`📂 textmessage/ (For SMS and text message logs)`** 
 
