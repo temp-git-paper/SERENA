@@ -7,7 +7,7 @@ SERENA (Systematic Extraction and Reconstruction for Enhanced A2P Message Forens
 ## 📌 Key Features
 - **Automated Data Processing**: Converts emails (.eml), text messages (.xlsx), and chat logs into structured text format.
 - **A2P vs. P2P Classification**: Identifies and categorizes messages using OpenAI’s GPT-4o.
-- **Keyword Extraction**: Extracts essential forensic data (e.g., service name, timestamps, payment details).
+- **Named Entity Recognition**: Extracts essential forensic data (e.g., service name, timestamps, payment details).
 - **GUI-Based Analysis**: Provides an interactive interface for forensic investigators.
 - **Highlighting Feature**: Displays extracted keywords directly within the original message.
 
@@ -19,8 +19,9 @@ SERENA (Systematic Extraction and Reconstruction for Enhanced A2P Message Forens
 - **`A2P_classifying.py`**  
   - Classifies messages as A2P (Application-to-Person) or P2P (Person-to-Person) using GPT-4o.
 
-- **`keyword_extraction.py`**  
+- **`named_entity_recognition.py`**  
   - Extracts structured data such as service name, timestamp, payment amount, etc.
+  - Normalize values (e.g., datetime - YYYY/MM/DD hh:mm:ss, amount - USD 150, AUD 300)
 
 - **`SERENA-GUI.py`**  
   - Provides a GUI-based interface for forensic investigation.
