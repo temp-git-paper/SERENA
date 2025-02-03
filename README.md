@@ -1,10 +1,10 @@
 # [DFRWS USA 2025] SERENA (Systematic Extraction and Reconstruction for ENhanced A2P Message Forensics)
 
 📄 **Official repository for our research paper submitted to DFRWS 2025 USA**
+SERENA (Systematic Extraction and Reconstruction for Enhanced A2P Message Forensics) is a forensic tool designed to automate the **extraction, classification, and highlighting** of structured data from **Application-to-Person (A2P) messages**. The tool leverages **GPT-4o** to classify A2P messages and extract key forensic information, enabling investigators to efficiently analyze digital communications.
 
 ![gui](https://github.com/user-attachments/assets/c33ef1ef-ca3a-4424-96f6-016114c6711b)
 
-SERENA (Systematic Extraction and Reconstruction for Enhanced A2P Message Forensics) is a forensic tool designed to automate the **extraction, classification, and highlighting** of structured data from **Application-to-Person (A2P) messages**. The tool leverages **GPT-4o** to classify A2P messages and extract key forensic information, enabling investigators to efficiently analyze digital communications.
 
 ## 📌 Key Features
 - **Automated Data Processing**: Converts emails (.eml), text messages (.xlsx), and chat logs into structured text format.
