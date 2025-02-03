@@ -41,3 +41,6 @@ To ensure the tool works correctly, the selected folder must contain the followi
 - **`📂 messagingapp/ (For chat and messaging app logs)`** 
 - **`📂 textmessage/ (For SMS and text message logs)`** 
 
+
+![gui](https://github.com/user-attachments/assets/c33ef1ef-ca3a-4424-96f6-016114c6711b)
+
