@@ -1,99 +1,168 @@
 import os
-import re
 import json
 from openai import OpenAI
 
-# Initiate OpenAI client
-client = OpenAI(api_key="Your-API-Key")
 
-# Call Open API
+# Read API key from environment variables
+api_key = os.getenv("OPENAI_API_KEY")
+
+# Initiate OpenAI client
+client = OpenAI(api_key=api_key)
+
 def process_text_with_gpt(file_path):
+    """Process text file using GPT model to extract relevant keywords."""
+
     try:
-        # Read text files
+        # Read file content
         with open(file_path, "r", encoding="utf-8") as file:
             content = file.read()
+
+        # GPT prompt for keyword extraction
+        prompt = {
+            "role": "system",
+            "content": (
+                "You are an expert in extracting keywords from text messages, emails, and messenger apps "
+                "to infer user actions. Extract the following fields and return JSON output:\n\n"
+                "- service_name\n- action_datetime\n- message_datetime\n- action_keyword\n"
+                "- address1\n- address2\n- amount\n- item\n- mobile_number\n\n"
+                "Rules:\n"
+                "- If a value is not found, insert NULL.\n"
+                "- Extract dates exactly as they appear.\n"
+                "- If multiple payments exist, extract only the highest one.\n"
+                "- If multiple ordered items are found, include all items as a list."
+            )
+        }
 
         # Call GPT model
         completion = client.chat.completions.create(
             model="gpt-4o",
             store=True,
-            messages=[
-                {
-                    "role": "system",
-                    "content": "You are an expert in extracting keywords from text messages, emails, "
-                    "and messenger apps like KakaoTalk to infer user actions within the text."
-                    "Extract the following data from the text and store it in JSON format."
-
-                    "Keyword Extraction Rules: "
-                    "If a value is not found, insert NULL."
-                    "Extract dates exactly as they appear in the text."
-                    "For item 4, extract the exact keywords used in the text."
-                    "Addresses may include IP addresses."
-                    "For item 7, if multiple payment amounts exist, extract only the highest" "amount while preserving the full keyword including the currency."
-                    "For item 8, if multiple product names or ordered items are found, include" "all item details as a list under the item key."
-                    "Each item can include a name field."
-                    "Extract the following fields:"
-                    "Service Name / Store Name / Business Name (key name: service_name)"
-                    "Date and Time of Action (key name: action_datetime)"
-                    "Date and Time of Message Reception (key name: message_datetime)"
-                    "Action Keyword (e.g., purchase, movie reservation, taxi ride)" 
-                    "(key name: action_keyword)"
-                    "Departure Address / Location Information (key name: address1)"
-                    "Destination Address / Location Information (key name: address2)"
-                    "Payment Amount (key name: amount)"
-                    "Ordered Items / Product Names (key name: item)"
-                    "Phone Number / Mobile Number (key name: mobile_number)"
-
-                },
-                {"role": "user", "content": content}
-            ],
+            messages=[prompt, {"role": "user", "content": content}],
             temperature=0.65,
             max_completion_tokens=2048,
-            top_p=1,
-            frequency_penalty=0,
-            presence_penalty=0,
         )
 
-        # Extract JSON data from GPT responses
-        gpt_response = completion.choices[0].message.content
-
-        # Load JSON
+        # Parse GPT response
+        gpt_response = completion.choices[0].message.content.strip()
         data = json.loads(gpt_response.strip("```json").strip())
 
-        # Check Item data
-        if "item" in data and isinstance(data["item"], list):
+        # Validate and log extracted items
+        if isinstance(data.get("item"), list):
             print(f"Extracted items: {data['item']}")
         else:
             print("No items found or invalid format.")
 
-
-        # Add original source file path to the json
+        # Attach source file path
         data["source_path"] = file_path
 
         return data
     except Exception as e:
         return {"source_path": file_path, "error": str(e)}
 
-# dealing with multiple directories
+
+def normalize_json_data(json_data):
+    """
+    Uses GPT API to normalize JSON fields (dates, currency).
+    """
+    try:
+        prompt = {
+            "role": "system",
+            "content": (
+                "You are an expert in formatting and normalizing JSON data. "
+                "You will receive a JSON object containing fields such as dates and amounts. "
+                "Your task is to:\n"
+                "- Convert dates to format: YYYY/MM/DD HH:MM:ss.\n"
+                "- Ensure missing values are empty (\"\").\n"
+                "- Format amount fields with currency codes (e.g., 'USD 100', 'AUD 50').\n"
+                "- Return the updated JSON with all fields properly formatted."
+            )
+        }
+
+        # Send data to GPT API
+        completion = client.chat.completions.create(
+            model="gpt-4o",
+            messages=[prompt, {"role": "user", "content": json.dumps(json_data)}],
+            temperature=0,
+            max_tokens=1000,
+        )
+
+        # Parse response
+        gpt_response = completion.choices[0].message.content.strip()
+        normalized_data = json.loads(gpt_response.strip("```json").strip())
+
+        return normalized_data
+
+    except Exception as e:
+        print(f"Error normalizing JSON: {e}")
+        return json_data  # Return original if GPT fails
+
+
+
+CACHE_FILE = "cache.json"  # ✅ Store processed data persistently
+
+def load_cache():
+    """Loads previously extracted and normalized JSON data from cache."""
+    if os.path.exists(CACHE_FILE):
+        with open(CACHE_FILE, "r", encoding="utf-8") as cache_file:
+            try:
+                return json.load(cache_file)
+            except json.JSONDecodeError:
+                return []  # Return empty list if JSON is corrupted
+    return []
+
+def save_cache(data):
+    """Saves extracted and normalized JSON data to cache."""
+    with open(CACHE_FILE, "w", encoding="utf-8") as cache_file:
+        json.dump(data, cache_file, ensure_ascii=False, indent=4)
+
+
+
+
 def extract_keywords(input_directories, output_directory):
-    # If directory not found, create it
+    """Extracts keywords from text files, saves raw JSON, and returns normalized JSON."""
+    # ✅ Load previously cached data
+    normalized_json_list = load_cache()
+
     os.makedirs(output_directory, exist_ok=True)
 
-    for directory_path in input_directories:
-        print(f"Processing directory: {directory_path}")
+    for directory in input_directories:
+        print(f"📂 Processing directory: {directory}")
 
-        for file_name in os.listdir(directory_path):
-            file_path = os.path.join(directory_path, file_name)
+        # ✅ Check for `.txt` files BEFORE processing
+        all_files = os.listdir(directory)
+        txt_files = [f for f in all_files if f.lower().endswith(".txt")]
+        print(f"📑 Found {len(txt_files)} text files: {txt_files}")
 
-            if os.path.isfile(file_path) and file_name.endswith(".txt"):
-                print(f"Processing file: {file_name}")
+        if not txt_files:
+            #print("⚠ No .txt files found, returning cached data.")
+            return normalized_json_list  # ✅ Return previous cache if no new files
 
-                # Process with GPT
-                result = process_text_with_gpt(file_path)
+        for file_name in txt_files:
+            file_path = os.path.join(directory, file_name)
+            print(f"✅ Processing text file: {file_name}")
 
-                # Save the outputs
-                output_file = os.path.join(output_directory, f"result_{os.path.basename(file_name)}.json")
-                with open(output_file, "w", encoding="utf-8") as output:
-                    json.dump(result, output, ensure_ascii=False, indent=4)
+            # Extract JSON from text file
+            extracted_json = process_text_with_gpt(file_path)
 
-                print(f"Result saved to: {output_file}")
+            if not extracted_json:
+                #print(f"⚠ Skipping file (extraction failed): {file_name}")
+                continue
+
+            # ✅ Save raw JSON for HTML highlighting
+            raw_output_path = os.path.join(output_directory, f"raw_{file_name}.json")
+            with open(raw_output_path, "w", encoding="utf-8") as raw_file:
+                json.dump(extracted_json, raw_file, ensure_ascii=False, indent=4)
+            print(f"✅ Raw JSON saved for highlighting: {raw_output_path}")
+
+            # ✅ Normalize extracted JSON
+            normalized_json = normalize_json_data(extracted_json)
+
+            # ✅ Prevent duplicate entries
+            if normalized_json not in normalized_json_list:
+                normalized_json_list.append(normalized_json)
+
+    # ✅ Save updated data to cache
+    save_cache(normalized_json_list)
+
+    #print(f"🔹 DEBUG: Returning {len(normalized_json_list)} JSON objects")
+    return normalized_json_list  # ✅ Always return a list
