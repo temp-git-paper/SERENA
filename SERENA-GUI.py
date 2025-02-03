@@ -51,7 +51,7 @@ class TextToHtmlApp:
     def __init__(self, master):
         self.master = master
         master.title("SERENA - Your Forensic AI-Assistant")
-        master.geometry("1200x650")  # 창 크기 유지
+        master.geometry("1200x650")  
 
         # ✅ Initialize extracted JSON storage
         self.normalized_json_list = None
@@ -282,4 +282,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()  # ✅ Ensures GUI runs when script is executed
+    main() 
