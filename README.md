@@ -33,13 +33,19 @@ SERENA (Systematic Extraction and Reconstruction for Enhanced A2P Message Forens
   - This README file containing project details and setup instructions.
  
 
-
 ## 📌 How to Run the Tool on a Git Repository
 To ensure the tool works correctly, the selected folder must contain the following subfolders:
 
 - **`📂 emls/ (For processing email data)`** 
 - **`📂 messagingapp/ (For chat and messaging app logs)`** 
-- **`📂 textmessage/ (For SMS and text message logs)`** 
+- **`📂 textmessage/ (For SMS and text message logs)`**
+
+- Once the base folder is selected, the **A2P classification** and **Named Entity Recognition (NER) modules** are executed automatically.
+
+- When the process is completed, the terminal displays the message:  
+  **"Processing completed."**
+- Double-clicking a file in the **TreeView** will display the message file with **highlighted JSON keywords**.
+- Selecting **"Load JSON Data"** allows the user to view **Named Entities** in a structured **Table View**.
 
 
 ![gui](https://github.com/user-attachments/assets/c33ef1ef-ca3a-4424-96f6-016114c6711b)
