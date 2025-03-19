@@ -27,7 +27,11 @@ SERENA (Systematic Extraction and Reconstruction for Enhanced A2P Message Forens
 
 - **`SERENA-GUI.py`**  
   - Provides a GUI-based interface for forensic investigation.
-
+ 
+- **`SAMPLE A2P DATASET`**
+  - Provides real-world A2P messages (emls and chat logs).
+  - Service names, addresses, numbers, and other identifiable information have been redacted.
+  - 
 - **`requirements.txt`**  
   - Lists required Python dependencies for the project.
 
