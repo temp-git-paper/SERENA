@@ -102,7 +102,8 @@ def split_messagingapp_files(input_directory, output_directory):
     """
     os.makedirs(output_directory, exist_ok=True)
 
-    date_pattern = r"(--------------- \d{4}Year \d{1,2}Month \d{1,2}Day [A-Z]+ ---------------)"
+    date_pattern = r"-{15,}\s*[A-Za-z]+,\s*[A-Za-z]+\s*\d{1,2},\s*\d{4}\s*-{15,}"
+
 
     for file_name in (f for f in os.listdir(input_directory) if f.endswith(".txt")):
         file_path = os.path.join(input_directory, file_name)
@@ -111,23 +112,25 @@ def split_messagingapp_files(input_directory, output_directory):
             with open(file_path, "r", encoding="utf-8") as file:
                 content = file.read()
 
-            # Split based on date headers
+            # Splitting based on date headers
             sections = re.split(date_pattern, content)
 
             if len(sections) > 1:
-                for i in range(1, len(sections), 2):
-                    header, body = sections[i].strip(), sections[i + 1].strip()
+                for i, section in enumerate(sections):
+                    section = section.strip()
+                    if not section:  # Skip empty sections
+                        continue
 
-                    output_file_name = f"{os.path.splitext(file_name)[0]}_part{i // 2 + 1}.txt"
+                    output_file_name = f"{os.path.splitext(file_name)[0]}_part{i + 1}.txt"
                     output_file_path = os.path.join(output_directory, output_file_name)
 
                     with open(output_file_path, "w", encoding="utf-8") as output_file:
-                        output_file.write(header + "\n" + body)
+                        output_file.write(section)
 
                     print(f"Saved: {output_file_path}")
 
             else:
-                # No split required, save as-is
+                # If no valid split is found, save the file as is
                 output_file_name = f"{os.path.splitext(file_name)[0]}_original.txt"
                 output_file_path = os.path.join(output_directory, output_file_name)
 
