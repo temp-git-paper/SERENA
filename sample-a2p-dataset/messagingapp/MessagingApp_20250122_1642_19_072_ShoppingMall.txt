@@ -1,0 +1,9 @@
+--------------- Sunday, January 12, 2025 ---------------
+[ABC Shopping Mall] [11:38 AM] [ABC Shopping Mall] Order Completed
+Hello, John Doe, your order has been completed. We will carefully prepare and send your valuable product.
+▶ Order Date: 2025/01/12
+▶ Product Name: ADIDAS W 3S WV WB HT3399
+▶ Payment Amount: $45.00 (Citibank Card, Lump Sum)
+▶ Delivery Address: 10347 S Ewing Ave, Chicago, IL 60617
+▶ Point: 60P to be credited
+

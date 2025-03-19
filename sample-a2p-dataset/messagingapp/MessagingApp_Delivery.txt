@@ -1,0 +1,18 @@
+--------------- Wednesday, October 9, 2024 ---------------
+October 9, 2024, 03:33, cheetahDelivery: Your driver is coming!
+
+Departure: 10347 S Ewing Ave, Chicago, IL 60617
+Destination: 200-232 W 87th St, Chicago, IL 60620  
+Vehicle: Ford, Black SUV
+
+Please make sure to check the vehicle number before boarding!
+
+The customer's phone number is provided to the driver as a safe number.  
+October 9, 2024, 03:38, cheetahDelivery: Taxi boarding completed!
+
+Departure: 10347 S Ewing Ave, Chicago, IL 60617
+Destination: 200-232 W 87th St, Chicago, IL 60620 
+Vehicle: Ford, Black SUV
+Boarding time: 03:38
+
+Check the travel route by clicking the 'Check Real-Time Location' button below!

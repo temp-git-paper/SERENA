@@ -1,0 +1,17 @@
+--------------- Saturday, December 14, 2024 ---------------
+
+2024. 12. 14. 12:37, NowWaiting: [Sunrise Restaurant]
+Hello, customer!
+Your waiting has been registered.
+You are expected to enter soon, so please wait in front of the store!
+
+※ Please be aware that if you are not present when called, your waiting may be canceled.
+
+- Waiting number: No. 6
+- Teams ahead of you: 0 teams
+- Estimated waiting time: About 0 minutes
+2024. 12. 14. 12:55, NowWaiting: [Sunrise Restaurant]
+Customer, it's your turn to enter.
+Please enter now!
+
+- Waiting number: No. 6

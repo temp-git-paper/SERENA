@@ -1,0 +1,19 @@
+--------------- Saturday, August 10, 2024 ---------------
+
+[FunFun Cinema] [4:40 PM] Your order has been received!
+
+There are 0 teams waiting ahead of you.
+[1] Cold Brew (L) 1 item
+[2] Peach Plum Ade 1 item
+
+You will receive an additional notification via MessagingApp once the preparation is complete. When your order number appears on the pickup monitor, please collect your items from the pickup zone.
+
+※ Once the order is placed, preparation begins immediately, and cancellations or refunds are not possible. ※
+
+[FunFun Cinema] [4:41 PM] Ready for pickup!
+
+Your order is ready.
+It's waiting for you at the pickup zone!
+Please collect your items using your order number.
+
+If not collected, it may be marked as unclaimed.
