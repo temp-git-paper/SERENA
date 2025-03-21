@@ -197,6 +197,8 @@ class TextToHtmlApp:
         if selected_item:
             file_name = self.file_tree.item(selected_item, 'values')[0]
             highlighted_content = self.load_and_highlight_html(file_name)
+            soup = BeautifulSoup(highlighted_content, 'html5lib')
+            clean_html = str(soup)
             self.html_viewer.load_html(
                 highlighted_content if highlighted_content else "<html><body><p>No highlights applied.</p></body></html>")
 
@@ -221,19 +223,26 @@ class TextToHtmlApp:
         return None
 
     def highlight_json_in_html_content(self, html_content, json_data):
-        """Highlights JSON values in the HTML content."""
+        """Highlights JSON values in the HTML content while avoiding tag attributes and redundant span tags."""
+        soup = BeautifulSoup(html_content, "html.parser")
+
+        def highlight_text(text, value, color):
+            """Highlights text only if it's not already inside a <span>."""
+            if value in text and f'<span' not in text:
+                return text.replace(value, f'<span style="background-color: {color};">{value}</span>')
+            return text
+
+        # JSON 값이 있는 경우에만 하이라이트 적용
         for key, color in KEY_COLORS.items():
             value = json_data.get(key)
-            if isinstance(value, str) and value in html_content:
-                html_content = html_content.replace(value, f'<span style="background-color: {color};">{value}</span>')
+            if isinstance(value, str) and value.strip():  # 값이 문자열이고 공백이 아닐 때만 실행
+                for text_node in soup.find_all(string=True):
+                    if text_node.parent.name not in ['script', 'style'] and not text_node.parent.attrs:
+                        updated_text = highlight_text(text_node, value, color)
+                        if updated_text != text_node:
+                            text_node.replace_with(BeautifulSoup(updated_text, "html.parser"))
 
-        if isinstance(json_data.get("item"), list):
-            for item in json_data["item"]:
-                item_name = item if isinstance(item, str) else item.get("name", "")
-                if item_name and item_name in html_content:
-                    html_content = html_content.replace(item_name, f'<span style="background-color: lavender;">{item_name}</span>')
-
-        return html_content
+        return str(soup)
 
 
     def load_json_table(self):
