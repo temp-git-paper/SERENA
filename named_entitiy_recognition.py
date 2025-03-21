@@ -1,4 +1,5 @@
 import os
+import re
 import json
 from openai import OpenAI
 
@@ -88,9 +89,13 @@ def normalize_json_data(json_data):
 
         # Parse response
         gpt_response = completion.choices[0].message.content.strip()
-        normalized_data = json.loads(gpt_response.strip("```json").strip())
-
-        return normalized_data
+        match = re.search(r"```json\s*(\{.*?\})\s*```", gpt_response, re.DOTALL)
+        if match:
+            json_str = match.group(1)
+            normalized_data = json.loads(json_str)
+            return normalized_data
+        else:
+            raise ValueError("Cannot find JSON code block")
 
     except Exception as e:
         print(f"Error normalizing JSON: {e}")
