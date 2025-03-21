@@ -1,0 +1,699 @@
+Delivered-To: johndoe@gmail.com
+Received: by 2002:a05:6638:1f02:b0:430:8fd0:f2a1 with SMTP id ga2csp642875jab;
+        Tue, 31 Oct 2023 19:22:32 -0700 (PDT)
+X-Google-Smtp-Source:
+ AGHT+IG+goM6UJnINmeYfumC4/6NyRXYDVbDjl/UiZWzZYge99GHJZhB8SYP9PXGQRx4PSzJSJS7
+X-Received: by 2002:a05:622a:138a:b0:410:842d:fc2f with SMTP id
+ o10-20020a05622a138a00b00410842dfc2fmr2419090qtk.7.1698805352738;        Tue,
+ 31 Oct 2023 19:22:32 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1698805352; cv=none;
+        d=google.com; s=arc-20160816;
+        b=OfsxiNY8BL4y+aH6oAgEwVqbQcXfYbp3a75b6dMNw0rnEvjbE3k6MABMhKkfincJjm
+         XTIYBBWrT4KrhsxHmRVv79+hALIdeFUsdDPat2YnW5rY+BQb/Ogckp+alAlgW83vrVv6
+         NWYvAYaRlHpLS1HBdgCyZGihwoOjonAVEj/ahJrkzY7UzvJ4slxl1fN9258yEheHQwEe
+         mfTyn/vXz3ikbkOJ31wG8zakxDcH8jjrjeAwBk8slU8x9cELQYls7088cxlVwdD6pEAb
+         Z19iwlx3W8K+SxfLHxA/h9beisNa475gvQHx/9OeYWGO8jCIXt4cfSdrkVt2nLOjKwnf
+         9hGw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=feedback-id:message-id:list-id:mime-version:list-help:date:subject        
+ :to:from:dkim-signature;       
+ bh=DMlmTvOZm1uhXT36vnMNBUx2nZ2LLYh2VC7iNUwGjYs=;       
+ fh=/P1qjtw94aYrWntqMfl0ZXrmcj4h/pqcQ7JdvNZruEU=;       
+ b=WyNXsVbLIifqMo07frK+uHcv2m1jWGSHn4/jHvOE62OpiUFpCqHALTS0ujojF3j/Tz        
+ l91lYNwh64Y6D6SlHLyEU9NQWpWAO9MYI6tQNolkxhDDTYMgaSRINxUv8+ZtIIvZNSaZ        
+ FCJdFqnH0X+QyrPXaNWkaBOT8wsfeInMs0C2ouLJLA8nqtZ5BN4+sR1cIhrIiQmGKlSm        
+ g4Up4RuYKA9ELwiz8phvpDZuqlY3r49XviHS0gFNAMNbxCRlz+Tjaz3UWpw8uTvnY4T+        
+ 8vRWxBzUZBY4fADBtdZf0wG83zXorhWd6wXoePuOCzG9PEEU2jURtOWiSh4xIUaTC4Hc        
+ k9EA==
+ARC-Authentication-Results: i=1; mx.google.com;       dkim=pass
+ header.i=@email.chipotle.com header.s=11dkim1 header.b=W1hKTW7z;      
+ spf=pass (google.com: domain of
+ bounce-376_html-676956795-244561-514000685-39153044@bounce.email.chipotle.com
+ designates 13.111.78.155 as permitted sender) =?utf-8?q?smtp=2Emailfrom=3Db?=
+ =?utf-8?q?ounce-376=5FHTML-676956795-244561-514000685-39153044=40bounce=2Ee?=
+ =?utf-8?q?mail=2Echipotle=2Ecom=3B?=       dmarc=pass (p=REJECT sp=REJECT
+ dis=NONE) header.from=email.chipotle.com
+Return-Path: =?utf-8?q?=3Cbounce-376=5FHTML-676956795-244561-514000685-39153?=
+ =?utf-8?q?044=40bounce=2Eemail=2Echipotle=2Ecom=3E?=
+Received: from mta6.email.chipotle.com (mta6.email.chipotle.com.
+ [13.111.78.155])        by mx.google.com with ESMTPS id
+ 19-20020ac85753000000b0041816d65a98si2120860qtx.421.2023.10.31.19.22.32
+        for <johndoe@gmail.com>        (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Tue, 31 Oct 2023
+ 19:22:32 -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ bounce-376_html-676956795-244561-514000685-39153044@bounce.email.chipotle.com
+ designates 13.111.78.155 as permitted sender) client-ip=13.111.78.155;
+Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@email.chipotle.com header.s=11dkim1 header.b=W1hKTW7z;      
+ spf=pass (google.com: domain of
+ bounce-376_html-676956795-244561-514000685-39153044@bounce.email.chipotle.com
+ designates 13.111.78.155 as permitted sender) =?utf-8?q?smtp=2Emailfrom=3Db?=
+ =?utf-8?q?ounce-376=5FHTML-676956795-244561-514000685-39153044=40bounce=2Ee?=
+ =?utf-8?q?mail=2Echipotle=2Ecom=3B?=       dmarc=pass (p=REJECT sp=REJECT
+ dis=NONE) header.from=email.chipotle.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=11dkim1;
+ d=email.chipotle.com;
+ h=From:To:Subject:Date:List-Help:MIME-Version:List-ID:X-CSA-Complaints:
+ Message-ID:Content-Type; i=chipotle@email.chipotle.com;
+ bh=DMlmTvOZm1uhXT36vnMNBUx2nZ2LLYh2VC7iNUwGjYs=; =?utf-8?q?b=3DW1hKTW7zKk0r?=
+ =?utf-8?q?2GIdQs+0ya0wyDhAJWm07bLXBU0rbNDjw0Mcrbi461eG0DkDIIRXD4QakOiDWCI5?=
+  
+ hPd+lo8LmHrapJqrcUrNSiChcdMTwt1YBBvcO0xF3nv25oKWGuKJJI94FlHcgOcQwHW3tWzk/Iva
+  
+ pQbpSXV62jYs56d3nRKHp4rgmFek8Gi5Ke/rn8dbXl9QZvS5b6EHDqkxjfUW6MFGYW6IPMvBRHHQ
+  
+ vcpEL1JlnfnG4SEiqDzQyhKnP440JxDTi06zL7B8LphXgAplpPLiQ0MCnv1K/qiwm/EXyeRCQE5K
+   YkdcLgmQRCYAKNkIPU4/0e2ohAbVLfSKdI1MBw==
+Received: by mta6.email.chipotle.com id h86r6g2fmd40 for <johndoe@gmail.com>;
+ Wed, 1 Nov 2023 02:22:29 +0000 (envelope-from =?utf-8?q?=3Cbounce-376=5FHTM?=
+ =?utf-8?q?L-676956795-244561-514000685-39153044=40bounce=2Eemail=2Echipotle?=
+ =?utf-8?q?=2Ecom=3E=29?=
+From: "Chipotle Mexican Grill" <chipotle@email.chipotle.com>
+To: <johndoe@gmail.com>
+Subject: Thanks for your order, Ella.
+Date: Tue, 31 Oct 2023 20:22:29 -0600
+List-Help: =?utf-8?q?=3Chttps=3A//click=2Eemail=2Echipotle=2Ecom/subscriptio?=
+ =?utf-8?q?n=5Fcenter=2Easpx=3Fjwt=3DeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9=2E?=
+ =?utf-8?q?eyJtaWQiOiI1MTQwMDA2ODUiLCJzIjoiNjc2OTU2Nzk1IiwibGlkIjoiMzc2Iiwia?=
+ =?utf-8?q?iI6IjI0NDU2MSIsImpiIjoiMzkxNTMwNDQiLCJkIjoiMTEwMDI5In0=2EMK1IqA8U?=
+ =?utf-8?q?T3XJnVuvl8uM8Dw6PWFpjd2vEg3-yM6gEVY=3E?=
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+List-ID: <110007397.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+x-messageKey: 641d25f2-51ba-4d9b-ad6f-a8376b346f5f
+X-Delivery: Transactional
+X-SFMC-Stack: 11
+x-job: 514000685_244561
+Message-ID: <b063dec8-9e78-4a03-872b-da7459619e91@atl1s11mta888.xt.local>
+Feedback-ID: 514000685:244561:13.111.78.155:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="SQkl95K8ljo5=_?:"
+
+This is a multi-part message in MIME format.
+
+--SQkl95K8ljo5=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Your order details inside and points are on the way.
+
+https://www.chipotle.com/ 
+
+YOUR ORDER IS IN,
+
+john doe
+
+ESTIMATED PICKUP TIME:
+
+11:00 PM
+
+10/31/2023 (Today)
+
+MY ORDER CONFIRMATION NUMBER:
+AS8-CA3
+Need help?
+https://www.chipotle.com/contact-us?email=john.doe@gmail.com&orderConfId=AS8-CA3 
+Chat with Pepper 
+
+https://www.chipotle.com/rewards 
+
+WHERE AM I PICKING UP?
+
+john doe
+
+https://www.google.com/maps/place/2000 Pennsylvania Ave NW Lbby 15,Washington,DC+20006-1886 
+2000 Pennsylvania Ave NW Lbby 15 
+
+https://www.google.com/maps/place/2000 Pennsylvania Ave NW Lbby 15,Washington,DC+20006-1886 
+Washington, DC 20006-1886 
+
+PICKUP INSTRUCTIONS
+
+Go straight to the pickup shelf to grab your order
+
+Order Details
+
+john doe $9.50
+
+Chicken Bowl
+Fresh Tomato Salsa, Roasted Chili-Corn Salsa, Sour Cream, Cheese, Romaine Lettuce, Tomatillo-Green Chili Salsa, Tomatillo-Red Chili Salsa, Fajita Veggies, No Beans, Brown Rice
+
+Napkins & Utensils $0.00
+Bag Total $9.50
+$6 Entree - $3.50
+
+Subtotal
+
+$6.00
+
+Tax $0.60
+Crew Tip $0.00
+
+Total $6.60
+PAYMENT METHOD
+Apple Pay (ending in 0558) - $6.60
+
+REAL FOODPRINT Real food sourced responsibly makes a real impact compared to conventional ingredients. The data below, computed by HowGood, shows how orders like yours can help us Cultivate a Better World.
+Less Carbon in the Atmosphere 0.9 GRAMS
+Supported Organic Land 0.1 SQ. FEET Antibiotics Avoided 42.3 MILLIGRAMS
+Gallons of Water Saved 0.0 GALLONS Improved Soil Health 0.1 SQ. FEET
+
+https://www.chipotle.com/order/real-foodprint 
+SEE YOUR FULL IMPACT 
+
+Metrics powered by 
+https://howgood.com 
+HowGood 
+
+How was your experience? We appreciate your feedback!
+
+https://www.chipotlefeedback.com/?chipotle-rcpt-survey 
+TAKE THE SURVEY 
+
+https://itunes.apple.com/us/app/chipotle/id327228455?mt=8 
+DOWNLOAD OUR APP      
+https://www.chipotle.com/catering 
+CATERING      
+https://www.chipotle.com/find-a-chipotle?mode=delivery&utm_source=confirmation-email&utm_medium=email 
+DELIVERY 
+
+Cultivate a Better World.
+
+https://instagram.com/chipotle 
+
+https://facebook.com/chipotle 
+
+https://twitter.com/chipotletweets 
+
+https://www.chipotle.com/rewards 
+CHIPOTLE.COM 
+
+This email was sent to 
+mailto:john.doe@gmail.com 
+john.doe@gmail.com 
+
+https://www.chipotle.com/email-us 
+Customer Service     
+
+Chipotle Mexican Grill, Inc · 610
+Newport Center
+
+Drive · Newport Beach, CA 92660 · USA
+
+© 2023 Chipotle Mexican Grill, Inc.
+
+* Rewards are for regular-priced entree items only and expire after 60 days.
+
+Restrictions apply; void where prohibited. Full program terms 
+https://www.chipotle.com/about-us/rewards-terms.html 
+here .
+
+https://www.chipotle.com/about-us/rewards-terms.html 
+
+Chipotle Rewards Terms of Use
+ 
+
+https://www.chipotle.com/privacy-policy 
+
+Privacy Policy
+ 
+
+
+
+This email was sent by: Chipotle Mexican Grill, Inc.
+610 Newport Center Drive Newport Beach, CA, 92660, USA
+
+https://click.email.chipotle.com/profile_center.aspx?qs=3b18ce76ef2463095fafd5a984e3fb171854170872c8ac5106d532fd24b7b9879256fdaaddc0ac4896b80bda1c571f22949cdae83482439d499e8e3e28461954f58afb991506277d 
+Update Profile
+--SQkl95K8ljo5=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <style type="text/css">
+        /* CLIENT-SPECIFIC STYLES ------------------- */
+
+        #outlook a {
+            padding: 0; /* Force Outlook to provide a "view in browser" message */
+        }
+
+        .ReadMsgBody {
+            width: 100%; /* Force Hotmail to display emails at full width */
+        }
+
+        .ExternalClass {
+            width: 100%; /* Force Hotmail to display emails at full width */
+        }
+
+            .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+                line-height: 100%; /* Force Hotmail to display normal line spacing */
+            }
+
+        body, table, td, a { /* Prevent WebKit and Windows mobile changing default text sizes */
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        table, td { /* Remove spacing between tables in Outlook 2007 and up */
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        img { /* Allow smoother rendering of resized image in Internet Explorer */
+            -ms-interpolation-mode: bicubic;
+        }
+
+        /* RESET STYLES --------------------------- */
+
+        body {
+            height: 100% !important;
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+        }
+
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+        }
+
+        table {
+            border-collapse: collapse !important;
+        }
+
+        /* iOS BLUE LINKS */
+
+        .apple-links a {
+            color: #999999;
+            text-decoration: none;
+        }
+
+        /* MOBILE STYLES ------------------------ */
+    </style>
+</head>
+<body style="margin: 0; padding: 0;">
+    <!-- CONTAINER TABLE -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
+        <tr>
+            <td align="center" style="font-family: Helvetica, Arial, sans-serif; padding: 20px 0 20px 0">
+                <!-- HIDDEN PREHEADER -->
+                <div style="display: none; font-size: 1px; color:#333333; line-height: 1px; font-family: Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all;">
+                    Your order details inside and points are on the way.
+                </div>
+                <!-- WRAPPER TABLE -->
+                <table border="0" cellpadding="0" cellspacing="0" width="480">
+                    <tr>
+                        <td>
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td align="center">
+                                        <a href="https://www.chipotle.com/" target="_blank">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="color: #451400; font-size: 35px; font-weight: bold; padding: 20px 0 10px 0">
+                                        YOUR ORDER IS IN,<br />
+                                        john doe
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td align="center" style="color: #451400; font-size: 20px; font-weight: bold; padding-top: 10px">
+                                        ESTIMATED PICKUP TIME:
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="color: #451400; font-size: 72px; font-weight: bold;">
+                                        11:00 PM
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="color: #451400; font-size: 18px; font-weight: bold;">
+                                        10/31/2023 (Today)
+                                    </td>
+                                </tr>
+                                <tr><td align="center" style="font-family: Helvetica, Arial, sans-serif; font-size: 20px; font-weight: bold; color: #451400; padding-top: 20px">MY ORDER CONFIRMATION NUMBER:</td></tr><tr><td align="center" style="font-family: Helvetica, Arial, sans-serif; font-size: 35px; font-weight: bold; color:#ad2118;" >AS8-CA3</td></tr>
+                                <tr>
+                                    <td align="center" style="color: #451400; padding-top: 20px">
+                                        <span style="font-size: 15px; margin-right: 10px;">Need help?</span>
+                                        <span style="font-size: 15px; font-weight: bold;"><a href="https://www.chipotle.com/contact-us?email=1234@gmail.com&orderConfId=AS8-CA3" target="_blank" style="text-decoration: underline; color: #451400; padding-top: 4px;">Chat with Pepper</a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="padding-top: 20px; border-bottom-style: solid; border-width: 1.5px; border-color: #d4cbc7;"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <!-- CONTAINER TABLE -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
+        <tr>
+            <td align="center" style="padding: 20px 0 20px 0">
+                <!-- WRAPPER TABLE -->
+                <table border="0" cellpadding="0" cellspacing="0" width="480">
+                    <tr>
+                        <td>
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr><td><a href =https://www.chipotle.com/rewards></a></td></tr>
+                                <tr>
+                                    <td align="center" style="padding-top: 20px">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <!-- CONTAINER TABLE -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
+        <tr>
+            <td align="center" style="padding: 0 0 20px 0">
+                <!-- WRAPPER TABLE -->
+                <table border="0" cellpadding="0" cellspacing="0" style="font-family: Helvetica, Arial, sans-serif; padding: 10px 0 20px 0" width="480">
+                    <tr>
+                        <td>
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td align="center" style="color: #451400; font-size: 20px; font-weight: bold; padding-bottom: 20px;">
+                                        WHERE AM I PICKING UP?
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="color: #451400; font-size:30px; font-weight: bold;">
+                                        john doe
+                                    </td>
+                                </tr>
+                                <tr><td align="center" style="font-size:30px; font-weight: bold;"><a style="color: #451400; text-decoration: underline" href="https://www.google.com/maps/place/2000 Pennsylvania Ave NW Lbby 15,Washington,DC+20006-1886" target="_blank">john doe</a></td></tr><tr><td align="center" style="font-size:30px; font-weight: bold;"><a style="color: #451400; text-decoration: underline" href="https://www.google.com/maps/place/2000 Pennsylvania Ave NW Lbby 15,Washington,DC+20006-1886" target="_blank">john doe</a></td></tr>
+                                <tr>
+                                    <td align="center">
+                                        <table align="center" border="0" cellpadding="0" cellspacing="0" width="420">
+                                            <tr>
+                                                <td align="center" colspan="2" style="border-bottom-style: solid; border-width: 1.5px; border-color: #d4cbc7; padding-top: 20px;"></td>
+                                            </tr>
+                                            <tr><td align ="center" style="color: #451400; font-size:20px; font-weight: bold; padding-top: 20px; padding-bottom: 20px">PICKUP INSTRUCTIONS</td></tr><tr><td align ="center"></td></tr><tr><td align="center" style="color: #451400; font-family: Helvetica, Arial, sans-serif; font-weight: bold; font-size:20px; padding: 20px 65px 0 65px">Go straight to the pickup shelf to grab your order</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <!-- CONTAINER TABLE -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
+        <tr>
+            <td align="center" style="padding: 20px 0 20px 0">
+                <!-- WRAPPER TABLE -->
+                <table border="0" cellpadding="0" cellspacing="0" style="font-family: Helvetica, Arial, sans-serif; padding: 10px 0 20px 0" width="480">
+                    <tr>
+                        <td>
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td align="center" style="color: #451400; font-size: 20px; font-weight: bold;">
+                                        Order Details
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <table align="center" border="0" cellpadding="0" cellspacing="0" width="420">
+                                            <tr><td style="font-family: Helvetica, Arial, sans-serif; font-size: 25px; font-weight: bold; color: #a89784; padding-top: 20px">john doe</td><td align="right" style="font-family: Helvetica, Arial, sans-serif; font-size: 25px; font-weight: bold; color: #a89784; padding-top: 20px;">$9.50</td></tr><tr><td align="center" colspan="2" style="border-bottom-style: solid; border-width: 1.5px; border-color: #d4cbc7; padding-top: 10px;"></td></tr><tr><td colspan="2" style="font-family: Helvetica, Arial, sans-serif; font-size: 18px; color:#451400; padding-top: 15px; padding-bottom: 5px"><strong>Chicken Bowl</strong></td></tr><tr>
+<td colspan="2" style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; color:#451400; padding-top: 5px; padding-bottom: 5px">Fresh Tomato Salsa, Roasted Chili-Corn Salsa, Sour Cream, Cheese, Romaine Lettuce, Tomatillo-Green Chili Salsa, Tomatillo-Red Chili Salsa, Fajita Veggies, No Beans, Brown Rice</td></tr>
+                                            <tr>
+                                                <td align="center" colspan="2" style="border-bottom-style: solid; border-width: 1.5px; border-color: #d4cbc7; padding-top: 20px;"></td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" colspan="2" style="padding-top: 30px;"></td>
+                                            </tr>
+                                            <tr><td style="color: #451400; font-size: 18px; padding-bottom: 5px">Napkins & Utensils</td><td align="right" style="color: #451400; font-size: 18px; font-weight: bold; padding-bottom: 5px">$0.00</td></tr>
+                                            <tr><td style="color: #451400; font-size: 18px;">Bag Total</td><td align="right" style="color: #451400; font-size: 18px; font-weight: bold;">$9.50</td></tr>
+                                            <tr><td style="color: #451400; font-size: 18px; padding-top: 5px;">$6 Entree</td><td align="right" style="color: #451400; font-size: 18px; font-weight: bold; padding-top: 5px;">-$3.50</td></tr>
+                                            <tr>
+                                                <td style="color: #451400; font-size: 18px; padding-top: 5px;">
+                                                    Subtotal
+                                                </td>
+                                                <td align="right" style="color: #451400; font-size: 18px; font-weight: bold; padding-top: 5px;">
+                                                    $6.00
+                                                </td>
+                                            </tr>
+                                            <tr><td style="color: #451400; font-size: 18px; padding-top: 5px">Tax</td><td align="right" style="color: #451400; font-size: 18px; font-weight: bold; padding-top: 5px">$0.60</td></tr>
+                                            <tr><td style="color: #451400; font-size: 18px; padding-top: 5px">Crew Tip</td><td align="right" style="color: #451400; font-size: 18px; font-weight: bold; padding-top: 5px">$0.00</td></tr>
+                                            
+                                            <tr><td align="center" colspan="2" style="border-bottom-style: solid; border-width: 1.5px; border-color: #d4cbc7; padding-top: 35px;"></td></tr><tr><td style="color: #451400; font-size: 25px; font-weight: bold; padding-top: 30px">Total</td><td align="right" style="color: #451400; font-size: 25px; font-weight: bold; padding-top: 30px">$6.60</td></tr>
+                                            <tr><td colspan="2" style="font-size: 18px; font-weight:bold; color: #451400; padding-top: 20px">PAYMENT METHOD</td></tr><tr><td style="font-size: 18px; color: #451400; padding-top: 10px">Apple Pay (ending in 0558)</td><td align="right" style="color: #451400; font-size: 18px; padding-top: 10px;"> - $6.60</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <!-- CONTAINER TABLE -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding-top: 20px; table-layout: fixed;">
+        <tr>
+            <td align="center" style="font-family: Helvetica, Arial, sans-serif; padding: 20px 0 20px 0">
+                <!-- WRAPPER TABLE -->
+                <table border="0" cellpadding="0" cellspacing="0" width="480">
+                    <tr>
+                        <td>
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td align="center" colspan=2 style="background: url('https://www.chipotle.com/content/dam/poc/order/images/email/sustainability_banner_480_ws0hz4.jpg'); background-color: #f2f2f2; height: 180px;">
+                                        <div style="font-size: 24px; font-family: TradeGothicLTStd, Helvetica, Arial, sans-serif; line-height: 16px; font-weight: bold; color: #417505; margin-top: 25px;">REAL FOODPRINT</div>
+                                        <div style="font-size: 15px; font-family: TradeGothicLTStd, Helvetica, Arial, sans-serif; color: #786259; margin: 10px 25px 0px">Real food sourced responsibly makes a real impact compared to conventional ingredients. The data below, computed by HowGood, shows how orders like yours can help us Cultivate a Better World.</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" colspan=2 height="125" width="240" style="border:#DBD2CE solid 1px;">
+                                        <div style="font-size: 16px; font-family: TradeGothicLTStd, Helvetica, Arial, sans-serif; font-weight: bold; color: #451400;">Less Carbon in the Atmosphere</div>
+                                        <div style="font-size: 38px; font-family: Arial, sans-serif; font-weight: bold; color: #417505;">0.9</div>
+                                        <div style="font-size: 13px; font-family: TradeGothicLTStd, Helvetica, Arial, sans-serif; font-weight: bold; color: #796257;">GRAMS</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" height="125" width="240" style="border:#DBD2CE solid 1px">
+                                        <div style="font-size: 16px; font-family: TradeGothicLTStd, Helvetica, Arial, sans-serif; font-weight: bold; color: #451400;">Supported Organic Land</div>
+                                        <div style="font-size: 38px; font-family: Arial, sans-serif; font-weight: bold; color: #417505;">0.1</div>
+                                        <div style="font-size: 13px; font-family: TradeGothicLTStd, Helvetica, Arial, sans-serif; font-weight: bold; color: #796257;">SQ. FEET</div>
+                                    </td>
+                                    <td align="center" height="125" width="240" style="border:#DBD2CE solid 1px">
+                                        <div style="font-size: 16px; font-family: TradeGothicLTStd, Helvetica, Arial, sans-serif; font-weight: bold; color: #451400;">Antibiotics Avoided</div>
+                                        <div style="font-size: 38px; font-family: Arial, sans-serif; font-weight: bold; color: #417505;">42.3</div>
+                                        <div style="font-size: 13px; font-family: TradeGothicLTStd, Helvetica, Arial, sans-serif; font-weight: bold; color: #796257;">MILLIGRAMS</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" height="125" width="240" style="border:#DBD2CE solid 1px">
+                                        <div style="font-size: 16px; font-family: TradeGothicLTStd, Helvetica, Arial, sans-serif; font-weight: bold; color: #451400;">Gallons of Water Saved</div>
+                                        <div style="font-size: 38px; font-family: Arial, sans-serif; font-weight: bold; color: #417505;">0.0</div>
+                                        <div style="font-size: 13px; font-family: TradeGothicLTStd, Helvetica, Arial, sans-serif; font-weight: bold; color: #796257;">GALLONS</div>
+                                    </td>
+                                    <td align="center" height="125" width="240" style="border:#DBD2CE solid 1px">
+                                        <div style="font-size: 16px; font-family: TradeGothicLTStd, Helvetica, Arial, sans-serif; font-weight: bold; color: #451400;">Improved Soil Health</div>
+                                        <div style="font-size: 38px; font-family: Arial, sans-serif; font-weight: bold; color: #417505;">0.1</div>
+                                        <div style="font-size: 13px; font-family: TradeGothicLTStd, Helvetica, Arial, sans-serif; font-weight: bold; color: #796257;">SQ. FEET</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan=2 bgcolor="#451400" style="padding: 12px 35px 12px 35px;" align="center">
+                                        <a href="https://www.chipotle.com/order/real-foodprint" target="_blank" style = "font-size: 20px; font-family: Arial, sans-serif; font-weight: bold; color: #ffffff; text-decoration: none;">SEE YOUR FULL IMPACT</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" colspan=2 style="color: #7d6351; font-family: Helvetica, Arial, sans-serif; font-size: 14px; padding-top: 12px">
+                                        Metrics powered by <a href="https://howgood.com" target="_blank" style="color: #451400; font-size: 14px; font-family: Helvetica, Arial, sans-serif; font-weight: bold;">HowGood</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <!-- CONTAINER TABLE -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding-top: 20px; table-layout: fixed;">
+        <tr>
+            <td align="center" style="font-family: Helvetica, Arial, sans-serif; padding: 20px 0 20px 0">
+                <!-- WRAPPER TABLE -->
+                <table border="0" cellpadding="0" cellspacing="0" width="480">
+                    <tr>
+                        <td>
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td align="center">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="color: #451400; font-family: Helvetica, Arial, sans-serif; font-size: 18px; font-weight: bold; padding-top: 30px">
+                                        How was your experience? We appreciate your feedback!
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <!-- TABLE-BASED BUTTON -->
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td align="center" style="padding: 30px 0 0 0;">
+                                                    <table border="0" cellspacing="0" cellpadding="0">
+                                                        <tr>
+                                                            <td bgcolor="#ac2017" style="padding: 12px 35px 12px 35px;" align="center">
+                                                                <a href="https://www.chipotlefeedback.com/?chipotle-rcpt-survey" target="_blank" style="font-size: 20px; font-family: Arial, sans-serif; font-weight: bold; color: #ffffff; text-decoration: none;">TAKE THE SURVEY</a>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <!-- CONTAINER TABLE -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding-top: 70px; table-layout: fixed;">
+        <tr>
+            <td align="center" style="font-family: Helvetica, Arial, sans-serif; padding: 20px 0 20px 0">
+                <!-- WRAPPER TABLE -->
+                <table border="0" cellpadding="0" cellspacing="0" width="480">
+                    <tr>
+                        <td>
+                            <table align="center" cellpadding="0" cellspacing="0" style="margin: 0 auto; width: 100%; max-width: 512px;" role="Presentation">
+                                <tr>
+                                    <td class="padb40m" align="center" style="padding-top: 20px; padding-bottom: 30px; mso-padding-bottom-alt: 0;">
+                                        <table align="center" width="100%" cellpadding="0" cellspacing="0" style="margin: 0 auto; width: 100%;" role="Presentation">
+                                            <tr>
+                                                <td align="center" class="pads5m">
+
+                                                    <table align="center" class="" width="100%" cellpadding="0" cellspacing="0" style="margin: 0 auto; width: 100%; max-width: 100%;" role="Presentation">
+                                                        <tr>
+                                                            <td class="font16m gfontf w137" style="font-size: 14px; line-height: normal; color: #451400; font-family: TradeGothicLTCom-Bold, 'Helvetica Neue', sans-serif; text-align: center; font-weight: bold;"><a href="https://itunes.apple.com/us/app/chipotle/id327228455?mt=8" target="_blank" style="text-decoration: none; color: #451400">DOWNLOAD OUR APP</a> &nbsp;&nbsp;<span class="hidem">&nbsp;&nbsp;</span> <a href="https://www.chipotle.com/catering" target="_blank" style="text-decoration: none; color: #451400;">CATERING</a> &nbsp;&nbsp;<span class="hidem">&nbsp;&nbsp;</span> <a href="https://www.chipotle.com/find-a-chipotle?mode=delivery&utm_source=confirmation-email&utm_medium=email" target="_blank" style="text-decoration: none; color: #451400">DELIVERY</a></td>
+                                                        </tr>
+                                                    </table>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="font14m" align="center" style="padding-top: 20px; font-family: 'Helvetica Neue', sans-serif; font-size: 12px; line-height: 140%; color: #55392c;">
+                                                    <p style="padding: 0; margin: 0;">Cultivate a Better World.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" style="padding-top: 20px;">
+                                                    <!--[if (gte mso 9)|(IE)]>
+                                                    <table width="150" align="center" cellpadding="0" cellspacing="0" style="border: 0; width: 150px;" role="Presentation">
+                                                    <tr>
+                                                    <td>
+                                                    <![endif]-->
+                                                    <table align="center" class="w166m" width="135" cellpadding="0" cellspacing="0" style="margin: 0 auto; width: 100%; max-width: 135px;" role="Presentation">
+                                                        <tr>
+                                                            <td style="width: 32%; font-size: 14px; line-height: normal; color: #451400; font-family: TradeGothicLTCom-Bold, 'Helvetica Neue', sans-serif; text-align: left;"><a href="https://instagram.com/chipotle" style="text-decoration: none; color: #451400"></a></td>
+                                                            <td style="width: 33%; font-size: 14px; line-height: normal; color: #451400; font-family: TradeGothicLTCom-Bold, 'Helvetica Neue', sans-serif; text-align: center;"><a href="https://facebook.com/chipotle" style="text-decoration: none; color: #451400"></a></td>
+                                                            <td style="width: 34%; font-size: 14px; line-height: normal; color: #451400; font-family: TradeGothicLTCom-Bold, 'Helvetica Neue', sans-serif; text-align: right;"><a href="https://twitter.com/chipotletweets" style="text-decoration: none; color: #451400"></a></td>
+                                                        </tr>
+                                                    </table>
+                                                    <!--[if (gte mso 9)|(IE)]>
+                                                    </td>
+                                                    </tr>
+                                                    </table>
+                                                    <![endif]-->
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center">
+                                                    <table class="w95m" align="center" width="100%" cellpadding="0" cellspacing="0" style="margin: 0 auto; width: 100%;" role="Presentation">
+                                                        <tr>
+                                                            <td class="font20m" align="center" style="padding-top: 20px; padding-bottom: 22px; font-family: TradeGothicLTCom-Bold, 'Helvetica Neue', sans-serif; font-size: 16px; line-height: 140%; color: #55392c; font-weight: bold; border-bottom: 2px solid #aa9c95;">
+                                                                <p style="padding: 0; margin: 0;"><a href="https://www.chipotle.com/rewards" style="text-decoration: none; color: #451400">CHIPOTLE.COM</a></p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" style="padding-top: 20px; font-family: 'Helvetica Neue', sans-serif; font-size: 12px; line-height: 140%; color: #451400;">
+                                                    <p style="padding: 0; margin: 0; margin-right: 10px; margin-left: 10px;">
+                                                        This email was sent to <a href="mailto:1234@gmail.com" style="text-decoration: underline; color: #451400">1234@gmail.com</a>
+                                                    </p>
+                                                    <p style="padding: 0; margin: 0; margin-top: 10px; margin-right: 10px; margin-left: 10px;">
+                                                        <a href="https://www.chipotle.com/email-us" target="_blank" style="text-decoration: underline; color: #451400">Customer Service</a> &nbsp;&nbsp;&nbsp;
+                                                    </p>
+                                                    <p style="padding: 0; margin: 0; margin-top: 10px; margin-right: 10px; margin-left: 10px;">
+                                                        Chipotle Mexican Grill, Inc · 610
+                                                        Newport Center
+                                                        <br />
+                                                        Drive · Newport<span> Beach, C</span>A 9<span>2660 · U</span>SA<br />
+                                                        © 2023 Chipotle Mexican Grill,&nbsp;Inc.
+                                                    </p>
+
+                                                    <p>
+                                                        * Rewards are for regular-priced entree items only and expire after 60 days.<br />
+                                                        Restrictions apply; void where prohibited. Full program terms <a href="https://www.chipotle.com/about-us/rewards-terms.html" target="_blank" style="text-decoration: underline; color: #451400">here</a>.
+                                                    </p>
+
+                                                    <p style="padding: 0; margin: 0; margin-top: 15px; margin-right: 10px; margin-left: 10px;">
+                                                        <a href="https://www.chipotle.com/about-us/rewards-terms.html" target="_blank" style="text-decoration: underline; color: #451400">
+                                                            Chipotle Rewards Terms of Use
+                                                        </a>
+                                                    </p>
+
+                                                    <p style="padding: 0; margin: 0; margin-top: 15px; margin-right: 10px; margin-left: 10px;">
+                                                        <a href="https://www.chipotle.com/privacy-policy" target="_blank" style="text-decoration: underline; color: #451400">
+                                                            Privacy Policy
+                                                        </a>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+        </tr>
+    </table>
+</body>
+</html>
+
+<table cellpadding="2" cellspacing="0" width="600" ID="Table5" Border=0><tr><td><font face="verdana" size="1" color="#444444">This email was sent by: <b>Chipotle Mexican Grill, Inc.</b><br>john doe<br><br></font></td></tr></table>
+
+<a href="https://click.email.chipotle.com/profile_center.aspx?qs=3b18ce76ef2463095fafd5a984e3fb171854170872c8ac5106d532fd24b7b9879256fdaaddc0ac4896b80bda1c571f22949cdae83482439d37a9670e7b39aab00eb7b4cf4ef468f3" >Update Profile</a>
+
+

@@ -1,0 +1,252 @@
+ARC-Seal: i=1; a=rsa-sha256; d=stfashion.com; s=arc-20180730; t=1733363046;
+	cv=none; b=Gmbh5PHlOTCyaUl3Z9/bw5+HjtlSMK3L/MHK8BToQRvtNzll/BsSEo5fJOA3
+	 PDTNX71ubjiiGanusJBZf6LrzSqRaN/IqXBrlM88Px10Mlncrg18XOtPYP8Xl//88KnvDP
+	 GkNvdWRpumymuq5RiuuZ1/rWHLop7pG4Ipjh7pdjB7l6qDBQ4qNvDpX6lYdC3RhZkMLNZe
+	 /YxvWYnCA3jcOokEWk4wGYtUTqzQRNO3FsWRn7zDjTuR9OyHKpS9+R3rns3yHs/52oftxX
+	 pOHq3/NqHPDMMTxJ0iQErzVjega+lkcckYw+N6XOjlr0fpTJw4J0XEo5bU6ZWvdzF6S0Qx
+	 mw==
+ARC-Message-Signature: i=1; a=rsa-sha256; d=stfashion.com; s=arc-20180730;
+	t=1733363046; c=relaxed/relaxed;
+	bh=Naht/0pLXTn3NJPyNLG6nqyNgL1mMjb9owa4H7F5ISQ=;
+	h=dkim-signature:dkim-signature:from:to:subject:message-id:date; b=RnjQ
+	 EObK0ETHAmCkDpVLexn/8X8d51QUAeW9nkGGXviG2Igpler4D+Gewq2pNSXQLd6i44uniJ
+	 MWNhbUN30HSu2kSm5mLdjX85BcEtUXz1H8H03RY4DsCjC8cZPNufMPjwJ9yFHaAE4dFDlp
+	 GG6uw6CEVZR+Qu+XprcWSjVB99lBsU6mY748rjs2x7JXZvpQQoWJ9DuD5ngET49ZDgP2QE
+	 LizJkszz8dBtibCKNV5D01OYpQ5sFkuRSaKngQh/uUt2F+HcLHXj7ebLAQu3eXIwvG5iJy
+	 KY0Zapwl3Nh6DQOk9aU1wBgmfvOm1qBVOe2RRjcJ9bmuvxSZv+cg4Z9YyA==
+ARC-Authentication-Results: i=1; mx.stfashion.com;   spf=pass (mx.stfashion.com:
+ domain of =?utf-8?q?010c0193947d17c8-47038f12-3cbb-4aa9-a3b0-a9bc59da6019-0?=
+ =?utf-8?q?00000=40ap-northeast-2=2Eamazonses=2Ecom?= designates 76.223.177.50
+ as permitted sender) =?utf-8?q?smtp=2Emailfrom=3D010c0193947d17c8-47038f12-?=
+ =?utf-8?q?3cbb-4aa9-a3b0-a9bc59da6019-000000=40ap-northeast-2=2Eamazonses?=
+ =?utf-8?q?=2Ecom=3B?=  dkim=pass header.i=@stfashion.com;  dkim=pass
+ header.i=@amazonses.com;  dmarc=pass (p=NONE sp=NONE dis=NONE)
+ header.from=stfashion.com
+Return-Path: =?utf-8?q?=3C010c0193947d17c8-47038f12-3cbb-4aa9-a3b0-a9bc59da6?=
+ =?utf-8?q?019-000000=40ap-northeast-2=2Eamazonses=2Ecom=3E?=
+Received-SPF: pass (mx.stfashion.com: domain of =?utf-8?q?010c0193947d17c8-47038?=
+ =?utf-8?q?f12-3cbb-4aa9-a3b0-a9bc59da6019-000000=40ap-northeast-2=2Eamazons?=
+ =?utf-8?q?es=2Ecom?= designates 76.223.177.50 as permitted sender) 
+ client-ip=76.223.177.50; x-iptype=default;
+Authentication-Results: mx.stfashion.com;  spf=pass (mx.stfashion.com: domain of 
+ =?utf-8?q?010c0193947d17c8-47038f12-3cbb-4aa9-a3b0-a9bc59da6019-000000=40ap?=
+ =?utf-8?q?-northeast-2=2Eamazonses=2Ecom?= designates 76.223.177.50 as
+ permitted sender) =?utf-8?q?smtp=2Emailfrom=3D010c0193947d17c8-47038f12-3cb?=
+ =?utf-8?q?b-4aa9-a3b0-a9bc59da6019-000000=40ap-northeast-2=2Eamazonses=2Eco?=
+ =?utf-8?q?m=3B?=  dkim=pass header.i=@stfashion.com;  dkim=pass
+ header.i=@amazonses.com;  dmarc=pass (p=NONE sp=NONE dis=NONE)
+ header.from=stfashion.com
+X-Naver-ESV: wm+n+6J4p63CbHmqKBwdbXFYKAudFAgrjJ+Y
+X-Session-IP: 76.223.177.50
+Received: from c177-50.smtp-out.ap-northeast-2.amazonses.com
+ (c177-50.smtp-out.ap-northeast-2.amazonses.com [76.223.177.50])  by
+ crcvmail102.nm.stfashion.com with ESMTP id Rzk-P77zRXqAfBOEeltTjg  for
+ <johndoe@gmail.com>  (version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256);  Thu,
+ 05 Dec 2024 01:44:06 -0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=j7ctagyeogsiivvhs7hue2phuvm4psfj; d=stfashion.com; t=1733363046;	
+ =?utf-8?q?h=3DFrom=3ATo=3ASubject=3AMIME-Version=3AContent-Type=3AContent-T?=
+ =?utf-8?q?ransfer-Encoding=3AMessage-ID=3ADate=3B?=
+	bh=ge1y2ljreEj2pJ0GFkVvOXnhiam314lO46j3f3qou94=;
+	b=sR2CUH1pY5BG5/4hfc/vZjHuuOtjZUOqzNM6flKfV9BNLu405x42arM3jKeBmg6m
+	XMyPRhXk1R/HskmXqmHwAr4ruIeeuZkL3fB59jne1T9CJS5cRT48qzEtY68j65xKC4l
+	DC1E3yZc8fLewAdn4jezDwaHsfM8OtEj6dKTb2Yo=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=cwxpcqz2jsbnzswvvpljj7cdg74la37w; d=amazonses.com; t=1733363046;	
+ =?utf-8?q?h=3DFrom=3ATo=3ASubject=3AMIME-Version=3AContent-Type=3AContent-T?=
+ =?utf-8?q?ransfer-Encoding=3AMessage-ID=3ADate=3AFeedback-ID=3B?=
+	bh=ge1y2ljreEj2pJ0GFkVvOXnhiam314lO46j3f3qou94=;
+	b=bgS7AO9oF93vbahxjPHZgZSI2Rt5BCZ2k/wvywEqbZ/icE+PyedE9Y2IaqVirE1J
+	c4c0ktuuPVddfH3D6WnpEQ1IeC5pwsTNk2Wu59DEQVCa3ysOAq8FuICvpvdZHR9yLzv
+	PcLCDgt1/Jhva0OeLcEPPQT1qR26t4fxNVrbA0W4=
+From:StreetFashion <mail@stfashion.com>
+To: johndoe@gmail.com
+Subject: [StreetFashion] Your Order Confirmation
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Message-ID: <010c0193947d17c8-47038f12-3cbb-4aa9-a3b0-a9bc59da6019-000000@ap-northeast-2.amazonses.com>
+Date: Thu, 5 Dec 2024 01:44:06 +0000
+Feedback-ID:
+ ::1.ap-northeast-2.pvzNZ4g0h+QbifP7iU1yBLFUYU8luOf46ytiS4/Y+nQ=:AmazonSES
+X-SES-Outgoing: 2024.12.05-76.223.177.50
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0"
+       style="border-collapse: collapse; min-width: 290px; max-width: 600px; margin: 0 auto" width="100%">
+    <tbody>
+    <tr>
+        <td style="padding: 14px 0 50px; font-size: 0;">
+            <a href="https://musinsaapp.page.link/jRf2" target="_blank" title="New Window"
+               style="display: inline-block; padding: 10px 3px 10px 10px; text-decoration: none; background-color:#ffffff;"></a>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding: 0 10px;">
+            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" width="100%">
+                <tbody>
+                <tr>
+                    <td style="padding: 0 0 16px; color: #000000; line-height: 42px; font-family: 'AppleSDGothicNeo', 'Apple SD Gothic Neo','Apple SD 산돌고딕 Neo',sans-serif; font-size: 32px; font-weight: bold; border-bottom-color: #000000; border-bottom-width: 2px; border-bottom-style: solid;">
+                        Order Completed
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 32px 0 8px; color: #000000; line-height: 24px; font-family: 'AppleSDGothicNeo', 'Apple SD Gothic Neo','Apple SD 산돌고딕 Neo',sans-serif; font-size: 16px; font-weight: bold;">
+                        Your order has been confirmed.
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color: #000000; line-height: 24px; font-family: 'AppleSDGothicNeo', 'Apple SD Gothic Neo','Apple SD 산돌고딕 Neo',sans-serif; font-size: 16px;">
+                        John Doe's 202412051043330001 order has been successfully confirmed.<br>                     
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:40px 0 24px">
+                        <table border="0" cellpadding="0" cellspacing="0"
+                               style="table-layout:fixed; border: 1px solid #eeeeee; border-image: none; border-collapse: collapse;"
+                               width="100%">
+                            <colgroup>
+                                <col width="126"/>
+                                <col width="auto"/>
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <td colspan="2"
+                                    style="padding: 20px; background: #eeeeee; color: #000000; line-height: 24px; font-family: 'AppleSDGothicNeo', 'Apple SD Gothic Neo','Apple SD 산돌고딕 Neo',sans-serif; font-size: 16px; font-weight: bold;">
+                                    Order Information
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 20px 0px 20px 20px; color: #000000; line-height: 24px; font-family: 'AppleSDGothicNeo', 'Apple SD Gothic Neo','Apple SD 산돌고딕 Neo',sans-serif; font-size: 16px; font-weight: bold; border-bottom-color: #eeeeee; border-bottom-width: 1px; border-bottom-style: solid;"
+                                    valign="top">Order Date
+                                </td>
+                                <td style="padding: 20px 20px 20px 20px; color: #777777; line-height: 24px; font-family: 'AppleSDGothicNeo', 'Apple SD Gothic Neo','Apple SD 산돌고딕 Neo',sans-serif; font-size: 16px; border-bottom-color: #eeeeee; border-bottom-width: 1px; border-bottom-style: solid;word-break: keep-all;">
+                                    2024-12-05 10:44:02
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 20px 0px 20px 20px; color: #000000; line-height: 24px; font-family: 'AppleSDGothicNeo', 'Apple SD Gothic Neo','Apple SD 산돌고딕 Neo',sans-serif; font-size: 16px; font-weight: bold; border-bottom-color: #eeeeee; border-bottom-width: 1px; border-bottom-style: solid;"
+                                    valign="top">Order Number
+                                </td>
+                                <td style="padding: 20px 20px 20px 20px; color: #777777; line-height: 24px; font-family: 'AppleSDGothicNeo', 'Apple SD Gothic Neo','Apple SD 산돌고딕 Neo',sans-serif; font-size: 16px; border-bottom-color: #eeeeee; border-bottom-width: 1px; border-bottom-style: solid;word-break: keep-all;">
+                                    202412051043330001
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 20px 0px 20px 20px; color: #000000; line-height: 24px; font-family: 'AppleSDGothicNeo', 'Apple SD Gothic Neo','Apple SD 산돌고딕 Neo',sans-serif; font-size: 16px; font-weight: bold; border-bottom-color: #eeeeee; border-bottom-width: 1px; border-bottom-style: solid;"
+                                    valign="top">Product Information
+                                </td>
+                                <td style="padding: 20px 20px 20px 20px; color: #777777; line-height: 24px; font-family: 'AppleSDGothicNeo', 'Apple SD Gothic Neo','Apple SD 산돌고딕 Neo',sans-serif; font-size: 16px; border-bottom-color: #eeeeee; border-bottom-width: 1px; border-bottom-style: solid;word-break: keep-all;">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                           style="border-collapse:collapse">
+                                        <tr>
+                                            <td style="color: #777777; line-height: 24px; font-family: 'AppleSDGothicNeo', 'Apple SD Gothic Neo','Apple SD 산돌고딕 Neo',sans-serif; font-size: 16px; vertical-align:middle; word-break: keep-all;">
+                                                <div style="width: 90px; min-height: 72px; padding: 0; margin: 20px 0 0 0; float: left">
+                                                </div>
+                                                <div style="min-width: 80%; padding: 0; margin: 16px 0; float: left">
+                                                    <span>[Love is True/2]</span><br>
+                                                    FS STRIPE MUFFLER(BLACK)<br>
+                                                    <div>
+                                                        Option : FREE
+                                                        <div>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        
+                                                        <br>
+                                                        </span>
+                                                    </div>
+                                                    Quantity: 1
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color: #777777; line-height: 24px; font-family: 'AppleSDGothicNeo', 'Apple SD Gothic Neo','Apple SD 산돌고딕 Neo',sans-serif; font-size: 16px; vertical-align:middle; word-break: keep-all;">
+                                                <div style="width: 90px; min-height: 72px; padding: 0; margin: 20px 0 0 0; float: left">
+                                                </div>
+                                                <div style="min-width: 80%; padding: 0; margin: 16px 0; float: left">
+                                                    <span>[Partimento Woman/2]</span><br>
+                                                    Wide Sweatpants_Melange<br>
+                                                    <div>
+                                                        Option : SMALL
+                                                        <div>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        
+                                                        <br>
+                                                        </span>
+                                                    </div>
+                                                    Quantity: 1
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 20px 0px 20px 20px; color: #000000; line-height: 24px; font-family: 'AppleSDGothicNeo', 'Apple SD Gothic Neo','Apple SD 산돌고딕 Neo',sans-serif; font-size: 16px; font-weight: bold; border-bottom-color: #eeeeee; border-bottom-width: 1px; border-bottom-style: solid;"
+                                    valign="top">Payment Information
+                                </td>
+                                <td style="padding: 20px 20px 20px 20px; color: #777777; line-height: 24px; font-family: 'AppleSDGothicNeo', 'Apple SD Gothic Neo','Apple SD 산돌고딕 Neo',sans-serif; font-size: 16px; border-bottom-color: #eeeeee; border-bottom-width: 1px; border-bottom-style: solid;word-break: keep-all;">
+                                    <div>Order Amount: $46.00</div>
+                                    <div>
+                                        <span>Discount Amount: $8.20</span>
+                                    </div>
+                                    <div>Final Payment Amount: $38.00</div>
+                                    <div>Coupon Amount Used: $4.00</div>
+                                    <div>
+                                        <span>Points Used: $3.20</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 20px 0px 20px 20px; color: #000000; line-height: 24px; font-family: 'AppleSDGothicNeo', 'Apple SD Gothic Neo','Apple SD 산돌고딕 Neo',sans-serif; font-size: 16px; font-weight: bold; border-bottom-color: #eeeeee; border-bottom-width: 1px; border-bottom-style: solid;"
+                                    valign="top">Shipping Information
+                                </td>
+                                <td style="padding: 20px 20px 20px 20px; color: #777777; line-height: 24px; font-family: 'AppleSDGothicNeo', 'Apple SD Gothic Neo','Apple SD 산돌고딕 Neo',sans-serif; font-size: 16px; border-bottom-color: #eeeeee; border-bottom-width: 1px; border-bottom-style: solid;word-break: keep-all;">
+                                    Recipient: John Doe<br>
+                                    Address: 010347 S Ewing Ave, Chicago, IL 60617 <br>
+                                    Phone Number: 734-****-0319<br>
+                                    Mobile: 734-****-0319<br>
+                                    Delivery Message: 
+                                </td>
+                            
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 0 0 72px"><a
+                            href="https://musinsaapp.page.link/?link=https%3A%2F%2Fwww.stfashion.com%2Fapp%2Fmypage%2Forder_list_opt&amp;apn=com.musinsa.store&isi=1003139529&amp;ibi=com.grab.musinsa"
+                            target="_black" title="New Window"
+                            style="display: block; height: 19px; padding: 16px 10px 15px; background: #0078ff; color: #ffffff; line-height: 18px; font-family: 'AppleSDGothicNeo', 'Apple SD Gothic Neo','Apple SD 산돌고딕 Neo',sans-serif; font-size: 14px; font-weight: 800; text-decoration: none; text-align:center">Check
+                        Order</a></td>
+                </tr>
+                <tr>
+                    <td style="padding-bottom:16px; color: #000000; line-height: 24px; font-family: 'AppleSDGothicNeo', 'Apple SD Gothic Neo','Apple SD 산돌고딕 Neo',sans-serif; font-size: 16px;word-break: keep-all;">
+                        For exchanges/returns, please apply on My Page and return the product to the place it was shipped from.
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 16px 0 56px; color: #777777; line-height: 21px; font-family: 'AppleSDGothicNeo', 'Apple SD Gothic Neo','Apple SD 산돌고딕 Neo',sans-serif; font-size: 14px; border-top-color: #eeeeee; border-top-width: 1px; border-top-style: solid;word-break: keep-all;">
+                        This email is for sending only, and replies will not be received. For inquiries, please use the <a
+                            href="https://musinsaapp.page.link/?link=https%3A%2F%2Fwww.stfashion.com%2Fapp%2Fcs&amp;apn=com.musinsa.store&amp;isi=1003139529&amp;ibi=com.grab.musinsa"
+                            title="Customer Service" target="_blank"
+                            style="color: #777777; line-height: 21px; font-family: 'AppleSDGothicNeo', 'Apple SD Gothic Neo','Apple SD 산돌고딕 Neo',sans-serif; font-size: 14px;">Customer Service</a>.<br/>COPYRIGHTS (C)MUSINSA ALL RIGHTS RESERVED.
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

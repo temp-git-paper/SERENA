@@ -1,0 +1,241 @@
+Delivered-To: johndoe@gmail.com
+Received: by 2002:ac0:e605:0:b0:33a:bcdd:32da with SMTP id y5csp2439340imp;
+        Tue, 10 Dec 2024 15:06:45 -0800 (PST)
+X-Google-Smtp-Source:
+ AGHT+IF9L1cnLyOmhEkVp6YEt4jA09BAeUz/bG4m9Wm8UPnn8pRnx8Ge8CKW4HBmBgBiclQ/AkPk
+X-Received: by 2002:a17:90b:510c:b0:2ee:e158:125b with SMTP id
+ 98e67ed59e1d1-2f128032774mr998624a91.26.1733872004862;        Tue, 10 Dec
+ 2024 15:06:44 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1733872004; cv=none;
+        d=google.com; s=arc-20240605;
+        b=a9dECMiPa33YVcc23V2C1cuGF1NBFa3Z+2kxVJXhsx1KKW19FBBq/fSAZECmZCEW31
+         4c+TJZKZNUgPFBtuepkf4TizUtOl4cZQwtgFq4woEFtkzVzbAC3ZVIF/HK0v655u0JCJ
+         Z7GvOnl2K0CHmXieXIB3eMPEiM8FRWr47OhwjgILJ4Q/gVWsJbkRV9np7hJxEkyjgy2p
+         anbMUSLOg+hSq6oUt8dftEjSe+k+DwaBSnF/laZy9XZP1T5lMb0E8jOFT7ePmHFyQpY7
+         odtexN35CW7gxO94y0r+P8qQs2Ts2y5d2CF0QQfOwsO35aM08yfkQ3Qq3hgeQ5zkRDgF
+         Ywyg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;       
+ h=feedback-id:date:message-id:content-transfer-encoding:mime-version        
+ :subject:to:from:dkim-signature;       
+ bh=KcORYd24piKNJ9pESTTpSRaNu2TzNJzimoeoz/hIvbs=;       
+ fh=VX/scqIlXbGyoUbtKkjohJHbzs/vl1Acn9mdQa2MjTY=;       
+ b=RmXo/kDGy6BP5mGLYw7Hh3ze5O393ngKQIiJj1DLDqEgpTnVcT0KpNiEthpCULyOdv        
+ qNmIIPoEXJ4XBKj1G11ba4CeDpPIeF9fgcEQ+a981b5I59bV3Q1LsZwlEnaX2X8EfLR8        
+ 1l/tUXmXZJqMDc5qGWe5C/voV8/dbc0KqPMq6nfJYz49F/vCZ1uHotspBRf2sF480KI8        
+ 1/uwbK7vEGtMQtiOF6iX41kYU7vv6IQM/ITBLueWokd3lXNI+GKwfGhYxBCuXC57s1Bf        
+ YKwihOH9Adpu3AY/tOxbVlPeIA/BhCHsPzmKtiOa+VvD64SKxvh3uQgTLwQXHriaqiVm        
+ 3oDw==;        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;       dkim=pass
+ header.i=@amazonses.com header.s=7v7vs6w47njt4pimodk5mmttbegzsi6n
+ header.b=hPPnjaB2;       spf=pass (google.com: domain of =?utf-8?q?01010193?=
+ =?utf-8?q?b2d32d4b-c5b9ce8f-316a-46c6-8026-6719238e515a-000000=40us-west-2?=
+ =?utf-8?q?=2Eamazonses=2Ecom_designates_54=2E240=2E27=2E33_as_permitted_sen?=
+ =?utf-8?q?der=29_smtp=2Emailfrom=3D01010193b2d32d4b-c5b9ce8f-316a-46c6-8026?=
+ =?utf-8?q?-6719238e515a-000000=40us-west-2=2Eamazonses=2Ecom?=
+Return-Path: =?utf-8?q?=3C01010193b2d32d4b-c5b9ce8f-316a-46c6-8026-6719238e5?=
+ =?utf-8?q?15a-000000=40us-west-2=2Eamazonses=2Ecom=3E?=
+Received: from a27-33.smtp-out.us-west-2.amazonses.com
+ (a27-33.smtp-out.us-west-2.amazonses.com. [54.240.27.33])        by
+ mx.google.com with ESMTPS id
+ 98e67ed59e1d1-2ef27094d9csi17188061a91.136.2024.12.10.15.06.44        for
+ <johndoe@gmail.com>        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256
+ bits=128/128);        Tue, 10 Dec 2024 15:06:44 -0800 (PST)
+Received-SPF: pass (google.com: domain of =?utf-8?q?01010193b2d32d4b-c5b9ce8?=
+ =?utf-8?q?f-316a-46c6-8026-6719238e515a-000000=40us-west-2=2Eamazonses=2Eco?=
+ =?utf-8?q?m?= designates 54.240.27.33 as permitted sender)
+ client-ip=54.240.27.33;
+Authentication-Results: mx.google.com;       dkim=pass header.i=@amazonses.com
+ header.s=7v7vs6w47njt4pimodk5mmttbegzsi6n header.b=hPPnjaB2;       spf=pass
+ (google.com: domain of =?utf-8?q?01010193b2d32d4b-c5b9ce8f-316a-46c6-8026-6?=
+ =?utf-8?q?719238e515a-000000=40us-west-2=2Eamazonses=2Ecom?= designates
+ 54.240.27.33 as permitted sender) =?utf-8?q?smtp=2Emailfrom=3D01010193b2d32?=
+ =?utf-8?q?d4b-c5b9ce8f-316a-46c6-8026-6719238e515a-000000=40us-west-2=2Eama?=
+ =?utf-8?q?zonses=2Ecom?=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=7v7vs6w47njt4pimodk5mmttbegzsi6n; d=amazonses.com; t=1733872004;	
+ =?utf-8?q?h=3DFrom=3ATo=3ASubject=3AMIME-Version=3AContent-Type=3AContent-T?=
+ =?utf-8?q?ransfer-Encoding=3AMessage-ID=3ADate=3AFeedback-ID=3B?=
+	bh=KcORYd24piKNJ9pESTTpSRaNu2TzNJzimoeoz/hIvbs=;
+	b=hPPnjaB2IueLtf9ROHOiVm4gwb4FoNmMjFcIbF66QQPaY1Tl0dhxlnbU3Ga0eQ8q
+	KxDUT7dayW/cvuC1O6FHB7E0jaQ7Jow8q/KpKPCuxdM+Yhqhxn230QFJ+YIDulxbFuC
+	HaevzGQoqX6IU24le1+XN50RWngNDymad2rRNvmw=
+From: =CleanLaundry <info@cleanlaundry.kr>
+To: johndoe@gmail.com
+Subject: =CleanLaundry [Payment Notification]
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Message-ID: <01010193b2d32d4b-c5b9ce8f-316a-46c6-8026-6719238e515a-000000@us-west-2.amazonses.com>
+Date: Tue, 10 Dec 2024 23:06:44 +0000
+Feedback-ID:
+ ::1.us-west-2.oPyPT83LXi93v+k8FvT09aTnKdnS8pV1IBrlXAFfpL0=:AmazonSES
+X-SES-Outgoing: 2024.12.10-54.240.27.33
+
+<table 
+    width="100%" 
+    cellspacing="0" 
+    cellpadding="0" 
+    style="min-width: 290px; max-width: 720px; margin: 0px auto; background-color: #FFFFFF; border: #C9C9C9 solid 1px; font-family: AppleSDGothicNeo, Apple SD Gothic Neo, Apple SD 산돌고딕 Neo, sans-serif;"
+>
+    <tbody>
+        <tr>
+            <td width="100%">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td width="100%" style="padding: 32px;">
+                                <table width="100%" cellpadding="0" cellspacing="0" style="word-break: keep-all;">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top">
+                                                <table cellpadding="0" cellspacing="0" width="100%">
+                                                    <tr>
+                                                        <td>
+                                                            <!-- Image tag removed -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="padding: 24px 0 0 0; width: 100%; color: #212121; font-weight: 700; font-size: 32px; line-height: 44px;">
+                                                            CleanLaundry <br />
+                                                            Payment Details Notification 
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table width="100%" cellpadding="0" cellspacing="0" style="margin: 32px 0; word-break: keep-all;">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top" style="border-top: 1px solid black; padding: 11px 0;">
+                                                <table cellpadding="0" cellspacing="0" width="100%">
+                                                    <tr>
+                                                        <td valign="top" style="padding: 5px 0; width: 50%; color: #666666; font-size: 14px; line-height: 22px;"> 
+                                                            Payment Date
+                                                        </td>
+                                                        <td 
+                                                            valign="top"
+                                                            style="padding: 5px 0; width: 50%; font-size: 14px; font-weight: 600; color: #212121; line-height: 22px; text-align: right;"
+                                                        >December 11 (Wed)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="top" style="padding: 5px 0; width: 50%; color: #666666; font-size: 14px; line-height: 22px;"> 
+                                                            Current Plan
+                                                        </td>
+                                                        <td 
+                                                            valign="top"
+                                                            style="padding: 5px 0; width: 50%; color: #212121; font-size: 14px; font-weight: 600; line-height: 22px; text-align: right;"
+                                                        >Unlimited Use</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" style="border-top: 1px solid #C9C9C9; padding: 11px 0;">
+                                                <table cellpadding="0" cellspacing="0" width="100%">
+                                                    <tr>
+                                                        <td valign="top" style="padding: 5px 0; width: 38%; color:#666666; font-size: 14px; line-height: 22px;"> 
+                                                            Usage Amount
+                                                        </td>
+                                                        <td 
+                                                            valign="top"
+                                                            style="padding: 5px 0; width: 62%; color: #212121; font-size: 14px; font-weight: 600; line-height: 22px; text-align: right;"
+                                                        >$30.80</td>
+                                                    </tr>
+                                                    
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" style="border-top: 1px solid #C9C9C9; padding: 11px 0 0 0;">
+                                                <table cellpadding="0" cellspacing="0" width="100%">
+                                                    <tr>
+                                                        <td valign="top" style="padding: 5px 0; width: 38%; color: #212121; font-size: 16px; line-height: 24px; font-weight: 700;"> 
+                                                            Total Payment Amount
+                                                        </td>
+                                                        <td 
+                                                            valign="top"
+                                                            style="padding: 5px 0 4px 0; width: 62%; font-size: 24px; font-weight: 700; color: #212121; line-height: 32px; text-align: right;"
+                                                        >$30.80</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="38%"></td>
+                                                        <td 
+                                                            style="text-align: right; width: 62%;"
+                                                        > 
+                                                            <a 
+                                                                href="https://iniweb.inicis.com/DefaultWebApp/mall/cr/cm/mCmReceipt_head.jsp?noMethod=1&amp;noTid=INIAPICARDfcscombill20241211080643612159"
+                                                                target="_blank"
+                                                                style="padding: 0; font-size: 12px; font-weight: 600; color: #939393; line-height: 18px; text-align: right;"
+                                                            > 
+                                                                Check Receipt >
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td align="center">
+                                                <a
+                                                    href="https://cleanlaundry.onelink.me/12IP/8717c888"
+                                                    name="ANCHOR108"
+                                                    style="display: block; margin-bottom: 24px; padding: 14px 20px; background-color: #0AC290; text-decoration: none; color: #ffffff; font-size: 16px; font-weight: 600; border-radius: 10px; line-height: 24px;"
+                                                    target="_blank"
+                                                    rel="noreferrer noopener"
+                                                >
+                                                    Check Detailed Payment Details
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="vertical-align: top; line-height: 18px; font-size: 14px; color: #939393; line-height: 22px;"> 
+                                                                *
+                                                            </td>
+                                                            <td style="vertical-align: top; line-height: 18px; font-size: 14px; color: #939393; line-height: 22px;"> 
+                                                                Detailed usage details can be checked in the CleanLaundry app [MY > Payment Details].
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="vertical-align: top; line-height: 18px; font-size: 14px; color: #939393; line-height: 22px;"> 
+                                                                *
+                                                            </td>
+                                                            <td style="vertical-align: top; line-height: 18px; font-size: 14px; color: #939393; line-height: 22px;"> 
+                                                                This email was sent regardless of consent to receive under the "Act on Promotion of Information and Communications Network Utilization and Information Protection, etc." For inquiries, please contact the CleanLaundry app [MY > Customer Center].
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table width="100%" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                            <td style="vertical-align: top; background-color: #EFEFEF; padding: 32px; margin: 0; line-height: 18px; font-size: 12px; color: #939393"> 
+                                CleanLife Corp. <br /> 
+                                CEO: Emily McDonald  | Address: 200-232 W 87th St, Chicago, IL 60620 USA | Personal Information Manager: John Doe | Business Registration Number: 561-87-00957 | Mail Order Business Report: No. 2018-USA-Chicago-2052 <br /> 
+                                ⓒ 2018. CleanLife Corp. All rights reserved.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>

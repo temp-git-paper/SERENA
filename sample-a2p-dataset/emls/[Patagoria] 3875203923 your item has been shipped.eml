@@ -1,0 +1,231 @@
+Delivered-To: johndoe@gmail.com
+Received: by 2002:a05:6e04:2a52:b0:33a:bcdd:32da with SMTP id
+ cf18csp3506637imd;        Wed, 15 Jan 2025 21:12:34 -0800 (PST)
+X-Google-Smtp-Source:
+ AGHT+IHgZu4RQ609UtEgit132+J1sIDpLAKsuT7PSXSeJN9d0f0WcUY6RJdHpSNfMhhmrbFutX9J
+X-Received: by 2002:a05:6a00:4fd3:b0:72a:83ec:b1c9 with SMTP id
+ d2e1a72fcca58-72d21f35ae3mr44973568b3a.6.1737004354082;        Wed, 15 Jan
+ 2025 21:12:34 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1737004354; cv=none;
+        d=google.com; s=arc-20240605;
+        b=fzCXjL5OGb8IT1DxMFF1MR5xVPkHXitDSCFJfjcgpX04ASFjIgRVfcpW6xxurQu0Yf
+         bGwUCXY4PCaCcVNoE76hfzdhUL9ALmw7zlPCH+LjJEe1nhTgdjoy7NWi9rGJyGANQAEq
+         t3pokYTPSszOXy0XUW5KB2lBYpG74PrpTT3VJCLg/ctjM8KCrR2NOFxccbGUGXTPBhqt
+         98wQ9m+efwo7ynzd3SL+Fko2ZOimUyBU1G5tXBLuP5gAwjOu1G4TKRg6DsWfdIDVNHmW
+         jsaeQQjOdGJhLi9thDBc+KsaHOTOS5Ukr3XcLCFBM2pHq4gIXB4tP8iIIRU80XozShvr
+         IOqA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;       
+ h=to:subject:content-transfer-encoding:reply-to:user-agent:from        
+ :dkim-signature:message-id:date;       
+ bh=3AjINgyLyk4HP2gcAJasp5pCTwsl1wjiAnMujSpABos=;       
+ fh=rWV3G2OXStvbPggf0L1tjTZbaNLusmi0GvC2XXmxtVk=;       
+ b=KuyytdJih5xUAOK3B/TZj2U45BW+B7zu4JhpWXpkL7k2TythnbwnesPICaTQmWoNmN        
+ 0nPMzL3R9HctzFyBVCJcODOKwLXbHnh00Z2kAbRz8ZO6UwNWnqE5u74c8Jf//0tTNdpV        
+ qmjpH7orlcHg/L48V5YOqog+MnO4yKCDL/+Nmtpp21X6c5WThhsJbnYvOf2iG2BnH5pC        
+ tuMyfD1/na1HxIfBaOEYPyseiGtUbpUjnbzcBvmgmkoRtEDdrLzwOe/hB+Z/UOrSZB6/        
+ T86eYDU+VS534FVgCKNJmvWoeLzYFmAuRg92y1kw1Jkz8DP57LcGsy+fF23y61dIZLiG        
+ NQag==;        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;       dkim=pass
+ header.i=@cafe24shop.com header.s=1610409156.cafe24shop header.b=hOTE7isu;
+       spf=pass (google.com: domain of no-reply@cafe24shop.com designates
+ 222.122.197.190 as permitted sender) smtp.mailfrom=no-reply@cafe24shop.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=cafe24shop.com
+Return-Path: <no-reply@cafe24shop.com>
+Received: from relay-001-15.cafe24.com (ec-kt-relay005.cafe24.com.
+ [222.122.197.190])        by mx.google.com with ESMTPS id
+ d2e1a72fcca58-72d406ad58dsi16904448b3a.159.2025.01.15.21.12.33        for
+ <johndoe@gmail.com>        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384
+ bits=256/256);        Wed, 15 Jan 2025 21:12:34 -0800 (PST)
+Received-SPF: pass (google.com: domain of no-reply@cafe24shop.com designates
+ 222.122.197.190 as permitted sender) client-ip=222.122.197.190;
+Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@cafe24shop.com header.s=1610409156.cafe24shop header.b=hOTE7isu;
+       spf=pass (google.com: domain of no-reply@cafe24shop.com designates
+ 222.122.197.190 as permitted sender) smtp.mailfrom=no-reply@cafe24shop.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=cafe24shop.com
+Date: Wed, 15 Jan 2025 21:12:34 -0800 (PST)
+Message-ID: <67889542.050a0220.22dda5.1953SMTPIN_ADDED_MISSING@mx.google.com>
+Received: from mail-send02.echosting.cafe24.com (unknown [14.128.143.95])
+	(using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+	(No client certificate requested)
+	by relay-001-15.cafe24.com (Postfix) with ESMTPS id 6B35CAC3856
+	for <johndoe@gmail.com>; Thu, 16 Jan 2025 14:12:32 +0900 (KST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=cafe24shop.com;
+	s=1610409156.cafe24shop; t=1737004352;
+	bh=6bkyQ+ofoVUtaFiR3TTVaUeQGWDbw3Dm5me5yTZhCTA=;
+	h=From:Reply-to:Subject:To;
+	b=hOTE7isuUcD2skUC0V2ksCqD8T0k7GrqoqybPylJc9tnOz3EORsZAWy5QHesQeCC/
+	 h4D8gUHcrb9XWFrrFJCY6shjonAZ+xagpAE862RvslCOwYNgA7o0egv7AdZxwJgbEJ
+	 tYwX2NIHkUNYnIia7A0a7t3BrWEXTa2udvOGdtR4=
+Received: from mail-send.echosting.cafe24.com (unknown [211.45.179.109])
+	by mail-send02.echosting.cafe24.com (Postfix) with SMTP id 5DF0F10003B
+	for <johndoe@gmail.com>; Thu, 16 Jan 2025 14:12:32 +0900 (KST)
+From: Patagoria <no-reply@cafe24shop.com>
+User-Agent: Cafe24 Mail System
+X-Accept-Language: ko, en
+X-Sender: no-reply@cafe24shop.com
+X-Mailer: PHP
+X-Priority: 1
+Reply-to: no-reply@cafe24shop.com
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
+Subject: =Your Item 3875203923@i has been shipped
+To: John Doe <johndoe@gmail.com>
+
+
+<table width="700" border="0" cellpadding="0" cellspacing="0" align="center" class="outsideBorder" style="border:1px solid #bbc0c4;">
+<tbody>
+    <tr>
+        <td style="padding:24px 14px 0;">
+            <table width="670" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="visual">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="greeting" style="padding:50px 0 0 10px; font-size:12px; font-family:Gulim; color:#393939; line-height:19px;">
+                        <p>Hello. <strong>Patagoria</strong> here.</p>
+                        <p style="margin-top:13px;"><strong>John Doe (johndoe@gmail.com)</strong> Your order has been shipped.<br />
+                        The order details are as follows.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table width="670" border="0" cellpadding="0" cellspacing="0" style="font-size:12px; font-family:Gulim; color:#393939; line-height:19px;">
+                        <tbody>
+                            <tr>
+                                <td style="padding:23px 0 0;">
+                                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableColor" style="font-size:12px; font-family:Gulim; line-height:15px; border-top:1px solid #d5d5d5;">
+                                    <thead>
+                                        <tr>
+                                            <th width="33%" scope="col" style="padding:13px 10px 10px; font-weight:normal; background-color:#f5f6f5; border-bottom:1px solid #d5d5d5; border-right:1px solid #d5d5d5; border-left:1px solid #d5d5d5; color:#80878d;">Orderer</th>
+                                            <th width="33%" scope="col" style="padding:13px 10px 10px; font-weight:normal; background-color:#f5f6f5; border-bottom:1px solid #d5d5d5; border-right:1px solid #d5d5d5; color:#80878d;">Order Number</th>
+                                            <th width="34%" scope="col" style="padding:13px 10px 10px; font-weight:normal; background-color:#f5f6f5; border-bottom:1px solid #d5d5d5; border-right:1px solid #d5d5d5; color:#80878d;">Order Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td align="center" valign="middle" style="padding:13px 10px 10px; border-bottom:1px solid #d5d5d5; border-right:1px solid #d5d5d5; border-left:1px solid #d5d5d5; color:#393939;">1234@gmail.com (John Doe)</td>
+                                            <td align="center" valign="middle" style="padding:13px 10px 10px; border-bottom:1px solid #d5d5d5;border-right:1px solid #d5d5d5; color:#393939;">20250114-0008430</td>
+                                            <td align="center" valign="middle" style="padding:13px 10px 10px; border-bottom:1px solid #d5d5d5; border-right:1px solid #d5d5d5; color:#393939;">2025-01-14 19:02:51</td>
+                                        </tr>
+                                    </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr><td height="40">&nbsp;</td></tr>
+                            <tr>
+                                <td>
+                                    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin:0 0 20px;">
+                                    <tbody>
+                                        <tr>
+                                            <td width="19" valign="middle"></td>
+                                            <td valign="middle"><strong class="contentTitle" style="font-size:13px; font-family:Gulim; color:#1c1c1c;">Shipping Product Information</strong></td>
+                                        </tr>
+                                    </tbody>
+                                    </table>
+                                    
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableColor" style="font-size:12px; font-family:Gulim; line-height:15px; border-top:1px solid #d5d5d5;">
+<thead>
+    <tr>
+        <th width="50%" scope="col" style="padding:13px 10px 10px; font-weight:normal; background-color:#f5f6f5; border-bottom:1px solid #d5d5d5; border-right:1px solid #d5d5d5; border-left:1px solid #d5d5d5; color:#80878d;">Product Name</th>
+        <th width="10%" scope="col" style="padding:13px 10px 10px; font-weight:normal; background-color:#f5f6f5; border-bottom:1px solid #d5d5d5; border-right:1px solid #d5d5d5; color:#80878d;">Quantity</th>
+        <th width="20%" scope="col" style="padding:13px 10px 10px; font-weight:normal; background-color:#f5f6f5; border-bottom:1px solid #d5d5d5; border-right:1px solid #d5d5d5; color:#80878d;">Order Status</th>
+        <th width="20%" scope="col" style="padding:13px 10px 10px; font-weight:normal; background-color:#f5f6f5; border-bottom:1px solid #d5d5d5; border-right:1px solid #d5d5d5; color:#80878d;">Courier</th>
+    </tr>
+</thead>
+<tbody>
+
+<tr>
+    <td align="left" valign="middle" style="padding:13px 10px 10px; border-bottom:1px solid #d5d5d5; border-right:1px solid #d5d5d5; border-left:1px solid #d5d5d5; color:#393939;">
+        FLOW BACKPACK <br />[Backpack Only: Backpack Only (USD 125)]
+    </td>
+    <td align="center" valign="middle" style="padding:13px 10px 10px; border-bottom:1px solid #d5d5d5; border-right:1px solid #d5d5d5; color:#393939;">
+        1
+    </td>
+    <td align="center" valign="middle" style="padding:13px 10px 10px; border-bottom:1px solid #d5d5d5; border-right:1px solid #d5d5d5; color:#393939;">
+        In Transit
+    </td>
+    <td align="center" valign="middle" style="padding:13px 10px 10px; border-bottom:1px solid #d5d5d5; border-right:1px solid #d5d5d5; color:#393939;">
+        FAST Logistics <br />
+        <a href="http://Patagoria-made.com/common/delivery_trace.php?order_id=20250114-0008430&product_no=30&opt_id=000B&invoice_no=500558588940" title="new window" target="_blank" style="color:#000;">500558588940</a>
+    </td>
+</tr>
+
+    <tr>
+        <td colspan="4" align="right" valign="middle" style="padding:13px 10px 10px; border-bottom:1px solid #d5d5d5; border-right:1px solid #d5d5d5; border-left:1px solid #d5d5d5; color:#393939;">Total Shipping Cost <strong>USD 0</strong></td>
+    </tr>
+</tbody>
+</table>
+
+                                </td>
+                            </tr>
+                            <tr><td height="20">&nbsp;</td></tr>
+                            <tr>
+                                <td>
+                                     <p style="margin:0 0 0 10px; font-size:11px;">You can check the delivery status by clicking the tracking number.</p>
+                                </td>
+                            </tr>
+                            <tr><td height="40">&nbsp;</td></tr>
+                            <tr>
+                                <td>
+                                    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin:0 0 20px;">
+                                    <tbody>
+                                        <tr>
+                                            <td width="19" valign="middle"></td>
+                                            <td valign="middle"><strong class="contentTitle" style="font-size:13px; font-family:Gulim; color:#1c1c1c;">Shipping Address Information</strong></td>
+                                        </tr>
+                                    </tbody>
+                                    </table>
+                                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableColor" style="font-size:12px; font-family:Gulim; line-height:15px; border-top:1px solid #d5d5d5;">
+                                    <tbody>
+                                        <tr>
+                                            <th width="22%" scope="row" align="left" valign="middle" style="padding:13px 10px 10px; font-weight:normal; border-bottom:1px solid #d5d5d5; border-right:1px solid #d5d5d5; border-left:1px solid #d5d5d5; color:#80878d; background-color:#f5f6f5;">Recipient</th>
+                                            <td width="78%" colspan="3" align="left" valign="middle" style="padding:13px 10px 10px; border-bottom:1px solid #d5d5d5; border-right:1px solid #d5d5d5; color:#393939;">John Doe</td>
+                                        </tr>
+                                        <tr>
+                                            <th width="22%" scope="row" align="left" valign="middle" style="padding:13px 10px 10px; font-weight:normal; border-bottom:1px solid #d5d5d5; border-right:1px solid #d5d5d5; border-left:1px solid #d5d5d5; color:#80878d; background-color:#f5f6f5;">Address</th>
+                                            <td width="78%" colspan="3" align="left" valign="middle" style="padding:13px 10px 10px; border-bottom:1px solid #d5d5d5; border-right:1px solid #d5d5d5; color:#393939;">10347 S Ewing Ave, Chicago, IL 60617 USA</td>
+                                        </tr>
+                                        <tr>
+                                            <th width="22%" scope="row" align="left" valign="middle" style="padding:13px 10px 10px; font-weight:normal; border-bottom:1px solid #d5d5d5; border-right:1px solid #d5d5d5; border-left:1px solid #d5d5d5; color:#80878d; background-color:#f5f6f5;">Landline</th>
+                                            <td width="28%" align="left" valign="middle" style="padding:13px 10px 10px; border-bottom:1px solid #d5d5d5; border-right:1px solid #d5d5d5; color:#393939;">--</td>
+                                            <th width="22%" scope="row" align="left" valign="middle" style="padding:13px 10px 10px; font-weight:normal; border-bottom:1px solid #d5d5d5; border-right:1px solid #d5d5d5; color:#80878d; background-color:#f5f6f5;">Mobile</th>
+                                            <td width="28%" align="left" valign="middle" style="padding:13px 10px 10px; border-bottom:1px solid #d5d5d5; border-right:1px solid #d5d5d5; color:#393939;">010-1234-5678</td>
+                                        </tr>
+                                    </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="closingRemarks" style="padding:30px 0 60px 10px; font-size:12px; font-family:Gulim; color:#393939; line-height:19px;">
+                        <p>We will always serve you with care to ensure your satisfaction.</p>
+                        <p style="margin-top:13px;">The delivery period of the product may vary slightly depending on the region,<br />
+                        and if a holiday is included during the delivery period, it may be slightly delayed.<br />
+                        If you have any other inquiries, please contact our shopping mall customer service center.</p>
+                        <p style="margin-top:13px;">Once again, we sincerely thank <strong>John Doe (johndoe@gmail.com)</strong> for using our shopping mall.</p>
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class="companyInfo" style="padding:24px 34px; font-family:Gulim; font-size:12px; line-height:18px; background-color:#cacdd4; color:#fff;">
+           <p style="{COMPANY_INFO_DISPLAY}">
+                Tel : <strong>543-523-5678</strong> | Fax : <br />
+                8510 S Cottage Grove Ave, Chicago, IL 60619 USA<br />
+                CEO: Melissa Young | Personal Information Protection Officer: Donald Lopez | Business Registration Number [121-234-12233] | Mail Order Business Report: 2020-USA-Chicago-00320
+           </p>
+           <p>Copyright(c) Patagoria all rights reserved. <a href="https://Patagoria-made.com" target="_blank" style="color:#fff; text-decoration:none;">Patagoria-made.com</a></p>
+        </td>
+    </tr>
+</tbody>
+</table>
+```

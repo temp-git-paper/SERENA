@@ -1,0 +1,1002 @@
+ARC-Seal: i=1; a=rsa-sha256; d=naver.com; s=arc-20180730; t=1712643301;
+	cv=none; b=nHRV/qLVfOSp3WqLoPIhdxIRHjBWbmZ3ljTYr7sED+p0lfiigKMFnwIeSysa
+	 LPoBpXknSd5i6Q7reARolvuPzpd3IZBffH5H1A93M7Y9qfMNiiGngWv7q5DlhH+yDEUXAP
+	 g/v3nVM4Syzm7OmV8NPlOVL1/FSA3WcyJJ24vqgyENk6Yv4waW1wSGaFcJItz8tI3VcH+w
+	 zZBbgS8qtZUap2XtEPK3m4dNXsHDtGG3nSkJNJgpoSGn4RcvYnGduvZJMVDTG9wtaskryt
+	 WAzl8W/in83k4JmmXP09u9yNfsaordLDvmYxG85ZWdNPC43FGzDklDcO8Kbe/Erle8yL/Z
+	 wA==
+ARC-Message-Signature: i=1; a=rsa-sha256; d=naver.com; s=arc-20180730;
+	t=1712643301; c=relaxed/relaxed;
+	bh=ZlWJ05BDV/KDpkPw0Ud/kY+rtpyscggyvw05Vsq2Up4=;
+	h=dkim-signature:message-id:from:to:subject:date; b=XMynw231+2Qh+0qA80Y
+	 qQVmCECAkTVSvdu1iD9TT8EzYz4Moa0+RDzTzDEfnRPvxeWzVVjQs6RYjEJrQf6Z/d+9N2
+	 tSEPJ2giZ1XLm/Vdvr872vGiNhVSx0YghCTwTyYzGbA4E3Dfe8bYPIP9T97KoRVJ65ENvc
+	 8B852LojQ//OPwlZNq2GMzPdMu7y9Fvudkm/K5YtgFP9qPO/rw+MuSFcLKBApwuMUvV5Rg
+	 lKjOmn4pVpIHT7JrzRnBGsgWcCJSHwcAXlInCmVWfMY//Ujb6ZVFYtv3rhsaxGG6Qaf0fB
+	 Ys3WGeJL5cgzItunqXjWVF1qy6jk7Od9sijMHfLmXbA==
+ARC-Authentication-Results: i=1; mx.naver.com;   spf=pass (mx.naver.com:
+ domain of
+ 0d92a6fc.AWsAAD7UissAAAAAAAAAAAftok0AAAAAAAEAAAAAAAuI7wBmFNzh@bnc3.zara.com
+ designates 185.189.238.171 as permitted sender) =?utf-8?q?smtp=2Emailfrom?=
+ =?utf-8?q?=3D0d92a6fc=2EAWsAAD7UissAAAAAAAAAAAftok0AAAAAAAEAAAAAAAuI7wBmFNz?=
+ =?utf-8?q?h=40bnc3=2Ezara=2Ecom=3B?=  dkim=pass header.i=@zara.com; 
+ dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=zara.com
+Return-Path:
+ <0d92a6fc.AWsAAD7UissAAAAAAAAAAAftok0AAAAAAAEAAAAAAAuI7wBmFNzh@bnc3.zara.com>
+Received-SPF: pass (mx.naver.com: domain of
+ 0d92a6fc.AWsAAD7UissAAAAAAAAAAAftok0AAAAAAAEAAAAAAAuI7wBmFNzh@bnc3.zara.com
+ designates 185.189.238.171 as permitted sender)  client-ip=185.189.238.171;
+ x-iptype=default;
+Authentication-Results: mx.naver.com;  spf=pass (mx.naver.com: domain of
+ 0d92a6fc.AWsAAD7UissAAAAAAAAAAAftok0AAAAAAAEAAAAAAAuI7wBmFNzh@bnc3.zara.com
+ designates 185.189.238.171 as permitted sender) =?utf-8?q?smtp=2Emailfrom?=
+ =?utf-8?q?=3D0d92a6fc=2EAWsAAD7UissAAAAAAAAAAAftok0AAAAAAAEAAAAAAAuI7wBmFNz?=
+ =?utf-8?q?h=40bnc3=2Ezara=2Ecom=3B?=  dkim=pass header.i=@zara.com; 
+ dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=zara.com
+X-Naver-ESV: wfen+6J4p63CbHmqKBwdbXFYKAMwFxgwjJ+Y
+X-Session-IP: 185.189.238.171
+Received: from o171.p27.mailjet.com (o171.p27.mailjet.com [185.189.238.171])
+  by crcvmail102.nm.naver.com with ESMTP id Ho5acEYcT9OwvRFqw0AIHg
+  for <johndoe@naver.com>
+  (version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256);
+  Tue, 09 Apr 2024 06:15:01 -0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; q=dns/txt;  d=zara.com;
+ i=noreply@zara.com; s=mailjet; x=1712650497;  =?utf-8?q?h=3Dmessage-id=3Ami?=
+ =?utf-8?q?me-version=3Afrom=3Afrom=3Ato=3Ato=3Asubject=3Asubject=3Adate=3Ad?=
+ =?utf-8?q?ate=3Alist-unsubscribe-post=3Alist-unsubscribe=3A__ecommerce=3Afe?=
+ =?utf-8?q?edback-id=3Ax-csa-complaints=3Ax-mj-mid=3Ax-mj-smtpguid=3Ax-repor?=
+ =?utf-8?q?t-abuse-to=3A?=  content-type; 
+ bh=/ee3SGHlbpb2a8a/FS+76QMcLFul1k7xQ8cS9B/wpi0=; 
+ b=gOolG9sbiNZdy3c+WzC1pgJ2fY3Qa1405rSBMFkbZcW1pvvb4puwhoQF+
+ oefqYiFQ6v3tE1id6XS5mgQ9Ua2Wf1m8BsoD4K5eeA6AbLM6FVz0ZBSSZh5d
+ zm9PMpt6Vl7Rf264vsSNt9oy+CJ4xqed5Qid/fWYMUZgwDYj+BfTCM=
+Return-Path:
+ <0d92a6fc.AWsAAD7UissAAAAAAAAAAAftok0AAAAAAAEAAAAAAAuI7wBmFNzh@bnc3.zara.com>
+Message-Id:
+ <0d92a6fc.AWsAAD7UissAAAAAAAAAAAftok0AAAAAAAEAAAAAAAuI7wBmFNzh@mailjet.com>
+MIME-Version: 1.0
+From: Zara <noreply@zara.com>
+To: johndoe@naver.com
+Subject: Thanks for your order, ZARA
+Date: Tue, 9 Apr 2024 07:14:56 +0100 (IST)
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <mailto:unsub-0d92a6fc.89yo.lnxxzslz3x7s@bnc3.mailjet.com>,	
+ =?utf-8?q?=3Chttps=3A//ir=2Ezara=2Ecom/unsub2=3Fm=3DAWsAAD7UissAAAAAAAAAAAf?=
+ =?utf-8?q?tok0AAAAAAAEAAAAAAAuI7wBmFNzhVsdel152Ru25tY9ULaM-EAAIJlk=26b=3D0d?=
+ =?utf-8?q?92a6fc=26e=3D05e6aba6=26x=3DMAdOWVQtq6jt-63DcW6zlFB-wIxPY86tsZgxa?=
+ =?utf-8?q?FU=5Fks8=3E?=
+eCommerce: zara
+Feedback-Id: 42.755951.534105:MJ
+X-CSA-Complaints: csa-complaints@eco.de
+X-MJ-Mid: =?utf-8?q?AWsAAD7UissAAAAAAAAAAAftok0AAAAAAAEAAAAAAAuI7wBmFNzhVsde?=
+ =?utf-8?q?l152Ru25tY9ULaM-EAAIJlk?=
+X-MJ-SMTPGUID: 56c75e97-5e76-46ed-b9b5-8f542da33e10
+X-REPORT-ABUSE-TO: Message sent by Mailjet please report to
+	abuse@mailjet.com with a copy of the message
+Content-Type: multipart/mixed;
+	boundary="----=_Part_698744_1851156694.1712643296706"
+
+------=_Part_698744_1851156694.1712643296706
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" style="direction: ltr;">
+  <head>
+    <title>ZARA</title>
+    <!--[if !mso]><!-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+      #outlook a { padding:0; }
+      body { margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%; }
+      table, td { border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt; }
+      img { border:0;height:auto;line-height:100%; outline:none;text-decoration:none;-ms-interpolation-mode:bicubic; }
+      p { display:block;margin:13px 0; }
+    </style>
+    <!--[if mso]>
+    <noscript>
+    <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+    </xml>
+    </noscript>
+    <![endif]-->
+    <!--[if lte mso 11]>
+    <style type="text/css">
+      .mj-outlook-group-fix { width:100% !important; }
+    </style>
+    <![endif]-->
+    
+    
+    <style type="text/css">
+      @media only screen and (min-width:480px) {
+        .mj-column-per-100 { width:100% !important; max-width: 100%; }
+.mj-column-per-16-666666666666668 { width:16.666666666666668% !important; max-width: 16.666666666666668%; }
+      }
+    </style>
+    <style media="screen and (min-width:480px)">
+      .moz-text-html .mj-column-per-100 { width:100% !important; max-width: 100%; }
+.moz-text-html .mj-column-per-16-666666666666668 { width:16.666666666666668% !important; max-width: 16.666666666666668%; }
+    </style>
+    
+  
+    <style type="text/css">
+    
+    
+
+    @media only screen and (max-width:479px) {
+      table.mj-full-width-mobile { width: 100% !important; }
+      td.mj-full-width-mobile { width: auto !important; }
+    }
+  
+    </style>
+    <style type="text/css">
+    @font-face {
+    font-family: "Neue-Helvetica";
+    font-weight: bold;
+		src: url("https://static.zara.net/photos/contents/communication/NeueHelveticaforZara-MdCn.eot#iefix");                             /* IE9 Compat Modes */
+		src: local("?"),
+				 url("#https://static.zara.net/photos/contents/communication/NeueHelveticaforZara-MdCn.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+				 url("https://static.zara.net/photos/contents/communication/NeueHelveticaforZara-MdCn.woff2.woff2") format("woff2"),                  /* Super Modern Browsers */
+				 url("https://static.zara.net/photos/contents/communication/NeueHelveticaforZara-MdCn.woff") format("woff"),                    /* Pretty Modern Browsers */
+				 url("https://static.zara.net/photos/contents/communication/NeueHelveticaforZara-MdCn.ttf") format("truetype"),                 /* Safari, Android, iOS */
+				 url("https://static.zara.net/photos/contents/communication/NeueHelveticaforZara-MdCn.svg#{NeueHelveticaforZara-MdCn}") format("svg");          /* Legacy iOS */
+		      
+  }
+  @font-face {
+    font-family: "Neue-Helvetica";
+   	src: url("https://static.zara.net/photos/contents/communication/NeueHelveticaforZara-LtCn.eot#iefix");                             /* IE9 Compat Modes */
+		src: local("?"),
+				 url("#https://static.zara.net/photos/contents/communication/NeueHelveticaforZara-LtCn.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+				 url("https://static.zara.net/photos/contents/communication/NeueHelveticaforZara-LtCn.woff2.woff2") format("woff2"),                  /* Super Modern Browsers */
+				 url("https://static.zara.net/photos/contents/communication/NeueHelveticaforZara-LtCn.woff") format("woff"),                    /* Pretty Modern Browsers */
+				 url("https://static.zara.net/photos/contents/communication/NeueHelveticaforZara-LtCn.ttf") format("truetype"),                 /* Safari, Android, iOS */
+				 url("https://static.zara.net/photos/contents/communication/NeueHelveticaforZara-LtCn.svg#{NeueHelveticaforZara-LtCn}") format("svg");          /* Legacy iOS */
+  }
+
+  
+  
+  td.rd-product-col + td.rd-product-col > table.rd-product {
+        margin-left: auto;
+    }
+
+    .static-content {
+        display: none;
+    }
+
+    .Singleton .static-content,
+    _:-webkit-full-screen,
+    _::-webkit-full-page-media,
+    _:future,
+    :root .static-content,
+    [class^="apple-mail"] .static-content {
+        display: block;
+    }
+
+    .dynamic-content {
+        display: block;
+    }
+
+    .Singleton .dynamic-content,
+    _:-webkit-full-screen,
+    _::-webkit-full-page-media,
+    _:future,
+    :root .dynamic-content,
+    [class^="apple-mail"] .dynamic-content {
+        display: none;
+    }
+
+    .dynamic-content {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+    
+        /* hide radio element */
+    .tab {
+      display:none;
+      height:0px;
+      visibility:hidden;
+    }
+    .tab-content {
+     display:none;
+    }
+    .title-tab {
+        background-color: #ffffff;
+        padding: 15px 20px 15px 20px;
+        border-bottom: 0.5px solid #cccccc;
+        cursor: pointer;
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 16px;
+    }
+
+    /* change tab to bold */
+    .tab:checked + label {
+      font-weight: bold;
+    } 
+    /* show content */
+    #tab-simple:checked ~ .content-simple,
+    #tabl-detail:checked ~ .content-details
+    {
+      display:block;
+    }
+
+    .rd-unit-absolute {
+      max-height: 0;
+      position: relative;
+      opacity: 0.999;
+    }
+
+    .rd-unit-position {
+      margin-top: 135%;
+      padding-left: 4px;
+      padding-right: 4px;
+      display: inline-block;
+      text-align: center;
+      background-color: #FFFFFF;
+      font-size: 10px !important;
+      line-height: 21px !important;
+    }
+
+    .rd-unit-right-absolute {
+        text-align: right !important;
+    }
+
+    @media only screen and (min-width:430px) {
+      .rd-unit-position {
+        margin-top: 139%;
+      }
+    }
+    </style>
+    
+  </head>
+  <body style="direction: ltr; word-spacing: normal;">
+    
+    
+      <div style="direction: ltr;" lang="en">
+        <!-- Sección 1 cabecera -->
+      
+      <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:535px;" width="535" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+    
+      
+      <div style="direction: ltr; margin: 0px auto; max-width: 535px;">
+        
+        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="direction: ltr; width: 100%;" width="100%">
+          <tbody style="direction: ltr;">
+            <tr style="direction: ltr;">
+              <td style="direction: ltr; font-size: 0px; padding: 0 5px; text-align: center;" align="center">
+                <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td align="left" class="" style="vertical-align:top;width:525px;" ><![endif]-->
+            
+      <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size: 0px; text-align: left; direction: ltr; display: inline-block; vertical-align: top; width: 100%;">
+        
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="direction: ltr;">
+        <tbody style="direction: ltr;">
+          <tr style="direction: ltr;">
+            <td style="direction: ltr; vertical-align: top; padding: 0;" valign="top">
+              
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="direction: ltr;" width="100%">
+        <tbody style="direction: ltr;">
+          
+              <tr style="direction: ltr;">
+                <td align="center" style="direction: ltr; font-size: 0px; padding: 0; padding-top: 48px; padding-bottom: 43px; word-break: break-word;">
+                  
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="direction: ltr; border-collapse: collapse; border-spacing: 0px;">
+        <tbody style="direction: ltr;">
+          <tr style="direction: ltr;">
+            <td style="direction: ltr; width: 149px;" width="149">
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+                </td>
+              </tr>
+            
+              <tr style="direction: ltr;">
+                <td align="center" class="rd-title" style="direction: ltr; font-size: 0px; padding: 0; word-break: break-word;">
+                  
+      <div style="direction: ltr; text-transform: uppercase; font-weight: bold; letter-spacing: 0.7px; font-family: Neue-Helvetica, Helvetica; text-align: center; color: #000000; font-size: 22px; line-height: 28px;">Thank you for your purchase</div>
+    
+                </td>
+              </tr>
+            
+              <tr style="direction: ltr;">
+                <td align="center" class="rd-order-number" style="direction: ltr; font-size: 0px; padding: 0; padding-top: 24px; word-break: break-word;">
+                  
+      <div style="direction: ltr; text-transform: uppercase; font-weight: bold; letter-spacing: 0.7px; font-family: Neue-Helvetica, Helvetica; text-align: center; color: #000000; font-size: 16px; line-height: 24px;">Order Number 53218700459</div>
+    
+                </td>
+              </tr>
+            
+              <tr style="direction: ltr;">
+                <td align="left" class="rd-text-info" style="direction: ltr; font-size: 0px; padding: 0; padding-top: 24px; word-break: break-word;">
+                  
+      <div style="direction: ltr; letter-spacing: 0.3px; font-family: Neue-Helvetica, Helvetica; color: #000000; text-align: left; font-size: 14px; line-height: 18px;">                                          </div>
+    
+                </td>
+              </tr>
+            
+              <tr style="direction: ltr;">
+                <td align="left" class="rd-text-info" style="direction: ltr; font-size: 0px; padding: 0; word-break: break-word;">
+                  
+      <div style="direction: ltr; letter-spacing: 0.3px; font-family: Neue-Helvetica, Helvetica; color: #000000; text-align: left; font-size: 14px; line-height: 18px;">                                          <p style="direction: ltr; margin: 13px 0 0;">We will notify you with a new email when the shipment begins</p>
+                                                              <p style="direction: ltr; margin: 13px 0 0;"></p></div>
+    
+                </td>
+              </tr>
+            
+              <tr style="direction: ltr;">
+                <td align="left" vertical-align="top" style="direction: ltr; font-size: 0px; padding: 0; word-break: break-word;">
+                  
+      <div class="mj-column-per-16-666666666666668 mj-outlook-group-fix" style="font-size: 0px; text-align: left; direction: ltr; display: inline-block; vertical-align: top; width: 100%;">
+        
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="direction: ltr;">
+        <tbody style="direction: ltr;">
+          <tr style="direction: ltr;">
+            <td style="direction: ltr; vertical-align: top; padding: 0;" valign="top">
+              
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="direction: ltr;" width="100%">
+        <tbody style="direction: ltr;">
+          
+        </tbody>
+      </table>
+    
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+      </div>
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+      </div>
+    
+      
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+    
+    <!-- Sección 1 envío -->       ﻿      
+      <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:535px;" width="535" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+    
+      
+      <div style="direction: ltr; margin: 0px auto; max-width: 535px;">
+        
+        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="direction: ltr; width: 100%;" width="100%">
+          <tbody style="direction: ltr;">
+            <tr style="direction: ltr;">
+              <td style="direction: ltr; font-size: 0px; padding: 0 5px; text-align: center;" align="center">
+                <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td align="left" class="" style="vertical-align:top;width:525px;" ><![endif]-->
+            
+      <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size: 0px; text-align: left; direction: ltr; display: inline-block; vertical-align: top; width: 100%;">
+        
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="direction: ltr;">
+        <tbody style="direction: ltr;">
+          <tr style="direction: ltr;">
+            <td style="direction: ltr; vertical-align: top; padding: 0; padding-top: 24px;" valign="top">
+              
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="direction: ltr;" width="100%">
+        <tbody style="direction: ltr;">
+                                                                              <tr style="direction: ltr;">
+                <td align="left" class="rd-subsection-text-light" style="direction: ltr; font-size: 0px; padding: 0; padding-bottom: 24px; word-break: break-word;">
+                  
+      <div style="direction: ltr; font-family: Neue-Helvetica, Helvetica; font-size: 14px; font-weight: bold; line-height: 18px; text-align: left; color: #000000;">                                  <p style="direction: ltr; margin: 0px; letter-spacing: 0.8px; text-align: left; text-transform: uppercase; font-size: 13px; line-height: 18px; color: #333333;">Delivery is expected to arrive:</p>
+                              </div>
+    
+                </td>
+              </tr>
+                                    <tr style="direction: ltr;">
+                <td align="left" class="rd-subsection-title" style="direction: ltr; font-size: 0px; padding: 0; padding-bottom: 16px; word-break: break-word;">
+                  
+      <div style="direction: ltr; text-transform: uppercase; letter-spacing: 0.7px; font-family: Neue-Helvetica, Helvetica; font-weight: bold; color: #000000; text-align: left; font-size: 14px; line-height: 18px;">Thursday 11, April - Saturday 13, April</div>
+    
+                </td>
+              </tr>
+                                      <tr style="direction: ltr;">
+                <td align="left" class="rd-subsection-text" style="direction: ltr; font-size: 0px; padding: 0; padding-top: 16px; word-break: break-word;">
+                  
+      <div style="direction: ltr; text-transform: uppercase; letter-spacing: 0.8px; font-family: Neue-Helvetica, Helvetica; font-weight: bold; color: #000000; text-align: left; font-size: 13px; line-height: 18px;">Home Delivery</div>
+    
+                </td>
+              </tr>
+            
+              <tr style="direction: ltr;">
+                <td align="left" class="rd-subsection-text" style="direction: ltr; font-size: 0px; padding: 0; padding-top: 4px; word-break: break-word;">
+                  
+      <div style="direction: ltr; text-transform: uppercase; letter-spacing: 0.8px; font-family: Neue-Helvetica, Helvetica; color: #000000; text-align: left; font-size: 13px; line-height: 18px;"><div style="direction: ltr; text-transform: uppercase; letter-spacing: 0.8px; text-align: left; font-size: 13px; line-height: 18px;">
+                      </div>
+                    <div style="direction: ltr; text-transform: uppercase; letter-spacing: 0.8px; text-align: left; font-size: 13px; line-height: 18px;">10347 S Ewing Ave</div>
+          </div>
+    
+                </td>
+              </tr>
+            
+              <tr style="direction: ltr;">
+                <td align="left" class="rd-subsection-text" style="direction: ltr; font-size: 0px; padding: 0; word-break: break-word;">
+                  
+      <div style="direction: ltr; text-transform: uppercase; letter-spacing: 0.8px; font-family: Neue-Helvetica, Helvetica; color: #000000; text-align: left; font-size: 13px; line-height: 18px;"><div style="direction: ltr; text-transform: uppercase; letter-spacing: 0.8px; text-align: left; font-size: 13px; line-height: 18px;">
+                      </div>
+          <div style="direction: ltr; text-transform: uppercase; letter-spacing: 0.8px; text-align: left; font-size: 13px; line-height: 18px;">
+                          60617
+                                      Chicago, IL
+                      </div>
+          <div style="direction: ltr; text-transform: uppercase; letter-spacing: 0.8px; text-align: left; font-size: 13px; line-height: 18px;">
+                      </div>
+          <div style="direction: ltr; text-transform: uppercase; letter-spacing: 0.8px; text-align: left; font-size: 13px; line-height: 18px;">
+            USA
+          </div>
+          <div style="direction: ltr; text-transform: uppercase; letter-spacing: 0.8px; color: #ff930b; margin-top: 16px; text-align: left; font-size: 13px; line-height: 18px;">
+                      </div></div>
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+      </div>
+    
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+    
+                
+      <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:535px;" width="535" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+    
+      
+      <div style="direction: ltr; margin: 0px auto; max-width: 535px;">
+        
+        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="direction: ltr; width: 100%;" width="100%">
+          <tbody style="direction: ltr;">
+            <tr style="direction: ltr;">
+              <td style="direction: ltr; font-size: 0px; padding: 0 5px; text-align: center;" align="center">
+                <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td align="left" class="" style="vertical-align:top;width:525px;" ><![endif]-->
+            
+      <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size: 0px; text-align: left; direction: ltr; display: inline-block; vertical-align: top; width: 100%;">
+        
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="direction: ltr;">
+        <tbody style="direction: ltr;">
+          <tr style="direction: ltr;">
+            <td style="direction: ltr; vertical-align: top; padding: 0;" valign="top">
+              
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="direction: ltr;" width="100%">
+        <tbody style="direction: ltr;">
+          
+              <tr style="direction: ltr;">
+                <td align="center" vertical-align="middle" class="rd-order-detail-btn" style="direction: ltr; word-break: break-word; padding: 15px 0 20px; font-size: 14px;">
+                  
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="direction: ltr; border-collapse: separate; width: 100%; line-height: 100%;" width="100%">
+        <tbody style="direction: ltr;">
+          <tr style="direction: ltr;">
+            <td align="center" bgcolor="#000000" role="presentation" style="direction: ltr; border: 1px solid #FFFFFF; border-radius: 3px; cursor: auto; mso-padding-alt: 10px 25px; background: #000000;" valign="middle">
+                Track Order
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+                </td>
+              </tr>
+            
+              <tr style="direction: ltr;">
+                <td align="left" class="rd-text-info" style="direction: ltr; font-size: 0px; padding: 0; word-break: break-word;">
+                  
+      <div style="direction: ltr; letter-spacing: 0.3px; font-family: Neue-Helvetica, Helvetica; color: #000000; text-align: left; font-size: 14px; line-height: 18px;">          <p style="direction: ltr; margin: 13px 0 0;"></p></div>
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+      </div>
+    
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+    
+    <!-- Sección 2 opcional --> ﻿                    <!-- Sección 3 productos -->       ﻿
+      
+      <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:535px;" width="535" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+    
+      
+      <div style="direction: ltr; margin: 0px auto; max-width: 535px;">
+        
+        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="direction: ltr; width: 100%;" width="100%">
+          <tbody style="direction: ltr;">
+            <tr style="direction: ltr;">
+              <td style="direction: ltr; font-size: 0px; padding: 0 5px; text-align: center;" align="center">
+                <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td align="left" class="" style="vertical-align:top;width:525px;" ><![endif]-->
+            
+      <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size: 0px; text-align: left; direction: ltr; display: inline-block; vertical-align: top; width: 100%;">
+        
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="direction: ltr;">
+        <tbody style="direction: ltr;">
+          <tr style="direction: ltr;">
+            <td style="direction: ltr; vertical-align: top; padding: 0;" valign="top">
+              
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="direction: ltr;" width="100%">
+        <tbody style="direction: ltr;">
+          
+              <tr style="direction: ltr;">
+                <td align="left" class="rd-subsection-text" style="direction: ltr; font-size: 0px; padding: 0; padding-top: 40px; word-break: break-word;">
+                  
+      <div style="direction: ltr; text-transform: uppercase; letter-spacing: 0.8px; font-family: Neue-Helvetica, Helvetica; color: #000000; text-align: left; font-size: 13px; line-height: 18px;"><div class="rd-light-font" style="direction: ltr; color: #666666; text-transform: uppercase; letter-spacing: 0.8px; text-align: left; font-size: 13px; line-height: 18px;">
+                          1 
+                              Product
+                                    </div>
+          </div>
+    
+                </td>
+              </tr>
+                                                                                              <tr style="direction: ltr;">
+                <td align="left" style="direction: ltr; font-size: 0px; padding: 16px 0 0; word-break: break-word;">
+                  
+      <table cellpadding="0" cellspacing="0" width="100%" border="0" style="direction: ltr; color: #000000; font-family: Neue-Helvetica, Helvetica; font-size: 13px; line-height: 22px; table-layout: fixed; width: 100%; border: none;">
+                                                                                           <tr class="rd-product-row" style="direction: ltr;">
+                                  <td style="direction: ltr; vertical-align: top; padding-bottom: 24px;" class="rd-product-col" valign="top">
+                                          <table class="rd-product" style="direction: ltr; width: 85%; max-width: 230px;" width="85%"> 
+                        <tr style="direction: ltr;">
+                          <td style="direction: ltr; width: 100%; max-width: 230px; padding: 0;" class="rd-subsection-text" width="100%">
+                                                          <table style="direction: ltr;">
+                                <tr style="direction: ltr;">
+                                  <td style="direction: ltr; width: 100%; max-width: 230px; padding: 0 0 8px;" width="100%">
+                                    
+                                  </td>
+                                </tr>
+                              </table>
+                                                                                      <div style="direction: ltr; text-transform: uppercase; letter-spacing: 0.8px; text-align: left; font-size: 13px; line-height: 18px;">Satin Slim Shirt ZW COLLECTION</div>
+                              <div style="direction: ltr; text-transform: uppercase; letter-spacing: 0.8px; color: #666666; text-align: left; font-size: 13px; line-height: 18px;">
+                                                                      Blue
+                                                                    0/4786/040/400/04
+                              </div>
+                              <div style="direction: ltr; text-transform: uppercase; letter-spacing: 0.8px; padding-top: 16px; text-align: left; font-size: 13px; line-height: 18px;">1 
+                                                                  Piece
+                                                                                                                                            / 29.90&nbsp;USD
+                                                                                                    </div>
+                              <div style="direction: ltr; text-transform: uppercase; letter-spacing: 0.8px; text-align: left; font-size: 13px; line-height: 18px;">M (FR 38)</div>
+                                                                                                                                                </td>
+                        </tr>
+                      </table>
+                                      </td>
+                                                                      <td style="direction: ltr; vertical-align: top; padding-bottom: 24px;" class="rd-product-col" valign="top"></td>
+                                                </tr>
+                  </table>
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+      </div>
+    
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+    
+          <!-- Sección 5 pago --> ﻿            
+      <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:535px;" width="535" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+    
+      
+      <div style="direction: ltr; margin: 0px auto; max-width: 535px;">
+        
+        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="direction: ltr; width: 100%;" width="100%">
+          <tbody style="direction: ltr;">
+            <tr style="direction: ltr;">
+              <td style="direction: ltr; font-size: 0px; padding: 0 5px; text-align: center;" align="center">
+                <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td align="left" class="" style="vertical-align:top;width:525px;" ><![endif]-->
+            
+      <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size: 0px; text-align: left; direction: ltr; display: inline-block; vertical-align: top; width: 100%;">
+        
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="direction: ltr;">
+        <tbody style="direction: ltr;">
+          <tr style="direction: ltr;">
+            <td style="direction: ltr; vertical-align: top; padding: 8px 0 0 0;" valign="top">
+              
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="direction: ltr;" width="100%">
+        <tbody style="direction: ltr;">
+          
+              <tr style="direction: ltr;">
+                <td align="center" style="direction: ltr; font-size: 0px; padding: 0; padding-bottom: 40px; word-break: break-word;">
+                  
+      <p style="direction: ltr; border-top: solid 1px #dddddd; font-size: 1px; margin: 0px auto; width: 100%;">
+      </p>
+      
+      <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" style="border-top:solid 1px #dddddd;font-size:1px;margin:0px auto;width:525px;" role="presentation" width="525px" ><tr><td style="height:0;line-height:0;"> &nbsp;
+</td></tr></table><![endif]-->
+    
+    
+                </td>
+              </tr>
+            
+              <tr style="direction: ltr;">
+                <td align="left" class="rd-section-title" style="direction: ltr; font-size: 0px; padding: 0; word-break: break-word;">
+                  
+      <div style="direction: ltr; text-transform: uppercase; font-weight: bold; letter-spacing: 0.7px; font-family: Neue-Helvetica, Helvetica; color: #000000; text-align: left; font-size: 16px; line-height: 24px;">Payment Method</div>
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+      </div>
+    
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+    
+          
+      <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:535px;" width="535" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+    
+      
+      <div style="direction: ltr; margin: 0px auto; max-width: 535px;">
+        
+        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="direction: ltr; width: 100%;" width="100%">
+          <tbody style="direction: ltr;">
+            <tr style="direction: ltr;">
+              <td style="direction: ltr; font-size: 0px; padding: 0 5px; padding-top: 16px; text-align: center;" align="center">
+                <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td align="left" class="" style="vertical-align:top;width:525px;" ><![endif]-->
+            
+      <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size: 0px; text-align: left; direction: ltr; display: inline-block; vertical-align: top; width: 100%;">
+        
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="direction: ltr;">
+        <tbody style="direction: ltr;">
+          <tr style="direction: ltr;">
+            <td style="direction: ltr; vertical-align: top; padding: 0;" valign="top">
+              
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="direction: ltr;" width="100%">
+        <tbody style="direction: ltr;">
+          
+              <tr style="direction: ltr;">
+                <td align="left" style="direction: ltr; font-size: 0px; padding: 0; word-break: break-word;">
+                  
+      <table cellpadding="0" cellspacing="0" width="100%" border="0" style="direction: ltr; color: #000000; font-family: Neue-Helvetica, Helvetica; font-size: 13px; line-height: 22px; table-layout: auto; width: 100%; border: none;">
+        <tr style="direction: ltr;">
+                <td style="direction: ltr; width: 60px;" width="60">
+                                      <table style="direction: ltr;">
+                      <tr style="direction: ltr;">
+                        <td style="direction: ltr;">
+                          
+                        </td>
+                      </tr>
+                    </table>
+                                  </td>
+                                  <td style="direction: ltr; padding-left: 16px;" class="rd-text-info-small"> 
+                                        <div style="direction: ltr; text-transform: uppercase; letter-spacing: 0.8px; text-align: left; font-size: 11px; line-height: 16px;">ABCPay</div>
+                                                          </td>
+                            </tr>
+      </table>
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+      </div>
+    
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+    
+                
+      <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:535px;" width="535" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+    
+      
+      <div style="direction: ltr; margin: 0px auto; max-width: 535px;">
+        
+        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="direction: ltr; width: 100%;" width="100%">
+          <tbody style="direction: ltr;">
+            <tr style="direction: ltr;">
+              <td style="direction: ltr; font-size: 0px; padding: 0 5px; text-align: center;" align="center">
+                <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td align="left" class="" style="vertical-align:top;width:525px;" ><![endif]-->
+            
+      <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size: 0px; text-align: left; direction: ltr; display: inline-block; vertical-align: top; width: 100%;">
+        
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="direction: ltr;">
+        <tbody style="direction: ltr;">
+          <tr style="direction: ltr;">
+            <td style="direction: ltr; vertical-align: top; padding: 28px 0 0 0;" valign="top">
+              
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="direction: ltr;" width="100%">
+        <tbody style="direction: ltr;">
+          
+              <tr style="direction: ltr;">
+                <td align="center" style="direction: ltr; font-size: 0px; padding: 0; padding-bottom: 24px; word-break: break-word;">
+                  
+      <p style="direction: ltr; border-top: solid 1px #dddddd; font-size: 1px; margin: 0px auto; width: 100%;">
+      </p>
+      
+      <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" style="border-top:solid 1px #dddddd;font-size:1px;margin:0px auto;width:525px;" role="presentation" width="525px" ><tr><td style="height:0;line-height:0;"> &nbsp;
+</td></tr></table><![endif]-->
+    
+    
+                </td>
+              </tr>
+            
+              <tr style="direction: ltr;">
+                <td align="left" class="rd-section-title" style="direction: ltr; font-size: 0px; padding: 0; padding-bottom: 16px; word-break: break-word;">
+                  
+      <div style="direction: ltr; text-transform: uppercase; font-weight: bold; letter-spacing: 0.7px; font-family: Neue-Helvetica, Helvetica; color: #000000; text-align: left; font-size: 16px; line-height: 24px;">Details</div>
+    
+                </td>
+              </tr>
+            
+              <tr style="direction: ltr;">
+                <td align="left" class="rd-payment-table" style="direction: ltr; font-size: 0px; word-break: break-word; padding: 0px;">
+                  
+      <table cellpadding="0" cellspacing="0" width="100%" border="0" style="direction: ltr; letter-spacing: 0.7px; text-transform: uppercase; color: #000000; font-family: Neue-Helvetica, Helvetica; table-layout: auto; width: 100%; border: none; font-size: 13px; line-height: 18px;">
+        <tr class="rd-light-font" style="direction: ltr; color: #666666;">
+              <td style="direction: ltr; padding-bottom: 4px; min-width: 100px;">1 Product</td>
+              <td class="rd-payment-price" style="direction: ltr; padding-bottom: 4px; min-width: 100px; text-align: right; word-break: break-word;" align="right">29.90&nbsp;USD</td>
+            </tr>
+            <tr class="rd-lightNeutral-font" style="direction: ltr; color: #999999;">
+              <td style="direction: ltr; padding-bottom: 4px; min-width: 100px;">Delivery</td>
+              <td class="rd-payment-price" style="direction: ltr; padding-bottom: 4px; min-width: 100px; text-align: right; word-break: break-word;" align="right">2.25&nbsp;USD</td>
+            </tr>
+                                                                                                                                                                                                    <tr class="rd-payment-total rd-black-font" style="direction: ltr; font-weight: bold; color: #000000;">
+              <td style="direction: ltr; padding-bottom: 4px; min-width: 100px;">Total</td>
+              <td class="rd-payment-price" style="direction: ltr; padding-bottom: 4px; min-width: 100px; text-align: right; word-break: break-word;" align="right">32.15&nbsp;USD </td>
+            </tr>
+                                      <tr style="direction: ltr;">
+                <td colspan="2" style="direction: ltr; padding-bottom: 4px; min-width: 100px;">
+                  <span class="rd-payment-include-tax-label-left" style="direction: ltr; color: #666666; letter-spacing: 0.3px; text-transform: none; font-size: 12px; line-height: 18px; text-align: left;">*Tax included</span>
+                </td>
+              </tr>
+                  </table>
+    
+                </td>
+              </tr>
+            
+        </tbody>
+      </table>
+    
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+      </div>
+    
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+    
+<!-- Sección 6 footer --> ﻿
+      
+      <!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:535px;" width="535" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+    
+      
+      <div style="direction: ltr; margin: 0px auto; max-width: 535px;">
+        
+        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="direction: ltr; width: 100%;" width="100%">
+          <tbody style="direction: ltr;">
+            <tr style="direction: ltr;">
+              <td style="direction: ltr; font-size: 0px; padding: 0 5px; padding-bottom: 100px; padding-top: 72px; text-align: center;" align="center">
+                <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td align="left" class="" style="vertical-align:top;width:525px;" ><![endif]-->
+            
+      <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size: 0px; text-align: left; direction: ltr; display: inline-block; vertical-align: top; width: 100%;">
+        
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%" style="direction: ltr;">
+        <tbody style="direction: ltr;">
+          <tr style="direction: ltr;">
+            <td style="direction: ltr; vertical-align: top; padding: 0;" valign="top">
+              
+      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="direction: ltr;" width="100%">
+        <tbody style="direction: ltr;">
+          
+              <tr style="direction: ltr;">
+                <td align="left" class="rd-footer-link" style="direction: ltr; font-size: 0px; padding: 0; word-break: break-word;">
+                  
+      <div style="direction: ltr; margin-bottom: 12px; font-family: Neue-Helvetica, Helvetica; font-size: 14px; line-height: 18px; color: #000000; text-align: left;"><a href="https://www.zara.com/kr/ko/help" style="direction: ltr; color: #000000; text-transform: uppercase; font-weight: bold; line-height: 18px; letter-spacing: 0.7px; text-decoration: none; font-size: 13px;">Help</a></div>
+    
+                </td>
+              </tr>
+                          <tr style="direction: ltr;">
+                <td align="left" class="rd-footer-link" style="direction: ltr; font-size: 0px; padding: 0; word-break: break-word;">
+                  
+      <div style="direction: ltr; margin-bottom: 12px; font-family: Neue-Helvetica, Helvetica; font-size: 14px; line-height: 18px; color: #000000; text-align: left;"><a href="https://static.zara.net/static//pdfs/KR/terms-and-conditions/terms-and-conditions-ko_KR-20240311.pdf" style="direction: ltr; color: #000000; text-transform: uppercase; font-weight: bold; line-height: 18px; letter-spacing: 0.7px; text-decoration: none; font-size: 13px;">Purchase Conditions</a></div>
+    
+                </td>
+              </tr>
+                                                                  <tr style="direction: ltr;">
+                <td align="left" class="rd-footer-link" style="direction: ltr; font-size: 0px; padding: 0; word-break: break-word;">
+                  
+      <div style="direction: ltr; margin-bottom: 12px; font-family: Neue-Helvetica, Helvetica; font-size: 14px; line-height: 18px; color: #000000; text-align: left;"><a href="https://static.zara.net/static//pdfs/KR/privacy-policy/privacy-policy-ko_KR-20230726.pdf?polÃ­tica de privacidad" style="direction: ltr; color: #000000; text-transform: uppercase; font-weight: bold; line-height: 18px; letter-spacing: 0.7px; text-decoration: none; font-size: 13px;">Privacy Policy</a></div>
+    
+                </td>
+              </tr>
+            
+              <tr style="direction: ltr;">
+                <td align="left" class="rd-footer-rrsss-link" style="direction: ltr; font-size: 0px; padding: 28px 0 0; word-break: break-word;">
+                  
+      <table cellpadding="0" cellspacing="0" width="100%" border="0" style="direction: ltr; color: #000000; font-family: Neue-Helvetica, Helvetica; font-size: 13px; line-height: 0; table-layout: auto; width: 100%; border: none;">
+        <tr style="direction: ltr;">
+              <td style="direction: ltr;">
+                <table class="rd-footer-rrsss-link" style="direction: ltr;">
+                  <tr style="direction: ltr;">
+                    <td style="direction: ltr;">
+                      <a href="https://www.tiktok.com/@zara" target="_blank" style="direction: ltr; color: #000; text-transform: uppercase; font-weight: bold; letter-spacing: 0.7px; line-height: 16px; text-decoration: none; font-size: 9px;">Tik Tok</a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <td style="direction: ltr;">
+                <table class="rd-footer-rrsss-link" style="direction: ltr;">
+                  <tr style="direction: ltr;">
+                    <td style="direction: ltr;">
+                      <a href="https://www.instagram.com/zara/" target="_blank" style="direction: ltr; color: #000; text-transform: uppercase; font-weight: bold; letter-spacing: 0.7px; line-height: 16px; text-decoration: none; font-size: 9px;">Instagram</a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <td style="direction: ltr;">
+                <table class="rd-footer-rrsss-link" style="direction: ltr;">
+                  <tr style="direction: ltr;">
+                    <td style="direction: ltr;">
+                      <a href="https://www.facebook.com/Zara" target="_blank" style="direction: ltr; color: #000; text-transform: uppercase; font-weight: bold; letter-spacing: 0.7px; line-height: 16px; text-decoration: none; font-size: 9px;">Facebook</a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            <td style="direction: ltr;">
+              <table class="rd-footer-rrsss-link" style="direction: ltr;">
+                <tr style="direction: ltr;">
+                  <td style="direction: ltr;">
+                    <a href="https://twitter.com/ZARA" target="_blank" style="direction: ltr; color: #000; text-transform: uppercase; font-weight: bold; letter-spacing: 0.7px; line-height: 16px; text-decoration: none; font-size: 9px;">Twitter</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td style="direction: ltr;">
+              <table class="rd-footer-rrsss-link" style="direction: ltr;">
+                <tr style="direction: ltr;">
+                  <td style="direction: ltr;">
+                    <a href="https://www.pinterest.es/zaraofficial/" target="_blank" style="direction: ltr; color: #000; text-transform: uppercase; font-weight: bold; letter-spacing: 0.7px; line-height: 16px; text-decoration: none; font-size: 9px;">Pinterest</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td style="direction: ltr;">
+              <table class="rd-footer-rrsss-link" style="direction: ltr;">
+                <tr style="direction: ltr;">
+                  <td style="direction: ltr;">
+                    <a href="http://www.youtube.com/zara" target="_blank" style="direction: ltr; color: #000; text-transform: uppercase; font-weight: bold; letter-spacing: 0.7px; line-height: 16px; text-decoration: none; font-size: 9px;">Youtube</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+      </table>
+    
+                </td>
+              </tr>
+            
+              <tr style="direction: ltr;">
+                <td align="left" class="rd-dowload-app" style="direction: ltr; font-size: 0px; padding: 0; padding-top: 8px; word-break: break-word;">
+                  
+      <div style="direction: ltr; text-transform: uppercase; text-decoration: none; letter-spacing: 0.7px; font-family: Neue-Helvetica, Helvetica; font-weight: bold; color: #000000; text-align: left; font-size: 11px; line-height: 18px;"><a href="https://www.zara.com/static/go/marketplaces.html" target="_blank" style="direction: ltr; color: #000000; text-transform: uppercase; text-decoration: none; letter-spacing: 0.7px; text-align: left; font-size: 11px; line-height: 18px;">Download the brand app</a></div>
+    
+                </td>
+              </tr>
+            
+              <tr style="direction: ltr;">
+                <td align="left" class="rd-footer-legal-message" style="direction: ltr; font-size: 0px; padding: 0; padding-top: 16px; word-break: break-word;">
+                  
+      <div style="direction: ltr; letter-spacing: 0.3px; text-transform: none; font-family: Neue-Helvetica, Helvetica; color: #000000; text-align: left; font-size: 14px; line-height: 18px;"></div>
+    
+                </td>
+              </tr>
+        </tbody>
+      </table>
+    
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+      </div>
+    
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    
+      
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+    
+          </div>
+    
+</body>
+</html>
+```
+------=_Part_698744_1851156694.1712643296706--

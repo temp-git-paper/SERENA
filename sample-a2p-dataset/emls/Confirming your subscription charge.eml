@@ -1,0 +1,673 @@
+Delivered-To: johndoe@gmail.com
+Received: by 2002:a54:3090:0:0:0:0:0 with SMTP id u16csp1644228ecp;
+        Sat, 26 Mar 2022 09:30:17 -0700 (PDT)
+X-Google-Smtp-Source:
+ ABdhPJwVnPzlRCr4Sd7EhxOpdu2LZRoZ43u1Bl3Y4p5Efw5r16wPp7H2jIF98VdYBZqFQoMZQHbw
+X-Received: by 2002:aa7:cdc9:0:b0:419:197e:14d9 with SMTP id
+ h9-20020aa7cdc9000000b00419197e14d9mr5484366edw.375.1648312216923;       
+ Sat, 26 Mar 2022 09:30:16 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1648312216; cv=none;
+        d=google.com; s=arc-20160816;
+        b=fs2S69D1EudtwW9zRdQqjCzenu//csI/+Mic9DPmNOQFXEJcNkurRfxTpBO3VzH1aJ
+         U7Y1vlGFYGEIZRx47UpUBnMJ9XU1sBOLX139mOyVZTs0bj03W1DnufpO7iF8/iOPAqRD
+         9JRcnijaHgEA0mge8fm4Ou386nTtFir0np2uAsMtd1C8iRYdGxdIwTm1SR1UM5N6g2rx
+         JMVtW2oSnm+5DaR09Uo78cp7KG5p1LX6MyzCSZda4rpnpvaPBjy7obJyI9VJkLbsZbMV
+         Fuw84vSrryZawX4GEbDoHqDAcmI4BcD+kSx1OrTuATEm9/Y8jjRFixXsKDh9Gh7DQ33k
+         P/DA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=message-id:feedback-id:subject:reply-to:from:to:date:mime-version        
+ :dkim-signature:dkim-signature;       
+ bh=ssADXv6cAusnsClU68YEZ5Ac8lH3mXJImYaU0+418lA=;       
+ b=nGb5mEunc28f0AmFq9W7RhJrordBKk6VBAFGjLBdE2ux1MkUe5esuRw/pwCdkR5vB8        
+ 46g0nu9t3zT+qEOVaSei2fvKQWf4mOEVYuPMziIxdfRQN/mlFmJSwhMtXcqyRPkbi2Qq        
+ 6EO1+eKEKpR9TcP8JG/D+BMvMPpEuqflpQ9eO9WMIwuaEq+Hc0WsNFc9pKuo3B20Z7JZ        
+ 0oBZ/GPBmv5B9RJzuTBgYOa13WmpGnMgEqBpY0U3GbwTOb0jRO/uzeUS0y0X7VvEiPrN        
+ J5+T5Dw63QZLYUAPBv+Hcmg6QhIMhNtQH8qsDA2nlGGXvqtkdfNGf5K5+FMEDSVt8xx7        
+ vygQ==
+ARC-Authentication-Results: i=1; mx.google.com;       dkim=pass
+ header.i=@service.newyorktimes.com header.s=newyorktimes3 header.b=Bgy8ydc7;
+       dkim=pass header.i=@responsys.net header.s=oraclersys
+ header.b=KaMXiWeq;       spf=pass (google.com: domain of
+ nyt@service.newyorktimes.com designates 199.7.205.141 as permitted sender)
+ smtp.mailfrom=nyt@service.newyorktimes.com;       dmarc=pass (p=REJECT
+ sp=REJECT dis=NONE) header.from=service.newyorktimes.com
+Return-Path: <nyt@service.newyorktimes.com>
+Received: from omptrans.e.newyorktimes.com (omptrans.e.newyorktimes.com.
+ [199.7.205.141])        by mx.google.com with ESMTPS id
+ qw10-20020a1709066a0a00b006e001255119si7673427ejc.919.2022.03.26.09.30.15
+        for <johndoe@gmail.com>        (version=TLS1_3
+ cipher=TLS_AES_256_GCM_SHA384 bits=256/256);        Sat, 26 Mar 2022 09:30:16
+ -0700 (PDT)
+Received-SPF: pass (google.com: domain of nyt@service.newyorktimes.com
+ designates 199.7.205.141 as permitted sender) client-ip=199.7.205.141;
+Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@service.newyorktimes.com header.s=newyorktimes3 header.b=Bgy8ydc7;
+       dkim=pass header.i=@responsys.net header.s=oraclersys
+ header.b=KaMXiWeq;       spf=pass (google.com: domain of
+ nyt@service.newyorktimes.com designates 199.7.205.141 as permitted sender)
+ smtp.mailfrom=nyt@service.newyorktimes.com;       dmarc=pass (p=REJECT
+ sp=REJECT dis=NONE) header.from=service.newyorktimes.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=newyorktimes3;
+ d=service.newyorktimes.com;
+ h=MIME-Version:Content-Type:Date:To:From:Reply-To:Subject:Feedback-ID:
+ Message-ID; i=nyt@service.newyorktimes.com;
+ bh=ssADXv6cAusnsClU68YEZ5Ac8lH3mXJImYaU0+418lA=; =?utf-8?q?b=3DBgy8ydc7naF5?=
+ =?utf-8?q?9bPcc3zG3F7cykQN+qn2YdnpHk9FLOZKQpiw1tO8MAaOQ9uLainMIAi2PO9IObLI?=
+  
+ 8XAIweSsBEPtJNNnoYEU09HCBWUnoLU+2eMSpJiH/HFcjO4+lmTk12gceqHjW2ApAevvUXVmn3+B
+   HMVu/gLZLmZ70lEYkRc=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=oraclersys;
+ d=responsys.net;
+ h=MIME-Version:Content-Type:Date:To:From:Reply-To:Subject:Feedback-ID:
+ Message-ID; bh=ssADXv6cAusnsClU68YEZ5Ac8lH3mXJImYaU0+418lA=; =?utf-8?q?b=3D?=
+ =?utf-8?q?KaMXiWeqUCdBTFjJmJQRI/7Pf1i93YKQSm8Dfk4j91kU6+4qrdNQUnk8dxlIAeD71?=
+ =?utf-8?q?8Q0K5Tc3SWv?=  
+ 5CnpwGOT18K/09IpTOn8KaqxgMRIZ2wsfSU1TBiRN19DNASEkaQftu8rB1f7YKfRbUXF0XAVZ/Oy
+   S2BYddVOZFlMdCbrjvU=
+Received: by omptrans.e.newyorktimes.com id h7svpe2tlo8o for
+ <johndoe@gmail.com>; Sat, 26 Mar 2022 09:29:54 -0700 (envelope-from
+ <nyt@service.newyorktimes.com>)
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="----msg_border_bsdcbql0Uf"
+Date: Sat, 26 Mar 2022 09:29:54 -0700
+To: johndoe@gmail.com
+From: =?UTF-8?B?VGhlIE5ldyBZb3JrIFRpbWVz?= <nyt@service.newyorktimes.com>
+Reply-To: The New York Times <reply@service.newyorktimes.com>
+Subject: Confirming your subscription charge.
+Feedback-ID: 80634:14136005:oraclersys
+X-sgxh1: rzbOLSRRxnuHptQJhu
+X-rext: 6.interact5.EPvO3TBqBJkOcgqS472zcmCOZHtSfGZ-bOQVHCYWuJINDVbaSyF7
+X-cid: nyt.6521425
+X-ei: EQkI9xWBuuw_WCyeO2YMezGuno49d2LmCw
+Message-ID: <0.1.5E.3B0.1D8412EB9B06F50.0@omptrans.e.newyorktimes.com>
+
+This is a multi-part message in MIME format.
+
+------msg_border_bsdcbql0Uf
+Date: Sat, 26 Mar 2022 09:29:54 -0700
+Content-Type: multipart/alternative; boundary="----alt_border_3MSFtgkPjd_1"
+
+
+
+------alt_border_3MSFtgkPjd_1
+Content-Type: text/plain;
+	charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Here is the anonymized and translated version of the text:
+
+---
+
+This email confirms your most recent New York Times subscription charge on Master Card.
+
+-----------------------------------------------------------------
+
+-- The New York Times --
+
+-----------------------------------------------------------------
+
+This email confirms your most recent New York Times subscription charge on Master Card
+
+-----------------------------------------------------------------
+
+Click here to view email with images:
+
+https://e.newyorktimes.com/pub/sf/FormLink?_ri_=X0Gzc2X%3DAQpglLjHJlYQGyNwU27zb7cswJnzb1WBTFJu8wzdal1MEzdqIwzazea854mcbv9zeIH1PzgBVXMtX%3DAQpglLjHJlYQG2XJyWt7vG7vmzaOnhgPrjb61pjAFrzcgJpCIOuN8UelzgWEEzcU37pD&_ei_=ESRreqEhcwAZwAt4CCdBTzvJfVH1y9Q8ZeRKetpLQlzmfXTh8D-xVVnEKz1VY8CJDI_tn4wos8cD2PVPyMJHV_D2-FigBIJ5ofWyC_GWtY55SrXmQ3hPWcOkW0QNYgPkWfqAoLOE8vAz-5vwSN15eB2vDUli07JEO_YjcMUK2irIGr9cYyZjXVRUz4ozvJSdwOaZ9AoM_P2RYw-gTzq2kb_nweWTLp68.&_di_=19nmg6csoln49lt09po36kdksscv2lcfe5ttvthos68dlcfmlir0Jg%3D%3D
+
+-----------------------------------------------------------------
+
+This email was sent to 'johndoe@gmail.com'
+
+Account Login: 
+https://e.newyorktimes.com/pub/cc?_ri_=X0Gzc2X%3DAQpglLjHJlYQGyNwU27zb7cswJnzb1WBTFJu8wzdal1MEzdqIwzazea854mcbv9zeIH1PzgBVXtpKX%3DTDSWYAY&_ei_=EW2tf9zs59idfPO1Sc_9Bbl4sEsR8cO7Fu_6CmaZoMJGrYurZjxpvkOr9-8jmMw2zpysjp9jJ88_TAd2tYLO82_tSbg7VNeCTMC4PY6wxKPwJuJxfKvC.&_di_=toivf1v6iok42er4lrgctqkabkkefbchdkajuolr3t46m0k2s6fgJg%3D%3D
+
+Help Center: 
+https://e.newyorktimes.com/pub/cc?_ri_=X0Gzc2X%3DAQpglLjHJlYQGyNwU27zb7cswJnzb1WBTFJu8wzdal1MEzdqIwzazea854mcbv9zeIH1PzgBVXtpKX%3DTDSWYCY&_ei_=EW2tf9zs59idfPO1Sc_9Bbl4sEsR8cO7Fu_6CmaZoMJGrYurZjxpvkOr9-8jmMw2zpysjp9jJ88_TAd2tYLO82_tSbg7VNeCTMC4PY6wxKPwJuJxfKvC.&_di_=5brf1p8utvn4sreh95cinjuuembrasnc44ci0svld6jplboj03dgJg%3D%3D
+
+Customer Care/Call Center, '620 Eighth Avenue, New York, NY 10018', Attn.: Postal
+
+Terms of Service: 
+https://e.newyorktimes.com/pub/cc?_ri_=X0Gzc2X%3DAQpglLjHJlYQGyNwU27zb7cswJnzb1WBTFJu8wzdal1MEzdqIwzazea854mcbv9zeIH1PzgBVXtpKX%3DTDSWAWY&_ei_=EW2tf9zs59idfPO1Sc_9Bbl4sEsR8cO7Fu_6CmaZoMJGrYurZjxpvkOr9-8jmMw2zpysjp9jJ88_TAd2tYLO82_tSbg7VNeCTMC4PY6wxKPwJuJxfKvC.&_di_=8cmv450dfm456h0jssudd8pk38p98ma675cnbj1drgmim2lsban0Jg%3D%3D
+
+Privacy Policy: 
+https://e.newyorktimes.com/pub/cc?_ri_=X0Gzc2X%3DAQpglLjHJlYQGyNwU27zb7cswJnzb1WBTFJu8wzdal1MEzdqIwzazea854mcbv9zeIH1PzgBVXtpKX%3DTDSWAAY&_ei_=EW2tf9zs59idfPO1Sc_9Bbl4sEsR8cO7Fu_6CmaZoMJGrYurZjxpvkOr9-8jmMw2zpysjp9jJ88_TAd2tYLO82_tSbg7VNeCTMC4PY6wxKPwJuJxfKvC.&_di_=s58b7t1dp6vpk4dqup6ifnv0qllfbgho66h2pimt4gm4e755p9igJg%3D%3D
+
+California Notices: 
+https://e.newyorktimes.com/pub/cc?_ri_=X0Gzc2X%3DAQpglLjHJlYQGyNwU27zb7cswJnzb1WBTFJu8wzdal1MEzdqIwzazea854mcbv9zeIH1PzgBVXtpKX%3DTDSWARY&_ei_=EW2tf9zs59idfPO1Sc_9Bbl4sEsR8cO7Fu_6CmaZoMJGrYurZjxpvkOr9-8jmMw2zpysjp9jJ88_TAd2tYLO82_tSbg7VNeCTMC4PY6wxKPwJuJxfKvC.&_di_=ttcl4f14pdcvdqtdlld4v39k6odi3r7qkuskp4jcs7rfhdoijgp0Jg%3D%3D
+
+(c)2022 The New York Times Company | '620 Eighth Avenue, New York, NY, 10018'
+
+--- 
+
+Note: The original text did not contain any currency values to convert to USD.
+------alt_border_3MSFtgkPjd_1
+Content-Type: text/html;
+	charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta content="NOINDEX, NOFOLLOW" name="ROBOTS" />
+ <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+ <meta content="width=device-width, maximum-scale=1.0" name="viewport" />
+ <meta content="telephone=no" name="format-detection" /><!--[if !mso]><!-- -->
+ <meta content="IE=edge" http-equiv="X-UA-Compatible" /><!--<![endif]-->
+ <title>Confirming your subscription charge.</title>
+ <style type="text/css">body {
+	margin: 0 !important;
+	padding: 0 !important;
+	-webkit-text-size-adjust: 100% !important;
+	-ms-text-size-adjust: 100% !important;
+	-webkit-font-smoothing: antialiased !important;
+}
+img {
+	border: 0 !important;
+	outline: none !important;
+}
+p {
+	margin: 0px !important;
+	padding: 0px !important;
+}
+table {
+	border-collapse: collapse;
+	mso-table-lspace: 0px;
+	mso-table-rspace: 0px;
+}
+td, a, span {
+	border-collapse: collapse;
+	mso-line-height-rule: exactly;
+}
+.ExternalClass * {
+	line-height: 100%;
+}
+a[x-apple-data-detectors] {
+	color: inherit !important;
+	text-decoration: none !important;
+	font-size: inherit !important;
+	font-family: inherit !important;
+	font-weight: inherit !important;
+	line-height: inherit !important;
+}
+.appleLinks a {
+	color: #666666;
+	text-decoration: none;
+}
+.appleLinksBlack a {
+	color: #000001;
+	text-decoration: none;
+}
+
+table[class=tb], .tb {border:2px solid black !important;
+    }
+     
+ li {margin:10px 0; }
+@media only screen and (max-width:640px) {
+table[class=main_table], .main_table {
+	width: 100% !important;
+}
+td[class=em_hide], br[class=em_hide], div[class=em_hide], .em_hide {
+	display: none !important;
+}
+td[class=mobpad], .mobpad {
+	padding: 25px !important;
+}
+img[class=em_img], .em_img {
+	width: 100% !important;
+	height: auto !important;
+}
+div[class=show], .show {
+	display: block !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	overflow: visible !important;
+	width: auto !important;
+	max-height: inherit !important;
+}
+	td[class=em_left], .em_left{
+		text-align: left !important;
+	}
+    
+   
+}
+
+@media only screen and (max-width:480px) {
+td[class=mobpad], .mobpad {
+	padding: 20px !important;
+}
+}
+
+@media only screen and (min-width:480px) and (max-width:640px) {
+td[class=mobpad], .mobpad {
+	padding: 25px !important;
+}
+}
+ </style>
+</head>
+
+<body>
+    <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center" role="presentation">
+        <tr>
+            <td valign="top">
+                <table width="640" border="0" align="center" cellpadding="0" cellspacing="0" class="main_table" role="presentation">
+                   
+                   
+                    <tr>
+                        <td colspan="2">
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%" role="presentation">
+                               <!--NYT LOGO/VIB-->
+                                <tr>
+                                    <td>
+                                    <table cellpadding="0" cellspacing="0" border="0" width="100%" role="presentation">
+                                    <tr id="hero_V1" class="NYT_header">
+    <td>
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" role="presentation">
+            <tr>
+                <td height="10" align="left" valign="top" style="font-size:1px; line-height:1px; mso-line-height-alt:0; mso-margin-top-alt:1px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+                        <!-- PRE-HEADER -->
+                      <tr>
+  <td align="left" class="pre_header" colspan="2" qa-id="pre-header" style="font-family: Arial, Helvetica, sans-serif; font-size:1px; text-align:left; color:#ffffff; font-weight:200;" valign="top">This email confirms your most recent New York Times subscription charge on Master Card.
+</td>
+</tr>
+                    <!-- END PRE-HEADER -->
+                   
+                        <tr>
+                            <td class="em_10px_left" align="left" valign="middle" style=" width:60%; padding-left:10px"><a data-link-category="Top Navigation" class="NYT_HomePage" href="https://e.newyorktimes.com/pub/cc?_ri_=X0Gzc2X%3DAQpglLjHJlYQGyNwU27zb7cswJnzb1WBTFJu8wzdal1MEzdqIwzazea854mcbv9zeIH1PzgBVXtpKX%3DTDSWYWY&amp;_ei_=EW2tf9zs59idfPO1Sc_9Bbl4sEsR8cO7Fu_6CmaZoMJGrYurZjxpvkOr9-8jmMw2zpysjp9jJ88_TAd2tYLO82_tSbg7VNeCTMC4PY6wxKPwJuJxfKvC.&amp;_di_=gbjkb4ec3sdrck9bs462190cropju7i7bor633aois9fan50l31g" target="_blank" style="color:#000001;"></a></td>
+                            
+                            <td align="right" valign="middle" style=" width:100%; font-family: Arial, Helvetica, sans-serif; font-size:11px; text-align:right; color:#999999; padding-right:10px;"><a class="NYT_Acc_Login" data-link-category="Section" href="https://e.newyorktimes.com/pub/cc?_ri_=X0Gzc2X%3DAQpglLjHJlYQGyNwU27zb7cswJnzb1WBTFJu8wzdal1MEzdqIwzazea854mcbv9zeIH1PzgBVXtpKX%3DTDSWYAY&amp;_ei_=EW2tf9zs59idfPO1Sc_9Bbl4sEsR8cO7Fu_6CmaZoMJGrYurZjxpvkOr9-8jmMw2zpysjp9jJ88_TAd2tYLO82_tSbg7VNeCTMC4PY6wxKPwJuJxfKvC.&amp;_di_=toivf1v6iok42er4lrgctqkabkkefbchdkajuolr3t46m0k2s6fg" target="_blank" style="color:#999999; text-decoration: underline;">My Account</a>&nbsp;|&nbsp;<a class="NYT_Help
+                                " data-link-category="Top Navigation" href="https://e.newyorktimes.com/pub/cc?_ri_=X0Gzc2X%3DAQpglLjHJlYQGyNwU27zb7cswJnzb1WBTFJu8wzdal1MEzdqIwzazea854mcbv9zeIH1PzgBVXtpKX%3DTDSWYCY&amp;_ei_=EW2tf9zs59idfPO1Sc_9Bbl4sEsR8cO7Fu_6CmaZoMJGrYurZjxpvkOr9-8jmMw2zpysjp9jJ88_TAd2tYLO82_tSbg7VNeCTMC4PY6wxKPwJuJxfKvC.&amp;_di_=5brf1p8utvn4sreh95cinjuuembrasnc44ci0svld6jplboj03dg" target="_blank" style="color:#999999; text-decoration: underline;">Help</a>&nbsp;<span class="em_hide">|&nbsp;<a data-link-category="Top Navigation" class="View_Online" href="https://e.newyorktimes.com/pub/cc?_ri_=X0Gzc2X%3DAQpglLjHJlYQGyNwU27zb7cswJnzb1WBTFJu8wzdal1MEzdqIwzazea854mcbv9zeIH1PzgBVXtpKX%3DTDSWWWY&amp;_ei_=EW2tf9zs59idfPO1Sc_9Bbl4sEsR8cO7Fu_6CmaZoMJGrYurZjxpvkOr9-8jmMw2zpysjp9jJ88_TAd2tYLO82_tSbg7VNeCTMC4PY6wxKPwJuJxfKvC.&amp;_di_=j879m9n79ea22uj5dioftsnkb99n8smbtc27ejs5pn03firboss0" style="color:#999999;text-decoration:underline;" target="_blank">View in Browser</a></span></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td height="1" align="left" valign="top" style="font-size:1px; line-height:1px; mso-line-height-alt:0; mso-margin-top-alt:1px; background: #000000;">&nbsp;</td>
+            </tr>
+        </table>
+    </td>
+</tr>                                    </table>
+                                    </td>
+                                    </tr>
+                                <!-- END NYT LOGO/VIB-->
+                               
+                               
+                                <!-- MAIN CONTENT -->
+                                <!--BEGIN BODY -->
+                                <tr>
+                                    <td>
+                                        <!-- Blocks-->
+                                        <table cellpadding="0" cellspacing="0" border="0" width="100%" role="presentation">
+                                         		<tr><td bgcolor="#000000"> <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">	  <!--Space desktop 3rem mobile 2.5rem-->
+			
+              <!--end Space desktop 3rem mobile 2.5rem--> 			  <!--HERO-->
+			  
+              <tr class="hero_alt">
+                <td valign="top" align="left" style="font-family: Georgia, serif; color:#ffffff;font-size:26px;padding:40px 60px;line-height:34px" class="em_hide">
+<p style="width:640px">Confirmation of your Times subscription<br class="em_hide" />charge on Master Card.</p>
+</td>
+              </tr>
+				<!--[if !mso]><!-- -->
+				<tr class="hero_alt">
+					<td align="center">
+						<div class="show" style="font-size: 0; max-height: 0; overflow: hidden; display: none;">
+							<table border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr>
+									<td valign="top" align="left" style="font-family: Georgia, serif; color:#ffffff;font-size:30px;padding:40px;line-height:36px">
+									<p style="width:320px">Confirmation of your<br />Times subscription charge on Master Card.</p>
+								
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>.
+				
+				<!--<![endif]--> 
+                <!--end HERO--> 			  <!--Space desktop 3rem mobile 2.5rem-->
+			  <tr>
+  <td>
+     <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+              
+</table>
+</td>
+</tr>
+              <!--end Space desktop 3rem mobile 2.5rem--> 	</table></td></tr>		  <!--Space desktop 3rem mobile 2.5rem-->
+			  <tr>
+  <td>
+     <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+              <tr>
+                <td height="40" align="left" valign="top" style="font-size:1px; line-height:1px; mso-line-height-alt:0; mso-margin-top-alt:1px;">&nbsp;</td>
+              </tr>
+              
+</table>
+</td>
+</tr>
+              <!--end Space desktop 3rem mobile 2.5rem--> <!--Body text Arial font -->
+<tr>
+  <td><table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+    <tr>
+     <td width="25" class="em_hide">&nbsp;</td><td width="35">&nbsp;</td>
+      <td class="mobpad2"><table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+        <tr>       
+          <td valign="top" align="left" style="font-family:Arial, Helvetica, sans-serif;font-size:16px;text-align:left;color:#000001;line-height:22px;font-weight:normal;">Thank you for being a New York Times subscriber.<br />
+<br />
+
+The following information is being provided for your records.
+
+</td>
+       
+      </tr>
+       <tr>
+                <td height="40" align="left" valign="top" style="font-size:1px; line-height:1px; mso-line-height-alt:0; mso-margin-top-alt:1px;">&nbsp;</td>
+              </tr>
+               <tr>       
+          <td valign="top" align="left" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;text-align:left;color:#000001;line-height:22px;font-weight:bold;">
+           
+          ORDER DETAILS
+        </td>
+        </tr>        
+	  <tr>
+                <td height="16" align="left" valign="top" style="font-size:1px; line-height:1px; mso-line-height-alt:0; mso-margin-top-alt:1px;">&nbsp;</td>
+              </tr>
+      </table></td>
+        <td width="25" class="em_hide">&nbsp;</td><td width="35">&nbsp;</td>
+    </tr>
+  </table></td>
+</tr>
+ <!--END Body text Arial font -->		 <!--Body text Arial font -->
+<tr>
+  <td><table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+    <tr>
+      <td width="25" class="em_hide">&nbsp;</td><td width="35">&nbsp;</td>
+      <td class="mobpad2"><table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+        
+      
+       
+	  <tr>
+               <td align="left" height="1" style="font-size:1px; line-height:1px; mso-line-height-alt:0; mso-margin-top-alt:1px; background: #D8D8D8;" valign="top">&nbsp;</td>
+              </tr><tr>
+                <td height="16" align="left" valign="top" style="font-size:1px; line-height:1px; mso-line-height-alt:0; mso-margin-top-alt:1px;">&nbsp;</td>
+              </tr>
+	  <tr>
+               <td align="left" style="font-family:Helvetica, Arial, sans-serif;font-size:16px;text-align:center;color:#000001;line-height:25px;font-weight:normal;" valign="top">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+             
+                 <tr>
+                  <td valign="middle">
+                  <table align="left" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" class="main_table" width="200" role="presentation">
+                  
+                    <tr>
+                     <td align="left" style="font-family:Helvetica, Arial, sans-serif;font-size:12px;text-align:left;color:#333333;line-height:23px;font-weight:bold;" valign="top">Subscription Type</td>
+                    </tr>
+                 
+                  </table>
+                  <!--[if gte mso 9]>
+                                                        </td><td width="320" valign="top"l>
+                                                        <![endif]-->
+
+                  <table align="left" border="0" cellpadding="0" cellspacing="0" class="main_table" width="320" role="presentation">
+                
+                    <tr>
+                     <td align="left" style="font-family:Helvetica, Arial, sans-serif;font-size:16px;text-align:left;color:#333333;line-height:22px;font-weight:normal;" valign="top">Basic Digital Access</td>
+                    </tr>
+                 
+                  </table>
+                  </td>
+                 </tr>
+               
+               </table>
+               </td>
+              </tr>
+	   <tr>
+                <td height="16" align="left" valign="top" style="font-size:1px; line-height:1px; mso-line-height-alt:0; mso-margin-top-alt:1px;">&nbsp;</td>
+              </tr>
+	  <tr>
+               <td align="left" height="1" style="font-size:1px; line-height:1px; mso-line-height-alt:0; mso-margin-top-alt:1px; background: #D8D8D8;" valign="top">&nbsp;</td>
+              </tr><tr>
+                <td height="16" align="left" valign="top" style="font-size:1px; line-height:1px; mso-line-height-alt:0; mso-margin-top-alt:1px;">&nbsp;</td>
+              </tr>
+	  <tr>
+               <td align="left" style="font-family:Helvetica, Arial, sans-serif;font-size:16px;text-align:center;color:#000001;line-height:25px;font-weight:normal;" valign="top">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+               
+                 <tr>
+                  <td valign="middle">
+                  <table align="left" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" class="main_table" width="200" role="presentation">
+                  
+                    <tr>
+                     <td align="left" style="font-family:Helvetica, Arial, sans-serif;font-size:12px;text-align:left;color:#333333;line-height:23px;font-weight:bold;" valign="top">Your Next Charge Date</td>
+                    </tr>
+                 
+                  </table>
+                  <!--[if gte mso 9]>
+                                                        </td><td width="320" valign="top"l>
+                                                        <![endif]-->
+
+                  <table align="left" border="0" cellpadding="0" cellspacing="0" class="main_table" width="320" role="presentation">
+                   
+                    <tr>
+                     <td align="left" style="font-family:Helvetica, Arial, sans-serif;font-size:16px;text-align:left;color:#333333;line-height:22px;font-weight:normal;" valign="top">04/12/2022</td>
+                    </tr>
+                  </table>
+                  </td>
+                 </tr>
+              
+               </table>
+               </td>
+              </tr>
+								  <tr>
+                <td height="16" align="left" valign="top" style="font-size:1px; line-height:1px; mso-line-height-alt:0; mso-margin-top-alt:1px;">&nbsp;</td>
+              </tr>
+	  <tr>
+               <td align="left" height="1" style="font-size:1px; line-height:1px; mso-line-height-alt:0; mso-margin-top-alt:1px; background: #D8D8D8;" valign="top">&nbsp;</td>
+              </tr><tr>
+                <td height="16" align="left" valign="top" style="font-size:1px; line-height:1px; mso-line-height-alt:0; mso-margin-top-alt:1px;">&nbsp;</td>
+              </tr>
+	  <tr>
+               <td align="left" style="font-family:Helvetica, Arial, sans-serif;font-size:16px;text-align:center;color:#000001;line-height:25px;font-weight:normal;" valign="top">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+               
+                 <tr>
+                  <td valign="middle">
+                  <table align="left" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" class="main_table" width="200" role="presentation">
+                  
+                    <tr>
+                     <td align="left" style="font-family:Helvetica, Arial, sans-serif;font-size:12px;text-align:left;color:#333333;line-height:23px;font-weight:bold;" valign="top">Account Email</td>
+                    </tr>
+                  
+                  </table>
+                  <!--[if gte mso 9]>
+                                                        </td><td width="320" valign="top"l>
+                                                        <![endif]-->
+
+                  <table align="left" border="0" cellpadding="0" cellspacing="0" class="main_table" width="320" role="presentation">
+                 
+                    <tr>
+                     <td align="left" style="font-family:Helvetica, Arial, sans-serif;font-size:16px;text-align:left;color:#333333;line-height:22px;font-weight:normal;" valign="top">'johndoe@gmail.com'</td>
+                    </tr>
+                 
+                  </table>
+                  </td>
+                 </tr>
+                
+               </table>
+               </td>
+              </tr>
+			  <tr>
+                <td height="16" align="left" valign="top" style="font-size:1px; line-height:1px; mso-line-height-alt:0; mso-margin-top-alt:1px;">&nbsp;</td>
+              </tr>
+	 
+	  <tr>
+               <td align="left" style="font-family:Helvetica, Arial, sans-serif;font-size:16px;text-align:center;color:#000001;line-height:25px;font-weight:normal;" valign="top">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+             
+                
+              
+               </table>
+               </td>
+              </tr>
+ 
+	  <tr>
+               <td align="left" height="1" style="font-size:1px; line-height:1px; mso-line-height-alt:0; mso-margin-top-alt:1px; background: #D8D8D8;" valign="top">&nbsp;</td>
+              </tr>
+       
+      </table></td>
+       <td width="25" class="em_hide">&nbsp;</td><td width="35">&nbsp;</td>
+    </tr>
+  </table></td>
+</tr>
+ <!--END Body text Arial font -->  <!--Space desktop 3rem mobile 2.5rem-->
+			  <tr>
+  <td>
+     <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+              <tr>
+                <td height="40" align="left" valign="top" style="font-size:1px; line-height:1px; mso-line-height-alt:0; mso-margin-top-alt:1px;">&nbsp;</td>
+              </tr>
+            
+</table>
+</td>
+</tr>
+              <!--end Space desktop 3rem mobile 2.5rem-->    		 <!--Body text Arial font -->
+<tr>
+  <td bgcolor="#ffffff"><table width="100%" cellspacing="0" cellpadding="0" class="tb" style="border:0px solid black !important;" role="presentation">
+    <tr>
+     <td width="25" class="em_hide">&nbsp;</td><td width="35">&nbsp;</td>
+      <td class="mobpad2"><table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+         
+         <tr>       
+          <td valign="top" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:16px;text-align:center;color:#000001;line-height:22px;font-weight:normal;" >
+              <p>You&rsquo;ve been billed $2.00 plus any additional tax. The amount indicated is your usual recurring charge.<br class="em_hide" />Recently applied credits may not appear here.<br class="em_hide" />Check your credit card statement. Your subscription will continue until you cancel.
+</p>
+             </td>
+          </tr>
+           <tr>
+                <td height="30" align="left" valign="top" style="font-size:1px; line-height:1px; mso-line-height-alt:0; mso-margin-top-alt:1px;">&nbsp;</td>
+              </tr>
+           <tr>       
+          <td valign="top" align="left" style="font-family:Arial, Helvetica, sans-serif;font-size:16px;text-align:left;color:#000001;line-height:22px;font-weight:normal;" >
+  <ul>
+  
+   <li style="margin:10px 0;">You can <a class="Tier2_CopyLink_01" data-link-category="Goal" href="https://e.newyorktimes.com/pub/cc?_ri_=X0Gzc2X%3DAQpglLjHJlYQGyNwU27zb7cswJnzb1WBTFJu8wzdal1MEzdqIwzazea854mcbv9zeIH1PzgBVXtpKX%3DTDSWACY&_ei_=EW2tf9zs59idfPO1Sc_9Bbl4sEsR8cO7Fu_6CmaZoMJGrYurZjxpvkOr9-8jmMw2zpysjp9jJ88_TAd2tYLO82_tSbg7VNeCTMC4PY6wxKPwJuJxfKvC.&_di_=7acb2flbld9d7fg5j1b0jfdeueg8lfd66b8f8m451ojlvlqudbvg" style="text-decoration:underline; color:#2FA0FF;" target="_blank">cancel online by chatting</a> with a Care Representative, available 24 hours a day, 7 days a week. You may also cancel by calling <a href="tel:18005919233" style="text-decoration:none; color:#2FA0FF;" target="_blank">
+  <nobr>1-800-591-9233
+  </nobr></a> between 7 a.m. and 10 p.m. E.T. on Monday&ndash;Friday, and between 7 a.m. and 3 p.m. E.T. on weekends and holidays (for international customers, click <a class="Tier2_CopyLink_02" data-link-category="Goal" href="https://e.newyorktimes.com/pub/cc?_ri_=X0Gzc2X%3DAQpglLjHJlYQGyNwU27zb7cswJnzb1WBTFJu8wzdal1MEzdqIwzazea854mcbv9zeIH1PzgBVXtpKX%3DTDSWBRY&_ei_=EW2tf9zs59idfPO1Sc_9Bbl4sEsR8cO7Fu_6CmaZoMJGrYurZjxpvkOr9-8jmMw2zpysjp9jJ88_TAd2tYLO82_tSbg7VNeCTMC4PY6wxKPwJuJxfKvC.&_di_=k5530r69tm1iqs5q0cfpgb0iviu31aqafh5el7ror5hv5096ojeg" style="text-decoration:underline; color:#2FA0FF;" target="_blank">here</a> for phone numbers).
+</li>
+   <li style="margin:10px 0;">You can notify us of your intent to cancel at any time during your billing period. Cancellations take effect at the end of your current billing period. For more information, see our <a data-link-category="Goal" class="Tier2_CopyLink_03" href="https://e.newyorktimes.com/pub/cc?_ri_=X0Gzc2X%3DAQpglLjHJlYQGyNwU27zb7cswJnzb1WBTFJu8wzdal1MEzdqIwzazea854mcbv9zeIH1PzgBVXtpKX%3DTDSWBTY&_ei_=EW2tf9zs59idfPO1Sc_9Bbl4sEsR8cO7Fu_6CmaZoMJGrYurZjxpvkOr9-8jmMw2zpysjp9jJ88_TAd2tYLO82_tSbg7VNeCTMC4PY6wxKPwJuJxfKvC.&_di_=e3aujudku8v8dmhu2pd39ef6rlip85hn1u2m0ka0hchuksvg3k40" target="_blank" style="text-decoration:underline; color:#2FA0FF;">Terms of Sale</a>.
+</li>
+</ul>
+               </td></tr>
+
+      
+      </table></td>
+        <td width="25" class="em_hide">&nbsp;</td><td width="35">&nbsp;</td>
+    </tr>
+  </table></td>
+</tr>
+ <!--END Body text Arial font -->		  <!--Space desktop 3rem mobile 2.5rem-->
+			  <tr>
+  <td>
+     <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+              <tr>
+                <td height="48" align="left" valign="top" style="font-size:1px; line-height:1px; mso-line-height-alt:0; mso-margin-top-alt:1px;">&nbsp;</td>
+              </tr>
+              
+</table>
+</td>
+</tr>
+              <!--end Space desktop 3rem mobile 2.5rem-->                                         </table>
+                                    </td>
+                                </tr>
+                                 <!--END BODY -->
+                                <!--END MAIN CONTENT-->
+                                <!--CARE-->
+                              
+                                <!-- END CARE->
+                               
+ <!-- BEGIN DISCLAIMER  -->
+              <tr>
+                                    <td>
+                                    <table cellpadding="0" cellspacing="0" border="0" width="100%" role="presentation">
+                                    <tr>
+    <td>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+            <tr>
+                <td height="1" align="left" valign="top" style="font-size:1px; line-height:1px; mso-line-height-alt:0; mso-margin-top-alt:1px; background: #b7b7b7">&nbsp;</td>
+            </tr>
+            <tr>
+                <td height="13" align="left" valign="top" style="font-size:1px; line-height:1px; mso-line-height-alt:0; mso-margin-top-alt:1px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="em_10px_left" align="left" valign="top" style="font-family: Arial,Helvetica, Sans Serif; color:#999999; font-size:11px; line-height:15px;"> This email was sent to <a href="mailto:johndoe@gmail.com" style="font-family: Helvetica, Arial, sans-serif;font-size:11px; font-weight:normal;color:#999999;text-decoration:none;">'johndoe@gmail.com'</a></td>
+            </tr>
+            <tr>
+                <td height="10" align="left" valign="top" style="font-size:1px; line-height:1px; mso-line-height-alt:0; mso-margin-top-alt:1px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="em_10px_left" align="left" valign="top" style="font-family: Arial,Helvetica, Sans Serif; color:#999999; font-size:11px; line-height:15px;"><a data-link-category="
+Bottom Navigation" class="NYT_MyAccount" href="https://e.newyorktimes.com/pub/cc?_ri_=X0Gzc2X%3DAQpglLjHJlYQGyNwU27zb7cswJnzb1WBTFJu8wzdal1MEzdqIwzazea854mcbv9zeIH1PzgBVXtpKX%3DTDSWWAY&_ei_=EW2tf9zs59idfPO1Sc_9Bbl4sEsR8cO7Fu_6CmaZoMJGrtloTZGIFEOUcKwiUApw2ahKNTjyjIVgIknTTKZj3s-r1Y2beHV4FYkaGaFvB9ls5RsYqUWbRcPeHosz7hXZI-G6rXvGqJusdNJvHqLt7slfv-9OHv9d0RYdpd0usg.&_di_=nh3qqav837aia6joghau12c7baimaui2bnbclesos87mo3u5ub5g" target="_blank" style="color:#999999;text-decoration: underline;">Account Login</a> | <a data-link-category="
+Bottom Navigation" class="NYT_Help_Center" href="https://e.newyorktimes.com/pub/cc?_ri_=X0Gzc2X%3DAQpglLjHJlYQGyNwU27zb7cswJnzb1WBTFJu8wzdal1MEzdqIwzazea854mcbv9zeIH1PzgBVXtpKX%3DTDSWWCY&_ei_=EW2tf9zs59idfPO1Sc_9Bbl4sEsR8cO7Fu_6CmaZoMJGrtloTZGIFEOUcKwiUApw21LIlne9vSXL4M3IktdOVt5NIwps2BHUZdQMP_zhVE67aksZu2uo5k38pv7qik1ldCs9CzK1uoYkal5kBHe0JQTYdFRVp-bCJXMi8w-SJufmYOU.&_di_=ahflcqc0qmecq2661fdsud5rifvjv0sphar0api2vp6m66stasug" target="_blank" style="color:#999999;text-decoration: underline;">Help Center</a></td>
+            </tr>
+           
+            <tr>
+                <td height="10" align="left" valign="top" style="font-size:1px; line-height:1px; mso-line-height-alt:0; mso-margin-top-alt:1px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="em_10px_left" align="left" valign="top" style="font-family: Arial,Helvetica, Sans Serif; color:#999999; font-size:11px; line-height:15px;"><a data-link-category="
+Bottom Navigation" class="NYT_Terms" href="https://e.newyorktimes.com/pub/cc?_ri_=X0Gzc2X%3DAQpglLjHJlYQGyNwU27zb7cswJnzb1WBTFJu8wzdal1MEzdqIwzazea854mcbv9zeIH1PzgBVXtpKX%3DTDSWYRY&_ei_=EW2tf9zs59idfPO1Sc_9Bbl4sEsR8cO7Fu_6CmaZoMJGrtloTZGIFEOUcKwiUApw2aaV93jt7S4FNEnxKVQ_vw-abLVylGAPYNryKpH6dRt9m8zN4e7O8gnad75bPyhmcrZH5UqJ4S--TcM3C2SX438K51duABjXnSEVFR3a70-Lt83rAY2ON7wfad-TgNZk6SE_kEipivYVG0rjL2aXwftPZ8AwMhB-.&_di_=ls3oluesnbea1aedii43c27dvi4e6h58lcvacv24brf681vfb390" target="_blank" style="color:#999999;text-decoration: underline;">Terms of Service</a> | <a data-link-category="
+Bottom Navigation" class="NYT_Privacy" href="https://e.newyorktimes.com/pub/cc?_ri_=X0Gzc2X%3DAQpglLjHJlYQGyNwU27zb7cswJnzb1WBTFJu8wzdal1MEzdqIwzazea854mcbv9zeIH1PzgBVXtpKX%3DTDSWYTY&_ei_=EW2tf9zs59idfPO1Sc_9Bbl4sEsR8cO7Fu_6CmaZoMJGrtloTZGIFEOUcKwiUApw2drjcgOxpLLHGnhRVldBhP8q2C1_hJpCuS2RtmUksmcaDaei2siwdW5Y_skn_Ydcyu6MyWens2bgsZ3UwwHUNIqGMn4ACcnZekPZpIyy2BWFGUuznyUW_VpVFX1stB9J.&_di_=co21qshv7vnbm1e8qm92e76me3br9nfk7gir0o6tokd3au3pu3r0" target="_blank" style="color:#999999;text-decoration: underline;">Privacy Policy</a> | <a class="Cali_notice" data-link-category="Bottom Navigation" href="https://e.newyorktimes.com/pub/cc?_ri_=X0Gzc2X%3DAQpglLjHJlYQGyNwU27zb7cswJnzb1WBTFJu8wzdal1MEzdqIwzazea854mcbv9zeIH1PzgBVXtpKX%3DTDSWARY&_ei_=EW2tf9zs59idfPO1Sc_9Bbl4sEsR8cO7Fu_6CmaZoMJGrYurZjxpvkOr9-8jmMw2zpysjp9jJ88_TAd2tYLO82_tSbg7VNeCTMC4PY6wxKPwJuJxfKvC.&_di_=ttcl4f14pdcvdqtdlld4v39k6odi3r7qkuskp4jcs7rfhdoijgp0" target="_blank" style="color:#999999;text-decoration: underline;">California Notices</a></td>
+            </tr>
+            <tr>
+                <td height="10" align="left" valign="top" style="font-size:1px; line-height:1px; mso-line-height-alt:0; mso-margin-top-alt:1px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="em_10px_left" align="left" valign="top" style="font-family: Arial,Helvetica, Sans Serif; color:#999999; font-size:11px; line-height:15px;"> &copy;2022 The New York Times Company <span class="em_hide">|</span> <a style="white-space: nowrap; color: #999999; text-decoration: none">620 Eighth Avenue, New York, NY 10018</a>
+                </td>
+            </tr>
+            <tr>
+                <td height="25" align="left" valign="top" style="font-size:1px; line-height:1px; mso-line-height-alt:0; mso-margin-top-alt:1px;">&nbsp;</td>
+            </tr>
+        </table>
+    </td>
+</tr>                                    </table>
+                                    </td>
+                                    </tr>
+              <!-- END DISCLAIMER  -->               <!--No scaling when Android email app have only one column -->
+                                <tr>
+                                    <td>
+                                        <table width="640" border="0" cellspacing="0" cellpadding="0" class="main_table" role="presentation">
+                                            <tr>
+                                                <td width="640" class="em_hide" align="center" valign="top" style="padding-top: 0px; padding-bottom:0px;min-width:640px; max-width:640px;">
+                                                    <table width="640" border="0" cellspacing="0" cellpadding="0" class="main_table" role="presentation">
+                                                        <tr>
+                                                            <td height="1" style="font-family:Helvetica, Arial, sans-serif;font-size:1px;text-align:center;color:#000000;line-height:1px;font-weight:300;">&nbsp;
+                                                                <br />
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <!--No scaling when gmail app don't read css classes -->
+    <div style="display: block; white-space: nowrap; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; font-family: courier; line-height: 0;" class="em_hide"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div><table cellpadding="0" cellspacing="0" style="border: 0px; padding: 0px; margin: 0px; position: absolute; display: none; float: left">
+<tr>
+<td height="1" style="font-size: 1px; line-height: 1px; padding: 0px;">
+<br>
+</td>
+</tr>
+</table>
+</body>
+</html>

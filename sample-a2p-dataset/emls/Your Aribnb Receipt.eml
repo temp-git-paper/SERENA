@@ -1,0 +1,1001 @@
+Delivered-To: johndoe@gmail.com
+Received: by 2002:a05:7011:93:b0:35e:3e33:432a with SMTP id iq19csp809770mdb;
+        Thu, 8 Jun 2023 18:43:22 -0700 (PDT)
+X-Google-Smtp-Source:
+ ACHHUZ6WOomZkOQMlXK5sHbvblD3Z0C0iVGo/Skszj9qFe67Pd4Eh/ry6xCwTjZjI/tC5UUqa30Y
+X-Received: by 2002:a05:6214:2687:b0:621:562c:4e22 with SMTP id
+ gm7-20020a056214268700b00621562c4e22mr280863qvb.47.1686275001844;        Thu,
+ 08 Jun 2023 18:43:21 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1686275001; cv=none;
+        d=google.com; s=arc-20160816;
+        b=fH/5KQETf8eWa/9mWKHskzBEtvQw1evXEJ8yXSFfZuA/BKRwNP2aan+tK+7nYEHpVd
+         LYoA6eEG97fqBMUUSQzezlMm8sx4ijOpjknVZO0ZtNBc4fZS2wT0Mz25B7M5ohIDYBPi
+         pVbPH+BNsc3kO5CeQIFWkr6neGdTZfsasMUsQX1Bkx+MhakiO97a5HmFXkRRzaTvGuNK
+         ECMKDVuV2ELQUqDHi7UMb5v6qmUE7YEi9a+/d6qJMY2Eot7qc9/Fc1+Lk1OfJttlDv58
+         txC7twHLxjrJUEtuC/c2KWZN3sb+rB4D6A40w58IPtHICyD2N+Bg+g70tSkAe1lwX0hh
+         JAWw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=to:subject:message-id:mime-version:from:date:dkim-signature        
+ :dkim-signature;        bh=+P0qG2qVXCrqhPkCpWB/IXzOH5PSEoW79qg3flxvXaU=;
+        b=uhke85cBb2rO76HOMn1vebCB363+O2wC4WlvQX55sShC0dA8Xq+xw4spt+YNpWzYBS
+         z/I4cVonOtySGsSEAtnPtOEcFTnfkvIrhtK7qm6DLWRLZr6hKUr/l90a57L9+1Nbj7KI
+         3x1c57Qz8fnbZPeqCH/SzkrOYfdxt08ipinelwx3c+QX50Zq2GQ8h2RKySow4JgBt1vg
+         Fx1ocRYe6/e5gQ8Vctpf6DTecteS+PpnyVHrRPOtsW6HqOgo4gAtvcOGIWxdrj44ysg2
+         hheFBIC783YzZFsCSXhh6zAkq9CZQphnC1JiXCGR2G9fnqm68RoTrFfxUC5MlcX4TCbG
+         YUhw==
+ARC-Authentication-Results: i=1; mx.google.com;       dkim=pass
+ header.i=@email.airbnb.com header.s=s20150428 header.b=brSVlBb0;      
+ dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=dKvW0WBA;      
+ spf=pass (google.com: domain of
+ bounces+168748-d1c9-johndoe=gmail.com@email.airbnb.com designates 50.31.32.19
+ as permitted sender)
+ smtp.mailfrom="bounces+168748-d1c9-johndoe=gmail.com@email.airbnb.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=airbnb.com
+Return-Path: <bounces+168748-d1c9-johndoe=gmail.com@email.airbnb.com>
+Received: from o12.email.airbnb.com (o12.email.airbnb.com. [50.31.32.19])
+        by mx.google.com with ESMTPS id
+ s15-20020ac85ccf000000b003ef5008336bsi1428109qta.28.2023.06.08.18.43.21
+        for <johndoe@gmail.com>        (version=TLS1_3
+ cipher=TLS_AES_128_GCM_SHA256 bits=128/128);        Thu, 08 Jun 2023 18:43:21
+ -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ bounces+168748-d1c9-johndoe=gmail.com@email.airbnb.com designates 50.31.32.19
+ as permitted sender) client-ip=50.31.32.19;
+Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@email.airbnb.com header.s=s20150428 header.b=brSVlBb0;      
+ dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=dKvW0WBA;      
+ spf=pass (google.com: domain of
+ bounces+168748-d1c9-johndoe=gmail.com@email.airbnb.com designates 50.31.32.19
+ as permitted sender)
+ smtp.mailfrom="bounces+168748-d1c9-johndoe=gmail.com@email.airbnb.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=airbnb.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=email.airbnb.com;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=s20150428; bh=+P0qG2qVXCrqhPkCpWB/IXzOH5PSEoW79qg3flxvXaU=;
+	b=brSVlBb0A9nLii5IJp1xi7o05G/VL3WqmNLpzxFrxN4CHRa2iZHDSeWfbLiM5gy0cvzs
+	a0Y0wvs0SZM5+RD3VfzyVe3EsLuqYQlRcYFpMO2w+FKKfc2Uq/Ye0wm6ErYNMTocCIzDo+
+	AlyLw+PpAv/WXVJuvIlVs6x1SyLxgVjio=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=smtpapi; bh=+P0qG2qVXCrqhPkCpWB/IXzOH5PSEoW79qg3flxvXaU=;
+	b=dKvW0WBAb4CECpUm9lzTp/pjHUTYlNZfveIVIC565YQ5A4ZkciEN9YM5Q+bLIAc2/BPZ
+	VIIFl476Czkj8/2eHukKZ35CFcbNYHSI0BljOoZk1ELqVKjcp3UFX23JxXQhiT/nbD6gbb
+	QLhk6LZLHUVSgbvCMiPKTwaVsE0v0pJlE=
+Received: by filterdrecv-d8ddd4485-62qpd with SMTP id
+ filterdrecv-d8ddd4485-62qpd-1-648283B9-42        2023-06-09
+ 01:43:21.560143295 +0000 UTC m=+2513023.319596994
+Received: from MTY4NzQ4 (unknown)
+	by geopod-ismtpd-3 (SG) with HTTP
+	id 3uRqdt1rSCey9_uGI2aStQ
+	Fri, 09 Jun 2023 01:43:21.549 +0000 (UTC)
+Content-Type: multipart/alternative;
+ boundary="19c9aaf11bcbbb16d573b862871a9e5c80277cf5bedc8f62f2bbd58b8627"
+Date: Fri, 09 Jun 2023 01:43:21 +0000 (UTC)
+From: Airbnb <express@airbnb.com>
+Mime-Version: 1.0
+Message-ID: <3uRqdt1rSCey9_uGI2aStQ@geopod-ismtpd-3>
+Subject: Your Airbnb Receipt
+X-Category: support
+X-Message-Package-UUID: eed0e469-ced8-8de6-b45b-2454ae3787c6
+X-Template: payments/bill_receipt
+X-Locale: ko
+Return-Path: express@airbnb.com
+X-Strategy: email
+X-Priority: critical
+X-rpcampaign: airbnb20230609308045713773753747038724120448152501871
+X-User-ID: 38742215
+X-Feedback-ID: 168748:SG
+X-SG-EID: ETAM4gn3u2DBJqLmN6fZkQM32hmBsE0slwbR0EYNazRwXXTwYjUPQ3ak2MQ3yb
+ =?utf-8?q?BZBMb5oy98hcYtLll94uvOjYXDSQZgApp3CHCbf?==?utf-8?q?wVkCTE9O9Exwjt?=
+ =?utf-8?q?d5tR/1QSeNx01k+3OJBR/919maD+30I0y6yYqjqCKix7+qD1XETZRJlBHp9DgdL3P?=
+ =?utf-8?q?0ZRMfLud/WzyAhcRlGyKqXc01/FJ+y7EPQD3dV?=N+ImNSWtEV3CqBQi4=
+X-SG-ID: N2C25iY2uzGMFz6rgvQsb5hEvF3Mw3wCPfk4FAQCJGW9CoWxAWR4oaKmyTEg+T
+ =?utf-8?q?sPvmlVHn27lCgLcwog426WhjWP7O48CBazS3s6S?==?utf-8?q?jkPwaQ1uPzLKFK?=
+ =?utf-8?q?tPzm3YI0Zkr8F5vcake5UBkf0i/ZulKechNqpAoAdDxqi35K/kAZzJP4KJUj0jBNN?=
+ =?utf-8?q?X9HbY1hJqBcjK7ZHNHzgiA03GlxYDRYVVmjU4IrbxJgs06iEmnXMV+a13RhR8AiWm?=
+ =?utf-8?q?bZ/R9IROfLQJO71WlxfVxvEYCpTG8sLAubegjGZpYYLeyaaKC8itIA3bpe0RjNMBd?=
+ =?utf-8?q?UAeWIWDUad/ENNLxQQ9OM+ZmEKiZwRNP0ZVvPqueXzEi1K4hCYBtvBpv/pSYtGluM?=
+ =?utf-8?q?duZFKhSaajkiMbeussFX8mJbbes0TsRop8WxOCWJEBxJPaxyq8VCA/S9oDbJuNzwd?=
+ =?utf-8?q?Y1BbicER03NS?=1rdAxF6YT2Xcha4rYQ==
+To: johndoe@gmail.com
+X-Entity-ID: 3s78pb/r1lg5WNZyShm4TQ==
+
+--19c9aaf11bcbbb16d573b862871a9e5c80277cf5bedc8f62f2bbd58b8627
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Airbnb Receipt
+
+Receipt ID: RCY38B89RC - June 8, 2023
+
+Broadview, IL 
+
+1 night in Broadview, IL
+
+Pricing Details
+
+Payment
+
+Print Receipt
+https://www.airbnb.co.kr/receipt/RCY38B89RC?c=.pi80.pkcGF5bWVudHMvYmlsbF9yZWNlaXB0&euid=eed0e469-ced8-8de6-b45b-2454ae3787c6
+
+Go to Itinerary
+https://www.airbnb.co.kr/reservation/itinerary?c=.pi80.pkcGF5bWVudHMvYmlsbF9yZWNlaXB0&code=HMMJHD5C22&euid=eed0e469-ced8-8de6-b45b-2454ae3787c6
+
+Have any questions?
+
+For detailed information on payments and refunds, please check the payment page or related help section.
+https://www.airbnb.co.kr/account-settings/payments/your-payments
+https://www.airbnb.co.kr/help
+
+Airbnb Payments UK Ltd.
+
+Airbnb Payments is a limited payment collection agent of the host. Therefore, paying in full through Airbnb Payments fulfills your payment obligation to the host. Refund requests are processed according to (1) the host's refund policy (available on the listing page) or (2) the rebooking and refund policy terms (www.airbnb.co.kr/terms).
+https://www.airbnb.co.kr/terms
+--19c9aaf11bcbbb16d573b862871a9e5c80277cf5bedc8f62f2bbd58b8627
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" style="min-height:100%;background:#f3f3f3">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body style="min-width:100%;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;margin:0;text-align:left;font-size:16px;line-height:19px;width:100% !important">
+<div class="preheader" style="visibility:hidden;opacity:0;color:transparent;height:0;width:0;font-size:0px;mso-hide:all;display:none !important"></div>
+    <div class="tracking" style="visibility:hidden;opacity:0;color:transparent;height:0;width:0;font-size:0px;mso-hide:all;display:none !important"></div>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width">
+    <style data-roadie-ignore data-immutable="true" type="text/css">
+  /*Light*/
+  @font-face {
+    font-family: 'Cereal';
+    font-style: normal;
+    font-weight: 200;
+    src: url("https://a1.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Lt-61d38480cfdf1dfc73d6bd0f459b3e10.eot");
+    src: url("https://a1.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Lt-61d38480cfdf1dfc73d6bd0f459b3e10.eot?#") format("eot"),
+      url("https://a1.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Lt-4f51497e2f6db6e72599a1f2f484eb7e.woff") format("woff"),
+      url("https://a1.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Lt-919ae0b65de2f8c6204ec57daeceb9e9.woff2") format("woff2"),
+      url("https://a0.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Lt-ef243dd05072c5987d3abcbe00581224.ttf") format("truetype");
+  }
+
+  /*Regular*/
+  @font-face {
+    font-family: 'Cereal';
+    font-style: normal;
+    font-weight: 300;
+    src: url("https://a1.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Rg-909a75677f1cbf6e66c8811e6d39441a.eot");
+    src: url("https://a1.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Rg-909a75677f1cbf6e66c8811e6d39441a.eot?#") format("eot"),
+      url("https://a1.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Rg-391ee76d399e20117aade2ce1f7e196e.woff") format("woff"),
+      url("https://a1.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Rg-3ff4006ded0500d605d6eff88ccc59f8.woff2") format("woff2"),
+      url("https://a0.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Rg-190a6e02b3b3d6cfaf3bbe887349adad.ttf") format("truetype");
+  }
+
+  /*Medium*/
+  @font-face {
+    font-family: 'Cereal';
+    font-style: normal;
+    font-weight: 500;
+    src: url("https://a0.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Md-ff8747694c95295917ef4c60c2bb6bce.eot");
+    src: url("https://a0.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Md-ff8747694c95295917ef4c60c2bb6bce.eot?#") format("eot"),
+      url("https://a1.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Md-b9bb7e6d20007be4b0caa86ea7fbd906.woff") format("woff"),
+      url("https://a0.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Md-dec1db4a099dd1761f19bbe3088de0c8.woff2") format("woff2"),
+      url("https://a0.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Md-2f25e87279c9c202ebf384fae79ac376.ttf") format("truetype");
+  }
+
+  /*Bold*/
+  @font-face {
+    font-family: 'Cereal';
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://a0.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Bd-7b4c5f071be2fb695c04a1af3a1e0616.eot");
+    src: url("https://a0.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Bd-7b4c5f071be2fb695c04a1af3a1e0616.eot?#") format("eot"),
+      url("https://a1.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Bd-20d7bff68cfbfa449bd9601275d29996.woff") format("woff"),
+      url("https://a1.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Bd-32afa6b67d060b665623bbc48ce00187.woff2") format("woff2"),
+      url("https://a1.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Bd-943ebbaff21543f9115cf46427213a47.ttf") format("truetype");
+  }
+
+  /*XBold*/
+  @font-face {
+    font-family: 'Cereal';
+    font-style: normal;
+    font-weight: 800;
+    src: url("https://a1.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_XBd-170530db17719eb719c2f03f8ac2a94d.eot");
+    src: url("https://a1.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_XBd-170530db17719eb719c2f03f8ac2a94d.eot?#") format("eot"),
+      url("https://a0.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_XBd-3aea49864b40db534f43dc271460baba.woff") format("woff"),
+      url("https://a0.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_XBd-66f244ea0cd79026250a9ba89a47a7aa.woff2") format("woff2"),
+      url("https://a0.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_XBd-5d879965b6ea4ac2a31b41647c283433.ttf") format("truetype");
+  }
+
+  /*Black*/
+  @font-face {
+    font-family: 'Cereal';
+    font-style: normal;
+    font-weight: 900;
+    src: url("https://a0.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Bk-5e8fbee9505fc68a77d714aa35aee405.eot");
+    src: url("https://a0.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Bk-5e8fbee9505fc68a77d714aa35aee405.eot?#") format("eot"),
+      url("https://a1.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Bk-36f3fbaecfd0e0f82e83f28a466ce425.woff") format("woff"),
+      url("https://a1.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Bk-eed38b780704d1a3acbdb4ed930f6cdf.woff2") format("woff2"),
+      url("https://a0.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Bk-a7f958b92f5a7555e9a6d5755e026c6b.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: 'Cereal Black';
+    src: url("https://a0.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Bk-5e8fbee9505fc68a77d714aa35aee405.eot");
+    src: url("https://a0.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Bk-5e8fbee9505fc68a77d714aa35aee405.eot?#") format("eot"),
+      url("https://a1.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Bk-36f3fbaecfd0e0f82e83f28a466ce425.woff") format("woff"),
+      url("https://a1.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Bk-eed38b780704d1a3acbdb4ed930f6cdf.woff2") format("woff2"),
+      url("https://a0.muscache.com/airbnb/rookery/fonts/Cereal/Cereal_W_Bk-a7f958b92f5a7555e9a6d5755e026c6b.ttf") format("truetype");
+  }
+</style>
+
+    
+    
+    
+      <style data-roadie-ignore data-immutable="true">
+        a[x-apple-data-detectors] {
+            color: #77d6fc !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        u + #body a {
+            color: #77d6fc !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        #MessageViewBody a {
+            color: #77d6fc !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+      </style>
+    <style data-roadie-ignore data-immutable="true">
+      @media only screen and (max-width: 596px) {
+        .small-float-center {
+          margin: 0 auto !important;
+          float: none !important;
+          text-align: center !important; }
+        .small-text-center {
+          text-align: center !important; }
+        .small-text-left {
+          text-align: left !important; }
+        .small-text-right {
+          text-align: right !important; } }
+
+        @media only screen and (max-width: 596px) {
+          table.body table.container .hide-for-large {
+            display: block !important;
+            width: auto !important;
+            overflow: visible !important;
+            max-height: none !important; } }
+
+      @media only screen and (max-width: 596px) {
+        table.body table.container .row.hide-for-large,
+        table.body table.container .row.hide-for-large {
+          display: table !important;
+          width: 100% !important; } }
+
+      @media only screen and (max-width: 596px) {
+        table.body table.container .show-for-large {
+          display: none !important;
+          width: 0;
+          mso-hide: all;
+          overflow: hidden; } }
+
+      @media only screen and (max-width: 596px) {
+        table.body img {
+          width: auto !important;
+          height: auto !important; }
+        table.body center {
+          min-width: 0 !important; }
+        table.body .container {
+          width: 95% !important; }
+        table.body .columns,
+        table.body .column {
+          height: auto !important;
+          -moz-box-sizing: border-box;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          padding-left: 16px !important;
+          padding-right: 16px !important; }
+          table.body .columns .column,
+          table.body .columns .columns,
+          table.body .column .column,
+          table.body .column .columns {
+            padding-left: 0 !important;
+            padding-right: 0 !important; }
+          table.body .columns .column.nested,
+          table.body .columns .columns.nested,
+          table.body .column .column.nested,
+          table.body .column .columns.nested {
+            padding-left: 16px !important;
+            padding-right: 16px !important; }
+        table.body .collapse .columns,
+        table.body .collapse .column {
+          padding-left: 0 !important;
+          padding-right: 0 !important; }
+        td.small-1,
+        th.small-1 {
+          display: inline-block !important;
+          width: 8.33333% !important; }
+        td.small-2,
+        th.small-2 {
+          display: inline-block !important;
+          width: 16.66667% !important; }
+        td.small-3,
+        th.small-3 {
+          display: inline-block !important;
+          width: 25% !important; }
+        td.small-4,
+        th.small-4 {
+          display: inline-block !important;
+          width: 33.33333% !important; }
+        td.small-5,
+        th.small-5 {
+          display: inline-block !important;
+          width: 41.66667% !important; }
+        td.small-6,
+        th.small-6 {
+          display: inline-block !important;
+          width: 50% !important; }
+        td.small-7,
+        th.small-7 {
+          display: inline-block !important;
+          width: 58.33333% !important; }
+        td.small-8,
+        th.small-8 {
+          display: inline-block !important;
+          width: 66.66667% !important; }
+        td.small-9,
+        th.small-9 {
+          display: inline-block !important;
+          width: 75% !important; }
+        td.small-10,
+        th.small-10 {
+          display: inline-block !important;
+          width: 83.33333% !important; }
+        td.small-11,
+        th.small-11 {
+          display: inline-block !important;
+          width: 91.66667% !important; }
+        td.small-12,
+        th.small-12 {
+          display: inline-block !important;
+          width: 100% !important; }
+        .columns td.small-12,
+        .column td.small-12,
+        .columns th.small-12,
+        .column th.small-12 {
+          display: block !important;
+          width: 100% !important; }
+        .body .columns td.small-1,
+        .body .column td.small-1,
+        td.small-1 center,
+        .body .columns th.small-1,
+        .body .column th.small-1,
+        th.small-1 center {
+          display: inline-block !important;
+          width: 8.33333% !important; }
+        .body .columns td.small-2,
+        .body .column td.small-2,
+        td.small-2 center,
+        .body .columns th.small-2,
+        .body .column th.small-2,
+        th.small-2 center {
+          display: inline-block !important;
+          width: 16.66667% !important; }
+        .body .columns td.small-3,
+        .body .column td.small-3,
+        td.small-3 center,
+        .body .columns th.small-3,
+        .body .column th.small-3,
+        th.small-3 center {
+          display: inline-block !important;
+          width: 25% !important; }
+        .body .columns td.small-4,
+        .body .column td.small-4,
+        td.small-4 center,
+        .body .columns th.small-4,
+        .body .column th.small-4,
+        th.small-4 center {
+          display: inline-block !important;
+          width: 33.33333% !important; }
+        .body .columns td.small-5,
+        .body .column td.small-5,
+        td.small-5 center,
+        .body .columns th.small-5,
+        .body .column th.small-5,
+        th.small-5 center {
+          display: inline-block !important;
+          width: 41.66667% !important; }
+        .body .columns td.small-6,
+        .body .column td.small-6,
+        td.small-6 center,
+        .body .columns th.small-6,
+        .body .column th.small-6,
+        th.small-6 center {
+          display: inline-block !important;
+          width: 50% !important; }
+        .body .columns td.small-7,
+        .body .column td.small-7,
+        td.small-7 center,
+        .body .columns th.small-7,
+        .body .column th.small-7,
+        th.small-7 center {
+          display: inline-block !important;
+          width: 58.33333% !important; }
+        .body .columns td.small-8,
+        .body .column td.small-8,
+        td.small-8 center,
+        .body .columns th.small-8,
+        .body .column th.small-8,
+        th.small-8 center {
+          display: inline-block !important;
+          width: 66.66667% !important; }
+        .body .columns td.small-9,
+        .body .column td.small-9,
+        td.small-9 center,
+        .body .columns th.small-9,
+        .body .column th.small-9,
+        th.small-9 center {
+          display: inline-block !important;
+          width: 75% !important; }
+        .body .columns td.small-10,
+        .body .column td.small-10,
+        td.small-10 center,
+        .body .columns th.small-10,
+        .body .column th.small-10,
+        th.small-10 center {
+          display: inline-block !important;
+          width: 83.33333% !important; }
+        .body .columns td.small-11,
+        .body .column td.small-11,
+        td.small-11 center,
+        .body .columns th.small-11,
+        .body .column th.small-11,
+        th.small-11 center {
+          display: inline-block !important;
+          width: 91.66667% !important; }
+        table.body td.small-offset-1,
+        table.body th.small-offset-1 {
+          margin-left: 8.33333% !important;
+          Margin-left: 8.33333% !important; }
+        table.body td.small-offset-2,
+        table.body th.small-offset-2 {
+          margin-left: 16.66667% !important;
+          Margin-left: 16.66667% !important; }
+        table.body td.small-offset-3,
+        table.body th.small-offset-3 {
+          margin-left: 25% !important;
+          Margin-left: 25% !important; }
+        table.body td.small-offset-4,
+        table.body th.small-offset-4 {
+          margin-left: 33.33333% !important;
+          Margin-left: 33.33333% !important; }
+        table.body td.small-offset-5,
+        table.body th.small-offset-5 {
+          margin-left: 41.66667% !important;
+          Margin-left: 41.66667% !important; }
+        table.body td.small-offset-6,
+        table.body th.small-offset-6 {
+          margin-left: 50% !important;
+          Margin-left: 50% !important; }
+        table.body td.small-offset-7,
+        table.body th.small-offset-7 {
+          margin-left: 58.33333% !important;
+          Margin-left: 58.33333% !important; }
+        table.body td.small-offset-8,
+        table.body th.small-offset-8 {
+          margin-left: 66.66667% !important;
+          Margin-left: 66.66667% !important; }
+        table.body td.small-offset-9,
+        table.body th.small-offset-9 {
+          margin-left: 75% !important;
+          Margin-left: 75% !important; }
+        table.body td.small-offset-10,
+        table.body th.small-offset-10 {
+          margin-left: 83.33333% !important;
+          Margin-left: 83.33333% !important; }
+        table.body td.small-offset-11,
+        table.body th.small-offset-11 {
+          margin-left: 91.66667% !important;
+          Margin-left: 91.66667% !important; }
+        table.body table.columns td.expander,
+        table.body table.columns th.expander {
+          display: none !important; }
+        table.body .right-text-pad,
+        table.body .text-pad-right {
+          padding-left: 10px !important; }
+        table.body .left-text-pad,
+        table.body .text-pad-left {
+          padding-right: 10px !important; }
+        table.menu {
+          width: 100% !important; }
+          table.menu td,
+          table.menu th {
+            width: auto !important;
+            display: inline-block !important; }
+          table.menu.vertical td,
+          table.menu.vertical th, table.menu.small-vertical td,
+          table.menu.small-vertical th {
+            display: block !important; }
+        table.menu[align="center"] {
+          width: auto !important; }
+        table.button.expand {
+          width: 100% !important; } }
+
+      @media only screen and (max-width: 596px) {
+        .day-box {
+          padding-top: 2vw !important;
+          width: 14vw !important;
+          height: 14vw !important;
+        }
+        .icon {
+          margin-right: 0.5vw;
+          width: 8px !important;
+        }
+        .icon-container {
+          height: 25%;
+        }
+        .exp-day-label {
+          margin-top: 0% !important;
+          font-size: 15px;
+        }
+        .exp-calendar-content {
+          min-width: 320px;
+          height: 14vw;
+        }
+      }
+
+      @media only screen and (min-width: 596px) {
+        .exp-calendar-content {
+          margin-left: auto;
+          margin-right: auto;
+          width: 78 * 7 + 8;
+          height: 78;
+        }
+        .icon-container {
+          height: 35px;
+        }
+      }
+
+      @media only screen and (max-width: 596px) {
+        .calendar-content {
+          padding: 0px !important;
+          width: 288px !important;
+        }
+
+        .not-available-day, .calendar-today, .available-day {
+          height: 40px !important;
+          width: 40px !important;
+        }
+
+        .day-label {
+          margin-left: 10% !important;
+          margin-top: 0% !important;
+          font-size: 15px;
+        }
+      }
+
+      @media only screen and (max-width: 596px) {
+        .small-font {
+          font-size: 15px !important;
+        }
+      }
+
+      .gmailfix {
+        display: none;
+        display: none !important;
+      }
+    </style>
+    <meta name="filler" content="        _      _           _      ">
+    <meta name="filler" content="       (_)    | |         | |     ">
+    <meta name="filler" content="   __ _ _ _ __| |__  _ __ | |__   ">
+    <meta name="filler" content="  / _' | | '__| '_ \| '_ \| '_ \  ">
+    <meta name="filler" content=" | (_| | | |  | |_) | | | | |_) | ">
+    <meta name="filler" content="  \__,_|_|_|  |_.__/|_| |_|_.__/  ">
+    <meta name="filler" content="                                  ">
+    
+  
+  
+    <table dir="ltr" class="body" style="border-spacing:0;border-collapse:collapse;vertical-align:top;hyphens:none;-moz-hyphens:none;-webkit-hyphens:none;-ms-hyphens:none;background:#f3f3f3;height:100%;width:100%;color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;margin:0;text-align:left;font-size:16px;line-height:19px;margin-bottom:0px !important;background-color: white">
+      <tr style="padding:0;vertical-align:top;text-align:left">
+        <td class="center" align="center" valign="top" style="word-wrap:break-word;-webkit-hyphens:auto;-moz-hyphens:auto;hyphens:auto;vertical-align:top;color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;margin:0;text-align:left;font-size:16px;line-height:19px;border-collapse:collapse !important">
+          <center style="width:100%;min-width:580px">
+            <!--[if mso]>
+              <table class="container" width="580">
+            <![endif]-->
+            <!--[if !mso]> <!-- -->
+              <table class="container" style="border-spacing:0;border-collapse:collapse;padding:0;vertical-align:top;background:#fefefe;width:580px;margin:0 auto;text-align:inherit;max-width:580px;">
+            <!-- <![endif]-->
+              <tr style="padding:0;vertical-align:top;text-align:left">
+                <td style="word-wrap:break-word;-webkit-hyphens:auto;-moz-hyphens:auto;hyphens:auto;vertical-align:top;color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;margin:0;text-align:left;font-size:16px;line-height:19px;border-collapse:collapse !important">
+                  <div>
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <a href="https://www.airbnb.co.kr?eal_exp=1688867001&amp;eal_sig=a4fcc084075311980d10c149502afef5ca78d917004ab04e8a5104722fd53018&amp;eal_uid=38742215&amp;eluid=0&amp;euid=eed0e469-ced8-8de6-b45b-2454ae3787c6" style="font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;margin:0;text-align:left;line-height:1.3;text-decoration:none;color:#008489">
+      </a>
+    </th>
+  </tr>
+</table>
+</div>
+<div>
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <h1 class="headline headline-md  heavy max-width-485" style='padding:0;margin:0;text-align:left;word-wrap:normal;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;max-width:485px;font-weight:700;color:#484848;word-break:normal;hyphens:none;-moz-hyphens:none;-webkit-hyphens:none;-ms-hyphens:none;font-size:24px;line-height:28px;margin-bottom:0 !important;'>
+        Airbnb Receipt
+      </h1>
+    </th>
+  </tr>
+</table>
+</div>
+<div>
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <p class="body  body-md  body-link-rausch light text-left   " style='padding:0;margin:0;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;font-weight:300;color:#484848;hyphens:none;-moz-hyphens:none;-webkit-hyphens:none;-ms-hyphens:none;font-size:15px;line-height:22px;text-align:left;margin-bottom:0px !important;color: #6f6f6f'>
+        Receipt ID: RCY38B89RC · June 8, 2023
+      </p>
+    </th>
+  </tr>
+</table>
+</div>
+<div style="padding-top:24px;padding-bottom:24px">
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <hr class="full-divider" style="max-width:580px;border-right:0;border-top:0;border-bottom:1px solid #cacaca;border-left:0;margin:20px auto;clear:both;background-color:#dbdbdb;height:1px;border:none;width:100%;margin-top:0;margin-bottom:0">
+    </th>
+  </tr>
+</table>
+</div>
+<div>
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <p class="headline headline-md  heavy max-width-485" style='padding:0;margin:0;text-align:left;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;max-width:485px;font-weight:700;color:#484848;word-break:normal;hyphens:none;-moz-hyphens:none;-webkit-hyphens:none;-ms-hyphens:none;font-size:24px;line-height:28px;margin-bottom:0 !important;'>
+        Glenview, Chicago
+      </p>
+    </th>
+  </tr>
+</table>
+</div>
+<div style="padding-bottom:8px">
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <p class="body  body-md  body-link-rausch heavy text-left   " style='padding:0;margin:0;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;font-weight:700;color:#484848;hyphens:none;-moz-hyphens:none;-webkit-hyphens:none;-ms-hyphens:none;font-size:15px;line-height:22px;text-align:left;margin-bottom:0px !important;'>
+        1 night in Glenview, Chicago
+      </p>
+    </th>
+  </tr>
+</table>
+</div>
+<div style="padding-top:8px;padding-bottom:8px">
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <hr class="full-divider" style="max-width:580px;border-right:0;border-top:0;border-bottom:1px solid #cacaca;border-left:0;margin:20px auto;clear:both;background-color:#dbdbdb;height:1px;border:none;width:100%;margin-top:0;margin-bottom:0">
+    </th>
+  </tr>
+</table>
+</div>
+<div>
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <div class="product-info-card" style="padding-top:16px">
+        <table style="border-spacing:0;border-collapse:collapse;padding:0;vertical-align:top;text-align:left;width:100%">
+          <tr style="padding:0;vertical-align:top;text-align:left">
+            <th class="body-left-column" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;margin:0;text-align:left;font-size:16px;line-height:19px;width:100%">
+              <p class="date-container text-small" style='padding:0;margin:0;text-align:left;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;font-size:14px;font-weight:300;line-height:19px;margin-bottom:2px;color:#6f6f6f;display:inline-flex'>
+                July 4, 2023 (Tue)
+                July 5, 2023 (Wed)
+              </p>
+              <p class="dates-details text-small" style='padding:0;margin:0;text-align:left;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;font-size:14px;font-weight:300;line-height:19px;margin-bottom:2px;color:#6f6f6f'>
+                Entire home/apt · 2 beds · 2 guests
+              </p>
+              <p class="text-small confirmation-code" style='padding:0;margin:0;text-align:left;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;font-size:14px;font-weight:300;line-height:19px;margin-bottom:2px;color:#6f6f6f'>
+                Confirmation Code: HMMJHD5C22
+              </p>
+              <p class="text-small" style='padding:0;margin:0;text-align:left;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;font-size:14px;font-weight:300;line-height:19px;margin-bottom:2px;color:#6f6f6f'>
+<a href="https://www.airbnb.co.kr/rooms/832994915143008453" target="_blank" style="font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;margin:0;text-align:left;line-height:1.3;text-decoration:none;color:#008489">Go to listing</a>              </p>
+              <p class="text-small cancellation-title" style='padding:0;margin:0;text-align:left;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;font-size:14px;font-weight:300;line-height:19px;margin-bottom:2px;color:#6f6f6f;margin-top:30px'>
+<a href="https://www.airbnb.co.kr/help/article/2637?c=.pi80.pkcGF5bWVudHMvYmlsbF9yZWNlaXB0&amp;euid=eed0e469-ced8-8de6-b45b-2454ae3787c6" style="font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;margin:0;text-align:left;line-height:1.3;text-decoration:none;color:#008489">Refund Policy</a>              </p>
+              <p class="text-small" style='padding:0;margin:0;text-align:left;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;font-size:14px;font-weight:300;line-height:19px;margin-bottom:2px;color:#6f6f6f'>
+                Free cancellation before 4:00 PM on July 3. After that, the reservation fee is non-refundable.
+              </p>
+            </th>
+          </tr>
+        </table>
+      </div>
+    </th>
+  </tr>
+</table>
+</div>
+<div style="padding-top:24px;padding-bottom:24px">
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <hr class="full-divider" style="max-width:580px;border-right:0;border-top:0;border-bottom:1px solid #cacaca;border-left:0;margin:20px auto;clear:both;background-color:#dbdbdb;height:1px;border:none;width:100%;margin-top:0;margin-bottom:0">
+    </th>
+  </tr>
+</table>
+</div>
+<div style="padding-bottom:8px">
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <p class="headline headline-md  heavy max-width-485" style='padding:0;margin:0;text-align:left;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;max-width:485px;font-weight:700;color:#484848;word-break:normal;hyphens:none;-moz-hyphens:none;-webkit-hyphens:none;-ms-hyphens:none;font-size:24px;line-height:28px;margin-bottom:0 !important;'>
+        Fee Details
+      </p>
+    </th>
+  </tr>
+</table>
+</div>
+<div>
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <table style="border-spacing:0;border-collapse:collapse;padding:0;vertical-align:top;text-align:left;width:100%">
+        <tr style="padding:0;vertical-align:top;text-align:left">
+          <th style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;margin:0;text-align:left;font-size:16px;line-height:19px">
+            <p class="text-default" style='font-weight:normal;padding:0;margin:0;text-align:left;line-height:19px;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;font-size:18px;color:#484848;margin-bottom:4px'>
+              $75.00 x 1 night
+            </p>
+          </th>
+          <th class="text-default amount" style="font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;margin:0;line-height:19px;font-size:18px;color:#484848;margin-bottom:4px;text-align:right">
+            $75.00
+          </th>
+        </tr>
+      </table>
+    </th>
+  </tr>
+</table>
+</div>
+<div style="padding-top:8px;padding-bottom:8px">
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <hr class="full-divider" style="max-width:580px;border-right:0;border-top:0;border-bottom:1px solid #cacaca;border-left:0;margin:20px auto;clear:both;background-color:#dbdbdb;height:1px;border:none;width:100%;margin-top:0;margin-bottom:0">
+    </th>
+  </tr>
+</table>
+</div>
+<div>
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <table style="border-spacing:0;border-collapse:collapse;padding:0;vertical-align:top;text-align:left;width:100%">
+        <tr style="padding:0;vertical-align:top;text-align:left">
+          <th style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;margin:0;text-align:left;font-size:16px;line-height:19px">
+            <p class="text-default text-strong" style='padding:0;margin:0;text-align:left;line-height:19px;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;font-size:18px;color:#484848;margin-bottom:4px;font-weight:bold !important'>
+              Total (KRW)
+            </p>
+          </th>
+          <th class="text-default amount text-strong" style="font-family:'Cereal', Helvetica, Arial, sans-serif;padding:0;margin:0;line-height:19px;font-size:18px;color:#484848;margin-bottom:4px;text-align:right;font-weight:bold !important">
+            $75.00
+          </th>
+        </tr>
+      </table>
+    </th>
+  </tr>
+</table>
+</div>
+<div style="padding-top:8px;padding-bottom:24px">
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <hr class="full-divider" style="max-width:580px;border-right:0;border-top:0;border-bottom:1px solid #cacaca;border-left:0;margin:20px auto;clear:both;background-color:#dbdbdb;height:1px;border:none;width:100%;margin-top:0;margin-bottom:0">
+    </th>
+  </tr>
+</table>
+</div>
+<div style="padding-bottom:8px">
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <p class="headline headline-md  heavy max-width-485" style='padding:0;margin:0;text-align:left;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;max-width:485px;font-weight:700;color:#484848;word-break:normal;hyphens:none;-moz-hyphens:none;-webkit-hyphens:none;-ms-hyphens:none;font-size:24px;line-height:28px;margin-bottom:0 !important;'>
+        Payment
+      </p>
+    </th>
+  </tr>
+</table>
+</div>
+<div>
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <table style="border-spacing:0;border-collapse:collapse;padding:0;vertical-align:top;text-align:left;width:100%">
+        <tr style="padding:0;vertical-align:top;text-align:left">
+          <th style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;margin:0;text-align:left;font-size:16px;line-height:19px">
+            <p class="text-default" style='font-weight:normal;padding:0;margin:0;text-align:left;line-height:19px;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;font-size:18px;color:#484848;margin-bottom:4px'>
+              MASTERCARD •••• 6252
+            </p>
+            <p class="text-default subtitle" style='font-weight:normal;padding:0;margin:0;text-align:left;line-height:19px;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;margin-bottom:4px;font-size:14px !important;color:#6f6f6f !important'>
+              June 8, 2023, 9:43:09 PM GMT-4
+            </p>
+          </th>
+          <th class="text-default amount" style="font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;margin:0;line-height:19px;font-size:18px;color:#484848;margin-bottom:4px;text-align:right">
+            $15.00
+          </th>
+        </tr>
+      </table>
+    </th>
+  </tr>
+</table>
+</div>
+<div style="padding-top:8px;padding-bottom:8px">
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <hr class="full-divider" style="max-width:580px;border-right:0;border-top:0;border-bottom:1px solid #cacaca;border-left:0;margin:20px auto;clear:both;background-color:#dbdbdb;height:1px;border:none;width:100%;margin-top:0;margin-bottom:0">
+    </th>
+  </tr>
+</table>
+</div>
+<div>
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <table style="border-spacing:0;border-collapse:collapse;padding:0;vertical-align:top;text-align:left;width:100%">
+        <tr style="padding:0;vertical-align:top;text-align:left">
+          <th style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;margin:0;text-align:left;font-size:16px;line-height:19px">
+            <p class="text-default text-strong" style='padding:0;margin:0;text-align:left;line-height:19px;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;font-size:18px;color:#484848;margin-bottom:4px;font-weight:bold !important'>
+              Payment Amount (KRW)
+            </p>
+          </th>
+          <th class="text-default amount text-strong" style="font-family:'Cereal', Helvetica, Arial, sans-serif;padding:0;margin:0;line-height:19px;font-size:18px;color:#484848;margin-bottom:4px;text-align:right;font-weight:bold !important">
+            $15.00
+          </th>
+        </tr>
+      </table>
+    </th>
+  </tr>
+</table>
+</div>
+<div style="padding-top:8px;padding-bottom:8px">
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <hr class="full-divider" style="max-width:580px;border-right:0;border-top:0;border-bottom:1px solid #cacaca;border-left:0;margin:20px auto;clear:both;background-color:#dbdbdb;height:1px;border:none;width:100%;margin-top:0;margin-bottom:0">
+    </th>
+  </tr>
+</table>
+</div>
+<div style="padding-top:24px">
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr style="padding:0;vertical-align:top;text-align:left">
+    <th class="col-pad-left-2 col-pad-right-2" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;margin:0;text-align:left;font-size:16px;line-height:19px;padding-left:16px;padding-right:16px">
+      <a href="https://www.airbnb.co.kr/receipt/RCY38B89RC?c=.pi80.pkcGF5bWVudHMvYmlsbF9yZWNlaXB0&amp;euid=eed0e469-ced8-8de6-b45b-2454ae3787c6" class="btn-primary btn-lg btn-rausch" style="font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;margin:0;text-align:left;line-height:1.3;text-decoration:none;color:#008489;background-color:#ff5a5f;-webkit-border-radius:4px;border-radius:4px;padding:19px 24px 19px 24px;display:block;">
+        <p class="text-center" style='font-weight:normal;padding:0;margin:0;text-align:center;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;color:white;font-size:24px;line-height:32px;margin-bottom:0px !important;'>
+          Print Receipt
+        </p>
+      </a>
+    </th>
+  </tr>
+</table>
+</div>
+<div style="padding-top:24px">
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr style="padding:0;vertical-align:top;text-align:left">
+    <th class="col-pad-left-2 col-pad-right-2" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;margin:0;text-align:left;font-size:16px;line-height:19px;padding-left:16px;padding-right:16px">
+      <a href="https://www.airbnb.co.kr/reservation/itinerary?c=.pi80.pkcGF5bWVudHMvYmlsbF9yZWNlaXB0&amp;code=HMMJHD5C22&amp;euid=eed0e469-ced8-8de6-b45b-2454ae3787c6" class="btn-secondary btn-lg" style="font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;margin:0;text-align:left;line-height:1.3;text-decoration:none;color:#008489;-webkit-border-radius:4px;border-radius:4px;border:2px solid #dbdbdb;padding:19px 24px 19px 24px;display:block;width: auto !important;">
+        <p class="text-center" style='font-weight:normal;padding:0;margin:0;text-align:center;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;color:#484848;font-size:24px;line-height:32px;margin-bottom:0px !important'>
+          Go to Itinerary
+        </p>
+      </a>
+    </th>
+  </tr>
+</table>
+</div>
+<div style="padding-top:48px;padding-bottom:24px">
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <hr class="full-divider" style="max-width:580px;border-right:0;border-top:0;border-bottom:1px solid #cacaca;border-left:0;margin:20px auto;clear:both;background-color:#dbdbdb;height:1px;border:none;width:100%;margin-top:0;margin-bottom:0">
+    </th>
+  </tr>
+</table>
+</div>
+<div>
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <p class="headline headline-sm  normal max-width-485" style='padding:0;margin:0;text-align:left;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;max-width:485px;font-weight:400;color:#484848;word-break:normal;hyphens:none;-moz-hyphens:none;-webkit-hyphens:none;-ms-hyphens:none;font-size:18px;line-height:21px;margin-bottom:0 !important;line-height: 0 !important'>
+        Have any questions?
+      </p>
+    </th>
+  </tr>
+</table>
+</div>
+<div>
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <p class="body  body-lg  body-link-babu light text-left   " style='padding:0;margin:0;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;font-weight:300;color:#484848;hyphens:none;-moz-hyphens:none;-webkit-hyphens:none;-ms-hyphens:none;font-size:18px;line-height:1.4;text-align:left;margin-bottom:0px !important;'>
+For more details on payments and refunds, please check the <a href="https://www.airbnb.co.kr/account-settings/payments/your-payments" target="_blank" style="font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;margin:0;text-align:left;line-height:1.3;text-decoration:none;color:#00a699">Payments</a> page or related <a href="https://www.airbnb.co.kr/help" target="_blank" style="font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;margin:0;text-align:left;line-height:1.3;text-decoration:none;color:#00a699">Help</a> section.      </p>
+    </th>
+  </tr>
+</table>
+</div>
+<div style="padding-top:8px;padding-bottom:24px">
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <hr class="full-divider" style="max-width:580px;border-right:0;border-top:0;border-bottom:1px solid #cacaca;border-left:0;margin:20px auto;clear:both;background-color:#dbdbdb;height:1px;border:none;width:100%;margin-top:0;margin-bottom:0">
+    </th>
+  </tr>
+</table>
+</div>
+<div>
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <p class="headline headline-sm  normal max-width-485" style='padding:0;margin:0;text-align:left;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;max-width:485px;font-weight:400;color:#484848;word-break:normal;hyphens:none;-moz-hyphens:none;-webkit-hyphens:none;-ms-hyphens:none;font-size:18px;line-height:21px;margin-bottom:0 !important;line-height: 0 !important'>
+        Airbnb Payments UK Ltd.
+      </p>
+    </th>
+  </tr>
+</table>
+</div>
+<div style="padding-bottom:16px">
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <p class="body  body-md  body-link-babu light text-left   " style='padding:0;margin:0;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;font-weight:300;color:#484848;hyphens:none;-moz-hyphens:none;-webkit-hyphens:none;-ms-hyphens:none;font-size:15px;line-height:22px;text-align:left;margin-bottom:0px !important;'>
+Airbnb Payments is the limited payment collection agent of the host. Therefore, payment made to Airbnb Payments is considered the same as payment made directly to the host. Refund requests are processed according to (1) the host's refund policy (available on the listing page) or (2) the terms of the rebooking and refund policy (<a href="https://www.airbnb.co.kr/terms" style="font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;margin:0;text-align:left;line-height:1.3;text-decoration:none;color:#00a699">www.airbnb.co.kr/terms</a>).      </p>
+    </th>
+  </tr>
+</table>
+</div>
+<div style="padding-top:24px">
+<table class="row" style="border-spacing:0;border-collapse:collapse;vertical-align:top;text-align:left;padding:0;width:100%;position:relative;display:table">
+  <tr class="" style="padding:0;vertical-align:top;text-align:left">
+    <th class="columns first large-12 last small-12 standard-footer-padding" style="color:#0a0a0a;font-family:'Cereal', Helvetica, Arial, sans-serif;font-weight:normal;padding:0;text-align:left;font-size:16px;line-height:19px;margin:0 auto;padding-bottom:16px;width:564px;padding-left:16px;padding-right:16px">
+      <div class="">
+        <hr class="standard-footer-hr" style="max-width:580px;border-right:0;border-top:0;border-bottom:1px solid #cacaca;border-left:0;clear:both;background-color:#dbdbdb;height:2px;width:100%;border:none;margin:auto">
+        <div class="row-pad-bot-4" style="padding-bottom:32px">
+        </div>
+        <p class="standard-footer-text " style='padding:0;margin:0;text-align:left;margin-bottom:10px;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;color:#484848;font-size:14px;text-shadow:0 1px #fff;font-weight:300;line-height:1.4'>
+        </p>
+        <p class="standard-footer-text " style='padding:0;margin:0;text-align:left;margin-bottom:10px;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;color:#484848;font-size:14px;text-shadow:0 1px #fff;font-weight:300;line-height:1.4'>
+Airbnb, Inc., 888 Brannan St, San Francisco, CA 94103        </p>
+        <p class="standard-footer-text " style='padding:0;margin:0;text-align:left;margin-bottom:10px;font-family:"Cereal", "Helvetica", Helvetica, Arial, sans-serif;color:#484848;font-size:14px;text-shadow:0 1px #fff;font-weight:300;line-height:1.4'>
+        </p>
+      </div>
+    </th>
+  </tr>
+</table>
+</div>
+                </td>
+              </tr>
+            </table>
+          </center>
+        </td>
+      </tr>
+    </table>
+    <!-- Gmail on iOS will automatically increase font-size for readability -->
+    <!-- http://freshinbox.com/blog/gmail-supports-displaynone-and-gmail-ios-font-fix-update/ -->
+    <div class="gmailfix" style="white-space:nowrap; font:15px courier; line-height:0; color:white;">
+                           
+                           
+                     
+    </div>
+  
+</body>
+</html>

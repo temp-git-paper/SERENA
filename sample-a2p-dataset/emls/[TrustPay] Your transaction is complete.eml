@@ -1,0 +1,347 @@
+ARC-Seal: i=1; a=rsa-sha256; d=google.com; s=arc-20180730; t=1732353941;
+	cv=none; b=DZkjqAFJwYF1MsKUldbZTAF0qXYBE+3sfuH6GbxrN+6Dx8L+Tg9+nJI3rN+4
+	 YGb6Gl24yz0XHYsllBDp1GoSx32htyNoLdiV5/2TWNj3He/NMLRL5wApNSBIxTVzUMuHQB
+	 e7XK+t8/Z9BvTMJUnzjVgEZ5lGT7eAB+QPG45VATuf8kBbKuJ7PQfN2aL14MiJ4hTGDxfx
+	 2uNVKAPl40IuYVYjpC0A+LBEmq9B7w1OCGXOCL3kLV3mYmTP27Y3rcPH6Ega0Nc1KsDDvI
+	 gTFxi7cf07vFXSLo83Xy7lyTtTsKhqaUzQp6a0J3DxvPxF6OeNIN1IS35tnH32iO8aWFjG
+	 Ew==
+ARC-Message-Signature: i=1; a=rsa-sha256; d=google.com; s=arc-20180730;
+	t=1732353941; c=relaxed/relaxed;
+	bh=7sm17N8KQJaj8DWFrCZPoyPIKGe9kxompXK1hiXQFbM=;
+	h=date:from:to:message-id:subject:dkim-signature; b=Ga2Mx2g0opOs08y1rwK
+	 Ub206Q+ulSwcoZpXpcWpU1NrNK9+gk0Q/d0SxPgBJWCpTAhGuoiXD8SNr+uUuiU+v/UGPh
+	 TVg4Y7m0GgArqHi1gi6cwdNf215cCDFDONT9pUOpHN0vPw3M+X69rqevoXXiyH+KwZ3Mm6
+	 6CnmjvQOqhfPdMl1Lsr8/081e4s5J5/JP1aiW3YOQcEAMaEOavDdF4SF/JanvG+X0DvUpa
+	 Ip81czqFwFgj6+bmLp6bpDwNwUNnPZ3VevAZQw2dqIia2gT+RiJyOjEMqx9cf6h4r9IYpu
+	 lGYUyGIuq0SCSHwnUxxwO0Fntgl1GvjtA4qbPQlf+mQ==
+ARC-Authentication-Results: i=1; mx.google.com;   spf=pass (mx.google.com:
+ domain of trustpayadmin_noreply@trustpay.com designates 202.179.181.71 as
+ permitted sender) smtp.mailfrom=trustpayadmin_noreply@trustpay.com; 
+ dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=trustpay.com
+Return-Path: <trustpayadmin_noreply@trustpay.com>
+Received-SPF: pass (mx.google.com: domain of
+ trustpayadmin_noreply@trustpay.com designates 202.179.181.71 as permitted
+ sender)  client-ip=202.179.181.71; x-iptype=white;
+Authentication-Results: mx.google.com;  spf=pass (mx.google.com: domain of
+ trustpayadmin_noreply@trustpay.com designates 202.179.181.71 as permitted
+ sender) smtp.mailfrom=trustpayadmin_noreply@trustpay.com;  dmarc=pass
+ (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=trustpay.com
+X-Session-IP: 202.179.181.71
+Received: from cos-sender-005.trustpay.com (cos-sender-005.trustpay.com
+ [202.179.181.71])  by crcvmail101.nm.google.com with ESMTP id
+ vmYki6GxRaCvwCitddzRhg  for <johndoe@gmail.com>  (version=TLSv1.3
+ cipher=TLS_AES_256_GCM_SHA384);  Sat, 23 Nov 2024 09:25:41 -0000
+Date: Sat, 23 Nov 2024 18:25:41 +0900 (KST)
+From: = TrustPay <trustpayadmin_noreply@trustpay.com>
+To: johndoe@gmail.com
+Message-ID: <1951997952.84659387.1732353941710@cos-sender-005.trustpay.com>
+Subject: = [TrustPay] Your Transaction Confirmation 
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_84659386_1153158208.1732353941710"
+DKIM-Signature: a=rsa-sha256; c=relaxed/simple; s=cr20240124; d=trustpay.com;
+ 	t=1732386341; v=1; 	bh=kSTm2DGc1Sh9s2z0wBkAnJN052/KvyA6tf+m4zO7HiM=; 
+	h=Date:From:To:Message-Id:Subject:MIME-Version:Content-Type; 
+	b=n4CIGkxDZs9u3d2I+w56ZwTDFmF0BP4bhg5Y8x8H7QyLtrT6uSUgehh2owE5QNYt	 
+ 4XvuNhPIr+NCpKwzlJFkbVS/Sl2dMljjElaHlk1g/FUUzFohgn5Y74w8RJ/cPmmN	 
+ f6LMrzheEykvitMlz6kfcM3yEjD7G7OERpvS0HmLgvhaVCLDf/ijgIfuFc+LgSQy	 
+ aStIoubSomBFwGIAqJoCGSnYRSaaUjV590C3hr6721DfYMF5fM3zP6MNLrcPr5xy	 
+ 9m42HuA/BJIyA5cSloal2A2+5DRtM4HC98HlT9nS0ICToSe0gZovoDKPT1BZ3NC2	 
+ V9YEZ4FEYGvzxBW2BAvbLw==
+
+------=_Part_84659386_1153158208.1732353941710
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <title>Trust Pay NEXT - Payment Screen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" cellpadding="0" cellspacing="0"  style="width:100%;background-color:#f8f8f9;letter-spacing:-1px" align="center">
+    <tr>
+        <td align="center">
+            <!-- Outlook max-width hack -->
+            <!--[if (gte mso 9)|(IE)]>
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td width="595">
+            <![endif]-->
+            <div style="max-width:595px; margin:0 auto">
+                <table cellpadding="0" cellspacing="0" style="width:100%;margin:0 auto;background-color:#fff;;-webkit-text-size-adjust:100%;text-align:left">
+                    <tr>
+                        <td colspan="3" height="60"></td>
+                    </tr>
+                    <tr>
+                        <td width="21"></td>
+                        <td>
+                            <table cellpadding="0" cellspacing="0" style="width:100%;margin:0;padding:0">
+                                <tr>
+                                    <td style="margin:0;padding:0">
+                                        <a href="https://trustpay.google.com/home"></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="40"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="21"></td>
+                    </tr>
+                    <tr>
+                        <td width="21"></td>
+                        <td>
+                            <table cellpadding="0" cellspacing="0" style="width:100%;margin:0;padding:0">
+                                <tr>
+                                    <td style="font-size:28px;font-family:'NanumGothic',NanumGothic,'Malgun Gothic',Malgun Gothic,'Dotum',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;color:#424240;line-height:34px;vertical-align:top">
+                                        Payment details<br><span style="color:#1ec800">via Trust Pay</span>.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="21"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="21"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" height="1" style="background:#e5e5e5"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" height="22"></td>
+                    </tr>
+                    <!-- Order Number -->
+                    <tr>
+                        <td rowspan="5" width="21"></td>
+                        <td>
+                            <table cellpadding="0" cellspacing="0" style="width:100%;margin:0;padding:0">
+                                <tr>
+                                    <td width="70" style="line-height:26px;font-size:14px;font-family:'NanumGothic',NanumGothic,'Malgun Gothic',Malgun Gothic,'Dotum',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;color:#696969;vertical-align:top">
+                                        Customer Name
+                                    </td>
+                                    <td style="line-height:26px;font-size:14px;font-family:'NanumGothic',NanumGothic,'Malgun Gothic',Malgun Gothic,'Dotum',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;color:#333;vertical-align:top">
+                                        john doe
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="70" style="line-height:26px;font-size:14px;font-family:'NanumGothic',NanumGothic,'Malgun Gothic',Malgun Gothic,'Dotum',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;color:#696969;vertical-align:top">
+                                        Payment Number
+                                    </td>
+                                    <td style="line-height:26px;font-size:17px;font-family:Helvetica;font-weight:bold">
+                                        <a href="https://orders.pay.google.com/instantPay/detail/20241123NP1765264198" style="color:#1ec800;text-decoration:none">20241123NP1765264198</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="70" style="line-height:26px;font-size:14px;font-family:'NanumGothic',NanumGothic,'Malgun Gothic',Malgun Gothic,'Dotum',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;color:#696969;vertical-align:top">
+                                        Payment Date
+                                    </td>
+                                    <td style="line-height:26px;font-size:14px;font-family:Helvetica;color:#333;vertical-align:top">
+                                         2024.11.23 18:25
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" height="46"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td rowspan="5" width="21"></td>
+                    </tr>
+                    <!--// Order Number -->
+
+                    <!-- Payment Information -->
+                    <tr>
+                        <td>
+                            <table cellpadding="0" cellspacing="0" style="width:100%;margin:0;padding:0">
+                                <tr>
+                                    <td height="26" style="font-size:14px;font-family:'NanumGothic',NanumGothic,'Malgun Gothic',Malgun Gothic,'Dotum',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;font-weight:bold;color:#000;line-height:26px">
+                                        Payment Information
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="2"></td>
+                                </tr>
+                                <tr>
+                                    <td height="2" style="background:#424240"></td>
+                                </tr>
+                                <tr>
+                                    <td height="19"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table cellpadding="0" cellspacing="0" style="width:100%;margin:0;padding:0">
+                                            <tr>
+                                                <td width="50%" style="font-size:14px;font-family:'NanumGothic',NanumGothic,'Malgun Gothic',Malgun Gothic,'Dotum',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;color:#696969;line-height:26px;vertical-align:top">
+                                                    Merchant Name
+                                                </td>
+                                                <td style="font-size:14px;font-family:'NanumGothic',NanumGothic,'Malgun Gothic',Malgun Gothic,'Dotum',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;color:#000;line-height:26px;text-align:right;vertical-align:top">
+                                                    JUMBO Coffee -Chicago St.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" height="2"></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="50%" style="font-size:14px;font-family:'NanumGothic',NanumGothic,'Malgun Gothic',Malgun Gothic,'Dotum',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;color:#696969;line-height:26px;vertical-align:top">
+                                                    Total Payment Amount
+                                                </td>
+                                                <td style="font-size:14px;font-family:'NanumGothic',NanumGothic,'Malgun Gothic',Malgun Gothic,'Dotum',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;color:#000;line-height:26px;text-align:right;vertical-align:top">
+                                                    <span style="font-family:Helvetica;line-height:26px">6.90</span> USD
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" height="3"></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="50%" style="font-size:12px;font-family:'NanumGothic',NanumGothic,'Malgun Gothic',Malgun Gothic,'Dotum',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;color:#696969;line-height:26px;vertical-align:top">
+                                                    ㄴ Product Amount
+                                                </td>
+                                                <td style="font-size:12px;font-family:'NanumGothic',NanumGothic,'Malgun Gothic',Malgun Gothic,'Dotum',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;color:#000;line-height:26px;text-align:right;vertical-align:top">
+                                                    <span style="font-family:Helvetica;line-height:26px">6.90</span> USD
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" height="2"></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="50%" style="font-size:14px;font-family:'NanumGothic',NanumGothic,'Malgun Gothic',Malgun Gothic,'Dotum',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;color:#696969;line-height:26px;vertical-align:top">
+                                                    Payment Method
+                                                </td>
+                                                <td style="font-size:14px;font-family:'NanumGothic',NanumGothic,'Malgun Gothic',Malgun Gothic,'Dotum',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;color:#000;line-height:26px;text-align:right;vertical-align:top">
+                                                    Trust Pay Points·Money
+                                                </td>
+                                            </tr>
+
+                                                <tr>
+                                                    <td height="3" colspan="2"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="50%" style="font-size:12px;font-family:'NanumGothic',NanumGothic,'Malgun Gothic',Malgun Gothic,'Dotum',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;color:#696969;line-height:26px;vertical-align:top">
+                                                        ㄴ Pay Money Used
+                                                    </td>
+                                                    <td style="font-size:12px;font-family:'NanumGothic',NanumGothic,'Malgun Gothic',Malgun Gothic,'Dotum',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;color:#000;line-height:26px;text-align:right;vertical-align:top">
+                                                        <span style="font-family:Helvetica;line-height:26px">0</span> USD
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="50%" style="font-size:12px;font-family:'NanumGothic',NanumGothic,'Malgun Gothic',Malgun Gothic,'Dotum',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;color:#696969;line-height:26px;vertical-align:top">
+                                                        ㄴ Pay Points Used
+                                                    </td>
+                                                    <td style="font-size:12px;font-family:'NanumGothic',NanumGothic,'Malgun Gothic',Malgun Gothic,'Dotum',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;color:#000;line-height:26px;text-align:right;vertical-align:top">
+                                                        <span style="font-family:Helvetica;line-height:26px">6.90</span> USD
+                                                    </td>
+                                                </tr>
+                                            <tr>
+                                                <td height="6" colspan="2"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!--// Payment Information -->
+
+
+                    <!-- Final Payment Amount -->
+                    <tr>
+                        <td>
+                            <table cellpadding="0" cellspacing="0" style="width:100%;margin:0;padding:0">
+                                <tr>
+                                    <td colspan="2" height="1" style="background:#e5e5e5"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" height="21"></td>
+                                </tr>
+                                <tr>
+                                    <td width="45%" height="26" style="font-size:16px;font-family:'NanumGothic',NanumGothic,'Malgun Gothic',Malgun Gothic,'Dotum',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;font-weight:bold;color:#333;line-height:26px">
+                                        Final Payment Amount
+                                    </td>
+                                    <td height="26" style="font-size:16px;font-family:'NanumGothic',NanumGothic,'Malgun Gothic',Malgun Gothic,'Dotum',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;font-weight:bold;color:#000;text-align:right;line-height:26px">
+                                        <span style="font-size:30px;font-family:HelveticaNeue;color:#1ec800;line-height:26px;vertical-align:top">6.90</span> USD
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" height="21"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" height="1" style="background:#424240"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!--// Final Payment Amount -->
+                    <tr>
+                        <td height="16" colspan="2"></td>
+                    </tr>
+                    <!-- Information Note -->
+                    <tr>
+                        <td>
+                            <table cellpadding="0" cellspacing="0" style="width:100%;margin:0;padding:0">
+                                <tr>
+                                    <td height="20" style="font-size:12px;font-family:'NanumGothic',NanumGothic,'Malgun Gothic',Malgun Gothic,'Dotum',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;color:#696969;line-height:20px;">
+                                        - Payment details can be checked at <a href="https://orders.pay.google.com/instantPay/detail/20241123NP1765264198" style="color:#696969;">[Trust Pay Home &gt; Payment History &gt; Offline]</a>.
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- // Information Note -->
+                    <tr>
+                        <td height="25" colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" align="center">
+                            <div style="display:inline-block;width:278px;max-width:100%;vertical-align:top">
+                                <table style="table-layout: fixed;width:100%;background:#1fc801"border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td height="56" style="line-height:56px;text-align:center">
+                                            <a href="https://trustpay.google.com/home" style="display:block;font-size:18px;color:#fff;text-decoration:none;font-family:'NanumGothic',NanumGothic,'Malgun Gothic',Malgun Gothic,'Dotum',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">Trust Pay Home</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" height="40"></td>
+                    </tr>
+
+                    <!-- footer-->
+                    <tr>
+                        <td colspan="3"  style="padding-top:26px;padding-left:21px;padding-right:21px;padding-bottom:13px;background:#e5e5e5;font-size:12px;font-family:'NanumGothic',NanumGothic,'Malgun Gothic',Malgun Gothic,'Dotum',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;color:#696969;line-height:17px">
+                            This email is for sending only.<br>
+                            For inquiries about product delivery/return/exchange/cancellation/refund, please contact the seller for faster and more accurate processing.<br>
+                            TrustPay Financial Corp. is an intermediary or communication sales intermediary of payment information and is not a party to communication sales.<br>
+                            Obligations and responsibilities related to product orders, delivery, refunds, etc. lie with the seller.<br>
+                            For suggestions or complaints related to the use of Trust Pay, please use the <a href="http://help.pay.google.com" style="color:#696969;font-weight:bold;text-decoration:underline">Customer Center</a>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"  style="padding-top:10px;padding-left:21px;padding-right:21px;padding-bottom:13px;background:#e5e5e5;font-size:12px;font-family:'NanumGothic',NanumGothic,'Malgun Gothic',Malgun Gothic,'Dotum',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;color:#696969;line-height:17px">
+                            <a href="https://new-m.pay.google.com/member/terms-policy/npay-usage" style="padding-right:10px;color:#696969;text-decoration:none">Trust Pay Terms of Use</a>  l  <a href="https://new-m.pay.google.com/member/terms-policy/withdrawal-of-subscription" style="padding:0 10px;color:#696969;text-decoration:none">Matters Concerning Withdrawal of Subscription</a>  l  <a href="https://new-m.pay.google.com/member/terms-policy/privacy" style="padding:0 10px;color:#696969;text-decoration:none"><strong>Privacy Policy</strong></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  colspan="3" style="padding-left:21px;padding-right:21px;padding-bottom:57px;background:#e5e5e5;font-size:12px;font-family:Helvetica;color:#696969;line-height:17px">
+                            Copyright ⓒ <strong>TrustPay FINANCIAL Corp.</strong> All Rights Reserved.
+                        </td>
+                    </tr>
+                    <!--// footer-->
+                </table>
+            </div>
+            <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </td>
+    </tr>
+</table>
+<table style='display:none'><tr><td></td></tr></table></body>
+</html>

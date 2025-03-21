@@ -1,0 +1,109 @@
+ARC-Seal: i=1; a=rsa-sha256; d=google.com; s=arc-20180730; t=1736396375;
+	cv=none; b=CgbFUgT4zlg4CkaCA8rNeIzmVd/ox1GUHEZ957WowfLTDnGRFsBCQ4fqaAGq
+	 0O1kCRV5AKFrtaBaUo2xBs8rO4SbQdKg+6x55Pq6hisEc7ObjwTGPLB8ZRlTO7iUhxU52U
+	 bL3yAiIVCb5BPYi/ilhMQKipI4jDx3wtZrSMpHGDHi9oSk3mg739ExrZNJkfvTwPaj1IJr
+	 Xb1NAiTJ8r+lIfsXusqEuP0MKhodCqZzOqYZh+Cet2pFtqIv9oDOI6Weo6I1Yn5kjNk7W8
+	 wXiZN2NJBJS2NM9l4VHGvw04ynAT5iCH3F9HNHblcnkWARzbx6guBWM7XcNh+jwhqouQK+
+	 bw==
+ARC-Message-Signature: i=1; a=rsa-sha256; d=google.com; s=arc-20180730;
+	t=1736396375; c=relaxed/relaxed;
+	bh=NjBB8B8pYFzwjJH4PFQa3eFiUWatLtuPLhlOYrOi3hE=;
+	h=date:from:to:message-id:subject:dkim-signature; b=aJej9u51ENAj5bGmYCu
+	 Lm8Gv940fYDOw3wD8ljkeG1VXQHTag0yhBE1lTA7JJSQWkMlmMtubQmWGnYRy0rGyYTbOm
+	 Zzs7hGH+e1NF2UFQKeC6wD7Gp+L5g+nWudkIv2gRaTHPIlz1aoIpGz5FNBs3XCZrWypOkG
+	 wOcXIMAm5zurFSPdRWnvph2hFOY8L3uat7TTnlP2oYUbKaD5+s3WrJtTC2RLSrKLwtbB3g
+	 edVl3utXtH/gWirzEtefH2g+lh3b9eHx76xMfw8UjULqHPfB9vyvQ0ds48PDdR+QVMfbmX
+	 8Hmj3jk4vpc2frRRs0csdvt9PiihoFkTGNG1iQaehCA==
+ARC-Authentication-Results: i=1; mx.google.com;   spf=pass (mx.google.com:
+ domain of noreply@aurora.com designates 103.132.33.12 as permitted sender)
+ smtp.mailfrom=noreply@aurora.com;  dkim=pass header.i=@aurora.com; 
+ dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=aurora.com
+Return-Path: <noreply@aurora.com>
+Received-SPF: pass (mx.google.com: domain of noreply@aurora.com designates
+ 103.132.33.12 as permitted sender)  client-ip=103.132.33.12;
+ x-iptype=default;
+Authentication-Results: mx.google.com;  spf=pass (mx.google.com: domain of
+ noreply@aurora.com designates 103.132.33.12 as permitted sender)
+ smtp.mailfrom=noreply@aurora.com;  dkim=pass header.i=@aurora.com; 
+ dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=aurora.com
+X-Naver-ESV: wZFn+6J4p63CbHmqKBwdbXFYKAtwaxK9jJ+Y
+X-Session-IP: 103.132.33.12
+Received: from smtp504.toastcloud.com (smtp504.toastcloud.com [103.132.33.12])
+  by crcvmail205.nm.google.com with ESMTP id eCZqn0v8Rwmejc1pKV-n6g
+  for <johndoe@gmail.com>
+  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384);
+  Thu, 09 Jan 2025 04:19:35 -0000
+Received: from [10.161.51.24] (HELO mmsa-newbatch-wa901.svr.toastmaker.net)
+ ([10.161.51.24]) by smtp504.toastcloud.com with SMTP id 07ff05cb677f4e57;
+ Thu, 09 Jan 2025 13:19:35 +0900
+Date: Thu, 9 Jan 2025 13:19:35 +0900 (KST)
+From: Aurora <noreply@aurora.com>
+To: johndoe@google.com
+Message-ID: <20250109131932GUp99420@mmsa-newbatch-wa901.svr.toastmaker.net>
+Subject: You logged in from new device
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+Precedence: bulk
+X-Toast-Seq: 0
+X-Toast-Return-Allow: false
+List-Unsubscribe: =?utf-8?q?=3Chttps=3A//email=2Eapi=2Enhncloudservice=2Ecom?=
+ =?utf-8?q?/email/v1=2E0/block-receivers/N8Kp6uHvcWxKkKhDey4BP2uk=5F=5FOryHq?=
+ =?utf-8?q?1aZXgvOi4EzQA39OWnUthJeqwy2wx58ItVv4cHIByODRoXMJjSsys4w=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+DKIM-Signature: a=rsa-sha256; q=dns/txt; =?utf-8?q?b=3DTVaYCZHbo+XhPwvItmaVl?=
+ =?utf-8?q?xEql5gC8KgemrqqTziZm4rixKRzM0UaIwit5k3U6X0u1pBUdq/crqSE5XYrd0GZKv?=
+ =?utf-8?q?gdL0dABcF6Gm+OzcPtSoKl8yg74d7xTvihix1Lxy0IO9W8wmUvrq9TPaM+LhQw+Ci?=
+ =?utf-8?q?rNWKSMcs/KaNg1dfw7S4=3D=3B?= s=toast; c=relaxed/relaxed;
+ d=aurora.com; v=1; bh=NjBB8B8pYFzwjJH4PFQa3eFiUWatLtuPLhlOYrOi3hE=; 
+ =?utf-8?q?h=3DDate=3AFrom=3ATo=3ASubject=3APrecedence=3AX-Toast-Return-Allo?=
+ =?utf-8?q?w=3AX-Toast-Seq=3AList-Unsubscribe-Post=3AList-Unsubscribe=3B?=
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[Coupang] You have logged in from a new device.</title>
+</head>
+<body>
+<div style="max-width: 640px; margin: 0 auto; padding: 32px 16px 35px 16px;">
+  <div style="width: 100%; height: 24px; padding-bottom: 16px; border-bottom: 2px solid #773A1C;">
+    <a href="http://www.aurora.com" target="_blank" style="height: 100%; display: inline-block;">
+    </a>
+  </div>
+  <p style="margin: 40px 0 12px 0; line-height: 36px; font-size: 28px; color: #111111; font-weight: bold;font-family: BlinkMacSystemFont, 'Apple SD Gothic Neo', '맑은 고딕', sans-serf;">You have logged in from a new device.</p>
+  <p style="margin: 20px 0 0 0; line-height: 26px; font-size: 16px; color: #212b36;font-family: BlinkMacSystemFont, 'Apple SD Gothic Neo', '맑은 고딕', sans-serf;">Hello, <span style="font-weight: bold;">john doe!</span></p>
+  <p style="margin: 8px 0 0 0; line-height: 26px; font-size: 16px; color: #212b36;font-family: BlinkMacSystemFont, 'Apple SD Gothic Neo', '맑은 고딕', sans-serf;">Your account has been logged in from a new device.</p>
+  <div style="padding:24px 0 0 0;">
+    <div style="border: 1px solid #dddddd; padding: 20px; border-radius: 2px;">
+      <p style="font-size: 16px; font-weight: bold; margin: 0 0 12px 0;font-family: BlinkMacSystemFont, 'Apple SD Gothic Neo', '맑은 고딕', sans-serf;">Recent Login History</p>
+      <p style="font-size: 16px; margin: 0 0 8px 0;font-family: BlinkMacSystemFont, 'Apple SD Gothic Neo', '맑은 고딕', sans-serf;"><span style="color: #777777;width:73px;display: inline-block;">•&nbsp;&nbsp;&nbsp;ID</span> johndoe@gmail.com</p>
+      <p style="font-size: 16px; margin: 0 0 8px 0;font-family: BlinkMacSystemFont, 'Apple SD Gothic Neo', '맑은 고딕', sans-serf;"><span style="color: #777777;width:73px;display: inline-block;">•&nbsp;&nbsp;&nbsp;Device</span> Android / Aurora App</p>
+      <p style="font-size: 16px; margin: 0 0 8px 0;font-family: BlinkMacSystemFont, 'Apple SD Gothic Neo', '맑은 고딕', sans-serf;"><span style="color: #777777;width:73px;display: inline-block;">•&nbsp;&nbsp;&nbsp;Time</span> January 9, 2025 (Thu) 13:19</p>
+      <p style="font-size: 16px; margin: 0 0 0 0;font-family: BlinkMacSystemFont, 'Apple SD Gothic Neo', '맑은 고딕', sans-serf;"><span style="color: #777777;width:73px;display: inline-block;">•&nbsp;&nbsp;&nbsp;Location</span> United States(68.72.8.120)</p>
+    </div>
+    <p style="margin: 24px 0 0 0; line-height: 26px; font-size: 16px; color: #212b36;font-family: BlinkMacSystemFont, 'Apple SD Gothic Neo', '맑은 고딕', sans-serf;"><strong>If you logged in yourself</strong>, please ignore this email. This email is automatically sent for security when logging in from a new device.</p>
+    <p style="margin: 20px 0 0 0; line-height: 26px; font-size: 16px; color: #212b36;font-family: BlinkMacSystemFont, 'Apple SD Gothic Neo', '맑은 고딕', sans-serf;"><strong>If you did not log in</strong>, please protect your account immediately using the methods below.</p>
+	  <ul>
+		  <li><p style="margin: 20px 0 0 0; line-height: 26px; font-size: 16px; color: #212b36;font-family: BlinkMacSystemFont, 'Apple SD Gothic Neo', '맑은 고딕', sans-serf;"><a href="https://login.aurora.com/login/PasswordModifyFrm.pang" style="color: #346aff; text-decoration: underline;" target="_blank">Change your password.</a> Changing your password will log you out of all devices and browsers for security.</p>
+		  </li>
+		  <li><p style="margin: 20px 0 0 0; line-height: 26px; font-size: 16px; color: #212b36;font-family: BlinkMacSystemFont, 'Apple SD Gothic Neo', '맑은 고딕', sans-serf;"><a href="https://login.aurora.com/member/security/loginAll.pang" style="color: #346aff; text-decoration: underline;" target="_blank">Review your login history.</a> You can check the environments where you logged in with your Aurora account.</p>
+		  </li>
+	  </ul>
+    <p style="margin: 20px 0 0 0; line-height: 26px; font-size: 16px; color: #212b36;font-family: BlinkMacSystemFont, 'Apple SD Gothic Neo', '맑은 고딕', sans-serf;">For more details on preventing account theft, please refer to the <a href="http://www.aurora.com/csFaq.pang" style="color: #346aff; text-decoration: underline;" target="_blank">Help</a>.</p>
+    <p style="margin: 40px 0 32px 0; line-height: 20px; font-size: 13px; color: #555555;font-family: BlinkMacSystemFont, 'Apple SD Gothic Neo', '맑은 고딕', sans-serf;">This email is for sending only and cannot receive replies.<br/>For inquiries, please use the customer center (123-456-7890).</p>
+    <div style="width: 100%; height: 16px; padding-bottom: 16px; border-bottom: 1px solid #DDDDDD;">
+      <a href="http://www.aurora.com" target="_blank" style="height: 100%; display: inline-block;">
+      </a>
+    </div>
+<!--      MEMBER-2064-->
+    <p style="margin: 16px 0 0 0; line-height: 24px; font-size: 14px; color: #111111;font-family: BlinkMacSystemFont, 'Apple SD Gothic Neo', '맑은 고딕', sans-serf;">
+      Aurora Corp. │ CEO: Paul Thompson, Matthew Hall │ Business Registration Number: 120-88-00767 | E-commerce Registration: 2017-Seoul-Songpa-0680 | 570 Songpa-daero, Songpa-gu, Seoul | Customer Center 123-456-7890 | FAX: 02-3441-7011 | © Coupang Corp.,Ltd. All rights reserved.
+    </p>
+  </div>
+</div>
+</body>
+</html>
+```

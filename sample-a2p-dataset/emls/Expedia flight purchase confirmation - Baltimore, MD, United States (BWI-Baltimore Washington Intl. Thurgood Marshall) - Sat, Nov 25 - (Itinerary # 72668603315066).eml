@@ -1,0 +1,2945 @@
+Delivered-To: johndoe@gmail.com
+Received: by 2002:a02:c88f:0:b0:430:8fd0:f2a1 with SMTP id m15csp1256756jao;
+        Sun, 1 Oct 2023 21:46:16 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IE4jD213/IbIdQTFTYUYAB785nKsbI8aczG8cI0vFue7BYuRDtwlqKATFPNFp8Avai6QNTD
+X-Received: by 2002:a0d:eb16:0:b0:59c:8b3:6850 with SMTP id u22-20020a0deb16000000b0059c08b36850mr10957486ywe.4.1696221976465;
+        Sun, 01 Oct 2023 21:46:16 -0700 (PDT)
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mg.expediamail.com header.s=gears header.b=G9j62EQY;
+       dkim=pass header.i=@d.messagegears.io header.s=gears header.b=NAZqrF8M;
+       spf=pass (google.com: domain of 364126281000010015302-c23275-5309b40a36d24259a81f7cc591e2ec1a@mg.expediamail.com designates 135.84.217.208 as permitted sender) smtp.mailfrom=364126281000010015302-c23275-5309b40a36d24259a81f7cc591e2ec1a@mg.expediamail.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=expediamail.com
+Return-Path: <364126281000010015302-c23275-5309b40a36d24259a81f7cc591e2ec1a@mg.expediamail.com>
+Received: from gears217-208.expediamail.com (gears217-208.expediamail.com. [135.84.217.208])
+        by mx.google.com with ESMTPS id s8-20020a814508000000b005929433a69esi10100353ywa.170.2023.10.01.21.46.16
+        for <johndoe@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 01 Oct 2023 21:46:16 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 364126281000010015302-c23275-5309b40a36d24259a81f7cc591e2ec1a@mg.expediamail.com designates 135.84.217.208 as permitted sender) client-ip=135.84.217.208;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mg.expediamail.com header.s=gears header.b=G9j62EQY;
+       dkim=pass header.i=@d.messagegears.io header.s=gears header.b=NAZqrF8M;
+       spf=pass (google.com: domain of 364126281000010015302-c23275-5309b40a36d24259a81f7cc591e2ec1a@mg.expediamail.com designates 135.84.217.208 as permitted sender) smtp.mailfrom=364126281000010015302-c23275-5309b40a36d24259a81f7cc591e2ec1a@mg.expediamail.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=expediamail.com
+Date: Mon, 2 Oct 2023 00:46:15 -0400 (EDT)
+From: "Expedia.com" <Expedia@expediamail.com>
+Reply-To: 
+	r-364126281000010015302-c23275-5309b40a36d24259a81f7cc591e2ec1a@mg.expediamail.com
+To: johndoe@gmail.com
+Message-ID: <1962785760.905506969.1696221975977.JavaMail.cloud@p2-mta-0204.p2.messagegears.net>
+Subject: Expedia flight purchase confirmation - Baltimore, MD, United States
+ (BWI-Baltimore Washington Intl. Thurgood Marshall) - Sat, Nov 25 -
+ (Itinerary # 72668603315066)
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_905506967_1813992196.1696221975975"
+X-Original-To: johndoe@gmail.com
+List-Unsubscribe: <https://link.expediamail.com/list-unsub/uc/3/eyJhaSI6NjQxMjYyODEsImUiOiJwc2UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3NS01MzA5YjQwYTM2ZDI0MjU5YTgxZjdjYzU5MWUyZWMxYSIsInBoIjpudWxsLCJtIjpmYWxzZX0/INovfmdXSnz0fYOO0Ti1xQ>, <mailto:unsub-364126281000010015302-c23275-5309b40a36d24259a81f7cc591e2ec1a@mg.expediamail.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+
+------=_Part_905506967_1813992196.1696221975975
+Content-Type: multipart/related; 
+	boundary="----=_Part_905506968_1580244481.1696221975975"
+
+------=_Part_905506968_1580244481.1696221975975
+Content-Type: text/html;charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"http://www.w3.=
+org/1999/xhtml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:sc=
+hemas-microsoft-com:office:office"><head><meta charset=3D"utf-8"/><meta nam=
+e=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.0"/><meta=
+ http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"/><meta name=3D"x-appl=
+e-disable-message-reformatting"/><meta name=3D"format-detection" content=3D=
+"telephone=3Dno"><meta name=3D"format-detection" content=3D"date=3Dno"><met=
+a name=3D"format-detection" content=3D"address=3Dno"><meta name=3D"format-d=
+etection" content=3D"email=3Dno"><title>Expedia.com</title><!--[if gte mso =
+9]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:Pixel=
+sPerInch></o:OfficeDocumentSettings></xml><![endif]--><!--[if gt mso 15]><s=
+tyle type=3D"text/css" media=3D"all">table,tr,td,th{border-collapse:collaps=
+e;}</style><![endif]--><!--[if mso]><style>table.btn td,table.btn-small td =
+{background-color: #FFC94C !important;font-size: 16px !important;line-heigh=
+t: 20px !important;text-decoration: none !important;padding: 12px 48px 12px=
+ 48px !important;border: none !important;}table.btn2 td,table.btn2-small td=
+ {background-color: transparent !important;font-size: 16px !important;line-=
+height: 20px !important;text-decoration: none !important;padding: 12px 24px=
+ 12px 24px !important;border: 1px solid #202843 !important;}table.btn td a,=
+table.btn-small td a,table.btn2 td a,table.btn2-small td a {color: #202843 =
+!important;font-weight: normal !important;}</style><![endif]-->
+<style type=3D"text/css">
+body {
+margin: 0;
+padding: 0;
+-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%;
+-webkit-font-smoothing: antialiased;
+min-width: 100% !important;
+font-family: Helvetica, sans-serif;
+}
+img {
+border: 0;
+outline: 0;
+display: block;
+-ms-interpolation-mode: bicubic;
+}
+img.FlexWidth100HERO_R {
+border-radius: 12px !important;
+}
+img.FlexWidth100HERO_HR{
+border-radius: 0px 12px 12px 0px !important;
+}
+img.heroFlex24 {
+border-radius: 24px !important;
+}
+a img {
+border: 0 none;
+}
+a {
+text-decoration: none;
+}
+/* Outlook fixes */
+#outlook a {
+padding: 0;
+}
+a,
+span,
+td,
+th {
+border-collapse: collapse;
+mso-line-height-rule: exactly;
+}
+th {
+font-weight: normal;
+}
+span.MsoHyperlink {
+mso-style-priority: 99;
+color: inherit;
+}
+span.MsoHyperlinkFollowed {
+mso-style-priority: 99;
+color: inherit;
+}
+.ReadMsgBody {
+width: 100% !important;
+}
+.ExternalClass,
+.ExternalClass a,
+.ExternalClass p,
+.ExternalClass span,
+.ExternalClass th,
+.ExternalClass td {
+line-height: 100%;
+}
+table.btn td,
+table.btn-small td {
+background-color: #FFC94C !important;
+font-size: 16px !important;
+line-height: 20px !important;
+text-decoration: none !important;
+padding: 12px 48px 12px 48px !important;
+border-radius: 24px !important;
+-moz-border-radius: 24px !important;
+-webkit-border-radius: 24px !important;
+border: none !important;
+}
+table.btn2 td,
+table.btn2-small td {
+background-color: transparent !important;
+font-size: 16px !important;
+line-height: 20px !important;
+text-decoration: none !important;
+padding: 12px 24px 12px 24px !important;
+border: 1px solid #202843 !important;
+border-radius: 24px !important;
+-moz-border-radius: 24px !important;
+-webkit-border-radius: 24px !important;
+}
+table.btn td a,
+table.btn-small td a,
+table.btn2 td a,
+table.btn2-small td a {
+color: #202843 !important;
+font-weight: normal !important;
+}
+/* Link fixes */
+*[x-apple-data-detectors], /* iOS */
+.x-gmail-data-detectors, /* Gmail */
+.x-gmail-data-detectors *,
+.aBn {
+border-bottom: 0 !important;
+cursor: default !important;
+color: inherit !important;
+text-decoration: none !important;
+font-size: inherit !important;
+font-family: inherit !important;
+font-weight: inherit !important;
+line-height: inherit !important;
+}
+@media screen and (max-width: 600px) {
+/* Gmail App fix */
+u ~ div {
+min-width: 100vw !important;
+}
+u + .body .table-wrap {
+width: 100% !important;
+width: 100vw !important;
+}
+u + .body a {
+color: inherit;
+text-decoration: none;
+font-size: inherit;
+font-family: inherit;
+font-weight: inherit;
+line-height: inherit;
+}
+table.table-wrap {
+width: 100% !important;
+min-width: 100% !important;
+}
+div.table-wrap {
+min-width: 100% !important;
+margin: 0 !important;
+padding: 0 !important;
+}
+/* End Gmail App fix */
+.HideForMobile,
+.hide,
+.HideAll,
+.Hide400 {
+display: none !important;
+}
+/* Header */
+.Split {
+width: 100% !important;
+display: block !important;
+}
+td.clear{
+float: left !important;
+clear: both !important;
+width: 100% !important;
+}
+/* General */
+.FlexWidth100 {
+width: 100% !important;
+height: auto !important;
+line-height: normal !important;
+}
+.FlexWidth100HERO,
+.FlexWidth100HERO_R,
+.FlexWidth100HERO_HR,
+.heroFlex24
+{
+width: 100% !important;
+min-width: 100% !important;
+height: auto !important;
+line-height: normal !important;
+}
+img.heroFlex24 {
+border-radius: 12px !important;
+}
+.Split2ColNL{
+width: 100% !important;
+min-width: 100% !important;
+display: block !important;
+padding: 0 !important;
+}
+.LoyaltyMobl {
+text-align: center !important;
+width: 100%;
+margin: auto;
+}
+.Phone{
+padding-left: 12px !important;
+padding-bottom: 15px;
+}
+table.cta,
+table.btn,
+table.btn2{
+width: 100% !important;
+}
+table.btn td,
+table.btn-small td {
+padding: 12px 24px 12px 24px !important;
+}
+/* Image Swap */
+.ShowHeroNL_mobile {
+width:100% !important;
+height:auto !important;
+max-height:9999px!important;
+display:block !important;
+overflow:Hidden !important;
+}
+/* /\/\/\/\/\/\/\/\/ New classes added 20200810 by Jared Shurtliff /\/\/\/\=
+/\/\/\/\/ */
+td.margin32,
+th.margin32 {
+padding-left: 32px !important;
+padding-right: 32px !important;
+}
+td.margin16,
+th.margin16 {
+padding-left: 16px !important;
+padding-right: 16px !important;
+}
+.mPaddingTop0,
+.mPaddingTop0 {
+padding-top: 0 !important;
+}
+.mPaddingTop2,
+.mPaddingTop2 {
+padding-top: 2px !important;
+}
+.mPaddingTop4,
+.mPaddingTop4 {
+padding-top: 4px !important;
+}
+.mPaddingTop8,
+.mPaddingTop8 {
+padding-top: 8px !important;
+}
+.mPaddingTop12,
+.mPaddingTop12 {
+padding-top: 12px !important;
+}
+.mPaddingTop16,
+.mPaddingTop16 {
+padding-top: 16px !important;
+}
+.mPaddingTop24,
+.mPaddingTop24 {
+padding-top: 24px !important;
+}
+.mPaddingTop32,
+.mPaddingTop32 {
+padding-top: 32px !important;
+}
+.mPaddingTop48,
+.mPaddingTop48 {
+padding-top: 48px !important;
+}
+.mPaddingBottom0,
+.mPaddingBottom0 {
+padding-bottom: 0 !important;
+}
+.mPaddingBottom2,
+.mPaddingBottom2 {
+padding-bottom: 2px !important;
+}
+.mPaddingBottom4,
+.mPaddingBottom4 {
+padding-bottom: 4px !important;
+}
+.mPaddingBottom8,
+.mPaddingBottom8 {
+padding-bottom: 8px !important;
+}
+.mPaddingBottom12,
+.mPaddingBottom12 {
+padding-bottom: 12px !important;
+}
+.mPaddingBottom16,
+.mPaddingBottom16 {
+padding-bottom: 16px !important;
+}
+.mPaddingBottom24,
+.mPaddingBottom24 {
+padding-bottom: 24px !important;
+}
+.mPaddingBottom32,
+.mPaddingBottom32 {
+padding-bottom: 32px !important;
+}
+.mPaddingBottom48,
+.mPaddingBottom48 {
+padding-bottom: 48px !important;
+}
+td.mAlignLeft,
+th.mAlignLeft {
+text-align: left !important;
+}
+td.mAlignRight,
+th.mAlignRight {
+text-align: right !important;
+}
+td.mAlignCenter,
+th.mAlignCenter {
+text-align: center !important;
+}
+img.floatLeft {
+float: left !important;
+}
+img.floatRight {
+float: right !important;
+}
+img.floatCenter {
+margin-right: auto !important;
+margin-left: auto !important;
+}
+td.mFont10,
+th.mFont10 {
+font-size: 10px !important;
+line-height: 12px !important;
+}
+td.mFont12,
+th.mFont12 {
+font-size: 12px !important;
+line-height: 16px !important;
+}
+td.mFont14,
+th.mFont14 {
+font-size: 14px !important;
+line-height: 18px !important;
+}
+td.mFont16,
+th.mFont16 {
+font-size: 16px !important;
+line-height: 20px !important;
+}
+td.mFont18,
+th.mFont18 {
+font-size: 18px !important;
+line-height: 22px !important;
+}
+td.mFont22,
+th.mFont22 {
+font-size: 22px !important;
+line-height: 26px !important;
+}
+td.mFont28,
+th.mFont28 {
+font-size: 28px !important;
+line-height: 32px !important;
+}
+td.mFont36,
+th.mFont36 {
+font-size: 36px !important;
+line-height: 38px !important;
+}
+}
+/* /\/\/\/\/\/\/\/\/ Currently used classes /\/\/\/\/\/\/\/\/ */
+@media screen and (max-width: 480px) {
+.logo_split{
+float: left !important;
+width: 100% !important;
+padding-left: 0px !important;
+}
+.SplitExLogo{
+float: left !important;
+width: 100% !important;
+margin: auto;
+}
+.aBtmPad{
+padding-bottom: 20px !important;
+}
+.aTopPad{
+padding-top: 20px !important;
+}
+.alncenter{
+width: 252px !important;
+height: auto !important;
+text-align: center !important;
+padding-top: 10px !important;
+}
+.ImgResize{
+width: 50% !important;
+height: auto !important;
+}
+.headernewlogo{
+text-align: center !important;
+margin-left: auto !important;
+margin-right: auto !important;
+}
+.aTopBtmPad{
+padding-top: 10px !important;
+padding-bottom: 10px !important;
+}
+.FSTopPad{
+padding-top: 28px !important;
+}
+.SplitCardText{
+float: left !important;
+text-align: left !important;
+width: 100% !important;
+padding-right: 5px !important;
+padding-left: 5px !important;
+}
+.Header240Split{
+margin: auto;
+width: 240px !important;
+}
+.RwAppBannerWidth255 {
+width: 255px !important;
+}
+.RwAppBannerWidth268 {
+width: 268px !important;
+}
+}
+@media only screen and (max-width:300px) {
+.Hide300{
+display: none !important;
+}
+} </style>
+<!-- MG Tracking -->
+<img src=3D"https://link.expediamail.com/o/4/eyJhaSI6NjQxMjYyODEsImUiOiJwc2=
+UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQV=
+VJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURY=
+LktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0=
+xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMj=
+k5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3NS01MzA5YjQwYTM2ZDI0MjU5YTgxZjdjYzU5M=
+WUyZWMxYSIsInBoIjpudWxsfQ/K2zvxfZe64EOO51Ji6CCQA" width=3D"1" height=3D"1" =
+/>
+</head><body class=3D"body" style=3D"background-color: #F8F5F4; min-width: =
+100% !important;"><div style=3D"display:none;max-height:0px;max-width:0px;l=
+ine-height:1px;font-size:1px;color:#ffffff;opacity:0;overflow:hidden"><a hr=
+ef=3D"https://link.expediamail.com/c/7/eyJhaSI6NjQxMjYyODEsImUiOiJwc2UwMDAx=
+M0BnbWFpbC5jb20iLCJyaSI6IlVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQVVJDSEF=
+TRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURYLktFWT=
+k2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0xMDEzM=
+DVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5OTRf=
+OC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3NS01MzA5YjQwYTM2ZDI0MjU5YTgxZjdjYzU5MWUyZWM=
+xYSIsInBoIjpudWxsLCJtIjpmYWxzZSwidWkiOiIiLCJ1biI6IiIsInUiOiJodHRwczovL3d3dy=
+5leHBlZGlhLmNvbS91c2VyL2VtYWlsY2xpY2svYmV4LW9jcy9GSWRiUmE3dzNjM3J0RVhrNVBZT=
+DNoeDFyN25PUGhuRmdBOU0xaFJqTENzN0JQeHNxQndxV0puaU12SDlTTV8wQWFNanB3ZnlHbDNF=
+b0dPMW0xTUx6OWlUQXVLbm1tWWF6RlRFWGtFaGoyb1dlZ05IZDdCNElRcHlUemcvcC9pbmZvLW9=
+0aGVyL2d1YXJhbnRlZXM_bGFuZ2lkPTEwMzMmRU1MQ0lEPVVTLlBULkVWRU5UVFJJR0dFUkVETU=
+FJTElORy5FTlNQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwM=
+i1JU1NVWC5TSURYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5W=
+RVJTWC5NSURTMS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0=
+xNjA1NjVfNy0xMjk5OTRfOC0xMTYxOTEifQ/qcmji27ZiTk3HLADrOIp9w">Thank you for y=
+our booking
+</a></div><div style=3D"display: none; max-height: 0px; overflow: hidden;">=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div><table bgcolor=3D"#F8F5F4" rol=
+e=3D"presentation" align=3D"center" width=3D"100%" cellpadding=3D"0" cellsp=
+acing=3D"0"><tbody><tr><td><center><table class=3D"table-wrap" role=3D"pres=
+entation" align=3D"center" width=3D"600" cellpadding=3D"0" cellspacing=3D"0=
+" style=3D"width:600px;max-width:600px!important;"><tbody><tr><td id=3D"hea=
+der" class=3D"margin32" align=3D"center" style=3D"padding:36px 46px 36px 46=
+px; border-bottom:1px solid #D7D3D2;" bgcolor=3D"#FFFFFF"><table align=3D"c=
+enter" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr>
+<th align=3D"left" valign=3D"middle" class=3D"Split2ColNL"><a alias=3D"1.0_=
+1033_Logo_en_US" href=3D"https://link.expediamail.com/c/7/eyJhaSI6NjQxMjYyO=
+DEsImUiOiJwc2UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTLlBULkVWRU5UVFJJR0dFUkVETUFJ=
+TElORy5FTlNQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1=
+JU1NVWC5TSURYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRV=
+JTWC5NSURTMS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xN=
+jA1NjVfNy0xMjk5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3NS01MzA5YjQwYTM2ZDI0MjU5=
+YTgxZjdjYzU5MWUyZWMxYSIsInBoIjpudWxsLCJtIjpmYWxzZSwidWkiOiIiLCJ1biI6IiIsInU=
+iOiJodHRwczovL3d3dy5leHBlZGlhLmNvbS91c2VyL2VtYWlsY2xpY2svYmV4LW9jcy9GSWRiUm=
+E3dzNjM3J0RVhrNVBZTDNoeDFyN25PUGhuRmdBOU0xaFJqTENzN0JQeHNxQndxV0puaU12SDlTT=
+V8wQWFNanB3ZnlHbDNFb0dPMW0xTUx6OWlUQXVLbm1tWWF6RlRFWGtFaGoyb1dlZ05IZDdCNElR=
+cHlUemc_bGFuZ2lkPTEwMzMmRU1MQ0lEPVVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlN=
+QVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSU=
+RYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTM=
+S0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0x=
+Mjk5OTRfOC0xMTYxOTEifQ/3KTAqlXHNkYhd4gHcc4W8g" target=3D"_blank"><img class=
+=3D"floatCenter" src=3D"https://a.travel-assets.com/travel-assets-manager/g=
+lobal-wrapper-logos-2023/Expedia_Logo.png" width=3D"141" alt=3D"Expedia.com=
+" border=3D"0" style=3D"display:block;"/></a></th></tr></table></td></tr><t=
+r><td><table id=3D"Email-Module-Container" role=3D"presentation" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"><tr><td id=3D"campaig=
+nBody" bgcolor=3D"#FFFFFF" align=3D"center">
+<!-- ....... START TRIPLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"" valign=3D"top"
+style=3D"padding:0px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #C7C7C7; border-radius:0px 0px 0px=
+ 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"5%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+</table>
+</th>
+<!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D START Middle Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"90%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT MIDDLE CONTENT HERE -->
+<!-- ....... START SINGLE COL WRAPPER ....... -->
+<tr>
+<td bgcolor=3D"#FFFFFF" align=3D"" valign=3D""
+style=3D"padding:24px 16px 24px 16px; border-right: none; border-left: none=
+; border-top: none; border-bottom: 1px solid #cccfdb; border-radius:0px 0px=
+ 0px 0px; -webkit-border-radius:0px 0px 0px 0px;-moz-border-radius:0px 0px =
+0px 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D START 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"center" valign=3D"top" style=3D"padding:3px 0px 0px=
+ 0px; font-family:Helvetica, Arial, sans-serif; color:#616161; font-size:17=
+px; line-height:1.3em; font-weight:normal;" class=3D"appleLinkBodyTxt"> </t=
+d></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"center" valign=3D"top" style=3D"padding:2px 0px 0px=
+ 0px; font-family:Helvetica, Arial, sans-serif; color:#616161; font-size:0p=
+x; line-height:1.3em; font-weight:normal;" class=3D"appleLinkBodyTxt"></td>=
+</tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:24px 0px 0px =
+0px; font-family:Helvetica, Arial, sans-serif; color:#001959; font-size:22p=
+x; line-height:26px; font-weight:bold;" class=3D"appleLinkBodyTxt">Thank yo=
+u, John! Your flight is booked.</td></tr><!-- *=3D*=3D*=3D* END CB: Tex=
+t (unlinked) *=3D*=3D*=3D* -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:16px 0px 0px =
+0px; font-family:Helvetica, Arial, sans-serif; color:#001959; font-size:14p=
+x; line-height:18px; font-weight:normal;" class=3D"appleLinkBodyTxt"><b>Iti=
+nerary #</b> <span style=3D"color: #005aeb;">72668603315066</span></td></tr=
+><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* --><!-- *=3D*=3D*=
+=3D* START CB: Button *=3D*=3D*=3D* --><tr><td align=3D"center" valign=3D"t=
+op" bgcolor=3D"#FFFFFF" style=3D"padding: 16px 0px 0px 0px;"><table role=3D=
+"presentation" style=3D"border-collapse: separate;" align=3D"left" valign=
+=3D"" class=3D"FlexWidth100HERO" cellpadding=3D"15" cellspacing=3D"0"><tr><=
+td bgcolor=3D"#005aeb" align=3D"center" style=3D"padding: 8px 16px 8px 16px=
+; border-radius:8px 8px 8px 8px; -moz-border-radius:8px 8px 8px 8px; -webki=
+t-border-radius:8px 8px 8px 8px;border-top:0px solid #ffffff; border-bottom=
+:0px solid #ffffff; border-right:0px solid #ffffff; border-left:0px solid #=
+ffffff;"><a alias=3D"Button" href=3D"https://link.expediamail.com/c/7/eyJha=
+SI6NjQxMjYyODEsImUiOiJwc2UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTLlBULkVWRU5UVFJJ=
+R0dFUkVETUFJTElORy5FTlNQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEU=
+yMDIzMTAwMi1JU1NVWC5TSURYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC=
+5URVNUNC5WRVJTWC5NSURTMS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xN=
+TIzNTlfNi0xNjA1NjVfNy0xMjk5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3NS01MzA5YjQw=
+YTM2ZDI0MjU5YTgxZjdjYzU5MWUyZWMxYSIsInBoIjpudWxsLCJtIjpmYWxzZSwidWkiOiIiLCJ=
+1biI6IiIsInUiOiJodHRwczovL3d3dy5leHBlZGlhLmNvbS91c2VyL2VtYWlsY2xpY2svYmV4LW=
+9jcy9GSWRiUmE3dzNjM3J0RVhrNVBZTDNoeDFyN25PUGhuRmdBOU0xaFJqTENzN0JQeHNxQndxV=
+0puaU12SDlTTV8wQWFNanB3ZnlHbDNFb0dPMW0xTUx6OWlUQXVLbm1tWWF6RlRFWGtFaGoyb1dl=
+Z05IZDdCNElRcHlUemcvdHJpcHMvNzI2Njg2MDMzMTUwNjYvZGV0YWlscy9ObVEwWWpreU16UXR=
+aVFk0TVMwMU0yRmhMV0ZoT1RrdFpXTTVPREF6T0dNNFlqVTBPekJsTWpObFlUUXpMV1l3TWpZdE=
+5EazFNUzFoWlRSbExXTTVOMlJsTXpkbE4yRm1ORjh3T3pBP3NpdGVpZD0xJnVzZXJUb2tlbj1GS=
+WRiUmE3dzNjM3J0RVhrNVBZTDNoeDFyN25PUGhuRmdBOU0xaFJqTENzN0JQeHNxQndxV0puaU12=
+SDlTTV8wQWFNanB3ZnlHbDNFb0dPMW0xTUx6OWlUQXVLbm1tWWF6RlRFWGtFaGoyb1dlZ05IZDd=
+CNElRcHlUemcmRU1MQ0lEPVVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQVVJDSEFTRU=
+NPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURYLktFWTk2M=
+Dc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0xMDEzMDVf=
+Mi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5OTRfOC0=
+xMTYxOTEuTU9EOTcwLTk0LTEtMC1FTUFJTC1IRVJPLUVOLVVTX1MyLVAxMF9QT1MwX0JUTjYwOC=
+J9/Ry1AqLlWzId8RHkVqKmLOg" style=3D"font-family: Helvetica, Arial, sans-ser=
+if; color:#ffffff; font-size:16px; font-weight:bold; display:block; text-de=
+coration:none;" target=3D"_blank" >View your trip</a></td></tr></table></td=
+></tr><!-- *=3D*=3D*=3D* END CB: Button *=3D*=3D*=3D* --><!-- *=3D*=3D*=3D*=
+ START CB: Button *=3D*=3D*=3D* --><tr><td align=3D"center" valign=3D"top" =
+bgcolor=3D"#FFFFFF" style=3D"padding: 16px 0px 24px 0px;"><table role=3D"pr=
+esentation" style=3D"border-collapse: separate;" align=3D"left" valign=3D""=
+ class=3D"FlexWidth100HERO" cellpadding=3D"15" cellspacing=3D"0"><tr><td bg=
+color=3D"#ffffff" align=3D"center" style=3D"padding: 8px 16px 8px 16px; bor=
+der-radius:8px 8px 8px 8px; -moz-border-radius:8px 8px 8px 8px; -webkit-bor=
+der-radius:8px 8px 8px 8px;border-top:1px solid #cccfdb; border-bottom:1px =
+solid #cccfdb; border-right:1px solid #cccfdb; border-left:1px solid #cccfd=
+b;"><a alias=3D"Button" href=3D"https://link.expediamail.com/c/7/eyJhaSI6Nj=
+QxMjYyODEsImUiOiJwc2UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTLlBULkVWRU5UVFJJR0dFU=
+kVETUFJTElORy5FTlNQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIz=
+MTAwMi1JU1NVWC5TSURYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVN=
+UNC5WRVJTWC5NSURTMS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNT=
+lfNi0xNjA1NjVfNy0xMjk5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3NS01MzA5YjQwYTM2Z=
+DI0MjU5YTgxZjdjYzU5MWUyZWMxYSIsInBoIjpudWxsLCJtIjpmYWxzZSwidWkiOiIiLCJ1biI6=
+IiIsInUiOiJodHRwczovL2V4cGUuYXBwLmxpbmsvP35hZ2VuY3lfaWQ9MTAzNCZ-Y3VzdG9tZXJ=
+fY2FtcGFpZ249QlJBTkQmfmN1c3RvbWVyX3N1Yl9zaXRlX25hbWU9R0VORVJJQyYkM3A9Ml9jdX=
+N0b21fMTY5MDA2Jn5jdXN0b21lcl9zZWNvbmRhcnlfcHVibGlzaGVyPUVYUEVESUEtVVMmfmN1c=
+3RvbWVyX2FkX3NldF9uYW1lPUJSQU5EOkRJU1BMQVkuRU9EJn5jdXN0b21lcl9hZF9uYW1lPUVN=
+TC5VUy5QVC5FVkVOVFRSSUdHRVJFRE1BSUxJTkcuT0NFTE9UUFVSQ0hBU0VDT05GSVJNQVRJT04=
+uRkxJR0hUJn5jdXN0b21lcl9wbGFjZW1lbnQ9RU1MLVBVUkNIQVNFQ09ORklSTUFUSU9OLUZMSU=
+dIVC1PQ0VMT1QmJGRlc2t0b3BfdXJsPWh0dHBzOi8vd3d3LmV4cGVkaWEuY29tL2FwcCZjYW5vb=
+mljYWxfdXJsPWh0dHBzOi8vd3d3LmV4cGVkaWEuY29tL2FwcC9tb2JpbGUvZGVlcGxpbmsvdHJp=
+cHMmRU1MQ0lEPVVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQVVJDSEFTRUNPTkZJUk1=
+BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURYLktFWTk2MDc0MjUyND=
+g5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0xMDEzMDVfMi0xMjUwN=
+jdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5OTRfOC0xMTYxOTEu=
+TU9EOTcwLTk0LTEtMC1FTUFJTC1IRVJPLUVOLVVTX1MyLVAxMl9QT1MwX0JUTjYwOSJ9/nF4cE3=
+teWjgnftRUyMnndw" style=3D"font-family: Helvetica, Arial, sans-serif; color=
+:#005aeb; font-size:16px; font-weight:bold; display:block; text-decoration:=
+none;" target=3D"_blank" >Download to your phone</a></td></tr></table></td>=
+</tr><!-- *=3D*=3D*=3D* END CB: Button *=3D*=3D*=3D* -->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D END 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D --></table>
+</td>
+</tr><!-- ........ END SINGLE COL WRAPPER ........ -->
+</table>
+</th>
+<!-- =3D=3D=3D=3D=3D=3D END Middle Content =3D=3D=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"5%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+</table>
+</th>
+<!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D -->
+</tr>
+</table>
+</th>
+</tr><!-- ........ END TRIPLE COL WRAPPER ........ -->
+<!-- ....... START TRIPLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"" valign=3D"top"
+style=3D"padding:0px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 1px solid cccfdb; border-radius:0px 0px 0px =
+0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"Split2ColNL" style=3D"padding:0px 0px 0px =
+0px;" align=3D""
+valign=3D"top" width=3D"5%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+</table>
+</th>
+<!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D START Middle Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"Split2ColNL" style=3D"padding:0px 0px 0px =
+0px;" align=3D""
+valign=3D"top" width=3D"90%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT MIDDLE CONTENT HERE -->
+<!-- ....... START DOUBLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"" valign=3D"top"
+style=3D"padding:24px 16px 0px 16px; border-right: none; border-left: none;=
+ border-top: none; border-bottom: 0px solid #ffffff; border-radius:0px 0px =
+0px 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr><!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"5%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Image *=3D*=3D*=3D* --><tr><td bgcolor=3D"#FFF=
+FFF" align=3D"left" valign=3D"top" style=3D"padding:0px 0px 0px 0px;"><a al=
+ias=3D"Image" href=3D"https://link.expediamail.com/c/7/eyJhaSI6NjQxMjYyODEs=
+ImUiOiJwc2UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTLlBULkVWRU5UVFJJR0dFUkVETUFJTEl=
+ORy5FTlNQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1=
+NVWC5TSURYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTW=
+C5NSURTMS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1=
+NjVfNy0xMjk5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3NS01MzA5YjQwYTM2ZDI0MjU5YTg=
+xZjdjYzU5MWUyZWMxYSIsInBoIjpudWxsLCJtIjpmYWxzZSwidWkiOiIiLCJ1biI6IiIsInUiOi=
+JodHRwczovL3d3dy5leHBlZGlhLmNvbS91c2VyL2VtYWlsY2xpY2svYmV4LW9jcy9GSWRiUmE3d=
+zNjM3J0RVhrNVBZTDNoeDFyN25PUGhuRmdBOU0xaFJqTENzN0JQeHNxQndxV0puaU12SDlTTV8w=
+QWFNanB3ZnlHbDNFb0dPMW0xTUx6OWlUQXVLbm1tWWF6RlRFWGtFaGoyb1dlZ05IZDdCNElRcHl=
+Uemc_RU1MQ0lEPVVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQVVJDSEFTRUNPTkZJUk=
+1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURYLktFWTk2MDc0MjUyN=
+Dg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0xMDEzMDVfMi0xMjUw=
+NjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5OTRfOC0xMTYxOTE=
+uTU9EOTY0LTEzMy0xLTAtRU1BSUwtQkFOTkVSLUVOLVVTX1MzLVAxX1BPUzBfSU1HMTM1NiJ9/f=
+sD1T5qpOL13opy3aUPd6Q" target=3D"_blank"><img src=3D"https://a.travel-asset=
+s.com/travel-assets-manager/cf6e8aee-cb16-4d66-8064-2469c6b8c3b0/Icon_perso=
+n_24x24.jpg" alt=3D"Image Alt" style=3D"display:block;" width=3D"24" height=
+=3D"auto" border=3D"0" class=3D""></a></td></tr><!-- *=3D*=3D*=3D* END CB: =
+Image *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D --><!-- =
+=3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 12px;" alig=
+n=3D""
+valign=3D"top">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:0px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#001959; font-size:18px=
+; line-height:22px; font-weight:bold;" class=3D"appleLinkBodyTxt">Traveler =
+details</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -=
+-><!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgc=
+olor=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:4px 0px 0px=
+ 0px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:14=
+px; line-height:18px; font-weight:normal;" class=3D"appleLinkBodyTxt">John=
+Doe (Adult) </td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=
+=3D*=3D* -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:2px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:14px=
+; line-height:18px; font-weight:normal;" class=3D"appleLinkBodyTxt">George =
+Flores (Adult)</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=
+=3D* -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:2px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:14px=
+; line-height:18px; font-weight:normal;" class=3D"appleLinkBodyTxt">Robert=
+Harris (Adult)</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=
+=3D* -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:2px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:14px=
+; line-height:18px; font-weight:normal;" class=3D"appleLinkBodyTxt">Robert =
+Scott (Adult)
+</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+<!-- ....... START DOUBLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"" valign=3D"top"
+style=3D"padding:10px 0px 0px 0px; border-right: none; border-left: none; b=
+order-top: none; border-bottom: 0px solid #C7C7C7; border-radius:0px 0px 0p=
+x 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr><!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"5%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Image *=3D*=3D*=3D* --><tr><td bgcolor=3D"#FFF=
+FFF" align=3D"left" valign=3D"top" style=3D"padding:0px 0px 0px 12px;"><a a=
+lias=3D"Image" href=3D"https://link.expediamail.com/c/7/eyJhaSI6NjQxMjYyODE=
+sImUiOiJwc2UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTLlBULkVWRU5UVFJJR0dFUkVETUFJTE=
+lORy5FTlNQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU=
+1NVWC5TSURYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJT=
+WC5NSURTMS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA=
+1NjVfNy0xMjk5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3NS01MzA5YjQwYTM2ZDI0MjU5YT=
+gxZjdjYzU5MWUyZWMxYSIsInBoIjpudWxsLCJtIjpmYWxzZSwidWkiOiIiLCJ1biI6IiIsInUiO=
+iJodHRwczovL3d3dy5leHBlZGlhLmNvbS91c2VyL2VtYWlsY2xpY2svYmV4LW9jcy9GSWRiUmE3=
+dzNjM3J0RVhrNVBZTDNoeDFyN25PUGhuRmdBOU0xaFJqTENzN0JQeHNxQndxV0puaU12SDlTTV8=
+wQWFNanB3ZnlHbDNFb0dPMW0xTUx6OWlUQXVLbm1tWWF6RlRFWGtFaGoyb1dlZ05IZDdCNElRcH=
+lUemc_RU1MQ0lEPVVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQVVJDSEFTRUNPTkZJU=
+k1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURYLktFWTk2MDc0MjUy=
+NDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0xMDEzMDVfMi0xMjU=
+wNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5OTRfOC0xMTYxOT=
+EuTU9EOTY0LTEzMy0xLTAtRU1BSUwtQkFOTkVSLUVOLVVTX1MzLVAxMV9QT1MwX0lNRzE2MjQif=
+Q/fmk3T5YYnyGxD1LLEBH9lw" target=3D"_blank"><img src=3D"https://a.travel-as=
+sets.com/travel-assets-manager/cf6e8aee-cb16-4d66-8064-2469c6b8c3b0/Icon_in=
+fo_18x18.jpg" alt=3D"Image" style=3D"display:block;" width=3D"18" height=3D=
+"auto" border=3D"0" class=3D""></a></td></tr><!-- *=3D*=3D*=3D* END CB: Ima=
+ge *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D --><!-- =
+=3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 8px;" align=
+=3D""
+valign=3D"top">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (linked) *=3D*=3D*=3D* --><tr><td bgcolor=
+=3D"#FFFFFF" align=3D"left" valign=3D"" style=3D"padding: 0px 0px 0px 0px;"=
+ class=3D""><a alias=3D"Header" href=3D"https://link.expediamail.com/c/7/ey=
+JhaSI6NjQxMjYyODEsImUiOiJwc2UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTLlBULkVWRU5UV=
+FJJR0dFUkVETUFJTElORy5FTlNQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURB=
+VEUyMDIzMTAwMi1JU1NVWC5TSURYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0l=
+EWC5URVNUNC5WRVJTWC5NSURTMS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS=
+0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3NS01MzA5Y=
+jQwYTM2ZDI0MjU5YTgxZjdjYzU5MWUyZWMxYSIsInBoIjpudWxsLCJtIjpmYWxzZSwidWkiOiIi=
+LCJ1biI6IiIsInUiOiJodHRwczovL3d3dy5leHBlZGlhLmNvbS91c2VyL2VtYWlsY2xpY2svYmV=
+4LW9jcy9GSWRiUmE3dzNjM3J0RVhrNVBZTDNoeDFyN25PUGhuRmdBOU0xaFJqTENzN0JQeHNxQn=
+dxV0puaU12SDlTTV8wQWFNanB3ZnlHbDNFb0dPMW0xTUx6OWlUQXVLbm1tWWF6RlRFWGtFaGoyb=
+1dlZ05IZDdCNElRcHlUemcvdHJpcHMvNzI2Njg2MDMzMTUwNjYvZGV0YWlscy9ObVEwWWpreU16=
+UXRaVFk0TVMwMU0yRmhMV0ZoT1RrdFpXTTVPREF6T0dNNFlqVTBPekJsTWpObFlUUXpMV1l3TWp=
+ZdE5EazFNUzFoWlRSbExXTTVOMlJsTXpkbE4yRm1ORjh3T3pBP3NpdGVpZD0xJnVzZXJUb2tlbj=
+1GSWRiUmE3dzNjM3J0RVhrNVBZTDNoeDFyN25PUGhuRmdBOU0xaFJqTENzN0JQeHNxQndxV0pua=
+U12SDlTTV8wQWFNanB3ZnlHbDNFb0dPMW0xTUx6OWlUQXVLbm1tWWF6RlRFWGtFaGoyb1dlZ05I=
+ZDdCNElRcHlUemcmRU1MQ0lEPVVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQVVJDSEF=
+TRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURYLktFWT=
+k2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0xMDEzM=
+DVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5OTRf=
+OC0xMTYxOTEuTU9EOTY0LTEzMy0xLTAtRU1BSUwtQkFOTkVSLUVOLVVTX1MzLVAxNV9QT1MwX0x=
+OSzE2MjcifQ/neJ0gMoYYLh9A7E7kO4flQ" style=3D"font-family: Helvetica, Arial,=
+ sans-serif; color:#005aeb; font-size:14px; line-height:18px; font-weight:n=
+ormal; text-decoration:none;" target=3D"_blank" nowrap=3D"" >View all ticke=
+ting details</a></td></tr><!-- *=3D*=3D*=3D* END CB: Text (linked) *=3D*=3D=
+*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D --></tr>
+</table>
+</th>
+</tr><!-- ........ END DOUBLE COL WRAPPER ........ -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D --></tr>
+</table>
+</th>
+</tr><!-- ........ END DOUBLE COL WRAPPER ........ -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"center" valign=3D"top" style=3D"padding:2px 0px 0px=
+ 0px; font-family:Helvetica, Arial, sans-serif; color:#616161; font-size:17=
+px; line-height:1.3em; font-weight:normal;" class=3D"appleLinkBodyTxt"></td=
+></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* --><!-- *=3D=
+*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcolor=3D"#FF=
+FFFF" align=3D"center" valign=3D"top" style=3D"padding:2px 0px 0px 0px; fon=
+t-family:Helvetica, Arial, sans-serif; color:#616161; font-size:0px; line-h=
+eight:1.3em; font-weight:normal;" class=3D"appleLinkBodyTxt"></td></tr><!--=
+ *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+<!-- ....... START DOUBLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"" valign=3D"top"
+style=3D"padding:22px 16px 16px 16px; border-right: none; border-left: none=
+; border-top: none; border-bottom: 0px solid #cccfdb; border-radius:0px 0px=
+ 0px 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr><!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"5%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Image *=3D*=3D*=3D* --><tr><td bgcolor=3D"#FFF=
+FFF" align=3D"left" valign=3D"top" style=3D"padding:0px 0px 0px 0px;"><a al=
+ias=3D"Image" href=3D"https://link.expediamail.com/c/7/eyJhaSI6NjQxMjYyODEs=
+ImUiOiJwc2UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTLlBULkVWRU5UVFJJR0dFUkVETUFJTEl=
+ORy5FTlNQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1=
+NVWC5TSURYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTW=
+C5NSURTMS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1=
+NjVfNy0xMjk5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3NS01MzA5YjQwYTM2ZDI0MjU5YTg=
+xZjdjYzU5MWUyZWMxYSIsInBoIjpudWxsLCJtIjpmYWxzZSwidWkiOiIiLCJ1biI6IiIsInUiOi=
+JodHRwczovL3d3dy5leHBlZGlhLmNvbS91c2VyL2VtYWlsY2xpY2svYmV4LW9jcy9GSWRiUmE3d=
+zNjM3J0RVhrNVBZTDNoeDFyN25PUGhuRmdBOU0xaFJqTENzN0JQeHNxQndxV0puaU12SDlTTV8w=
+QWFNanB3ZnlHbDNFb0dPMW0xTUx6OWlUQXVLbm1tWWF6RlRFWGtFaGoyb1dlZ05IZDdCNElRcHl=
+Uemc_RU1MQ0lEPVVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQVVJDSEFTRUNPTkZJUk=
+1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURYLktFWTk2MDc0MjUyN=
+Dg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0xMDEzMDVfMi0xMjUw=
+NjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5OTRfOC0xMTYxOTE=
+uTU9EOTY0LTEzMy0xLTAtRU1BSUwtQkFOTkVSLUVOLVVTX1MzLVAxOF9QT1MwX0lNRzE0MDkifQ=
+/tnugUFCT1_npnqKBRCkTGw" target=3D"_blank"><img src=3D"https://a.travel-ass=
+ets.com/travel-assets-manager/cf6e8aee-cb16-4d66-8064-2469c6b8c3b0/Icon_fli=
+ghts_24x24.jpg" alt=3D"Flight" style=3D"display:block;" width=3D"24" height=
+=3D"auto" border=3D"0" class=3D""></a></td></tr><!-- *=3D*=3D*=3D* END CB: =
+Image *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D --><!-- =
+=3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 12px;" alig=
+n=3D""
+valign=3D"top">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:8px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#001959; font-size:18px=
+; line-height:22px; font-weight:bold;" class=3D"appleLinkBodyTxt">Los Angel=
+es (LAX) to Baltimore (BWI)</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlin=
+ked) *=3D*=3D*=3D* --><!-- ....... START SINGLE COL WRAPPER ....... -->
+<tr>
+<td bgcolor=3D"#FFFFFF" align=3D"" valign=3D""
+style=3D"padding:0px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #ffffff; border-radius:0px 0px 0px=
+ 0px; -webkit-border-radius:0px 0px 0px 0px;-moz-border-radius:0px 0px 0px =
+0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D START 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:8px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#001959; font-size:14px=
+; line-height:18px; font-weight:bold;" class=3D"appleLinkBodyTxt">Spirit Ai=
+rlines 128 11:15pm =E2=80=A2 Los Angeles, CA, United States (LAX-Los Angele=
+s Intl.) to Baltimore, MD, United States (BWI-Baltimore Washington Intl. Th=
+urgood Marshall)</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=
+=3D*=3D* --><!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><=
+tr><td bgcolor=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:2=
+px 0px 0px 0px; font-family:Helvetica, Arial, sans-serif; color:#465280; fo=
+nt-size:14px; line-height:18px; font-weight:normal;" class=3D"appleLinkBody=
+Txt">Airline confirmation: ML4GWD (Spirit Airlines)<br/></td></tr><!-- *=3D=
+*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* --><!-- *=3D*=3D*=3D* START=
+ CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcolor=3D"#FFFFFF" align=3D"=
+left" valign=3D"top" style=3D"padding:2px 0px 0px 0px; font-family:Helvetic=
+a, Arial, sans-serif; color:#465280; font-size:14px; line-height:18px; font=
+-weight:normal;" class=3D"appleLinkBodyTxt">Economy / Coach (V)</td></tr><!=
+-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* --> <!-- *=3D*=3D*=
+=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcolor=3D"#FFFFFF"=
+ align=3D"left" valign=3D"top" style=3D"padding:0px 0px 0px 0px; font-famil=
+y:Helvetica, Arial, sans-serif; color:#465280; font-size:14px; line-height:=
+18px; font-weight:normal;" class=3D"appleLinkBodyTxt">Sat, Nov 25, 11:15pm =
+- 7:13am <span style=3D"color:#d40005;">+1</span></td></tr><!-- *=3D*=3D*=
+=3D* END CB: Text (unlinked) *=3D*=3D*=3D* --><!-- *=3D*=3D*=3D* START CB: =
+Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcolor=3D"#FFFFFF" align=3D"left"=
+ valign=3D"top" style=3D"padding:2px 0px 0px 0px; font-family:Helvetica, Ar=
+ial, sans-serif; color:#465280; font-size:14px; line-height:18px; font-weig=
+ht:normal;" class=3D"appleLinkBodyTxt">4h 58m flight duration</td></tr><!--=
+ *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* --><!-- *=3D*=3D*=3D* =
+START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcolor=3D"#FFFFFF" alig=
+n=3D"left" valign=3D"top" style=3D"padding:2px 0px 0px 0px; font-family:Hel=
+vetica, Arial, sans-serif; color:#d40035; font-size:14px; line-height:18px;=
+ font-weight:normal;" class=3D"appleLinkBodyTxt">Overnight arrives on Sun, =
+Nov 26</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* --=
+>
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D END 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D --></table>
+</td>
+</tr><!-- ........ END SINGLE COL WRAPPER ........ -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D --></tr>
+</table>
+</th>
+</tr><!-- ........ END DOUBLE COL WRAPPER ........ -->
+</table>
+</th>
+<!-- =3D=3D=3D=3D=3D=3D END Middle Content =3D=3D=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"Split2ColNL" style=3D"padding:0px 0px 0px =
+0px;" align=3D""
+valign=3D"top" width=3D"5%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+</table>
+</th>
+<!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D -->
+</tr>
+</table>
+</th>
+</tr><!-- ........ END TRIPLE COL WRAPPER ........ -->
+<!-- ....... START TRIPLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"" valign=3D"top"
+style=3D"padding:0px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 1px solid cccfdb; border-radius:0px 0px 0px =
+0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"Split2ColNL" style=3D"padding:0px 0px 0px =
+0px;" align=3D""
+valign=3D"top" width=3D"5%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+</table>
+</th>
+<!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D START Middle Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"Split2ColNL" style=3D"padding:0px 0px 0px =
+0px;" align=3D""
+valign=3D"top" width=3D"90%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT MIDDLE CONTENT HERE -->
+<!-- ....... START DOUBLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"" valign=3D"top"
+style=3D"padding:16px 16px 16px 16px; border-right: none; border-left: none=
+; border-top: none; border-bottom: 0px solid #cccfdb; border-radius:0px 0px=
+ 0px 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr><!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"5%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D --><!-- =
+=3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 12px;" alig=
+n=3D""
+valign=3D"top">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D --></tr>
+</table>
+</th>
+</tr><!-- ........ END DOUBLE COL WRAPPER ........ -->
+<!-- ....... START DOUBLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"" valign=3D"top"
+style=3D"padding:0px 16px 0px 16px; border-right: none; border-left: none; =
+border-top: none; border-bottom: 0px solid #cccfdb; border-radius:0px 0px 0=
+px 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr><!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"5%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D --><!-- =
+=3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 12px;" alig=
+n=3D""
+valign=3D"top">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Button *=3D*=3D*=3D* --><tr><td align=3D"cente=
+r" valign=3D"top" bgcolor=3D"#FFFFFF" style=3D"padding: 16px 0px 24px 0px;"=
+><table role=3D"presentation" style=3D"border-collapse: separate;" align=3D=
+"left" valign=3D"" class=3D"FlexWidth100HERO" cellpadding=3D"15" cellspacin=
+g=3D"0"><tr><td bgcolor=3D"#ffffff" align=3D"center" style=3D"padding: 8px =
+16px 8px 16px; border-radius:8px 8px 8px 8px; -moz-border-radius:8px 8px 8p=
+x 8px; -webkit-border-radius:8px 8px 8px 8px;border-top:1px solid #cccfdb; =
+border-bottom:1px solid #cccfdb; border-right:1px solid #cccfdb; border-lef=
+t:1px solid #cccfdb;"><a alias=3D"Button" href=3D"https://link.expediamail.=
+com/c/7/eyJhaSI6NjQxMjYyODEsImUiOiJwc2UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTLlB=
+ULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU=
+1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFT=
+l9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0x=
+Mjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI=
+3NS01MzA5YjQwYTM2ZDI0MjU5YTgxZjdjYzU5MWUyZWMxYSIsInBoIjpudWxsLCJtIjpmYWxzZS=
+widWkiOiIiLCJ1biI6IiIsInUiOiJodHRwczovL3d3dy5leHBlZGlhLmNvbS91c2VyL2VtYWlsY=
+2xpY2svYmV4LW9jcy9GSWRiUmE3dzNjM3J0RVhrNVBZTDNoeDFyN25PUGhuRmdBOU0xaFJqTENz=
+N0JQeHNxQndxV0puaU12SDlTTV8wQWFNanB3ZnlHbDNFb0dPMW0xTUx6OWlUQXVLbm1tWWF6RlR=
+FWGtFaGoyb1dlZ05IZDdCNElRcHlUemcvdHJpcHMvNzI2Njg2MDMzMTUwNjYvZGV0YWlscy9ObV=
+EwWWpreU16UXRaVFk0TVMwMU0yRmhMV0ZoT1RrdFpXTTVPREF6T0dNNFlqVTBPekJsTWpObFlUU=
+XpMV1l3TWpZdE5EazFNUzFoWlRSbExXTTVOMlJsTXpkbE4yRm1ORjh3T3pBP3NpdGVpZD0xJnVz=
+ZXJUb2tlbj1GSWRiUmE3dzNjM3J0RVhrNVBZTDNoeDFyN25PUGhuRmdBOU0xaFJqTENzN0JQeHN=
+xQndxV0puaU12SDlTTV8wQWFNanB3ZnlHbDNFb0dPMW0xTUx6OWlUQXVLbm1tWWF6RlRFWGtFaG=
+oyb1dlZ05IZDdCNElRcHlUemcmRU1MQ0lEPVVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FT=
+lNQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5T=
+SURYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSUR=
+TMS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy=
+0xMjk5OTRfOC0xMTYxOTEuTU9ENDg2OS0xMzEtMS0wLUVNQUlMLUJBTk5FUi1FTi1VU19TNC1QM=
+jAzX1BPUzBfQlROMTkxMCJ9/pA6Y-6Rk-df_Qw94GFAdqQ" style=3D"font-family: Helve=
+tica, Arial, sans-serif; color:#005aeb; font-size:16px; font-weight:bold; d=
+isplay:block; text-decoration:none;" target=3D"_blank" >Manage your itinera=
+ry</a></td></tr></table></td></tr><!-- *=3D*=3D*=3D* END CB: Button *=3D*=
+=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D --></tr>
+</table>
+</th>
+</tr><!-- ........ END DOUBLE COL WRAPPER ........ -->
+<!-- ....... START DOUBLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"" valign=3D"top"
+style=3D"padding:24px 0px 24px 16px; border-right: none; border-left: none;=
+ border-top: 1px solid #cccfdb; border-bottom: 1px solid #cccfdb; border-ra=
+dius:0px 0px 0px 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr><!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 5px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"5%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Image *=3D*=3D*=3D* --><tr><td bgcolor=3D"#FFF=
+FFF" align=3D"left" valign=3D"top" style=3D"padding:0px 0px 0px 0px;"><a al=
+ias=3D"Image" href=3D"https://link.expediamail.com/c/7/eyJhaSI6NjQxMjYyODEs=
+ImUiOiJwc2UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTLlBULkVWRU5UVFJJR0dFUkVETUFJTEl=
+ORy5FTlNQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1=
+NVWC5TSURYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTW=
+C5NSURTMS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1=
+NjVfNy0xMjk5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3NS01MzA5YjQwYTM2ZDI0MjU5YTg=
+xZjdjYzU5MWUyZWMxYSIsInBoIjpudWxsLCJtIjpmYWxzZSwidWkiOiIiLCJ1biI6IiIsInUiOi=
+JodHRwczovL2V4cGUuYXBwLmxpbmsvP35hZ2VuY3lfaWQ9MTAzNCZ-Y3VzdG9tZXJfY2FtcGFpZ=
+249QlJBTkQmfmN1c3RvbWVyX3N1Yl9zaXRlX25hbWU9R0VORVJJQyYkM3A9Ml9jdXN0b21fMTY5=
+MDA2Jn5jdXN0b21lcl9zZWNvbmRhcnlfcHVibGlzaGVyPUVYUEVESUEtVVMmfmN1c3RvbWVyX2F=
+kX3NldF9uYW1lPUJSQU5EOkRJU1BMQVkuRU9EJn5jdXN0b21lcl9hZF9uYW1lPUVNTC5VUy5QVC=
+5FVkVOVFRSSUdHRVJFRE1BSUxJTkcuT0NFTE9UUFVSQ0hBU0VDT05GSVJNQVRJT04uRkxJR0hUJ=
+n5jdXN0b21lcl9wbGFjZW1lbnQ9RU1MLVBVUkNIQVNFQ09ORklSTUFUSU9OLUZMSUdIVC1PQ0VM=
+T1QmJGRlc2t0b3BfdXJsPWh0dHBzOi8vd3d3LmV4cGVkaWEuY29tL2FwcCZjYW5vbmljYWxfdXJ=
+sPWh0dHBzOi8vd3d3LmV4cGVkaWEuY29tL2FwcC9tb2JpbGUvZGVlcGxpbmsvdHJpcHMmRU1MQ0=
+lEPVVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQVVJDSEFTRUNPTkZJUk1BVElPTi5GT=
+ElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURYLktFWTk2MDc0MjUyNDg5LlBBSURY=
+LkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk=
+4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5OTRfOC0xMTYxOTEuTU9ENDg2OS=
+0xMzEtMS0wLUVNQUlMLUJBTk5FUi1FTi1VU19TNC1QMjA0X1BPUzBfSU1HMjA5MCJ9/mm8s_K7b=
+uvq6pHeqVgPjJQ" target=3D"_blank"><img src=3D"https://a.travel-assets.com/t=
+ravel-assets-manager/70c12dcb-beef-444c-991d-2d72cb24c942/icon_mobile_app_s=
+kinny.png" alt=3D"Stay in the know with the Expedia app
+" style=3D"display:block;" width=3D"18" height=3D"auto" border=3D"0" class=
+=3D""></a></td></tr><!-- *=3D*=3D*=3D* END CB: Image *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D --><!-- =
+=3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 5px;" align=
+=3D""
+valign=3D"top">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:0px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#001959; font-size:14px=
+; line-height:18px; font-weight:bold;" class=3D"appleLinkBodyTxt">Travel co=
+nfidently with the Expedia app</td></tr><!-- *=3D*=3D*=3D* END CB: Text (un=
+linked) *=3D*=3D*=3D* --><!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=
+=3D*=3D* --><tr><td bgcolor=3D"#FFFFFF" align=3D"left" valign=3D"top" style=
+=3D"padding:8px 0px 0px 0px; font-family:Helvetica, Arial, sans-serif; colo=
+r:#001959; font-size:14px; line-height:18px; font-weight:normal;" class=3D"=
+appleLinkBodyTxt">Manage your plans and make trip updates on the fly - wher=
+ever the journey takes you. <span style=3D"text-decoration-thickness: initi=
+al; text-decoration-style: initial;color:#005aeb;"><a href=3D"https://link.=
+expediamail.com/c/7/eyJhaSI6NjQxMjYyODEsImUiOiJwc2UwMDAxM0BnbWFpbC5jb20iLCJ=
+yaSI6IlVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQVVJDSEFTRUNPTkZJUk1BVElPTi=
+5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURYLktFWTk2MDc0MjUyNDg5LlBBS=
+URYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0xMDEzMDVfMi0xMjUwNjdfMy0x=
+Mjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5OTRfOC0xMTYxOTEiLCJycSI=
+6IjAyLWMyMzI3NS01MzA5YjQwYTM2ZDI0MjU5YTgxZjdjYzU5MWUyZWMxYSIsInBoIjpudWxsLC=
+JtIjpmYWxzZSwidWkiOiIiLCJ1biI6IiIsInUiOiJodHRwczovL2V4cGUuYXBwLmxpbmsvP35hZ=
+2VuY3lfaWQ9MTAzNCZ-Y3VzdG9tZXJfY2FtcGFpZ249QlJBTkQmfmN1c3RvbWVyX3N1Yl9zaXRl=
+X25hbWU9R0VORVJJQyYkM3A9Ml9jdXN0b21fMTY5MDA2Jn5jdXN0b21lcl9zZWNvbmRhcnlfcHV=
+ibGlzaGVyPUVYUEVESUEtVVMmfmN1c3RvbWVyX2FkX3NldF9uYW1lPUJSQU5EOkRJU1BMQVkuRU=
+9EJn5jdXN0b21lcl9hZF9uYW1lPUVNTC5VUy5QVC5FVkVOVFRSSUdHRVJFRE1BSUxJTkcuT0NFT=
+E9UUFVSQ0hBU0VDT05GSVJNQVRJT04uRkxJR0hUJn5jdXN0b21lcl9wbGFjZW1lbnQ9RU1MLVBV=
+UkNIQVNFQ09ORklSTUFUSU9OLUZMSUdIVC1PQ0VMT1QmJGRlc2t0b3BfdXJsPWh0dHBzOi8vd3d=
+3LmV4cGVkaWEuY29tL2FwcCZjYW5vbmljYWxfdXJsPWh0dHBzOi8vd3d3LmV4cGVkaWEuY29tL2=
+FwcC9tb2JpbGUvZGVlcGxpbmsvdHJpcHMmRU1MQ0lEPVVTLlBULkVWRU5UVFJJR0dFUkVETUFJT=
+ElORy5FTlNQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1J=
+U1NVWC5TSURYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJ=
+TWC5NSURTMS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNj=
+A1NjVfNy0xMjk5OTRfOC0xMTYxOTEuTU9ENDg2OS0xMzEtMS0wLUVNQUlMLUJBTk5FUi1FTi1VU=
+19TNF9QT1MwX1RYVDIwOTIifQ/sLPpokKFrXrBjNlZvyDTDQ" style=3D"text-decoration:=
+ none;"><span style=3D"color:#005aeb;">Explore the app</span></a></span><br=
+></td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D --></tr>
+</table>
+</th>
+</tr><!-- ........ END DOUBLE COL WRAPPER ........ -->
+</table>
+</th>
+<!-- =3D=3D=3D=3D=3D=3D END Middle Content =3D=3D=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"Split2ColNL" style=3D"padding:0px 0px 0px =
+0px;" align=3D""
+valign=3D"top" width=3D"5%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+</table>
+</th>
+<!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D -->
+</tr>
+</table>
+</th>
+</tr><!-- ........ END TRIPLE COL WRAPPER ........ -->
+<!-- ....... START TRIPLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"" valign=3D"top"
+style=3D"padding:24px 0px 0px 0px; border-right: none; border-left: none; b=
+order-top: none; border-bottom: 0px solid #ffffff; border-radius:0px 0px 0p=
+x 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"5%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+</table>
+</th>
+<!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D START Middle Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"90%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT MIDDLE CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:0px 16px 0px =
+16px; font-family:Helvetica, Arial, sans-serif; color:#001959; font-size:18=
+px; line-height:22px; font-weight:bold;" class=3D"appleLinkBodyTxt">Price s=
+ummary</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* --=
+>
+<!-- ....... START DOUBLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"" valign=3D"top"
+style=3D"padding:16px 16px 0px 16px; border-right: none; border-left: none;=
+ border-top: none; border-bottom: 0px solid #ffffff; border-radius:0px 0px =
+0px 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr><!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"50%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:0px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#001959; font-size:14px=
+; line-height:18px; font-weight:bold;" class=3D"appleLinkBodyTxt">One way f=
+light </td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* --=
+>
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D --><!-- =
+=3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D"right"
+valign=3D"top">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D --></tr>
+</table>
+</th>
+</tr><!-- ........ END DOUBLE COL WRAPPER ........ -->
+<!-- ....... START DOUBLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"" valign=3D"top"
+style=3D"padding:8px 16px 0px 16px; border-right: none; border-left: none; =
+border-top: none; border-bottom: 0px solid #ffffff; border-radius:0px 0px 0=
+px 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr><!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"50%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:0px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:14px=
+; line-height:18px; font-weight:normal;" class=3D"appleLinkBodyTxt">4 trave=
+lers</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D --><!-- =
+=3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D"right"
+valign=3D"top">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"right" valign=3D"top" style=3D"padding:0px 0px 0px =
+0px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:14p=
+x; line-height:18px; font-weight:normal;" class=3D"appleLinkBodyTxt">$366.7=
+6</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D --></tr>
+</table>
+</th>
+</tr><!-- ........ END DOUBLE COL WRAPPER ........ -->
+<!-- ....... START DOUBLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"" valign=3D"top"
+style=3D"padding:8px 16px 0px 16px; border-right: none; border-left: none; =
+border-top: none; border-bottom: 0px solid #ffffff; border-radius:0px 0px 0=
+px 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr><!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"50%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:0px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:14px=
+; line-height:18px; font-weight:normal;" class=3D"appleLinkBodyTxt">Taxes &=
+ fees
+</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D --><!-- =
+=3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D"right"
+valign=3D"top">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"right" valign=3D"top" style=3D"padding:0px 0px 0px =
+0px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:14p=
+x; line-height:18px; font-weight:normal;" class=3D"appleLinkBodyTxt">$260.8=
+0</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D --></tr>
+</table>
+</th>
+</tr><!-- ........ END DOUBLE COL WRAPPER ........ -->
+<!-- ....... START DOUBLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"" valign=3D"top"
+style=3D"padding:8px 16px 0px 16px; border-right: none; border-left: none; =
+border-top: none; border-bottom: 0px solid #ffffff; border-radius:0px 0px 0=
+px 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr><!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"50%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:0px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:14px=
+; line-height:18px; font-weight:normal;" class=3D"appleLinkBodyTxt">Travele=
+r 1 Baggage Fee (LAX) to (BWI)</td></tr><!-- *=3D*=3D*=3D* END CB: Text (un=
+linked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D --><!-- =
+=3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D"right"
+valign=3D"top">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"right" valign=3D"top" style=3D"padding:0px 0px 0px =
+0px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:14p=
+x; line-height:18px; font-weight:normal;" class=3D"appleLinkBodyTxt">$34.00=
+</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D --></tr>
+</table>
+</th>
+</tr><!-- ........ END DOUBLE COL WRAPPER ........ -->
+<!-- ....... START DOUBLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"" valign=3D"top"
+style=3D"padding:8px 16px 0px 16px; border-right: none; border-left: none; =
+border-top: none; border-bottom: 0px solid #ffffff; border-radius:0px 0px 0=
+px 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr><!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"50%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:0px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:14px=
+; line-height:18px; font-weight:normal;" class=3D"appleLinkBodyTxt">Travele=
+r 2 Baggage Fee (LAX) to (BWI)</td></tr><!-- *=3D*=3D*=3D* END CB: Text (un=
+linked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D --><!-- =
+=3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D"right"
+valign=3D"top">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"right" valign=3D"top" style=3D"padding:0px 0px 0px =
+0px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:14p=
+x; line-height:18px; font-weight:normal;" class=3D"appleLinkBodyTxt">$34.00=
+</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D --></tr>
+</table>
+</th>
+</tr><!-- ........ END DOUBLE COL WRAPPER ........ -->
+<!-- ....... START DOUBLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"" valign=3D"top"
+style=3D"padding:8px 16px 0px 16px; border-right: none; border-left: none; =
+border-top: none; border-bottom: 0px solid #ffffff; border-radius:0px 0px 0=
+px 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr><!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"50%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:0px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:14px=
+; line-height:18px; font-weight:normal;" class=3D"appleLinkBodyTxt">Travele=
+r 3 Baggage Fee (LAX) to (BWI)</td></tr><!-- *=3D*=3D*=3D* END CB: Text (un=
+linked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D --><!-- =
+=3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D"right"
+valign=3D"top">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"right" valign=3D"top" style=3D"padding:0px 0px 0px =
+0px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:14p=
+x; line-height:18px; font-weight:normal;" class=3D"appleLinkBodyTxt">$34.00=
+</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D --></tr>
+</table>
+</th>
+</tr><!-- ........ END DOUBLE COL WRAPPER ........ -->
+<!-- ....... START DOUBLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"" valign=3D"top"
+style=3D"padding:8px 16px 0px 16px; border-right: none; border-left: none; =
+border-top: none; border-bottom: 0px solid #ffffff; border-radius:0px 0px 0=
+px 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr><!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"50%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:0px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:14px=
+; line-height:18px; font-weight:normal;" class=3D"appleLinkBodyTxt">Travele=
+r 4 Baggage Fee (LAX) to (BWI)</td></tr><!-- *=3D*=3D*=3D* END CB: Text (un=
+linked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D --><!-- =
+=3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D"right"
+valign=3D"top">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"right" valign=3D"top" style=3D"padding:0px 0px 0px =
+0px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:14p=
+x; line-height:18px; font-weight:normal;" class=3D"appleLinkBodyTxt">$34.00=
+</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D --></tr>
+</table>
+</th>
+</tr><!-- ........ END DOUBLE COL WRAPPER ........ -->
+<!-- ....... START SINGLE COL WRAPPER ....... -->
+<tr>
+<td bgcolor=3D"#FFFFFF" align=3D"" valign=3D""
+style=3D"padding:0px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #C7C7C7; border-radius:0px 0px 0px=
+ 0px; -webkit-border-radius:0px 0px 0px 0px;-moz-border-radius:0px 0px 0px =
+0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D START 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D END 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D --></table>
+</td>
+</tr><!-- ........ END SINGLE COL WRAPPER ........ -->
+<!-- ....... START SINGLE COL WRAPPER ....... -->
+<tr>
+<td bgcolor=3D"#FFFFFF" align=3D"" valign=3D""
+style=3D"padding:0px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #C7C7C7; border-radius:0px 0px 0px=
+ 0px; -webkit-border-radius:0px 0px 0px 0px;-moz-border-radius:0px 0px 0px =
+0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D START 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D END 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D --></table>
+</td>
+</tr><!-- ........ END SINGLE COL WRAPPER ........ -->
+<!-- ....... START SINGLE COL WRAPPER ....... -->
+<tr>
+<td bgcolor=3D"#FFFFFF" align=3D"" valign=3D""
+style=3D"padding:0px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #C7C7C7; border-radius:0px 0px 0px=
+ 0px; -webkit-border-radius:0px 0px 0px 0px;-moz-border-radius:0px 0px 0px =
+0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D START 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D END 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D --></table>
+</td>
+</tr><!-- ........ END SINGLE COL WRAPPER ........ -->
+<!-- ....... START SINGLE COL WRAPPER ....... -->
+<tr>
+<td bgcolor=3D"#FFFFFF" align=3D"" valign=3D""
+style=3D"padding:0px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #C7C7C7; border-radius:0px 0px 0px=
+ 0px; -webkit-border-radius:0px 0px 0px 0px;-moz-border-radius:0px 0px 0px =
+0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D START 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D END 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D --></table>
+</td>
+</tr><!-- ........ END SINGLE COL WRAPPER ........ -->
+<!-- ....... START SINGLE COL WRAPPER ....... -->
+<tr>
+<td bgcolor=3D"#FFFFFF" align=3D"" valign=3D""
+style=3D"padding:0px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #C7C7C7; border-radius:0px 0px 0px=
+ 0px; -webkit-border-radius:0px 0px 0px 0px;-moz-border-radius:0px 0px 0px =
+0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D START 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D END 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D --></table>
+</td>
+</tr><!-- ........ END SINGLE COL WRAPPER ........ -->
+<!-- ....... START SINGLE COL WRAPPER ....... -->
+<tr>
+<td bgcolor=3D"#FFFFFF" align=3D"" valign=3D""
+style=3D"padding:0px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #C7C7C7; border-radius:0px 0px 0px=
+ 0px; -webkit-border-radius:0px 0px 0px 0px;-moz-border-radius:0px 0px 0px =
+0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D START 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D END 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D --></table>
+</td>
+</tr><!-- ........ END SINGLE COL WRAPPER ........ -->
+<!-- ....... START SINGLE COL WRAPPER ....... -->
+<tr>
+<td bgcolor=3D"#FFFFFF" align=3D"" valign=3D""
+style=3D"padding:0px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #C7C7C7; border-radius:0px 0px 0px=
+ 0px; -webkit-border-radius:0px 0px 0px 0px;-moz-border-radius:0px 0px 0px =
+0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D START 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D END 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D --></table>
+</td>
+</tr><!-- ........ END SINGLE COL WRAPPER ........ -->
+<!-- ....... START SINGLE COL WRAPPER ....... -->
+<tr>
+<td bgcolor=3D"#FFFFFF" align=3D"" valign=3D""
+style=3D"padding:0px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #C7C7C7; border-radius:0px 0px 0px=
+ 0px; -webkit-border-radius:0px 0px 0px 0px;-moz-border-radius:0px 0px 0px =
+0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D START 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D END 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D --></table>
+</td>
+</tr><!-- ........ END SINGLE COL WRAPPER ........ -->
+<!-- ....... START SINGLE COL WRAPPER ....... -->
+<tr>
+<td bgcolor=3D"#FFFFFF" align=3D"" valign=3D""
+style=3D"padding:0px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #C7C7C7; border-radius:0px 0px 0px=
+ 0px; -webkit-border-radius:0px 0px 0px 0px;-moz-border-radius:0px 0px 0px =
+0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D START 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D END 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D --></table>
+</td>
+</tr><!-- ........ END SINGLE COL WRAPPER ........ -->
+<!-- ....... START SINGLE COL WRAPPER ....... -->
+<tr>
+<td bgcolor=3D"#FFFFFF" align=3D"" valign=3D""
+style=3D"padding:0px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #C7C7C7; border-radius:0px 0px 0px=
+ 0px; -webkit-border-radius:0px 0px 0px 0px;-moz-border-radius:0px 0px 0px =
+0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D START 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D END 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D --></table>
+</td>
+</tr><!-- ........ END SINGLE COL WRAPPER ........ -->
+<!-- ....... START SINGLE COL WRAPPER ....... -->
+<tr>
+<td bgcolor=3D"#FFFFFF" align=3D"" valign=3D""
+style=3D"padding:0px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #C7C7C7; border-radius:0px 0px 0px=
+ 0px; -webkit-border-radius:0px 0px 0px 0px;-moz-border-radius:0px 0px 0px =
+0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D START 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D END 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D --></table>
+</td>
+</tr><!-- ........ END SINGLE COL WRAPPER ........ -->
+<!-- ....... START SINGLE COL WRAPPER ....... -->
+<tr>
+<td bgcolor=3D"#FFFFFF" align=3D"" valign=3D""
+style=3D"padding:0px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #C7C7C7; border-radius:0px 0px 0px=
+ 0px; -webkit-border-radius:0px 0px 0px 0px;-moz-border-radius:0px 0px 0px =
+0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D START 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D END 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D --></table>
+</td>
+</tr><!-- ........ END SINGLE COL WRAPPER ........ -->
+<!-- ....... START SINGLE COL WRAPPER ....... -->
+<tr>
+<td bgcolor=3D"#FFFFFF" align=3D"" valign=3D""
+style=3D"padding:8px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #C7C7C7; border-radius:0px 0px 0px=
+ 0px; -webkit-border-radius:0px 0px 0px 0px;-moz-border-radius:0px 0px 0px =
+0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D START 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D -->
+<!-- ....... START DOUBLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"" valign=3D"top"
+style=3D"padding:0px 16px 0px 16px; border-right: none; border-left: none; =
+border-top: 1px solid #cccfdb; border-bottom: 0px solid #ffffff; border-rad=
+ius:0px 0px 0px 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr><!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"50%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:16px 0px 0px =
+0px; font-family:Helvetica, Arial, sans-serif; color:#001959; font-size:18p=
+x; line-height:22px; font-weight:bold;" class=3D"appleLinkBodyTxt">Total</t=
+d></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D --><!-- =
+=3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D"right"
+valign=3D"top">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"right" valign=3D"top" style=3D"padding:16px 0px 0px=
+ 0px; font-family:Helvetica, Arial, sans-serif; color:#001959; font-size:18=
+px; line-height:22px; font-weight:bold;" class=3D"appleLinkBodyTxt">$763.56=
+</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D --></tr>
+</table>
+</th>
+</tr><!-- ........ END DOUBLE COL WRAPPER ........ -->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D END 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D --></table>
+</td>
+</tr><!-- ........ END SINGLE COL WRAPPER ........ -->
+<!-- ....... START SINGLE COL WRAPPER ....... -->
+<tr>
+<td bgcolor=3D"#FFFFFF" align=3D"" valign=3D""
+style=3D"padding:8px 16px 0px 16px; border-right: none; border-left: none; =
+border-top: none; border-bottom: 0px solid #ffffff; border-radius:0px 0px 0=
+px 0px; -webkit-border-radius:0px 0px 0px 0px;-moz-border-radius:0px 0px 0p=
+x 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D START 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:8px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:12px=
+; line-height:16px; font-weight:normal;" class=3D"appleLinkBodyTxt">The tot=
+al price includes all mandatory taxes and fees.</td></tr><!-- *=3D*=3D*=3D*=
+ END CB: Text (unlinked) *=3D*=3D*=3D* -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:8px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:12px=
+; line-height:16px; font-weight:normal;" class=3D"appleLinkBodyTxt">Unless =
+and otherwise specified, rates are quoted in US dollars.</td></tr><!-- *=3D=
+*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D END 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D --></table>
+</td>
+</tr><!-- ........ END SINGLE COL WRAPPER ........ -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"center" valign=3D"top" style=3D"padding:3px 0px 0px=
+ 0px; font-family:Helvetica, Arial, sans-serif; color:#ffffff; font-size:1p=
+x; line-height:1px; font-weight:normal;" class=3D"appleLinkBodyTxt"> </td><=
+/tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* --><!-- ......=
+. START SINGLE COL WRAPPER ....... -->
+<tr>
+<td bgcolor=3D"#FFFFFF" align=3D"" valign=3D""
+style=3D"padding:24px 16px 24px 16px; border-right: none; border-left: none=
+; border-top: none; border-bottom: 1px solid #cccfdb; border-radius:0px 0px=
+ 0px 0px; -webkit-border-radius:0px 0px 0px 0px;-moz-border-radius:0px 0px =
+0px 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D START 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D -->
+<!-- *=3D*=3D*=3D* START CB: Button *=3D*=3D*=3D* --><tr><td align=3D"cente=
+r" valign=3D"top" bgcolor=3D"#FFFFFF" style=3D"padding: 0px 0px 0px 0px;"><=
+table role=3D"presentation" style=3D"border-collapse: separate;" align=3D"l=
+eft" valign=3D"" class=3D"FlexWidth100HERO" cellpadding=3D"15" cellspacing=
+=3D"0"><tr><td bgcolor=3D"#ffffff" align=3D"center" style=3D"padding: 8px 1=
+6px 8px 16px; border-radius:8px 8px 8px 8px; -moz-border-radius:8px 8px 8px=
+ 8px; -webkit-border-radius:8px 8px 8px 8px;border-top:1px solid #cccfdb; b=
+order-bottom:1px solid #cccfdb; border-right:1px solid #cccfdb; border-left=
+:1px solid #cccfdb;"><a alias=3D"Button" href=3D"https://link.expediamail.c=
+om/c/7/eyJhaSI6NjQxMjYyODEsImUiOiJwc2UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTLlBU=
+LkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1=
+MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl=
+9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xM=
+jk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3=
+NS01MzA5YjQwYTM2ZDI0MjU5YTgxZjdjYzU5MWUyZWMxYSIsInBoIjpudWxsLCJtIjpmYWxzZSw=
+idWkiOiIiLCJ1biI6IiIsInUiOiJodHRwczovL3d3dy5leHBlZGlhLmNvbS91c2VyL2VtYWlsY2=
+xpY2svYmV4LW9jcy9GSWRiUmE3dzNjM3J0RVhrNVBZTDNoeDFyN25PUGhuRmdBOU0xaFJqTENzN=
+0JQeHNxQndxV0puaU12SDlTTV8wQWFNanB3ZnlHbDNFb0dPMW0xTUx6OWlUQXVLbm1tWWF6RlRF=
+WGtFaGoyb1dlZ05IZDdCNElRcHlUemcvdHJpcC1yZWNlaXB0LzcyNjY4NjAzMzE1MDY2P0VNTEN=
+JRD1VUy5QVC5FVkVOVFRSSUdHRVJFRE1BSUxJTkcuRU5TUFVSQ0hBU0VDT05GSVJNQVRJT04uRk=
+xJR0hUJkVNTERUTD1EQVRFMjAyMzEwMDItSVNTVVguU0lEWC5LRVk5NjA3NDI1MjQ4OS5QQUlEW=
+C5MQU5HRU5fVVMuTUNJRFguVEVTVDQuVkVSU1guTUlEUzEtMTAxMzA1XzItMTI1MDY3XzMtMTI5=
+ODQ5XzQtMTI5ODUwXzUtMTUyMzU5XzYtMTYwNTY1XzctMTI5OTk0XzgtMTE2MTkxLk1PRDk2NS0=
+2Ny0xLTAtRU1BSUwtQkFOTkVSLUVOLVVTX1M1LVAxNzFfUE9TMF9CVE4xMjE1In0/pYT1_IF-xf=
+j76luEpSzklQ" style=3D"font-family: Helvetica, Arial, sans-serif; color:#00=
+5aeb; font-size:16px; font-weight:bold; display:block; text-decoration:none=
+;" target=3D"_blank" >View receipt</a></td></tr></table></td></tr><!-- *=3D=
+*=3D*=3D* END CB: Button *=3D*=3D*=3D* -->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D END 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D --></table>
+</td>
+</tr><!-- ........ END SINGLE COL WRAPPER ........ -->
+</table>
+</th>
+<!-- =3D=3D=3D=3D=3D=3D END Middle Content =3D=3D=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"5%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+</table>
+</th>
+<!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D -->
+</tr>
+</table>
+</th>
+</tr><!-- ........ END TRIPLE COL WRAPPER ........ -->
+<!-- ....... START TRIPLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"" valign=3D"top"
+style=3D"padding:0px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #ffffff; border-radius:0px 0px 0px=
+ 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"5%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+</table>
+</th>
+<!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D START Middle Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"90%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT MIDDLE CONTENT HERE -->
+</table>
+</th>
+<!-- =3D=3D=3D=3D=3D=3D END Middle Content =3D=3D=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"5%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+</table>
+</th>
+<!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D -->
+</tr>
+</table>
+</th>
+</tr><!-- ........ END TRIPLE COL WRAPPER ........ -->
+<!-- ....... START TRIPLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"" valign=3D"top"
+style=3D"padding:0px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #ffffff; border-radius:0px 0px 0px=
+ 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"5%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+</table>
+</th>
+<!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D START Middle Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"90%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT MIDDLE CONTENT HERE -->
+<!-- ....... START SINGLE COL WRAPPER ....... -->
+<tr>
+<td bgcolor=3D"#FFFFFF" align=3D"" valign=3D""
+style=3D"padding:24px 16px 8px 16px; border-right: none; border-left: none;=
+ border-top: 0px solid #ffffff; border-bottom: 0px solid #cccfdb; border-ra=
+dius:0px 0px 0px 0px; -webkit-border-radius:0px 0px 0px 0px;-moz-border-rad=
+ius:0px 0px 0px 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D START 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:0px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#001959; font-size:18px=
+; line-height:22px; font-weight:bold;" class=3D"appleLinkBodyTxt">Important=
+ information</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=
+=3D* --><!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><=
+td bgcolor=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:16px =
+0px 8px 0px; font-family:Helvetica, Arial, sans-serif; color:#001959; font-=
+size:12px; line-height:16px; font-weight:bold;" class=3D"appleLinkBodyTxt">=
+Flight information</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D=
+*=3D*=3D* -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"bottom" style=3D"padding:0px 0px 8p=
+x 0px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:1=
+2px; line-height:16px; font-weight:normal;" class=3D"appleLinkBodyTxt">Reme=
+mber to bring your itinerary and government-issued photo ID for airport che=
+ck-in and security.</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=
+=3D*=3D*=3D* -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"bottom" style=3D"padding:0px 0px 8p=
+x 0px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:1=
+2px; line-height:16px; font-weight:normal;" class=3D"appleLinkBodyTxt">We r=
+ecommend you <a href=3D"https://link.expediamail.com/c/7/eyJhaSI6NjQxMjYyOD=
+EsImUiOiJwc2UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTLlBULkVWRU5UVFJJR0dFUkVETUFJT=
+ElORy5FTlNQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1J=
+U1NVWC5TSURYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJ=
+TWC5NSURTMS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNj=
+A1NjVfNy0xMjk5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3NS01MzA5YjQwYTM2ZDI0MjU5Y=
+TgxZjdjYzU5MWUyZWMxYSIsInBoIjpudWxsLCJtIjpmYWxzZSwidWkiOiIiLCJ1biI6IiIsInUi=
+OiJodHRwczovL3d3dy5leHBlZGlhLmNvbS91c2VyL2VtYWlsY2xpY2svYmV4LW9jcy9GSWRiUmE=
+3dzNjM3J0RVhrNVBZTDNoeDFyN25PUGhuRmdBOU0xaFJqTENzN0JQeHNxQndxV0puaU12SDlTTV=
+8wQWFNanB3ZnlHbDNFb0dPMW0xTUx6OWlUQXVLbm1tWWF6RlRFWGtFaGoyb1dlZ05IZDdCNElRc=
+HlUemcvc2VydmljZS8_RU1MQ0lEPVVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQVVJD=
+SEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURYLkt=
+FWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0xMD=
+EzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5O=
+TRfOC0xMTYxOTEuTU9EOTY3LTU4LTEtMC1FTUFJTC1CQU5ORVItRU4tVVNfUzdfUE9TMF9UWFQx=
+NDY0Iy9hcnRpY2xlLzEyMzM3In0/OCW2jRzk1ZA8VSt1C0BqGQ" class=3D"tooltip" >comp=
+lete online check-in <span class=3D"visually-hidden">(Opens a new window) <=
+/span></a> and pre-purchase all extras or baggage allowances prior to trave=
+lling to avoid higher fees charged by some airlines at the airport. Please =
+note that some airlines may have restrictions on the size and weight of bag=
+gage that is guaranteed to be placed in the cabin.</td></tr><!-- *=3D*=3D*=
+=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"bottom" style=3D"padding:0px 0px 8p=
+x 0px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:1=
+2px; line-height:16px; font-weight:normal;" class=3D"appleLinkBodyTxt">Your=
+ flight booking is with a low cost airline and can only be changed or cance=
+lled by contacting the airline directly. For convenience, you can select th=
+e airline from our <a href=3D"https://link.expediamail.com/c/7/eyJhaSI6NjQx=
+MjYyODEsImUiOiJwc2UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTLlBULkVWRU5UVFJJR0dFUkV=
+ETUFJTElORy5FTlNQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMT=
+AwMi1JU1NVWC5TSURYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUN=
+C5WRVJTWC5NSURTMS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlf=
+Ni0xNjA1NjVfNy0xMjk5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3NS01MzA5YjQwYTM2ZDI=
+0MjU5YTgxZjdjYzU5MWUyZWMxYSIsInBoIjpudWxsLCJtIjpmYWxzZSwidWkiOiIiLCJ1biI6Ii=
+IsInUiOiJodHRwczovL3d3dy5leHBlZGlhLmNvbS91c2VyL2VtYWlsY2xpY2svYmV4LW9jcy9GS=
+WRiUmE3dzNjM3J0RVhrNVBZTDNoeDFyN25PUGhuRmdBOU0xaFJqTENzN0JQeHNxQndxV0puaU12=
+SDlTTV8wQWFNanB3ZnlHbDNFb0dPMW0xTUx6OWlUQXVLbm1tWWF6RlRFWGtFaGoyb1dlZ05IZDd=
+CNElRcHlUemcvc2VydmljZS8_RU1MQ0lEPVVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTl=
+NQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TS=
+URYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURT=
+MS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0=
+xMjk5OTRfOC0xMTYxOTEuTU9EOTY3LTU4LTEtMC1FTUFJTC1CQU5ORVItRU4tVVNfUzdfUE9TMF=
+9UWFQxNTU3Iy9hcnRpY2xlLzEyMzM3In0/IM24Wcl0z5DoFITMVAOYUg" class=3D"tooltip"=
+ >online check-in page <span class=3D"visually-hidden">(Opens a new window)=
+ </span> </a>. Please note that Expedia may not be advised if you change or=
+ cancel your flight with your airline directly, or if the airline makes any=
+ changes to your flight schedule. These changes may not be reflected in you=
+r Expedia Itinerary, so please ensure that you also print out any subsequen=
+t itinerary change emails you receive directly from the airline.</td></tr><=
+!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"bottom" style=3D"padding:0px 0px 8p=
+x 0px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:1=
+2px; line-height:16px; font-weight:normal;" class=3D"appleLinkBodyTxt">Fare=
+ restrictions apply to this trip. Please review the rules and restrictions =
+for each fare in the Additional Information section below.</td></tr><!-- *=
+=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"bottom" style=3D"padding:16px 0px 4=
+px 0px; font-family:Helvetica, Arial, sans-serif; color:#001959; font-size:=
+12px; line-height:16px; font-weight:bold;" class=3D"appleLinkBodyTxt">Conta=
+ct the airline to confirm:</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlink=
+ed) *=3D*=3D*=3D* --><!-- ....... START DOUBLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"" valign=3D"top"
+style=3D"padding:0px 0px 2px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #C7C7C7; border-radius:0px 0px 0px=
+ 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr><!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D"left"
+valign=3D"top" width=3D"15">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:0px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#616161; font-size:18px=
+; line-height:1.3em; font-weight:normal;" class=3D"appleLinkBodyTxt">=E2=80=
+=A2</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D --><!-- =
+=3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 4px 5px;" align=
+=3D""
+valign=3D"top">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"bottom" style=3D"padding:0px 0px 0p=
+x 4px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:1=
+2px; line-height:16px; font-weight:normal;" class=3D"appleLinkBodyTxt">Spec=
+ial meals</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D*=
+ -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D --></tr>
+</table>
+</th>
+</tr><!-- ........ END DOUBLE COL WRAPPER ........ -->
+<!-- ....... START DOUBLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"" valign=3D"top"
+style=3D"padding:0px 0px 2px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #C7C7C7; border-radius:0px 0px 0px=
+ 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr><!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D"left"
+valign=3D"top" width=3D"15">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:0px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#616161; font-size:18px=
+; line-height:1.3em; font-weight:normal;" class=3D"appleLinkBodyTxt">=E2=80=
+=A2</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D --><!-- =
+=3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 4px 5px;" align=
+=3D""
+valign=3D"top">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"bottom" style=3D"padding:0px 0px 0p=
+x 4px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:1=
+2px; line-height:16px; font-weight:normal;" class=3D"appleLinkBodyTxt">Freq=
+uent flyer point awards</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked)=
+ *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D --></tr>
+</table>
+</th>
+</tr><!-- ........ END DOUBLE COL WRAPPER ........ -->
+<!-- ....... START DOUBLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"" valign=3D"top"
+style=3D"padding:0px 0px 2px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #C7C7C7; border-radius:0px 0px 0px=
+ 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr><!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D"left"
+valign=3D"top" width=3D"15">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:0px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#616161; font-size:18px=
+; line-height:1.3em; font-weight:normal;" class=3D"appleLinkBodyTxt">=E2=80=
+=A2</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D --><!-- =
+=3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 4px 5px;" align=
+=3D""
+valign=3D"top">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"bottom" style=3D"padding:0px 0px 0p=
+x 4px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:1=
+2px; line-height:16px; font-weight:normal;" class=3D"appleLinkBodyTxt">Spec=
+ial assistance requests</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked)=
+ *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D --></tr>
+</table>
+</th>
+</tr><!-- ........ END DOUBLE COL WRAPPER ........ -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"center" valign=3D"top" style=3D"padding:2px 0px 0px=
+ 0px; font-family:Helvetica, Arial, sans-serif; color:#616161; font-size:0p=
+x; line-height:1.3em; font-weight:normal;" class=3D"appleLinkBodyTxt"></td>=
+</tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"center" valign=3D"top" style=3D"padding:2px 0px 0px=
+ 0px; font-family:Helvetica, Arial, sans-serif; color:#616161; font-size:0p=
+x; line-height:1.3em; font-weight:normal;" class=3D"appleLinkBodyTxt"></td>=
+</tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:8px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:12px=
+; line-height:16px; font-weight:normal;" class=3D"appleLinkBodyTxt">If the =
+airline charges such fees in accordance with its own policies, the cost wil=
+l be passed on to you.</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) =
+*=3D*=3D*=3D* -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:16px 0px 0px =
+0px; font-family:Helvetica, Arial, sans-serif; color:#001959; font-size:12p=
+x; line-height:16px; font-weight:bold;" class=3D"appleLinkBodyTxt">Addition=
+al fees</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -=
+->
+<!-- ....... START SINGLE COL WRAPPER ....... -->
+<tr>
+<td bgcolor=3D"#FFFFFF" align=3D"" valign=3D""
+style=3D"padding:16px 0px 0px 0px; border-right: none; border-left: none; b=
+order-top: 0px solid #cccfdb; border-bottom: 0px solid #C7C7C7; border-radi=
+us:0px 0px 0px 0px; -webkit-border-radius:0px 0px 0px 0px;-moz-border-radiu=
+s:0px 0px 0px 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D START 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:8px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:12px=
+; line-height:16px; font-weight:normal;" class=3D"appleLinkBodyTxt">Additio=
+nal fees for your flight to Baltimore: The airline may charge <a href=3D"ht=
+tps://link.expediamail.com/c/7/eyJhaSI6NjQxMjYyODEsImUiOiJwc2UwMDAxM0BnbWFp=
+bC5jb20iLCJyaSI6IlVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQVVJDSEFTRUNPTkZ=
+JUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURYLktFWTk2MDc0Mj=
+UyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0xMDEzMDVfMi0xM=
+jUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5OTRfOC0xMTYx=
+OTEiLCJycSI6IjAyLWMyMzI3NS01MzA5YjQwYTM2ZDI0MjU5YTgxZjdjYzU5MWUyZWMxYSIsInB=
+oIjpudWxsLCJtIjpmYWxzZSwidWkiOiIiLCJ1biI6IiIsInUiOiJodHRwczovL3d3dy5leHBlZG=
+lhLmNvbS91c2VyL2VtYWlsY2xpY2svYmV4LW9jcy9GSWRiUmE3dzNjM3J0RVhrNVBZTDNoeDFyN=
+25PUGhuRmdBOU0xaFJqTENzN0JQeHNxQndxV0puaU12SDlTTV8wQWFNanB3ZnlHbDNFb0dPMW0x=
+TUx6OWlUQXVLbm1tWWF6RlRFWGtFaGoyb1dlZ05IZDdCNElRcHlUemcvRmxpZ2h0cy1CYWdGZWV=
+zP29yaWdpbmFwdD1MQVgmZGVzdGluYXRpb25hcHQ9QldJJmNhYmluY2xhc3M9MyZta3RnY2Fycm=
+llcj1OSyZvcGNhcnJpZXI9TksmZmFyZWJhc2lzPVZBN05SJmJvb2tpbmdjbGFzcz1WJnRyYXZlb=
+ERhdGU9MjAyMy0xMS0yNiZmbGlnaHROdW1iZXI9MTI4JkVNTENJRD1VUy5QVC5FVkVOVFRSSUdH=
+RVJFRE1BSUxJTkcuRU5TUFVSQ0hBU0VDT05GSVJNQVRJT04uRkxJR0hUJkVNTERUTD1EQVRFMjA=
+yMzEwMDItSVNTVVguU0lEWC5LRVk5NjA3NDI1MjQ4OS5QQUlEWC5MQU5HRU5fVVMuTUNJRFguVE=
+VTVDQuVkVSU1guTUlEUzEtMTAxMzA1XzItMTI1MDY3XzMtMTI5ODQ5XzQtMTI5ODUwXzUtMTUyM=
+zU5XzYtMTYwNTY1XzctMTI5OTk0XzgtMTE2MTkxLk1PRDk2Ny01OC0xLTAtRU1BSUwtQkFOTkVS=
+LUVOLVVTX1M3X1BPUzBfVFhUMTMwNCJ9/cfWnm5z5eJqC7YNhd_gEgA" target=3D"rulesAnd=
+Restrictions">additional fees <span class=3D"icon icon-popup tooltip" aria-=
+hidden=3D"true"> </span><span class=3D"visually-hidden alt">(Opens in a new=
+ window.)</span></a> for checked baggage or other optional services.</td></=
+tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:16px 0px 0px =
+0px; font-family:Helvetica, Arial, sans-serif; color:#001959; font-size:12p=
+x; line-height:16px; font-weight:bold;" class=3D"appleLinkBodyTxt">Spirit A=
+irlines basic economy fare rules</td></tr><!-- *=3D*=3D*=3D* END CB: Text (=
+unlinked) *=3D*=3D*=3D* --><!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=
+=3D*=3D*=3D* --><tr><td bgcolor=3D"#FFFFFF" align=3D"left" valign=3D"top" s=
+tyle=3D"padding:8px 0px 0px 0px; font-family:Helvetica, Arial, sans-serif; =
+color:#465280; font-size:12px; line-height:16px; font-weight:normal;" class=
+=3D"appleLinkBodyTxt">Pay to choose your seat<br/>Pay to bring a checked ba=
+g<br/>Pay a fee to change<br/>Pay a fee to cancel<br/>Pay to bring a carry-=
+on bag<br/>Bring a personal item<br/></td></tr><!-- *=3D*=3D*=3D* END CB: T=
+ext (unlinked) *=3D*=3D*=3D* -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:16px 0px 0px =
+0px; font-family:Helvetica, Arial, sans-serif; color:#001959; font-size:12p=
+x; line-height:16px; font-weight:bold;" class=3D"appleLinkBodyTxt">Spirit A=
+irlines flight rules and regulations</td></tr><!-- *=3D*=3D*=3D* END CB: Te=
+xt (unlinked) *=3D*=3D*=3D* --> <!-- ....... START DOUBLE COL WRAPPER .....=
+.. -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"left" valign=3D"top"
+style=3D"padding:8px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #ffffff; border-radius:0px 0px 0px=
+ 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr><!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D"left"
+valign=3D"top" width=3D"15">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:0px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:24px=
+; line-height:16px; font-weight:normal;" class=3D"appleLinkBodyTxt">=E2=80=
+=A2</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D --><!-- =
+=3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"bottom" style=3D"padding:0px 0px 0p=
+x 4px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:1=
+2px; line-height:16px; font-weight:normal;" class=3D"appleLinkBodyTxt">Plea=
+se read the <a id=3D"complete_penalty_rules_for_changes_and_cancellations_l=
+ink" href=3D"https://link.expediamail.com/c/7/eyJhaSI6NjQxMjYyODEsImUiOiJwc=
+2UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQ=
+VVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSUR=
+YLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS=
+0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xM=
+jk5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3NS01MzA5YjQwYTM2ZDI0MjU5YTgxZjdjYzU5=
+MWUyZWMxYSIsInBoIjpudWxsLCJtIjpmYWxzZSwidWkiOiIiLCJ1biI6IiIsInUiOiJodHRwczo=
+vL3d3dy5leHBlZGlhLmNvbS91c2VyL2VtYWlsY2xpY2svYmV4LW9jcy9GSWRiUmE3dzNjM3J0RV=
+hrNVBZTDNoeDFyN25PUGhuRmdBOU0xaFJqTENzN0JQeHNxQndxV0puaU12SDlTTV8wQWFNanB3Z=
+nlHbDNFb0dPMW0xTUx6OWlUQXVLbm1tWWF6RlRFWGtFaGoyb1dlZ05IZDdCNElRcHlUemcvRmFy=
+ZS1SdWxlcz90cmlwaWQ9NmQ0YjkyMzQtZTY4MS01M2FhLWFhOTktZWM5ODAzOGM4YjU0JkVNTEN=
+JRD1VUy5QVC5FVkVOVFRSSUdHRVJFRE1BSUxJTkcuRU5TUFVSQ0hBU0VDT05GSVJNQVRJT04uRk=
+xJR0hUJkVNTERUTD1EQVRFMjAyMzEwMDItSVNTVVguU0lEWC5LRVk5NjA3NDI1MjQ4OS5QQUlEW=
+C5MQU5HRU5fVVMuTUNJRFguVEVTVDQuVkVSU1guTUlEUzEtMTAxMzA1XzItMTI1MDY3XzMtMTI5=
+ODQ5XzQtMTI5ODUwXzUtMTUyMzU5XzYtMTYwNTY1XzctMTI5OTk0XzgtMTE2MTkxLk1PRDk2Ny0=
+1OC0xLTAtRU1BSUwtQkFOTkVSLUVOLVVTX1M3X1BPUzBfVFhUMTY0MiJ9/VrPeS696UARmVVoFl=
+xgz4A" target=3D"rulesAndRestrictions">complete penalty rules for changes a=
+nd cancellations <span class=3D"icon icon-popup tooltip" aria-hidden=3D"tru=
+e"> </span><span class=3D"visually-hidden alt">(Opens in a new window.)</sp=
+an></a> applicable to this fare.</td></tr><!-- *=3D*=3D*=3D* END CB: Text (=
+unlinked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D --></tr>
+</table>
+</th>
+</tr><!-- ........ END DOUBLE COL WRAPPER ........ -->
+<!-- ....... START DOUBLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"left" valign=3D"top"
+style=3D"padding:8px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #ffffff; border-radius:0px 0px 0px=
+ 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr><!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D"left"
+valign=3D"top" width=3D"15">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:0px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:24px=
+; line-height:16px; font-weight:normal;" class=3D"appleLinkBodyTxt">=E2=80=
+=A2</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D --><!-- =
+=3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"bottom" style=3D"padding:0px 0px 0p=
+x 4px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:1=
+2px; line-height:16px; font-weight:normal;" class=3D"appleLinkBodyTxt">Tick=
+ets are nonrefundable, nontransferable and name changes are not allowed.</t=
+d></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D --></tr>
+</table>
+</th>
+</tr><!-- ........ END DOUBLE COL WRAPPER ........ -->
+<!-- ....... START DOUBLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"left" valign=3D"top"
+style=3D"padding:0px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #ffffff; border-radius:0px 0px 0px=
+ 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr><!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D"left"
+valign=3D"top" width=3D"15">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:8px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:24px=
+; line-height:16px; font-weight:normal;" class=3D"appleLinkBodyTxt">=E2=80=
+=A2</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D --><!-- =
+=3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"bottom" style=3D"padding:8px 0px 0p=
+x 4px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:1=
+2px; line-height:16px; font-weight:normal;" class=3D"appleLinkBodyTxt">Once=
+ your booking is completed, you may receive two booking confirmations by em=
+ail, one from Expedia and another from the airline. The airline confirmatio=
+n code included in the Expedia itinerary will be required for check-in.</br=
+></td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D --></tr>
+</table>
+</th>
+</tr><!-- ........ END DOUBLE COL WRAPPER ........ -->
+<!-- ....... START DOUBLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"left" valign=3D"top"
+style=3D"padding:0px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #ffffff; border-radius:0px 0px 0px=
+ 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr><!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D"left"
+valign=3D"top" width=3D"15">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:8px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:24px=
+; line-height:16px; font-weight:normal;" class=3D"appleLinkBodyTxt">=E2=80=
+=A2</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D --><!-- =
+=3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:8px 0px 0px 4=
+px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size:12px=
+; line-height:16px; font-weight:normal;" class=3D"appleLinkBodyTxt">Please =
+read important information regarding <a id=3D"airline_liability_limitations=
+_link" href=3D"https://link.expediamail.com/c/7/eyJhaSI6NjQxMjYyODEsImUiOiJ=
+wc2UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTl=
+NQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TS=
+URYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURT=
+MS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0=
+xMjk5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3NS01MzA5YjQwYTM2ZDI0MjU5YTgxZjdjYz=
+U5MWUyZWMxYSIsInBoIjpudWxsLCJtIjpmYWxzZSwidWkiOiIiLCJ1biI6IiIsInUiOiJodHRwc=
+zovL3d3dy5leHBlZGlhLmNvbS91c2VyL2VtYWlsY2xpY2svYmV4LW9jcy9GSWRiUmE3dzNjM3J0=
+RVhrNVBZTDNoeDFyN25PUGhuRmdBOU0xaFJqTENzN0JQeHNxQndxV0puaU12SDlTTV8wQWFNanB=
+3ZnlHbDNFb0dPMW0xTUx6OWlUQXVLbm1tWWF6RlRFWGtFaGoyb1dlZ05IZDdCNElRcHlUemcvcC=
+9pbmZvLW1haW4vd2Fyc2F3P0VNTENJRD1VUy5QVC5FVkVOVFRSSUdHRVJFRE1BSUxJTkcuRU5TU=
+FVSQ0hBU0VDT05GSVJNQVRJT04uRkxJR0hUJkVNTERUTD1EQVRFMjAyMzEwMDItSVNTVVguU0lE=
+WC5LRVk5NjA3NDI1MjQ4OS5QQUlEWC5MQU5HRU5fVVMuTUNJRFguVEVTVDQuVkVSU1guTUlEUzE=
+tMTAxMzA1XzItMTI1MDY3XzMtMTI5ODQ5XzQtMTI5ODUwXzUtMTUyMzU5XzYtMTYwNTY1XzctMT=
+I5OTk0XzgtMTE2MTkxLk1PRDk2Ny01OC0xLTAtRU1BSUwtQkFOTkVSLUVOLVVTX1M3X1BPUzBfV=
+FhUMTQ3MSJ9/5yiex_AQnLIL1X2Mk6Vvcw" target=3D"rulesAndRestrictions">airline=
+ liability limitations <span class=3D"icon icon-popup tooltip" aria-hidden=
+=3D"true"> </span><span class=3D"visually-hidden alt">(Opens in a new windo=
+w.)</span></a>.
+</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+</table>
+</th><!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D --></tr>
+</table>
+</th>
+</tr><!-- ........ END DOUBLE COL WRAPPER ........ -->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D END 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D --></table>
+</td>
+</tr><!-- ........ END SINGLE COL WRAPPER ........ -->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D END 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D --></table>
+</td>
+</tr><!-- ........ END SINGLE COL WRAPPER ........ -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"center" valign=3D"top" style=3D"padding:2px 0px 0px=
+ 0px; font-family:Helvetica, Arial, sans-serif; color:#616161; font-size:0p=
+x; line-height:1.3em; font-weight:normal;" class=3D"appleLinkBodyTxt"></td>=
+</tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+<!-- ....... START SINGLE COL WRAPPER ....... -->
+<tr>
+<td bgcolor=3D"#FFFFFF" align=3D"" valign=3D""
+style=3D"padding:0px 16px 24px 16px; border-right: none; border-left: none;=
+ border-top: 0px solid #ffffff; border-bottom: 1px solid #cccfdb; border-ra=
+dius:0px 0px 0px 0px; -webkit-border-radius:0px 0px 0px 0px;-moz-border-rad=
+ius:0px 0px 0px 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D START 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D -->
+<!-- *=3D*=3D*=3D* START CB: Text (linked) *=3D*=3D*=3D* --><tr><td bgcolor=
+=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding: 16px 0px 0px 0=
+px;" class=3D""><a alias=3D"Header" href=3D"https://link.expediamail.com/c/=
+7/eyJhaSI6NjQxMjYyODEsImUiOiJwc2UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTLlBULkVWR=
+U5UVFJJR0dFUkVETUFJTElORy5FTlNQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRM=
+PURBVEUyMDIzMTAwMi1JU1NVWC5TSURYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5=
+NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NT=
+BfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3NS01M=
+zA5YjQwYTM2ZDI0MjU5YTgxZjdjYzU5MWUyZWMxYSIsInBoIjpudWxsLCJtIjpmYWxzZSwidWki=
+OiIiLCJ1biI6IiIsInUiOiJodHRwczovL3d3dy5leHBlZGlhLmNvbS91c2VyL2VtYWlsY2xpY2s=
+vYmV4LW9jcy9GSWRiUmE3dzNjM3J0RVhrNVBZTDNoeDFyN25PUGhuRmdBOU0xaFJqTENzN0JQeH=
+NxQndxV0puaU12SDlTTV8wQWFNanB3ZnlHbDNFb0dPMW0xTUx6OWlUQXVLbm1tWWF6RlRFWGtFa=
+Goyb1dlZ05IZDdCNElRcHlUemcvdHJpcHMvNzI2Njg2MDMzMTUwNjYvZGV0YWlscy9ObVEwWWpr=
+eU16UXRaVFk0TVMwMU0yRmhMV0ZoT1RrdFpXTTVPREF6T0dNNFlqVTBPekJsTWpObFlUUXpMV1l=
+3TWpZdE5EazFNUzFoWlRSbExXTTVOMlJsTXpkbE4yRm1ORjh3T3pBP3NpdGVpZD0xJnVzZXJUb2=
+tlbj1GSWRiUmE3dzNjM3J0RVhrNVBZTDNoeDFyN25PUGhuRmdBOU0xaFJqTENzN0JQeHNxQndxV=
+0puaU12SDlTTV8wQWFNanB3ZnlHbDNFb0dPMW0xTUx6OWlUQXVLbm1tWWF6RlRFWGtFaGoyb1dl=
+Z05IZDdCNElRcHlUemcmRU1MQ0lEPVVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQVVJ=
+DSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURYLk=
+tFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0xM=
+DEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5=
+OTRfOC0xMTYxOTEuTU9EOTY3LTU4LTEtMC1FTUFJTC1CQU5ORVItRU4tVVNfUzctUDkyX1BPUzB=
+fTE5LMTQ2MSJ9/8br8uXdhVDreZWIJYPi9tQ" style=3D"font-family: Helvetica, Aria=
+l, sans-serif; color:#005aeb; font-size:12px; line-height:16px; font-weight=
+:normal; text-decoration:none;" target=3D"_blank" nowrap=3D"" >View all rul=
+es in full itinerary</a></td></tr><!-- *=3D*=3D*=3D* END CB: Text (linked) =
+*=3D*=3D*=3D* -->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D END 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D --></table>
+</td>
+</tr><!-- ........ END SINGLE COL WRAPPER ........ -->
+</table>
+</th>
+<!-- =3D=3D=3D=3D=3D=3D END Middle Content =3D=3D=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"5%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+</table>
+</th>
+<!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D -->
+</tr>
+</table>
+</th>
+</tr><!-- ........ END TRIPLE COL WRAPPER ........ -->
+<!-- ....... START TRIPLE COL WRAPPER ....... -->
+<tr>
+<th bgcolor=3D"#FFFFFF" align=3D"" valign=3D"top"
+style=3D"padding:0px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #C7C7C7; border-radius:0px 0px 0px=
+ 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<!-- =3D=3D=3D=3D=3D START Left Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"5%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT LEFT CONTENT HERE -->
+</table>
+</th>
+<!-- =3D=3D=3D=3D=3D=3D END Left Content =3D=3D=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D START Middle Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"90%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT MIDDLE CONTENT HERE -->
+<!-- ....... START SINGLE COL WRAPPER ....... -->
+<tr>
+<td bgcolor=3D"#FFFFFF" align=3D"" valign=3D""
+style=3D"padding:16px 16px 24px 16px; border-right: none; border-left: none=
+; border-top: none; border-bottom: none; border-radius:0px 0px 0px 0px; -we=
+bkit-border-radius:0px 0px 0px 0px;-moz-border-radius:0px 0px 0px 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D START 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D -->
+<!-- ....... START SINGLE COL WRAPPER ....... -->
+<tr>
+<td bgcolor=3D"#FFFFFF" align=3D"" valign=3D""
+style=3D"padding:0px 0px 16px 0px; border-right: none; border-left: none; b=
+order-top: none; border-bottom: 0px solid #e0e0e0; border-radius:0px 0px 0p=
+x 0px; -webkit-border-radius:0px 0px 0px 0px;-moz-border-radius:0px 0px 0px=
+ 0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D START 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:0px 0px 0px 0=
+px; font-family:Helvetica, Arial, sans-serif; color:#001959; font-size:18px=
+; line-height:22px; font-weight:bold;" class=3D"appleLinkBodyTxt">We're her=
+e to help</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D*=
+ --><!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td b=
+gcolor=3D"#FFFFFF" align=3D"left" valign=3D"top" style=3D"padding:16px 0px =
+0px 0px; font-family:Helvetica, Arial, sans-serif; color:#465280; font-size=
+:14px; line-height:18px; font-weight:normal;" class=3D"appleLinkBodyTxt">Co=
+ntact Expedia for further guidance on your itinerary.</td></tr><!-- *=3D*=
+=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* --><!-- *=3D*=3D*=3D* START =
+CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcolor=3D"#FFFFFF" align=3D"l=
+eft" valign=3D"top" style=3D"padding:8px 0px 0px 0px; font-family:Helvetica=
+, Arial, sans-serif; color:#465280; font-size:14px; line-height:18px; font-=
+weight:normal;" class=3D"appleLinkBodyTxt">Itinerary: #<span style=3D"color=
+: #005aeb;">72668603315066</span></td></tr><!-- *=3D*=3D*=3D* END CB: Text =
+(unlinked) *=3D*=3D*=3D* --><!-- *=3D*=3D*=3D* START CB: Text (linked) *=3D=
+*=3D*=3D* --><tr><td bgcolor=3D"#FFFFFF" align=3D"left" valign=3D"" style=
+=3D"padding: 8px 0px 0px 0px;" class=3D""><a alias=3D"Header" href=3D"https=
+://link.expediamail.com/c/7/eyJhaSI6NjQxMjYyODEsImUiOiJwc2UwMDAxM0BnbWFpbC5=
+jb20iLCJyaSI6IlVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQVVJDSEFTRUNPTkZJUk=
+1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURYLktFWTk2MDc0MjUyN=
+Dg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0xMDEzMDVfMi0xMjUw=
+NjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5OTRfOC0xMTYxOTE=
+iLCJycSI6IjAyLWMyMzI3NS01MzA5YjQwYTM2ZDI0MjU5YTgxZjdjYzU5MWUyZWMxYSIsInBoIj=
+pudWxsLCJtIjpmYWxzZSwidWkiOiIiLCJ1biI6IiIsInUiOiJodHRwczovL3d3dy5leHBlZGlhL=
+mNvbS91c2VyL2VtYWlsY2xpY2svYmV4LW9jcy9GSWRiUmE3dzNjM3J0RVhrNVBZTDNoeDFyN25P=
+UGhuRmdBOU0xaFJqTENzN0JQeHNxQndxV0puaU12SDlTTV8wQWFNanB3ZnlHbDNFb0dPMW0xTUx=
+6OWlUQXVLbm1tWWF6RlRFWGtFaGoyb1dlZ05IZDdCNElRcHlUemcvc2VydmljZT9FTUxDSUQ9VV=
+MuUFQuRVZFTlRUUklHR0VSRURNQUlMSU5HLkVOU1BVUkNIQVNFQ09ORklSTUFUSU9OLkZMSUdIV=
+CZFTUxEVEw9REFURTIwMjMxMDAyLUlTU1VYLlNJRFguS0VZOTYwNzQyNTI0ODkuUEFJRFguTEFO=
+R0VOX1VTLk1DSURYLlRFU1Q0LlZFUlNYLk1JRFMxLTEwMTMwNV8yLTEyNTA2N18zLTEyOTg0OV8=
+0LTEyOTg1MF81LTE1MjM1OV82LTE2MDU2NV83LTEyOTk5NF84LTExNjE5MS5NT0Q5NjgtMzQtMS=
+0wLUVNQUlMLUJBTk5FUi1FTi1VU19TOC1QNV9QT1MwX0xOSzg4In0/IP5gkHjTlO3yUMZFO3Mxo=
+Q" style=3D"font-family: Helvetica, Arial, sans-serif; color:#005aeb; font-=
+size:14px; line-height:18px; font-weight:normal; text-decoration:none;" tar=
+get=3D"_blank" nowrap=3D"" >Expedia customer support</a></td></tr><!-- *=3D=
+*=3D*=3D* END CB: Text (linked) *=3D*=3D*=3D* --><!-- *=3D*=3D*=3D* START C=
+B: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcolor=3D"#FFFFFF" align=3D"le=
+ft" valign=3D"top" style=3D"padding:16px 0px 8px 0px; font-family:Helvetica=
+, Arial, sans-serif; color:#465280; font-size:14px; line-height:18px; font-=
+weight:normal;" class=3D"appleLinkBodyTxt">Receive real-time travel alerts =
+throughout your trip with the <a href=3D"https://link.expediamail.com/c/7/e=
+yJhaSI6NjQxMjYyODEsImUiOiJwc2UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTLlBULkVWRU5U=
+VFJJR0dFUkVETUFJTElORy5FTlNQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPUR=
+BVEUyMDIzMTAwMi1JU1NVWC5TSURYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0=
+lEWC5URVNUNC5WRVJTWC5NSURTMS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfN=
+S0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3NS01MzA5=
+YjQwYTM2ZDI0MjU5YTgxZjdjYzU5MWUyZWMxYSIsInBoIjpudWxsLCJtIjpmYWxzZSwidWkiOiI=
+iLCJ1biI6IiIsInUiOiJodHRwczovL2V4cGUuYXBwLmxpbmsvP35hZ2VuY3lfaWQ9MTAzNCZ-Y3=
+VzdG9tZXJfY2FtcGFpZ249QlJBTkQmfmN1c3RvbWVyX3N1Yl9zaXRlX25hbWU9R0VORVJJQyYkM=
+3A9Ml9jdXN0b21fMTY5MDA2Jn5jdXN0b21lcl9zZWNvbmRhcnlfcHVibGlzaGVyPUVYUEVESUEt=
+VVMmfmN1c3RvbWVyX2FkX3NldF9uYW1lPUJSQU5EOkRJU1BMQVkuRU9EJn5jdXN0b21lcl9hZF9=
+uYW1lPUVNTC5VUy5QVC5FVkVOVFRSSUdHRVJFRE1BSUxJTkcuT0NFTE9UUFVSQ0hBU0VDT05GSV=
+JNQVRJT04uRkxJR0hUJn5jdXN0b21lcl9wbGFjZW1lbnQ9RU1MLVBVUkNIQVNFQ09ORklSTUFUS=
+U9OLUZMSUdIVC1PQ0VMT1QmJGRlc2t0b3BfdXJsPWh0dHBzOi8vd3d3LmV4cGVkaWEuY29tL2Fw=
+cCZjYW5vbmljYWxfdXJsPWh0dHBzOi8vd3d3LmV4cGVkaWEuY29tL2FwcC9tb2JpbGUvZGVlcGx=
+pbmsvdHJpcHMmRU1MQ0lEPVVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQVVJDSEFTRU=
+NPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURYLktFWTk2M=
+Dc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0xMDEzMDVf=
+Mi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5OTRfOC0=
+xMTYxOTEuTU9EOTY4LTM0LTEtMC1FTUFJTC1CQU5ORVItRU4tVVNfUzhfUE9TMF9UWFQ5OSJ9/2=
+5eVzo-W29kyAYckc-NmPw"><span style=3D"text-decoration: none; color: rgb(0, =
+90, 235);"><span style=3D"color:#005aeb;">Expedia app</span></span>.</a></t=
+d></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=3D* -->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D END 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D --></table>
+</td>
+</tr><!-- ........ END SINGLE COL WRAPPER ........ -->
+<!-- *=3D*=3D*=3D* START CB: Button *=3D*=3D*=3D* --><tr><td align=3D"cente=
+r" valign=3D"top" bgcolor=3D"#FFFFFF" style=3D"padding: 16px 0px 0px 0px;">=
+<table role=3D"presentation" style=3D"border-collapse: separate;" align=3D"=
+left" valign=3D"" class=3D"FlexWidth100HERO" cellpadding=3D"15" cellspacing=
+=3D"0"><tr><td bgcolor=3D"#ffffff" align=3D"center" style=3D"padding: 8px 1=
+5px 8px 15px; border-radius:8px 8px 8px 8px; -moz-border-radius:8px 8px 8px=
+ 8px; -webkit-border-radius:8px 8px 8px 8px;border-top:1px solid #cccfdb; b=
+order-bottom:1px solid #cccfdb; border-right:1px solid #cccfdb; border-left=
+:1px solid #cccfdb;"><a alias=3D"Button" href=3D"https://link.expediamail.c=
+om/c/7/eyJhaSI6NjQxMjYyODEsImUiOiJwc2UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTLlBU=
+LkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1=
+MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl=
+9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xM=
+jk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3=
+NS01MzA5YjQwYTM2ZDI0MjU5YTgxZjdjYzU5MWUyZWMxYSIsInBoIjpudWxsLCJtIjpmYWxzZSw=
+idWkiOiIiLCJ1biI6IiIsInUiOiJodHRwczovL3d3dy5leHBlZGlhLmNvbS91c2VyL2VtYWlsY2=
+xpY2svYmV4LW9jcy9GSWRiUmE3dzNjM3J0RVhrNVBZTDNoeDFyN25PUGhuRmdBOU0xaFJqTENzN=
+0JQeHNxQndxV0puaU12SDlTTV8wQWFNanB3ZnlHbDNFb0dPMW0xTUx6OWlUQXVLbm1tWWF6RlRF=
+WGtFaGoyb1dlZ05IZDdCNElRcHlUemcvdHJpcHMvNzI2Njg2MDMzMTUwNjYvZGV0YWlscy9ObVE=
+wWWpreU16UXRaVFk0TVMwMU0yRmhMV0ZoT1RrdFpXTTVPREF6T0dNNFlqVTBPekJsTWpObFlUUX=
+pMV1l3TWpZdE5EazFNUzFoWlRSbExXTTVOMlJsTXpkbE4yRm1ORjh3T3pBP3NpdGVpZD0xJnVzZ=
+XJUb2tlbj1GSWRiUmE3dzNjM3J0RVhrNVBZTDNoeDFyN25PUGhuRmdBOU0xaFJqTENzN0JQeHNx=
+QndxV0puaU12SDlTTV8wQWFNanB3ZnlHbDNFb0dPMW0xTUx6OWlUQXVLbm1tWWF6RlRFWGtFaGo=
+yb1dlZ05IZDdCNElRcHlUemcmRU1MQ0lEPVVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTl=
+NQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TS=
+URYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURT=
+MS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0=
+xMjk5OTRfOC0xMTYxOTEuTU9EOTY4LTM0LTEtMC1FTUFJTC1CQU5ORVItRU4tVVNfUzgtUDE4X1=
+BPUzBfQlROODkifQ/mHkW108QXctZDZUQhnIEOA" style=3D"font-family: Helvetica, A=
+rial, sans-serif; color:#005aeb; font-size:16px; font-weight:bold; display:=
+block; text-decoration:none;" target=3D"_blank" >Manage your itinerary</a><=
+/td></tr></table></td></tr><!-- *=3D*=3D*=3D* END CB: Button *=3D*=3D*=3D* =
+-->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D END 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D --></table>
+</td>
+</tr><!-- ........ END SINGLE COL WRAPPER ........ -->
+</table>
+</th>
+<!-- =3D=3D=3D=3D=3D=3D END Middle Content =3D=3D=3D=3D=3D=3D -->
+<!-- =3D=3D=3D=3D=3D START Right Content =3D=3D=3D=3D=3D -->
+<th bgcolor=3D"#FFFFFF" class=3D"" style=3D"padding:0px 0px 0px 0px;" align=
+=3D""
+valign=3D"top" width=3D"5%">
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+<!-- INSERT RIGHT CONTENT HERE -->
+</table>
+</th>
+<!-- =3D=3D=3D=3D=3D=3D END Right Content =3D=3D=3D=3D=3D=3D -->
+</tr>
+</table>
+</th>
+</tr><!-- ........ END TRIPLE COL WRAPPER ........ -->
+<!-- ....... START SINGLE COL WRAPPER ....... -->
+<tr>
+<td bgcolor=3D"#ededed" align=3D"" valign=3D""
+style=3D"padding:0px 0px 0px 0px; border-right: none; border-left: none; bo=
+rder-top: none; border-bottom: 0px solid #C7C7C7; border-radius:0px 0px 0px=
+ 0px; -webkit-border-radius:0px 0px 0px 0px;-moz-border-radius:0px 0px 0px =
+0px;"
+class=3D"">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D START 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D -->
+<!-- *=3D*=3D*=3D* START CB: Text (unlinked) *=3D*=3D*=3D* --><tr><td bgcol=
+or=3D"#ededed" align=3D"left" valign=3D"top" style=3D"padding:24px 16px 24p=
+x 16px; font-family:Helvetica, Arial, sans-serif; color:#6b6b6b; font-size:=
+10px; line-height:1.3em; font-weight:normal;" class=3D"appleLinkBodyTxt">Da=
+ta Protection Notice: Your personal data will be processed in accordance wi=
+th the applicable carrier=E2=80=99s privacy policy and, if your booking is =
+made via a reservation system provider (GDS), with its privacy policy. Thes=
+e are available at <a href=3D"https://link.expediamail.com/c/7/eyJhaSI6NjQx=
+MjYyODEsImUiOiJwc2UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTLlBULkVWRU5UVFJJR0dFUkV=
+ETUFJTElORy5FTlNQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMT=
+AwMi1JU1NVWC5TSURYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUN=
+C5WRVJTWC5NSURTMS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlf=
+Ni0xNjA1NjVfNy0xMjk5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3NS01MzA5YjQwYTM2ZDI=
+0MjU5YTgxZjdjYzU5MWUyZWMxYSIsInBoIjpudWxsLCJtIjpmYWxzZSwidWkiOiIiLCJ1biI6Ii=
+IsInUiOiJodHRwczovL3d3dy5pYXRhdHJhdmVsY2VudHJlLmNvbS9wcml2YWN5P0VNTENJRD1VU=
+y5QVC5FVkVOVFRSSUdHRVJFRE1BSUxJTkcuRU5TUFVSQ0hBU0VDT05GSVJNQVRJT04uRkxJR0hU=
+JkVNTERUTD1EQVRFMjAyMzEwMDItSVNTVVguU0lEWC5LRVk5NjA3NDI1MjQ4OS5QQUlEWC5MQU5=
+HRU5fVVMuTUNJRFguVEVTVDQuVkVSU1guTUlEUzEtMTAxMzA1XzItMTI1MDY3XzMtMTI5ODQ5Xz=
+QtMTI5ODUwXzUtMTUyMzU5XzYtMTYwNTY1XzctMTI5OTk0XzgtMTE2MTkxLk1PRDk2OC0zNC0xL=
+TAtRU1BSUwtQkFOTkVSLUVOLVVTX1M4X1BPUzBfVFhUOTgifQ/yqsV5j8Yt8b0xEd7b0Cu5A" s=
+tyle=3D"color:#005aeb">https://www.iatatravelcentre.com/privacy</a> or from=
+ the carrier or GDS directly. You should read this documentation, which app=
+lies to your booking and specifies, for example, how your personal data is =
+collected, stored, used, disclosed and transferred (applicable for interlin=
+e carriage).</td></tr><!-- *=3D*=3D*=3D* END CB: Text (unlinked) *=3D*=3D*=
+=3D* -->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D END 1 Col Content =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D --></table>
+</td>
+</tr><!-- ........ END SINGLE COL WRAPPER ........ -->
+</td></tr></table></td></tr>
+<tr><td id=3D"appDownload" class=3D"margin32" bgcolor=3D"#F0EBE8" align=3D"=
+center" valign=3D"top" style=3D"background-color: #F0EBE8; padding: 16px 46=
+px 16px 46px;"><table role=3D"presentation" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0"><tr><td align=3D"center" valign=3D"middle"=
+><a href=3D"https://link.expediamail.com/c/7/eyJhaSI6NjQxMjYyODEsImUiOiJwc2=
+UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQV=
+VJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURY=
+LktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0=
+xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMj=
+k5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3NS01MzA5YjQwYTM2ZDI0MjU5YTgxZjdjYzU5M=
+WUyZWMxYSIsInBoIjpudWxsLCJtIjpmYWxzZSwidWkiOiIiLCJ1biI6IiIsInUiOiJodHRwczov=
+LzE3MjcxMC5tZWFzdXJlbWVudGFwaS5jb20vc2VydmU_YWN0aW9uPWNsaWNrJnB1Ymxpc2hlcl9=
+pZD0xNzI3MTAmc2l0ZV9pZF9pb3M9MTAyNzEyJnNpdGVfaWRfYW5kcm9pZD0xMDc2NyZhZ2VuY3=
+lfaWQ9MTAzNCZteV9hZD1FTUwuICsgT21uaXR1cmVWNiZFTUxDSUQ9VVMuUFQuRVZFTlRUUklHR=
+0VSRURNQUlMSU5HLkVOU1BVUkNIQVNFQ09ORklSTUFUSU9OLkZMSUdIVCZFTUxEVEw9REFURTIw=
+MjMxMDAyLUlTU1VYLlNJRFguS0VZOTYwNzQyNTI0ODkuUEFJRFguTEFOR0VOX1VTLk1DSURYLlR=
+FU1Q0LlZFUlNYLk1JRFMxLTEwMTMwNV8yLTEyNTA2N18zLTEyOTg0OV80LTEyOTg1MF81LTE1Mj=
+M1OV82LTE2MDU2NV83LTEyOTk5NF84LTExNjE5MSJ9/WcrBH4tE4MftFqEeZ3x6zQ" alias=3D=
+"Book the App" target=3D"_blank" style=3D"font-family: Helvetica, sans-seri=
+f; font-size:14px; line-height:18px; color:#575B6E; text-decoration:none;">=
+Download our FREE mobile app</a></td></tr><tr><th align=3D"center" valign=
+=3D"middle" style=3D"padding: 8px 0 0 0;"><table role=3D"presentation" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><th width=3D"95" align=3D"=
+right" valign=3D"middle" style=3D"padding: 0 8px 0 0;"><a alias=3D"Mobile A=
+pp Apple" href=3D"https://172710.measurementapi.com/serve?action=3Dclick&pu=
+blisher_id=3D172710&site_id=3D102712&agency_id=3D1034&my_site=3DGENERIC&my_=
+adgroup=3DTRIGGERED&my_ad=3DEML.EMLCID=3DUS.PT.EVENTTRIGGEREDMAILING.ENSPUR=
+CHASECONFIRMATION.FLIGHT&EMLDTL=3DDATE20231002-ISSUX.SIDX.KEY96074252489.PA=
+IDX.LANGEN_US.MCIDX.TEST4.VERSX.MIDS1-101305_2-125067_3-129849_4-129850_5-1=
+52359_6-160565_7-129994_8-116191&my_placement=3DTRIGGEREDEMAIL" target=3D"_=
+blank" ><img src=3D"https://images.trvl-media.com/media/content/expus/email=
+/wrapper/app/ios/app_ios_en_95x28.png" width=3D"95" alt=3D"Expedia App" bor=
+der=3D"0" style=3D"display:block;"/></a></th><th width=3D"95" align=3D"left=
+" valign=3D"middle" style=3D"padding: 0 0 0 8px;"><a alias=3D"Mobile App Go=
+ogle" href=3D"https://172710.measurementapi.com/serve?action=3Dclick&publis=
+her_id=3D172710&site_id=3D107678&agency_id=3D1034&my_site=3DGENERIC&my_adgr=
+oup=3DTRIGGERED&my_ad=3DEML.EMLCID=3DUS.PT.EVENTTRIGGEREDMAILING.ENSPURCHAS=
+ECONFIRMATION.FLIGHT&EMLDTL=3DDATE20231002-ISSUX.SIDX.KEY96074252489.PAIDX.=
+LANGEN_US.MCIDX.TEST4.VERSX.MIDS1-101305_2-125067_3-129849_4-129850_5-15235=
+9_6-160565_7-129994_8-116191&my_placement=3DTRIGGEREDEMAIL" target=3D"_blan=
+k"><img src=3D"https://images.trvl-media.com/media/content/expus/email/wrap=
+per/us-en/expediaapp_android_95x28.png" width=3D"95" alt=3D"Expedia App" bo=
+rder=3D"0" style=3D"display:block;"/></a></th></tr></table></th></tr></tabl=
+e></td></tr>
+<tr><td id=3D"footer" class=3D"margin32" bgcolor=3D"#F8F5F4" align=3D"cente=
+r" valign=3D"top" style=3D"background-color:#F8F5F4; padding: 8px 46px 24px=
+ 46px;"><table role=3D"presentation" width=3D"100%" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0"> <!-- for "en_US", use its normal footerlink deli=
+miter after link 5 -->
+<tr><td align=3D"center" valign=3D"top" style=3D"padding: 16px 0 0 0;"><tab=
+le role=3D"presentation" width=3D"100%" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0"><tr><td align=3D"center" valign=3D"middle" style=3D"font-fami=
+ly: Helvetica, sans-serif; font-size:12px; line-height: 16px; color:#575B6E=
+;"><a alias=3D"1.0_1033_LinksAccount_en_US" href=3D"https://link.expediamai=
+l.com/c/7/eyJhaSI6NjQxMjYyODEsImUiOiJwc2UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTL=
+lBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQm=
+RU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkd=
+FTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC=
+0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyM=
+zI3NS01MzA5YjQwYTM2ZDI0MjU5YTgxZjdjYzU5MWUyZWMxYSIsInBoIjpudWxsLCJtIjpmYWxz=
+ZSwidWkiOiIiLCJ1biI6IiIsInUiOiJodHRwczovL3d3dy5leHBlZGlhLmNvbS91c2VyL2VtYWl=
+sY2xpY2svYmV4LW9jcy9GSWRiUmE3dzNjM3J0RVhrNVBZTDNoeDFyN25PUGhuRmdBOU0xaFJqTE=
+NzN0JQeHNxQndxV0puaU12SDlTTV8wQWFNanB3ZnlHbDNFb0dPMW0xTUx6OWlUQXVLbm1tWWF6R=
+lRFWGtFaGoyb1dlZ05IZDdCNElRcHlUemcvdXNlci9hY2NvdW50P2xhbmdpZD0xMDMzJkVNTENJ=
+RD1VUy5QVC5FVkVOVFRSSUdHRVJFRE1BSUxJTkcuRU5TUFVSQ0hBU0VDT05GSVJNQVRJT04uRkx=
+JR0hUJkVNTERUTD1EQVRFMjAyMzEwMDItSVNTVVguU0lEWC5LRVk5NjA3NDI1MjQ4OS5QQUlEWC=
+5MQU5HRU5fVVMuTUNJRFguVEVTVDQuVkVSU1guTUlEUzEtMTAxMzA1XzItMTI1MDY3XzMtMTI5O=
+DQ5XzQtMTI5ODUwXzUtMTUyMzU5XzYtMTYwNTY1XzctMTI5OTk0XzgtMTE2MTkxIn0/TfepLbGl=
+KclinijXS49yLg" style=3D"color:#575B6E;text-decoration: underline;">My Acco=
+unt</a> <span>| </span><a alias=3D"1.0_1033_LinksUpdatePreferences_en_US" h=
+ref=3D"https://link.expediamail.com/c/7/eyJhaSI6NjQxMjYyODEsImUiOiJwc2UwMDA=
+xM0BnbWFpbC5jb20iLCJyaSI6IlVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQVVJDSE=
+FTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURYLktFW=
+Tk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0xMDEz=
+MDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5OTR=
+fOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3NS01MzA5YjQwYTM2ZDI0MjU5YTgxZjdjYzU5MWUyZW=
+MxYSIsInBoIjpudWxsLCJtIjpmYWxzZSwidWkiOiIiLCJ1biI6IiIsInUiOiJodHRwczovL3d3d=
+y5leHBlZGlhLmNvbS91c2VyL2VtYWlsY2xpY2svYmV4LW9jcy9GSWRiUmE3dzNjM3J0RVhrNVBZ=
+TDNoeDFyN25PUGhuRmdBOU0xaFJqTENzN0JQeHNxQndxV0puaU12SDlTTV8wQWFNanB3ZnlHbDN=
+Fb0dPMW0xTUx6OWlUQXVLbm1tWWF6RlRFWGtFaGoyb1dlZ05IZDdCNElRcHlUemcvYWNjb3VudC=
+9jb21tdW5pY2F0aW9ucz9sYW5naWQ9MTAzMyZFTUxDSUQ9VVMuUFQuRVZFTlRUUklHR0VSRURNQ=
+UlMSU5HLkVOU1BVUkNIQVNFQ09ORklSTUFUSU9OLkZMSUdIVCZFTUxEVEw9REFURTIwMjMxMDAy=
+LUlTU1VYLlNJRFguS0VZOTYwNzQyNTI0ODkuUEFJRFguTEFOR0VOX1VTLk1DSURYLlRFU1Q0LlZ=
+FUlNYLk1JRFMxLTEwMTMwNV8yLTEyNTA2N18zLTEyOTg0OV80LTEyOTg1MF81LTE1MjM1OV82LT=
+E2MDU2NV83LTEyOTk5NF84LTExNjE5MSJ9/fxWz-LZEKKNM2mNq3P5HsA" style=3D"color:#=
+575B6E;text-decoration: underline;"></a><a alias=3D"1.0_1033_LinksPrivacy_e=
+n_US" href=3D"https://link.expediamail.com/c/7/eyJhaSI6NjQxMjYyODEsImUiOiJw=
+c2UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlN=
+QVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSU=
+RYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTM=
+S0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0x=
+Mjk5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3NS01MzA5YjQwYTM2ZDI0MjU5YTgxZjdjYzU=
+5MWUyZWMxYSIsInBoIjpudWxsLCJtIjpmYWxzZSwidWkiOiIiLCJ1biI6IiIsInUiOiJodHRwcz=
+ovL3d3dy5leHBlZGlhLmNvbS91c2VyL2VtYWlsY2xpY2svYmV4LW9jcy9GSWRiUmE3dzNjM3J0R=
+VhrNVBZTDNoeDFyN25PUGhuRmdBOU0xaFJqTENzN0JQeHNxQndxV0puaU12SDlTTV8wQWFNanB3=
+ZnlHbDNFb0dPMW0xTUx6OWlUQXVLbm1tWWF6RlRFWGtFaGoyb1dlZ05IZDdCNElRcHlUemcvcC9=
+pbmZvLW90aGVyL3ByaXZhY3ktcG9saWN5Lmh0bT9sYW5naWQ9MTAzMyZFTUxDSUQ9VVMuUFQuRV=
+ZFTlRUUklHR0VSRURNQUlMSU5HLkVOU1BVUkNIQVNFQ09ORklSTUFUSU9OLkZMSUdIVCZFTUxEV=
+Ew9REFURTIwMjMxMDAyLUlTU1VYLlNJRFguS0VZOTYwNzQyNTI0ODkuUEFJRFguTEFOR0VOX1VT=
+Lk1DSURYLlRFU1Q0LlZFUlNYLk1JRFMxLTEwMTMwNV8yLTEyNTA2N18zLTEyOTg0OV80LTEyOTg=
+1MF81LTE1MjM1OV82LTE2MDU2NV83LTEyOTk5NF84LTExNjE5MSJ9/vxdCPJaeFI5Ia_8hnL4Nx=
+g" style=3D"color:#575B6E;text-decoration: underline;">Privacy Statement</a=
+> <span>| </span><a alias=3D"1.0_1033_LinksCust_en_US" href=3D"https://link=
+.expediamail.com/c/7/eyJhaSI6NjQxMjYyODEsImUiOiJwc2UwMDAxM0BnbWFpbC5jb20iLC=
+JyaSI6IlVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQVVJDSEFTRUNPTkZJUk1BVElPT=
+i5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURYLktFWTk2MDc0MjUyNDg5LlBB=
+SURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0xMDEzMDVfMi0xMjUwNjdfMy0=
+xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5OTRfOC0xMTYxOTEiLCJycS=
+I6IjAyLWMyMzI3NS01MzA5YjQwYTM2ZDI0MjU5YTgxZjdjYzU5MWUyZWMxYSIsInBoIjpudWxsL=
+CJtIjpmYWxzZSwidWkiOiIiLCJ1biI6IiIsInUiOiJodHRwczovL3d3dy5leHBlZGlhLmNvbS9z=
+ZXJ2aWNlL2VuLXVzLz9sYW5naWQ9MTAzMyZFTUxDSUQ9VVMuUFQuRVZFTlRUUklHR0VSRURNQUl=
+MSU5HLkVOU1BVUkNIQVNFQ09ORklSTUFUSU9OLkZMSUdIVCZFTUxEVEw9REFURTIwMjMxMDAyLU=
+lTU1VYLlNJRFguS0VZOTYwNzQyNTI0ODkuUEFJRFguTEFOR0VOX1VTLk1DSURYLlRFU1Q0LlZFU=
+lNYLk1JRFMxLTEwMTMwNV8yLTEyNTA2N18zLTEyOTg0OV80LTEyOTg1MF81LTE1MjM1OV82LTE2=
+MDU2NV83LTEyOTk5NF84LTExNjE5MSJ9/7QyJ9SQaqNm0TKmwzhpV6Q" style=3D"color:#57=
+5B6E;text-decoration: underline;">Customer Service</a></td></tr></table></t=
+d></tr>
+<!--/* =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D =3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D LEGAL TEMPLATE =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D =3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D */-->
+<tr><td align=3D"left" valign=3D"top" style=3D"font-family: Helvetica, sans=
+-serif; color: #575B6E; font-size: 10px; line-height: 14px; text-decoration=
+: none; padding: 16px 0 0 0;">This email and its links may contain your per=
+sonal information; please only forward to people you trust.<br /><br />You =
+are receiving this transactional email based on a recent booking or account=
+-related update on <a escapequotes=3D'true' alias=3D'1.0_1033_Legal_Expedia=
+.com' href=3D'https://link.expediamail.com/c/7/eyJhaSI6NjQxMjYyODEsImUiOiJw=
+c2UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlN=
+QVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSU=
+RYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTM=
+S0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0x=
+Mjk5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3NS01MzA5YjQwYTM2ZDI0MjU5YTgxZjdjYzU=
+5MWUyZWMxYSIsInBoIjpudWxsLCJtIjpmYWxzZSwidWkiOiIiLCJ1biI6IiIsInUiOiJodHRwcz=
+ovL3d3dy5leHBlZGlhLmNvbS91c2VyL2VtYWlsY2xpY2svYmV4LW9jcy9GSWRiUmE3dzNjM3J0R=
+VhrNVBZTDNoeDFyN25PUGhuRmdBOU0xaFJqTENzN0JQeHNxQndxV0puaU12SDlTTV8wQWFNanB3=
+ZnlHbDNFb0dPMW0xTUx6OWlUQXVLbm1tWWF6RlRFWGtFaGoyb1dlZ05IZDdCNElRcHlUemc_bGF=
+uZ2lkPTEwMzMmRU1MQ0lEPVVTLlBULkVWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQVVJDSEFTRU=
+NPTkZJUk1BVElPTi5GTElHSFQmRU1MRFRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURYLktFWTk2M=
+Dc0MjUyNDg5LlBBSURYLkxBTkdFTl9VUy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0xMDEzMDVf=
+Mi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5OTRfOC0=
+xMTYxOTEifQ/3KTAqlXHNkYhd4gHcc4W8g' target=3D'_blank' style=3D'color: #575B=
+6E; text-decoration: underline;'><span style=3D'color: #575B6E'>Expedia.com=
+</span></a>.<br /><br /><b>Contact information:</b> Expedia, Attn: EMC Team=
+ <span class=3D'alr' style=3D'font-size:10px !important;'>1111 Expedia Grou=
+p Way W., Seattle WA 98119</span>. Expedia cannot receive replies to this e=
+mail. <br /><br /><span class=3D'alr'>CST# 2029030-50</span><br /><br />&co=
+py; 2023 Expedia, Inc., an Expedia Group company. All rights reserved. Expe=
+dia, the Expedia Logo, One Key and OneKeyCash are trademarks or registered =
+trademarks of Expedia, Inc.</td></tr>
+<!--/* =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D =3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D LEGAL TEMPLATE =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D =3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D */-->
+<tr><td align=3D"left" valign=3D"middle" style=3D"padding: 16px 0 0 0;font-=
+family: Helvetica, sans-serif; font-size:10px; line-height: 14px; color:#57=
+5B6E;"><a alias=3D"View in Browser" href=3D"https://link.expediamail.com/m/=
+1/64126281/02-c23275-5309b40a36d24259a81f7cc591e2ec1a/1/1/1" style=3D"color=
+:#575B6E;text-decoration:underline;">View this email in a web browser </a><=
+/td></tr><tr><td align=3D"left" style=3D"font-family: Helvetica, sans-serif=
+;line-height:12px;color:#f8f5f4;font-size:1px; text-decoration:none; word-b=
+reak:break-all;padding:16px 0 0 0;"> <span style=3D'word-break:break-all;'>=
+EMLCID=3DUS.PT.EVENTTRIGGEREDMAILING.ENSPURCHASECONFIRMATION.FLIGHT&EMLDTL=
+=3DDATE20231002-ISSUX.SIDX.KEY96074252489.PAIDX.LANGEN_US.MCIDX.TEST4.VERSX=
+.MIDS1-101305_2-125067_3-129849_4-129850_5-152359_6-160565_7-129994_8-11619=
+1</td></tr><!-- safeRTB --></table></td></tr></tbody></table></center></td>=
+</tr></tbody></table></body></html><img src=3D"https://link.expediamail.com=
+/o/4/eyJhaSI6NjQxMjYyODEsImUiOiJwc2UwMDAxM0BnbWFpbC5jb20iLCJyaSI6IlVTLlBULk=
+VWRU5UVFJJR0dFUkVETUFJTElORy5FTlNQVVJDSEFTRUNPTkZJUk1BVElPTi5GTElHSFQmRU1MR=
+FRMPURBVEUyMDIzMTAwMi1JU1NVWC5TSURYLktFWTk2MDc0MjUyNDg5LlBBSURYLkxBTkdFTl9V=
+Uy5NQ0lEWC5URVNUNC5WRVJTWC5NSURTMS0xMDEzMDVfMi0xMjUwNjdfMy0xMjk4NDlfNC0xMjk=
+4NTBfNS0xNTIzNTlfNi0xNjA1NjVfNy0xMjk5OTRfOC0xMTYxOTEiLCJycSI6IjAyLWMyMzI3NS=
+01MzA5YjQwYTM2ZDI0MjU5YTgxZjdjYzU5MWUyZWMxYSIsInBoIjpudWxsfQ/K2zvxfZe64EOO5=
+1Ji6CCQA" width=3D"1" height=3D"1" />
+------=_Part_905506968_1580244481.1696221975975--
+
+------=_Part_905506967_1813992196.1696221975975--

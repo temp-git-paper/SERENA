@@ -1,0 +1,474 @@
+Delivered-To: johndoe@gmail.com
+Received: by 10.80.146.76 with SMTP id j12csp2166555eda;
+        Mon, 13 Nov 2017 23:48:46 -0800 (PST)
+X-Google-Smtp-Source:
+ AGs4zMbnHlwYhh2BHabDI6uNDMxFVqQwkw9kViwcuYm5JFoTnd7PSczoU+wqDpOEGDaemL8kh5KO
+X-Received: by 10.233.222.135 with SMTP id
+ s129mr17646531qkf.261.1510645726137;        Mon, 13 Nov 2017 23:48:46 -0800
+ (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1510645726; cv=none;
+        d=google.com; s=arc-20160816;
+        b=iYtw8lFDNUFFzybfK8XWVy9y6pRGd4S/WtlEigbd1lDM4GsaLL2jh8/dXvGULM3C4U
+         ugxEjiq9y42lLotFtBysFQZjdzaaPi0Tnmt49REfj5Mk0ncSLNbovYWGHDUxlB7TPs1Z
+         y5VCa4av3LbXGZ3Fs5eMpnzJYCgFE59ae1TT2m4okjxz1kfhpH1JpOJzgBrKUPjn0bwV
+         AHnpIv8O4zBwKnP/VU9dF23L0gtmeptYRxmiu9n0t8wBA0uWkV9mqZ1zi+s4Syw4Z7kW
+         UeqTj//arvWqyQ3XnuohACwUhFp8HZDC6ISUXQGBBVyCEXzvTf0AGL5O08QeIXc+XJRP
+         bcXw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=feedback-id:message-id:mime-version:content-disposition        
+ :content-transfer-encoding:date:from:subject:to:dkim-signature        
+ :dkim-signature:arc-authentication-results;       
+ bh=QBcBvsT9aB+w+Z7HHTTWA0yTVQQyZGYOpQsi8stHl20=;       
+ b=eBZHo+ueVCnxMDGfrCTz/hYnQUujRk9xkmpzNuTBVM7ROcL4sep/BBJpt9mdrltYDC        
+ Ioz9b2BduzRrYqClsEHGw34GbdDGWYFkQii1xmBLW1sfDQYjlHk41tfwsLeQPUSSZ6bw        
+ /vRlBTHH0jOqJ3wtJuBz8EGDaE/mT0QVf3IFszDCrd/ad5Q9a4mVNvttElb6HjhvzNgm        
+ Jm5g3k0IUx00QtPJMREIMllHIRy9TfozvMAqM6kfEo+zAzcbPbNx5fy/mpqSIHoEIsSM        
+ FkGJshkD7ZTJK3/YicLWyONYGiH2/2fRMoJk7SBRPqwsK6sJhakADHp/ojFpJEs9hUR4        
+ J6XQ==
+ARC-Authentication-Results: i=1; mx.google.com;       dkim=pass
+ header.i=@wconcept.com header.s=nry7scmlkf3esdwblkvr554luoelxuzg
+ header.b=oYM3bt9J;       dkim=pass header.i=@amazonses.com
+ header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=qC+wQ0TU;       spf=pass
+ (google.com: domain of
+ 0100015fb9807790-04a439e0-26f0-4360-b595-7d235fb80533-000000@amazonses.com
+ designates 54.240.8.20 as permitted sender) =?utf-8?q?smtp=2Emailfrom=3D010?=
+ =?utf-8?q?0015fb9807790-04a439e0-26f0-4360-b595-7d235fb80533-000000=40amazo?=
+ =?utf-8?q?nses=2Ecom?=
+Return-Path:
+ <0100015fb9807790-04a439e0-26f0-4360-b595-7d235fb80533-000000@amazonses.com>
+Received: from a8-20.smtp-out.amazonses.com (a8-20.smtp-out.amazonses.com.
+ [54.240.8.20])        by mx.google.com with ESMTPS id
+ y81si15575463qka.241.2017.11.13.23.48.45        for <johndoe@gmail.com>
+        (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);        Mon,
+ 13 Nov 2017 23:48:46 -0800 (PST)
+Received-SPF: pass (google.com: domain of
+ 0100015fb9807790-04a439e0-26f0-4360-b595-7d235fb80533-000000@amazonses.com
+ designates 54.240.8.20 as permitted sender) client-ip=54.240.8.20;
+Authentication-Results: mx.google.com;       dkim=pass header.i=@wconcept.com
+ header.s=nry7scmlkf3esdwblkvr554luoelxuzg header.b=oYM3bt9J;       dkim=pass
+ header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono
+ header.b=qC+wQ0TU;       spf=pass (google.com: domain of
+ 0100015fb9807790-04a439e0-26f0-4360-b595-7d235fb80533-000000@amazonses.com
+ designates 54.240.8.20 as permitted sender) =?utf-8?q?smtp=2Emailfrom=3D010?=
+ =?utf-8?q?0015fb9807790-04a439e0-26f0-4360-b595-7d235fb80533-000000=40amazo?=
+ =?utf-8?q?nses=2Ecom?=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=nry7scmlkf3esdwblkvr554luoelxuzg; d=wconcept.com; t=1510645725;	
+ =?utf-8?q?h=3DTo=3ASubject=3AFrom=3ADate=3AContent-Type=3AContent-Transfer-?=
+ =?utf-8?q?Encoding=3AMIME-Version=3AMessage-ID=3B?=
+	bh=li9Dw80AoLeyBJwNnZBYEDC0Fgcr+uQsLisKHMt4P9g=;
+	b=oYM3bt9J5A1a/OIXrIS4Q5m4JFKxpTsF8dSvES0PFollNrWVbtyoXw0CH9dOfwpJ
+	y9SKDi9MuUHSRe0ZOKbDdpFFtvvWXUm9cfNOOJ8bjztfr/fi3NM8tncpMejUYJ3LdFd
+	SbahdTQxvbVHDRDHZbH/Br/hyqmvwzpvvlLNuRAo=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1510645725;	
+ =?utf-8?q?h=3DTo=3ASubject=3AFrom=3ADate=3AContent-Type=3AContent-Transfer-?=
+ =?utf-8?q?Encoding=3AMIME-Version=3AMessage-ID=3AFeedback-ID=3B?=
+	bh=li9Dw80AoLeyBJwNnZBYEDC0Fgcr+uQsLisKHMt4P9g=;
+	b=qC+wQ0TUewytCdFEZa5d18pKfqYnillB3ag4zYXsj8HHeFU4QSRqBa0wKWBSzhgW
+	bMerotpJXbnTY5SKapEiWTJvxP2M/vrE/qK7yIB+4fbpr5gkOBm94q82TDT8WUicNHK
+	glc9Gci0pkxde1zS0g0g+S45pQDFqbAOyCMA2fKQ=
+To: =?utf-8?B?Smllb24gS2lt?= <johndoe@gmail.com>
+Subject: =?utf-8?B?VyBDb25jZXB0IFVTQTogTmV3IE9yZGVyICMgV1UxMDAwNTMyODY=?=
+From: W concept <hello@wconcept.com>
+Date: Tue, 14 Nov 2017 07:48:45 +0000
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+MIME-Version: 1.0
+Message-ID: <0100015fb9807790-04a439e0-26f0-4360-b595-7d235fb80533-000000@email.amazonses.com>
+X-SES-Outgoing: 2017.11.14-54.240.8.20
+Feedback-ID:
+ 1.us-east-1.TYyTQ+FiODOTWgETNR5WME7iaFmmzumbTcahQeAz9sE=:AmazonSES
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="background-color: #fff;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1.0, width=device-width">
+</head>
+<body style="font-family: Verdana, Arial; font-weight: normal; margin: 0; padding: 0; text-align: left; color: #272727; background-color: #fff; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-size: 12px;">
+<style type="text/css">
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,500,700);
+/* Font Styles */
+/* Media Queries */
+/* Setting the Web Font inside a media query so that Outlook doesn't try to render the web font */
+@media screen {
+  .email-heading h1,
+  .store-info h4,
+  th.cell-name,
+  a.product-name,
+  p.product-name,
+  .address-details h6,
+  .method-info h6,
+  h5.closing-text,
+  .action-button,
+  .action-button a,
+  .action-button span,
+  .action-content h1 {
+    font-family: 'Raleway', Verdana, Arial !important;
+    font-weight: normal;
+  }
+}
+@media screen and (max-width: 600px) {
+  body {
+    width: 94% !important;
+    padding: 0 3% !important;
+    display: block !important;
+  }
+
+  .container-table {
+    width: 100% !important;
+    max-width: 600px;
+    min-width: 300px;
+  }
+
+  td.store-info h4 {
+    margin-top: 8px !important;
+    margin-bottom: 0px !important;
+  }
+
+  td.store-info p {
+    margin: 5px 0 !important;
+  }
+
+  .wrapper {
+    width: 100% !important;
+    display: block;
+    padding: 5px 0 !important;
+  }
+
+  .cell-name,
+  .cell-content {
+    padding: 8px !important;
+  }
+}
+@media screen and (max-width: 450px) {
+  .email-heading,
+  .store-info {
+    float: left;
+    width: 98% !important;
+    display: block;
+    text-align: center;
+    padding: 10px 1% !important;
+    border-right: 0px !important;
+  }
+
+  .address-details, .method-info {
+    width: 85%;
+    display: block;
+  }
+
+  .store-info {
+    border-top: 1px dashed #c3ced4;
+  }
+
+  .method-info {
+    margin-bottom: 15px !important;
+  }
+}
+/* Remove link color on iOS */
+.no-link a {
+  color: #333333 !important;
+  cursor: default !important;
+  text-decoration: none !important;
+}
+
+.method-info h6,
+.address-details h6,
+.closing-text {
+  color: #3696c2 !important;
+}
+
+td.order-details h3,
+td.store-info h4 {
+  color: #333333 !important;
+}
+
+.method-info p,
+.method-info dl {
+  margin: 5px 0 !important;
+  font-size: 12px !important;
+}
+
+td.align-center {
+  text-align: center !important;
+}
+
+td.align-right {
+  text-align: right !important;
+}
+
+/* Newsletter styles */
+td.expander {
+  padding: 0 !important;
+}
+
+table.button td,
+table.social-button td {
+  width: 92% !important;
+}
+
+table.facebook:hover td {
+  background: #2d4473 !important;
+}
+
+table.twitter:hover td {
+  background: #0087bb !important;
+}
+
+table.google-plus:hover td {
+  background: #CC0000 !important;
+}
+
+/* ============================================ *
+ * Product Grid
+ * ============================================ */
+@media screen and (max-width: 600px) {
+  .products-grid tr td {
+    width: 50% !important;
+    display: block !important;
+    float: left !important;
+  }
+}
+.product-name a:hover {
+  color: #3399cc !important;
+  text-decoration: none !important;
+}
+
+
+</style>
+<!-- Begin wrapper table --><table width="660px" cellpadding="0" cellspacing="0" border="0" id="background-table" style="border: 1px solid #ebebeb; margin: 30px auto; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse; padding: 0; background-color: #fff; font-size: 12px;"><tr>
+<td valign="top" class="container-td" align="center" style="font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; padding: 0; margin: 0; width: 100%;">
+			<table cellpadding="0" cellspacing="0" border="0" align="center" class="container-table" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse; padding: 0; margin: 0 auto 30px; width: 560px;">
+<tr>
+<td style="font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; padding: 0; margin: 0;">
+						<table cellpadding="0" cellspacing="0" border="0" class="logo-container" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse; padding: 0; margin: 0; width: 100%; border-bottom: 2px solid #333;"><tr>
+<td class="logo" style="font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; padding: 15px 0px 10px 5px; margin: 0;">
+									<a href="http://us.wconcept.com/" style="color: #3696c2; text-align: center; display: block;">
+									</a>
+								</td>
+							</tr></table>
+</td>
+				</tr>
+<tr>
+<td valign="top" class="top-content" style="font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; padding: 0; margin: 0; background: #FFF;">
+						<!-- Begin Content -->
+
+
+
+<table cellpadding="0" cellspacing="0" border="0" class="email-order" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse; padding: 0; margin: 0; width: 100%;">
+<tr>
+<td class="email-heading" style="font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; padding: 0; margin: 0; text-align: center; border-bottom: 1px solid #ccc;">
+                     <h1 style="font-family: Verdana, Arial; font-weight: 700; font-size: 14px; margin: 28px 0; line-height: 20px; text-transform: none; margin-top: 25px;">Thank you for placing an order with W Concept USA.</h1>                        
+               </td>   
+    </tr>
+<tr>
+<td class="order-details" style="font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; padding: 18px 0 8px; margin: 0; text-align: center; border-top: 1px solid #ebebeb; border-bottom: 1px solid #ebebeb;">
+            <h3 style="font-family: Verdana, Arial; font-weight: 700; margin: 0; font-size: 16px;">Your order <span class="no-link">#WU100053286</span>
+</h3>
+            <p style="font-family: Verdana, Arial; font-weight: normal; font-size: 12px; color: #666; margin: 10px 0;">Placed on November 14, 2017 2:48:40 AM EST</p>
+        </td>
+    </tr>
+<tr class="order-information">
+<td style="font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; padding: 0; margin: 0;">
+             <table cellpadding="0" cellspacing="0" border="0" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse; padding: 0; margin: 0; width: 100%;">
+<tr>
+<td class="address-details" style="font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; padding: 10px 0; margin: 0; padding-top: 10px; text-align: left;">
+                        <h6 style="font-family: Verdana, Arial; font-weight: 700; color: #272727 !important; font-size: 12px; margin-bottom: 10px; margin-top: 5px; text-transform: uppercase;">Bill to:</h6>
+                        <p style="font-family: Verdana, Arial; font-weight: normal; font-size: 11px; line-height: 18px; margin: 0;"><span class="no-link">john doe<br>
+
+10347 S Ewing Ave<br>
+
+
+
+Chicago, IL 60617<br>
+United States<br>
+T: 734-747-0319
+
+</span></p>
+                    </td>
+                    
+                    <td class="address-details" style="font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; padding: 10px 0; margin: 0; padding-top: 10px; text-align: left;">
+                        <h6 style="font-family: Verdana, Arial; font-weight: 700; color: #272727 !important; font-size: 12px; margin-bottom: 10px; margin-top: 5px; text-transform: uppercase;">Ship to:</h6>
+                        <p style="font-family: Verdana, Arial; font-weight: normal; font-size: 11px; line-height: 18px; margin: 0;"><span class="no-link">john doe<br>
+
+10347 S Ewing Ave<br>
+
+
+
+Chicago, IL 60617<br>
+United States<br>
+T: 734-747-0319
+
+</span></p>
+                    </td>
+                    
+                </tr>
+<tr>
+<td class="method-info" style="font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; padding: 10px 0; margin: 0; text-align: left; margin-bottom: 20px;">
+                        <h6 style="font-family: Verdana, Arial; font-weight: 700; text-align: left; color: #272727 !important; font-size: 12px; margin-bottom: 10px; margin-top: 5px; text-transform: uppercase;">Shipping method:</h6>
+                        <p style="font-family: Verdana, Arial; font-weight: normal; text-align: left; font-size: 12px; line-height: 18px; margin: 0; margin-top: 2px; padding: 0;">Flat Rate - GROUND/STANDARD</p>
+                    </td>
+                    
+                    <td class="method-info" style="font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; padding: 10px 0; margin: 0; text-align: left; margin-bottom: 20px;">
+                        <h6 style="font-family: Verdana, Arial; font-weight: 700; text-align: left; color: #272727 !important; font-size: 12px; margin-bottom: 10px; margin-top: 5px; text-transform: uppercase;">Payment method:</h6>
+                        <p style="font-family: Verdana, Arial; font-weight: normal; text-align: left; font-size: 12px; line-height: 18px; margin: 0; margin-top: 2px; padding: 0;"></p>
+<p style="font-family: Verdana, Arial; font-weight: normal; text-align: left; font-size: 12px; line-height: 18px; margin: 0; margin-top: 2px; padding: 0;"><strong style="font-family: Verdana, Arial; font-weight: normal; text-align: left;">Credit Card (Authorize.Net)</strong></p>
+
+<table style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse; padding: 0; margin: 0;"><tbody>
+<tr>
+<th style="font-family: Verdana, Arial; font-weight: normal;"><strong style="font-family: Verdana, Arial; font-weight: normal; text-align: left;">Credit Card Type:</strong></th>
+        </tr>
+<tr>
+<td style="font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; padding: 0; margin: 0;">Visa</td>
+        </tr>
+<tr>
+<th style="font-family: Verdana, Arial; font-weight: normal;"><strong style="font-family: Verdana, Arial; font-weight: normal; text-align: left;">Credit Card Number:</strong></th>
+        </tr>
+<tr>
+<td style="font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; padding: 0; margin: 0;">XXXX-1394</td>
+        </tr>
+</tbody></table>
+</td>
+                </tr>
+</table>
+</td>
+    </tr>
+<tr class="order-information">
+<td style="font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; padding: 0; margin: 0;">
+            
+                <table cellspacing="0" cellpadding="0" border="0" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse; padding: 0; margin: 0; width: 100%;">
+<thead><tr>
+<th align="left" style="font-size: 12px; font-weight: bold; padding: 5px 5px 5px 20px; text-align: left; border-bottom: 1px solid #ccc; font-family: Verdana, Arial;" colspan="3">Item</th>
+            <!--<th align="left" style="font-size:13px; padding:3px 9px"></th>
+            <th align="center" style="font-size:13px; padding:3px 9px"></th>
+            <th align="right" style="font-size:13px; padding:3px 9px"></th>-->
+            <th align="right" style="font-size: 12px; font-weight: bold; padding: 5px 18px; text-align: right; border-bottom: 1px solid #ccc; font-family: Verdana, Arial;">Price</th>
+        </tr></thead>
+<tbody><tr>
+<td align="left" valign="middle" style="padding: 12px 0 12px 10px; width: 80px; border-bottom: 1px solid #ebebeb; vertical-align: middle; font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; margin: 0;">
+                
+</td>
+    <td align="left" valign="top" colspan="2" style="font-size: 11px; padding: 12px 10px; border-bottom: 1px solid #ebebeb; font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; margin: 0;">
+        <em style="display: block; margin-bottom: 4px; font-style: normal; font-weight: bold; font-size: 11px; color: #272727;"></em>
+        <strong style="display: block; font-size: 11px; color: #565656; font-weight: bold; margin-bottom: 6px; font-family: Verdana, Arial;">PINK BACK BELT HANDMADE COAT</strong>
+        <dl style="margin: 0; padding: 0;">
+<dt style="float: left; padding-right: 5px; color: #7d7d7d; line-height: 1.5;">SKU</dt>
+            <dd style="margin: 0; padding: 0; color: #7d7d7d; line-height: 1.5;">4507747970001</dd>
+        </dl>
+<dl style="margin: 0; padding: 0;">
+<dt style="float: left; padding-right: 5px; color: #7d7d7d; line-height: 1.5;">Color:</dt>
+                    <dd style="margin: 0; padding: 0; color: #7d7d7d; line-height: 1.5;">
+                        Pink                    </dd>
+                                    <dt style="float: left; padding-right: 5px; color: #7d7d7d; line-height: 1.5;">Size:</dt>
+                    <dd style="margin: 0; padding: 0; color: #7d7d7d; line-height: 1.5;">
+                        One Size                    </dd>
+                            </dl>
+<dl style="margin: 0; padding: 0;">
+<dt style="float: left; padding-right: 5px; color: #7d7d7d; line-height: 1.5;">QTY:</dt>
+            <dd style="margin: 0; padding: 0; color: #7d7d7d; line-height: 1.5;">1</dd>
+        </dl>
+</td>
+    <!--<td align="left" valign="top" style="font-size:11px; padding:3px 9px; border-bottom:1px dotted #CCCCCC;"></td>
+    <td align="center" valign="top" style="font-size:11px; padding:3px 9px; border-bottom:1px dotted #CCCCCC;"></td>-->
+    <td align="right" valign="middle" style="font-size: 11px; padding: 12px 10px; font-weight: bold; border-bottom: 1px dotted #ebebeb; vertical-align: middle; font-family: Verdana, Arial; border-collapse: collapse; margin: 0;">
+                                                <span class="price" style='font-family: "Helvetica Neue", Verdana, Arial, sans-serif;'>$299.00</span>            
+
+                    
+
+            </td>
+</tr></tbody>
+<tfoot class="order-total">
+<tr class="subtotal">
+<td colspan="3" align="left" style="padding: 3px 9px; font-size: 12px; color: #333; font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; margin: 0;">
+                        Subtotal                    </td>
+        <td align="right" style="padding: 3px 9px; font-size: 12px; color: #333; font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; margin: 0;">
+                        <span class="price" style='font-family: "Helvetica Neue", Verdana, Arial, sans-serif;'>$299.00</span>                    </td>
+    </tr>
+<tr class="giantpoints_earn_label">
+<td colspan="3" align="left" style="padding: 3px 9px; font-size: 12px; color: #333; font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; margin: 0;">
+                        Earn Points                    </td>
+        <td align="right" style="padding: 3px 9px; font-size: 12px; color: #333; font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; margin: 0;">
+                        <span class="giantpoints-label">284W Points</span>                    </td>
+    </tr>
+<tr class="shipping" style="padding-bottom: 5px;">
+<td colspan="3" align="left" style="padding: 3px 9px; font-size: 12px; color: #333; font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; margin: 0;">
+                        Shipping &amp; Handling                    </td>
+        <td align="right" style="padding: 3px 9px; font-size: 12px; color: #333; font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; margin: 0;">
+                        <span class="price" style='font-family: "Helvetica Neue", Verdana, Arial, sans-serif;'>$0.00</span>                    </td>
+    </tr>
+<tr class="discount">
+<td colspan="3" align="left" style="padding: 3px 9px; font-size: 12px; color: #333; font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; margin: 0;">
+                        Discount (Free Shipping Event, LOOKAST)                    </td>
+        <td align="right" style="padding: 3px 9px; font-size: 12px; color: #333; font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; margin: 0;">
+                        <span class="price" style='font-family: "Helvetica Neue", Verdana, Arial, sans-serif;'>-$14.95</span>                    </td>
+    </tr>
+<tr class="grand_total">
+<td colspan="3" align="left" style="padding: 3px 9px; font-size: 12px; color: #333; font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; margin: 0;">
+                        <strong style="font-family: Verdana, Arial; font-weight: bold; display: block; margin-top: 10px; margin-bottom: 20px;">Grand Total</strong>
+                    </td>
+        <td align="right" style="padding: 3px 9px; font-size: 12px; color: #333; font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; margin: 0;">
+                        <strong style="font-family: Verdana, Arial; font-weight: bold; display: block; margin-top: 10px; margin-bottom: 20px;"><span class="price" style='font-family: "Helvetica Neue", Verdana, Arial, sans-serif;'>$284.05</span></strong>
+                    </td>
+    </tr>
+</tfoot>
+</table>
+</td>
+    </tr>
+<!-- modify (s)--><tr>
+<td style="padding-bottom: 25px; font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; padding: 0; margin: 0;">
+        <p class="m_-6724506858540933965txt-wpoints" style="box-sizing: border-box; width: 100%; font-family: Verdana, Arial; font-weight: normal;">
+            </p>
+    </td>
+</tr>
+<!-- modify (e)--><tr>
+<td style="font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; padding: 0; margin: 0;">
+             <p class="guide" style="font-family: Verdana, Arial; font-weight: normal; color: #7d7d7d; font-size: 11px; line-height: 1.5; margin-top: 0; padding-top: 10px; border-top: 1px solid #ebebeb;">*This order will be processed within the next 2-3 business days.<br>
+*Please 
+*Items may also ship separately, however no additional shipping fees will apply. All charges are <br>pending until items are confirmed and shipped. Any pending charges that may exist will <br>disappear if your order is not able to be fulfilled.  </p>
+        </td>
+
+           </tr>
+<tr>
+<td class="guide-contact" style="font-family: Verdana, Arial; font-weight: normal; border-collapse: collapse; vertical-align: top; padding: 0; margin: 0; border-top: 1px solid #ebebeb;">
+                        <p style="font-family: Verdana, Arial; font-weight: normal; margin-top: 10px; font-size: 11px; color: #7d7d7d; line-height: 1.5;">Questions? Please contact us at <a href="tel:2015003411" style="color: #7d7d7d; font-size: 11px; line-height: 1.5; text-decoration: none;">(201) 500 -3411</a> , or <a href="mailto:hello@wconcept.com" style="color: #7d7d7d; font-size: 11px; line-height: 1.5; text-decoration: none;">hello@wconcept.com</a><br>
+Customer Service Hours (Eastern Standard Time ) Mon-Fri 9am-6pm </p>
+                </td>
+     </tr>
+</table>
+<!-- End Content -->
+</td>
+				</tr>
+</table>
+</td>
+	</tr></table>
+<!-- End wrapper table -->
+</body>
+</html>

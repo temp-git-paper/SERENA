@@ -1,0 +1,135 @@
+Delivered-To: johndoe@gmail.com
+Received: by 2002:a05:6402:1241:0:0:0:0 with SMTP id l1csp180627edw;
+        Thu, 20 Sep 2018 21:23:06 -0700 (PDT)
+X-Google-Smtp-Source:
+ ANB0VdasA8OTqDh06Ijd3EbScp3FR9sug8fKra9hoLyq/Lwx7DE9jA45MVGtc2cqISLpbOtK/X6k
+X-Received: by 2002:a37:9a8a:: with SMTP id
+ c132-v6mr29321620qke.153.1537503786733;        Thu, 20 Sep 2018 21:23:06
+ -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1537503786; cv=none;
+        d=google.com; s=arc-20160816;
+        b=uy8Sx6y+YppmM3fvXAFxZo9cv8v6m19oPhyO+J9BKL4YGph8v8hGgROkkSPBBSDhoc
+         O7yDmts+R31G+a8sWGlQAACaikHJjx/BgcQVlbBqmssMjRCFoUH3sRRm+6JK+QSeEJ36
+         BFZIzTbt1cf5tRhUAhBWi7jU7S4rvttrUCZvUJMfaI/BtIl/Ng1XSH3KMgJqpS7uDF26
+         v9ejZx7Hui6/Lq9SdEuOgDfXz4FNdJ++17VIKfChFh3pyxV+hD3S/wKDa74yKpvBuI9I
+         TbjO83yYb9NsJGPJ6gexv0EHUbQpIFUCrF0F+pSuHBY8Y9wtyh2brNpIDZ3WAyvaaeKk
+         7SyA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=content-transfer-encoding:mime-version:cc:subject:to:from:date        
+ :message-id;        bh=tOeZmzim0hxfM1YcUAelGru/MDGV4Inkf2asliY5kiY=;       
+ b=0mgYwdLIrb6wu3tnSfMZk7PkjQ1Yaa/q0mTDKxPjv39mxu0oPTn9gB/L7p5VZNCa+a        
+ PHQmKWyMAl2PJMdePs+HzYvI8Bhp7T8iPdDCDj1DKXsZFpi2O8vySFSXef2ZsgooCoBc        
+ daRdz4u8eS70HufRJfcuyND7Of+8IywRAGOwkxkD7+6XpP566sX8Et5WXW8Vo6wmlBub        
+ wK/mop5aTT2uVtEQMqhtE3jZ/Hf9z27a694svWSsV2kGjbole/l6X3Sq5ERrm81b4eam        
+ z95BL9ldYm7fw535T3HxrLXVa1COVj7OEaH3uUZETennvUT/5pnwz+HGeRSsLi10W0cE        
+ DFyg==
+ARC-Authentication-Results: i=1; mx.google.com;       spf=pass (google.com:
+ best guess record for domain of weborder@pobox.upenn.edu designates
+ 128.91.224.20 as permitted sender) smtp.mailfrom=weborder@pobox.upenn.edu
+Return-Path: <weborder@pobox.upenn.edu>
+Received: from fastprod-tiny-c-01.seo.int (burns.isc-seo.upenn.edu.
+ [128.91.224.20])        by mx.google.com with ESMTPS id
+ m18-v6si524900qtn.124.2018.09.20.21.23.06        for <johndoe@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 20 Sep 2018 21:23:06 -0700 (PDT)
+Received-SPF: pass (google.com: best guess record for domain of
+ weborder@pobox.upenn.edu designates 128.91.224.20 as permitted sender)
+ client-ip=128.91.224.20;
+Authentication-Results: mx.google.com;       spf=pass (google.com: best guess
+ record for domain of weborder@pobox.upenn.edu designates 128.91.224.20 as
+ permitted sender) smtp.mailfrom=weborder@pobox.upenn.edu
+Received: from fastprod-tiny-c-01 (localhost [127.0.0.1])
+	by fastprod-tiny-c-01.seo.int (8.14.4/8.14.4) with ESMTP id w8L4N5bl009782;
+	Fri, 21 Sep 2018 00:23:05 -0400
+Message-ID: <726045856.1537503785859.JavaMail.appadmin@zipcode.umis.upenn.edu>
+Date: Fri, 21 Sep 2018 00:23:05 -0400 (EDT)
+From: weborder@pobox.upenn.edu
+To: johndoe@gmail.com
+Subject: Transcript Order Confirmation
+Cc: weborder@pobox.upenn.edu
+Mime-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+```html
+<p>Your order has been received. If you ordered a paper transcript, the order will be processed in 3 to 5 business days, unless you requested that it be held for grades or degree. If you ordered an electronic transcript, the order is being processed and you will receive a confirmation email when it has been delivered. If you have any questions concerning this order, please contact the University Registrar's Office at <a href=mailto:john.doe@gmail.com>john.doe@gmail.com</a> or at 123-456-7890.</p>
+<p>Organizations that require forms to be attached to your transcripts (AMCAS LSDAS): these forms may be emailed to <a href=mailto:john.doe@gmail.com>john.doe@gmail.com</a> or faxed to 123-456-7890. At this time, we are unable to attach any forms to an electronic transcript.</p>
+<p>Please do not reply to this message - this email is generated automatically and is not monitored for responses.</p>
+<br/><hr><br/>
+<div>
+    <table width="100%">
+        <tr>
+            <td width="50%" align="right"><big><b>Order summary</b></big></td>
+            <td align="left">&nbsp;</td>
+        </tr>
+        <tr>
+            <td align="right">Name:</td>
+            <td align="left">John Doe</td>
+        </tr>
+        <tr>
+            <td align="right">Payment method:</td>
+            <td align="left">Credit card</td>
+        </tr>
+        <tr>
+            <td align="right">Authorization code:</td>
+            <td align="left">301021</td>
+        </tr>
+        <tr>
+            <td align="right">Transcripts ordered:</td>
+            <td align="left">3</td>
+        </tr>
+        <tr>
+            <td align="right">Total cost:</td>
+            <td align="left">$ 80.00 USD</td>
+        </tr>
+    </table>
+</div>
+<br/><hr><br/>
+<div>
+    <table width="100%">
+        <tr>
+            <td width="50%" align="right"><big><b>Destination 1</b></big></td>
+            <td align="left"></td>
+        </tr>
+        <tr>
+            <td align="right">Transcript Format:</td>
+            <td align="left">Paper transcript delivery by designated delivery service</td>
+        </tr>
+        <tr>
+            <td align="right">Type:</td>
+            <td align="left">Official</td>
+        </tr>
+        <tr>
+            <td align="right">Quantity/Program:</td>
+            <td align="left">3/PhD, gas ms<br/></td>
+        </tr>
+        <tr>
+            <td align="right">Special instructions:</td>
+            <td align="left">None</td>
+        </tr>
+        <tr>
+            <td align="right">Delivery method:</td>
+            <td align="left">UPS Express Mail (up to 15 business days)</td>
+        </tr>
+        <tr>
+            <td align="right">Delivery address:</td>
+            <td align="left">John Doe<br/>10347 S Ewing Ave<br/>Chicago<br/> IL, 60617 <br/>08758<br/>USA</td>
+        </tr>
+        <tr>
+            <td align="right">Cost:</td>
+            <td align="left">$ 80.00 USD</td>
+        </tr>
+    </table>
+</div>
+<br/><hr><br/>
+<div>
+    <table width="100%">
+        <tr>
+            <td align="center"><big><b>End of order</b></big></td>
+        </tr>
+    </table>
+    <br/><hr><br/>
+</div>
+```
+

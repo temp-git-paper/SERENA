@@ -1,0 +1,1566 @@
+Delivered-To: johndoe@gmail.com
+Received: by 2002:a05:7208:5514:b0:7f:5aa5:86b0 with SMTP id t20csp1576337rbf;
+        Mon, 11 Mar 2024 22:26:28 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGVYZRnMkIjD4C4SmIhEYtXCbpzoqUrIa3KrPT9p2CQPao7pIlApMDZBCsRac5Pm7K5mH++
+X-Received: by 2002:a81:c30d:0:b0:60a:374:969a with SMTP id r13-20020a81c30d000000b0060a0374969amr6161307ywk.50.1710221187412;
+        Mon, 11 Mar 2024 22:26:27 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1710221187; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ajRx+hWxc+qsSIwFDjxCv95aVaX0Ivs8xYyf/LP205mMfMtDRap6D+cezuyYz4iueb
+         eUGj6RtAobaPHI0MrX/b26mXXKgTTQF8o0I7/lJllV1d8DbmIuf0k9PPotDROfqYSh2f
+         j5/HMCWR04zvTsd6yPNLKVYOcuh3Ed9F1tZH5Oy9C3Qec96a+wKVyU511wcI+B8m7msa
+         E7XIlAD6Ei9UIIviL+SoZWYr5F1Ljyaxoamcz5XcenMJJz6HbpJOJhP0B4eMejb+9zuQ
+         Idi8VhFd68+xD4sO3YYEnySeCATn5mLIUphFjDyYxrEVPRXB5+vp7Y9RM0fFBWxeadyH
+         wxRA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:date:message-id:feedback-id:to:subject:from
+         :dkim-signature:dkim-signature;
+        bh=oL/snBAWCQ806gLNyNd4Pmq0huE9Tuud7eoNsstM4mE=;
+        fh=KIsoFOBgqLwjKhrQEZ0RveSF2ztvAxevYiXifMYfmlE=;
+        b=U5+KFwvjY4kQcdWoY+OzfKTPi/62ZfzmEq0oYx1CC1NIctbApc2XMZLj3wc/jsupeW
+         eeGuuRcu+izt0AnCxiozzK8xbX1f9bfU5FcR88MpsBP/KCFal4xBDfWmZG5MMdMuXbu1
+         D22TMfBt6xIQ87+SAnZGB8e5CVloT8jggr3vigDQ04vd6ec9ZtVGfqTR/TByqQjnpBiQ
+         sO+vM9dW67e3A1pxsQICH6M8jcUjlirCg9tEmqZzmflu6DUMx1dK9OtG47Oj1kBx1eox
+         IU5Qv+41tqMycBd6zkhQmu2ANO3s4u7TuFpFJd8rdZ+JNigUCNEivAehLtn4yRlhU1MZ
+         1Ytw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mandrillapp.com header.s=mte1 header.b="yQj/8OBd";
+       dkim=pass header.i=@railclick.com header.s=mandrill header.b=Ehq4u2+l;
+       spf=pass (google.com: domain of bounce-md_30243799.65efe781.v1-13fb3dc8387f45698774a40ee27fa295@mandrillapp.com designates 198.2.179.45 as permitted sender) smtp.mailfrom=bounce-md_30243799.65efe781.v1-13fb3dc8387f45698774a40ee27fa295@mandrillapp.com
+Return-Path: <bounce-md_30243799.65efe781.v1-13fb3dc8387f45698774a40ee27fa295@mandrillapp.com>
+Received: from mail179-45.suw41.mandrillapp.com (mail179-45.suw41.mandrillapp.com. [198.2.179.45])
+        by mx.google.com with ESMTPS id q68-20020a81b247000000b0060a1a366b38si2363272ywh.538.2024.03.11.22.26.27
+        for <johndoe@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 11 Mar 2024 22:26:27 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-md_30243799.65efe781.v1-13fb3dc8387f45698774a40ee27fa295@mandrillapp.com designates 198.2.179.45 as permitted sender) client-ip=198.2.179.45;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mandrillapp.com header.s=mte1 header.b="yQj/8OBd";
+       dkim=pass header.i=@railclick.com header.s=mandrill header.b=Ehq4u2+l;
+       spf=pass (google.com: domain of bounce-md_30243799.65efe781.v1-13fb3dc8387f45698774a40ee27fa295@mandrillapp.com designates 198.2.179.45 as permitted sender) smtp.mailfrom=bounce-md_30243799.65efe781.v1-13fb3dc8387f45698774a40ee27fa295@mandrillapp.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mandrillapp.com;
+	s=mte1; t=1710221186; x=1710481686;
+	bh=oL/snBAWCQ806gLNyNd4Pmq0huE9Tuud7eoNsstM4mE=;
+	h=From:Subject:To:Feedback-ID:Message-Id:Date:MIME-Version:
+	 Content-Type:CC:Date:Subject:From;
+	b=yQj/8OBdyzsULncMWlLm20K64Uka50gJl6hBdJJi2I3lWu538AAG5HfjJX63PnvSJ
+	 YGvRZVbhfq+XvPoESHB/wFa5VbnsEYUOqqIwWi0JJgztfGmixu0YeTFhk/nMDHMTxk
+	 iILZwzqX9d+nFDH305UpxTUYfKanUBzCfaSb9ucuYdpHjnFIcItlOMX1tyULcvkBHL
+	 hoKSo4ISM13ZU+sj1d13i8g2kL6tJX4BBkBV+QYzdyRbL+652VzYb5hqxMkEIvcRCB
+	 uDyx10N6r3rePjk07rebd4CalGxX7IQBd6yLcwqDyUK9DUcInG0Dv+o5PXLrCFkHQ4
+	 6LTrgbO+dOXNw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=railclick.com;
+	s=mandrill; t=1710221186; x=1710481686; i=info@railclick.com;
+	bh=oL/snBAWCQ806gLNyNd4Pmq0huE9Tuud7eoNsstM4mE=;
+	h=From:Subject:To:Feedback-ID:Message-Id:Date:MIME-Version:
+	 Content-Type:CC:Date:Subject:From;
+	b=Ehq4u2+lPAoPUrx2+E5WhbxeByfbJFdTDV1SiNRTVE49dnIckodG/DHea1jl/SYR0
+	 xdlRIMKPQnGugLGr1pIevhGMIK43g8Nvg5vXnXOVZFeY7nKtzPZl7DMmVbTPMdobOp
+	 X5ly/FF0fFfmuDa7CaiFTWSx8pYx9HyPco3z0L3U=
+Received: from pmta12.mandrill.prod.suw01.rsglab.com (localhost [127.0.0.1])
+	by mail179-45.suw41.mandrillapp.com (Mailchimp) with ESMTP id 4Tv2Dy69RVzNCdSfX
+	for <johndoe@gmail.com>; Tue, 12 Mar 2024 05:26:26 +0000 (GMT)
+From: RailClick <info@railclick.com>
+Subject: =?utf-8?Q?Booking=20Confirmation.=20You=20tickets=20are=20attached.?=
+Received: from [104.199.49.191] by mandrillapp.com id 13fb3dc8387f45698774a40ee27fa295; Tue, 12 Mar 2024 05:26:26 +0000
+To: johndoe@gmail.com
+X-Native-Encoded: 1
+X-Report-Abuse: =?UTF-8?Q?Please=20forward=20a=20copy=20of=20this=20message,=20including=20all=20headers,=20to=20abuse@mandrill.com.=20You=20can=20also=20report=20abuse=20here:=20https://mandrillapp.com/contact/abuse=3Fid=3D30243799.13fb3dc8387f45698774a40ee27fa295?=
+X-Mandrill-User: md_30243799
+Feedback-ID: 30243799:30243799.20240312:md
+Message-Id: <30243799.20240312052626.65efe782019c81.09831060@mail179-45.suw41.mandrillapp.com>
+Date: Tue, 12 Mar 2024 05:26:26 +0000
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="_av-DZqEByPgtEkbAh-r06A1YA"
+
+--_av-DZqEByPgtEkbAh-r06A1YA
+Content-Type: multipart/alternative; boundary="_av-5Q0GGOEX5Jnb_4cpmJ9oTA"
+
+--_av-5Q0GGOEX5Jnb_4cpmJ9oTA
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi John Doe, your booking is confirmed!                                   =
+ 
+
+See your tickets attached:
+
+OUT                                                
+
+18/03 08:00                                                        
+Barcelona Sants
+
+18/03 09:42                                                        
+Zaragoza Delicias
+
+Duration: 1h 42m                                                           =
+                                         
+
+Details:
+
+Reference code
+
+814733                                                        
+
+Order ID
+
+80a3e11d-c56c-4c3a-b4b1-ad31a77e78be                                       =
+                     
+
+PNRs
+
+XZRWV4                                                            
+
+Status
+
+Confirmed                                                            
+
+Buyer info:
+
+Buyer name
+
+John Doe                                                        
+
+Email address
+
+johndoe@gmail.com                                                          =
+  
+
+Phone number
+
++17347470319                                                       
+
+Tickets                                                        
+
+Fee                                                        
+
+Total                                                    
+
+*140 USD
+14 USD
+
+154 USD                                                   
+
+For more information on possible euro currency variations, please visit our=
+                                                
+Terms and Conditions                                                
+
+You can cancel your tickets by                                         
+following this link                                        . Please note th=
+at fee is not a part of refundable sum.                                    
+
+Enjoy
+Special Deals
+on Hotels
+
+Madrid
+Hotels: 5761
+
+Barcelona
+Hotels: 3303
+
+Sevilla
+Hotels: 3354
+
+Valencia
+Hotels: 2154
+
+Toledo
+Hotels: 393
+
+M=C3=A1laga
+Hotels: 3906
+
+Santiago de Compostela
+Hotels: 527
+
+Granada
+Hotels: 1459
+
+Alicante
+Hotels: 1679
+
+Railclick Support Team                                
+
+If you need to change you ticket or have any question, you can go to       =
+                             
+contact us                                    
+or call us at                                     
++34 93 487 4141.
+
+We will be happy to help you.                                
+
+Rambla de Catalunya 61, 5 3 Barcelona 08007, Spain
+Opening hours: 
+Mon =E2=80=93 Fri 09:00h =E2=80=93 18:00h 
+Sat =E2=80=93 Sun 09:00h =E2=80=93 14:00h                                
+
+Privacy Policy                                                
+
+Terms and Conditions
+
+--_av-5Q0GGOEX5Jnb_4cpmJ9oTA
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8=
+" />
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0" />
+    <meta name=3D"format-detection" content=3D"telephone=3Dno" />
+    <meta name=3D"x-apple-disable-message-reformatting">
+    <title></title>
+        <!--[if mso]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+            <o:AllowPNG />
+        </o:OfficeDocumentSettings>
+    </xml><![endif]-->
+    <style type=3D"text/css">
+        @import url('https://fonts.googleapis.com/css2?family=3DLato:ital,w=
+ght@0,300;0,700;0,900;1,900&display=3Dswap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            font-size: 12px;
+            font-family: "Lato", sans-serif;
+            -webkit-text-size-adjust: none;
+            text-size-adjust: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: inherit !important;
+        }
+
+        p {
+            line-height: inherit
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        .root-table {
+            width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .container-table {
+            width: 600px;
+        }
+
+        .container-table > tbody > tr > td {
+            padding: 20px;
+        }
+
+        .in-container-table {
+            width: 100%;
+        }
+
+        .ticket {
+            vertical-align: top;
+            width: 50%;
+            border-radius: 5px;
+            border: solid 1px #ddd;
+        }
+
+        .ticket > table {
+            width: 100%;
+        }
+
+        .ticket-header {
+            background-color: #ebfff7;
+        }
+
+        .ticket-header > td {
+            padding: 8px;
+        }
+        .ticket-direction > td {
+            padding: 8px;
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #9fabbf;
+        }
+
+        .ticket-body > td {
+            padding: 4px 8px;
+        }
+
+        .ticket-duration > td {
+            padding: 12px 8px 18px;
+            color: #9fabbf;
+        }
+
+        .ticket-time {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 900;
+        }
+
+        td.ticket-arrow {
+            vertical-align: top;
+            padding-top: 6px;
+        }
+
+        .ticket-location {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .details-header {
+            font-size: 14px;
+        }
+
+        .details-table {
+            width:100%
+        }
+
+        .details-table td {
+            padding: 6px 0px;
+        }
+
+        .details-values {
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .price-block {
+            padding: 4px 10px 10px 10px;
+            border-radius: 5px;
+            border: solid 1px #e2e2e2;
+        }
+
+        .price-details {
+            font-weight: 900;
+            border-bottom: 1px solid #d8d8d8;
+        }
+
+        .price-details p {
+            margin: 10px 0;
+        }
+
+        .price-total {
+            font-size: 16px;
+        }
+
+        .price-notes {
+            padding-top: 10px;
+            font-size: 10px;
+            text-align: center;
+        }
+
+        .useful-info {
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .useful-info a {
+            color: #0da3ae;
+        }
+
+        .motto {
+            font-size: 16px;
+            font-weight: 900;
+            font-style: italic;
+        }
+
+        .motto-divider {
+            border-top: 1px solid #c3daeb;
+        }
+
+        .city {
+            padding: 0;
+            border: solid 1px #ddd;
+            background-color: #ffffff;
+        }
+
+        .city > table {
+            width: 100%;
+        }
+
+        .city-img {
+            padding: 0;
+        }
+
+        .city img {
+            width: 100%;
+            height: auto;
+            border: 0;
+        }
+
+        .city-mid {
+            width: 33.333%;
+            max-width: 33.333%;
+        }
+
+        .city-mid .city-brief {
+            padding: 8px 10px;
+        }
+
+        .city-title {
+            margin: 2px 0;
+            font-weight: bold;
+        }
+
+        .city-mid .city-title {
+            font-size: 16px;
+        }
+
+        .hotel-count {
+            margin: 0 0 2px 0;
+        }
+
+        .city-title, .hotel-count {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .city-mid .city-title, .city-mid .hotel-count {
+            max-width: 92px;
+        }
+
+        .city-brief > a {
+            color: #3d4552;
+        }
+
+        .city-section-header {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .city-section-header span {
+            padding-left: 8px;
+            font-size: 12px;
+            font-weight: normal;
+            font-style: italic;
+        }
+
+        .product {
+            padding: 5px;
+            border-radius: 5px;
+            border: solid 1px #ddd;
+            background-color: #ffffff;
+        }
+
+        .product > table {
+            width: 100%;
+        }
+
+        .product img {
+            height: auto;
+            border: 0;
+        }
+
+        .product-big {
+            width: 33.333%;
+            max-width: 33.333%;
+        }
+
+        .product-big .product-img-block {
+            height: 96px;
+        }
+
+        .product-big img {
+            max-height: 96px;
+            max-width: 100%;
+        }
+
+        .product-title {
+            margin: 2px 0;
+            font-weight: bold;
+        }
+
+        .product-price {
+            margin: 0 0 2px 0;
+        }
+
+        .product-title, .product-price {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .product-price > span {
+            color: #ff6500;
+        }
+
+        .product-big .product-title, .product-big .product-price {
+            max-width: 164px;
+        }
+
+        .product-mid .product-title, .product-mid .product-price {
+            max-width: 92px;
+        }
+
+        .product-small .product-title, .product-small .product-price {
+            max-width: 104px;
+        }
+
+        .product a {
+            color: #3d4552;
+        }
+
+        .button {
+            width: 250px;
+            padding: 10px 30px 10px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #ffffff;
+            text-align: center;
+            border-radius: 5px;
+            background-color: #ff9900;
+        }
+
+    </style>
+</head>
+<body style=3D"margin: 0;padding: 0;background-color: #ffffff;font-size: 12=
+px;font-family: 'Lato', sans-serif;-webkit-text-size-adjust: none;text-size=
+-adjust: none;">
+
+<table style=3D"width:100%">
+    <tr>
+        <td>
+<!-- Header -->
+<table class=3D"root-table" style=3D"width: 100%;padding-left: 20px;padding=
+-right: 20px;background-color: #ffffff; color: #3d4552;">
+    <tbody>
+    <tr>
+        <td>
+            <table class=3D"container-table" align=3D"center" style=3D"widt=
+h: 600px;">
+                <tbody>
+                <tr>
+                    <td style=3D"padding-bottom: 0;">
+                        <table class=3D"in-container-table" align=3D"center=
+">
+                            <tbody>
+                            <tr>
+                                <td style=3D"padding-bottom: 20px; border-b=
+ottom: 1px solid #d2d7de;">
+                                    <a href=3D"https://mandrillapp.com/trac=
+k/click/30243799/spainrail.com?p=3DeyJzIjoiNWdDS1JVejFHTjg2NThjRnB4SGhoa19B=
+RlZrIiwidiI6MSwicCI6IntcInVcIjozMDI0Mzc5OSxcInZcIjoxLFwidXJsXCI6XCJodHRwczp=
+cXFwvXFxcL3NwYWlucmFpbC5jb21cXFwva29cIixcImlkXCI6XCIxM2ZiM2RjODM4N2Y0NTY5OD=
+c3NGE0MGVlMjdmYTI5NVwiLFwidXJsX2lkc1wiOltcIjk3NDY0MzUyZjhiMDdkYmUwNGEwYjBhY=
+jlkMzNkOGZjYWM3ZWQ4NjZcIl19In0" target=3D"_blank" title=3D"Railclick" style=
+=3D"display: inline-block; text-decoration: none;">
+                                        <img alt=3D"Railclick" src=3D"https=
+://static.railclick.com/email-templates/railclick-logo.png" width=3D"125" s=
+tyle=3D"height: auto; border: 0; width: 125px;" />
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<!-- Header End -->
+
+<!---------------content start--------------->
+
+
+
+<!--Tickets block-->
+<table class=3D"root-table" style=3D"width: 100%;padding-left: 20px;padding=
+-right: 20px;background-color: #ffffff; color: #3d4552;">
+    <tbody>
+    <tr>
+        <td>
+            <table class=3D"container-table" align=3D"center">
+                <tbody>
+                <tr>
+                    <td style=3D"padding-bottom: 0;">
+                        <table class=3D"in-container-table" align=3D"center=
+">
+                            <tbody>
+                            <tr>
+                                <td align=3D"center" style=3D"text-align: c=
+enter;">
+                                    <p style=3D"font-size: 18px; font-weigh=
+t: 900; margin-top: 26px; margin-bottom: 10px;">
+                                        Hi John Doe, your booking is confi=
+rmed!                                    </p>
+                                                                    </td>
+                            </tr>
+                            <tr>
+                                <td style=3D"font-size: 14px;">
+                                    See your tickets attached:
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <table class=3D"container-table" align=3D"center" style=3D"widt=
+h: 600px;">
+                <tbody>
+                <tr>
+                    <td style=3D"padding: 0;">
+                        <table class=3D"in-container-table" align=3D"center=
+" style=3D"width: 100%;border-collapse: separate; border-spacing: 20px;">
+                            <tbody>
+                            <tr>
+                                                                    <td cla=
+ss=3D"ticket" style=3D"width: 50%;border-radius: 5px;border: solid 1px #ddd=
+;">
+                                        <table style=3D"width: 100%">
+                                            <tbody>
+                                            <tr class=3D"ticket-header">
+                                                                           =
+                         <td colspan=3D"3" style=3D"background-color: #ebff=
+f7;padding:8px;">
+                                                        <img alt=3D"Renfe" =
+src=3D"https://static.railclick.com/email-templates/platform-renfe.png" wid=
+th=3D"71" style=3D"height: auto; border: 0; width: 71px;" />
+                                                    </td>
+                                                                           =
+                 </tr>
+                                            <tr class=3D"ticket-direction">
+                                                <td colspan=3D"3" style=3D"=
+padding: 8px;font-size: 14px;font-weight: 900;text-transform: uppercase;col=
+or: #9fabbf;">
+                                                    OUT                    =
+                            </td>
+                                            </tr>
+                                            <tr class=3D"ticket-body">
+                                                <td style=3D"padding: 4px 8=
+px;">
+                                                                           =
+                                 <p class=3D"ticket-time" style=3D"margin-t=
+op: 0;margin-bottom: 8px;font-size: 14px;font-weight: 900;">
+                                                            18/03 08:00    =
+                                                    </p>
+                                                                           =
+                             <p class=3D"ticket-location">Barcelona Sants</=
+p>
+                                                </td>
+                                                <td class=3D"ticket-arrow" =
+style=3D"vertical-align: top;padding-top: 6px;">
+                                                    <img src=3D"https://sta=
+tic.railclick.com/email-templates/arrow-right-turquoise.png" width=3D"15" s=
+tyle=3D"height: auto; border: 0; width: 15px;" />
+                                                </td>
+                                                <td style=3D"padding: 4px 8=
+px;">
+                                                                           =
+                                 <p class=3D"ticket-time" style=3D"margin-t=
+op: 0;margin-bottom: 8px;font-size: 14px;font-weight: 900;">
+                                                            18/03 09:42    =
+                                                    </p>
+                                                                           =
+                             <p class=3D"ticket-location">Zaragoza Delicias=
+</p>
+                                                </td>
+                                            </tr>
+                                            <tr class=3D"ticket-duration">
+                                                <td colspan=3D"3" style=3D"=
+padding:12px 8px 18px;color: #9fabbf;">
+                                                                           =
+                                 Duration: 1h 42m                          =
+                                                                          <=
+/td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                                                           =
+                 </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<!--/Tickets block-->
+
+
+
+<!--Ticket Details block-->
+<table class=3D"root-table" style=3D"width: 100%;padding-left: 20px;padding=
+-right: 20px;background-color: #f7fcff; color: #3d4552;">
+    <tbody>
+    <tr>
+        <td>
+            <table class=3D"container-table" align=3D"center" style=3D"widt=
+h: 600px;">
+                <tbody>
+                <tr>
+                    <td style=3D"padding-bottom: 10px;">
+                        <table class=3D"in-container-table" style=3D"width:=
+ 100%;">
+                            <tbody>
+                            <tr>
+                                <td style=3D"width:47%;vertical-align: top"=
+>
+                                    <table width=3D"100%">
+                                        <tbody>
+                                        <tr>
+                                            <td colspan=3D"2" class=3D"deta=
+ils-header" style=3D"font-size: 14px;">
+                                                Details:
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan=3D"2">
+                                                <table class=3D"details-tab=
+le">
+                                                    <tr>
+                                                        <td>Reference code<=
+/td>
+                                                        <td class=3D"detail=
+s-values" style=3D"font-weight: bold;text-align: right;">
+                                                            814733         =
+                                               </td>
+                                                    </tr>
+
+                                                                           =
+                                 <tr>
+                                                            <td>Order ID</t=
+d>
+                                                            <td class=3D"de=
+tails-values" style=3D"font-weight: bold;text-align: right;">
+                                                                80a3e11d-c5=
+6c-4c3a-b4b1-ad31a77e78be                                                  =
+          </td>
+                                                        </tr>
+                                                                           =
+                                                                           =
+          <tr>
+                                                            <td>PNRs</td>
+                                                            <td class=3D"de=
+tails-values" style=3D"font-weight: bold;text-align: right;">
+                                                                XZRWV4     =
+                                                       </td>
+                                                        </tr>
+                                                                           =
+                                     <tr>
+                                                            <td>Status</td>
+                                                            <td class=3D"de=
+tails-values" style=3D"color: #32c58f;font-weight: bold;text-align: right;"=
+>
+                                                                Confirmed  =
+                                                          </td>
+                                                        </tr>
+                                                    
+                                                                           =
+                                                                           =
+      </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td style=3D"width:6%"></td>
+                                <td style=3D"width:47%;vertical-align: top"=
+>
+                                    <table width=3D"100%">
+                                        <tbody>
+                                        <tr>
+                                            <td colspan=3D"2" class=3D"deta=
+ils-header" style=3D"font-size: 14px;">
+                                                Buyer info:
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan=3D"2">
+                                                <table class=3D"details-tab=
+le">
+                                                    <tr>
+                                                        <td>Buyer name</td>
+                                                        <td class=3D"detail=
+s-values" style=3D"font-weight: bold;text-align: right;">
+                                                            John Doe      =
+                                                  </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Email address</=
+td>
+                                                        <td class=3D"detail=
+s-values" style=3D"font-weight: bold;text-align: right;">
+                                                            <a href=3D"mail=
+to:johndoe@gmail.com" style=3D"text-decoration:none; color: #3d4552;">
+                                                                johndoe@gma=
+il.com                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Phone number</t=
+d>
+                                                        <td class=3D"detail=
+s-values" style=3D"font-weight: bold;text-align: right;">
+                                                            +821098017712  =
+                                                      </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<!--/Ticket Details block-->
+
+<!--Ticket Total block-->
+<table class=3D"root-table" style=3D"width: 100%;padding-left: 20px;padding=
+-right: 20px;background-color: #ffffff; color: #3d4552;">
+    <tbody>
+    <tr>
+        <td>
+            <table class=3D"container-table" align=3D"center" style=3D"widt=
+h: 600px;">
+                <tbody>
+                <tr>
+                    <td>
+                        <table class=3D"in-container-table" style=3D"width:=
+ 100%;border-collapse: separate; border-spacing: 0;">
+                            <tbody>
+                            <tr>
+                                <td class=3D"price-block" style=3D"padding:=
+ 4px 10px 10px 10px;border-radius: 5px;border: solid 1px #e2e2e2;">
+                                    <table width=3D"100%">
+                                        <tbody>
+                                        <tr class=3D"price-details" style=
+=3D"font-weight: 900;border-bottom: 1px solid #d8d8d8;">
+                                            <td style=3D"text-align: left;"=
+>
+                                                                           =
+                                                                           =
+      <p style=3D"margin: 10px 0;">
+                                                            Tickets        =
+                                                </p>
+                                                    
+                                                                           =
+                                 <p style=3D"margin: 10px 0;font-weight: bo=
+ld;">
+                                                            Fee            =
+                                            </p>
+                                                                           =
+                                                                           =
+                                                          <p class=3D"price=
+-total" style=3D"margin: 10px 0;font-size: 16px;">
+                                                        Total              =
+                                      </p>
+                                                                           =
+                 </td>
+                                            <td style=3D"text-align: right;=
+">
+                                                                           =
+                                                                           =
+      <p style=3D"margin: 10px 0;">*140 USD</p>
+                                                                           =
+                                                                           =
+          <p style=3D"margin: 10px 0;">14 USD</p>
+                                                                           =
+                                                                           =
+                                                          <p class=3D"price=
+-total" style=3D"margin: 10px 0;font-size: 16px;">
+                                                        154 USD     =
+                                               </p>
+                                                                           =
+                 </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan=3D"2" class=3D"pric=
+e-notes" style=3D"padding-top: 10px;font-size: 10px;text-align: center;">
+                                                For more information on pos=
+sible euro currency variations, please visit our                           =
+                     <a href=3D"https://mandrillapp.com/track/click/3024379=
+9/spainrail.com?p=3DeyJzIjoiaUctTkpKLXp2dHJJcGFBWHcxb19QUHpzaWtvIiwidiI6MSw=
+icCI6IntcInVcIjozMDI0Mzc5OSxcInZcIjoxLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3NwYW=
+lucmFpbC5jb21cXFwva29cXFwvdGVybXNfYW5kX2NvbmRpdGlvbnNcIixcImlkXCI6XCIxM2ZiM=
+2RjODM4N2Y0NTY5ODc3NGE0MGVlMjdmYTI5NVwiLFwidXJsX2lkc1wiOltcIjNjZGNhZmI3NTM1=
+ODYzY2NmZGRkMjllM2YzYjg1MDYxZWI0MzViOThcIl19In0" target=3D"_blank" style=3D=
+"color: #0da3ae;">
+                                                    Terms and Conditions   =
+                                             </a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class=3D"useful-info" style=3D"margi=
+n-top: 28px;font-size: 14px;text-align: center;">
+                                        You can cancel your tickets by     =
+                                    <a href=3D"https://mandrillapp.com/trac=
+k/click/30243799/spainrail.com?p=3DeyJzIjoicTZzV2JZcDJnR09faDdOa3J0RE45XzR0=
+X1FZIiwidiI6MSwicCI6IntcInVcIjozMDI0Mzc5OSxcInZcIjoxLFwidXJsXCI6XCJodHRwczp=
+cXFwvXFxcL3NwYWlucmFpbC5jb21cXFwva29cXFwvYm9va2luZ1xcXC9jYW5jZWxcXFwvODBhM2=
+UxMWQtYzU2Yy00YzNhLWI0YjEtYWQzMWE3N2U3OGJlXCIsXCJpZFwiOlwiMTNmYjNkYzgzODdmN=
+DU2OTg3NzRhNDBlZTI3ZmEyOTVcIixcInVybF9pZHNcIjpbXCI4ZDA0MjVjYWJhNzQ2NGNiNzY3=
+NzNkNjBjZjdmMjdmZWRmNGY2ZTc0XCJdfSJ9" target=3D"_blank" style=3D"color: #0d=
+a3ae;">
+                                            following this link            =
+                            </a>. Please note that fee is not a part of ref=
+undable sum.                                    </p>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<!--Ticket Total block-->
+
+    <!--Booking.com block-->
+<table class=3D"root-table" style=3D"width: 100%;padding-left: 20px;padding=
+-right: 20px;background-color: #f3faff; color: #3d4552;">
+    <tbody>
+    <tr>
+        <td>
+            <table class=3D"container-table" align=3D"center" style=3D"widt=
+h: 600px;">
+                <tbody>
+                <tr>
+                    <td style=3D"padding-bottom: 0;">
+                        <table class=3D"in-container-table" align=3D"center=
+" style=3D"width: 100%;">
+                            <tbody>
+                            <tr>
+                                <td></td>
+                                <td align=3D"center" width=3D"240">
+                                    <img alt=3D"Booking.com" src=3D"https:/=
+/static.railclick.com/email-templates/booking-com-logo.png" width=3D"178" s=
+tyle=3D"height: auto; border: 0; width: 178px;" />
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td rowspan=3D"2" align=3D"center" class=3D=
+"motto" style=3D"font-size: 16px;font-weight: 900;font-style: italic;">
+                                    <span>Enjoy</span>
+                                    <span style=3D"color: #499fdd;">Special=
+ Deals</span>
+                                    <span>on Hotels</span>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class=3D"motto-divider" style=3D"border=
+-top: 1px solid #c3daeb;"></td>
+                                <td class=3D"motto-divider" style=3D"border=
+-top: 1px solid #c3daeb;"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <table class=3D"container-table" align=3D"center" style=3D"widt=
+h: 600px;">
+                <tbody>
+                <tr>
+                    <td style=3D"padding: 10px">
+                        <table class=3D"in-container-table" align=3D"center=
+" style=3D"width: 100%;border-collapse: separate; border-spacing: 10px;">
+                            <tbody>
+                            <tr>
+                                                                    <td cla=
+ss=3D"city city-mid" style=3D"border-radius:5px;padding: 0;border: solid 1p=
+x #ddd;background-color: #ffffff; width: 33.333%; max-width: 33.333%;">
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                                <td class=3D"city-img" styl=
+e=3D"padding: 0;text-align: center">
+                                                    <a href=3D"https://mand=
+rillapp.com/track/click/30243799/www.booking.com?p=3DeyJzIjoiblZPSXU2RUhrbz=
+hhekc1WnJydjN6azRyZ3ljIiwidiI6MSwicCI6IntcInVcIjozMDI0Mzc5OSxcInZcIjoxLFwid=
+XJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5ib29raW5nLmNvbVxcXC9zZWFyY2hyZXN1bHRzLmtv=
+Lmh0bWw_Y2l0eT0tMzkwNjI1JmFpZD03OTI4MjU4Jm5vX3Jvb21zPTEmZ3JvdXBfYWR1bHRzPTJ=
+cIixcImlkXCI6XCIxM2ZiM2RjODM4N2Y0NTY5ODc3NGE0MGVlMjdmYTI5NVwiLFwidXJsX2lkc1=
+wiOltcImM1YTFmZWE5YzJkMmRhNDA0YmJlMTFlYjQyYjg4NTRkOGI5YmRjMTdcIl19In0" targ=
+et=3D"_blank">
+                                                            <img alt=3D"Mad=
+rid" src=3D"https://static.railclick.com/email-templates/booking/madrid.jpg=
+" style=3D"border-radius:5px;object-fit: cover; max-width:180px; max-height=
+:80px" width=3D"179" />
+                                                   </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class=3D"city-brief" st=
+yle=3D"padding: 8px 10px;">
+                                                    <a href=3D"https://mand=
+rillapp.com/track/click/30243799/www.booking.com?p=3DeyJzIjoiblZPSXU2RUhrbz=
+hhekc1WnJydjN6azRyZ3ljIiwidiI6MSwicCI6IntcInVcIjozMDI0Mzc5OSxcInZcIjoxLFwid=
+XJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5ib29raW5nLmNvbVxcXC9zZWFyY2hyZXN1bHRzLmtv=
+Lmh0bWw_Y2l0eT0tMzkwNjI1JmFpZD03OTI4MjU4Jm5vX3Jvb21zPTEmZ3JvdXBfYWR1bHRzPTJ=
+cIixcImlkXCI6XCIxM2ZiM2RjODM4N2Y0NTY5ODc3NGE0MGVlMjdmYTI5NVwiLFwidXJsX2lkc1=
+wiOltcImM1YTFmZWE5YzJkMmRhNDA0YmJlMTFlYjQyYjg4NTRkOGI5YmRjMTdcIl19In0" styl=
+e=3D"color: #3d4552;" target=3D"_blank">
+                                                        <p class=3D"city-ti=
+tle" style=3D" max-width: 150px;margin: 2px 0;font-weight: bold;font-size: =
+16px;">Madrid</p>
+                                                        <p class=3D"hotel-c=
+ount" style=3D"margin: 0 0 2px 0;">Hotels: 5761</p>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                                                           =
+                             <td class=3D"city city-mid" style=3D"border-ra=
+dius:5px;padding: 0;border: solid 1px #ddd;background-color: #ffffff; width=
+: 33.333%; max-width: 33.333%;">
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                                <td class=3D"city-img" styl=
+e=3D"padding: 0;text-align: center">
+                                                    <a href=3D"https://mand=
+rillapp.com/track/click/30243799/www.booking.com?p=3DeyJzIjoiSDBITmx1U1p5Tk=
+lMX2dvbHNhUkdRdG1xekxJIiwidiI6MSwicCI6IntcInVcIjozMDI0Mzc5OSxcInZcIjoxLFwid=
+XJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5ib29raW5nLmNvbVxcXC9zZWFyY2hyZXN1bHRzLmtv=
+Lmh0bWw_Y2l0eT0tMzcyNDkwJmFpZD03OTI4MjU4Jm5vX3Jvb21zPTEmZ3JvdXBfYWR1bHRzPTJ=
+cIixcImlkXCI6XCIxM2ZiM2RjODM4N2Y0NTY5ODc3NGE0MGVlMjdmYTI5NVwiLFwidXJsX2lkc1=
+wiOltcImM1YTFmZWE5YzJkMmRhNDA0YmJlMTFlYjQyYjg4NTRkOGI5YmRjMTdcIl19In0" targ=
+et=3D"_blank">
+                                                            <img alt=3D"Bar=
+celona" src=3D"https://static.railclick.com/email-templates/booking/barcelo=
+na.jpg" style=3D"border-radius:5px;object-fit: cover; max-width:180px; max-=
+height:80px" width=3D"179" />
+                                                   </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class=3D"city-brief" st=
+yle=3D"padding: 8px 10px;">
+                                                    <a href=3D"https://mand=
+rillapp.com/track/click/30243799/www.booking.com?p=3DeyJzIjoiSDBITmx1U1p5Tk=
+lMX2dvbHNhUkdRdG1xekxJIiwidiI6MSwicCI6IntcInVcIjozMDI0Mzc5OSxcInZcIjoxLFwid=
+XJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5ib29raW5nLmNvbVxcXC9zZWFyY2hyZXN1bHRzLmtv=
+Lmh0bWw_Y2l0eT0tMzcyNDkwJmFpZD03OTI4MjU4Jm5vX3Jvb21zPTEmZ3JvdXBfYWR1bHRzPTJ=
+cIixcImlkXCI6XCIxM2ZiM2RjODM4N2Y0NTY5ODc3NGE0MGVlMjdmYTI5NVwiLFwidXJsX2lkc1=
+wiOltcImM1YTFmZWE5YzJkMmRhNDA0YmJlMTFlYjQyYjg4NTRkOGI5YmRjMTdcIl19In0" styl=
+e=3D"color: #3d4552;" target=3D"_blank">
+                                                        <p class=3D"city-ti=
+tle" style=3D" max-width: 150px;margin: 2px 0;font-weight: bold;font-size: =
+16px;">Barcelona</p>
+                                                        <p class=3D"hotel-c=
+ount" style=3D"margin: 0 0 2px 0;">Hotels: 3303</p>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                                                           =
+                             <td class=3D"city city-mid" style=3D"border-ra=
+dius:5px;padding: 0;border: solid 1px #ddd;background-color: #ffffff; width=
+: 33.333%; max-width: 33.333%;">
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                                <td class=3D"city-img" styl=
+e=3D"padding: 0;text-align: center">
+                                                    <a href=3D"https://mand=
+rillapp.com/track/click/30243799/www.booking.com?p=3DeyJzIjoiMHdsbnFHZ2ZNek=
+d6QmVYcnF6R3M3N0JBeHdBIiwidiI6MSwicCI6IntcInVcIjozMDI0Mzc5OSxcInZcIjoxLFwid=
+XJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5ib29raW5nLmNvbVxcXC9zZWFyY2hyZXN1bHRzLmtv=
+Lmh0bWw_Y2l0eT0tNDAyODQ5JmFpZD03OTI4MjU4Jm5vX3Jvb21zPTEmZ3JvdXBfYWR1bHRzPTJ=
+cIixcImlkXCI6XCIxM2ZiM2RjODM4N2Y0NTY5ODc3NGE0MGVlMjdmYTI5NVwiLFwidXJsX2lkc1=
+wiOltcImM1YTFmZWE5YzJkMmRhNDA0YmJlMTFlYjQyYjg4NTRkOGI5YmRjMTdcIl19In0" targ=
+et=3D"_blank">
+                                                            <img alt=3D"Sev=
+illa" src=3D"https://static.railclick.com/email-templates/booking/sevilla.j=
+pg" style=3D"border-radius:5px;object-fit: cover; max-width:180px; max-heig=
+ht:80px" width=3D"179" />
+                                                   </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class=3D"city-brief" st=
+yle=3D"padding: 8px 10px;">
+                                                    <a href=3D"https://mand=
+rillapp.com/track/click/30243799/www.booking.com?p=3DeyJzIjoiMHdsbnFHZ2ZNek=
+d6QmVYcnF6R3M3N0JBeHdBIiwidiI6MSwicCI6IntcInVcIjozMDI0Mzc5OSxcInZcIjoxLFwid=
+XJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5ib29raW5nLmNvbVxcXC9zZWFyY2hyZXN1bHRzLmtv=
+Lmh0bWw_Y2l0eT0tNDAyODQ5JmFpZD03OTI4MjU4Jm5vX3Jvb21zPTEmZ3JvdXBfYWR1bHRzPTJ=
+cIixcImlkXCI6XCIxM2ZiM2RjODM4N2Y0NTY5ODc3NGE0MGVlMjdmYTI5NVwiLFwidXJsX2lkc1=
+wiOltcImM1YTFmZWE5YzJkMmRhNDA0YmJlMTFlYjQyYjg4NTRkOGI5YmRjMTdcIl19In0" styl=
+e=3D"color: #3d4552;" target=3D"_blank">
+                                                        <p class=3D"city-ti=
+tle" style=3D" max-width: 150px;margin: 2px 0;font-weight: bold;font-size: =
+16px;">Sevilla</p>
+                                                        <p class=3D"hotel-c=
+ount" style=3D"margin: 0 0 2px 0;">Hotels: 3354</p>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                                                           =
+ </tr>
+                                        <tr>
+                                                                           =
+                             <td class=3D"city city-mid" style=3D"border-ra=
+dius:5px;padding: 0;border: solid 1px #ddd;background-color: #ffffff; width=
+: 33.333%; max-width: 33.333%;">
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                                <td class=3D"city-img" styl=
+e=3D"padding: 0;text-align: center">
+                                                    <a href=3D"https://mand=
+rillapp.com/track/click/30243799/www.booking.com?p=3DeyJzIjoiRkFBSWdyM2RPcj=
+lCclRVbERIY2I1cUNPOE53IiwidiI6MSwicCI6IntcInVcIjozMDI0Mzc5OSxcInZcIjoxLFwid=
+XJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5ib29raW5nLmNvbVxcXC9zZWFyY2hyZXN1bHRzLmtv=
+Lmh0bWw_Y2l0eT0tNDA2MTMxJmFpZD03OTI4MjU4Jm5vX3Jvb21zPTEmZ3JvdXBfYWR1bHRzPTJ=
+cIixcImlkXCI6XCIxM2ZiM2RjODM4N2Y0NTY5ODc3NGE0MGVlMjdmYTI5NVwiLFwidXJsX2lkc1=
+wiOltcImM1YTFmZWE5YzJkMmRhNDA0YmJlMTFlYjQyYjg4NTRkOGI5YmRjMTdcIl19In0" targ=
+et=3D"_blank">
+                                                            <img alt=3D"Val=
+encia" src=3D"https://static.railclick.com/email-templates/booking/valencia=
+.jpg" style=3D"border-radius:5px;object-fit: cover; max-width:180px; max-he=
+ight:80px" width=3D"179" />
+                                                   </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class=3D"city-brief" st=
+yle=3D"padding: 8px 10px;">
+                                                    <a href=3D"https://mand=
+rillapp.com/track/click/30243799/www.booking.com?p=3DeyJzIjoiRkFBSWdyM2RPcj=
+lCclRVbERIY2I1cUNPOE53IiwidiI6MSwicCI6IntcInVcIjozMDI0Mzc5OSxcInZcIjoxLFwid=
+XJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5ib29raW5nLmNvbVxcXC9zZWFyY2hyZXN1bHRzLmtv=
+Lmh0bWw_Y2l0eT0tNDA2MTMxJmFpZD03OTI4MjU4Jm5vX3Jvb21zPTEmZ3JvdXBfYWR1bHRzPTJ=
+cIixcImlkXCI6XCIxM2ZiM2RjODM4N2Y0NTY5ODc3NGE0MGVlMjdmYTI5NVwiLFwidXJsX2lkc1=
+wiOltcImM1YTFmZWE5YzJkMmRhNDA0YmJlMTFlYjQyYjg4NTRkOGI5YmRjMTdcIl19In0" styl=
+e=3D"color: #3d4552;" target=3D"_blank">
+                                                        <p class=3D"city-ti=
+tle" style=3D" max-width: 150px;margin: 2px 0;font-weight: bold;font-size: =
+16px;">Valencia</p>
+                                                        <p class=3D"hotel-c=
+ount" style=3D"margin: 0 0 2px 0;">Hotels: 2154</p>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                                                           =
+                             <td class=3D"city city-mid" style=3D"border-ra=
+dius:5px;padding: 0;border: solid 1px #ddd;background-color: #ffffff; width=
+: 33.333%; max-width: 33.333%;">
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                                <td class=3D"city-img" styl=
+e=3D"padding: 0;text-align: center">
+                                                    <a href=3D"https://mand=
+rillapp.com/track/click/30243799/www.booking.com?p=3DeyJzIjoiMVg5bE1uWGwtY1=
+RUb0lMTTZqY3d2NU9yT0xjIiwidiI6MSwicCI6IntcInVcIjozMDI0Mzc5OSxcInZcIjoxLFwid=
+XJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5ib29raW5nLmNvbVxcXC9zZWFyY2hyZXN1bHRzLmtv=
+Lmh0bWw_Y2l0eT0tNDA0MzU3JmFpZD03OTI4MjU4Jm5vX3Jvb21zPTEmZ3JvdXBfYWR1bHRzPTJ=
+cIixcImlkXCI6XCIxM2ZiM2RjODM4N2Y0NTY5ODc3NGE0MGVlMjdmYTI5NVwiLFwidXJsX2lkc1=
+wiOltcImM1YTFmZWE5YzJkMmRhNDA0YmJlMTFlYjQyYjg4NTRkOGI5YmRjMTdcIl19In0" targ=
+et=3D"_blank">
+                                                            <img alt=3D"Tol=
+edo" src=3D"https://static.railclick.com/email-templates/booking/toledo.jpg=
+" style=3D"border-radius:5px;object-fit: cover; max-width:180px; max-height=
+:80px" width=3D"179" />
+                                                   </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class=3D"city-brief" st=
+yle=3D"padding: 8px 10px;">
+                                                    <a href=3D"https://mand=
+rillapp.com/track/click/30243799/www.booking.com?p=3DeyJzIjoiMVg5bE1uWGwtY1=
+RUb0lMTTZqY3d2NU9yT0xjIiwidiI6MSwicCI6IntcInVcIjozMDI0Mzc5OSxcInZcIjoxLFwid=
+XJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5ib29raW5nLmNvbVxcXC9zZWFyY2hyZXN1bHRzLmtv=
+Lmh0bWw_Y2l0eT0tNDA0MzU3JmFpZD03OTI4MjU4Jm5vX3Jvb21zPTEmZ3JvdXBfYWR1bHRzPTJ=
+cIixcImlkXCI6XCIxM2ZiM2RjODM4N2Y0NTY5ODc3NGE0MGVlMjdmYTI5NVwiLFwidXJsX2lkc1=
+wiOltcImM1YTFmZWE5YzJkMmRhNDA0YmJlMTFlYjQyYjg4NTRkOGI5YmRjMTdcIl19In0" styl=
+e=3D"color: #3d4552;" target=3D"_blank">
+                                                        <p class=3D"city-ti=
+tle" style=3D" max-width: 150px;margin: 2px 0;font-weight: bold;font-size: =
+16px;">Toledo</p>
+                                                        <p class=3D"hotel-c=
+ount" style=3D"margin: 0 0 2px 0;">Hotels: 393</p>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                                                           =
+                             <td class=3D"city city-mid" style=3D"border-ra=
+dius:5px;padding: 0;border: solid 1px #ddd;background-color: #ffffff; width=
+: 33.333%; max-width: 33.333%;">
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                                <td class=3D"city-img" styl=
+e=3D"padding: 0;text-align: center">
+                                                    <a href=3D"https://mand=
+rillapp.com/track/click/30243799/www.booking.com?p=3DeyJzIjoibkhkZkJmcG1KWX=
+Y4SVJsOUEwVlI5S1VESFBRIiwidiI6MSwicCI6IntcInVcIjozMDI0Mzc5OSxcInZcIjoxLFwid=
+XJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5ib29raW5nLmNvbVxcXC9zZWFyY2hyZXN1bHRzLmtv=
+Lmh0bWw_Y2l0eT0tMzkwNzg3JmFpZD03OTI4MjU4Jm5vX3Jvb21zPTEmZ3JvdXBfYWR1bHRzPTJ=
+cIixcImlkXCI6XCIxM2ZiM2RjODM4N2Y0NTY5ODc3NGE0MGVlMjdmYTI5NVwiLFwidXJsX2lkc1=
+wiOltcImM1YTFmZWE5YzJkMmRhNDA0YmJlMTFlYjQyYjg4NTRkOGI5YmRjMTdcIl19In0" targ=
+et=3D"_blank">
+                                                            <img alt=3D"M=
+=C3=A1laga" src=3D"https://static.railclick.com/email-templates/booking/m=
+=C3=A1laga.jpg" style=3D"border-radius:5px;object-fit: cover; max-width:180=
+px; max-height:80px" width=3D"179" />
+                                                   </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class=3D"city-brief" st=
+yle=3D"padding: 8px 10px;">
+                                                    <a href=3D"https://mand=
+rillapp.com/track/click/30243799/www.booking.com?p=3DeyJzIjoibkhkZkJmcG1KWX=
+Y4SVJsOUEwVlI5S1VESFBRIiwidiI6MSwicCI6IntcInVcIjozMDI0Mzc5OSxcInZcIjoxLFwid=
+XJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5ib29raW5nLmNvbVxcXC9zZWFyY2hyZXN1bHRzLmtv=
+Lmh0bWw_Y2l0eT0tMzkwNzg3JmFpZD03OTI4MjU4Jm5vX3Jvb21zPTEmZ3JvdXBfYWR1bHRzPTJ=
+cIixcImlkXCI6XCIxM2ZiM2RjODM4N2Y0NTY5ODc3NGE0MGVlMjdmYTI5NVwiLFwidXJsX2lkc1=
+wiOltcImM1YTFmZWE5YzJkMmRhNDA0YmJlMTFlYjQyYjg4NTRkOGI5YmRjMTdcIl19In0" styl=
+e=3D"color: #3d4552;" target=3D"_blank">
+                                                        <p class=3D"city-ti=
+tle" style=3D" max-width: 150px;margin: 2px 0;font-weight: bold;font-size: =
+16px;">M=C3=A1laga</p>
+                                                        <p class=3D"hotel-c=
+ount" style=3D"margin: 0 0 2px 0;">Hotels: 3906</p>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                                                           =
+ </tr>
+                                        <tr>
+                                                                           =
+                             <td class=3D"city city-mid" style=3D"border-ra=
+dius:5px;padding: 0;border: solid 1px #ddd;background-color: #ffffff; width=
+: 33.333%; max-width: 33.333%;">
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                                <td class=3D"city-img" styl=
+e=3D"padding: 0;text-align: center">
+                                                    <a href=3D"https://mand=
+rillapp.com/track/click/30243799/www.booking.com?p=3DeyJzIjoiRUNSc1lYay1LYX=
+Z3Ym5fUm9POFJvelcwSG93IiwidiI6MSwicCI6IntcInVcIjozMDI0Mzc5OSxcInZcIjoxLFwid=
+XJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5ib29raW5nLmNvbVxcXC9zZWFyY2hyZXN1bHRzLmtv=
+Lmh0bWw_Y2l0eT0tNDAyMDU5JmFpZD03OTI4MjU4Jm5vX3Jvb21zPTEmZ3JvdXBfYWR1bHRzPTJ=
+cIixcImlkXCI6XCIxM2ZiM2RjODM4N2Y0NTY5ODc3NGE0MGVlMjdmYTI5NVwiLFwidXJsX2lkc1=
+wiOltcImM1YTFmZWE5YzJkMmRhNDA0YmJlMTFlYjQyYjg4NTRkOGI5YmRjMTdcIl19In0" targ=
+et=3D"_blank">
+                                                            <img alt=3D"San=
+tiago de Compostela" src=3D"https://static.railclick.com/email-templates/bo=
+oking/santiago_de_compostela.jpg" style=3D"border-radius:5px;object-fit: co=
+ver; max-width:180px; max-height:80px" width=3D"179" />
+                                                   </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class=3D"city-brief" st=
+yle=3D"padding: 8px 10px;">
+                                                    <a href=3D"https://mand=
+rillapp.com/track/click/30243799/www.booking.com?p=3DeyJzIjoiRUNSc1lYay1LYX=
+Z3Ym5fUm9POFJvelcwSG93IiwidiI6MSwicCI6IntcInVcIjozMDI0Mzc5OSxcInZcIjoxLFwid=
+XJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5ib29raW5nLmNvbVxcXC9zZWFyY2hyZXN1bHRzLmtv=
+Lmh0bWw_Y2l0eT0tNDAyMDU5JmFpZD03OTI4MjU4Jm5vX3Jvb21zPTEmZ3JvdXBfYWR1bHRzPTJ=
+cIixcImlkXCI6XCIxM2ZiM2RjODM4N2Y0NTY5ODc3NGE0MGVlMjdmYTI5NVwiLFwidXJsX2lkc1=
+wiOltcImM1YTFmZWE5YzJkMmRhNDA0YmJlMTFlYjQyYjg4NTRkOGI5YmRjMTdcIl19In0" styl=
+e=3D"color: #3d4552;" target=3D"_blank">
+                                                        <p class=3D"city-ti=
+tle" style=3D" max-width: 150px;margin: 2px 0;font-weight: bold;font-size: =
+16px;">Santiago de Compostela</p>
+                                                        <p class=3D"hotel-c=
+ount" style=3D"margin: 0 0 2px 0;">Hotels: 527</p>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                                                           =
+                             <td class=3D"city city-mid" style=3D"border-ra=
+dius:5px;padding: 0;border: solid 1px #ddd;background-color: #ffffff; width=
+: 33.333%; max-width: 33.333%;">
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                                <td class=3D"city-img" styl=
+e=3D"padding: 0;text-align: center">
+                                                    <a href=3D"https://mand=
+rillapp.com/track/click/30243799/www.booking.com?p=3DeyJzIjoibTNaUWVJT05GbX=
+lZb00yNjdGSk5Hc0lCXzZFIiwidiI6MSwicCI6IntcInVcIjozMDI0Mzc5OSxcInZcIjoxLFwid=
+XJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5ib29raW5nLmNvbVxcXC9zZWFyY2hyZXN1bHRzLmtv=
+Lmh0bWw_Y2l0eT0tMzg0MzI4JmFpZD03OTI4MjU4Jm5vX3Jvb21zPTEmZ3JvdXBfYWR1bHRzPTJ=
+cIixcImlkXCI6XCIxM2ZiM2RjODM4N2Y0NTY5ODc3NGE0MGVlMjdmYTI5NVwiLFwidXJsX2lkc1=
+wiOltcImM1YTFmZWE5YzJkMmRhNDA0YmJlMTFlYjQyYjg4NTRkOGI5YmRjMTdcIl19In0" targ=
+et=3D"_blank">
+                                                            <img alt=3D"Gra=
+nada" src=3D"https://static.railclick.com/email-templates/booking/granada.j=
+pg" style=3D"border-radius:5px;object-fit: cover; max-width:180px; max-heig=
+ht:80px" width=3D"179" />
+                                                   </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class=3D"city-brief" st=
+yle=3D"padding: 8px 10px;">
+                                                    <a href=3D"https://mand=
+rillapp.com/track/click/30243799/www.booking.com?p=3DeyJzIjoibTNaUWVJT05GbX=
+lZb00yNjdGSk5Hc0lCXzZFIiwidiI6MSwicCI6IntcInVcIjozMDI0Mzc5OSxcInZcIjoxLFwid=
+XJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5ib29raW5nLmNvbVxcXC9zZWFyY2hyZXN1bHRzLmtv=
+Lmh0bWw_Y2l0eT0tMzg0MzI4JmFpZD03OTI4MjU4Jm5vX3Jvb21zPTEmZ3JvdXBfYWR1bHRzPTJ=
+cIixcImlkXCI6XCIxM2ZiM2RjODM4N2Y0NTY5ODc3NGE0MGVlMjdmYTI5NVwiLFwidXJsX2lkc1=
+wiOltcImM1YTFmZWE5YzJkMmRhNDA0YmJlMTFlYjQyYjg4NTRkOGI5YmRjMTdcIl19In0" styl=
+e=3D"color: #3d4552;" target=3D"_blank">
+                                                        <p class=3D"city-ti=
+tle" style=3D" max-width: 150px;margin: 2px 0;font-weight: bold;font-size: =
+16px;">Granada</p>
+                                                        <p class=3D"hotel-c=
+ount" style=3D"margin: 0 0 2px 0;">Hotels: 1459</p>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                                                           =
+                             <td class=3D"city city-mid" style=3D"border-ra=
+dius:5px;padding: 0;border: solid 1px #ddd;background-color: #ffffff; width=
+: 33.333%; max-width: 33.333%;">
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                                <td class=3D"city-img" styl=
+e=3D"padding: 0;text-align: center">
+                                                    <a href=3D"https://mand=
+rillapp.com/track/click/30243799/www.booking.com?p=3DeyJzIjoiTTRUajFqcEFpdk=
+llZWxlbHp0TGtUYWhOOGFrIiwidiI6MSwicCI6IntcInVcIjozMDI0Mzc5OSxcInZcIjoxLFwid=
+XJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5ib29raW5nLmNvbVxcXC9zZWFyY2hyZXN1bHRzLmtv=
+Lmh0bWw_Y2l0eT0tMzcwMjEwJmFpZD03OTI4MjU4Jm5vX3Jvb21zPTEmZ3JvdXBfYWR1bHRzPTJ=
+cIixcImlkXCI6XCIxM2ZiM2RjODM4N2Y0NTY5ODc3NGE0MGVlMjdmYTI5NVwiLFwidXJsX2lkc1=
+wiOltcImM1YTFmZWE5YzJkMmRhNDA0YmJlMTFlYjQyYjg4NTRkOGI5YmRjMTdcIl19In0" targ=
+et=3D"_blank">
+                                                            <img alt=3D"Ali=
+cante" src=3D"https://static.railclick.com/email-templates/booking/alicante=
+.jpg" style=3D"border-radius:5px;object-fit: cover; max-width:180px; max-he=
+ight:80px" width=3D"179" />
+                                                   </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class=3D"city-brief" st=
+yle=3D"padding: 8px 10px;">
+                                                    <a href=3D"https://mand=
+rillapp.com/track/click/30243799/www.booking.com?p=3DeyJzIjoiTTRUajFqcEFpdk=
+llZWxlbHp0TGtUYWhOOGFrIiwidiI6MSwicCI6IntcInVcIjozMDI0Mzc5OSxcInZcIjoxLFwid=
+XJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5ib29raW5nLmNvbVxcXC9zZWFyY2hyZXN1bHRzLmtv=
+Lmh0bWw_Y2l0eT0tMzcwMjEwJmFpZD03OTI4MjU4Jm5vX3Jvb21zPTEmZ3JvdXBfYWR1bHRzPTJ=
+cIixcImlkXCI6XCIxM2ZiM2RjODM4N2Y0NTY5ODc3NGE0MGVlMjdmYTI5NVwiLFwidXJsX2lkc1=
+wiOltcImM1YTFmZWE5YzJkMmRhNDA0YmJlMTFlYjQyYjg4NTRkOGI5YmRjMTdcIl19In0" styl=
+e=3D"color: #3d4552;" target=3D"_blank">
+                                                        <p class=3D"city-ti=
+tle" style=3D" max-width: 150px;margin: 2px 0;font-weight: bold;font-size: =
+16px;">Alicante</p>
+                                                        <p class=3D"hotel-c=
+ount" style=3D"margin: 0 0 2px 0;">Hotels: 1679</p>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                                                           =
+ </tr>
+                                        <tr>
+                                                                           =
+                     </tr>
+
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<!--/Booking.com block-->
+
+
+<!---------------content end--------------->
+<!--Blue footer-->
+<table class=3D"root-table" style=3D"margin-top:10px;width: 100%;padding-le=
+ft: 20px;padding-right: 20px;background-color: #1082d3; color: #ffffff;">
+    <tbody>
+    <tr>
+        <td>
+            <table class=3D"container-table" align=3D"center">
+                <tbody>
+                <tr>
+                    <td style=3D"padding-bottom: 16px;">
+                        <table class=3D"in-container-table" align=3D"center=
+" style=3D"color: #ffffff;">
+                            <tbody>
+                            <tr>
+                                <td style=3D"padding-bottom: 10px; font-siz=
+e: 16px; font-weight: bold;">
+                                    Railclick Support Team                 =
+               </td>
+                            </tr>
+                            <tr>
+                                <td style=3D"padding-bottom: 16px;">
+                                    If you need to change you ticket or hav=
+e any question, you can go to                                    <a href=3D=
+"https://mandrillapp.com/track/click/30243799/spainrail.com?p=3DeyJzIjoicWx=
+xeHduN2MyallJZ1BXVXRTRmhONlR0YjZrIiwidiI6MSwicCI6IntcInVcIjozMDI0Mzc5OSxcIn=
+ZcIjoxLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3NwYWlucmFpbC5jb21cXFwva29cXFwvY29ud=
+GFjdFwiLFwiaWRcIjpcIjEzZmIzZGM4Mzg3ZjQ1Njk4Nzc0YTQwZWUyN2ZhMjk1XCIsXCJ1cmxf=
+aWRzXCI6W1wiOWM2ZjIyZTJjMzRhYjk2NjgxZGFkN2QzOGJjNmE2NmM0ODk2ZWY1N1wiXX0ifQ"=
+ style=3D"color: #ffffff; font-weight: bold;">
+                                        contact us                         =
+           </a>
+                                    or call us at                          =
+           <a href=3D"tel:+34934874141" style=3D"color: #ffffff; font-weigh=
+t: bold;">
+                                        +34 93 487 4141.
+                                    </a>
+                                    We will be happy to help you.          =
+                      </td>
+                            </tr>
+                            <tr>
+                                <td style=3D"padding-bottom: 24px; border-b=
+ottom: 1px solid #3193d9;">
+                                    Rambla de Catalunya 61, 5 3 Barcelona 0=
+8007, Spain<br>
+                                    Opening hours: <br>
+                                    Mon =E2=80=93 Fri 09:00h =E2=80=93 18:0=
+0h <br>
+                                    Sat =E2=80=93 Sun 09:00h =E2=80=93 14:0=
+0h                                </td>
+                            </tr>
+                            <tr>
+                                <td style=3D"padding-top: 14px;">
+                                    <table>
+                                        <tr>
+                                            <td width=3D"33%">
+                                                <a href=3D"https://mandrill=
+app.com/track/click/30243799/spainrail.com?p=3DeyJzIjoiNDg3Q2o1NjJOdXN3c2FW=
+ZXVHcllaU0txNFJJIiwidiI6MSwicCI6IntcInVcIjozMDI0Mzc5OSxcInZcIjoxLFwidXJsXCI=
+6XCJodHRwczpcXFwvXFxcL3NwYWlucmFpbC5jb21cXFwva29cXFwvdGVybXNfYW5kX2NvbmRpdG=
+lvbnMjcHJpdmFjeV9wb2xpY3lcIixcImlkXCI6XCIxM2ZiM2RjODM4N2Y0NTY5ODc3NGE0MGVlM=
+jdmYTI5NVwiLFwidXJsX2lkc1wiOltcIjNjZGNhZmI3NTM1ODYzY2NmZGRkMjllM2YzYjg1MDYx=
+ZWI0MzViOThcIl19In0" target=3D"_blank" style=3D"color:#ffffff;font-weight:b=
+old;margin-right:20px">
+                                                    Privacy Policy         =
+                                       </a>
+                                            </td>
+                                            <td width=3D"33%">
+                                                <a href=3D"https://mandrill=
+app.com/track/click/30243799/spainrail.com?p=3DeyJzIjoiaUctTkpKLXp2dHJJcGFB=
+WHcxb19QUHpzaWtvIiwidiI6MSwicCI6IntcInVcIjozMDI0Mzc5OSxcInZcIjoxLFwidXJsXCI=
+6XCJodHRwczpcXFwvXFxcL3NwYWlucmFpbC5jb21cXFwva29cXFwvdGVybXNfYW5kX2NvbmRpdG=
+lvbnNcIixcImlkXCI6XCIxM2ZiM2RjODM4N2Y0NTY5ODc3NGE0MGVlMjdmYTI5NVwiLFwidXJsX=
+2lkc1wiOltcIjNjZGNhZmI3NTM1ODYzY2NmZGRkMjllM2YzYjg1MDYxZWI0MzViOThcIl19In0"=
+ target=3D"_blank" style=3D"color: #ffffff;font-weight: bold;">
+                                                    Terms and Conditions   =
+                                             </a>
+                                            </td>
+                                            <td width=3D"33%">
+                                                                           =
+                 </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+        </td>
+    </tr>
+</table>
+<!--/Blue footer-->
+<img src=3D"https://mandrillapp.com/track/open.php?u=3D30243799&id=3D13fb3d=
+c8387f45698774a40ee27fa295" height=3D"1" width=3D"1" alt=3D""></body>
+</html>
+
+--_av-5Q0GGOEX5Jnb_4cpmJ9oTA--
+
+--_av-DZqEByPgtEkbAh-r06A1YA
+Content-Type: application/pdf
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="eef897dd-83c5-443d-a27f-f2d902e3459f.pdf"

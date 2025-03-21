@@ -1,0 +1,1014 @@
+Delivered-To: johndoe@gmail.com
+Received: by 2002:a05:7010:e60f:b0:306:885b:fa78 with SMTP id
+ lu15csp1481943mdb;        Fri, 30 Sep 2022 00:56:37 -0700 (PDT)
+X-Received: by 2002:a81:b64f:0:b0:34c:28b9:2b32 with SMTP id
+ h15-20020a81b64f000000b0034c28b92b32mr7568198ywk.89.1664524597534;       
+ Fri, 30 Sep 2022 00:56:37 -0700 (PDT)
+ARC-Seal: i=3; a=rsa-sha256; t=1664524597; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=U1Wnj4+NzX8rCaf4JqYDwUT0gc64sKe2ca4ZF/VB0H0vJTE3rKCfDJe3qProgrqLpS
+         7i6+dH0mGBQMHw5l9sdLq87NzO3yO/1oG3hmxuX9KGjV9TtADBtvWzjtRD4bJLm3hifa
+         6nQAMuFoYmRrrR/noUlKuCDhxwYz6pWD1Uykxrg/mWgJcxvR+111ffwTnk4GQ9DqSakZ
+         ktO0HpbLlXzJuWnGjlwBFvy+5g8k0/leAa1kz4EzLjNlyt2b/EbEVk6BHaokdnsjnnbn
+         6quGKXydtmM05u9zg2HMmB2qfHuKG69Lx1KCGd7PomWE2oRgMDPCa2K2ARoG99epPV0H
+         2zVw==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=mime-version:subject:message-id:to:from:date:dkim-signature        
+ :delivered-to;        bh=wpuCa2V2yErY5qQOZGNODlmyCb8dUUJWWNqp0iEcv5s=;
+        b=xqT1f63wMND3oYax+n/GTEg6L7aW7GDFjdMsHAHnd+fW8VNODBtYSWzJsv87BtNrQC
+         thzF+kHJcQW7FU6TmE+JqQJgKgvnBZ2NqFQ16UQbywK4BheK+456+9AJ7197MxpAyuin
+         BTGoRIS6b2WQ8NZLHYQKoCpy/NWlaPXkhnHaSkLxscGBtVsyp9YSZkSGLjgJe8/VLe4z
+         +FYBR0WJKylINKA1n+uUGw8guKrl5ICKcpTjZqiuc1tnd918pSyT6GYToGbPEzfIxFWT
+         0zuHSHq+tw6KeAOysBAmusKMflQ4a0VgsNAso7UBaFocUgnhBBFI4ewXuIH4tAffM9N0
+         pooA==
+ARC-Authentication-Results: i=3; mx.google.com;       dkim=pass
+ header.i=@virginaustralia.com header.s=selector2 header.b=STj2wqbo;      
+ arc=pass (i=2 spf=pass spfdomain=virginaustralia.com dkim=pass
+ dkdomain=virginaustralia.com);       spf=pass (google.com: domain of
+ john2+caf_=johndoe=gmail.com@gmail.com designates 209.85.220.41 as
+ permitted sender) smtp.mailfrom="john2+caf_=johndoe=gmail.com@gmail.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE)
+ header.from=virginaustralia.com
+Return-Path: <john2+caf_=johndoe=gmail.com@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com.
+ [209.85.220.41])        by mx.google.com with SMTPS id
+ k143-20020a25c695000000b006bd05344f85sor203670ybf.1.2022.09.30.00.56.37
+        for <johndoe@gmail.com>        (Google Transport Security);       
+ Fri, 30 Sep 2022 00:56:37 -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ john2+caf_=johndoe=gmail.com@gmail.com designates 209.85.220.41 as
+ permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@virginaustralia.com header.s=selector2 header.b=STj2wqbo;      
+ arc=pass (i=2 spf=pass spfdomain=virginaustralia.com dkim=pass
+ dkdomain=virginaustralia.com);       spf=pass (google.com: domain of
+ john2+caf_=johndoe=gmail.com@gmail.com designates 209.85.220.41 as
+ permitted sender) smtp.mailfrom="john2+caf_=johndoe=gmail.com@gmail.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE)
+ header.from=virginaustralia.com
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=mime-version:subject:message-id:to:from:date:dkim-signature
+         :delivered-to:x-gm-message-state:from:to:cc:subject:date;
+        bh=wpuCa2V2yErY5qQOZGNODlmyCb8dUUJWWNqp0iEcv5s=;
+        b=RStdM4zA08Fgav9N1qq0L5op9BOx1abeZnbImfV6mgwRFQ5I3c6uTNiifCOt07vvsx
+         ooAeNE2rLgRJVmiJm4G9c1sMlTRYjXldIjzIFsPeGA3dxqDPYVy5HNSMwFgVwcCZrEyS
+         AQeYAvDX2dgoOUy4DFNfC2rJd2ZSefmdto7oTRmnG/Qpl5g0d/3onzDiZHf43+I2beOD
+         lBODwQ0mpk4xX/nm5qt8nnGQN9DcBU2ig89QRsH58V85NStpPbtyxNH0BeUsn98fRr0e
+         HcLnrn6SKw1vxvx+X3mWYJIf1fD39k0GwCwMImInr27py/msowNgdf3fwvL7XQdxvg59
+         kmTw==
+X-Gm-Message-State: ACrzQf3S/C+BK+rlVODF1fld7Cjjcch+2WOVpLwcnM/2tAbLOpq+KlgF
+	qt1Abj9+aAPd//YZlmUG2JS5kAU5WGCfD9JTLDQS3R7eiyFL5xvBt3BT5aNw1g==
+X-Received: by 2002:a25:418e:0:b0:6bc:b4de:3c21 with SMTP id
+ o136-20020a25418e000000b006bcb4de3c21mr6750767yba.508.1664524597223;       
+ Fri, 30 Sep 2022 00:56:37 -0700 (PDT)
+X-Forwarded-To: johndoe@gmail.com
+X-Forwarded-For: john2@gmail.com johndoe@gmail.com
+Delivered-To: john2@gmail.com
+Received: by 2002:a05:7011:d96:b0:302:dbb3:3ae2 with SMTP id
+ gw22csp1529192mdb;        Fri, 30 Sep 2022 00:56:35 -0700 (PDT)
+X-Google-Smtp-Source:
+ AMsMyM6MTuJroy0SM4j44uUdEJWkWRJ04gL8FoNRo2g5FSUPlh36s2Y1TbCI116+6ooRhg9Vw3t/
+X-Received: by 2002:a63:d652:0:b0:43c:9566:5394 with SMTP id
+ d18-20020a63d652000000b0043c95665394mr6527202pgj.536.1664524595604;       
+ Fri, 30 Sep 2022 00:56:35 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1664524595; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=gngoiBZoK+4/CsyiAuEHJabDltvYRrGByQJHcbdSaoiUfG1qEJrDDjvj5AH6GPz6uo
+         UTrQDbfkpHBrTCrVBFitGkacAzGBB9CQ2F+5jJnvqvof3OIKVcvw47Gqo0mgtzFsfLaK
+         KJ0XmfPYy5i/8n+5Ozo7Lfao7hoArBJ+7J9bt27gXk5ksDuYS9uCDzZNmm8Xr6yWEGvb
+         dlrWt8ihvp/gjuedroWtS/6zO9pcYgpDkWsfRlxw10nxD9TGlTLCSwEEPH0epHn9fjGK
+         vlW5gH4TmaXVSUbcWWxDKmhF01N1jeTwi7iFCfTU377AD9a06jnZNLi+y+iMo5K0XnGO
+         D+sQ==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=mime-version:subject:message-id:to:from:date:dkim-signature;       
+ bh=wpuCa2V2yErY5qQOZGNODlmyCb8dUUJWWNqp0iEcv5s=;       
+ b=otUdQIa7BG3h31EmjVW2n+Szo+Px7QoUeD3Ol13y8vVuwdawkPxm6cpl0llM7qRUOd        
+ vLAfFml+v6fLSU5tmA6vBI+rjJ5GdrKZEyTr3DGFVIsF4vZt8oIziXlDcW2DBQoHJmYv        
+ c09G8hZ0ViA0eaB/NUOi0BNcJCtXrOqf22os0D2AUL2t2lIo2O+URpQXbwBC7d1V75sK        
+ pZ1gtxK9FKgYTf1Ct3tai+k94ODQMW4Qjy1JXJeAoxPp8Wdh68iTeVkVncfavsV4weJa        
+ R2ye8LnylLicBB22O0XdfN+ahIdqOdeQj5E4oK+Cp0MZ48zDs1mq0Jk8T5CK2S755/ur        
+ ADzg==
+ARC-Authentication-Results: i=2; mx.google.com;       dkim=pass
+ header.i=@virginaustralia.com header.s=selector2 header.b=STj2wqbo;      
+ arc=pass (i=1 spf=pass spfdomain=virginaustralia.com dmarc=pass
+ fromdomain=virginaustralia.com);       spf=pass (google.com: domain of
+ noreply@virginaustralia.com designates 40.107.107.128 as permitted sender)
+ smtp.mailfrom=noreply@virginaustralia.com
+Return-Path: <noreply@virginaustralia.com>
+Received: from gmail.com (r2.koreauniv.govhiworks.com. [45.120.70.212])
+        by mx.google.com with ESMTPS id
+ o17-20020a639a11000000b0042b4724fb0fsi2725264pge.736.2022.09.30.00.56.34
+        for <john2@gmail.com>        (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Fri, 30 Sep 2022
+ 00:56:35 -0700 (PDT)
+Received-SPF: pass (google.com: domain of noreply@virginaustralia.com
+ designates 40.107.107.128 as permitted sender) client-ip=40.107.107.128;
+Received: (hhosting 14784 invoked from network); 30 Sep 2022 16:56:33 +0900
+Received: from unknown (HELO spam-koreauniv.gabia.com) (192.168.21.212)
+	by 0 (qmail 1.03 + ejcp) with SMTP;
+	30 Sep 2022 16:56:33 +0900
+X-Received-IP-1: 40.107.107.128
+X-Received-IP-2: 103.18.154.67
+X-Received-IP-3: 10.11.106.60
+X-Received-IP-SPF: pass (139.150.94.212: SPF record at
+ spf.protection.outlook.com designates 40.107.107.128 as permitted sender)
+X-DKIM-RESULT: pass (2048-bit key) header.d=virginaustralia.com
+ header.i=@virginaustralia.com header.b=STj2wqbo
+X-SpamStatus: Non-Spam
+Received: from unknown (HELO AUS01-SY4-obe.outbound.protection.outlook.com)
+ (40.107.107.128)	by 139.150.94.212 with ESMTP; 30 Sep 2022 16:56:30 +0900
+X-Original-SENDERIP: 40.107.107.128
+X-Hiworks-RelayID: 20220930165633_014783_0208130
+X-Original-SENDERCOUNTRY: US, United States
+X-Original-MAILFROM: noreply@virginaustralia.com
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none; 
+ =?utf-8?q?b=3DAI7F6jBSqvGz763iV+fuLV+nxVHE/k2yQ/dJszX8pbRJM1ITnkv3/PFlvo+GK?=
+ =?utf-8?q?epCPA86AzaigDCi/9lSmzBN6BBRjzy721JzFxixJzyxvFVANS8vcEqu0Sc0+8t/bM?=
+ =?utf-8?q?kUy9h53BamnOsEjylyPh0MZ4qnVFBUdw/sLzPGTeBBUT40dpttqSZhPXa0e7SMoL2?=
+ =?utf-8?q?UQxvZ9H3WdaljxohnQby5IcbnW5eEdx8iPZlaEk6zbuh9fnrz7jPeTZtNTMPi51iz?=
+ =?utf-8?q?+wrY3+Cr91UaMCwSMAiTt7DeY3oSPDldH7z8ak1OqRTzl97E6ZweVRHI2fj/TjKNM?=
+ =?utf-8?q?3Dhtup+yD7HA4QCRXRrnQ=3D=3D?=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901; =?utf-8?q?h=3DFrom=3ADate=3ASubject=3AMessage-ID=3AConte?=
+ =?utf-8?q?nt-Type=3AMIME-Version=3AX-MS-Exchange-AntiSpam-MessageData-Chunk?=
+ =?utf-8?q?Count=3AX-MS-Exchange-AntiSpam-MessageData-0=3AX-MS-Exchange-Anti?=
+ =?utf-8?q?Spam-MessageData-1=3B?=
+ bh=wpuCa2V2yErY5qQOZGNODlmyCb8dUUJWWNqp0iEcv5s=; =?utf-8?q?b=3DNgb/zaT20req?=
+ =?utf-8?q?OYJkSCy47FLgINyAj81LZz686aIjollnRf3fp0rNbl3L2fi0XRZ9ow3y7aVOIp6lq?=
+ =?utf-8?q?2H0F6Plf0kK8fkeHv6BhFbACw51A6CW4zEt2I1nkVQf5jLOzWyyGCVHTeoBdsgJiF?=
+ =?utf-8?q?iG1Tlrtb1BFu9ZfPK7fPhW+P43veRpUt7m89Ss5bpgUxN+829kCBPvH+Yv7085f6Q?=
+ =?utf-8?q?SFFVLeagh84l2NSBS1Tu2NTvQfbEIatbQQj65O0307NyUF9g0RA/qlR2a13AYudj8?=
+ =?utf-8?q?JHBLvjWQbv7jTyTh73s1uMBZed7u/ReZXaXSWbfmTBju6uB5QJh41YCDaMRpkA+CL?=
+ =?utf-8?q?6/l5g=3D=3D?=
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 103.18.154.67) smtp.rcpttodomain=gmail.com
+ smtp.mailfrom=virginaustralia.com; dmarc=pass (p=reject sp=reject pct=100)
+ action=none header.from=virginaustralia.com; dkim=none (message not signed);
+ arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=virginaustralia.com;
+ s=selector2; =?utf-8?q?h=3DFrom=3ADate=3ASubject=3AMessage-ID=3AContent-Typ?=
+ =?utf-8?q?e=3AMIME-Version=3AX-MS-Exchange-SenderADCheck=3B?=
+ bh=wpuCa2V2yErY5qQOZGNODlmyCb8dUUJWWNqp0iEcv5s=; =?utf-8?q?b=3DSTj2wqboPoPp?=
+ =?utf-8?q?G2Jv9ah2JjAS5cP2n9oxtP/IMH7g8d/rS3tMmvUAePg3hKU0+zqpKImysFy30shY1?=
+ =?utf-8?q?izWrUcYDo1NK2kkZIp+P3vNgj9SQV9MWEGit1VgotuMOl6fQBuZLa+WPRe/YEjUma?=
+ =?utf-8?q?6prHq7bnjm8cGZ2nc2as7rCn2f6fyZ3qXZOZ35nqpmt8iJXVloAzab6bXG0AkJPtJ?=
+ =?utf-8?q?t7TUzCXPeCQnNE9Mb3Qb6Cmwsdq124nnpDTrCqgnO1YPXwHrK/x3KD94+abTnMMGR?=
+ =?utf-8?q?hPG3YpR9gwttkdWMdd78Kwkhx2tPwxFThFzKz3PLa/t86KeKEf94T+K/FuCu+/9Dp?=
+ =?utf-8?q?FSLQQ=3D=3D?=
+Received: from SYBPR01CA0165.ausprd01.prod.outlook.com (2603:10c6:10:d::33) by
+ MEAPR01MB2424.ausprd01.prod.outlook.com (2603:10c6:201:9::14) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.5676.20; Fri, 30 Sep 2022 07:56:26 +0000
+Received: from SY4AUS01FT010.eop-AUS01.prod.protection.outlook.com
+ (2603:10c6:10:d:cafe::2f) by SYBPR01CA0165.outlook.office365.com
+ (2603:10c6:10:d::33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5676.23 via Frontend
+ Transport; Fri, 30 Sep 2022 07:56:26 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 103.18.154.67)
+ smtp.mailfrom=virginaustralia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=virginaustralia.com;
+Received-SPF: Pass (protection.outlook.com: domain of virginaustralia.com
+ designates 103.18.154.67 as permitted sender)
+ receiver=protection.outlook.com; client-ip=103.18.154.67;
+ helo=smtp.virginaustralia.com; pr=C
+Received: from smtp.virginaustralia.com (103.18.154.67) by
+ SY4AUS01FT010.mail.protection.outlook.com (10.114.156.119) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.20.5676.17 via Frontend Transport; Fri, 30 Sep 2022 07:56:25 +0000
+Received: from ISKE16MBXPRD01.virginblue.internal (10.11.106.60) by
+ LDRE16MBXPRD01.virginblue.internal (10.11.106.63) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2507.12; Fri, 30 Sep 2022 17:56:25 +1000
+Received: from www.virginblue.com.au (172.25.32.241) by
+ ISKE16MBXPRD01.virginblue.internal (10.11.106.60) with Microsoft SMTP Server
+ id 15.1.2507.12 via Frontend Transport; Fri, 30 Sep 2022 17:56:25 +1000
+Received: from ldrwebwwwprd27.virginblue.com.au (localhost.localdomain
+ [127.0.0.1])	by www.virginblue.com.au (Postfix) with ESMTP id 05B7678075	for
+ <john2@gmail.com>; Fri, 30 Sep 2022 17:56:25 +1000 (AEST)
+Date: Fri, 30 Sep 2022 17:56:25 +1000
+From: Virgin Australia - Boarding Pass <noreply@virginaustralia.com>
+To: <john2@gmail.com>
+Message-ID: <9760790.11119.1664524585023.JavaMail.noreply@virginaustralia.com>
+Subject: Retrieve your Virgin Australia Boarding Pass for Ms Jieon Kim -
+ DRYDIZ - 01-Oct-2022
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+	boundary="----=_Part_11117_31044360.1664524585022"
+Return-Path: noreply@virginaustralia.com
+X-Loop: V1
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: SY4AUS01FT010:EE_|MEAPR01MB2424:EE_
+X-MS-Office365-Filtering-Correlation-Id: 4c3ad94d-1e0d-479a-b2d8-08daa2b94649
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: =?utf-8?q?PzrA/pM2rqRWnlKvJRX1aMPqCcuuYNX?=
+ =?utf-8?q?fpaMCNTOaEHBPNCfl7w8GgnijTMUtStEGf2FbiYtJqg3w2rs8HuSqW8vz/FsQTuiB?=
+ =?utf-8?q?EF3vkmv+PXf6cZlY3EecePH4ZsCccZUc0L256KMsweS10znv+U3WUilGh5DnS3iHl?=
+ =?utf-8?q?w9zzZ1hXnvQis/6b8S7BF4kgB+qV708746zHgHBQ4jbNOnpoK1POPOo7j6Jn6XIjZ?=
+ =?utf-8?q?vpHDIGaaLnXmBKQUja+usKV3Qfvmr40dv+Ow1/k/VrxQTm7zpH8cYRETHKmxxiOQM?=
+ =?utf-8?q?2reRAOokcpzHzxKul3qJ9bTv5ax8ILIPY7EhYS+OAP6gf2ZzalubhtrNi5wArNS59?=
+ =?utf-8?q?IlxN2+4pZSGZKgtG/AesBuWRphNFB/k0ZEE4CMripdW/sNritKm6Id/LCwpWV8/Mh?=
+ =?utf-8?q?uGZX/a+rUNYIFD6t5i0cIYrf7vFPqPwKAA7UNHBOtuRUc86TG9l72aUeDXlHLba8i?=
+ =?utf-8?q?dUa0tcBcHNSDHe7OCE3b4ZtCnuEa+pgXl1p0K5bwqZC2fkCDnVbVGx+vFzapLX8vD?=
+ =?utf-8?q?7OscpVqHrcFfqs68S0+vph0et4s8Lk0G4TGtonmQ5a+tpdRbFBb/AFQNrypiWXNvu?=
+ =?utf-8?q?lGRtDdwQl8q3WRNDqULE4YJkRYm5cGBYqOV539jhtXA4lkn72vkhUNB5VbIzpBGfV?=
+ =?utf-8?q?c1wj6PNQKCr6jjHelDJpCg70JKMyxyCAqba1+XyVTdwPSgGLbNdioodF0lozqWC++?=
+ =?utf-8?q?3xoDJrfgPcd6kTDCvUAQHoj9YaS/NEeyDzJ5Yt3+2kwwLYSSSVDNZfFU9iSAJ8Qr6?=
+ =?utf-8?q?aygQtdYpc12TVCi5j639xXFX1gtWkl+a3UEk40s8dz9+/nvyJjAjuoXyK6rspi6KG?=
+ =?utf-8?q?oQEWp388CevOl7JBZyWqvmmf7evFa5rbvXq50Tt0AQ=3D=3D?=
+X-Forefront-Antispam-Report: =?utf-8?b?Q0lQOjEwMy4xOC4xNTQuNjc7Q1RSWTpBVTtM?=
+ =?utf-8?b?QU5HOmVuO1NDTDoxO1NSVjo7SVBWOk5MSTtTRlY6TlNQTTtIOnNtdHAudmlyZ2lu?=
+ =?utf-8?q?australia=2Ecom=3BPTR=3AInfoDomainNonexistent=3BCAT=3ANONE=3BSFS?=
+ =?utf-8?b?OigxMzIzMDAyMikoNDYzNjAwOSkoMzQ2MDAyKSgzNzYwMDIpKDM5ODYwNDAw?=
+ =?utf-8?b?MDAyKSgxMzYwMDMpKDM5NjAwMykoMTY5MDc5OTAwOCkoNDUxMTk5MDE1KSgz?=
+ =?utf-8?q?6840700001=29=2846966006=29=2840470700004=29=2840460700003=29=284?=
+ =?utf-8?q?1300700001=29=2886362001=29=2882310400005=29=285660300002=29=2818?=
+ =?utf-8?b?NjAwMykoNzA2NjAwMykoMzU2MDA1KSg4MzM4MDQwMDAwMSkoNjkxNjAwOSko?=
+ =?utf-8?q?336012=29=2881166007=29=282906002=29=2870586007=29=2870206006=29?=
+ =?utf-8?b?KDYyNjYwMDIpKDI2MTYwMDUpKDcxMjYwMDMpKDI2MDA1KSg0MDQ4MDcwMDAwMSko?=
+ =?utf-8?b?OTY2MDA1KSgxNjYwMDIpKDg5MzYwMDIpKDQ3MDc2MDA1KSgzNjc1NjAwMyko?=
+ =?utf-8?q?66574015=29=288676002=29=2866899015=29=2819627405001=29=284786000?=
+ =?utf-8?q?01=29=2882740400003=29=28316002=29=2836906005=29=2836860700001=29?=
+ =?utf-8?b?KDQ3OTU2MDA0KSgzNjkwMDcwMDAwMSkoNTc5MDA0KTtESVI6T1VUO1NGUDox?=
+ =?utf-8?q?102=3B?=
+X-OriginatorOrg: virginaustralia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Sep 2022 07:56:25.7762
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id:
+ 4c3ad94d-1e0d-479a-b2d8-08daa2b94649
+X-MS-Exchange-CrossTenant-Id: 0f289d43-bbef-4446-9cec-57d0419a15c2
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: =?utf-8?q?Te?=
+ =?utf-8?q?nantId=3D0f289d43-bbef-4446-9cec-57d0419a15c2=3BIp=3D=5B103=2E18?=
+ =?utf-8?q?=2E154=2E67=5D=3BHelo=3D=5Bsmtp=2Evirginaustralia=2Ecom=5D?=
+X-MS-Exchange-CrossTenant-AuthSource:
+ SY4AUS01FT010.eop-AUS01.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MEAPR01MB2424
+X-MS-Exchange-CrossPremises-OriginalClientIPAddress: 103.18.154.67
+X-MS-Exchange-CrossPremises-TransportTrafficType: Email
+X-MS-Exchange-CrossPremises-AuthSource:
+ SY4AUS01FT010.eop-AUS01.prod.protection.outlook.com
+X-MS-Exchange-CrossPremises-AuthAs: Anonymous
+X-MS-Exchange-CrossPremises-Antispam-ScanContext:
+ DIR:Originating;SFV:NSPM;SKIP:0;
+X-MS-Exchange-CrossPremises-SCL: 1
+X-MS-Exchange-CrossPremises-Processed-By-Journaling: Journal Agent
+X-OrganizationHeadersPreserved: MEAPR01MB2424.ausprd01.prod.outlook.com
+
+------=_Part_11117_31044360.1664524585022
+Content-Type: multipart/related;
+	boundary="----=_Part_11118_30507727.1664524585022"
+
+------=_Part_11118_30507727.1664524585022
+Content-Type: text/html; charset="ANSI_X3.4-1968"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Virgin Australia</title>
+<meta name="viewport" content="width=device-width,intial-scale=1.0"/>
+<meta name="x-apple-disable-message-reformatting" />
+<link rel="SHORTCUT ICON" href="https://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/virginaus/favicon.png" />
+<script type="application/ld+json">
+{
+"@context" : "http://schema.org",
+"@type" : "FlightReservation",
+"reservationNumber" : "DRYDIZ",
+"reservationStatus": "http://schema.org/Confirmed",
+"reservationFor" : {
+"@type" : "Flight",
+"boardingTime" : "2022-10-01T05:35:00.000",
+"arrivalTime" : "2022-10-01T08:20:00.000",
+"arrivalAirport" : {
+"@type" : "Airport",
+"iataCode" : "SYD",
+"name" : "Sydney"
+},
+"departureTime" : "2022-10-01T06:00:00.000",
+"departureGate": "22",
+"departureTerminal": "${terminal}",
+"departureAirport" : {
+"@type" : "Airport",
+"iataCode" : "ADL",
+"name" : "Adelaide"
+},
+"airline" : {
+"@type" : "Airline",
+"iataCode" : "VA",
+"name" : "Virgin Australia"
+},
+"flightNumber" : "401"
+},
+"underName" : {
+"@type" : "Person",
+"familyName" : "Doe",
+"givenName" : "John",
+"name" : "Doe, John"
+},
+"airplaneSeat" : "29E",
+"ticketPrintUrl" : "https://va.aero/el2vkpjcd5qJ",
+"ticketToken" : "aztecCode:M1doe/john EDRYDIZ ADLSYDVA 0401 274Y029E0083 154<1181MR2273BVA 29795 0 YZFL0 ",
+"ticketNumber" : "DRYDIZ",
+"additionalTicketText" : "Please take any checked baggage to the Bag Drop counter at the airport. All guests travelling on Virgin Australia operated flights are permitted a carry-on baggage allowance based on cabin class and Velocity Tier.",
+"ticketDownloadUrl" : "https://va.aero/el2vkpjcd5qJ" }
+</script>
+</head>
+<body style="margin:0;padding:0;background-color:#ffffff;" bgcolor="#ffffff">
+<!--[if gte mso 9]>
+<style type="text/css">
+table, td, span, body, html {
+font-family:Arial !important;}
+</style>
+<![endif]-->
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700');
+.appleLinks a {color:#606060; text-decoration:none;}
+.appleLinks_light a {color:#ffffff; text-decoration:none;}
+.ReadMsgBody {
+width: 100%;
+}
+.ExternalClass {
+width: 100%;
+}
+.ExternalClass * {
+line-height: 100%;
+}
+
+.header {
+
+font-size: 45px; 
+font-family: 'Montserrat', Helvetica, Arial, sans-serif; 
+color: #FFFFFF; 
+mso-line-height-rule: exactly; 
+font-weight:600; 
+line-height: 120%;
+padding-top:5px; 
+letter-spacing:15px; 
+padding-right:50px;
+
+}
+
+.border {
+border-left: 1px solid #b9a5d4;
+border-right: 1px solid #b9a5d4;
+padding: -1px;
+}
+
+.border-full {
+border: 1px solid #b9a5d4;
+}
+
+
+html, body, p, span, td {
+-webkit-text-size-adjust:none;
+padding:0px;
+margin:0px;
+}
+hr {margin:0 !important;padding:0 !important}
+
+.gradient{
+background: #a90329;
+background: -moz-linear-gradient(top, #a90329 0%, #8f0222 51%, #6d0019 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a90329), color-stop(51%,#8f0222), color-stop(100%,#6d0019));
+background: -webkit-linear-gradient(top, #a90329 0%,#8f0222 51%,#6d0019 100%);
+background: -o-linear-gradient(top, #a90329 0%,#8f0222 51%,#6d0019 100%);
+background: -ms-linear-gradient(top, #a90329 0%,#8f0222 51%,#6d0019 100%);
+background: linear-gradient(to bottom, #a90329 0%,#8f0222 51%,#6d0019 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 );
+}
+
+
+td[id=hero-bg] {
+
+background:url('https://www.virginaustralia.com/content/dam/vaa/images/va_boardingpass_hero.jpg') 0 0 no-repeat !important;
+background-size: cover !important;
+background-position: left !important;
+height: 219px !important;
+width: 100% !important; 
+}
+
+/* Media Queries */
+
+
+@media screen and (max-width: 480px) {
+
+.mob-cta {
+
+display: block !important;
+
+}
+
+td[id=hero-bg] {
+
+background:url('https://www.virginaustralia.com/content/dam/vaa/images/va_boardingpass_hero.jpg') 0 0 no-repeat !important;
+background-size: cover !important;
+background-position: left !important;
+width: 100% !important; 
+}
+
+.header {
+font-size: 30px !important; 
+padding-top:2px !important;
+letter-spacing: 8px !important;
+}
+
+.subheader {
+font-size: 18px !important; 
+letter-spacing: 8px !important;
+}
+
+.border {
+border-left: none;
+border-right: none;
+}
+
+td[id=hero-bg] {
+
+background:url('https://www.virginaustralia.com/content/dam/vaa/images/va_boardingpass_hero.jpg') 0 0 no-repeat !important;
+background-size: cover !important;
+background-position: left !important;
+height: 219px !important;
+width: 100% !important; 
+}
+
+td[id=secondary-bg] {
+
+background-size: cover !important;
+background-position: right !important;
+width: 100% !important; 
+}
+
+
+
+html, body, p, span, td {-webkit-text-size-adjust:none;margin:0;padding:0;}
+*[class=emailwrap100pc]{width:100% !important; height:auto !important;}
+
+*[class=colsplit]{width:100% !important; float:left !important}
+*[class=colsplitcenter]{width:100% !important; float:left !important; text-align:center !important;padding:0 !important}
+*[class=colsplitPT20]{width:100% !important; float:left !important; padding-top:20px !important;}
+*[class=colsplitPB10]{width:100% !important; float:left !important; padding-bottom:10px !important;}
+*[class=colsplitH0]{width:100% !important; float:left !important; height:auto !important}
+*[class=hidemob]{display:none !important}
+*[class=padLR20]{padding-left:20px !important; padding-right:20px !important;}
+*[class=padLR30]{padding-left:15px !important; padding-right:15px !important;}
+*[class=padT10]{padding-top:10px !important;}
+*[class=padB10]{padding-bottom:10px !important;}
+*[class=padB20]{padding-bottom:20px !important;}
+*[class=PTB20]{padding-top:20px !important;padding-bottom:20px !important;}
+*[class=PB30]{padding-top:20px !important;}
+*[class=PT20]{padding-top:20px !important;}
+*[class=PT5]{padding-top:5px !important;}
+*[class=PT10]{padding-top:10px !important;}
+*[class=PT30]{padding-top:35px !important;}
+*[class=PTB10]{padding-top:10px !important;padding-bottom:10px !important;}
+*[class=PB30]{padding-bottom:30px !important;}
+*[class=PB20F16]{font-size:16px !important;padding-bottom:20px !important;}
+*[class=btnAlignLeft]{padding-left:15px !important;padding-bottom:15px !important; text-align:left !important}
+*[class=PR3]{padding-right:3px !important;padding-bottom:6px !important;}
+*[class=PL3]{padding-left:3px !important;padding-bottom:6px !important;}
+*[class=PL20]{padding-left:20px !important;}
+*[class=H0]{height:auto !important}
+*[class=P0]{padding-left:0px !important}
+*[class=H200]{height:250px !important}
+*[class=W115]{width:115px !important}
+*[class=emailwrap95pc]{width:95% !important;height:auto !important}
+*[class=emailwrap85pc]{width:85% !important;height:auto !important}
+*[class=emailwrap94pc]{width:95% !important;height:auto !important}
+*[class=emailwrap90pc]{width:90% !important;height:auto !important}
+*[class=emailwrap70pc]{width:70% !important;height:auto !important}
+*[class=emailwrap50pc]{width:50% !important;height:auto !important}
+*[class=emailwrap30pc]{width:30% !important;height:auto !important}
+*[class=emailwrap55pcPAD]{width:95% !important;height:auto !important; padding-top:30px;}
+*[class=colsplitPB20]{width:100% !important; float:left !important; padding-bottom: 20px !important;}
+*[class=W3]{width:3% !important}
+*[class=lrgimg]{width:48px !important; height:48px;}
+*[class=lrgimgapp]{width:50px !important; height:62px;}
+*[class=F14]{font-size:14px !important;}
+*[class=F16]{font-size:16px !important;}
+*[class=F18]{font-size:17px !important;}
+*[class=F20]{font-size:22px !important;}
+*[class=F22]{font-size:22px !important;}
+*[class=F25]{font-size:25px !important;}
+*[class=F28]{font-size:28px !important;}
+*[class=F30]{font-size:30px !important;}
+*[class=F42]{font-size:42px !important;}
+*[class=F58]{font-size:58px !important;}
+*[class=F65]{font-size:65px !important; font-weight:bold;}
+*[class=TXTC]{text-align:center !important;}
+*[class=PL]{padding-left:30px;padding-right:10px;}
+*[class=W120]{width:120px !important;}
+*[class=W200]{width:200px !important;}
+*[class=W250]{width:200px !important;}
+*[class=featuresplitbutton]{width: 100% !important;float: left !important;margin: 5px 0px 0px 0px !important;padding: 10px 0px 5px 0px !important;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;background-color: #FFFFFF;text-align: center;height:20px !important; border:1px solid #7F7F7F !important;}
+
+*[class=PADTL20]{padding-left:20px !important; padding-right:20px !important; padding-top:20px !important;}
+*[class=PADLB20]{padding-left:20px !important;padding-bottom:20px !important;}
+*[class=PADL20]{padding-left:20px !important;}
+*[class=PADT20]{padding-top:20px !important;}
+*[class=PADL10]{padding-left:10px !important;}
+*[class=PADB20]{padding-bottom:20px !important;}
+*[class=PADB30]{padding-bottom:35px !important;}
+*[class=noBG]{background-image:none !important;padding-bottom:20px !important;}
+*[class=mobheight] {height: 150px; !important;};
+
+
+
+
+
+}
+
+@media screen and (max-width: 400px) {
+
+*[class=H200]{height:150px !important}
+
+}
+
+@media screen and (max-width: 350px) {
+
+*[class=H200]{height:120px !important}
+*[class=F20]{font-size:18px !important;}
+*[class=F16]{font-size:14px !important;}
+}
+
+</style>
+
+
+<table class="emailwrap100pc" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;" align="center" bgcolor="#ffffff">
+<tr>
+<td align="left" valign="top" bgcolor="#ffffff">
+<table class="emailwrap100pc" width="750" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;" align="center" bgcolor="#ffffff">
+<tr>
+<td valign="top" align="center" style="font-size:11px;font-family:'Montserrat', Helvetica, Arial, sans-serif;mso-line-height-rule:exactly;line-height:150%;padding-top:15px;padding-bottom:5px;padding-left:12px;padding-right:12px;color:#52575d;">
+<p>Thank you for choosing to travel with Virgin Australia</p>
+<span class="wrap" style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #d6083b;">
+<a href="https://va.aero/el2vkpjcd5qJ" style="color: #d6083b; text-decoration: none; -webkit-text-size-adjust: none;">View in web browser</a>. 
+</span>
+</span>
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table class="emailwrap100pc" width="750" align="center"> 
+<td valign="middle" align="center">
+<a href="https://www.virginaustralia.com/au/en/" _label="header_link" style="border:none;outline:none;">
+</a>
+</td>
+</table>
+<table class="emailwrap100pc" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;" align="center">
+<tr>
+<td align="center" valign="top" bgcolor="#ffffff">
+<table class="emailwrap100pc" width="750" height="219" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#001a27">
+<tr>
+<td align="center" valign="middle" bgcolor="#001a27" >
+<table class="emailwrap100pc" width="100%" height="219" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td background="https://www.virginaustralia.com/content/dam/vaa/images/va_boardingpass_hero.jpg" bgcolor="#001a27" width="100%" height="219" valign="top" id="hero-bg">
+<!--[if gte mso 9]>
+<v:rect
+xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:750px;height:219px;">
+<v:fill type="tile" size="100%,100%" src="https://www.virginaustralia.com/content/dam/vaa/images/va_boardingpass_hero.jpg" style="background-size: cover;" color="#001a27" />
+<v:textbox inset="0,0,0,0">
+<![endif]-->
+<table class="emailwrap100pc" width="750" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;" align="center">
+<tr>
+<td valign="top" align="center">
+<table width="750" class="emailwrap90pc" cellpadding="0" cellspacing="0" align="center" border="0" style="border-collapse:collapse;"></table>
+</td>
+</tr>
+</table>
+<div style="width:100%;">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="emailwrap100pc">
+<tr>
+<td align="center">
+<table class="emailwrap100pc" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;" align="center">
+<tr>
+<td valign="top" align="left">
+<table class="emailwrap100pc" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;" align="center">
+<tr>
+<td valign="top" align="left">
+<table class="emailwrap90pc" width="750" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;" align="center">
+<tr>
+<td class="emailwrap90pc" width="100%" align="center" valign="middle"></td>
+</tr>
+<tr>
+<td align="center" valign="top"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<!--[if gte mso 9]>
+</v:textbox>
+</v:rect>
+<![endif]-->
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!-- start head mod text -->
+<!-- end head mod text -->
+<tr>
+<td align="left" valign="top" bgcolor="#ffffff">
+<table class="emailwrap100pc" width="750" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;" align="center" bgcolor="#FFFFFF">
+<tr>
+<td class="border">
+<table width="680" border="0" align="center" cellpadding="0" cellspacing="0" class="emailwrap100pc" style="padding-left: 10px; padding-right: 10px; line-height: 15pt;">
+<tr>
+<td colspan="4" align="center" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif;font-weight:300;color:#36424a; letter-spacing:0; font-size:14px; color:#52575d; padding-top:10px; padding-bottom:10px;">
+<p>
+<strong>Hi John, you've successfully checked-in.</strong>
+<br />
+Thank you for choosing to travel with Virgin Australia.
+</p>
+</td>
+</tr>
+<tr>
+<td valign="top" align="left" width="680">
+<table width="680" class="emailwrap90pc" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td colspan="4" align="center" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif;font-weight:300;color:#36424a; letter-spacing:0; font-size:10px; color:#52575d;">&nbsp;</td>
+</tr>
+<tr>
+<td class="hidemob" valign="top" align="left" width="30" style="padding-top:20px; padding-bottom:20px;">&nbsp;</td> 
+<td class="hidemob" valign="top" align="left" width="30" style="padding-top:20px; padding-bottom:20px;">&nbsp;</td> 
+<td class="hidemob" valign="top" align="left" width="20" style="padding-top:20px; padding-bottom:20px;">&nbsp;</td> 
+<td width="500" class="emailwrap90pc" align="center" style="font-size:18px; text-decoration: none; font-family:'Montserrat', Helvetica, Arial, sans-serif; font-weight:600; color:#ffffff; letter-spacing:5px; padding-top:20px; padding-bottom:20px;" bgcolor="#d6083b">
+<a href="https://va.aero/el2vkpjcd5qJ" _label="hero_CTA" style="font-size: 16px; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; mso-line-height-rule:exactly;line-height:100%; padding-right:3px; padding-left:13px; display:block; cursor:pointer; height:100%;">RETRIEVE YOUR ONLINE BOARDING PASS</a>
+</td> 
+<td class="hidemob" valign="top" align="left" width="30" style="padding-top:20px; padding-bottom:20px;">&nbsp;</td> 
+</tr>
+<tr>
+<td colspan="4" align="center" valign="middle" style="font-family:'Montserrat',Helvetica, Arial, sans-serif;font-weight:300;color:#36424a; letter-spacing:0; font-size:10px; color:#52575d;">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="4" align="center" valign="middle" style="font-family:'Montserrat',Helvetica, Arial, sans-serif;font-weight:300;color:#36424a; letter-spacing:0; font-size:14px; color:#52575d; padding-top:10px; padding-bottom:10px;">
+<p>You can also access your online boarding pass via this URL: 
+<a href="https://va.aero/el2vkpjcd5qJ" target="_blank" style="color:#d6083b; text-decoration:none">https://va.aero/el2vkpjcd5qJ</a>
+</p>
+</td>
+</tr>
+</table>
+</tr>
+<tr>
+<td width="680" height="25" align="right" valign="middle" class="colsplitPT20">
+<table border="0" cellspacing="0" cellpadding="0" align="left"></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table width="750" border="0" align="center" cellpadding="0" cellspacing="0" class="emailwrap100pc" bgcolor="#b9a5d4" style="line-height: 15pt; border:2px solid #b9a5d4; padding-top:10px; padding-bottom:10px;">
+<tr>
+<td align="left" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif;font-weight:300; letter-spacing:0; font-size:14px; color:#ffffff;">
+<table width="680" border="0" align="center" cellpadding="0" cellspacing="0" class="emailwrap100pc" style="padding-left: 10px; padding-right: 10px; line-height: 15pt;">
+<tr >
+<td width="41%" align="left" valign="middle" style="font-family:'Montserrat', Arial, sans-serif; font-size:14px; color:#ffffff; padding-top:10px;">
+<p>Booking Ref:</p>
+</td>
+<td width="14%" align="center" valign="middle" style="font-family:'Montserrat',Helvetica, Arial, sans-serif;font-weight:300; letter-spacing:0; font-size:14px; color:#ffffff; padding-top:10px;">
+<p>
+<strong>DRYDIZ</strong>
+</p>
+</td>
+<td width="45%" align="left" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif; font-size:14px; color:#52575d; padding-top:10px;">
+<p>&nbsp;</p>
+</td>
+</tr>
+</table>
+<table width="680" border="0" align="center" cellpadding="0" cellspacing="0" class="emailwrap100pc" style="padding-left: 10px; padding-right: 10px; line-height: 15pt;">
+<tr >
+<td width="41%" align="left" valign="middle" style="font-family:'Montserrat', Arial, sans-serif; font-size:14px; color:#ffffff; padding-top:10px;">
+<p>Flight / Date:</p>
+</td>
+<td width="14%" align="center" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif;font-weight:300; letter-spacing:0; font-size:14px; color:#ffffff; padding-top:10px;">
+<p>
+<strong>VA401</strong>
+</p>
+</td>
+<td width="45%" align="left" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif; font-size:14px; color:#ffffff; padding-top:10px; padding-left:10px; ">
+<p>Sat, 01 Oct 2022</p>
+</td>
+</tr>
+</table>
+<table width="680" border="0" align="center" cellpadding="0" cellspacing="0" class="emailwrap100pc" style="padding-left: 10px; padding-right: 10px; line-height: 15pt;">
+<tr >
+<td width="41%" align="left" valign="middle" style="font-family:'Montserrat', Arial, sans-serif; font-weight:600; font-size:16px; color:#ffffff; padding-top:10px; padding-bottom:10px;">
+<p>Adelaide (ADL)</p>
+</td>
+<td width="14%" align="center" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif;font-weight:300; letter-spacing:0; font-size:14px; color:#ffffff; padding-top:10px;">
+</td>
+<td width="45%" align="left" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif; font-weight:600; font-size:16px; color:#ffffff; padding-top:10px; padding-left:10px; padding-bottom:10px;">
+<p>Sydney (SYD)</p>
+</td>
+</tr>
+</table>
+<table width="750" border="0" cellpadding="0" cellspacing="0" class="emailwrap100pc" align="center" bgcolor="#ffffff" style="background-color:#ffffff">
+<tr></tr>
+<tr>
+<td valign="top" align="left">
+<table class="emailwrap90pc" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr></tr>
+</table>
+</tr>
+<tr></tr>
+</table>
+</td>
+</tr>
+</table>
+<table width="748" border="0" align="center" cellpadding="0" cellspacing="0" class="emailwrap100pc" style="line-height: 15pt; border-right:1px solid #b9a5d4; border-left:1px solid #b9a5d4; border-bottom:1px solid #b9a5d4;">
+<tr>
+<td align="left" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif;font-weight:300;color:#36424a; letter-spacing:0; font-size:14px; color:#52575d; padding-top:10px;">
+<table width="680" border="0" align="center" cellpadding="0" cellspacing="0" class="emailwrap90pc" style="padding-left: 10px; padding-right: 10px; line-height: 15pt;">
+<tr >
+<td width="30" align="center" valign="middle" style="font-family:'Montserrat', Arial, sans-serif; font-size:14px; color:#52575d; padding-top:10px;">
+<p>
+</p>
+</td>
+<td width="150" align="left" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif;font-weight:300;color:#36424a; letter-spacing:0; font-weight:600; font-size:16px; color:#52575d; padding-top:10px; padding-left:3px; padding-right:3px;">
+<p>Boarding:</p>
+</td>
+<td class="colsplitPT10" width="150" align="left" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif; font-size:14px; color:#52575d; padding-top:10px; padding-left:3px; padding-right:3px;">
+<p>05:35 (5:35am)</p>
+</td>
+<td class="colsplitPT10" width="30" align="center" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif; font-size:14px; color:#52575d; padding-top:10px;">
+<p>
+</p>
+</td>
+<td class="colsplitPT10" width="150" align="left" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif; font-size:16px; color:#52575d; padding-top:10px;padding-left:3px; padding-right:3px; font-weight:600; ">
+<p>Departs</p>
+</td>
+<td class="colsplitPT10" width="150" align="left" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif; font-size:14px; color:#52575d; padding-top:10px; padding-left:3px; padding-right:3px;">
+<p>06:00 (6:00am)</p>
+</td>
+</tr>
+</table>
+<table class="emailwrap100pc" width="680" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;" align="center" bgcolor="#ffffff">
+<tr>
+<td width="660" valign="top" align="center" style="font-size:14px;font-weight:300;font-family:'Montserrat', Helvetica, Arial, sans-serif; color:#52575d; padding-top:10px; padding-bottom:20px;">
+<p>Don't forget to leave enough time to go through security.</p>
+</td>
+</tr>
+</table>
+<table class="emailwrap100pc" width="680" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;" align="center" bgcolor="#ffffff">
+<tr></tr>
+</table>
+<table width="748" border="0" cellpadding="0" cellspacing="0" class="emailwrap100pc" align="center" bgcolor="#ffffff" style="background-color:#ffffff">
+<tr></tr>
+<tr>
+<td valign="top" align="left">
+<table class="emailwrap90pc" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr></tr>
+</table>
+</tr>
+<tr></tr>
+</table>
+</td>
+</tr>
+</table>
+<table width="748" border="0" align="center" cellpadding="0" cellspacing="0" class="emailwrap100pc" style="line-height: 15pt; border-right:1px solid #b9a5d4; border-left:1px solid #b9a5d4;">
+<tr>
+<td align="left" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif;font-weight:300;color:#36424a; letter-spacing:0; font-size:14px; color:#52575d; padding-top:20px;">
+<table width="680" border="0" align="center" cellpadding="0" cellspacing="0" class="emailwrap100pc" style="padding-left: 10px; padding-right: 10px; line-height: 15pt;">
+<tr >
+<td width="20" align="left" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif; font-size:14px; color:#52575d">
+<p>
+<br />
+</p>
+</td>
+<td width="50" align="left" valign="bottom" style="font-family:'Montserrat', Arial, sans-serif; font-size:14px; color:#52575d; padding-top:10px; padding-bottom:5px;">
+<p>
+</p>
+</td>
+<td width="170" align="left" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif;font-weight:300;color:#36424a; letter-spacing:0; font-size:14px; padding-top:10px; padding-bottom:5px; color:#52575d;">
+<strong>Checked Baggage</strong>
+</td>
+<td width="430" align="left" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif; font-size:14px; color:#52575d; padding-top:10px; padding-bottom:5px;">
+<p>1 x 23kg</p>
+</td>
+</tr>
+</table>
+<table class="emailwrap100pc" cellpadding="0" cellspacing="0" border="0" style="border:collapse;" align="center" bgcolor="#ffffff">
+<tr>
+<td align="left" valign="top" bgcolor="#ffffff">
+<table class="emailwrap100pc" width="680" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;" align="center" bgcolor="#ffffff">
+<tr>
+<td width="20" align="left" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif; font-size:14px; color:#52575d">
+<p>
+<br />
+</p>
+</td>
+<td width="660" valign="top" align="left" style="font-size:14px;font-weight:300;font-family:'Montserrat', Helvetica, Arial, sans-serif; color:#52575d; padding-top:5px; padding-bottom:20px; padding-left:10px;">
+<p>Please take any checked baggage to the bag drop counter at the airport. Please note that bag drop closes 30 minutes prior to your flight?s departure.</p>
+</td>
+</tr>
+</table>
+<table width="680" border="0" align="center" cellpadding="0" cellspacing="0" class="emailwrap100pc" style="padding-left: 10px; padding-right: 10px; line-height: 15pt;">
+<tr >
+<td width="20" align="left" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif; font-size:14px; color:#52575d">
+<p>
+<br />
+</p>
+</td>
+<td width="50" align="left" valign="middle" style="font-family:'Montserrat', Arial, sans-serif; font-size:14px; color:#52575d; padding-top:10px; padding-bottom:5px;">
+<p>
+</p>
+</td>
+<td width="170" align="left" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif;font-weight:300;color:#36424a; letter-spacing:0; font-size:14px; color:#52575d; padding-top:10px; padding-bottom:5px;">
+<strong>Carry-on Baggage</strong>
+</td>
+<td width="430" align="left" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif; font-size:14px; color:#52575d; padding-top:10px; padding-bottom:5px;">
+<!--<p>1 x 7kg</p>-->
+<p></p>
+</td>
+</tr>
+</table>
+<strong>
+<table class="emailwrap100pc" width="680" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;" align="center" bgcolor="#ffffff">
+<tr>
+<td width="20" align="left" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif; font-size:14px; color:#52575d; padding-top:10px;">
+<p>
+<br />
+</p>
+</td>
+<td width="660" valign="top" align="left" style="font-size:14px;font-weight:300;font-family:'Montserrat', Helvetica, Arial, sans-serif; color:#52575d; padding-top:5px; padding-bottom:20px; padding-left:10px;">
+<p>All guests travelling on Virgin Australia operated flights are permitted a <a href='https://www.virginaustralia.com/au/en/plan/baggage/carry-on-baggage/' style="text-decoration:none; color:#d6083b;"> carry-on baggage allowance</a> based on cabin class and Velocity Tier.</p>
+</td>
+</tr>
+</table>
+</strong>
+<table width="748" border="0" cellpadding="0" cellspacing="0" class="emailwrap100pc" align="center" bgcolor="#ffffff" style="background-color:#ffffff">
+<tr>
+<td valign="top" width="100%" align="left" style="font-size:30px;line-height:100%;">&nbsp;</td>
+</tr>
+<tr>
+<td valign="top" align="left">
+<table class="emailwrap90pc" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td colspan="4" align="center" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif;font-weight:300;color:#36424a; letter-spacing:0; font-size:10px; color:#52575d;">&nbsp;</td>
+</tr>
+<tr> 
+<td class="emailwrap90pc" align="center" style="font-size:18px; text-decoration: none; font-family:'Montserrat', Helvetica, Arial, sans-serif; font-weight:600; color:#ffffff; letter-spacing:5px; padding-top:20px; padding-bottom:20px;" bgcolor="#d6083b">
+<a href="https://va.aero/el2vkpjcd5qJ" _label="hero_CTA" style="font-size: 16px; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; mso-line-height-rule:exactly;line-height:100%; padding-right:3px; padding-left:3px;display:block;cursor:pointer;height:100%;">RETRIEVE YOUR ONLINE BOARDING PASS</a>
+</td> 
+</tr>
+<tr>
+<td colspan="4" align="center" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif;font-weight:300;color:#36424a; letter-spacing:0; font-size:10px; color:#52575d;">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="4" align="center" valign="middle" style="font-family:'Montserrat', Helvetica, Arial, sans-serif;font-weight:300;color:#36424a; letter-spacing:0; font-size:14px; color:#52575d; padding-top:10px; padding-bottom:10px;">
+<p>You can also access your online boarding pass via this URL: 
+<a href="https://va.aero/el2vkpjcd5qJ" target="_blank" style="color:#d6083b; text-decoration:none">https://va.aero/el2vkpjcd5qJ</a>
+</p>
+</td>
+</tr>
+</table>
+</tr>
+<tr>
+<td valign="top" width="100%" align="left" style="font-size:30px;line-height:100%;">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table width="100%" cellpadding="0" bgcolor="#ffffff" cellspacing="0" align="center" border="0" style="border-collapse:collapse;">
+<tr>
+<td align="center" valign="middle" bgcolor="#ffffff">
+<table class="emailwrap100pc" width="748" cellpadding="0" cellspacing="0" align="center" border="0" style="border-collapse:collapse;" bgcolor="#ffffff">
+<tr>
+<td align="center" valign="middle">
+<table class="border-full" width="100%" cellpadding="0" cellspacing="0" align="center" border="0" style="border-collapse:collapse;" bgcolor="#ffffff">
+<tr>
+<td align="center" valign="middle" style="padding-top:25px;padding-bottom:25px;">
+<table width="748" class="emailwrap100pc" cellpadding="0" cellspacing="0" align="center" border="0" style="border-collapse:collapse;" bgcolor="#ffffff">
+<tr>
+<td valign="middle" align="center">
+<table width="748" class="emailwrap100pc" cellpadding="0" cellspacing="0" align="center" border="0" style="border-collapse:collapse;" bgcolor="#ffffff">
+<tr>
+<td valign="middle" align="center">
+<table class="W280" border="0" cellpadding="0" cellspacing="0" align="center" style="border-collapse:collapse;">
+<tr>
+<td height="32" align="center" valign="middle">
+<a href="http://www.facebook.com/virginaustralia" _label="faceboook" style="border:none;display:block;color:#ae003b;text-decoration:none;">
+</a>
+</td>
+<td class="hidemob" align="center" valign="middle" style="font-size:1px;" width="15">&nbsp;</td>
+<td height="32" align="center" valign="middle">
+<a href="http://twitter.com/#!/virginaustralia" _label="twitter" style="border:none;display:block;color:#ae003b;text-decoration:none;">
+</a>
+</td>
+<td class="hidemob" align="center" valign="middle" style="font-size:1px;" width="15">&nbsp;</td>
+<td height="32" align="center" valign="middle">
+<a href="http://instagram.com/virginaustralia" _label="instagram" style="border:none;display:block;color:#ae003b;text-decoration:none;">
+</a>
+</td>
+<td class="hidemob" align="center" valign="middle" style="font-size:1px;" width="15">&nbsp;</td>
+<td height="32" align="center" valign="middle">
+<a href="http://www.youtube.com/virginaustralia" _label="youtube" style="border:none;display:block;color:#ae003b;text-decoration:none;">
+</a>
+</td>
+<td class="hidemob" align="center" valign="middle" style="font-size:1px;" width="15">&nbsp;</td>
+<td height="32" align="center" valign="middle">
+<a href="https://au.linkedin.com/company/virgin-australia" _label="linkedin" style="border:none;display:block;color:#ae003b;text-decoration:none;">
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;" bgcolor="#f6f6f6">
+<tr>
+<td align="center" valign="top" bgcolor="#ffffff">
+<table class="emailwrap100pc" width="750" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+<tr>
+<td valign="top" align="left" bgcolor="#ffffff" style="background-color:#ffffff;padding-top:10px;">
+<table width="750" border="0" cellpadding="0" cellspacing="0" class="emailwrap100pc" align="center" bgcolor="#ffffff">
+<tr>
+<td valign="top" align="left" style="font-size:11px;font-family:'Montserrat', Helvetica, Arial, sans-serif;line-height:120%;color:#606060;padding-top:10px;padding-left:10px;padding-right:10px;"></td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#ffffff" style="font-size:11px;font-family:'Montserrat', Helvetica, Arial, sans-serif;line-height:120%;color:#606060;padding-top:10px;padding-left:10px;padding-right:10px;">
+<a href="http://www.virginaustralia.com/au/en/about-us/legal-policies/privacy/" target="_blank" style="color:#d6083b; text-decoration:none">Privacy</a> / 
+<a href="http://www.virginaustralia.com/au/en/help/contact-us/" target="_blank" style="color:#d6083b; text-decoration:none">Contact Us</a>
+</td>
+</tr>
+<tr></tr>
+<tr>
+<td align="left" valign="top" bgcolor="#ffffff" style="font-size:11px;font-family:'Montserrat', Helvetica, Arial, sans-serif;line-height:120%;color:#606060;padding-top:10px;padding-left:10px;padding-right:10px;">Terms and Conditions
+<br />
+</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#ffffff" style="font-size:11px;font-family:'Montserrat', Helvetica, Arial, sans-serif;line-height:120%;color:#52575d;padding-top:10px;padding-left:10px;padding-right:10px;">Carriage and other services provided by Virgin Australia are subject to our Fare Rules and Conditions of Carriage which form part of our contract. The Conditions of Carriage include (amongst other things): (A) Limits on our liability for personal injury or death of passengers and for loss, damage, or delay of goods and baggage; (B) Restrictions and procedures that apply to any claims you may make against us; (C) Our rules about bookings, seat allocations, ticketing, baggage, check-in times, refusal of carriage; (D) Our rights and limitations concerning flight delays or cancellations, including schedule changes, substitution of alternate airline or aircraft and rerouting; and (E) Information regarding the management of your Personal Information.
+<br />
+<br />
+You may access these Conditions of Carriage and Fare Rules online at 
+<a href="http://www.virginaustralia.com/au/en/about-us/legal-policies/conditions-of-carriage/" style="text-decoration:none; color:#d6083b;">http://www.virginaustralia.com/au/en/about-us/legal-policies/conditions-of-carriage/</a>.
+
+<br />
+<br />Unless the Fare Rules that apply to your travel state otherwise, refunds of your ticket price are not available and any refund which is available will be made in the manner set out in the Conditions of Carriage. Virgin Australia may charge reasonable fees in relation to any refunds, ticket re-issuance and other circumstances as set out in our Fare Rules and Conditions of Carriage. Virgin Australia reserves the right to change fares before you pay for your reservation. Your Reservation Number is confidential and should only be given to Virgin Australia staff or your travel agent. Anyone with access to your Reservation Number will have access to your personal information. This document and any accompanying attachments are intended for the person names only. The information contained in this document may include Personal Information (as defined by the Privacy Act 1988 (Cth)). If you are not the named person, any use, interference with, disclosure or copying of this document, including any attachments is unauthorised and expressly prohibited. 
+
+</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr></tr>
+<tr>
+<td align="left" valign="top" bgcolor="#ffffff" style="font-size:11px;font-family:'Montserrat', Helvetica, Arial, sans-serif;line-height:120%;color:#606060;padding-top:10px;padding-left:10px;padding-right:10px;">
+<span class="appleLinks">This email is being sent to you by Virgin Australia Airlines Pty Ltd ABN 36 090 670 965 of 56 Edmondstone Road, Bowen Hills, Queensland 4006 Australia.</span>
+</td>
+</tr>
+<tr>
+<td valign="top" align="left" style="font-size:14px;font-family:'Montserrat', Helvetica, Arial, sans-serif;">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table> 
+</body>
+</html>

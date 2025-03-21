@@ -1,0 +1,216 @@
+Delivered-To: johndoe@gmail.com
+Received: by 2002:a05:7010:c812:b0:378:212c:7493 with SMTP id jr18csp1410313mdb;
+        Mon, 7 Aug 2023 06:01:17 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGCHj6a6783Hqs7UTbs66Ad4waVb97hi4PQpwnKLXpKkeAZoarY3G77wiK/5sxohYp3AGR8
+X-Received: by 2002:a1f:da43:0:b0:486:e696:c69a with SMTP id r64-20020a1fda43000000b00486e696c69amr4545899vkg.16.1691413275649;
+        Mon, 07 Aug 2023 06:01:15 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1691413275; cv=none;
+        d=google.com; s=arc-20160816;
+        b=nMPMUCzl0J9cpt137+LSPpaDU3ipM0tF2lMbKqYya32Ic6GIhHiR/VpMIzn9OcLr4d
+         hY8PUAcMwB5tMdM6uq1d+v6tJwN0q6CAUbz8uOF2ztnYHK69kB5F0cp0rLhhBXOC8nn6
+         7/OMsBCz/Bc61Ouw7XqTsu/03H4lSrdd6wozEWGPyfJmOOTMNfeda5tcA56G/tRxM2+w
+         Y3zF/mcvwVvtspBwDEeCHl8YQNeHNSK4ZA6j8+5ydBZ9R1OlAXaAZ0X+ioPuqfFCgHpr
+         isSlycu+IwbS8P1aFTRoSEOG7lWec8Lw5uIIzoftmlxSmESpOI2+OzUwB9FOwCc6nsCy
+         aVog==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:mime-version:message-id:user-agent:subject:reply-to:to
+         :from:date:dkim-signature:dkim-signature;
+        bh=hWxD5lRHr8dkHpJcVCB8DLGumTXACZJlm32vMJ4g5eo=;
+        fh=ssteKf5DHEtOdQ+7FEebpxr8GSs8z5YAO+u+yPue0eQ=;
+        b=oZB61hzrMJtCtSCtoXf+7epfE4Ho2nsWS90TJYaE45jViuB9RXxrf1RxRAWRnFRRPV
+         OvM3x+e8qu8Gx1Y/K6vU9GuhuGdIPZg4MnVAJwyty8uCJdmmZQfSIR/hoA/9W70vbCVB
+         rbI9BH8FBMRN6ZX4VZz/T13zzg+Zig9QuCIm7gdhRsT54gg2jPR4DeBCIMc942xx52NI
+         1LxKlx2hLlgApFuqNdPPsvI5azU3nzn+HYyC/FD2FP7HVedBCxHOAjJtLvkbmcOME+nd
+         HvcSk55azhDjI5uPp2TxrhwJSrStkHSTjTgSCisJeIiASWU6xQuYI6auz/Lf8X5W1Hlh
+         fYkQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@chope.co header.s=vnv5jssf3reosgj5cxs2uqb4mzkcm7rv header.b=gp8S95vg;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=VxAPYWU7;
+       spf=pass (google.com: domain of 01000189d01660a8-b813bb67-8664-4777-9e3f-61115dd0f907-000000@message.chope.co designates 54.240.9.115 as permitted sender) smtp.mailfrom=01000189d01660a8-b813bb67-8664-4777-9e3f-61115dd0f907-000000@message.chope.co;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=chope.co
+Return-Path: <01000189d01660a8-b813bb67-8664-4777-9e3f-61115dd0f907-000000@message.chope.co>
+Received: from a9-115.smtp-out.amazonses.com (a9-115.smtp-out.amazonses.com. [54.240.9.115])
+        by mx.google.com with ESMTPS id a74-20020a1f984d000000b0048719fc64d1si654095vke.301.2023.08.07.06.01.15
+        for <johndoe@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 07 Aug 2023 06:01:15 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 01000189d01660a8-b813bb67-8664-4777-9e3f-61115dd0f907-000000@message.chope.co designates 54.240.9.115 as permitted sender) client-ip=54.240.9.115;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@chope.co header.s=vnv5jssf3reosgj5cxs2uqb4mzkcm7rv header.b=gp8S95vg;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=VxAPYWU7;
+       spf=pass (google.com: domain of 01000189d01660a8-b813bb67-8664-4777-9e3f-61115dd0f907-000000@message.chope.co designates 54.240.9.115 as permitted sender) smtp.mailfrom=01000189d01660a8-b813bb67-8664-4777-9e3f-61115dd0f907-000000@message.chope.co;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=chope.co
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=vnv5jssf3reosgj5cxs2uqb4mzkcm7rv; d=chope.co; t=1691413275;
+	h=Date:From:To:Reply-To:Subject:Message-ID:Mime-Version:Content-Type;
+	bh=hWxD5lRHr8dkHpJcVCB8DLGumTXACZJlm32vMJ4g5eo=;
+	b=gp8S95vg9APUFXHFgDxRCfsMJKyfa+5Ofs7dH1S5/NG/U4jlDRBXt1s7BjIhw05S
+	vlwOOu5gWOejZnFefoGypMv4yc6kxcS1LyyLyO8q8e9rLiq48cs86YSp5NxOQVqf4+Y
+	ZVFOof2bGf+tUogAB4tfGVJKegzhWdRWjPbwixk4=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1691413275;
+	h=Date:From:To:Reply-To:Subject:Message-ID:Mime-Version:Content-Type:Feedback-ID;
+	bh=hWxD5lRHr8dkHpJcVCB8DLGumTXACZJlm32vMJ4g5eo=;
+	b=VxAPYWU7SADaq48wYkMxckDECOKBO+08WDAxLwrafCMtD5Lto9wHsFWuHs1blw8m
+	8YanrOdZO4qVv1D5N6AusI++WQNQFtHoDkAX9twE8Bj927FyS0m4Ba3/e7tM5ecXv2V
+	j0HOy8oEed7tTMg2NcYB7ZN7pxU2Jy0lrZafq64w=
+Date: Mon, 7 Aug 2023 13:01:14 +0000
+From: Chope <rez@chope.co>
+To: johndoe@gmail.com
+Reply-To: Mari Beach Club <reservations@maribeachclub.com>
+Subject: =?UTF-8?Q?Thank=20you=20for=20visiting=20Mari=20Beach=20Club.?=
+User-Agent: CodeIgniter
+X-Sender: rez@chope.co
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: <01000189d01660a8-b813bb67-8664-4777-9e3f-61115dd0f907-000000@email.amazonses.com>
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary="B_ALT_64d0eb188238c"
+Feedback-ID: 1.us-east-1.OYp1Rb19Lpxn2TRX20hRz/U3qy07FKw1S2ysnC3ZCFE=:AmazonSES
+X-SES-Outgoing: 2023.08.07-54.240.9.115
+
+This is a multi-part message in MIME format.
+Your email application may not support this format.
+--B_ALT_64d0eb188238c
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Thank you for visiting Mari Beach Club.
+
+
+
+ Dear Ms. John Doe,
+ Thank you for visiting us at Mari Beach Club, we hope you enjoyed your time
+and had a great experience with us.
+
+If you enjoy talking about your great experiences, please feel free to share
+them online via https://cho.pe/maribeachclub.review
+
+If for any reason, you didn't love your experience or there is something you
+think we can do better, we would really like to hear from you. Please do get
+in touch with us directly by email at mailto:reservations@maribeachclub.com
+
+We look forward to seeing you again soon,
+
+Mari Beach Club Team
+
+
+--B_ALT_64d0eb188238c
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"en">
+<meta http-equiv=3D"content-type" content=3D"text/html; charset=3Dutf-8"><t=
+itle>Reservation Confirmation - Chope</title>
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1"=
+>
+</head>
+
+<body topmargin=3D"0" leftmargin=3D"0" rightmargin=3D"0" width=3D"100%" hei=
+ght=3D"100%" style=3D"margin:0; background:#f7f7f7;">
+<table style=3D"background:#f7f7f7; align:center; padding-bottom:20px;" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+ <tbody>
+
+ <tr><td rowspan=3D"1" colspan=3D"1" align=3D"center" valign=3D"top" width=
+=3D"100%">
+ <table style=3D"align:center; width:100%; max-width:626px; background:#fff=
+; border:1px solid #232323;" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"1">
+ <tbody>
+ <tr><td rowspan=3D"1" colspan=3D"1" align=3D"center" valign=3D"top" width=
+=3D"100%">
+ <!--Yellow Bar-->
+ <table style=3D"display: table; background-color: #f1d124" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+
+ <tbody>
+ <tr height=3D"30px"><td style=3D"padding:5px;color:#ffffff;font-family:Ari=
+al,Helvetica,sans-serif;font-size:1em;" rowspan=3D"1" colspan=3D"1" align=
+=3D"center" valign=3D"top">
+ <strong> </strong>
+ </td></tr>
+ </tbody>
+ </table>
+ </td></tr>
+
+ <tr><td rowspan=3D"1" colspan=3D"1" align=3D"center" valign=3D"top" width=
+=3D"100%">
+ <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+ <tbody>
+ <tr><td style=3D"padding:20px 15px 10px 10px" rowspan=3D"1" colspan=3D"1" =
+align=3D"left" valign=3D"middle">
+ <img src=3D"https://static.chope.co/static/mainwebsite5.0/img/send_thank_r=
+es_logo.png?date=3D20190429" alt=3D"Chope" align=3D"right" border=3D"0" sty=
+le=3D"vertical-align:middle; max-width:100px !important; max-height:100px; =
+width:100%;">
+ <h2 style=3D"color: #3e3e3e;display: table;font-family: Helvetica, Arial, =
+sans-serif;font-size: 22px;font-weight: bold;line-height: 130%; text-align:=
+ left; vertical-align:middle;"> Thank you for visiting Mari Beach Club.</h2=
+>
+ </td></tr>
+ <tr>
+ <tr><td style=3D"padding:0 15px; color:#000000;font-family:Arial,Helvetica=
+,sans-serif;font-size:10pt;align:left;" rowspan=3D"1" colspan=3D"1" align=
+=3D"left" valign=3D"bottom">
+ <p style=3D"margin:0;"> Dear Ms. Jieon Kim, </p><br />
+ <p style=3D"margin:0;">Thank you for visiting us at Mari Beach Club, we ho=
+pe you enjoyed your time and had a great experience with us.<br />
+<br />
+If you enjoy talking about your great experiences, please feel free to shar=
+e them online via https://cho.pe/maribeachclub.review<br />
+<br />
+If for any reason, you didn't love your experience or there is something yo=
+u think we can do better, we would really like to hear from you. Please do =
+get in touch with us directly by email at mailto:reservations@maribeachclub=
+.com<br />
+<br />
+We look forward to seeing you again soon,<br />
+<br />
+Mari Beach Club Team </p><br /><br />
+ </td>
+ </tr>
+ </tbody>
+ </table>
+
+ <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+ <tbody>
+ <tr><td style=3D"padding:45px 20px 20px; color:#000000;font-family:Arial,H=
+elvetica,sans-serif;font-size:10pt;align:left;" rowspan=3D"1" colspan=3D"1"=
+ align=3D"left" valign=3D"bottom">
+ <p style=3D"margin:0;">
+
+ </p><br />
+ </td></tr>
+
+ </tbody>
+ </table>
+
+ </td></tr>
+
+
+ <tr><td rowspan=3D"1" colspan=3D"1" align=3D"center" valign=3D"top" width=
+=3D"100%">
+ <!--Yellow Bar-->
+ <table style=3D"background-color:#FFFFFF;" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%">
+ <tbody>
+ <tr><td style=3D"height:1px;padding-bottom:3px;background-color:#f1d124"; =
+rowspan=3D"1" colspan=3D"1" align=3D"center" bgcolor=3D"#dac90f" height=3D"=
+1" valign=3D"middle"></td></tr>
+ </tbody>
+ </table>
+ </td></tr>
+ </tbody>
+ </table>
+ </td></tr>
+ </tbody>
+</table>
+<img alt=3D"" src=3D"https://f1gppg2p.r.us-east-1.awstrack.me/I0/01000189d0=
+1660a8-b813bb67-8664-4777-9e3f-61115dd0f907-000000/jzoxpxAx7qJdaBPjCGgzy1uv=
+Ud4=3D333" style=3D"display: none; width: 1px; height: 1px;">
+</body>
+</html>
+
+--B_ALT_64d0eb188238c--

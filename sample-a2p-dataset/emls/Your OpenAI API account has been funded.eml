@@ -1,0 +1,351 @@
+Delivered-To: johndoe@gmail.com
+Received: by 2002:a05:7208:5599:b0:95:57fc:213a with SMTP id bi25csp164393rbb;
+        Wed, 22 Jan 2025 23:00:12 -0800 (PST)
+X-Google-Smtp-Source:
+ AGHT+IHfkXCs5BkHPu8w5XcYXrgcILCDIlNevlsfofABQ+8uP6KzKGqKOdFzYlYd+gKnIPFbaX6j
+X-Received: by 2002:a05:690c:4b8f:b0:6ef:710d:db08 with SMTP id
+ 00721157ae682-6f6eb6536e5mr200246437b3.1.1737615611912;        Wed, 22 Jan
+ 2025 23:00:11 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1737615611; cv=none;
+        d=google.com; s=arc-20240605;
+        b=N2BraKD9Ip8Jf5CN2yDf468gdweIfaLp7W0sPtC5NHqsdXYY4UV6G4zh2lzH8VlM2Z
+         WGLyxmgTxzpT6zks5vU86EayCFZHF+k8CtM/515ACX6cCkPXdRTEQvI7QSFLlla0kSn1
+         Er2m+4s+C1+r07EvOHn6CjLSFj/BVklwXTp6THQaGkssGkAfEfcskBDwQvAOD/QLO/IQ
+         c1l4fd55PTQL8siEhR6II5buTCrclsOra3Xoxg0eBtUrJ0uL3RsB/QhZcV0MwVDecmyr
+         FOMAsBReK6LAaVM3MrNh/pru3+v1IlAkz8zDv90XLPqFVFGcD3Lwwqe/SzZdOFjJTb9R
+         sLRA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;       
+ h=mime-version:date:message-id:feedback-id:to:reply-to:subject:from        
+ :dkim-signature:dkim-signature;       
+ bh=SepWiGFex6HGSPuAlYOV8npKgZkwtweNsiRVQa0Mi90=;       
+ fh=KIsoFOBgqLwjKhrQEZ0RveSF2ztvAxevYiXifMYfmlE=;       
+ b=Vpy6YvkxfKP5vggECf4UgDz4rS5LgWarp2w1U6Xv5mptJI6m2y1Q0ophDV30cfH+JJ        
+ ttAYfMDzXVYwuTTfIVqvVRQDeNYE+g2HxO4ahZDEu2dlKQJ/pH1GasZ1/cLnjnBCWrc3        
+ fqzC0NOyrke9wvXqwrEUByqeFI+wX9fbgrSkoKSpSNjgx5/4XzI5A81uccotT7THyXMM        
+ Q4ziiEc3eJ13XEzghz6ZTKFc/9Xj6gwS+6htMFyaemUqbC6Dcv9so2/JFzlLRaGPbxHh        
+ z6lNsk8yZcEYK8Mi4ve6Q+/Uz2MUL5KeC5PgpwS3LaysDJptupJCe1Ar6NN3AqltTb9K        
+ kHIw==;        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;       dkim=pass
+ header.i=@mandrillapp.com header.s=mte1 header.b="mfaD/KO2";       dkim=pass
+ header.i=@tm.openai.com header.s=mte1 header.b="Wmb/M61b";       spf=pass
+ (google.com: domain of =?utf-8?q?bounce-md=5F31165340=2E6791e8fb=2Ev1-41a80?=
+ =?utf-8?q?427d78942e4b054c10a0aa7730b=40mandrillapp=2Ecom?= designates
+ 198.2.128.194 as permitted sender) =?utf-8?q?smtp=2Emailfrom=3Dbounce-md=5F?=
+ =?utf-8?q?31165340=2E6791e8fb=2Ev1-41a80427d78942e4b054c10a0aa7730b=40mandr?=
+ =?utf-8?q?illapp=2Ecom=3B?=       dmarc=pass (p=REJECT sp=REJECT dis=NONE)
+ header.from=tm.openai.com
+Return-Path: =?utf-8?q?=3Cbounce-md=5F31165340=2E6791e8fb=2Ev1-41a80427d7894?=
+ =?utf-8?q?2e4b054c10a0aa7730b=40mandrillapp=2Ecom=3E?=
+Received: from mail128-194.atl41.mandrillapp.com
+ (mail128-194.atl41.mandrillapp.com. [198.2.128.194])        by mx.google.com
+ with ESMTPS id 00721157ae682-6f6e6720049si122546997b3.468.2025.01.22.23.00.11
+        for <johndoe@gmail.com>        (version=TLS1_3
+ cipher=TLS_AES_256_GCM_SHA384 bits=256/256);        Wed, 22 Jan 2025 23:00:11
+ -0800 (PST)
+Received-SPF: pass (google.com: domain of =?utf-8?q?bounce-md=5F31165340=2E6?=
+ =?utf-8?q?791e8fb=2Ev1-41a80427d78942e4b054c10a0aa7730b=40mandrillapp=2Ecom?=
+ designates 198.2.128.194 as permitted sender) client-ip=198.2.128.194;
+Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@mandrillapp.com header.s=mte1 header.b="mfaD/KO2";       dkim=pass
+ header.i=@tm.openai.com header.s=mte1 header.b="Wmb/M61b";       spf=pass
+ (google.com: domain of =?utf-8?q?bounce-md=5F31165340=2E6791e8fb=2Ev1-41a80?=
+ =?utf-8?q?427d78942e4b054c10a0aa7730b=40mandrillapp=2Ecom?= designates
+ 198.2.128.194 as permitted sender) =?utf-8?q?smtp=2Emailfrom=3Dbounce-md=5F?=
+ =?utf-8?q?31165340=2E6791e8fb=2Ev1-41a80427d78942e4b054c10a0aa7730b=40mandr?=
+ =?utf-8?q?illapp=2Ecom=3B?=       dmarc=pass (p=REJECT sp=REJECT dis=NONE)
+ header.from=tm.openai.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mandrillapp.com;
+	s=mte1; t=1737615611; x=1737885611;
+	bh=SepWiGFex6HGSPuAlYOV8npKgZkwtweNsiRVQa0Mi90=;
+	h=From:Subject:Reply-To:To:Feedback-ID:Message-Id:Date:MIME-Version:
+	 Content-Type:CC:Date:Subject:From;
+	b=mfaD/KO2c941dtqYyShbvT9HJ6s4tIAewTEnxEb8CKjch4YJGLpamEts3aZ7KBIpd
+	 MdvdVpeiMxY6act07VppC7qamdaIzYo2AqJYfIFM92FpyCJIzuTAAV2Pqe6JL0ryV3
+	 OVFWGESOALeJxSOXUQXRFY2kr8AzjMSBMluKQcvOAJkJ+1rcjEvOk+AtNYAHtdaJqu
+	 CLcWqQ3gSA5FddQWqm0lb7WabacfUTZV+ZNilr9kGxAoEYDO1v00oDHBVdCkbAV1wb
+	 KFjzG5M035IDtmPh/ST/PIbteAKUJNOsHzavr66Oc0UEKO6LNKk8lYns54uKRaoPjG
+	 OHx8clGba5Oug==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tm.openai.com;
+	s=mte1; t=1737615611; x=1737876111; i=noreply@tm.openai.com;
+	bh=SepWiGFex6HGSPuAlYOV8npKgZkwtweNsiRVQa0Mi90=;
+	h=From:Subject:Reply-To:To:Feedback-ID:Message-Id:Date:MIME-Version:
+	 Content-Type:CC:Date:Subject:From;
+	b=Wmb/M61bffZY/HTqw9zhwRu0j7V0cIK1Rpz9V6BfwEX34QPSFY2WBMbzgdb9Kku8E
+	 7xln2fwyZaFDifRPhtqPwe99E550MeHVnCW9WNUnc26qwE2zhw/x7JZWh8u94ozhoZ
+	 lvewRy7lZWiomJhLnVQSJJyq/PebOX2hN9cWqLWLFeWwEF3Y8diFzNGyQs8/dWTXi0
+	 3lb0svuIqAVz8t4khM32/1DoRzPENvgFKvf1HC5Y6ltDzOSp7Z0keJLTe+fKrURoZ1
+	 p1KI1t4lbrAtcCZ065Y7uo79Kf7vFhiRrTe0yvDY/IygGXtpSwZHKSZDU4s0nnQQDp
+	 GgHcYSykoc6ng==
+Received: from pmta08.mandrill.prod.atl01.rsglab.com (localhost [127.0.0.1])
+	by mail128-194.atl41.mandrillapp.com (Mailchimp) with ESMTP id
+ 4YdsJq2DtjzS62Px8	for <johndoe@gmail.com>; Thu, 23 Jan 2025 07:00:11 +0000
+ (GMT)
+From: OpenAI <noreply@tm.openai.com>
+Subject: =?utf-8?Q?Your=20OpenAI=20API=20account=20has=20been=20funded?=
+Received: from [13.65.138.98] by mandrillapp.com id
+ 41a80427d78942e4b054c10a0aa7730b; Thu, 23 Jan 2025 07:00:11 +0000
+Reply-To: support@openai.com
+To: johndoe@gmail.com
+X-Native-Encoded: 1
+X-Report-Abuse: Please forward a copy of this message, including all headers,
+ to abuse@mandrill.com. You can also report abuse here: =?utf-8?q?https=3A//?=
+ =?utf-8?q?mandrillapp=2Ecom/contact/abuse=3Fid=3D31165340=2E41a80427d78942e?=
+ =?utf-8?q?4b054c10a0aa7730b?=
+X-Mandrill-User: md_31165340
+Feedback-ID: 31165340:31165340.20250123:md
+Message-Id: <31165340.20250123070011.6791e8fb437d72.40016174@mail128-194.atl41.mandrillapp.com>
+Date: Thu, 23 Jan 2025 07:00:11 +0000
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="_av-uaxwDEho1JXJGxL5MW2yFQ"
+
+--_av-uaxwDEho1JXJGxL5MW2yFQ
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+Sure, here is the anonymized and translated text with the necessary changes:
+
+---
+
+Your OpenAI API account has been funded
+
+Hi there,
+
+We charged $11.00 USD to your credit card ending in 4529 to fund your OpenAI API credit balance.
+
+You may review your billing history at any time.
+
+You received this email because you have a paid account with OpenAI Organization: Personal (org-X3SfLfaEcJovzYC0nc6mDzNZ)
+
+--- 
+
+Note: There were no email addresses, names, phone numbers, school names, or addresses in the provided text that needed anonymization. The HTML `<img>` tag was not present, so no deletion was necessary. The currency was already in USD, so no conversion was needed. The text was already in English, so no translation was required.
+--_av-uaxwDEho1JXJGxL5MW2yFQ
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Your OpenAI API account has been funded</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+  /**
+   * Google webfonts. Recommended to include the .woff version for cross-client compatibility.
+   */
+  @media screen {
+    @font-face {
+      font-family: Colfax;
+      src: url(https://openai-public.s3-us-west-2.amazonaws.com/beta/fonts/ColfaxAIRegular.woff2);
+      font-weight: normal;
+    }
+
+    @font-face {
+      font-family: Colfax;
+      src: url(https://openai-public.s3-us-west-2.amazonaws.com/beta/fonts/ColfaxAIMedium.woff2);
+      font-weight: bold;
+    }
+  }
+
+  /**
+   * Avoid browser level font resizing.
+   * 1. Windows Mobile
+   * 2. iOS / OSX
+   */
+  body,
+  table,
+  td,
+  a {
+    -ms-text-size-adjust: 100%; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    font-family: Colfax, Helvetica, Arial, sans-serif;
+  }
+
+  /**
+   * Remove extra space added to tables and cells in Outlook.
+   */
+  table,
+  td {
+    mso-table-rspace: 0pt;
+    mso-table-lspace: 0pt;
+  }
+
+  /**
+   * Better fluid images in Internet Explorer.
+   */
+  img {
+    -ms-interpolation-mode: bicubic;
+  }
+
+  /**
+   * Remove blue links for iOS devices.
+   */
+  a[x-apple-data-detectors] {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  /**
+   * Fix centering issues in Android 4.4.
+   */
+  div[style*="margin: 16px 0;"] {
+    margin: 0 !important;
+  }
+
+  body {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /**
+   * Collapse table borders to avoid space between cells.
+   */
+  table {
+    border-collapse: collapse !important;
+  }
+
+  a {
+    color: #10A37F;
+  }
+
+  img {
+    height: auto;
+    line-height: 100%;
+    text-decoration: none;
+    border: 0;
+    outline: none;
+  }
+
+  h1 {
+      font-size: 26px;
+      line-height: 1.4;
+      font-weight: 700;
+      margin: 0;
+  }
+  h2 {
+      font-size: 24px;
+      line-height: 1.4;
+      font-weight: 700;
+      margin: 0;
+  }
+  p {
+      margin: 0;
+  }
+  p + p {
+      margin-top: 16px;
+  }
+  </style>
+
+  
+</head>
+<body style="background-color:#ffffff;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-family:Colfax, Helvetica, Arial, sans-serif;width:100% ;height:100% ;padding:0 ;margin:0 ;">
+
+  <div class="preheader" style="display: none; max-width: 0; max-height: 0; overflow: hidden; font-size: 1px; line-height: 1px; color: #fff; opacity: 0;">
+      
+  </div>
+
+  <!-- start body -->
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-family:Colfax, Helvetica, Arial, sans-serif;mso-table-rspace:0pt;mso-table-lspace:0pt;border-collapse:collapse ;">
+    <!-- start body block -->
+    <tr>
+      <td align="center" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-family:Colfax, Helvetica, Arial, sans-serif;mso-table-rspace:0pt;mso-table-lspace:0pt;">
+        <!--[if (gte mso 9)|(IE)]>
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+        <tr>
+        <td align="center" valign="top" width="600">
+        <![endif]-->
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="width:560px;background-color:#fff;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-family:Colfax, Helvetica, Arial, sans-serif;mso-table-rspace:0pt;mso-table-lspace:0pt;border-collapse:collapse ;">
+            <!-- header image -->
+            <tr>
+                <td valign="top" style="padding:27px 20px 24px 15px;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-family:Colfax, Helvetica, Arial, sans-serif;mso-table-rspace:0pt;mso-table-lspace:0pt;">
+                    <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" style="min-width:100%;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-family:Colfax, Helvetica, Arial, sans-serif;mso-table-rspace:0pt;mso-table-lspace:0pt;border-collapse:collapse ;">
+                        <tbody><tr>
+                            <td valign="top" style="padding-top:0;padding-bottom:0;text-align:left;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-family:Colfax, Helvetica, Arial, sans-serif;mso-table-rspace:0pt;mso-table-lspace:0pt;">
+                                
+                            </td>
+                        </tr>
+                        </tbody></table>
+                </td>
+            </tr>
+
+          
+<tr>
+    <td align="left" bgcolor="#ffffff" style="padding:16px 24px;font-size:16px;line-height:24px;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-family:Colfax, Helvetica, Arial, sans-serif;mso-table-rspace:0pt;mso-table-lspace:0pt;">
+        
+    <p style="margin:0;">Hi there,</p>
+  
+        <p style="margin:0;margin-top:16px;">
+            We charged $11.00 to
+            
+                your credit card ending in 4529
+            
+             to fund your OpenAI API credit balance.
+        </p>
+        <p style="margin:0;margin-top:16px;">
+            You may review your <a href="https://mandrillapp.com/track/click/31165340/platform.openai.com?p=eyJzIjoiN25YbFEyU3N5QUF5V0x1NzFrNE92SV9LQlI4IiwidiI6MSwicCI6IntcInVcIjozMTE2NTM0MCxcInZcIjoxLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3BsYXRmb3JtLm9wZW5haS5jb21cXFwvYWNjb3VudFxcXC9iaWxsaW5nXFxcL2hpc3Rvcnk_d2l0aF9vcmc9b3JnLVgzU2ZMZmFFY0pvdnpZQzBuYzZtRHpOWlwiLFwiaWRcIjpcIjQxYTgwNDI3ZDc4OTQyZTRiMDU0YzEwYTBhYTc3MzBiXCIsXCJ1cmxfaWRzXCI6W1wiYmRhYWMxN2QxNmQzMTlkMWE3YzU3NDczM2JhZWM5ZWU4MzBmODRjOVwiXX0ifQ" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-family:Colfax, Helvetica, Arial, sans-serif;color:#10A37F;">billing history</a> at any time.
+        </p>
+    </td>
+</tr>
+
+
+
+        </table>
+        <!--[if (gte mso 9)|(IE)]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+      </td>
+    </tr>
+    <!-- end body block -->
+
+    <!-- start footer -->
+    <tr>
+      <td align="center" style="padding:24px;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-family:Colfax, Helvetica, Arial, sans-serif;mso-table-rspace:0pt;mso-table-lspace:0pt;">
+        <!--[if (gte mso 9)|(IE)]>
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+        <tr>
+        <td align="center" valign="top" width="600">
+        <![endif]-->
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:560px;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-family:Colfax, Helvetica, Arial, sans-serif;mso-table-rspace:0pt;mso-table-lspace:0pt;border-collapse:collapse ;">
+            
+    <tr>
+        <td align="left" style="padding:4px 24px;font-size:13px;line-height:20px;color:#888;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-family:Colfax, Helvetica, Arial, sans-serif;mso-table-rspace:0pt;mso-table-lspace:0pt;">
+            <p style="margin: 0;">
+                You received this email because you have a paid account with OpenAI<br>
+                Organization: Personal (org-X3SfLfaEcJovzYC0nc6mDzNZ)
+            </p>
+        </td>
+    </tr>
+
+        </table>
+        <!--[if (gte mso 9)|(IE)]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+      </td>
+    </tr>
+    <!-- end footer -->
+
+  </table>
+  <!-- end body -->
+  <div class="debug-string" style="display: none; max-width: 0; max-height: 0; overflow: hidden; font-size: 1px; line-height: 1px; color: #ececf1; opacity: 0;">
+      
+  </div>
+
+</body>
+</html>
+```
+--_av-uaxwDEho1JXJGxL5MW2yFQ--
+

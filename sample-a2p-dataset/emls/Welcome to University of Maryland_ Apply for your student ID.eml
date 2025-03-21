@@ -1,0 +1,31 @@
+Delivered-To: johndoe@gmail.com
+Received: by 10.80.163.39 with SMTP id 36csp1777173edn;
+        Tue, 21 Mar 2017 09:01:37 -0700 (PDT)
+X-Received: by 10.55.26.98 with SMTP id a95mr3362641qka.312.1490112097704;
+        Tue, 21 Mar 2017 09:01:37 -0700 (PDT)
+Return-Path: <isss-admissions@rbu.edu>
+Received: from po0.glue.rbu.edu (po0.glue.rbu.edu. [128.8.162.133])
+        by mx.google.com with ESMTP id 11si16000053qkg.149.2017.03.21.09.01.37
+        for <johndoe@gmail.com>;
+        Tue, 21 Mar 2017 09:01:37 -0700 (PDT)
+Received-SPF: pass (google.com: domain of isss-admissions@rbu.edu designates
+ 128.8.162.133 as permitted sender) client-ip=128.8.162.133;
+Authentication-Results: mx.google.com;       spf=pass (google.com: domain of
+ isss-admissions@rbu.edu designates 128.8.162.133 as permitted sender)
+ smtp.mailfrom=isss-admissions@rbu.edu
+Received: from OITAP293V.AD.rbu.EDU (staff.iterp.rbu.edu [128.8.13.26])
+	by po0.glue.rbu.edu (8.14.1/8.14.1) with ESMTP id v2LG0H1S005285
+	for <johndoe@gmail.com>; Tue, 21 Mar 2017 12:01:37 -0400 (EDT)
+Date: Tue, 21 Mar 2017 12:01:37 -0400 (EDT)
+From: isss-admissions@rbu.edu
+To: johndoe@gmail.com
+Message-ID:
+ <1466609493.2944.1490112097368.JavaMail.OITAP293V$@smtp.glue.rbu.edu>
+Subject: Welcome to Rainbow University: Apply for your new student registration.
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-Mailer: ColdFusion 10 Application Server
+
+
+<p>Dear john doe,</p><p> Congratulations on your admission to the Rainbow University and welcome from the Admission office!</p><p> The forms linked in this email should be <strong>completed by all students</strong>. These forms are for internal university purposes only.</p><ul><li><strong>If you wish to receive an supplements</strong>, please complete all forms in the link below.</li><li><strong>If you wish not to attend RBU </strong>, please indicate your status on the first form and we will unsubscribe you from these emails (select “Other” if you do not see the appropriate status listed). You only need to complete the first form.</li><li><strong>If you do not wish to attend rbu</strong>, please indicate so on the first form and we will unsubscribe you from these emails. You only need to complete the first form.</li></ul><p> <a href="https://iterp.rbu.edu">Here is the link</a> to ISSS’s student portal (iTerp). Please <strong>use the “Limited Services” log-in</strong> on the right hand side. You will need to following formation to do so:</p><ul><li>Your University Identification Number (UID): 115525962</li><li>Your iTerp Pin Number: 762641</li><li>Your Application Number: 4085293 (if you’ve been admitted to multiple programs)</li></ul><p> Welcome to the Rainbow University again. We look forward to meeting you!</p>

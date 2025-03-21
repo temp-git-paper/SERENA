@@ -1,0 +1,236 @@
+Received: by 2002:a05:7208:3003:b0:92:26bf:1b4b with SMTP id f3csp264584rba;
+        Fri, 25 Oct 2024 21:05:56 -0700 (PDT)
+Received: from nt3.123fintech.com (nt3.123fintech.com. [126.226.101.123])        by
+ mx.google.com with ESMTPS id
+ d9443c01a7336-210bbff773csi27829535ad.469.2024.10.25.21.05.55        for
+ <johndoe@gmail.com>        (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Fri, 25 Oct 2024
+ 21:05:56 -0700 (PDT)
+From: =?ks_c_5601-1987?B?TkhOIEtDUCC5373FwPy/6w==?= <pgadmcust@123fintech.com>
+To: "johndoe@gmail.com" <johndoe@gmail.com>
+Subject: NHN KCP - =?utf-8?b?SG90ZWxzLmNvbeydmCDqsrDsoJwg64K07Jet7J6F64uI?=
+ =?utf-8?q?=EB=8B=A4=2E?=
+Thread-Topic: NHN KCP - =?utf-8?b?SG90ZWxzLmNvbeydmCDqsrDsoJwg64K07Jet7J6F?=
+ =?utf-8?b?64uI64ukLg==?=
+Thread-Index: AU5EUzEwSy2vLFG3pATtskpyosutzA==
+X-MS-Exchange-MessageSentRepresentingType: 1
+Date: Sat, 26 Oct 2024 04:05:54 +0000
+Message-ID: <671c6aa4.170a0220.33183b.85ddSMTPIN_ADDED_BROKEN@mx.google.com>
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-Exchange-Organization-SCL: -1
+X-MS-TNEF-Correlator: 
+X-MS-Exchange-Organization-RecordReviewCfmType: 0
+received-spf: pass (google.com: domain of pgadmcust@123fintech.com designates
+ 126.226.101.123 as permitted sender) client-ip=126.226.101.123;
+Content-Type: multipart/alternative;
+	boundary="_000_671c6aa4170a022033183b85ddSMTPINADDEDBROKENmxgooglecom_"
+MIME-Version: 1.0
+
+--_000_671c6aa4170a022033183b85ddSMTPINADDEDBROKENmxgooglecom_
+Content-Type: text/plain; charset="ks_c_5601-1987"
+Content-Transfer-Encoding: base64
+
+[http://cdn.123fintech.com/mail/pay/20120813/logo_nhn.gif] [https://cdn.123fintech.com/pay/images/MAIL/20220714102955DOMYZUJFWE.gif] [http://cdn.123fintech.com/mail/pay/20120813/tt_finish_nhn.gif] The details of your payment made on October 26, 2024, at 13:05 at Hotels.com are as follows. [http://cdn.123fintech.com/mail/pay/20120813/title_s1.gif] Orderer Name: john doe Payment Date and Time: October 26, 2024, 13:05 Payment Amount: 158.00 USD Card Type: Gold card [http://cdn.123fintech.com/mail/pay/20120813/btn_print_sales.gif] <https://partner.123fintech.com/bill/card?cmd=card_bill&tno=2B1EE5C5E551A65CA20D7F8C23444F68> Approval Number: 38875712 Order Number: 92d28159-c489-4ab1-bca4-0759d57d840f Installment Period: Lump sum [http://cdn.123fintech.com/mail/pay/20120813/title_s2.gif] [http://cdn.123fintech.com/mail/pay/20120813/btn_stotre.gif] <http://www.hotels.com> Store Name: Hotels.com Order Product Name: HOTELCOM72059332721537 Site Address: www.hotels.com<http://www.hotels.com> Customer Inquiry [https://cdn.123fintech.com/pay/images/MAIL/20240801140600OTXEJJIDOD.jpg]<http://www.123fintech.com> [http://cdn.123fintech.com/mail/pay/20120813/fotter_text_card_nhn.gif] [http://cdn.123fintech.com/mail/pay/20120813/fotter_nhn.gif]
+--_000_671c6aa4170a022033183b85ddSMTPINADDEDBROKENmxgooglecom_
+Content-Type: text/html; charset="ks_c_5601-1987"
+Content-ID: <78F7AF84B520D741A4E775B4785446E1@1>
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ks_c_5601-1987">
+<title>kcp</title>
+</head>
+<body>
+<table width="780" cellspacing="1" cellpadding="0" border="0" bgcolor="d9d9d9" align="center">
+<tbody>
+<tr>
+<td align="center" bgcolor="#FFFFFF" style="padding:10px 0 30px;"><!--본문--><!--Top-->
+<table width="718" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td align="left" style="padding-bottom:10px;"><a href="#"></a></td>
+<td align="right" style="padding-bottom:10px;"><a href="#"></a></td>
+</tr>
+</tbody>
+</table>
+<!--Title-->
+<table width="718" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td height="1" bgcolor="#d9d9d9"></td>
+</tr>
+<tr>
+<td align="center" style="padding-top:30px;"></td>
+</tr>
+<tr>
+<td align="center" style="padding:10px 0 40px 0; color:#777; font-family:dotum, sans-serif; font-size:12px;">
+The payment details made on Hotels.com on October 26, 2024, at 13:05 are as follows.</td>
+</tr>
+</tbody>
+</table>
+<!--Content-->
+<table width="718" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="339" valign="top">
+<table width="339" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="125" align="left" style="padding-bottom:6px;"></td>
+<td width="319&quot;" height="20" colspan="2" align="right" style="padding-bottom:6px;">
+</td>
+</tr>
+<tr>
+<td height="2" colspan="3" bgcolor="#0088b2"></td>
+</tr>
+<tr>
+<td align="left" height="32" style="font-weight:bold; color:#777; font-family:dotum, sans-serif; font-size:12px;">
+Orderer Name</td>
+<td colspan="2" align="left" style="color:#777; font-family:dotum, sans-serif; font-size:12px;">
+john doe</td>
+</tr>
+<tr>
+<td height="1" colspan="3" bgcolor="#d9d9d9"></td>
+</tr>
+<tr>
+<td align="left" height="32" style="font-weight:bold; color:#777; font-family:dotum, sans-serif; font-size:12px;">
+Payment Date and Time</td>
+<td colspan="2" align="left" style="color:#777; font-family:dotum, sans-serif; font-size:12px;">
+October 26, 2024, 13:05</td>
+</tr>
+<tr>
+<td height="1" colspan="3" bgcolor="#d9d9d9"></td>
+</tr>
+<tr>
+<td align="left" height="40" bgcolor="#f1f1f1" style="font-weight:bold; color:#777; font-family:dotum, sans-serif; font-size:12px;">
+Payment Amount</td>
+<td colspan="2" align="left" bgcolor="#f1f1f1" style="color:#00a8bf; font-weight:bold; font-family:verdana, Dotum, AppleGothic, sans-serif; font-size:22px;">
+158.00<span style="color:#000; font-weight:bold; font-family:Dotum, sans-serif; font-size:16px;">&nbsp;USD</span></td>
+</tr>
+<tr>
+<td height="1" colspan="3" bgcolor="#d9d9d9"></td>
+</tr>
+<tr>
+<td align="left" height="32" style="font-weight:bold; color:#777; font-family:dotum, sans-serif; font-size:12px;">
+Card Type</td>
+<td align="left" style="color:#777; font-family:dotum, sans-serif; font-size:12px;">
+Gold Card</td>
+<td align="right"><a href="https://partner.123fintech.com/bill/card?cmd=card_bill&amp;tno=2B1EE5C5E551A65CA20D7F8C23444F68"></a></td>
+</tr>
+<tr>
+<td height="1" colspan="3" bgcolor="#d9d9d9"></td>
+</tr>
+<tr>
+<td align="left" height="32" style="font-weight:bold; color:#777; font-family:dotum, sans-serif; font-size:12px;">
+Approval Number</td>
+<td colspan="2" align="left" style="color:#777; font-family:dotum, sans-serif; font-size:12px;">
+38875712</td>
+</tr>
+<tr>
+<td height="1" colspan="3" bgcolor="#d9d9d9"></td>
+</tr>
+<tr>
+<td align="left" height="32" style="font-weight:bold; color:#777; font-family:dotum, sans-serif; font-size:12px;">
+Order Number</td>
+<td colspan="2" align="left" style="color:#777; font-family:dotum, sans-serif; font-size:12px;">
+92d28159-c489-4ab1-bca4-0759d57d840f</td>
+</tr>
+<tr>
+<td height="1" colspan="3" bgcolor="#d9d9d9"></td>
+</tr>
+<tr>
+<td align="left" height="32" style="font-weight:bold; color:#777; font-family:dotum, sans-serif; font-size:12px;">
+Installment Period</td>
+<td colspan="2" align="left" style="color:#777; font-family:dotum, sans-serif; font-size:12px;">
+Lump sum</td>
+</tr>
+<tr>
+<td height="1" colspan="3" bgcolor="#d9d9d9"></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align="right" valign="top">
+<table width="339" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="125" align="left" style="padding-bottom:6px;"></td>
+<td width="214" align="right" style="padding-bottom:6px;"><a href="http://www.hotels.com"></a></td>
+</tr>
+<tr>
+<td height="2" colspan="2" bgcolor="#0088b2"></td>
+</tr>
+<tr>
+<td align="left" height="32" style="font-weight:bold; color:#777; font-family:dotum, sans-serif; font-size:12px;">
+Store Name</td>
+<td align="left" style="color:#000; font-weight:bold; font-family:dotum, sans-serif; font-size:12px;">
+Hotels.com</td>
+</tr>
+<tr>
+<td height="1" colspan="2" bgcolor="#d9d9d9"></td>
+</tr>
+<tr>
+<td align="left" height="32" style="font-weight:bold; color:#777; font-family:dotum, sans-serif; font-size:12px;">
+Order Product Name</td>
+<td align="left" style="color:#777; font-family:dotum, sans-serif; font-size:12px;">
+HOTELCOM72059332721537</td>
+</tr>
+<tr>
+<td height="1" colspan="2" bgcolor="#d9d9d9"></td>
+</tr>
+<tr>
+<td align="left" height="32" style="font-weight:bold; color:#777; font-family:dotum, sans-serif; font-size:12px;">
+Site Address</td>
+<td align="left"><a href="http://www.hotels.com" style="color:#000; font-family:dotum, sans-serif; font-size:12px; text-decoration:underline;">www.hotels.com</a></td>
+</tr>
+<tr>
+<td height="1" colspan="2" bgcolor="#d9d9d9"></td>
+</tr>
+<tr>
+<td align="left" height="32" style="font-weight:bold; color:#777; font-family:dotum, sans-serif; font-size:12px;">
+Customer Inquiry</td>
+<td align="left" style="color:#777; font-family:dotum, sans-serif; font-size:12px;">
+</td>
+</tr>
+<tr>
+<td height="1" colspan="2" bgcolor="#d9d9d9"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table width="718" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td style="padding:25px 0;"><a href="http://www.123fintech.com"></a></td>
+</tr>
+</tbody>
+</table>
+
+<table width="718" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td style="padding-top:20px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+
+</tbody>
+</table>
+<table width="780" border="0" cellspacing="0" cellpadding="0" align="center">
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

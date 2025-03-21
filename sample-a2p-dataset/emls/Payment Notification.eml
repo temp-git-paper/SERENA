@@ -1,0 +1,58 @@
+Delivered-To: johndoe@gmail.com
+Received: by 2002:a05:7010:8a20:b0:377:cf71:52a3 with SMTP id
+ ef32csp1195140mdb;        Tue, 1 Aug 2023 09:18:22 -0700 (PDT)
+X-Google-Smtp-Source:
+ APBJJlF/9+JiMQUwRRDzV0wWL7NevrIhzFdJ6Lo8XG0HIejvAfqIRQQqHMMDE8CuyrpMj/M+4Nvy
+X-Received: by 2002:a05:6a20:549e:b0:13d:71f4:fd8a with SMTP id
+ i30-20020a056a20549e00b0013d71f4fd8amr8587506pzk.13.1690906702671;       
+ Tue, 01 Aug 2023 09:18:22 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1690906702; cv=none;
+        d=google.com; s=arc-20160816;
+        b=isdwoniuXgDUiqHpfJiFtxZjW9ZMd4IkuVCZp7hS+ncLYG++5a/nYPkxOqFi1f8joU
+         k1IQJ4ipOWrhuUgIXhoBUTaxl6Pg6W9nCi4j0wop+Rn4XKJL9t0BjyBVZRLZp5bb4OGr
+         pyOCrfxExG/Hz/SDqMqybSsuUtPG5scHLjQbFJEQ/OyXY3VLheAEo681IkWMgyMSpg0O
+         q9icC4AsZ6vwJRPZnu8/lhEhkNIIY4G9oFGdANkinGRc6UcOlENqeo8u2u1tmizciVeo
+         3mQ4NJr/g+2yLlYTm9de+JaiL1U67aWM7483umY11kK8Bii7zPYxI2aOltWsQXQLhh3V
+         B/XQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=mime-version:date:content-transfer-encoding:message-id:subject:to        
+ :from;        bh=zFzQO3AkLbk8Qlp5fJj+JfL70kp6uzQ8XAQb7yEp8ZU=;       
+ fh=NFq6zNOhQvt8xJMR85K6SESD6BBG08+thvuLqLqSvhs=;       
+ b=qd9bomdEJk9F2160C90lSkqNDkMrh/CQmelaGt3FM5xv3W7JIadQxoUftw1AOLFApP        
+ sogHmnmNFy3S3M59ZVk3PdGVwYX5bKNvk2wkGEuUpN5OtmBWEmr2wV92bZ9/cfeBNWDr        
+ D5KMFe3wTxkOXGYuuyLCt/KLUYVYwTFgIOkiQiz8Lz/eUhXi25MQKnAD+kodKVpHm/U8        
+ dkssyMat3aRzO3E17G6M4srudz4B7VCQZWHP2si3TPpCHAgyJ1OYlk9d+DvFA9GFrKg5        
+ OjIdcWdoWoOytav0Dw0Ygk1dkRiymnlriwSoOQ08NisypOWgwlO7WGzAsLOrZySUN0yk        
+ vA3g==
+ARC-Authentication-Results: i=1; mx.google.com;       spf=pass (google.com:
+ domain of no-reply@finpay.id designates 182.23.91.21 as permitted sender)
+ smtp.mailfrom=no-reply@finpay.id
+Return-Path: <no-reply@finpay.id>
+Received: from mail01.finnet-indonesia.com (mail02.finnet-indonesia.com.
+ [182.23.91.21])        by mx.google.com with ESMTPS id
+ y13-20020a63b50d000000b00537c6c285a0si4651371pge.167.2023.08.01.09.18.21
+        for <johndoe@gmail.com>        (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Tue, 01 Aug 2023
+ 09:18:22 -0700 (PDT)
+Received-SPF: pass (google.com: domain of no-reply@finpay.id designates
+ 182.23.91.21 as permitted sender) client-ip=182.23.91.21;
+Authentication-Results: mx.google.com;       spf=pass (google.com: domain of
+ no-reply@finpay.id designates 182.23.91.21 as permitted sender)
+ smtp.mailfrom=no-reply@finpay.id
+Received: (qmail 21442 invoked by uid 89); 1 Aug 2023 10:51:41 -0000
+Received: by simscan 1.4.0 ppid: 21435, pid: 21439, t: 0.0068s
+         scanners: attach: 1.4.0
+Received: from unknown (HELO ?127.0.0.1?)
+ (newfinpay@finnet-indonesia.com@10.180.0.1)  by mail01.finnet-indonesia.com
+ with ESMTPA; 1 Aug 2023 10:51:41 -0000
+Content-Type: text/html; charset=utf-8
+From: Finpay <no-reply@finpay.id>
+To: johndoe@gmail.com
+Subject: Payment Notification
+Message-ID: <dc4c10c7-2d80-4464-951f-0ceaac3a4701@finpay.id>
+Content-Transfer-Encoding: quoted-printable
+Date: Tue, 01 Aug 2023 10:51:41 +0000
+MIME-Version: 1.0
+
+<!DOCTYPE html><div><div style="background-color:#F7F7F7;min-height:4rem;font-size:14px;color:black"><header style="display:flex;justify-content:center;padding:2rem;margin-left:auto;margin-right:auto"><div style="text-align:center;width:100%"></div></header><section style="min-height:4rem;width:75%;margin-left:auto;margin-right:auto"><div id="box" style="background-color:white;min-height:4rem;border-radius:0.5rem"><div style="padding:2rem"><div style="font-weight:bold">Dear Sir/Madam,</div><div style="font-weight:200;margin:1rem 0 1rem 0"><p>Thank you, we have received your payment and will process your payment immediately. Please find your request summary as bellow.</p><span>Order Summary</span><table style="border-bottom:1px;width:100%;margin-left:-1px"><tbody><tr><td style="padding:0.25rem 0 0.75rem 0;width:20%;border-bottom:1px dashed #E7E7E7">Product Name</td><td style="padding:0.25rem 0 0.75rem 0;width:100%;border-bottom:1px dashed #E7E7E7">: e-Visa IDN</td></tr><tr><td style="padding:0.75rem 0 0.75rem 0;width:20%;border-bottom:1px dashed #E7E7E7">Invoice</td><td style="border-bottom:1px dashed #E7E7E7">: 3010823A662946-20230801175056</td></tr><tr><td style="padding:0.75rem 0 0.75rem 0;width:20%;border-bottom:1px dashed #E7E7E7">Amount</td><td style="border-bottom:1px dashed #E7E7E7">: USD 33.50</td></tr><tr><td style="padding:0.75rem 0 0.75rem 0;width:20%;border-bottom:1px dashed #E7E7E7">Transaction Date</td><td style="border-bottom:1px dashed #E7E7E7">: 2023-08-01 17:50:57 Jakarta GMT +7</td></tr><tr><td style="padding:0.75rem 0 0.75rem 0;width:20%;border-bottom:1px dashed #E7E7E7">Card</td><td style="border-bottom:1px dashed #E7E7E7">: 402878xxxxxx8330</td></tr></tbody></table><p>If you're not received any email confirmation within 30 minute. Please check your current status on molina website.</p><p>This is an auto generate email, please do not reply.</p><p>Regards,<br/>Finpay</p></div><div></div></div></div><div style="padding:2rem 0 2rem 0;font-weight:200;display:flex"><div style="width:50%">Do you need help?<div style="display:flex"><div style="margin:1rem 0 1rem 0;display:flex;align-items:center;gap:0.5rem;margin-right:0.5rem">(+6221) 1500-770(care@finpay.id)<a href="mailto:john doe">care@finpay.id</a></div></div></div><div style="width:50%;text-align:right">PT. Finnet Indonesia Telkom Landmark Tower Lantai 28<br/>Jl. Jend. Gatot Subroto Kav 52 Jakarta Selatan</div></div></section><footer style="background-color:#E5E7EB;min-height:1rem;padding:1rem;display:flex;justify-content:center;font-size:14px;margin-left:auto;margin-right:auto"><div style="width:100%;text-align:center">Copyright © 2023 Finpay</div></footer></div></div>

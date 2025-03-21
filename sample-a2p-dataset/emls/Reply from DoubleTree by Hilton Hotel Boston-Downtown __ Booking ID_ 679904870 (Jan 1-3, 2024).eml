@@ -1,0 +1,993 @@
+Delivered-To: johndoe@gmail.com
+Received: by 2002:a05:6638:292e:b0:46d:65ae:3b52 with SMTP id ee14csp226583jab;
+        Tue, 26 Dec 2023 06:05:49 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGtIsyX5dsVvasxV8ATdqZa8dztRT5fLxANIMrGM8AY9Fpjbl8npq/4XtQGRtzPREmkPURg
+X-Received: by 2002:a05:6102:548f:b0:467:980:196f with SMTP id bk15-20020a056102548f00b004670980196fmr668581vsb.29.1703599548893;
+        Tue, 26 Dec 2023 06:05:48 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1703599548; cv=none;
+        d=google.com; s=arc-20160816;
+        b=kWz9DZ+IyAI+eStg5+wz0mRtq8GkHvl+NchPmG03IapGoOrSrZNa1/mqeoxu3jRYRs
+         6v1+73CgWOL/UZle/YNix+ozLAPoHUMlaAlVSzb/nH3H0cYXsbCS+qyLU+G90b7j43XX
+         eqPLN4x4Rv8VwKD3fz7unw2lmVrHFbduQzOA3oIqcGrgGMSd3FCWkSYpkXYxrHNtu5pA
+         muY1f4pY3ZllY6/Fqg+NJxxzIWQJuaTUZFS+qUH1ZRVMUJ29NxzzI9HfvGBAjqjyMd8q
+         xq0THVewckHm8IkWR5YXxv8vi+Kine8MlZ4xdFu3qdThnE9ps07XgR94vYLDAeqiH/m5
+         pwyQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:in-reply-to:references:reply-to:subject:message-id:mime-version
+         :from:date:content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=6+aoY1+DIAWAYHnVxrIqRrgf3qat3L2vGkGKAuNutgU=;
+        fh=bfEmn1wL+6G8NLBHSNypGSkhSc8FyDkaz7TMx2bbZk0=;
+        b=0+xlADKZcFObi5poz/u5BirfMP+/UoLGsCe0Le8LPbzgEGEsmvVbtg9Pq6UM9P5bU/
+         hB6WMTXBVi3B644G8vphbdXTCt+U2dl5uCf5oinM1LPR1QjgReu7/iFHZZPH/d/dF8sR
+         tdIDAL3z6KtT1ucIZV+ggM13KzeUQNr7LwCRptr98rTj7am7+cIdkep8c2A6bXucdV5j
+         8G9stm+fb+6M7wdJdvwnWmbZME+0qQqLkHaUBYRvn518sV8fqgD/y3bkl3ig4wBPTwKv
+         DBH9bwXYbc11KhrWesd4bU6YSEtMvyUrquvJbu2RlCGtpPPyu7jD8bk5PJZc4sYr3pB7
+         pd2w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@agoda-messaging.com header.s=agm header.b=Sdj3VWjW;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=oiYu+Si9;
+       spf=pass (google.com: domain of bounces+7154445-9659-johndoe=gmail.com@notifications.agoda-messaging.com designates 167.89.57.31 as permitted sender) smtp.mailfrom="bounces+7154445-9659-johndoe=gmail.com@notifications.agoda-messaging.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=agoda-messaging.com
+Return-Path: <bounces+7154445-9659-johndoe=gmail.com@notifications.agoda-messaging.com>
+Received: from o24.transactional.email.agoda.com (o24.transactional.email.agoda.com. [167.89.57.31])
+        by mx.google.com with ESMTPS id v23-20020a056102239700b00466a7b1f659si1519862vsr.645.2023.12.26.06.05.48
+        for <johndoe@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 26 Dec 2023 06:05:48 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+7154445-9659-johndoe=gmail.com@notifications.agoda-messaging.com designates 167.89.57.31 as permitted sender) client-ip=167.89.57.31;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@agoda-messaging.com header.s=agm header.b=Sdj3VWjW;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=oiYu+Si9;
+       spf=pass (google.com: domain of bounces+7154445-9659-johndoe=gmail.com@notifications.agoda-messaging.com designates 167.89.57.31 as permitted sender) smtp.mailfrom="bounces+7154445-9659-johndoe=gmail.com@notifications.agoda-messaging.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=agoda-messaging.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=agoda-messaging.com;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	reply-to:references:in-reply-to:x-feedback-id:to:cc:content-type:from:subject:
+	to;
+	s=agm; bh=6+aoY1+DIAWAYHnVxrIqRrgf3qat3L2vGkGKAuNutgU=;
+	b=Sdj3VWjWSmUTEryCVgUejjX7iZWY46VsWBOtBnuMYtuptgq1zlMKzLx3bAjjJKuQopuT
+	qJJAsnI9FKbQu4lpcX6aorEe+N1N6Os52ojKA/SgSxWRcd0S0TWH49rRgFJdEqU7BiAH1a
+	IOCip82gZaMuCnE96s6P9tNMEBrGCfqpskCtFwiHDhA0tzwIUAUL4pYA0VqWZJJgxBgFFp
+	0g4ukklaIUG/EVLUZy6t1MGHc/KwU+SJCxzk7TTqbYPLze1ONHdt8wLKuEoav0PgexJvjH
+	sILLFr06kdVVv0CRAttsGMM/L2Og/Uxe6ZFoWiRIF4qrpgTofxkphQZsA0xlxV/A==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	reply-to:references:in-reply-to:x-feedback-id:to:cc:content-type:from:subject:
+	to;
+	s=smtpapi; bh=6+aoY1+DIAWAYHnVxrIqRrgf3qat3L2vGkGKAuNutgU=;
+	b=oiYu+Si9v/LJu9wdILZ1sxNVscaex/ADbWQ+2L2oW8z5K/9pf3NQlXoaI+/UFbmae/V/
+	1smt3kzpHIA642Yh2a8vulJo1aUDZyU0zpdakDh3rC21S3E8IEzdZM38RcWJZt20yhMc3v
+	uevk267IsytvJqHatBN7l4kad4pxwT6U8=
+Received: by filterdrecv-5579bc58-bq8h2 with SMTP id filterdrecv-5579bc58-bq8h2-1-658ADDBB-5E
+        2023-12-26 14:05:47.287242062 +0000 UTC m=+6031425.619825826
+Received: from NzE1NDQ0NQ (unknown)
+	by geopod-ismtpd-canary-0 (SG) with HTTP
+	id GRgbbXCdTSG_xK5cTp8BNA
+	Tue, 26 Dec 2023 14:05:47.246 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Date: Tue, 26 Dec 2023 14:05:47 +0000 (UTC)
+From: DoubleTree by Hilton Hotel Boston-Downtown
+	<notifications@agoda-messaging.com>
+Mime-Version: 1.0
+Message-ID: <4ea556f9090f0314f2ed31d27a71c1a7/71d5b14222887d6f5560115133bfeb3b@agoda-messaging.com>
+Subject: Reply from DoubleTree by Hilton Hotel Boston-Downtown || Booking ID:
+ 679904870 (Jan 1-3, 2024)
+Reply-To: DoubleTree by Hilton Hotel Boston-Downtown
+	<0n9tabcx59ee0c7mmnt12rxjxeb0@agoda-messaging.com>
+References: <4ea556f9090f0314f2ed31d27a71c1a7@agoda-messaging.com>
+X-Message-ID: aWq+m/ngr7laiVEQq5zWAIwhwgguPoTK4sD886lW4l8=
+X-Property-ID: 2972
+In-Reply-To: <4ea556f9090f0314f2ed31d27a71c1a7@agoda-messaging.com>
+X-Member-ID: 453325584
+X-Auto-Response-Suppress: All
+X-Feedback-ID: 7154445:SG
+X-SG-EID: 
+ =?us-ascii?Q?IZykRWgfnkyPEY9FTuGzyNzs1LBBaJQl1r44Qq71iau7Aqsd538bB2THeW00yB?=
+ =?us-ascii?Q?yoAMbK0kxhe6dmtKPDdlH3snpJxu3zg5WsiOn2z?=
+ =?us-ascii?Q?9V1u=2FGbimW2PuxgrkPvtZ75RXw3rPMcE3GQkXUA?=
+ =?us-ascii?Q?LqyGpkAd7fsz1RKHNEc7XLPgZY9gO1litl+wV1i?=
+ =?us-ascii?Q?4Lvm7HD0oUQ8vbFETnVzl89Wqshp5uw2on1Zgx6?=
+ =?us-ascii?Q?Ac1J0Uw1W=2FyArU4+CA2qhqdrS5O3Hw6nDXx7CCR?=
+ =?us-ascii?Q?XbdbH7uDMy4kJvIN=2FUoATK16mNIrIbu=2FFbfTrEP?=
+ =?us-ascii?Q?l0U=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FL48g2ndg9Z+A04gNYUW2?=
+ =?us-ascii?Q?JmJjOkkQR7WZBK2e+Ata8C8Co7vIwsODXHv41PB?=
+ =?us-ascii?Q?GumnCN6d=2FifQn0DG93CKWahrblRUx62CnhGtgz1?=
+ =?us-ascii?Q?ZK7Gz1jN=2F9RikInHMZ+a45xlUXJHEanzLKw1J9I?=
+ =?us-ascii?Q?xxo1VvGjNhx50YQGsDCZQIKZHcbsLf3ZmM+j1P+?=
+ =?us-ascii?Q?7XqfhkqhQaHG5q2BtMgd+H0Oi6Ft5nZD1CfePLV?=
+ =?us-ascii?Q?IQb+XjPoyMXpzPQi+LzkbjdDwbjFXNRaPxdA4of?=
+ =?us-ascii?Q?W4YDtMH93gmED646ev02AC2rjsPoHcqujzU=2F=2Fjx?=
+ =?us-ascii?Q?FLXsUNKEXQrPEx37EOkS2xWU6Dj3JkDPbsMAXoA?=
+ =?us-ascii?Q?ArU18XO7LW0OXtUd5yychs9ocw2oAupq1JEplEL?=
+ =?us-ascii?Q?VoBEzPP5PytXLpWe9UfQ9Q91l2Cod4M9Q2o0sYj?=
+ =?us-ascii?Q?Sd5gzE59EHkCAXgapb+onoSCoUf9lVt9djGSr1t?=
+ =?us-ascii?Q?b2mzKwc4iJ9M=2FOeBWbWKlDJuL8GTsuG3NkYmnuO?=
+ =?us-ascii?Q?NUG1rUad+G9YBTG7w4bTVcqXb32fLVvt4g2=2Ffmd?=
+ =?us-ascii?Q?JDLaFIwOMyNuAq=2F7XNAsAUK=2FpKAcP0JcZARXJgi?=
+ =?us-ascii?Q?Dd=2F14iMBFvR8fPgwZSoTIEtd+G7=2FkQVp99=2FRBzZ?=
+ =?us-ascii?Q?u0tJIXGMDWlcsnjlgYyhmvJaMR3pd+DCd=2FE4DdA?=
+ =?us-ascii?Q?sf6zfXxplMHrGi83A9r7Zqkenr6=2FJv16SxGOW8d?=
+ =?us-ascii?Q?E7rSm8Y0Z96tWWjyaX0bLcGeYOOmIWlA=2F=2FR5iiL?=
+ =?us-ascii?Q?=2FhopnClknm207wZRxSMXUhHgtoKu1WnFiXG0+O2?=
+ =?us-ascii?Q?0Z4X3Y7H07RELK0NT5s2L1Kq5whKhnr5vC257lc?=
+ =?us-ascii?Q?FY2FsgO=2FIbQe3Ad1saHsbyLv1Juz1H4xoEcfOUv?=
+ =?us-ascii?Q?Z1FwjUWcIHZ8ZoYrVrIwPQS5dJy4342C=2Fk8SBjC?=
+ =?us-ascii?Q?AFYpo1Cu=2FFDmS=2FqYRh11LAeiBEOUe+Kti1E803W?=
+ =?us-ascii?Q?3mkvm4D9ioyH1Sll2kGJ6DgEeBmweXa51gfVkzr?=
+ =?us-ascii?Q?AXyh2DR9O7iXfeDiSsC5wDCIVsItpmTEF=2FWw02g?=
+ =?us-ascii?Q?S86FXF+1v3JBprZeXgR01cibv90yafnWhK=2F7S=2Fx?=
+ =?us-ascii?Q?UDMUuMm50pBA46xvq46plJcq9Mz99d7DYDzJP5W?=
+ =?us-ascii?Q?sb6mKXFTJa2MCPTnHhetlmNcWXk01dtLT7BnXMX?=
+ =?us-ascii?Q?mnfo0mfUiEWaS8F6dP8THAmQuewLS0FZ7tFSF7i?=
+ =?us-ascii?Q?bdit7713tvN+bhvxcQGZu6jJff5QCuMI+R7PyP3?=
+ =?us-ascii?Q?vZjpSmhyCUdLdoemoZlPtBlCg4U+llzC7TR+ffi?=
+ =?us-ascii?Q?EEYaY0HuyMbKwzCSYrAkHmkaQ0TOt68VYX+yDKp?=
+ =?us-ascii?Q?ObFOwSpNRl4gbVty008IFDDFCtY1bPGrW+nvcnU?=
+ =?us-ascii?Q?vojmb1t7LGgBG7Q0WViM9dHPD6zYPkJwLcWv7hL?=
+ =?us-ascii?Q?pJ8K4Ilz1jj+q1nX1kOeVc3cN5uCX4uqW+tbR64?=
+ =?us-ascii?Q?xI1613tRfqp024auY+Bfc1uf=2FNwFpNP0DWBj8BZ?=
+ =?us-ascii?Q?7nx0c3S3Phyb1hSMFMd9t6+i9+tdrm2zm+qIpwr?=
+ =?us-ascii?Q?RpneImkFosSKcrZctl6fMjxRcNkySD1PZiIJGtz?=
+ =?us-ascii?Q?rLU8t=2FU9GwIb4VuqurZl3rY8J+1SHoYpSxpgtjY?=
+ =?us-ascii?Q?8R0RNMtezHE+232dNmTodfajk3QBiUjNMlz4ZLm?=
+ =?us-ascii?Q?RjvDovN8nWYYEqDXjsBDAtjvXr0wsY2rOgeonjD?=
+ =?us-ascii?Q?DJPK=2Fh1EHRwRTwaxpH96J+j9LVLq14o10Irkjdt?=
+ =?us-ascii?Q?yFs+T+GosqGIc5NIVXByxM0QGdtWGMRy3ChjG9f?=
+ =?us-ascii?Q?3XeghgxR+Pu=2FQmZpgetF4iWWx5jQ5fD4lNHQPDo?=
+ =?us-ascii?Q?DlwhGtzT0qTYhdMRRon=2FdcCkUKPu6cyu=2FL1DLj7?=
+ =?us-ascii?Q?i053lztyYuM1m8sNh0X5Z1Q3kYBzk=2FvxU8rPJdc?=
+ =?us-ascii?Q?eJXoA42cw5zqBWHCnw+=2FZlZI=2FhFwb1KmWIu8Vg0?=
+ =?us-ascii?Q?h6tLc8+AUGFTmpnGC5ijfYrTlmmLUvcCOv65ngA?=
+ =?us-ascii?Q?s2PvDuxUu4T=2F1ic1i1QtwGx6vTSbm45sLw+uy2p?=
+ =?us-ascii?Q?rOKY=2FjCySvrwF4+skV5LERfAZYv7RkbEncPo5Wb?=
+ =?us-ascii?Q?C4TMeN8mzoR961UYfeOFSPjhzcKayt4oC0JMe82?=
+ =?us-ascii?Q?vKBye09+p6U7ehQDcjKCWc2PIt+jU=2FrbK+9e8dz?=
+ =?us-ascii?Q?fLRihO4UgKui5cw999rRXpJee48tBiK1sSPcY2q?=
+ =?us-ascii?Q?Dx3qIWXg0pD4j3CXH4iWIKXGz6EfgFviJMNsZnt?=
+ =?us-ascii?Q?hKclGEvvdFcH6B6fiStdxYeg3=2FjmAjngYFAOq5G?=
+ =?us-ascii?Q?tYfONBOohkNIeEh+pNd1AYN0uBjS29Nlrf25jNy?=
+ =?us-ascii?Q?BlF1Zd5jKaX6athmXxD+bumrsLPt4PSuB73KDfk?=
+ =?us-ascii?Q?2dFXtqVqb6LONS0AyTq6eIFkVqvk6yu3dLt2lyQ?=
+ =?us-ascii?Q?LjTRfvWTssryj5SQ8q=2Fmgvc=3D?=
+To: johndoe@gmail.com
+X-Entity-ID: 5B0QRRBc2QA2SSCSb/tEqw==
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w=
+3.org/TR/REC-html40/loose.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" style=3D"width: 100%;height: 1=
+00%;margin: 0;padding: 0;">
+<head>
+<meta content=3D"text/html; charset=3Dutf-8" http-equiv=3D"Content-Type">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0">
+<style type=3D"text/css">
+        html, body { width: 650px; height: 100%; margin: auto; padding: aut=
+o; }
+        body, table, td, p, a, li, blockquote { -webkit-text-size-adjust:10=
+0%; -ms-text-size-adjust:100%; }
+        img { height: auto; line-height: 100%; border: 0; outline: none; te=
+xt-decoration: none; display: inline; -ms-interpolation-mode: bicubic; }
+        table { border-collapse: collapse !important; mso-table-lspace: 0pt=
+; mso-table-rspace: 0pt; }
+        table td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        h1, h2, h3, h4, h5, h6 { margin: 0; }
+        table { display: table; }
+        td { display: table-cell; }
+        #outlook a { padding: 0; }
+        a { text-decoration: underline; }
+        a:hover { text-decoration: none; }
+        a:visited { color: #00adff; }
+        p[class=3Dmenu] a { text-decoration: none; }
+        p[class=3Dmenu] a:hover { text-decoration: underline; }
+        p[class=3Dmenu] a:hover img { opacity: 0.8; }
+        a[href^=3Dtel] { color: inherit; text-decoration: underline; }
+        table, tbody, tr, td { margin: 0; padding: 0 }
+        table[class=3Dentry-left] a, table[class=3Dentry-right] a { text-de=
+coration: none; }
+        table[class=3Dentry-left] a:hover, table[class=3Dentry-right] a:hov=
+er { text-decoration: underline; }
+        table[class=3Dbutton]:hover, table[class=3Dbutton-banner]:hover { o=
+pacity: 0.8; }
+        td[class=3Dbutton]:hover { opacity: 0.8; }
+        *[class=3Dvisible-mobile] { display: none !important; }
+        @media (max-width: 460px) { *[class=3Dhidden-desktop] { display: no=
+ne !important; } table[class=3Dcanvas-header], table[class=3Dcanvas-body], =
+table[class=3Dcanvas-footer], table[class=3Dbutton], table[class=3Dentry-le=
+ft-footer], table[class=3Dentry-right-footer], table[class=3Dentry-center-f=
+ooter],table[class=3Dentry-left] { width: 100% !important; } table[class=3D=
+canvas-header] table[class=3Dprofile-panel] table[class=3Dentry-left] {floa=
+t:none !important;margin-left:auto !important;margin-right:auto !important;=
+} img[class=3Dresponsive] { width: 100% !important; max-width: none !import=
+ant; height: auto !important; }  *[class=3Dvisible-desktop], *[class=3Dhidd=
+en-mobile] { display: none !important; } *[class=3Dvisible-mobile] { max-he=
+ight: none !important; overflow: visible !important; display: block !import=
+ant; } table[class=3Dvisible-mobile] { display: table !important; } tr[clas=
+s=3Dvisible-mobile] { display: table-row !important; } td[class=3Dvisible-m=
+obile] { display: table-cell !important; } table[class=3Dentry-left-footer]=
+, table[class=3Dentry-right-footer], table[class=3Dentry-left-footer] tr td=
+, table[class=3Dentry-right-footer] tr td {text-align:center !important;} t=
+able[class=3Dentry-center-footer] {height: auto !important;} *[class=3Dbold=
+] {font-weight:bold !important;} *[class=3Dcenter] {text-align:center !impo=
+rtant;} table[class=3D`-panel] {width:auto !important;float:none !important=
+;margin-left:auto !important;margin-right:auto !important;} }
+        @media only screen and (max-width: 480px){
+            .hide {display:none !important;}
+        }
+    </style>
+</head>
+<body yahoo=3D"fix" style=3D"width:650px; margin: auto; padding: auto; back=
+ground-color: #f9f9f9; font-size: 16px; line-height: 22px; font-family: Hel=
+vetica, Arial, sans-serif ; direction: ltr; color: #666666; -webkit-font-sm=
+oothing: antialiased; font-smoothing: antialiased; -webkit-text-size-adjust=
+: none; ">
+<table max-width=3D"650px" align=3D"center" width=3D"650px" style=3D"width:=
+650px; margin: auto; padding: auto; background-color: #f9f9f9; font-size: 1=
+6px; line-height: 22px; font-family: Helvetica, Arial, sans-serif ; directi=
+on: ltr; color: #666666; -webkit-font-smoothing: antialiased; font-smoothin=
+g: antialiased; -webkit-text-size-adjust: none; ">
+<tr>
+<td agoda-marker=3D"doc">
+<table height=3D"50" class=3D"header" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" style=3D"width: 100%; background-color: #ffffff; font-family:He=
+lvetica,Arial, sans-serif; direction:ltr;">
+<tr>
+<td style=3D"padding:0px;margin:0px;"></td>
+<td style=3D"padding:0px;margin:0px;" width=3D"650">
+<table style=3D"width: 100%; height: 50; background-color: #ffffff; font-fa=
+mily:Helvetica,Arial, sans-serif; direction:ltr;">
+<tbody>
+<tr>
+<td width=3D"1" style=3D"overflow: hidden; display: none !important;">
+<img width=3D"1" height=3D"1" border=3D"0" src=3D"http://tracking.agoda.com=
+/open?cID=3D1798841&memberID=3D453325584&cityID=3D0&countryID=3D0&subject=
+=3D0000&abUser=3DZ&propertyID=3D2972&bookingID=3D679904870&locale=3Den_US&m=
+essageID=3D383832009659276512&receiverType=3Dguest&amp;testid=3D0" style=3D=
+"visibility: hidden;"/>
+</td>
+<td align=3D"center" valign=3D"top" width=3D"25"></td>
+<td align=3D"left" valign=3D"middle" style=3D"align: left;">
+<a href=3D"http://tracking.agoda.com/click?cid=3D1798841&amp;memberID=3D297=
+2&amp;abUser=3DZ&amp;redirectUrl=3Dhttps://www.agoda.com/partners/tracking.=
+aspx?CID%3D1798841%26oc%3D1%26memberID%3D2972%26redirecturl%3D&amp;linkType=
+=3Dlogo" target=3D"_blank" title=3D"Agoda.com" style=3D"-webkit-text-size-a=
+djust: 100%;-ms-text-size-adjust: 100%;text-decoration: none;">
+<img src=3D"https://cdn6.agoda.net/images/hermes/20190724/agoda-logo-hermes=
+-email@2x.png" width=3D"69" height=3D"28" border=3D"0" alt=3D"Agoda.com" st=
+yle=3D"height: 28px;line-height: 29px;border: 0;outline: none;text-decorati=
+on: none;display: inline;-ms-interpolation-mode: bicubic;"/>
+</a>
+</td>
+<td align=3D"right" valign=3D"middle" style=3D"align: right;"><p id=3D"hi_l=
+abel" style=3D"font-family: Helvetica;font-size: 13px;text-align: right;col=
+or: #666666;margin: 0;">Hi, John Doe</p></td>
+<td align=3D"center" valign=3D"top" width=3D"25" style=3D"align: center; fo=
+nt-size: 12px;line-height: 12px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style=3D"padding:0px;margin:0px;"></td>
+</tr>
+</table>
+<table class=3D"body" style=3D"width: 650px; background-color: #f1f4f9; fon=
+t-family:Helvetica,Arial, sans-serif; direction:ltr;">
+<tr>
+<td style=3D"padding:0px;margin:0px;"></td>
+<td style=3D"padding:0px;margin:0px; width: 100%"">
+<table class=3D"inquiry-message" style=3D"width: 100%; font-family:Helvetic=
+a,Arial, sans-serif; direction:ltr;">
+<tr>
+<td colspan=3D"4" style=3D"height: 16px; line-height: 16px;">&nbsp;</td>
+</tr>
+<tr><td colspan=3D"4" style=3D"font-family: Helvetica;line-height: 20px; fo=
+nt-size: 16px; height: 24px; padding: 4px 0; text-align: center;" id=3D"not=
+iceHeader">New message from DoubleTree by Hilton Hotel Boston-Downtown</td>=
+</tr>
+<tr>
+<td colspan=3D"4" style=3D"height: 16px; line-height: 16px;">&nbsp;</td>
+</tr>
+<tr>
+<td colspan=3D"4" style=3D"width: 100%;">
+<table width=3D"100%">
+<tr>
+<td style=3D"width: 30px;">&nbsp;</td>
+<td align=3D"center" valign=3D"top" style=3D"height: 60px; width: 40px; pad=
+ding: 5px 0px;">
+<img id=3D"topAvatarImage" src=3D"https://cdn6.agoda.net/images/avatar/Avat=
+ars40x40@2x/40x40_a_host_blue@2x.png" height=3D"40" width=3D"40"/>
+</td>
+<td style=3D"width: 17px;">&nbsp;</td>
+<td align=3D"center" valign=3D"top" style=3D"font-size: 12px;line-height: 1=
+2px;border: 1px solid #e2e2e2;">
+<table style=3D"min-height:70px; width: 100%; background-color: #ffffff; fo=
+nt-family: Helvetica, sans-serif; table-layout: fixed; direction:ltr;">
+<tr>
+<td height=3D"20" style=3D"height: 20px; padding: 8px 0 0 0;">
+<table style=3D"width: 100%; font-family:Helvetica,Arial, sans-serif; direc=
+tion:ltr;">
+<tbody>
+<tr>
+<td style=3D"width: 16px;">&nbsp;</td>
+<td class=3D"senderName" align=3D"left" valign=3D"center" style=3D"text-ali=
+gn: left; font-size: 16px;font-weight: bold;line-height: 16px;color: #44444=
+4;" id=3D"sender">DoubleTree by Hilton Hotel Boston-Downtown</td>
+<td class=3D"senderDate" align=3D"right" valign=3D"center" style=3D"font-si=
+ze: 12px;letter-spacing: 1px;text-align: right;color: #999999;">Dec 26, 09:=
+05 PM ICT</td>
+<td style=3D"width: 16px;">&nbsp;</td>
+</tr>
+<tr>
+<td style=3D"width: 8px;">&nbsp;</td>
+<td id=3D'bookingId' align=3D"left" valign=3D"center" style=3D"text-align: =
+left; font-size: 12px;font-weight: normal;line-height: 16px;color: #6e6e6e;=
+">Booking ID: 679904870</td>
+<td align=3D"right" valign=3D"center">&nbsp;</td>
+<td style=3D"width: 8px;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top" height=3D"16" style=3D"line-height: 16p=
+x">&nbsp;</td>
+</tr>
+<tr>
+<td align=3D"center" height=3D"20" style=3D"height: 20px;">
+<table style=3D"width:100%; wrap:break-word; table-layout: fixed; font-fami=
+ly:Helvetica,Arial,sans-serif; direction:ltr;">
+<tbody>
+<tr>
+<td align=3D"left" valign=3D"top" width=3D"16" style=3D"width: 16px;"></td>
+<td align=3D"left" valign=3D"top" height=3D"20" style=3D"color: #6e808e;lin=
+e-height: 20px; font-size: 14px;">
+<span style=3D"color: #444444; font-weight: 500;" id=3D"messageType">Messag=
+e :&nbsp;</span><span style=3D"font-weight: 300;" id=3D"mainMessageContent"=
+>At times, premium rooms may go unsold. As a special offer, you can use<br>=
+the new Doubletree by Hilton Hotel Boston - Downtown eStandby Upgrade=C2=AE=
+<br>Program to potentially upgrade this reservation to a premium room.<br><=
+br>Upgrade now<br><br>DoubleTree by Hilton View Offers<br><br>DoubleTree by=
+ Hilton View offers<br><br>Why wait? Upgrade your stay now with this exclus=
+ive offer. VIEW MY<br>UPGRADE &gt;<br><br>explore<br><br>earn &amp; use poi=
+nts<br><br>contact us<br><br>Please do not reply to this email, as mail sen=
+t to this address cannot<br>be answered. If you have questions please visit=
+ our Customer Support<br>page and select the applicable contact method.<br>=
+Disclaimer: Room interior varies by hotel and the room booked may<br>differ=
+ from room shown in this email.<br>Hilton Honors=E2=84=A2 membership, inclu=
+ding the earning and redemption of<br>Points, is subject to Hilton Honors T=
+erms and Conditions.<br>This email was delivered to jdoe.892263@guest.book=
+ing.com. To<br>unsubscribe from receiving upgrade offers via email click he=
+re. To<br>unsubscribe from all marketing emails click here; this will preve=
+nt you<br>from receiving your Hilton Honors Monthly Statement, news, offers=
+ and<br>information from us. You can continue to check your account by logg=
+ing<br>into your profile, contacting by phone or chatting with us. You can<=
+br>also visit our support center for additional questions.<br>=C2=A9 2023 H=
+ilton | =E2=84=A2 indicates a trademark of Hilton Domestic Operating<br>Com=
+pany Inc. or its subsidiaries | Privacy Policy<br>Hilton Reservations and C=
+ustomer Care | 2050 Chenault Drive |<br>Carrollton, Texas 75006, USA<br>R05=
+_B05_MKT_AHC_V01_MO1951_H03_EN</span>
+</td>
+<td align=3D"right" valign=3D"top" width=3D"16" style=3D"width: 16px;"></td=
+>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top" height=3D"8" style=3D"line-height: 8px"=
+>&nbsp;</td>
+</tr>
+</table>
+</td>
+<td align=3D"right" valign=3D"top" width=3D"40" style=3D"width: 40px;">&nbs=
+p;</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td colspan=3D"4" style=3D"line-height: 8px;">&nbsp;</td> </tr>
+</table>
+<table style=3D"width: 100%; height: 134px; max-height: 134px; font-family:=
+Helvetica,Arial, sans-serif; background-color: #ffffff; direction:ltr;">
+<tr style=3D"line-height: 28px;"><td colspan=3D"5">&nbsp;</td></tr>
+<tr>
+<td align=3D"center" valign=3D"top" width=3D"70px">
+&nbsp;
+</td>
+<td id=3D"replyMessageIcon" align=3D"center" width=3D"80px" valign=3D"middl=
+e" style=3D"color: #666666;">
+<img src=3D"https://cdn6.agoda.net/images/email/illustration.png" width=3D"=
+79" height=3D"62" border=3D"0">
+</td>
+<td align=3D"center" valign=3D"top" width=3D"15px">
+&nbsp;
+</td>
+<td id=3D"replyMessage" align=3D"center" valign=3D"top">
+<table style=3D"height: 100%;">
+<tr><td style=3D"font-family: Helvetica,sans-serif; font-size: 14px;line-he=
+ight: 20px; text-align: left;color: #ff9900;">Got more to say?</td></tr>
+<tr><td style=3D"font-family: Helvetica,sans-serif; font-size: 14px;line-he=
+ight: 20px; text-align: left;color: #555555;">Just reply to this email like=
+ any other email, and it will be sent to the property directly.</td></tr>
+</table>
+</td>
+<td align=3D"center" valign=3D"top" width=3D"40px">
+&nbsp;
+</td>
+</tr>
+<tr style=3D"line-height: 26px;"><td colspan=3D"5">&nbsp;</td></tr>
+</table>
+<table width=3D"100%" align=3D"center">
+<tr>
+<td>
+<table class=3D"property-details" style=3D"border: 1px solid #dddddd; backg=
+round-color: #ffffff; width: 100%; font-family:Helvetica,Arial, sans-serif;=
+ direction:ltr;" bgcolor=3D"#ffffff">
+<tr>
+<td style=3D"padding:0;margin:0px;width: 30px;"></td>
+<td style=3D"padding:0px;margin:0px;background-color: #ffffff" width=3D"590=
+">
+<table style=3D"width: 100%; font-family:Helvetica,Arial, sans-serif; direc=
+tion:ltr;">
+<tr>
+<td width=3D"80%">
+<table style=3D"font-family:Helvetica,Arial, sans-serif; direction:ltr; mar=
+gin-left: 0px">
+<tr height=3D"16px" style=3D"height: 16px;">
+</tr>
+<tr height=3D"92px" width=3D"100%">
+<td>
+<table width=3D"100%">
+<tbody>
+<tr>
+<div class=3D"hidden-mobile" style=3D"width:0px; overflow: hidden !importan=
+t; display: none !important;">
+<td class=3D"hidden-mobile" style=3D"width:10px;">
+</td>
+</div>
+<td width=3D"92px">
+<table>
+<tbody>
+<tr>
+<td height=3D"2px">
+</td>
+</tr>
+<tr>
+<td align=3D"center" height=3D"90px" width=3D"90px">
+<a id=3D"bookingLink" href=3D"http://agoda.onelink.me/1640755593?pid=3DEmai=
+l&amp;amp;c=3Dinquiry_booking&amp;amp;af_dp=3Dagoda%3A%2F%2Fhotel%2FDoubleT=
+ree%2520by%2520Hilton%2520Hotel%2520Boston-Downtown%2F2972%26temp%3D0&amp;a=
+mp;adults=3D3&amp;amp;children=3D0&amp;amp;rooms=3D1&amp;amp;checkIn=3D2024=
+-01-01&amp;amp;checkOut=3D2024-01-03&amp;amp;los=3D2&amp;amp;cid=3D1772772&=
+amp;amp;af_force_dp=3Dtrue&amp;amp;af_r=3Dhttps%3A%2F%2Fwww.agoda.com%2Fdou=
+bletree-by-hilton-hotel-boston-downtown%2Fhotel%2Fboston-ma-us.html&amp;amp=
+;af_web_dp=3Dhttps%3A%2F%2Fwww.agoda.com%2Fdoubletree-by-hilton-hotel-bosto=
+n-downtown%2Fhotel%2Fboston-ma-us.html" target=3D"_blank" title=3D"property=
+ image">
+<img src=3D"http://pix8.agoda.net/hotelImages/2972/0/daefcc16a1c20617d6e661=
+f0adef7827.jpg?ca=3D7&amp;amp;ce=3D1&amp;amp;s=3D90x90&amp;amp;ar=3D1x1" wi=
+dth=3D"90" height=3D"90" style=3D"display:block" alt=3D"DoubleTree by Hilto=
+n Hotel Boston-Downtown">
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td height=3D"92px" style=3D"width:15px">
+</td>
+<td>
+<table height=3D"100%">
+<tbody>
+<tr>
+<td height=3D"22px">
+<p id=3D"propertyName" style=3D"font-family: Helvetica;font-size: 18px;font=
+-weight: bold;letter-spacing: -0.5px;color: #444444;margin: 0;">
+DoubleTree by Hilton Hotel Boston-Downtown
+</p>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+</tr>
+<tr>
+<td height=3D"16px">
+<p id=3D"hostLocation" style=3D"font-family: Helvetica;font-size: 13px;font=
+-weight: 300;color: #666666;margin: 0;">
+Boston (MA), United States
+</p>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+</tr>
+<tr>
+<td height=3D"16px">
+<p id=3D"hostReview" style=3D"font-family: Helvetica;font-size: 13px;font-w=
+eight: 300;color: #666666;margin: 0;">
+242 reviews
+</p>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+</tr>
+<tr>
+<td height=3D"14px">
+<img id=3D"starRating" src=3D"https://cdn0.agoda.net/images/emailmarketing/=
+HD-icon/4star.png" width=3D"78px" height=3D"14" style=3D"height: auto;line-=
+height: 100%;border: 0;outline: none;text-decoration: none;display: inline;=
+-ms-interpolation-mode: bicubic;">
+</td>
+</tr>
+<tr>
+<td height=3D"100%">
+</td>
+</tr>
+<tr>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td width=3D"20%">
+<table align=3D"center" valign=3D"top">
+<tr>
+<td align=3D"center" height=3D"22px">
+<p id=3D"reviewScore" style=3D"font-family: Helvetica;font-size: 18px;font-=
+weight: bold;text-align: center;color: #666666;height: 22px;margin: 0;">
+8.2
+</p>
+</td>
+</tr>
+<tr>
+<td height=3D"1px">
+</td>
+</tr>
+<tr>
+<td height=3D"16px">
+<p id=3D"scoreText" style=3D"font-family: Helvetica;font-size: 13px;font-we=
+ight: 300;text-align: center;color: #666666;margin: 0;">
+Excellent
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table style=3D"width: 100%; font-family:Helvetica,Arial, sans-serif; direc=
+tion:ltr;">
+<tr>
+<td width=3D"80%">
+<table height=3D"100%" width=3D"100%">
+<tbody>
+<tr>
+<td>
+<table width=3D"100%">
+<tr>
+<div class=3D"hidden-mobile" style=3D"width:0px; overflow: hidden !importan=
+t;">
+<td class=3D"hidden-mobile" style=3D"width:10px">
+</td>
+</div>
+<td height=3D"16px">
+<p id=3D"roomType" style=3D"font-family: Helvetica;font-size: 13px;font-wei=
+ght: 300;color: #666666;margin: 0;">
+Double Room - Disability Access&nbsp;&nbsp;|&nbsp;&nbsp;1 room&nbsp;&nbsp;|=
+&nbsp;&nbsp;Jan 1, 2024 - Jan 3, 2024
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td height=3D"4px">
+</td>
+</tr>
+<tr>
+<td>
+<table width=3D"100%">
+<tr>
+<div class=3D"hidden-mobile" style=3D"width:0px; overflow: hidden !importan=
+t;">
+<td class=3D"hidden-mobile" style=3D"width:10px">
+</td>
+</div>
+<td height=3D"16px">
+<p id=3D"numberOfTravelers" style=3D"font-family: Helvetica;font-size: 13px=
+;font-weight: 300;color: #666666;margin: 0;">
+3 adults,
+0 children
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td width=3D"20%">
+<table valign=3D"top" align=3D"center">
+<tbody>
+<tr>
+<td height=3D"14px">
+<table width=3D"100%">
+<tbody>
+<tr>
+<td width=3D"3px">
+</td>
+<td width=3D"100%" align=3D"right">
+<p id=3D"priceText" style=3D"font-family: Helvetica;font-size: 12px;font-we=
+ight: 300;text-align: center;color: #666666;margin: 0;">
+Total Price
+</p>
+</td>
+<td style=3D"width:18px">
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td height=3D"3px">
+</td>
+</tr>
+<tr>
+<td>
+<table width=3D"100%">
+<tbody>
+<tr>
+<td>
+<table>
+<tbody>
+<tr>
+<td height=3D"3px">
+</td>
+</tr>
+<tr>
+<td width=3D"29px" height=3D"14px">
+<p id=3D"currency" style=3D"font-family: Helvetica;font-size: 12px;font-wei=
+ght: 300;color: #666666;text-align: center;margin: 0;">
+USD
+</p>
+</td>
+</tr>
+<tr>
+<td height=3D"9px">
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td height=3D"26px" width=3D"100%" align=3D"right">
+<p id=3D"price" style=3D"font-family: Helvetica;font-size: 22px;text-align:=
+ center;color: #ef5857;margin: 0;">
+298.81
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr height=3D"16">
+</tr>
+</table>
+</td>
+<td style=3D"padding:0px;margin:0px;width: 30px;"></td>
+</tr>
+</table>
+<!-- Cancelled-->
+<table class=3D"status-bar" style=3D"border: solid 1px #dddddd; border-top:=
+ 0; width: 100%; font-family:Helvetica,Arial, sans-serif; direction:ltr;">
+<tr>
+<td style=3D"padding:0px;margin:0px;" width=3D"590">
+<table align=3D"center" valign=3D"top" style=3D"height: 64; width: 100%; ba=
+ckground-color: #ffffff;" bgcolor=3D"#ffffff">
+<tbody>
+<tr height=3D"14"></tr>
+<tr>
+<td valign=3D"middle" width=3D"100%" align=3D"center">
+<table style=3D"border:0; font-family:Helvetica,Arial, sans-serif; directio=
+n:ltr;">
+<tr>
+<td>
+<table align=3D"center">
+<tr>
+<td width=3D"20">
+<img src=3D"https://cdn6.agoda.net/images/avatar/email_blast/status_icon@2x=
+/positive-icon@2x.png" width=3D16 height=3D16 style=3D"height: auto;line-he=
+ight: 100%;border: 0;outline: none;text-decoration: none;display: inline;-m=
+s-interpolation-mode: bicubic;">
+</td>
+<td width=3D"8">
+</td>
+<td>
+<p id=3D"statusMessage" style=3D"padding-top: 2px; font-family: Helvetica;f=
+ont-size: 13px; color: #555555;margin: 0;">Congratulations! Your booking is=
+ confirmed. Your booking ID is 679904870.</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr height=3D"14"></tr>
+<tr>
+<td width=3D"100%" align=3D"center" valign=3D"middle">
+<div style=3D"margin:0;padding:0;width: 90%; border-radius: 3px; font-famil=
+y:Helvetica,Arial, sans-serif; direction:ltr;">
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tr>
+<td>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tr>
+<td bgcolor=3D"#488bf8" style=3D"padding: 10px 15px; border-radius:5px" ali=
+gn=3D"center">
+<a id=3D"statusLink" href=3D"http://tracking.agoda.com/click?cid=3D1798841&=
+amp;memberID=3D453325584&amp;abUser=3DZ&amp;redirectUrl=3Dhttp%3A%2F%2Fwww.=
+agoda.com%2Fmybooking%2Fcustomer-request.aspx%3FNjc5OTA0ODcw-JO5iaApke%2Bc%=
+3D&amp;linkType=3Dmb" target=3D"_blank" title=3D"Manage booking" style=3D"f=
+ont-size: 14px; font-family: Helvetica, Arial, sans-serif; font-weight: bol=
+d; color: #ffffff; text-decoration: none; display: inline-block;">Manage bo=
+oking</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+<tr height=3D"12"></tr>
+</tbody>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td style=3D"padding:0px;margin:0px;"></td>
+</tr>
+</table>
+<table id=3D"footer" width=3D"100%" class=3D"canvas-wrapper" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#f1f4f9">
+<tr>
+<td align=3D"center" valign=3D"top">
+<table width=3D"650" class=3D"canvas-footer" border=3D"0" cellspacing=3D"0"=
+ cellpadding=3D"0" style=3D"font-family:Helvetica,Arial, sans-serif; direct=
+ion:ltr;">
+<tr>
+<td align=3D"center" valign=3D"top" width=3D"30" style=3D"font-size: 30px; =
+line-height: 30px;"></td>
+<td>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" styl=
+e=3D"font-family:Helvetica,Arial, sans-serif; direction:ltr;">
+<tr>
+<td align=3D"center" valign=3D"top" height=3D"24"></td>
+</tr>
+<tr>
+<td>
+<table width=3D"50%" class=3D"entry-left-footer" align=3D"left" border=3D"0=
+" cellspacing=3D"0" cellpadding=3D"0" style=3D"font-family:Helvetica,Arial,=
+ sans-serif;direction:ltr;">
+<tr>
+<td class=3D"visible-desktop" align=3D"center" valign=3D"top" width=3D"50">=
+</td>
+<td>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" styl=
+e=3D"font-family:Helvetica,Arial, sans-serif;direction:ltr;">
+<tr>
+<td>
+<a href=3D"http://tracking.agoda.com/click?cid=3D1798841&amp;memberID=3D453=
+325584&amp;abUser=3DZ&amp;redirectUrl=3Dhttps://pages.agoda-emails.com/subs=
+criptioncenter2/selectchoice4?lang%3d1%26m%3d453325584%26jobid%3d31131670%2=
+6cid%3d1798841&amp;linkType=3Dus2" target=3D"_blank" title=3D"Unsubscribe" =
+style=3D"color:#999999; text-decoration:underline;font-size: 13px;">Unsubsc=
+ribe</a>
+</td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top" height=3D"15"></td>
+</tr>
+<tr>
+<td>
+<a href=3D"http://tracking.agoda.com/click?cid=3D1798841&amp;memberID=3D453=
+325584&amp;abUser=3DZ&amp;redirectUrl=3Dhttp://www.agoda.com/partners/track=
+ing.aspx?CID%3D1798841%26oc%3D1%26memberID%3D453325584%26redirecturl%3Dhttp=
+s://www.agoda.com/info/agoda_faq.html&amp;linkType=3Dfaq" target=3D"_blank"=
+ title=3D"24/7 Help" style=3D"color:#999999; text-decoration:underline;font=
+-size: 13px;">24/7 Help</a>
+</td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top" height=3D"15"></td>
+</tr>
+<tr>
+<td>
+<a href=3D"http://tracking.agoda.com/click?cid=3D1798841&amp;memberID=3D453=
+325584&amp;abUser=3DZ&amp;redirectUrl=3Dhttp://www.agoda.com/partners/track=
+ing.aspx?CID%3D1798841%26oc%3D1%26memberID%3D453325584%26redirecturl%3Dhttp=
+s://www.agoda.com/info/about-agoda.html&amp;linkType=3Daa" target=3D"_blank=
+" title=3D"About Agoda" style=3D"color:#999999; text-decoration:underline;f=
+ont-size: 13px;">About Agoda</a>
+</td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top" height=3D"15"></td>
+</tr>
+<tr>
+<td>
+<a href=3D"http://tracking.agoda.com/click?cid=3D1798841&amp;memberID=3D453=
+325584&amp;abUser=3DZ&amp;redirectUrl=3Dhttp://www.agoda.com/partners/track=
+ing.aspx?CID%3D1798841%26oc%3D1%26memberID%3D453325584%26redirecturl%3Dhttp=
+s://www.agoda.com/info/agoda-privacy.html&amp;linkType=3Dpp" target=3D"_bla=
+nk" title=3D"Privacy Policy" style=3D"color:#999999; text-decoration:underl=
+ine;font-size: 13px;">Privacy Policy</a><a href=3D"http://click.agoda-email=
+s.com/profile_center.aspx?qs=3Ddf59ab33912273088611fa11fbe384d1f7bdb8584ba3=
+16ba683390329837597f768d6d97a556dbd2231ff4aabdc25882" title=3D"profile cent=
+er"></a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table width=3D"50%" class=3D"entry-right-footer" align=3D"right" border=3D=
+"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"font-family:Helvetica,Aria=
+l, sans-serif;direction:ltr;">
+<tr class=3D"visible-mobile">
+<td align=3D"center" valign=3D"top" height=3D"24"></td>
+<td align=3D"center" valign=3D"top" height=3D"24"></td>
+</tr>
+<tr>
+<td>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" styl=
+e=3D"font-family:Helvetica,sans-serif;direction:ltr;">
+<tr>
+<td style=3D"font-size:13px; color: #555555; text-align:right; font-weight:=
+ 300;">Connect to Agoda=C2=A0</td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top" height=3D"10" style=3D"min-height: 10px=
+; line-height: 10px;">&nbsp;</td>
+</tr>
+<tr>
+<td style=3D"text-align:right; min-height: 25px; line-height: 25px;">
+<a href=3D"http://tracking.agoda.com/click?cid=3D1798841&amp;memberID=3D453=
+325584&amp;abUser=3DZ&amp;redirectUrl=3Dhttp://instagram.com/agoda&amp;link=
+Type=3Dig" title=3D"Instagram"><img src=3D"http://cdn0.agoda.net/images/ema=
+ilmarketing/footer_elements/Instagram.png" width=3D"24" height=3D"24" borde=
+r=3D"0" alt=3D"Instagram"></a>&nbsp;
+<a href=3D"http://tracking.agoda.com/click?cid=3D1798841&amp;memberID=3D453=
+325584&amp;abUser=3DZ&amp;redirectUrl=3Dhttp://www.facebook.com/agoda&amp;l=
+inkType=3Dfb" title=3D"Facebook"><img src=3D"http://cdn0.agoda.net/images/e=
+mailmarketing/footer_elements/Facebook.png" width=3D"24" height=3D"24" bord=
+er=3D"0" alt=3D"facebook"></a>&nbsp;
+<a href=3D"http://tracking.agoda.com/click?cid=3D1798841&amp;memberID=3D453=
+325584&amp;abUser=3DZ&amp;redirectUrl=3Dhttp://www.pinterest.com/agodadotco=
+m&amp;linkType=3Dpin" title=3D"Pinterest"><img src=3D"http://cdn0.agoda.net=
+/images/emailmarketing/footer_elements/Pinterest.png" width=3D"24" height=
+=3D"24" border=3D"0" alt=3D"Pinterest"></a>
+</td>
+</tr>
+</table>
+</td>
+<td class=3D"visible-desktop" align=3D"center" valign=3D"top" width=3D"50">=
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top" height=3D"16"></td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top" height=3D"20" style=3D"border-top: 2px =
+solid #dfe4ed;"></td>
+</tr>
+<tr>
+<td align=3D"center">
+<table width=3D"83%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=
+=3D"font-family:Helvetica,Arial, sans-serif; direction:ltr;">
+<tr>
+<td align=3D"center" valign=3D"top">
+<p style=3D"margin: 0; margin-bottom: 0; font-size: 12px; line-height: 19px=
+; color: #555555; font-weight: 300;">
+Except to the extent that Agoda Company Pte. Ltd (=E2=80=9CAgoda=E2=80=9D) =
+may need to intervene to provide reservation and other support services, al=
+l information contained herein is information exchanged between an Agoda us=
+er and the relevant accommodation provider, and therefore does not contain =
+or represent the views, opinions or recommendations of Agoda. Furthermore, =
+Agoda will not be held responsible for any information exchanged between th=
+e Agoda user and the relevant accommodation provider, which may or may not =
+result in the reservation of accommodation or the provision of services by =
+the relevant accommodation provider to an Agoda user.
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top" height=3D"20"></td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top" height=3D"20" style=3D"border-top: 2px =
+solid #dfe4ed;"></td>
+</tr>
+<tr>
+<td align=3D"center">
+<table width=3D"83%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=
+=3D"font-family:Helvetica,Arial, sans-serif; direction:ltr;">
+<tr>
+<td align=3D"center" valign=3D"top">
+<p style=3D"margin: 0; margin-bottom: 0; font-size: 13px; line-height: 19px=
+; color: #555555; font-weight: 300;">
+This email was sent by: Agoda Company Pte. Ltd., 30 Cecil Street #19-08, Pr=
+udential Tower, Singapore 049712
+</p>
+</td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top" height=3D"40"></td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top">
+<a href=3D"http://tracking.agoda.com/click?cid=3D1798841&amp;memberID=3D453=
+325584&amp;abUser=3DZ&amp;redirectUrl=3Dhttp://www.agoda.com/partners/track=
+ing.aspx?CID%3D1798841%26oc%3D1%26memberID%3D453325584%26redirecturl%3Dhttp=
+s://www.agoda.com&amp;linkType=3Dftlg" target=3D"_blank" title=3D"Agoda"><i=
+mg src=3D"https://cdn6.agoda.net/images/hermes/20190724/agoda-logo-hermes-e=
+mail@2x.png" width=3D"92" height=3D"37" border=3D"0" alt=3D"Agoda.com"></a>
+</td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top" height=3D"40"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td align=3D"center" valign=3D"top" width=3D"30" style=3D"font-size: 30px; =
+line-height: 30px;"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

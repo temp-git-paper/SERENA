@@ -1,0 +1,246 @@
+ARC-Seal: i=1; a=rsa-sha256; d=temp.com; s=arc-20180730; t=1736424262;
+	cv=none; b=abheVoykdzpoNkrhp1CiyraKUQiUhFS+kPImmH+68E/dmjtEDI01s2CAtVlY
+	 tNMePNwy6a+mVJ2skUO6Ji8riejfhaqOYggvkgnsDL/6a9VM4arqzBrL5UidrZh8qMqIO+
+	 dqDgNZBwySEwweUmFwknlqw3pTbTNe+zMaYtX4z9z+pCD0adyUw1Ijk4hRVF6wlGfqGL4t
+	 5p/UuIwAbLYH5AGpqXIn1t7GGbh5p5j2/s+3Z/Hr1B6YpwqdBiMZmsqK01LnIPr0ArukJ+
+	 EXQUgSoZf6Xz1bSV8Zx1sEcEtY1/X8RpDiLl1nLmc+w5z4j9sl8m+9Ffh3yLU4IjUTGI/v
+	 Mg==
+ARC-Message-Signature: i=1; a=rsa-sha256; d=temp.com; s=arc-20180730;
+	t=1736424262; c=relaxed/relaxed;
+	bh=mpHByStvtXGpkrLhk40Zi5C/JPN/zkBCmsa2Cu2dMbo=;
+	h=dkim-signature:message-id:from:to:subject:date; b=dtGq/aIz4p7yRLJUXlD
+	 AkXdJIcUVxYsM3buWFpYqacOp//osza0zsFYiH42H5kfipzaTu0rfphOIkYKxKwpOAzyJO
+	 MtuGJ7MsAwTcTayjKmI6VhGs45aE+KCJ2onwcCoXALhcrS+bHg2rsTGMG4TMkG2T4iAMQy
+	 BXki//tKAvJ0Ms9mowBpIu5Noso52JRW6qKYfIUEWQFP+10qru5lTUrlbLY2Tf1SQX4Pi7
+	 UrMgmsncU64Fh1v5Cs+KTzmB/4sJ9o16vQQ95VhE+uyQ4h4Kxwp37aJA0NO074XVAYUrY2
+	 BQyPLoPbDyVqBT9y2x/bW75J/t0pW1WfSkEXX2R+qTw==
+ARC-Authentication-Results: i=1; mx.temp.com;   spf=pass (mx.temp.com:
+ domain of pgadmcust@cardcompany.co.kr designates 103.215.145.176 as permitted sender)
+ smtp.mailfrom=pgadmcust@cardcompany.co.kr;  dkim=pass header.i=@cardcompany.co.kr; 
+ dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=cardcompany.co.kr
+Return-Path: <pgadmcust@cardcompany.co.kr>
+Received-SPF: pass (mx.temp.com: domain of pgadmcust@cardcompany.co.kr designates
+ 103.215.145.176 as permitted sender)  client-ip=103.215.145.176;
+ x-iptype=default;
+Authentication-Results: mx.temp.com;  spf=pass (mx.temp.com: domain of
+ pgadmcust@cardcompany.co.kr designates 103.215.145.176 as permitted sender)
+ smtp.mailfrom=pgadmcust@cardcompany.co.kr;  dkim=pass header.i=@cardcompany.co.kr; 
+ dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=cardcompany.co.kr
+X-temp-ESV: wmFn+6J4p63CbHmrKBwdbXFYKxUmFAUZjJ+Y
+X-Session-IP: 103.215.145.176
+Received: from sm2noti2.cardcompany.co.kr (sm2noti2.cardcompany.co.kr [103.215.145.176])
+  by crcvmail306.nm.temp.com with ESMTP id AWWoGwodR++uXwdsCcpsmA
+  for <johndoe@temp.com>
+  (version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256);
+  Thu, 09 Jan 2025 12:04:22 -0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=simple/simple; t=1736424262;
+	s=mds11; d=cardcompany.co.kr;
+	h=Content-Type:MIME-Version:Date:Subject:To:From:Message-ID;
+	bh=bYimVCht2FnO/UWDuvMjJYCYw7BhG8DFLMx/gdEo4eE=;
+	b=OYJyVeYgY6usT+BumG6/UxMkJJ2fAQObB2GOuqn4z/wSISNj/VqI6weGaFidRY0g
+	m34n00XQiT2QE7GyFAL8I4eZ8HqXkEs6ymSEPKMNb7bMwZoknCTofe1j3ymVGR8LXlT
+	Ni+LjiV/J/a7tgkXOdmm8fapcaTgrrEFSyiih4FlvVaYN3++QikPohg/n10b6V8cAEx
+	iWP+6l7zkgBQD5yfNMyESjJWI2wxC2bakahIfo4vAnxlYiXAqEPT0MeuB+AC8hbYKT0
+	3yVzQg3hVwEehE1vxX9Djz0ysRRDY2ot1pl9fQRTdUUJVAVnUUYHQbFCEzbWLGQpNfl
+	jSzHHuyBPg==
+Message-ID: <25259351981750_459336_-63335468>
+From: =?EUC-KR?B?TkhOIEtDUCC5373FwPy/6w==?= <pgadmcust@cardcompany.co.kr>
+To: <johndoe@temp.com>
+Subject: NHN cardcompany - =?utf-8?b?66Ow66Oo66CI66qs7JWg7YuA65287Yuw7Lm07L2U66as?=
+ =?utf-8?b?7JWEIOycoO2VnO2ajOyCrOydmCDqsrDsoJwg64K07Jet7J6F64uI64ukLg==?=
+Date: Thu, 09 Jan 2025 21:04:22 +0900
+MIME-Version: 1.0
+Content-Type: text/html; charset="ks_c_5601-1987"
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+<title>cardcompany</title>
+</head>
+
+<body style="margin:0;">
+<table width="780" cellspacing="1" cellpadding="0" border="0" bgcolor="d9d9d9" align="center">
+  <tr>
+    <td align="center" bgcolor="#FFFFFF" style="padding:10px 0 30px;">
+    
+    <!--Main Content--> 
+      
+      <!--Top-->
+      
+      <table width="718" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="left" style="padding-bottom:10px;"><a href="#"></a></td>
+          <td align="right" style="padding-bottom:10px;"><a href="#"></a></td>
+        </tr>
+      </table>
+      
+      <!--Title-->
+      
+      <table width="718" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="1" bgcolor="#d9d9d9"></td>
+        </tr>
+        <tr>
+          <td align="center" style="padding-top:30px;"></td>
+        </tr>
+        <tr>
+          <td align="center" style="padding:10px 0 40px 0; color:#777; font-family:dotum, sans-serif; font-size:12px;">The payment details made at Lululemon Athletica Co., Ltd. on January 9, 2025, at 21:04 are as follows.</td>
+        </tr>
+      </table>
+      
+      <!--Content-->
+      
+      <table width="718" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="339" valign="top">
+          
+          <!--Payment Information-->
+            
+            <table width="339" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="125" align="left" style="padding-bottom:6px;"></td>
+                  <td width=319" height="20" colspan="2" align="right" style="padding-bottom:6px;"></td>
+                </tr>
+                <tr>
+                  <td height="2" colspan="3" bgcolor="#0088b2"></td>
+                </tr>
+                <tr>
+                  <td align="left" height="32" style="font-weight:bold; color:#777; font-family:dotum, sans-serif; font-size:12px;">Orderer Name</td>
+                  <td colspan="2" align="left" style="color:#777; font-family:dotum, sans-serif; font-size:12px;">john doe</td>
+                </tr>
+                <tr>
+                  <td height="1" colspan="3" bgcolor="#d9d9d9"></td>
+                </tr>
+                <tr>
+                  <td align="left" height="32" style="font-weight:bold; color:#777; font-family:dotum, sans-serif; font-size:12px;">Payment Date and Time</td>
+                  <td colspan="2" align="left" style="color:#777; font-family:dotum, sans-serif; font-size:12px;">January 9, 2025, 21:04</td>
+                </tr>
+                <tr>
+                  <td height="1" colspan="3" bgcolor="#d9d9d9"></td>
+                </tr>
+                <tr>
+                  <td align="left" height="40" bgcolor="#f1f1f1" style="font-weight:bold; color:#777; font-family:dotum, sans-serif; font-size:12px;">Payment Amount</td>
+                  <td colspan="2" align="left" bgcolor="#f1f1f1" style="color:#00a8bf; font-weight:bold; font-family:verdana, Dotum, AppleGothic, sans-serif; font-size:22px;">$82.00<span style="color:#000; font-weight:bold; font-family:Dotum, sans-serif; font-size:16px;">&nbsp;USD</span></td>
+                </tr>
+                <tr>
+                  <td height="1" colspan="3" bgcolor="#d9d9d9"></td>
+                </tr>
+                <tr>
+                  <td align="left" height="32" style="font-weight:bold; color:#777; font-family:dotum, sans-serif; font-size:12px;">Card Type</td>
+                  <td align="left" style="color:#777; font-family:dotum, sans-serif; font-size:12px;">Citi Card</td>
+                  <td align="right"><a href="https://partner.cardcompany.co.kr/bill/card?cmd=card_bill&tno=143B4EF7C5A2B29E9E4BE1A86F7274CB"></a></td>
+                </tr>
+                <tr>
+                  <td height="1" colspan="3" bgcolor="#d9d9d9"></td>
+                </tr>
+                <tr>
+                  <td align="left" height="32" style="font-weight:bold; color:#777; font-family:dotum, sans-serif; font-size:12px;">Approval Number</td>
+                  <td colspan="2" align="left" style="color:#777; font-family:dotum, sans-serif; font-size:12px;">66944944</td>
+                </tr>
+                <tr>
+                  <td height="1" colspan="3" bgcolor="#d9d9d9"></td>
+                </tr>
+                <tr>
+                  <td align="left" height="32" style="font-weight:bold; color:#777; font-family:dotum, sans-serif; font-size:12px;">Order Number</td>
+                  <td colspan="2" align="left" style="color:#777; font-family:dotum, sans-serif; font-size:12px;">HRKV7J3P6JBT3VG6:610106:cardcompany_temppay</td>
+                </tr>
+                <tr>
+                  <td height="1" colspan="3" bgcolor="#d9d9d9"></td>
+                </tr>
+                <tr>
+                  <td align="left" height="32" style="font-weight:bold; color:#777; font-family:dotum, sans-serif; font-size:12px;">Installment Period</td>
+                  <td colspan="2" align="left" style="color:#777; font-family:dotum, sans-serif; font-size:12px;">Lump Sum</td>
+                </tr>
+                <tr>
+                  <td height="1" colspan="3" bgcolor="#d9d9d9"></td>
+                </tr>
+            </table>
+            
+            <!--//End of Payment Information--> 
+          
+          </td>
+          <td align="right" valign="top">
+          
+            <!--Store Information-->
+            
+            <table width="339" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="125" align="left" style="padding-bottom:6px;"></td>
+                  <td width="214" align="right" style="padding-bottom:6px;"><a href="http://shop.lululemon.com"></a></td>
+                </tr>
+                <tr>
+                  <td height="2" colspan="2" bgcolor="#0088b2"></td>
+                </tr>
+                <tr>
+                  <td align="left" height="32" style="font-weight:bold; color:#777; font-family:dotum, sans-serif; font-size:12px;">Store Name</td>
+                  <td align="left" style="color:#000; font-weight:bold; font-family:dotum, sans-serif; font-size:12px;">Lululemon Athletica Co., Ltd.</td>
+                </tr>
+                <tr>
+                  <td height="1" colspan="2" bgcolor="#d9d9d9"></td>
+                </tr>
+                <tr>
+                  <td align="left" height="32" style="font-weight:bold; color:#777; font-family:dotum, sans-serif; font-size:12px;">Order Product Name</td>
+                  <td align="left" style="color:#777; font-family:dotum, sans-serif; font-size:12px;">ITEM01058472</td>
+                </tr>
+                <tr>
+                  <td height="1" colspan="2" bgcolor="#d9d9d9"></td>
+                </tr>
+                <tr>
+                  <td align="left" height="32" style="font-weight:bold; color:#777; font-family:dotum, sans-serif; font-size:12px;">Website Address</td>
+                  <td align="left"><a href="http://www.lululemon.co.kr" style="color:#000; font-family:dotum, sans-serif; font-size:12px; text-decoration:underline;">www.lululemon.co.kr</a></td>
+                </tr>
+                <tr>
+                  <td height="1" colspan="2" bgcolor="#d9d9d9"></td>
+                </tr>
+                <tr>
+                  <td align="left" height="32" style="font-weight:bold; color:#777; font-family:dotum, sans-serif; font-size:12px;">Customer Inquiry</td>
+                  <td align="left" style="color:#777; font-family:dotum, sans-serif; font-size:12px;"></td>
+                </tr>
+                <tr>
+                  <td height="1" colspan="2" bgcolor="#d9d9d9"></td>
+                </tr>
+            </table>
+            
+            <!--//End of Store Information-->
+            
+          </td>
+        </tr>
+      </table>
+      
+      <!--Banner-->
+      
+      <table width="718" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="padding:25px 0;"><a href="http://www.cardcompany.co.kr"></a></td>
+        </tr>
+      </table>
+      
+      <!--End of Banner--> 
+            
+      <!--Notice-->
+      
+      <table width="718" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style="padding-top:20px;"></td>
+        </tr>
+      </table>
+      
+      <!--//End of Notice--> 
+      
+      <!--End of Main Content-->
+      
+      </td>
+  </tr>
+
+<!--Footer-->
+</table>
+<table width="780" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td></td>
+  </tr>
+</table>
+<!--//End of Footer-->
+
+

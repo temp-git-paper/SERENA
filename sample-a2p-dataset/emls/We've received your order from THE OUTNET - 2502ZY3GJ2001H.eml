@@ -1,0 +1,604 @@
+Delivered-To: johndoe@gmail.com
+Received: by 2002:ac2:5bdd:0:0:0:0:0 with SMTP id u29csp1690458lfn;
+        Tue, 25 Feb 2020 05:36:20 -0800 (PST)
+X-Google-Smtp-Source:
+ APXvYqzkloJ4nPU6mNxyH5/jAyW9MRvNHBhEZUGFVKBbWFM9mXXG3pLAXxN6WWorLJpjvrp5DBvC
+X-Received: by 2002:a5d:62d0:: with SMTP id
+ o16mr72940152wrv.197.1582637780040;        Tue, 25 Feb 2020 05:36:20 -0800
+ (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1582637780; cv=none;
+        d=google.com; s=arc-20160816;
+        b=H0m6AoJE6toFMx5dHr3+DJvvrJJ4Lu2RF9pjL9eT754Z59YHWAedNrS97IdrAI8/tb
+         8zi+wIIIjZvY7GbEzX9aOgZhLj0/+g1egQ04eXKR/0UCzaSA33AP2/gTVkTbzgihuzkK
+         P3NIXeUzmyf089brSQEEJ82qAeClYWhi2sGiYen9HKl5W3cnHbRNKsEZ7jagCAV/Qy57
+         hosV4NsUnmXf6SlNA2PLx2/FbSPRliaFRwqPtgvKCFY1Nj4on4U9B128rW18q011Mq7o
+         cUySRmuUso1eXPz67/NznTfAojln1jssT+9HsTIekyytzePHR4fepmrEpgHmCfr2tGP6
+         J4dg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=content-transfer-encoding:mime-version:subject:message-id:to        
+ :reply-to:from:date;        bh=yMSBnWsHzY9sjJkf0x3zfOJygvHQ6cAyqniHWSTOo7k=;
+        b=r2YyVTX7Im9j6E5XD2cmA9FOTgMNEWlRlHZ6JpZzSHXAz/oz/7Sr4bisQHIAQrj9za
+         SoNYf1z+rkKVnKTc5TYqTm8RiidSbbc8IC6egvnA/jhiYb6WNWEYsqTnDnq08tHfvrkU
+         crEthTUJP+VMOZy0nio571QvH3ArhbFtatTPbcGVEtF2v/yBDuFHXVml5mwSPvdCR26Z
+         SJjhBmadyhPp7BJf58SlfrhJNHxF0De9kyiTLB1O9BZM6yU5ITFue/R5RjCWNGB8grXn
+         7QrxIiYQnbE6gRjOWEBDo7XMrynhOIIZY59kaO2tnG0VnPL6Nnsb8GUehXJv3msLcZ8Y
+         mafQ==
+ARC-Authentication-Results: i=1; mx.google.com;       spf=fail (google.com:
+ domain of customercare@theoutnet.com does not designate 93.94.32.130 as
+ permitted sender) smtp.mailfrom=customercare@theoutnet.com
+Return-Path: <customercare@theoutnet.com>
+Received: from yoox-bk-02.yoox.com (yoox-bk-02.yoox.com. [93.94.32.130])
+        by mx.google.com with ESMTPS id
+ w11si14766167wrk.364.2020.02.25.05.36.19        for <johndoe@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 25 Feb 2020 05:36:20 -0800 (PST)
+Received-SPF: fail (google.com: domain of customercare@theoutnet.com does not
+ designate 93.94.32.130 as permitted sender) client-ip=93.94.32.130;
+Authentication-Results: mx.google.com;       spf=fail (google.com: domain of
+ customercare@theoutnet.com does not designate 93.94.32.130 as permitted
+ sender) smtp.mailfrom=customercare@theoutnet.com
+Return-Path: <customercare@theoutnet.com>
+X-CSA-Complaints: whitelist-complaints@eco.de
+Received: from [52.213.154.24] ([52.213.154.24:62694]
+ helo=PRDEMLEDG001AWS.prod.e-comm)	by t.contactlab.it (envelope-from
+ <customercare@theoutnet.com>)	(ecelerity 3.5.10.45038 r(Core:3.5.10.0)) with
+ ESMTP	id 59/B2-17485-1D2255E5; Tue, 25 Feb 2020 14:36:18 +0100
+Received: from smtp.ewe1.aws.prod.e-comm (10.241.5.87) by
+ Anonymous.PRDEMLEDG001AWS.prod.e-comm (10.241.5.61) with Microsoft SMTP
+ Server id 14.3.408.0; Tue, 25 Feb 2020 13:36:12 +0000
+Received: from [10.240.59.6] (helo=admin.wcs01.prd3.ewe1)	by
+ smtp.ewe1.aws.prod.e-comm with esmtp (Exim 4.90_1)	(envelope-from
+ <customercare@theoutnet.com>)	id 1j6aNg-000AZC-Fs	for johndoe@gmail.com; Tue,
+ 25 Feb 2020 13:36:12 +0000
+Received: from admin.wcs01.prd3.ewe1 (localhost [127.0.0.1])	by
+ admin.wcs01.prd3.ewe1 (Postfix) with ESMTP id 002F5ABA7E	for
+ <johndoe@gmail.com>; Tue, 25 Feb 2020 13:36:03 +0000 (UTC)
+Date: Tue, 25 Feb 2020 13:36:02 +0000
+From: THE OUTNET <customercare@theoutnet.com>
+Reply-To: <customercare@theoutnet.com>
+To: <johndoe@gmail.com>
+Message-ID:
+ <-815980174.327991.1582637763000.JavaMail.wasuser@admin.wcs01.prd3.ewe1>
+Subject: We've received your order from THE OUTNET - 2502ZY3GJ2001H
+MIME-Version: 1.0
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+<!doctype HTML>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<title>THE OUTNET</title>
+        <style type="text/css">
+            /*CLIENT SPECIFIC STYLES*/
+            #outlook a { padding: 0; }
+
+            /* Force Outlook to provide a "view in browser" menu link. */
+            body { width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin: 0; padding: 0; }
+            
+
+                /* Prevent Webkit and Windows Mobile platforms from changing default font sizes, while not breaking desktop design. */
+            .ExternalClass { width: 100%; }
+
+            /* Force Hotmail to display emails at full width */
+            .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height: 100%; }
+
+            /* Force Hotmail to display normal line spacing.  */
+            #backgroundTable { margin: 0; padding: 0; width: 100% !important; line-height: 100% !important; }
+
+            /* End reset */
+            @media yahoo {
+                .yahoofix { width: 640px; margin: 0 auto; }
+            }
+            @media screen {
+                
+
+                /*WEB FONTS*/
+                @font-face { font-family: "Body-WebS"; font-style: normal; font-weight: normal; src: url("{$fontsServerPath}THEOUTNET-Body-WebXL.eot"); src: url("<xsl:value-of select='$fontsServerPath'/>/THEOUTNET-Body-WebXL.eot#iefix") format("embedded-opentype"), url("<xsl:value-of select='$fontsServerPath'/>/THEOUTNET-Body-WebXL.woff") format("woff"), url("<xsl:value-of select='$fontsServerPath'/>/THEOUTNET-Body-WebXL.ttf") format("truetype"), url("<xsl:value-of select='$fontsServerPath'/>/THEOUTNET-Body-WebXL.svg#Body-WebS") format("svg") }
+                @font-face { font-family: "BodyItalic-WebS"; font-style: normal; font-weight: normal; src: url("<xsl:value-of select='$fontsServerPath'/>/THEOUTNET-BodyItalic-WebXL.eot"); src: url("<xsl:value-of select='$fontsServerPath'/>/THEOUTNET-BodyItalic-WebXL.eot#iefix") format("embedded-opentype"), url("<xsl:value-of select='$fontsServerPath'/>/THEOUTNET-BodyItalic-WebXL.woff") format("woff"), url("<xsl:value-of select='$fontsServerPath'/>/THEOUTNET-BodyItalic-WebX.ttf") format("truetype"), url("<xsl:value-of select='$fontsServerPath'/>/THEOUTNET-BodyItalic-WebXL.svg#BodyItalic-WebS") format("svg") }
+                @font-face { font-family: "Bold-WebS"; font-style: normal; font-weight: normal; src: url("<xsl:value-of select='$fontsServerPath'/>/THEOUTNET-Bold-WebXL.eot"); src: url("<xsl:value-of select='$fontsServerPath'/>/THEOUTNET-Bold-WebXL.eot#iefix") format("embedded-opentype"), url("<xsl:value-of select='$fontsServerPath'/>/THEOUTNET-Bold-WebXL.woff") format("woff"), url("<xsl:value-of select='$fontsServerPath'/>/THEOUTNET-Bold-WebXL.ttf") format("truetype"), url("<xsl:value-of select='$fontsServerPath'/>/THEOUTNET-Bold-WebXL.svg#Bold-WebS") format("svg") }
+                @font-face { font-family: "BoldItalic-WebS"; font-style: normal; font-weight: normal; src: url("<xsl:value-of select='$fontsServerPath'/>/THEOUTNET-BoldItalic-WebXL.eot"); src: url("<xsl:value-of select='$fontsServerPath'/>/THEOUTNET-BoldItalic-WebXL.eot#iefix") format("embedded-opentype"), url("<xsl:value-of select='$fontsServerPath'/>/THEOUTNET-BoldItalic-WebXL.woff") format("woff"), url("<xsl:value-of select='$fontsServerPath'/>/THEOUTNET-BoldItalic-WebXL.ttf") format("truetype"), url("<xsl:value-of select='$fontsServerPath'/>/THEOUTNET-BoldItalic-WebXL.svg#BoldItalic-WebS") format("svg") }
+            }
+
+            /*Centered framework*/
+            .container { max-width: 640px !important; min-width: 310px; display: block !important; margin: 0 auto !important; clear: both !important; background-color: #ffffff; }
+
+            /**Centered two stack bottom text framework**/
+            .box-container { max-width: 560px !important; margin: 0 auto !important; clear: both !important; background-color: #ffffff; }
+
+            /**Display mobile footer only framework**/
+            .footer-container { max-width: 640px !important; min-width: 310px; margin: 0 auto !important; clear: both !important; background-color: #ffffff; }
+
+            /*Responsive fluid image*/
+            .fluidImage { height: auto !important; max-width: 640px !important; width: 100% !important; }
+            .mobile-header { min-width: 320px; }
+
+            /*Copy styling*/
+            .header-title { font-family: "Body-WebS", Futura, Avenir, Gill Sans, Helvetica Neue, Arial; font-size: 22px; text-transform: uppercase; line-height: 24px; letter-spacing: 0; color: #000000; margin-bottom: -10px; -webkit-font-smoothing: antialiased; }
+            .sub-header { font-family: "Body-WebS", Futura, Avenir, Gill Sans, Helvetica Neue, Arial; font-size: 17px; text-transform: none; letter-spacing: 0.7px; color: #000000; padding-bottom: 2px; -webkit-font-smoothing: antialiased; }
+            .paragraph { font-family: "Body-WebS", Futura, Avenir, Gill Sans, Helvetica Neue, Arial; font-size: 17px; text-transform: none; letter-spacing: 0.7px; color: #000000; line-height: 25px; -webkit-font-smoothing: antialiased; }
+            .bold-font { font-family: "Bold-WebS", Futura, Avenir, Gill Sans, Helvetica Neue, Arial; font-size: 14px; text-transform: none; color: #000000; letter-spacing: 1px; padding-bottom: 10px; line-height: 20px; -webkit-font-smoothing: antialiased; }
+
+            /*Add class for italic font header on two stack module*/
+            .italic-font { font-family: "BoldItalic-WebS", Futura, Avenir, Gill Sans, Helvetica Neue, Arial; font-size: 28px; font-style: italic; text-transform: uppercase; color: #000000; line-height: 30px; letter-spacing: 0.7px; }
+
+            /*Add class for lighter font bodycopy on two stack module*/
+            .light-sell { font-family: "Body-WebS", Futura, Avenir, Gill Sans, Helvetica Neue, Arial !important; font-size: 17px; text-transform: none !important; letter-spacing: 0.7px; color: #000000; line-height: 25px; font-weight: 100 !important; }
+
+            /*PIDS module*/
+            .resize90percent { width: 90% !important; height: auto !important; }
+            .resize100percent { width: 100% !important; height: auto !important; }
+            td[class=padleft] { padding-left: 5px !important; padding-right: 0px !important; }
+            td[class=padright] { padding-left: 0px !important; padding-right: 5px !important; }
+
+            /* .first-module-image { padding-top:25px;}*/
+
+            /*Viewoport styling mobile*/
+            @media screen and (max-width:310px) {
+                .desktop-only { display: none !important; }
+                .desktop-view310 { display: none !important; }
+                .mobile-border { display: none !important; }
+                .show-mobile-image310 { overflow: visible !important; float: none !important; display: inline-table !important; line-height: 100% !important; }
+            }
+            @media screen and (max-width:550px) {
+
+                /**STACKABLE FOOTER CSS**/
+                td[class="pattern"] .desktop-footer { padding-left: 0 !important; padding-right: 0 !important; }
+                td[class="pattern"] .desktop-footer-social { padding-right: 0 !important; width: 100%; }
+                td[class="pattern"] .desktop-footer-main { display: none; }
+                td[class="pattern"] .desktop-footer-small { display: table-cell !important; width: 100% !important; height: auto !important; max-height: inherit !important; overflow: visible !important; float: none !important; padding-bottom: 10px; }
+                td[class="pattern"] .desktop-footer-small { width: 100%; display: block !important; }
+                td[class="product_description"] { padding-left: 0; }
+                .resize310 { width: 100% !important; }
+                .remove550view { display: none !important; }
+            }
+            @media only screen and (max-width:600px) {
+                .pid-table { width: 100% !important; }
+                .nomob { display: none !important; }
+                .pidspacer-mob { padding-top: 30px; }
+                *[class=float100percent] { width: 100% !important; float: left; display: block; }
+                .oneRowpid { width: 100% !important; }
+
+                /*one row pid style*/
+                .pidwidth150 { width: 150px !important; }
+                .no-padding-mob { padding: 0 !important; }
+            }
+
+            /**Two stack responsive center fix**/
+            @media screen and (max-width:630px) {
+                .mob-inline { display: inline-table !important; }
+                .column-padding { padding-top: 40px; }
+                .mainContent { width: <xsl:value-of select='$contentWidthMobile'/> !important; padding-left: 0 !important; padding-right: 0 !important; }
+
+                /**center align element fix**/
+                .width100Fix { width: 100% !important; }
+
+                /**center align element fix for 640 main images**/
+                .fluidImageMain { height: auto !important; max-width: 640px !important; width: 100% !important; }
+                .box-container { max-width: calc(100% - 40px) !important; }
+            }
+
+            /*Viewoport styling desktop*/
+            @media screen and (max-width:640px) and (max-width:1024px) {
+                .desktop-view { display: block !important; }
+                .desktop-inline-view { display: inline-block !important; }
+                .desktop-view310 { display: block !important; }
+                .mobile-view, .table-mobile-view { display: none !important; }
+
+                /**two stack module**/
+                *[class].responsive-columnStack { width: 320px !important; }
+                .desktop-header { display: inline-table !important; max-width: 640px; width: 100%; }
+
+                /**two stack module with right text**/
+                td[class="pattern"] .product_image img { width: 100%; height: auto !important; }
+                td[class="product_description"] { padding-left: 10px; }
+            }
+
+            /*Viewoport styling landscape mobile*/
+            @media screen and (max-width:480px) {
+                .mobile-view { display: block !important; float: none !important; }
+                .table-mobile-view { display: table !important; }
+                .desktop-view, .desktop-inline-view { display: none !important; }
+
+                /*Gmail fix**/
+                .show-mobile-header { overflow: visible !important; width: 100% !important; height: auto !important; float: none !important; display: block !important; line-height: 100% !important; margin-bottom: 20px !important;  }
+                .show-mobile-footer { overflow: visible !important; float: none !important; display: block !important; line-height: 100% !important; margin-bottom: 20px !important; }
+                .show-mobile-image480 { overflow: visible !important; float: none !important; display: inline-table !important; line-height: 100% !important; width: 100%; }
+                .show-mobile-probs { overflow: visible !important; float: none !important; display: block !important; line-height: 100% !important; }
+                .mobile-border { width: 2% !important; }
+                .padding-top { padding-top: 20px; }
+                .product { padding-bottom: 40px !important; }
+                .terms_and_co { padding-top: 150px; }
+
+                /*two stack module full width*/
+                *[class].responsive-columnStack, *[class].responsive-columnStack img { width: 100% !important; height: auto !important; }
+
+                /**two stack module with right text**/
+                td[class="pattern"] .product { padding-left: 0 !important; padding-right: 0 !important; }
+                td[class="pattern"] .product_description { padding-right: 0 !important; width: 100%; }
+                td[class="pattern"] .product_image { display: none; }
+                td[class="pattern"] .product_image_small { display: table-cell !important; width: 100% !important; height: auto !important; max-height: inherit !important; overflow: visible !important; float: none !important; padding-bottom: 10px; }
+                td[class="pattern"] .product_image_small img { width: 100%; display: block !important; }
+                td[class="product_description"] { padding-left: 0; }
+
+                /**FIRST HEADER and NAV SPACER **/
+                .header-title { padding-top: 20px; padding-bottom: 0; margin-bottom: 0; }
+                .padding-top, .first-module { height: 30px; }
+                .first-module-image { height: 80px; }
+                td[class="product_description"] { padding-left: 0; }
+
+                .box-container {
+                    width: calc(100% - 40px);
+                    min-width: 0 !important;
+                }
+            }
+
+            /**TWO STACK MODULE COPY CSS**/
+            *[class].column_intro { font-family: "Body-WebS", Futura, Avenir, Gill Sans, Helvetica Neue, Arial; font-size: 17px; text-transform: none; letter-spacing: 0.7px; line-height: 25px; color: #000000; -webkit-font-smoothing: antialiased; }
+            *[class].column_headline { font-family: "Bold-WebS", Futura, Avenir, Gill Sans, Arial; font-weight: 200; font-size: 28px; text-transform: uppercase; line-height: 30px; letter-spacing: 0.7px; color: #000000; -webkit-font-smoothing: antialiased; }
+            *[class].column_body_copy { font-family: "Body-WebS", Futura, Avenir, Gill Sans, Helvetica Neue, Arial; font-size: 16px; text-transform: none; letter-spacing: 0; line-height: 24px; color: #000000; -webkit-font-smoothing: antialiased; }
+
+            /**TWO STACK MODULE RIGHT TEXT CSS**/
+            *[class].twocolumn_tab { font-family: "Body-WebS", Futura, Avenir, Gill Sans, Arial; font-size: 14px; text-transform: none; letter-spacing: 0; line-height: 20px; text-transform: uppercase; -webkit-font-smoothing: antialiased; }
+            *[class].twocolumn_intro { font-family: "Body-WebS", Futura, Avenir, Gill Sans, Helvetica Neue, Arial; font-size: 14px; text-transform: none; letter-spacing: 0; line-height: 20px; -webkit-font-smoothing: antialiased; }
+            *[class].twocolumn_headline { font-family: "Body-WebS", Futura, Avenir, Gill Sans, Arial; font-size: 22px; text-transform: uppercase; line-height: 24px; letter-spacing: 0; -webkit-font-smoothing: antialiased; }
+            *[class].twocolumn_body_copy { font-family: "Body-WebS", Futura, Avenir, Gill Sans, Helvetica Neue, Arial; font-size: 14px; text-transform: none; letter-spacing: 0; line-height: 20px; -webkit-font-smoothing: antialiased; }
+        </style>
+    </head>
+
+    
+    <!-- start:espot:Email_MA_Password_Change:Email_Content_Header -->
+        <body style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin: 0; padding: 0; width: 100%;">
+	<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td style="background: #fff;">
+        <!-- HEADER SHELL STARTS -->
+<!--header desktop row starts -->
+<table class="container" width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="min-width: 310px; background-color: #ffffff; max-width: 640px; display: block; margin: 0 auto; clear: both;">
+<tr>
+    <td>
+        <table class="desktop-header" width="640" border="0" cellspacing="0" cellpadding="0" align="center" style="background: #ffffff;margin: 0 auto !important;">
+            <tr>
+                <td height="20"></td>
+            </tr>
+            <tr>
+                <td width="212"></td>
+                <td width="216" align="center"><a href="https://www.theoutnet.com"></a>
+                </td>
+                <td width="212"></td>
+            </tr>
+            <tr>
+                <td height="20"></td>
+            </tr>
+        </table>
+        <table class="desktop-view desktop-header" width="620" border="0" cellspacing="0" cellpadding="0" align="center" style="background: #ffffff;margin: 0 auto !important;">
+            <tr>
+                <td height="5"></td>
+            </tr>
+            <tr>
+                <td align="left" style="padding: 1px 8px 12px 4px; font-family: 'Bold-WebS', Futura, Avenir, Gill Sans, Helvetica Neue, Arial;font-size: 14px;text-transform: uppercase; letter-spacing: 0.5px; color: #000000; white-space:nowrap;">
+                    <a href="https://www.theoutnet.com/Shop/Just-In" style="text-decoration: none; color: #000000;-webkit-font-smoothing: antialiased;">JUST IN</a>
+                </td>
+                <td align="center" style="padding: 1px 20px 12px 6px; font-family: 'Bold-WebS', Futura, Avenir, Gill Sans, Helvetica Neue, Arial; font-size: 14px;text-transform: uppercase; letter-spacing: 0.5px; color: #000000;-webkit-font-smoothing: antialiased;">
+                    <a href="https://www.theoutnet.com/Shop/Designers" style="text-decoration: none; color: #000000;-webkit-font-smoothing: antialiased;">DESIGNERS</a>
+                </td>
+                <td align="center" style="padding: 1px 15px 12px; font-family: 'Bold-WebS', Futura, Avenir, Gill Sans, Helvetica Neue, Arial; font-size: 14px;text-transform: uppercase; letter-spacing: 0.5px; color: #000000;-webkit-font-smoothing: antialiased;">
+                    <a href="https://www.theoutnet.com/Shop/Clothing" style="text-decoration: none; color: #000000;">CLOTHING</a>
+                </td>
+                <td align="right" style="padding:1px 4px 12px 20px; font-family: 'Bold-WebS', Futura, Avenir, Gill Sans, Helvetica Neue, Arial;font-size: 14px;text-transform: uppercase; letter-spacing: 0.5px; color: #000000;-webkit-font-smoothing: antialiased;">
+                    <a href="https://www.theoutnet.com/Shop/Bags" style="text-decoration: none; color: #000000;">BAGS</a>
+                </td>
+            </tr>
+            <tr>
+                <td height="10"></td>
+            </tr>
+        </table>
+        <!--header desktop row starts -->
+
+        <!--HEADER SHELL ENDS-->
+    </td>
+</tr>
+</table>
+    <!-- end:espot:Email_MA_Password_Change:Email_Content_Header -->
+<!-- END ContentRecommendation.jsp --><!-- Introduction --><!-- BEGIN ContentRecommendation.jsp  () --><!-- JSPs References: HomePage.jsp, BundleDisplay.jsp , CategoryNavigationDisplay.jsp, CompareProductsDisplay.jsp
+					  DynamicKitDisplay.jsp, PackageDisplay.jsp, ProductDisplay.jsp, 
+					  SearchResultDisplay.jsp, SubCategoryPage.jsp, TopCategoryPage.jsp
+					   , Footer.jsp , OrderCancelNotify.jsp , OrderCreateNotify.jsp
+					  OrderShipmentNotify.jsp, AccountActivationNotify.jsp, PasswordChangeNotify.jsp,
+					  PasswordResetNotify.jsp, WishlistCreateNotify.jsp,  LandingPage.jsp, 	
+					  ShippingDetailDisplay.jsp, ShopCartDisplay.jsp, StaticContent, 
+					  Static JSPs, Footer_UI.jsp, Header_UI.jsp, ProductDescription_UI.jsp  
+					  UserTime--> <!-- start:espot:Email_OrderConfirmation_Intro:Email_OrderConfirmation_Intro_Content -->
+        
+<table align="center" class="centeredTable content-typography" border="0" cellpadding="0" cellspacing="0" style="font-family: 'Body-WebS', Futura, Avenir, Gill Sans, Helvetica Neue, Arial, sans-serif; margin: 0 auto; width: 670px; font-weight: 600; font-size: 13px;">
+	<tbody>
+		<tr>
+			<td style="text-align:right; padding-right:10px">
+				Order Number: 2502ZY3GJ2001H
+				<br><br>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table align="center" class="centeredTable" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto; width: 670px; padding: 0 25px;">
+	<tbody>
+	<tr>
+		<td style="font-family:Arial,Helvetica,sans-serif; font-size:13px">
+			<p style="font-family:Arial,Helvetica,sans-serif; font-size:13px; margin-bottom: 20px">
+				Hi John Doe,<br><br> Great choice! Thank you for shopping at THE OUTNET.<br><br>Here's a summary of your order. If you’d like to check its status, just select Sign In from the top left hand corner of our site, click on Track Your Order and enter your order number.
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td style="font-family:Arial,Helvetica,sans-serif; font-size:13px">
+			<table border="0" cellpadding="0" cellspacing="0" width="667px" style="font-family:Arial,Helvetica,sans-serif; font-size:13px">
+				<tbody>
+					<tr style="font-weight:600">
+						<td width="290" align="left">Item list</td>
+						<td width="188" align="center">Quantity</td>
+						<td width="188" align="right">Price</td>
+					</tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+		<tr>
+			<td style="margin: 8px 0px 12px;">
+			</td>
+		</tr>
+	</tbody>
+</table>
+    <!-- end:espot:Email_OrderConfirmation_Intro:Email_OrderConfirmation_Intro_Content -->
+
+<!-- END ContentRecommendation.jsp --><!-- Order Items --><!-- BEGIN ContentRecommendation.jsp  () --><!-- JSPs References: HomePage.jsp, BundleDisplay.jsp , CategoryNavigationDisplay.jsp, CompareProductsDisplay.jsp
+					  DynamicKitDisplay.jsp, PackageDisplay.jsp, ProductDisplay.jsp, 
+					  SearchResultDisplay.jsp, SubCategoryPage.jsp, TopCategoryPage.jsp
+					   , Footer.jsp , OrderCancelNotify.jsp , OrderCreateNotify.jsp
+					  OrderShipmentNotify.jsp, AccountActivationNotify.jsp, PasswordChangeNotify.jsp,
+					  PasswordResetNotify.jsp, WishlistCreateNotify.jsp,  LandingPage.jsp, 	
+					  ShippingDetailDisplay.jsp, ShopCartDisplay.jsp, StaticContent, 
+					  Static JSPs, Footer_UI.jsp, Header_UI.jsp, ProductDescription_UI.jsp  
+					  UserTime--><!-- start:espot:Email_OrderConfirmation_Products:Email_OrderConfirmation_Products_Content -->
+        <table align="center" class="centeredTable" border="0" cellpadding="0" cellspacing="0" width="667px" style="margin: 0 auto; font-family: Arial,Helvetica,sans-serif; font-size: 13px;">
+<tbody>
+<tr height="31px" width="667px">
+<td width="102">
+</td>
+<td width="188" align="left">Jocund cotton-blend bouclé-tweed jacket</td>
+<td width="188" align="center">1</td>
+<td width="188" align="right">$199.00</td>
+</tr>
+</tbody>
+</table>
+
+    <!-- end:espot:Email_OrderConfirmation_Products:Email_OrderConfirmation_Products_Content --><!-- END ContentRecommendation.jsp --><!-- Item Promos --><!-- Order Promos --><!-- BEGIN ContentRecommendation.jsp  () --><!-- JSPs References: HomePage.jsp, BundleDisplay.jsp , CategoryNavigationDisplay.jsp, CompareProductsDisplay.jsp
+					  DynamicKitDisplay.jsp, PackageDisplay.jsp, ProductDisplay.jsp, 
+					  SearchResultDisplay.jsp, SubCategoryPage.jsp, TopCategoryPage.jsp
+					   , Footer.jsp , OrderCancelNotify.jsp , OrderCreateNotify.jsp
+					  OrderShipmentNotify.jsp, AccountActivationNotify.jsp, PasswordChangeNotify.jsp,
+					  PasswordResetNotify.jsp, WishlistCreateNotify.jsp,  LandingPage.jsp, 	
+					  ShippingDetailDisplay.jsp, ShopCartDisplay.jsp, StaticContent, 
+					  Static JSPs, Footer_UI.jsp, Header_UI.jsp, ProductDescription_UI.jsp  
+					  UserTime--><!-- start:espot:Email_OrderConfirmation_Promotions:Email_OrderConfirmation_Promotions_Content -->
+        <table align="center" class="centeredTable" border="0" cellpadding="0" cellspacing="0" width="667px" style="margin: 0 auto; font-family: Arial,Helvetica,sans-serif; font-size: 13px;">
+<tbody>
+<tr height="23px">
+<td width="102"></td>
+<td width="188" align="left">Promotion: </td>
+<td width="188" align="center"></td>
+<td width="188" align="right">$45.77</td>
+</tr>
+</tbody>
+</table>
+    <!-- end:espot:Email_OrderConfirmation_Promotions:Email_OrderConfirmation_Promotions_Content --><!-- END ContentRecommendation.jsp --><!-- Tax --><!-- BEGIN ContentRecommendation.jsp  () --><!-- JSPs References: HomePage.jsp, BundleDisplay.jsp , CategoryNavigationDisplay.jsp, CompareProductsDisplay.jsp
+					  DynamicKitDisplay.jsp, PackageDisplay.jsp, ProductDisplay.jsp, 
+					  SearchResultDisplay.jsp, SubCategoryPage.jsp, TopCategoryPage.jsp
+					   , Footer.jsp , OrderCancelNotify.jsp , OrderCreateNotify.jsp
+					  OrderShipmentNotify.jsp, AccountActivationNotify.jsp, PasswordChangeNotify.jsp,
+					  PasswordResetNotify.jsp, WishlistCreateNotify.jsp,  LandingPage.jsp, 	
+					  ShippingDetailDisplay.jsp, ShopCartDisplay.jsp, StaticContent, 
+					  Static JSPs, Footer_UI.jsp, Header_UI.jsp, ProductDescription_UI.jsp  
+					  UserTime--><!-- start:espot:Email_OrderConfirmation_TaxesandDuties:Email_OrderConfirmation_TaxesandDuties_Content -->
+        <table align="center" class="centeredTable" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto; font-family: Arial,Helvetica,sans-serif; font-size: 13px;">
+<tbody>
+<tr>
+<td align="right" width="667">Taxes and Duties $45.77</td>
+</tr>
+</tbody>
+</table>
+    <!-- end:espot:Email_OrderConfirmation_TaxesandDuties:Email_OrderConfirmation_TaxesandDuties_Content --><!-- END ContentRecommendation.jsp --><!-- Order Total --><!-- BEGIN ContentRecommendation.jsp  () --><!-- JSPs References: HomePage.jsp, BundleDisplay.jsp , CategoryNavigationDisplay.jsp, CompareProductsDisplay.jsp
+					  DynamicKitDisplay.jsp, PackageDisplay.jsp, ProductDisplay.jsp, 
+					  SearchResultDisplay.jsp, SubCategoryPage.jsp, TopCategoryPage.jsp
+					   , Footer.jsp , OrderCancelNotify.jsp , OrderCreateNotify.jsp
+					  OrderShipmentNotify.jsp, AccountActivationNotify.jsp, PasswordChangeNotify.jsp,
+					  PasswordResetNotify.jsp, WishlistCreateNotify.jsp,  LandingPage.jsp, 	
+					  ShippingDetailDisplay.jsp, ShopCartDisplay.jsp, StaticContent, 
+					  Static JSPs, Footer_UI.jsp, Header_UI.jsp, ProductDescription_UI.jsp  
+					  UserTime--><!-- start:espot:Email_OrderConfirmation_Total:Email_OrderConfirmation_Total_Content -->
+        <table align="center" class="centeredTable" style="margin: 0 auto;">
+<tbody>
+<tr>
+<td style="margin: 8px 0px 12px;"></td>
+</tr>
+</tbody>
+</table>
+<table align="center" class="centeredTable" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto; font-family: Arial,Helvetica,sans-serif; font-size: 13px;">
+</table>
+<table align="center" class="centeredTable" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto; font-family: Arial,Helvetica,sans-serif; font-size: 13px;">
+<tbody>
+<tr>
+<td align="right" width="667">Shipping $25.00</td>
+</tr>
+<tr>
+<td align="right" width="667">Total $269.77</td>
+</tr>
+</tbody>
+</table>
+    <!-- end:espot:Email_OrderConfirmation_Total:Email_OrderConfirmation_Total_Content --><!-- END ContentRecommendation.jsp --><!-- Shipping and Billing --><!-- BEGIN ContentRecommendation.jsp  () --><!-- JSPs References: HomePage.jsp, BundleDisplay.jsp , CategoryNavigationDisplay.jsp, CompareProductsDisplay.jsp
+					  DynamicKitDisplay.jsp, PackageDisplay.jsp, ProductDisplay.jsp, 
+					  SearchResultDisplay.jsp, SubCategoryPage.jsp, TopCategoryPage.jsp
+					   , Footer.jsp , OrderCancelNotify.jsp , OrderCreateNotify.jsp
+					  OrderShipmentNotify.jsp, AccountActivationNotify.jsp, PasswordChangeNotify.jsp,
+					  PasswordResetNotify.jsp, WishlistCreateNotify.jsp,  LandingPage.jsp, 	
+					  ShippingDetailDisplay.jsp, ShopCartDisplay.jsp, StaticContent, 
+					  Static JSPs, Footer_UI.jsp, Header_UI.jsp, ProductDescription_UI.jsp  
+					  UserTime--><!-- start:espot:Email_OrderConfirmation_Shipping:Email_OrderConfirmation_Shipping_Content -->
+        <table align="center" class="centeredTable" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto; font-family: Arial,Helvetica,sans-serif; font-size: 13px; padding-top: 20px;">
+<tbody>
+<tr style="font-weight:600">
+<td>Shipping address</td>
+<td>Billing address</td>
+<td align="right">Shipping method</td>
+</tr>
+<tr>
+<td colspan="3"></td>
+</tr>
+<tr>
+<td> John Doe<br>
+10347 S Ewing Ave<br>
+<br>
+Chicago, IL <br>
+60617<br>
+USA</td>
+<td> John Doe<br>
+10347 S Ewing Ave<br>
+<br>
+Chicago, IL <br>
+60617<br>
+USA</td>
+<td valign="top" align="right">EXPRESS</td>
+</tr>
+<tr>
+<td colspan="3"></td>
+</tr>
+</tbody>
+</table>
+    <!-- end:espot:Email_OrderConfirmation_Shipping:Email_OrderConfirmation_Shipping_Content --><!-- END ContentRecommendation.jsp --><!-- Pre-Order --><!-- BEGIN ContentRecommendation.jsp  () --><!-- JSPs References: HomePage.jsp, BundleDisplay.jsp , CategoryNavigationDisplay.jsp, CompareProductsDisplay.jsp
+					  DynamicKitDisplay.jsp, PackageDisplay.jsp, ProductDisplay.jsp, 
+					  SearchResultDisplay.jsp, SubCategoryPage.jsp, TopCategoryPage.jsp
+					   , Footer.jsp , OrderCancelNotify.jsp , OrderCreateNotify.jsp
+					  OrderShipmentNotify.jsp, AccountActivationNotify.jsp, PasswordChangeNotify.jsp,
+					  PasswordResetNotify.jsp, WishlistCreateNotify.jsp,  LandingPage.jsp, 	
+					  ShippingDetailDisplay.jsp, ShopCartDisplay.jsp, StaticContent, 
+					  Static JSPs, Footer_UI.jsp, Header_UI.jsp, ProductDescription_UI.jsp  
+					  UserTime--><!-- start:espot:Email_OrderConfirmation_Delivery:Email_OrderConfirmation_Delivery_Content -->
+        <table align="center" class="centeredTable" border="0" cellpadding="0" cellspacing="0" width="659" style="margin: 0 auto; font-family: Arial,Helvetica,sans-serif; font-size: 13px; padding-top: 20px; width: 659px;">
+<tbody>
+<tr>
+<td>
+<p style="font-family:Arial,Helvetica,sans-serif; font-size:13px">
+Please make sure that someone can sign for your parcel at the above shipping address when it’s delivered.<br><br>Stay tuned to receive an email update when your purchase is almost ready to arrive at its final destination.<br><br>Best regards,<br>Customer Care
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+    <!-- end:espot:Email_OrderConfirmation_Delivery:Email_OrderConfirmation_Delivery_Content --><!-- END ContentRecommendation.jsp --><!-- Footer --><!-- BEGIN ContentRecommendation.jsp  () --><!-- JSPs References: HomePage.jsp, BundleDisplay.jsp , CategoryNavigationDisplay.jsp, CompareProductsDisplay.jsp
+					  DynamicKitDisplay.jsp, PackageDisplay.jsp, ProductDisplay.jsp, 
+					  SearchResultDisplay.jsp, SubCategoryPage.jsp, TopCategoryPage.jsp
+					   , Footer.jsp , OrderCancelNotify.jsp , OrderCreateNotify.jsp
+					  OrderShipmentNotify.jsp, AccountActivationNotify.jsp, PasswordChangeNotify.jsp,
+					  PasswordResetNotify.jsp, WishlistCreateNotify.jsp,  LandingPage.jsp, 	
+					  ShippingDetailDisplay.jsp, ShopCartDisplay.jsp, StaticContent, 
+					  Static JSPs, Footer_UI.jsp, Header_UI.jsp, ProductDescription_UI.jsp  
+					  UserTime--><!-- start:espot:Email_OrderConfirmation_Footer:Email_OrderConfirmation_Footer_Content -->
+<!--volutamente vuoto -->
+    <!-- end:espot:Email_OrderConfirmation_Footer:Email_OrderConfirmation_Footer_Content --><!-- start:espot:Email_MA_Password_Change:Email_Content_Footer -->
+        <!-- STACKABLE FOOTER MODULE-->
+<!--SPACER MODULE-->
+<table class="container" width="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="min-width: 310px; background-color: #ffffff; max-width: 640px; display: block; margin: 0 auto; clear: both;">
+    <tr>
+        <td height="40"></td>
+        <td height="40"></td>
+    </tr>
+</table>
+<!--SPACER MODULE ENDS-->
+<table class="container desktop-view" width="640" border="0" cellpadding="0" cellspacing="0" align="center" style="min-width: 310px; background-color: #ffffff; max-width: 640px; display: block; margin: 0 auto; clear: both;">
+    <tr>
+        <td width="640" style="font-family:'Body-WebS', Futura, Avenir, Gill Sans, Helvetica Neue, Arial; font-size: 10px; padding-top: 5px; padding-bottom: 10px; text-align: center; letter-spacing: 1px;">
+            Contact us on +44 330 022 4250, 24 hours a day, seven days a week.
+        </td>
+    </tr>
+</table>
+<table class="container desktop-view" width="640" border="0" cellpadding="0" cellspacing="0" align="center" style="min-width: 310px; background-color: #ffffff; background: #fafafa; max-width: 640px; display: block; margin: 0 auto; clear: both;">
+<tr>
+    <td class="pattern" width="640" style="background: #fafafa;">
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td class="desktop-footer" style="padding-top: 20px; background: #fafafa; padding-bottom: 30px;" align="center">
+                    <table class="desktopfooter-container" width="100%" cellpadding="0" cellspacing="0" style="background: #fafafa;">
+                        <tr>
+                            <td align="left" class="desktop-footer-main resize310" width="270" style="text-transform:uppercase;font-family:'Body-WebS', Futura, Avenir, Gill Sans, Helvetica Neue, Arial; font-size:12px; text-transform:none; line-height:16px;letter-spacing:1px;color:#777777;text-align:right;background: #fafafa; padding-top: 4px;">
+                                Follow @theoutnet
+                            </td>
+                            <td class="desktop-footer-social" width="60%" align="center" style="background: #fafafa;">
+                                <table cellpadding="0" cellspacing="0" align="center">
+
+                                    <tr>
+                                        <td width="35" style="float:left; padding-right:6px;">
+                                            <a href="https://www.facebook.com/THEOUTNET/"></a>
+                                        </td>
+                                        <td width="35" style="float:left; padding-right:6px;">
+                                            <a href="https://twitter.com/theOutnet"></a>
+                                        </td>
+                                        <td width="35" style="float:left; padding-right:6px;">
+                                            <a href="https://www.pinterest.com/theoutnet/"></a>
+                                        </td>
+                                        <td width="35" style="float:left; padding-right:6px;">
+                                            <a href="https://www.instagram.com/theoutnet/"></a>
+                                        </td>
+                                        <td width="35" style="float:left; padding-right:6px;">
+                                            <a href="https://plus.google.com/+THEOUTNET"></a>
+                                        </td>
+                                        <td width="35" style="float:left; padding-right:6px;">
+                                            <a href="https://www.youtube.com/theoutnet"></a>
+                                        </td>
+                                        <td width="90" class="remove550view"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td align="center" width="100%" style="float: left; text-transform:none; font-family:'Body-WebS', Futura, Avenir, Gill Sans, Helvetica Neue, Arial; font-size: 12px; letter-spacing:1px; color:#777777; text-align:center; background: #fafafa; padding-bottom:18px;">
+        Download THE OUTNET App
+    </td>
+</tr>
+<tr>
+    <td width="100%" style="line-height:30px; color:#000000; text-align:center; background: #fafafa; padding-bottom:20px;">
+        <table width="100%" style="width: 100%;">
+            <tr>
+                <td align="right" width="48%">
+                    <a href="https://itunes.apple.com/gb/app/the-outnet/id421387883?mt=8">
+                    </a>
+                </td>
+                <td width="3%" style="width: 4%;"></td>
+                <td align="left" width="48%" style="vertical-align: bottom;">
+                    <a href="https://play.google.com/store/apps/details?id=com.theoutnet">
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+</table>
+
+
+     </td>
+	</tr>
+</table>
+    <!-- end:espot:Email_MA_Password_Change:Email_Content_Footer -->
+
+
+</body></html>
+<!-- END ContentRecommendation.jsp -->

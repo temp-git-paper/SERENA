@@ -1,0 +1,1056 @@
+Delivered-To: johndoe@gmail.com
+Received: by 2002:a02:ac0f:0:b0:430:8fd0:f2a1 with SMTP id a15csp2939339jao;
+        Sun, 15 Oct 2023 22:55:36 -0700 (PDT)
+X-Google-Smtp-Source:
+ AGHT+IH26ZgM6pQEebxzynNwPi4iDQp2B9/UZ9zt3CHhpqxpasrjKm5rAYdJe7aucVrQlWiAJy80
+X-Received: by 2002:a0c:f645:0:b0:65a:f332:10f9 with SMTP id
+ s5-20020a0cf645000000b0065af33210f9mr36291051qvm.31.1697435735908;       
+ Sun, 15 Oct 2023 22:55:35 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697435735; cv=none;
+        d=google.com; s=arc-20160816;
+        b=T4eFF66H6/jVhYHlmLpwMuskw0rpT9WbQwTnuB8ThpGmNpqPeLqsY7sMKEmi6inb4P
+         YjFAHMkHIzEcGKp2Y0MQVakv8Atj0tpDRPN4ULU364Oa2/tL5dHWRGo+svSvKWDvlqhH
+         sSWAgvGRdYaWhbfY+xoF3y3WGAsGwpNxjPScDXIafxj4WAWQdXYcWMJIMGGVsZ1lN1hQ
+         /ISpheUJ5zPQDK33aZvg2EXZ0Y49gBXyy5pib8RRriZxk2ImqFrxcVsId6s5UYOZocJh
+         NyPz41aVVxResCDEVwFlHpwXO1avSy1M03tCuCb0UeGo3cq+tA1NmVMVdpOoyc05e0PE
+         BusQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=content-transfer-encoding:message-id:to:from:subject:mime-version        
+ :date:sender:dkim-signature:dkim-signature;       
+ bh=v388vQ/dxGkYPxCg9o0lAPVzsSIaBeyqGqbGzJeZMEY=;       
+ fh=bfEmn1wL+6G8NLBHSNypGSkhSc8FyDkaz7TMx2bbZk0=;       
+ b=pXxfeei/jbVYmgh9PsUMSgIzbPPpbNPFl1haA0b/Wuud5PfrDcBd+h8GXm6U7hlXxg        
+ Ht0YRkJFJC6kVLe4X3EnN2BSnpLD5ZDlEYiSYJnbNdGBFkRmJt3gDKWg/zfvo+iZkYC4        
+ ECHRoyhfzuUWx4EbBKYIWbnxfXmQW5tPfhhUVgKnyo1jlLHqpJ6HoxkgdgJTKCkHf1EJ        
+ UfovXWIIgbiJUsgLVTnoZ/hOQRyzKsjczwk9BUlnQzv1tgWyl8U0K21d8Ie3848Smsns        
+ oRG4nOMPnL5NL+OUyLZV1e5gOzSii3qmR+JIpz34fMzWpsO/WOMrtu8f+QuT3XBzsjhQ        
+ v44Q==
+ARC-Authentication-Results: i=1; mx.google.com;       dkim=pass
+ header.i=@sayweee.com header.s=krs header.b=gzknT+S1;       dkim=pass
+ header.i=@mailgun.org header.s=mg header.b=nZC9PtHw;       spf=pass
+ (google.com: domain of bounce+3e4f33.16e615-johndoe=gmail.com@sayweee.com
+ designates 143.55.227.99 as permitted sender)
+ smtp.mailfrom="bounce+3e4f33.16e615-johndoe=gmail.com@sayweee.com";      
+ dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=sayweee.com
+Return-Path: <bounce+3e4f33.16e615-johndoe=gmail.com@sayweee.com>
+Received: from relay.sayweee.com (relay.sayweee.com. [143.55.227.99])       
+ by mx.google.com with UTF8SMTPS id
+ x14-20020a05620a258e00b0077573e813dasi5088081qko.202.2023.10.15.22.55.35
+        for <johndoe@gmail.com>        (version=TLS1_3
+ cipher=TLS_AES_128_GCM_SHA256 bits=128/128);        Sun, 15 Oct 2023 22:55:35
+ -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ bounce+3e4f33.16e615-johndoe=gmail.com@sayweee.com designates 143.55.227.99
+ as permitted sender) client-ip=143.55.227.99;
+Authentication-Results: mx.google.com;       dkim=pass header.i=@sayweee.com
+ header.s=krs header.b=gzknT+S1;       dkim=pass header.i=@mailgun.org
+ header.s=mg header.b=nZC9PtHw;       spf=pass (google.com: domain of
+ bounce+3e4f33.16e615-johndoe=gmail.com@sayweee.com designates 143.55.227.99
+ as permitted sender)
+ smtp.mailfrom="bounce+3e4f33.16e615-johndoe=gmail.com@sayweee.com";      
+ dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=sayweee.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=sayweee.com;
+ q=dns/txt; s=krs; t=1697435735; x=1697442935; h=Content-Transfer-Encoding:
+ Content-Type: Message-Id: To: To: From: From: Subject: Subject: Mime-Version:
+ Date: Sender: Sender: X-Feedback-Id;
+ bh=v388vQ/dxGkYPxCg9o0lAPVzsSIaBeyqGqbGzJeZMEY=; =?utf-8?q?b=3DgzknT+S1FYKX?=
+ =?utf-8?q?tO98+mJSfz6CJMPhoJmYLHumP6ramwCs9jAv/jHxgLtVwSa8Pg3Jo87WoFjxATaGc?=
+ =?utf-8?q?+zqluhZbJRs+/uxLZ9EvJkA8lhS6coM35g671MTm/2jZycJh4JbS3TGiaBWD+jPcl?=
+ =?utf-8?q?hovDgfo1q8/li2QIkACXpVCs8QhLc=3D?=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org;
+ q=dns/txt; s=mg; t=1697435735; x=1697442935; h=Content-Transfer-Encoding:
+ Content-Type: Message-Id: To: To: From: From: Subject: Subject: Mime-Version:
+ Date: Sender: Sender: X-Feedback-Id;
+ bh=v388vQ/dxGkYPxCg9o0lAPVzsSIaBeyqGqbGzJeZMEY=; =?utf-8?q?b=3DnZC9PtHwsjpL?=
+ =?utf-8?q?ajs4kG3liDkqc1emfsAcUm+/DH7oLJWXFf6fu2ifmlP2cpupHfb5vYpCK/ycnWQ1k?=
+ =?utf-8?q?5WcuBm3CyiwQ6votoZHbbBcBaO872d5Xk+qpNVe1QXVKhxaFsvF3UvtrQNQ0bigiq?=
+ =?utf-8?q?qBI5CLDoyjsdTZk36h4In3AgKoAh0=3D?=
+X-Feedback-Id: =?utf-8?q?noreply=40sayweee=2Ecom=3Aorder=5Fconfirm-weee-mess?=
+ =?utf-8?q?age-service-prd=3A634900a6e1547cb8a77cbc04=3Amailgun?=
+X-Mailgun-Sending-Ip: 143.55.227.99
+X-Mailgun-Sid: WyI1NDkzOCIsInBzZTAwMDEzQGdtYWlsLmNvbSIsIjE2ZTYxNSJd
+Received: from <unknown> (<unknown> []) by 250b7181844b with HTTP id
+ 652cd057445d751e3211e939; Mon, 16 Oct 2023 05:55:35 GMT
+Sender: noreply@sayweee.com
+Date: Mon, 16 Oct 2023 05:55:35 +0000
+Mime-Version: 1.0
+Subject: =Order Confirmation  - 40656457 - Weee!
+From: Weee! <noreply@sayweee.com>
+To: johndoe@gmail.com
+X-Mailgun-Tag: order_confirm
+X-Mailgun-Tag: weee-message-service-prd
+X-Mailgun-Drop-Message: false
+X-Mailgun-Variables: {"source-code": "so", "tag": "order_confirm", "track-id":
+ "405c734b-77ba-4523-83e2-f890d9e340e9"}
+Message-Id: <20231016055535.d0917e2e41a163cb@sayweee.com>
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Poppins', 'Avenir Next', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Helvetica', 'Roboto', 'Arial', 'Seogoe UI', 'Ubuntu', sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            background: #F4F7FA;
+        }
+
+
+        #app {
+            max-width: 450px;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        .content-box {
+            border: 1px solid #EAEAEA;
+            background-color: #ffffff;
+
+        }
+
+        .weee-logo {
+            padding: 20px 0;
+            text-align: center;
+            display: block;
+        }
+
+        .item-box {
+            padding: 20px 20px 15px;
+            background-color: #ffffff;
+        }
+
+        .item-title {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 120%;
+            color: #111111;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .item-list {
+            padding-top: 20px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 120%;
+            color: #777777;
+        }
+
+        .item-child {
+            margin-bottom: 5px;
+            color: #777777;
+            font-size: 14px;
+            font-weight: 500;
+            height: 40px;
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        .item-left {
+            display: table-cell;
+            padding-right: 8px;
+            width: 60%;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .item-right {
+            line-height: 22px;
+            display: table-cell;
+            white-space: nowrap;
+            width: 40%;
+            vertical-align: middle;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .item-cover {
+            width: 40px;
+            height: 40px;
+            margin-right: 5px;
+        }
+
+        .item-name {
+            line-height: 40px;
+            display: inline-block;
+            vertical-align: top;
+            width: 70%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: #777777;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .item-q {
+            display: inline-block;
+            text-align: center;
+            white-space: nowrap;
+            width: 48%;
+            text-align: center;
+        }
+
+        .item-price {
+            width: 48%;
+            text-align: right;
+            white-space: nowrap;
+            display: inline-block;
+        }
+
+        .item-line1 {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 120%;
+            color: #777777;
+            margin-top: 20px;
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+        }
+
+
+        .tip-box {
+            padding: 60px 60px 20px;
+            text-align: center;
+            background-color: #ffffff;
+        }
+
+        @media screen and (max-width: 450px) {
+            .tip-box {
+                padding: 40px 40px 20px;
+            }
+        }
+
+        @media screen and (min-width: 450px) {
+            .tip-box {
+                padding: 60px 60px 20px;
+            }
+        }
+
+        .tip-box a {
+            display: block;
+            text-decoration: unset;
+        }
+
+        .tip-icon {
+            background-color: #DFF5FF;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .tip-title {
+            font-weight: 500;
+            font-size: 32px;
+            line-height: 120%;
+            color: #00376A;
+            margin-bottom: 10px;
+        }
+
+        .tip-title strong {
+            font-weight: 500;
+            color: #009ED0;
+        }
+
+        .tip-code {
+            font-size: 48px;
+            line-height: 120%;
+            color: #009ED0;
+            margin-bottom: 10px;
+        }
+
+        .tip-subtitle {
+            margin-bottom: 20px;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 120%;
+            color: #777777;
+        }
+
+        .tip-subtitle a {
+            color: #0975D8 !important;
+        }
+
+        .tip-btn {
+            color: #ffffff !important;
+            text-decoration: none;
+            margin: 0px;
+            box-sizing: border-box;
+            background-color: rgb(0, 158, 208);
+            text-align: center;
+            border-radius: 999px;
+            font-weight: 600;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            margin-bottom: 0px;
+            display: block;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .tip-btn p {
+            font-size: 16px;
+            line-height: 20px;
+            margin: 0px;
+            display: inline-block;
+            padding: 0px
+        }
+
+        .tip-support {
+            display: block;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 100%;
+            margin-bottom: 20px;
+            color: #0975D8;
+        }
+
+        .tip-cancel-btn {
+            display: block;
+            box-sizing: border-box;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 16px;
+            color: #111111;
+            margin-bottom: 20px;
+            border: 1px solid #EAEAEA;
+        }
+
+        .tip-text {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 120%;
+            color: #9E9E9E;
+        }
+
+        .tip-text a {
+            color: #0975D8;
+        }
+
+        .tip-link {
+            display: block;
+            margin-top: 10px;
+            color: #0975D8 !important;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 120%;
+        }
+
+        .tip-link {
+            display: block;
+            margin-top: 10px;
+            color: #0975D8;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 120%;
+        }
+
+        .delivery-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .order-box {
+            padding: 20px 20px 10px;
+            background-color: #ffffff;
+        }
+
+        .o-line1 {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 120%;
+            color: #111111;
+            border-bottom: 1px solid #EAEAEA;
+            margin-bottom: 20px;
+        }
+
+        .o-left {
+            max-width: 50%;
+            float: left;
+            font-weight: 600;
+            white-space: normal;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            padding-right: 8px;
+            box-sizing: border-box;
+        }
+
+        .o-t-left {
+            display: table-cell;
+            width: 50%;
+            padding-bottom: 20px;
+            text-align: left;
+        }
+
+        .o-t-right {
+            display: table-cell;
+            width: 50%;
+            vertical-align: bottom;
+            padding-bottom: 20px;
+            text-align: right;
+        }
+
+        .o-right {
+            float: right;
+            max-width: 50%;
+            text-align: right;
+            word-break: break-word;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .o-sub {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 120%;
+            color: #777777;
+            margin-bottom: 10px;
+        }
+
+        .ato-box {
+            padding: 20px;
+            margin: 20px;
+            background: #E2F4F7;
+            border-radius: 10px;
+            display: block;
+            text-decoration: unset;
+        }
+
+        .ato-title {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 120%;
+            color: #245673;
+            margin-bottom: 10px;
+        }
+
+        .ato-tips {
+            display: table;
+            width: 100%;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 120%;
+        }
+
+        .ato-tips p {
+            display: table-cell;
+            vertical-align: middle;
+            color: #245673;
+            font-weight: 500;
+
+        }
+
+        .ato-tips .ato-img {
+            display: table-cell;
+            padding-left: 20px;
+            vertical-align: middle;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .remind-box {
+            padding: 20px;
+            margin: 20px;
+            background: #D6E9FF;
+            border-radius: 10px;
+        }
+
+        .remind-box a {
+            text-decoration: none;
+        }
+
+        .remind-title {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 120%;
+            color: #1E3572;
+        }
+
+        .remind-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .remind-box p {
+            margin-top: 10px;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 120%;
+            color: #1E3572;
+        }
+
+        .sum-box {
+            padding: 20px 20px 10px;
+            background: #ffffff;
+
+        }
+
+        .sum-item {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 120%;
+            color: #777777;
+            padding-bottom: 10px;
+        }
+
+        .sum-left {
+            float: left;
+            font-weight: 600;
+        }
+
+        .sum-right {
+            float: right;
+            text-align: right;
+            font-weight: 500;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        /* combine style start */
+        .combine-content {
+            position: relative;
+            padding: 10px;
+            background: #dff5ff;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        .combine-title {
+            margin-bottom: 3px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #00376A;
+        }
+
+        .combine-free-info {
+            position: relative;
+            display: table;
+            width: 100%;
+            min-height: 35px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .combine-info {
+            display: table-cell;
+            text-align: left;
+            padding-left: 8px;
+            color: #00376A;
+            font-weight: 600;
+            font-size: 11px;
+            line-height: 125%;
+            vertical-align: middle;
+        }
+
+        .combine-img {
+            width: 44px;
+            height: 44px;
+            border-radius: 5px;
+        }
+
+        .combine-arrow {
+            width: 20px;
+            height: 20px;
+            margin-left: 20px;
+            vertical-align: middle;
+        }
+
+        /* combine style end */
+
+        .footer {
+            padding: 0 20px 20px;
+        }
+
+        .footer a {
+            color: #9E9E9E;
+            text-decoration: none;
+        }
+
+        .f-download {
+            box-sizing: border-box;
+            width: 100%;
+            display: table;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .f-d-left {
+            display: table-cell;
+            vertical-align: top;
+            padding-right: 10px;
+            padding-top: 20px;
+            width: 100%;
+        }
+
+        .f-d-right {
+            float: right;
+        }
+
+
+        .f-qrcode {
+            padding-top: 20px;
+            display: table-cell;
+            width: 73px !important;
+            height: 73px !important;
+        }
+
+        .f-d-line1 {
+            box-sizing: border-box;
+            width: 100%;
+            display: table;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .f-d-a {
+            margin-right: 8px;
+        }
+
+        .f-d-title {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 120%;
+            color: #9E9E9E;
+            display: table-cell;
+            vertical-align: middle;
+            padding-right: 10px;
+            white-space: nowrap;
+        }
+
+        .f-d-line-box {
+            vertical-align: middle;
+            display: table-cell;
+            width: 100%;
+        }
+
+        .f-d-line {
+            background-color: #9E9E9E;
+            height: 1px;
+            width: 100%;
+        }
+
+
+        .f-icons {
+            padding: 10px 0;
+            margin-bottom: 20px;
+        }
+
+        .f-logo {
+            height: 24px;
+            width: 81px;
+            float: left;
+        }
+
+        .f-medias {
+            float: right;
+        }
+
+        .f-medias img {
+            width: 20px;
+            height: 20px;
+            margin-left: 20px;
+            margin-top: 2px;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .f-titles {
+            font-weight: 700;
+            font-size: 9px;
+            line-height: 142.5%;
+            color: #9E9E9E;
+            text-align: center;
+        }
+
+        .f-t-ml {
+            margin-left: 16px;
+        }
+
+        .f-subtitles {
+            margin-top: 10px;
+            font-weight: 400;
+            font-size: 9px;
+            line-height: 142.5%;
+            color: #9E9E9E;
+            text-align: center;
+        }
+
+        .f-subtitles span {
+            display: inline-block;
+        }
+
+        .f-dot {
+            margin: 0 7px;
+        }
+
+        .f-tips {
+            margin-top: 10px;
+            font-size: 8px;
+            line-height: 142.5%;
+            text-align: center;
+            color: #9E9E9E;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div style="display: none;">
+            Do you have more items to purchase?
+            Add more items without additional shipping cost by Monday 1PM.
+        </div>
+        <div id="app"><a class="weee-logo" href="https://www.sayweee.com/">
+            </a>
+            <div class="content-box">
+
+                <div class="tip-box">
+                    
+                        <a href="https://www.sayweee.com/order/detail/40656457">
+                            <div class="tip-title">Thank you for your order</div>
+                            <div class="tip-subtitle">
+                                Below are the order details
+                            </div>
+                            <div class="tip-btn">
+                                <p>
+                                    View detailed information
+                                </p>
+                            </div>
+                        </a>
+                        <div class="combine-content">
+                            <a class="shop-link" href="https://www.sayweee.com/homepage?w_source=combine_free_shipping" style="text-decoration: none">
+                                <div class="combine-free-info">
+                                    <div style="display: table-cell;vertical-align: middle;padding-top: 6px;">
+                                    </div>
+                                    <div class="combine-info">
+                                        <span class="combine-title">Do you have more items to purchase?</span>
+                                        <br>
+                                        <div style="margin-top: 3px;font-size: 9px;font-weight: 500;line-height: 120%;">Add more items without additional shipping cost by Monday 1PM.</div>
+                                    </div>
+                                    <div style="display: table-cell;vertical-align: middle;">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        
+
+                        <div class="tip-text" style="margin-top: 20px;">If you have any questions, please contact us here <a style="color: #0975D8" href='mailto:john doe'>john doe</a></div>
+
+                    
+                    
+                </div>
+                <a href="https://www.sayweee.com/order/detail/40656457">
+                </a>
+                <div class="order-box">
+                    <div class="o-line1" style="display: table;table-layout: fixed;width: 100%;">
+                        <span class="o-t-left" style="font-weight: 500;">Order Details</span>
+                        <span class="o-t-right">
+                            #40656457
+                        </span>
+                    </div>
+                    <div class="o-sub">
+                        <span class="o-left">Total Order Payment</span>
+                        <span class="o-right">$36.45</span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="o-sub">
+                        <span class="o-left">Online Payment Amount</span>
+                        <span class="o-right">$36.45</span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="o-sub">
+                        <span class="o-left">Order Date</span>
+                        <span class="o-right">2023-10-16</span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="o-sub">
+                        <span class="o-left">Order Amount</span>
+                        <span class="o-right">$36.45</span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="o-sub">
+                        <span class="o-left">Payment Method</span>
+                        <span class="o-right">Online Payment</span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="o-sub">
+                        <span class="o-left">Delivery Address</span>
+                        <span class="o-right">john doe</span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="o-sub">
+                        <span class="o-left">Delivery Date</span>
+                        <span class="o-right">2023-10-17</span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="o-sub">
+                        <span class="o-left">Delivery Time</span>
+                        <span class="o-right">7:00 AM - 9:00 PM</span>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                
+            <div class="item-box">
+                <div class="item-title">
+                    <span>
+                        Products
+                    </span>
+                    <div class="item-line1">
+                        <div class="item-left" style="line-height: 22px;white-space: normal;vertical-align: bottom;">
+                            Ordered Products
+                        </div>
+                        <div class="item-right" style="line-height: 22px;vertical-align: bottom;">
+                            <span class="item-q" style="line-height: 22px;white-space: normal;">Quantity</span>
+                            <span class="item-price" style="line-height: 22px;white-space: normal;">Price</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-list">
+                    <div class="item-child">
+                        <div class="item-left">
+                            <span class="item-name">CJ Foods Bibigo Clam Kalguksu 642g</span>
+                        </div>
+                        <div class="item-right">
+                            <span class="item-q">1</span>
+                            
+                            
+                                
+                                <span class="item-price">$9.99</span>
+                            
+                            
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="item-child">
+                        <div class="item-left">
+                            <span class="item-name">Pulmuone Tteokbokki 424g</span>
+                        </div>
+                        <div class="item-right">
+                            <span class="item-q">1</span>
+                            
+                            
+                                
+                                <span class="item-price">$5.99</span>
+                            
+                            
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="item-child">
+                        <div class="item-left">
+                            <span class="item-name">Ottogi Ramen Noodles 110g</span>
+                        </div>
+                        <div class="item-right">
+                            <span class="item-q">4</span>
+                            
+                            
+                                
+                                <span class="item-price">$0.88</span>
+                            
+                            
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="item-child">
+                        <div class="item-left">
+                            <span class="item-name">S&amp;B Peperoncino Cayenne Pepper Pasta Sauce 1.57oz</span>
+                        </div>
+                        <div class="item-right">
+                            <span class="item-q">1</span>
+                            
+                            
+                                
+                                <span class="item-price">$3.99</span>
+                            
+                            
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="item-child">
+                        <div class="item-left">
+                            <span class="item-name">Ottogi Cupbap Kimchi Rice 192g</span>
+                        </div>
+                        <div class="item-right">
+                            <span class="item-q">1</span>
+                            
+                            
+                                
+                                <span class="item-price">$5.99</span>
+                            
+                            
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="item-child">
+                        <div class="item-left">
+                            <span class="item-name">Ottogi Cupbap Jeonju Bibimbap 233g</span>
+                        </div>
+                        <div class="item-right">
+                            <span class="item-q">1</span>
+                            
+                            
+                                
+                                <span class="item-price">$4.99</span>
+                            
+                            
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="item-child">
+                        <div class="item-left">
+                            <span class="item-name">CJ Midnight Udon 2 Servings 442.4g</span>
+                        </div>
+                        <div class="item-right">
+                            <span class="item-q">1</span>
+                            
+                            
+                                
+                                <span class="item-price">$7.99</span>
+                            
+                            
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="item-child">
+                        <div class="item-left">
+                            <span class="item-name">S&amp;B Instant Golden Curry Hot 8.1oz</span>
+                        </div>
+                        <div class="item-right">
+                            <span class="item-q">1</span>
+                            
+                            
+                                
+                                <span class="item-price">$2.99</span>
+                            
+                            
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sum-box">
+                <div class="sum-item">
+                    <span class="sum-left">Shipping Fee</span>
+                    <span class="sum-right">$0.00</span>
+                    <div class="clear"></div>
+                </div>
+                <div class="sum-item">
+                    <span class="sum-left">Order Amount</span>
+                    <span class="sum-right">$45.45</span>
+                    <div class="clear"></div>
+                </div>
+                <div class="sum-item">
+                    <span class="sum-left">Coupon Discount</span>
+                    <span class="sum-right">-$10.00</span>
+                    <div class="clear"></div>
+                </div>
+                <div class="sum-item">
+                    <span class="sum-left">Delivery Tip</span>
+                    <span class="sum-right">$1.00</span>
+                    <div class="clear"></div>
+                </div>
+                <div class="sum-item">
+                    <span class="sum-left">Total Payment</span>
+                    <span class="sum-right">$36.45</span>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="remind-box">
+                <div class="remind-title">
+                    Attention
+                </div>
+                <p>
+                    For orders containing frozen products, a dry ice pack may be included in the delivered package.<br/><br/> Dry ice packs require a lot of caution. For the safety of you and your family, please wear protective gloves and avoid contact with skin and eyes.<br/><br/> When disposing of dry ice, leave it at room temperature in a well-ventilated area to allow it to sublimate. Never dispose of dry ice in a regular trash can. 
+                </p>
+                
+            </div>
+            
+        </div><div class="footer">
+    <div href="" class="f-download">
+        <div class="f-d-left">
+            <div class="f-d-line1">
+                <div class="f-d-title">app download</div>
+                <div class="f-d-line-box">
+                    <div class="f-d-line"></div>
+                </div>
+            </div>
+            <div class="f-d-line1">
+                <a class="f-d-btn f-d-a" href="https://apps.apple.com/app/apple-store/id921864548">
+                </a>
+                <a class="f-d-btn f-d-g" href="https://play.google.com/store/apps/details?id=com.sayweee.weee">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="f-icons">
+        <a href="https://www.sayweee.com">
+        </a>
+        <div class="f-medias">
+            <a href="https://www.facebook.com/sayweee/?ref=aymt_homepage_panel">
+            </a>
+            <a href="https://www.instagram.com/sayweee_official">
+            </a>
+            <a href="https://www.linkedin.com/company/weee-/">
+            </a>
+            <a href="https://www.youtube.com/channel/UCmtycD943w_ZI2illCA9tvA">
+            </a>
+            <a href="https://twitter.com/weee_official/">
+            </a>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="f-titles">
+        <a href="https://www.sayweee.com/zh/home/privacy_and_security">Privacy Policy</a>
+        <a class="f-t-ml" href="https://www.sayweee.com/zh/home/terms_of_service">Terms of Service</a>
+        <a class="f-t-ml" href="https://www.sayweee.com/en/me/setting_notification">Unsubscribe</a>
+    </div>
+    <div class="f-subtitles">
+        <span>john doe</span>
+        <span class="f-dot">·</span>
+        <span>john doe</span>
+        <span class="f-dot">·</span>
+        <span>© 2023 Weee!, Inc.</span>
+    </div>
+    <div class="f-tips">
+        You received this email by registering an account or changing your email information. If you did not register, please ignore and delete this email.
+    </div>
+    <div class="f-tips">
+        Do not share this email with others. Weee! takes your account security very seriously. Weee! customer service will not request or verify passwords, authentication codes, credit card, or bank account information. If you receive a suspicious email with a link to update account information, do not click the link and report the email to Weee!.
+    </div>
+</div></div>
+    </div>
+</body></html>

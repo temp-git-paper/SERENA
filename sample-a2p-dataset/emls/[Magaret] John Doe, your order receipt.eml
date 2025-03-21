@@ -1,0 +1,441 @@
+Delivered-To: johndoe@gmail.com
+Received: by 2002:a05:6e04:2a52:b0:33a:bcdd:32da with SMTP id
+ cf18csp4874017imd;        Sat, 18 Jan 2025 00:44:30 -0800 (PST)
+X-Google-Smtp-Source:
+ AGHT+IEH1y8m8jQ3O8/KOZf0L9eZc9jUg1NFlxlO5GcJovSn8lcsbeI+l5yNWhgcoPklB4bWG6AD
+X-Received: by 2002:a17:902:cece:b0:216:3633:36e7 with SMTP id
+ d9443c01a7336-21c3556ae9amr82500325ad.26.1737189870723;        Sat, 18 Jan
+ 2025 00:44:30 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1737189870; cv=none;
+        d=google.com; s=arc-20240605;
+        b=aHhRitecH/ogWtxqHpRaMSV4+tPvBTG2fZXzRkyaOckx4pPXG8ujhWCZxx/zs0EJm4
+         NsQCjdHhh/138coE7xRAlUWCwo5OqEBaaTddDKBJPF4qFJXCVqVW9lATZdbZjOi3vrHW
+         5ONL+1z0owUwaWcWYCT8HNdP/jl5+Ih2VCzDcscttCuw4EEHzkDr5wgsr5pEoSX1vfBt
+         5xw6jMeLlGD0pBriuIQalKHfmKpWShOycbuNv4zjqSRFuEElaJLkmHL9UewoN3v0B1/i
+         Hm1Bsp6ry1ZLrDU4P0raxmjNok00nFZw0cyI7YfiAp6KkMPRP86fMTQAemQdLDXqscBB
+         1SDA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;       
+ h=dkim-signature:list-unsubscribe-post:list-unsubscribe:precedence        
+ :content-transfer-encoding:mime-version:subject:message-id:to:from        
+ :date;        bh=ED+1NRSGQ/mPJwK9SwP2Eqdjl+Ogmk6oLAKmr2fWG7w=;       
+ fh=VX/scqIlXbGyoUbtKkjohJHbzs/vl1Acn9mdQa2MjTY=;       
+ b=Z5bdWbIWM6Bk14yB5mAMYTLwS/svVLaGOtSoWqbEtAKN+VjXG8cszsqFij7+u9E4Y1        
+ oXp76CkMd2nwhj381uNfvgTKNMtc0KAuunBsSvr3BD+HsBV8vA0pNkQN0kDahj7M0wks        
+ mxVuiFZodoeLjAKtavlq3eB/aqZDsVfpJuS1G5PJRfoHkOqHlb8+QGCqbHCPzQ6Ykfn4        
+ LwLeR6yMQcgX8QK+hAGwUUyy/h/H7xtWpEQ1cNlEQOdL5U19LPGSa3sXITN/nme6+KVj        
+ kbUcV3T2Iz0WWLiK9op+8UmmSCKdnBFWJT4eZrp8RT+O4fS6JXn8RX3IqksGthsNn5Xl        
+ GZIA==;        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;       dkim=fail
+ header.i=@e.MAGARET.com header.s=toast header.b=BhMNNq0T;       spf=pass
+ (google.com: domain of noreply@e.MAGARET.com designates 103.132.34.29 as
+ permitted sender) smtp.mailfrom=noreply@e.MAGARET.com;       dmarc=pass
+ (p=NONE sp=NONE dis=NONE) header.from=e.MAGARET.com
+Return-Path: <noreply@e.MAGARET.com>
+Received: from smtp503.toastcloud.com ([103.132.34.29])        by
+ mx.google.com with ESMTPS id
+ d9443c01a7336-21c2ce9c3easi44319295ad.90.2025.01.18.00.44.29        for
+ <johndoe@gmail.com>        (version=TLS1_2
+ cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Sat, 18 Jan 2025
+ 00:44:30 -0800 (PST)
+Received-SPF: pass (google.com: domain of noreply@e.MAGARET.com designates
+ 103.132.34.29 as permitted sender) client-ip=103.132.34.29;
+Authentication-Results: mx.google.com;       dkim=fail header.i=@e.MAGARET.com
+ header.s=toast header.b=BhMNNq0T;       spf=pass (google.com: domain of
+ noreply@e.MAGARET.com designates 103.132.34.29 as permitted sender)
+ smtp.mailfrom=noreply@e.MAGARET.com;       dmarc=pass (p=NONE sp=NONE
+ dis=NONE) header.from=e.MAGARET.com
+Received: from [10.161.51.23] (HELO mmsa-newbatch-wa901.svr.toastmaker.net)
+ ([10.161.51.23]) by smtp503.toastcloud.com with SMTP id 2aa82555678b69ec;
+ Sat, 18 Jan 2025 17:44:28 +0900
+Date: Sat, 18 Jan 2025 17:44:28 +0900 (KST)
+From: = MaragetShop <noreply@e.MAGARET.com>
+To: johndoe@gmail.com
+Message-ID: <202501181744276h1vwmv0@mmsa-newbatch-wa901.svr.toastmaker.net>
+Subject: John,Your Order List
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+Precedence: bulk
+X-Toast-Seq: 0
+X-Toast-Return-Allow: false
+List-Unsubscribe: =?utf-8?q?=3Chttps=3A//email=2Eapi=2Enhncloudservice=2Ecom?=
+ =?utf-8?q?/email/v1=2E0/block-receivers/Y63WNW03tKoe9yKpclyet-rq3bKMp1ouHT4?=
+ =?utf-8?q?-hGbLf7UD-D9zxR8PNEi8=5FGcuFhlX3qUjGorEYQSoQGWj9LSrFA=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+DKIM-Signature: a=rsa-sha256; q=dns/txt; =?utf-8?q?b=3DBhMNNq0TbvKVEmLgksPzr?=
+ =?utf-8?q?18FsMZoQTei+jzX4p+9uQFzFF38aK23pPGdv0EiNo2ETFNVMpJ9hwu2FNOPjZjV09?=
+ =?utf-8?q?ss2CKlfw1G40I/yWRJUPsZHpVJyhKb0dRBa9mcUUjZFdkb30MqlqzzhQyq/EyuWnJ?=
+ =?utf-8?q?aUDMef9AS7RCofaPrQ7Q=3D=3B?= s=toast; c=relaxed/relaxed;
+ d=e.MAGARET.com; v=1; bh=ED+1NRSGQ/mPJwK9SwP2Eqdjl+Ogmk6oLAKmr2fWG7w=; 
+ =?utf-8?q?h=3DDate=3AFrom=3ATo=3ASubject=3APrecedence=3AX-Toast-Return-Allo?=
+ =?utf-8?q?w=3AX-Toast-Seq=3AList-Unsubscribe-Post=3AList-Unsubscribe=3B?=
+
+```html
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Order Details</title>
+    <style>
+        .vendor-item-table {
+            width: 100%;
+            border: 1px solid #e9eff4;
+            background-color: #f4fbfd;
+            font: normal 12px/13px '돋움', 'dotum';
+            color: #5d5d5d;
+        }
+        .vendor-item-table-header {
+            background-color: #eaeaea;
+            border-right: 1px solid #dfdfdf;
+            border-bottom: 1px solid #dfdfdf;
+            text-align: center;
+        }
+        .vendor-item-table-header-end {
+            background-color: #eaeaea;
+            border-bottom: 1px solid #dfdfdf;
+            text-align: center;
+        }
+        .payment-table {
+            font: normal 12px/13px '돋움', 'dotum';
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+<table width="710px" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+    <tr>
+        <td><a href="http://www.MAGARET.com" target="_blank">MAGARET Home</a></td>
+        <td align="right">View All MAGARET, My MAGARET, Customer Service</td>
+    </tr>
+    <tr>
+        <td colspan="2" style="vertical-align:middle">Please check your purchase details!</td>
+    </tr>
+    <tr>
+        <td colspan="2" style="background-color:#f4f4f4;">
+            <table cellpadding="0" cellspacing="0">
+                <!-- Product Details -->
+                <tr>
+                    <td style="width:22px;"></td>
+                    <td style="border-left:1px solid #e0e0e0;border-right:1px solid #e0e0e0;">
+                        <table cellpadding="0" cellspacing="0" style="width:667px;background-color:#fff;margin:0;">
+                            <tr><td width="30px" height="0px"></td><td width="609px"></td><td width="30px"></td></tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <p style="font-size:13px; font-family:dotum;color:#646464;line-height:18px;">
+                                        <strong>John Doe</strong>, here is the <strong>purchase details</strong> from MAGARET.<br/>
+                                        <span style="color:#7e7e7e;font-size:11px;">(Coupon number SMS and delivery status can be checked at <a href="https://mc.MAGARET.com/desktop/order/list" style="text-decoration:underline;font:bold 11px '돋움','dotum';color:#7e7e7e"  target="_blank">My MAGARET</a>)</span>
+                                    </p>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr><td colspan="3" height="5px"></td></tr>
+                            <tr><td colspan="3" height="11px"></td></tr>
+                            <tr>
+                                <td></td>
+                                <td>Purchase Information</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <!-- Product List -->
+                                    <table cellpadding="0" cellspacing="0" width="100%" class="vendor-item-table">
+                                        <colgroup><col width="6"/><col width="247"/><col width="62"/><col width="32"/><col width="86"/><col width="79"/><col width="75"/><col width="6"/></colgroup>
+                                        <tr>
+                                            <td colspan="8" height="7px"></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td colspan="6" style="font:bold 14px/21px '돋움','dotum'; color:#0090e2;">Medi-Peel Red Lacto Collagen Clear Foam Cleanser 2.0, 1 piece, 300ml</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="8" height="6px"></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td colspan="6" height="2" style="background-color:#7d7d7d;"></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td height="28px"></td>
+                                            <td class="vendor-item-table-header">Purchase Details</td>
+                                            <td class="vendor-item-table-header">MAGARET Price</td>
+                                            <td class="vendor-item-table-header">Quantity</td>
+                                            <td class="vendor-item-table-header">Purchase Amount</td>
+                                            <td class="vendor-item-table-header">Delivery Info</td>
+                                            <td class="vendor-item-table-header-end">Seller</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td height="36px"></td>
+                                            <td style="background-color:#fff;border-right:1px solid #dfdfdf;border-bottom:1px solid #dfdfdf;text-align:left;">
+                                                <span style="padding-left:10px;color:#383838;">Medi-Peel Red Lacto Collagen Clear Foam Cleanser 2.0, 1 piece, 300ml</span>
+                                            </td>
+                                            <td style="background-color:#fff;border-right:1px solid #dfdfdf;border-bottom:1px solid #dfdfdf;text-align:center;">
+                                                $9.80
+                                            </td>
+                                            <td style="background-color:#fff;border-right:1px solid #dfdfdf;border-bottom:1px solid #dfdfdf;text-align:center;">
+                                                1
+                                            </td>
+                                            <td style="background-color:#fff;border-right:1px solid #dfdfdf;border-bottom:1px solid #dfdfdf;text-align:center;">
+                                                <strong>$9.80</strong>
+                                            </td>
+                                            <td style="background-color:#fff;border-right:1px solid #dfdfdf;border-bottom:1px solid #dfdfdf;text-align:center;">
+                                                <a href="https://mc.MAGARET.com/desktop/order/31100091504683" target="_blank">Check Order Delivery</a>
+                                            </td>
+                                            <td style="background-color:#fff;border-bottom:1px solid #dfdfdf;text-align:center;">
+                                                MAGARET Inc.
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr><td colspan="3" height="10px"></td></tr>
+                                    </table>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr><td colspan="3" height="10px"></td></tr>
+                            <!-- Payment Information -->
+                            <tr>
+                                <td></td>
+                                <td colspan="4">Payment Information</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="4">
+                                    <table width="605px" cellpadding="0" cellspacing="0" class="payment-table">
+                                        <colgroup><col width="120"/><col width="20"/><col width="487"/></colgroup>
+                                        <tr><td colspan="3" height="2px" style="background-color:#cecece;"></td></tr>
+                                        <tr>
+                                            <td height="30px" style="background-color:#fbfbfb;border-right:1px solid #dfdfdf;"><span style="width:15px;display:inline-block;"></span><strong>Order Amount</strong></td>
+                                            <td style="background-color:#fbfbfb;">&nbsp;</td>
+                                            <td style="background-color:#fbfbfb;">
+                                                <span style="font-weight: bold; color:#168ae4;">$9.80</span>
+                                            </td>
+                                        </tr>
+                                        <tr><td colspan="3" style="height:1px;background-color:#dfdfdf;"></td></tr>
+                                        <tr>
+                                            <td height="30px" style="background-color:#fbfbfb;border-right:1px solid #dfdfdf;"><span style="width:15px;display:inline-block;"></span><strong>Payment Amount</strong></td>
+                                            <td style="background-color:#fbfbfb;">&nbsp;</td>
+                                            <td style="background-color:#fbfbfb;">
+                                                <span style="font-weight: bold; color:#d80000">$9.80</span>
+                                                ApplePay
+                                            </td>
+                                        </tr>
+                                        <tr><td colspan="3" style="height:1px;background-color:#dfdfdf;"></td></tr>
+                                    </table>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <!-- Recipient Information -->
+                            <tr>
+                                <td></td>
+                                <td colspan="4">Recipient Information</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="4">
+                                    <table width="605px" cellpadding="0" cellspacing="0" style="font:normal 12px/13px '돋움','dotum';color:#666">
+                                        <colgroup><col width="118"/><col width="215"/><col width="90"/><col width="182"/></colgroup>
+                                        <tr><td colspan="4" height="2px" style="background-color:#cecece;"></td></tr>
+                                        <tr>
+                                            <td height="28px" style="background-color:#fbfbfb;border-bottom:1px solid #dfdfdf;"><span style="width:15px;display:inline-block;"></span><strong>Recipient</strong></td>
+                                            <td style="background-color:#fbfbfb;border-right:1px solid #dfdfdf;border-bottom:1px solid #dfdfdf;"><strong>John Doe</strong></td>
+                                            <td style="background-color:#fbfbfb;border-bottom:1px solid #dfdfdf;"><span style="width:15px;display:inline-block;"></span><strong>Contact</strong></td>
+                                            <td style="background-color:#fbfbfb;border-bottom:1px solid #dfdfdf;">734-***-0319</td>
+                                        </tr>
+                                        <tr>
+                                            <td height="28px" style="background-color:#fbfbfb;border-bottom:1px solid #dfdfdf;"><span style="width:15px;display:inline-block;"></span><strong>Address</strong></td>
+                                            <td colspan="3" style="background-color:#fbfbfb;border-bottom:1px solid #dfdfdf;">
+                                                <span>[606**] </span>
+                                                10347 S Ewing Ave, Chicago, IL
+                                            </td>
+                                        </tr>
+                                        <tr><td colspan="4" height="30px"></td></tr>
+                                        <tr>
+                                            <td colspan="4" height="30px" style="text-align:center;">
+                                                <a href="http://www.MAGARET.com" target="_blank">View MAGARET Products</a>
+                                                <span style="width:10px;display:inline-block;"></span>
+                                                <a href="https://mc.MAGARET.com/desktop/order/31100091504683" target="_blank">Check Buyer Details</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td style="width:20px;background-color:#f4f4f4;"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" style="line-height:80%">
+            <table cellpadding="0" cellspacing="0" style="background-color: #f4f4f4;">
+                <tbody>
+                <tr>
+                    <td style="width:24px;"></td>
+                    <td style="width:10px;vertical-align: top;">· </td>
+                    <td style="width:652px;">
+                        <span style="color:#333333;font-size:12px;line-height:1.5;text-align:left">
+                        Detailed purchase details can be checked at&nbsp;<a href="https://mc.MAGARET.com/desktop/order/list" target="_blank" style="color:#168AE4;text-decoration:none;display:inline-block;">My MAGARET&gt;Purchase Details</a>.<br />
+                        </span>
+                    </td>
+                    <td style="width:24px;"></td>
+                </tr>
+                <tr>
+                    <td style="width:24px;"></td>
+                    <td style="width:10px;vertical-align: top;">· </td>
+                    <td style="width:652px;">
+                        <span style="color:#333333;font-size:12px;line-height:1.5;text-align:left">
+                            For inquiries, please call MAGARET Customer Service (tel.1577-7011) or use&nbsp;<a href="https://mc.MAGARET.com/ssr/mobile/contact/inquiry" target="_blank" style="color:#168AE4;text-decoration:none; display:inline-block;">My MAGARET&gt;Customer Service</a>.<br/>
+                            <span style="color:#777777">MAGARET Customer Service Hours: 24/7<br/></span>
+                        </span>
+                    </td>
+                    <td style="width:24px;"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="width:24px;height:24px;"></td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div style="border-left:1px solid #ccc; border-right:1px solid #ccc; padding:20px 0; text-align: center;">
+                <div style="width:670px;margin:0 auto;border:1px solid #eee;text-align:left;">
+                    <div style="float:left;width:286px;margin:29px 0;padding:0 24px;border-right:1px solid #eee;">
+                        <h4 style="font-size:14px;font-weight:bold;color:#555;margin:0 0 15px;">Debt Payment Guarantee Service</h4>
+                        <div style="font-size:12px;color:#888;line-height:15px;margin-bottom:20px;">
+                            For the amount paid in cash by the customer, we have entered into a debt payment guarantee contract with Woori Bank to ensure safe transactions.
+                            The debt payment guarantee service is a service in which Woori Bank guarantees the damage caused by MAGARET's failure to refund the payment or supply the product for prepaid orders.
+                        </div>
+                        <h4 style="font-size:14px;font-weight:bold;color:#555;margin:0 0 15px;">Product Exchange/Return Information</h4>
+                        <div style="font-size:12px;color:#888;line-height:15px;margin-bottom:20px;">
+                            <h5 style="font-size:12px;color:#555;font-weight:bold;line-height:13px;margin:0 0 7px;">Exchange/Return Method After Purchase</h5>
+                            <ul style="font-size:12px;color:#888;line-height:15px;padding-left:15px;margin:0;">
+                                <li>Exchange/return requests for delivered products can be made within 7 days of receipt.</li>
+                                <li>The buyer is responsible for the shipping cost (round-trip shipping cost for exchanges) due to a simple change of mind.</li>
+                                <li>For free shipping products, round-trip shipping costs including the initial shipping cost may be charged upon return.</li>
+                                <li>For remote/mountainous areas and custom-made, installation products, additional shipping costs may be incurred upon return in addition to the basic shipping cost.</li>
+                                <li>In case of product defects or wrong delivery, requests can be made within 3 months of receipt or within 30 days from the date the fact was known.</li>
+                                <li>The seller is responsible for the shipping cost of exchanges/returns due to product defects or wrong delivery.</li>
+                            </ul>
+                        </div>
+                        <div style="font-size:12px;color:#888;line-height:15px;margin-bottom:20px;">
+                            <h5 style="font-size:12px;color:#555;font-weight:bold;line-height:13px;margin:0 0 7px;">Reasons for Exchange/Return Not Allowed</h5>
+                            <span style="font-size:12px;color:#e7223d;line-height:15px;">Exchange/return is not allowed for the following reasons.</span>
+                            <ul style="font-size:12px;color:#888;line-height:15px;padding-left:15px;margin:0;">
+                                <li>If the exchange/return period of 7 days is exceeded after receiving the product due to a simple change of mind.</li>
+                                <li>If the value of the product is significantly reduced due to the removal of the tag/label or damage to the product (e.g., clothing/accessories/imported luxury goods, etc.).</li>
+                                <li>If the product and components are lost or damaged/broken/contaminated due to careless handling.</li>
+                                <li>If the value of the product is significantly reduced due to the customer's use, passage of time, or partial consumption (e.g., seasonal products, food, cosmetics, etc.).</li>
+                                <li>If the product packaging is opened and installed or used for home appliances and installation products.</li>
+                                <li>If the product is custom-made after order confirmation or the product specifications are changed at the customer's request (cancellation and exchange/return are not allowed after production begins).</li>
+                                <li>If the product is opened and installed after a simple change of mind (e.g., automotive products, etc.).</li>
+                                <li>If the packaging of a replicable product is damaged (e.g., CD/DVD/GAME/BOOK, etc.).</li>
+                                <li>If the value of the built-in software is reduced due to the leakage of the product's serial number (e.g., navigation, PMP with CS serial, laptop, desktop PC, etc.).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="float:right;width:286px;margin:29px 0;padding:0 24px;">
+                        <div style="font-size:12px;color:#888;line-height:15px;margin-bottom:20px;">
+                            <h5 style="font-size:12px;color:#555;font-weight:bold;line-height:13px;margin:0 0 7px;">Exchange/Return Notes</h5>
+                            <ul style="font-size:12px;color:#888;line-height:15px;padding-left:15px;margin:0;">
+                                <li>Due to differences in monitor resolution, colors or images may differ from the actual product, and exchange/return may be restricted for this reason.</li>
+                                <li>For some products, prices may change due to the manufacturer's circumstances (new model release, etc.) and component price fluctuations, and returns and price compensation are not possible for this reason.</li>
+                                <li>If the collection is delayed due to the customer's fault during exchange/return, the return may be restricted.</li>
+                                <li>Luxury goods cannot be returned after the tag is removed.</li>
+                                <li>Partial exchange and return of some set products are not possible.</li>
+                                <li>If the value of the product is significantly reduced due to the separation, loss, or damage of holograms, making resale impossible, exchange/return may be restricted.</li>
+                                <li>Imported products cannot be serviced.</li>
+                                <li>For some products, a medical certificate and opinion must be provided in case of trouble (allergy, red spots, itching, stinging) for a refund. In this case, other incidental costs must be borne by the customer.</li>
+                        </div>
+                        <div style="font-size:12px;color:#888;line-height:15px;margin-bottom:20px;">
+                            <h5 style="font-size:12px;color:#555;font-weight:bold;line-height:13px;margin:0 0 7px;">Effect of Withdrawal of Subscription</h5>
+                            <ul style="font-size:12px;color:#888;line-height:15px;padding-left:15px;margin:0;">
+                                <li>If a coupon is canceled or a product is returned from the customer, the already paid amount will be refunded within 3 business days.</li>
+                                <li>In this case, if the company delays the refund of goods, etc., to the customer, the company will pay the delay interest calculated by multiplying the delay interest rate set and announced by the Fair Trade Commission for the delay period.</li>
+                                <li>If the customer requests cancellation/exchange/return, the company will notify the result of the processing via email address or SMS.</li>
+                                <li>For matters not specified in the company's terms and conditions or user guide regarding cancellation and refund, the provisions of the Consumer Damage Compensation Regulations apply.</li>
+                            </ul>
+                        </div>
+                        <div style="font-size:12px;color:#888;line-height:15px;margin-bottom:20px;">
+                            <h5 style="font-size:12px;color:#555;font-weight:bold;line-height:13px;margin:0 0 7px;">Consumer Damage Compensation, Handling of Complaints about Goods, and Dispute Resolution between Consumers and Businesses</h5>
+                            <ul style="font-size:12px;color:#888;line-height:15px;padding-left:15px;margin:0;">
+                                <li>Consumer damage compensation and complaint application: MAGARET Customer Service 1577-7011, 1:1 inquiry</li>
+                                <li>We have established and operate a damage compensation processing organization to reflect the customer's legitimate opinions or complaints and compensate for the damage.</li>
+                                <li>We prioritize handling complaints and opinions submitted by customers. However, if prompt processing is difficult, we will immediately notify the customer of the reason and processing schedule.</li>
+                                <li>Consumer damage dispute resolution: Fair Trade Commission and dispute resolution organizations designated by the Fair Trade Commission</li>
+                            </ul>
+                        </div>
+                        <div style="padding:9px 14px 7px;background:#f5f5f5;font-size:12px;line-height:15px;">
+                            <a href="http://www.MAGARET.com/np/policies/terms" target="_blank" style="color:#555;cursor:pointer;"><b>Transaction Terms: Refer to MAGARET Terms of Use</b></a><br/>
+                            <a href="https://csmessenger.MAGARET.com/cs-center/chat/main" target="_blank" style="color:#555;cursor:pointer;"><b>Cancellation/Exchange/Return Inquiries: MAGARET Customer Service (1577-7011)</b></a>
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#313447" height="132">
+            <table height="130" width="710">
+                <tr>
+                    <td width="160" valign="middle" align="center">
+                        <a href="http://www.MAGARET.com/" target="_blank">MAGARET</a>
+                    </td>
+                    <td>
+                        <table style="padding: 10px 30px 10px 10px;">
+                            <tr>
+                                <td height="25">
+                                    <div style="font-family:dotum; font-size:11px;color:#969696;line-height:16px;">
+                                        <p>
+                                            Some of the products sold in the cyber mall are marketplace (open market) products sold by individual sellers registered with MAGARET.
+                                            For marketplace (open market) products, MAGARET is a communication sales intermediary and is not a party to the communication sales.
+                                            MAGARET is not responsible for marketplace (open market) products, transaction information, or transactions.
+                                            MAGARET operates a trust management center (CM112@MAGARET.com) for consumer protection and safe transactions, and disputes are handled according to separate dispute resolution procedures in case of related disputes.
+                                        </p>
+                                        <p>
+                                            This email is for sending only and cannot be replied to.
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="font-family:dotum; font-size:11px;color:#c8c8c8; line-height:16px; padding-top:10px;">
+                                        MAGARET Inc. | CEO: Daniel Perez, Nancy Allen | Business Registration Number: 120-88-00767<br/>
+                                        1946 Pulaski Rd, Chicago, IL 60614 | FAX: 02-3441-7011
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">Footer</td>
+    </tr>
+</table>
+<map id="header" name="header">
+    <area href="//MAGARET.com/" coords="0,0,70,20" alt="View All MAGARET" target="_blank"/>
+    <area href="https://mc.MAGARET.com/desktop/order/list" coords="75,0,125,20" alt="My MAGARET" target="_blank"/>
+    <area href="//cs.MAGARET.com/" coords="130,0,175,20" alt="Customer Service" target="_blank"/>
+</map>
+<map id="rlux-header" name="rlux-header">
+    <area href="https://www.MAGARET.com/np/campaigns/18530" coords="0,0,49,19" target="_blank"/>
+    <area href="https://mc.MAGARET.com/desktop/order/list" coords="63,0,104,19" target="_blank"/>
+    <area href="https://mc.MAGARET.com/ssr/desktop/contact/faq" coords="109,0,154,19" target="_blank"/>
+</map>
+</body>
+</html>

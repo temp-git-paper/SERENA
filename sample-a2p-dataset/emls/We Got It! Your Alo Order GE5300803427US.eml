@@ -1,0 +1,1023 @@
+Delivered-To: johndoe@gmail.com
+Received: by 2002:a05:7010:8c98:b0:3a6:2579:7ed3 with SMTP id
+ gn24csp1301355mdb;        Fri, 12 Jan 2024 20:34:33 -0800 (PST)
+X-Google-Smtp-Source:
+ AGHT+IHgzGoycY0ZqL5OaT5uSTKhtkCHxITxqyTiXq9eE+5XulWK4fIezAU5qWTE6oqjVAvMXk5C
+X-Received: by 2002:a81:c90e:0:b0:5ee:fac9:a55 with SMTP id
+ o14-20020a81c90e000000b005eefac90a55mr2068136ywi.26.1705120472873;       
+ Fri, 12 Jan 2024 20:34:32 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705120472; cv=none;
+        d=google.com; s=arc-20160816;
+        b=aLyJe9Xi/D2mRCJGm3jTtEJ8thZKJysIQ2kNYENos07CGEJMsiBmsSgHsG1HSvhf/K
+         sF377kK9blOr+hnXX54obKSbAYN881Q5aUCwqY/iWExA39hEOJJnNgDskKrNY4+hZMNR
+         l+DWDc/2sUAMG+CVOsa2MdVjHQV2UJO/Dy4BaK5aOXHcyQfomDtcDKlIghEfdAa9nf3H
+         BW7LgXhEuAkQY4YCRa5TLTYnSZOnDRqeSI/paZINWfSz5YRVn6/5mW8zWI09zLzsk3Go
+         ohdYGq+CLNqh1uj1pHFKPnhusM8jbiZETGqAtDKLZhrL1MTQtLrIc43HxV9UGaNyl37x
+         RFLA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=content-transfer-encoding:mime-version:date:message-id:feedback-id        
+ :to:subject:from:dkim-signature:dkim-signature;       
+ bh=7WF0qi96ncV71QRdaQM3frAnHWUZkmjZ5THWKuzJoj8=;       
+ fh=qarjaDVR7wlB5pEN6xojFSOKuBM9nfqO5/6WR0JBgvA=;       
+ b=bs89xGdaDX8diByJe4iSiyZ/laoG6yxLKdK3Ha91NcE08GWv/sw4E9uH4w5ADOMTqB        
+ JdLO0zfPODvTQIVukdhmmowbGiZccJoZfcz9/DAeg8gxxvAkhZ3H/AKljxzpVVh8phx2        
+ Uu/O1DPQFFHb9Zvf46ty5V20Sel7JYSrjvGO0Y5Tc+ISYoiU2abqEb9vCM22eaer/FFd        
+ 0FUhtrNNybKMyzgSYnFvymfRjhYF94Jli8OS/1CpuYBT9JVnniyNuJDSIrRYCI/UmHHq        
+ TY/nxlbpn4zyQYCUdZ1I4Y6FjQWFV4yhjIz2ahh3J7/5Q+wploUWzuoec9dq0gqS/+5N        
+ KpxQ==
+ARC-Authentication-Results: i=1; mx.google.com;       dkim=pass
+ header.i=@mandrillapp.com header.s=mte1 header.b=vg+uPIBJ;       dkim=pass
+ header.i=@aloyoga.com header.s=mandrill header.b=jxPHryUs;       spf=pass
+ (google.com: domain of =?utf-8?q?bounce-md=5F30080988=2E65a212d8=2Ev1-9875e?=
+ =?utf-8?q?c66482b4040b8ece45aaa6ce51a=40mandrillappmailreturn=2Eglobal-e=2E?=
+ =?utf-8?q?com_designates_198=2E2=2E178=2E22_as_permitted_sender=29_smtp=2Em?=
+ =?utf-8?q?ailfrom=3Dbounce-md=5F30080988=2E65a212d8=2Ev1-9875ec66482b4040b8?=
+ =?utf-8?q?ece45aaa6ce51a=40mandrillappmailreturn=2Eglobal-e=2Ecom=3B?=      
+ dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=aloyoga.com
+Return-Path: =?utf-8?q?=3Cbounce-md=5F30080988=2E65a212d8=2Ev1-9875ec66482b4?=
+ =?utf-8?q?040b8ece45aaa6ce51a=40mandrillappmailreturn=2Eglobal-e=2Ecom=3E?=
+Received: from mail178-22.suw51.mandrillapp.com
+ (mail178-22.suw51.mandrillapp.com. [198.2.178.22])        by mx.google.com
+ with ESMTPS id
+ u11-20020a81e60b000000b005e760423aacsi1564571ywl.97.2024.01.12.20.34.32
+        for <johndoe@gmail.com>        (version=TLS1_3
+ cipher=TLS_AES_256_GCM_SHA384 bits=256/256);        Fri, 12 Jan 2024 20:34:32
+ -0800 (PST)
+Received-SPF: pass (google.com: domain of =?utf-8?q?bounce-md=5F30080988=2E6?=
+ =?utf-8?q?5a212d8=2Ev1-9875ec66482b4040b8ece45aaa6ce51a=40mandrillappmailre?=
+ =?utf-8?q?turn=2Eglobal-e=2Ecom?= designates 198.2.178.22 as permitted
+ sender) client-ip=198.2.178.22;
+Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@mandrillapp.com header.s=mte1 header.b=vg+uPIBJ;       dkim=pass
+ header.i=@aloyoga.com header.s=mandrill header.b=jxPHryUs;       spf=pass
+ (google.com: domain of =?utf-8?q?bounce-md=5F30080988=2E65a212d8=2Ev1-9875e?=
+ =?utf-8?q?c66482b4040b8ece45aaa6ce51a=40mandrillappmailreturn=2Eglobal-e=2E?=
+ =?utf-8?q?com_designates_198=2E2=2E178=2E22_as_permitted_sender=29_smtp=2Em?=
+ =?utf-8?q?ailfrom=3Dbounce-md=5F30080988=2E65a212d8=2Ev1-9875ec66482b4040b8?=
+ =?utf-8?q?ece45aaa6ce51a=40mandrillappmailreturn=2Eglobal-e=2Ecom=3B?=      
+ dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=aloyoga.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mandrillapp.com;
+	s=mte1; t=1705120472; x=1705380972;
+	bh=7WF0qi96ncV71QRdaQM3frAnHWUZkmjZ5THWKuzJoj8=;
+	h=From:Subject:To:Feedback-ID:Message-Id:Date:MIME-Version:
+	 Content-Type:Content-Transfer-Encoding:CC:Date:Subject:From;
+	b=vg+uPIBJtiGJT3YeNoGRiqpK5n3TSuNxuDf3ZtqeCDeuswRSrHhbIyCjtKoKJwuwh
+	 twoCX6fbSX7v/jAQjcMvd0iNT95WAbaN/sYNXdXqzdjALbLSWWG0bYCreZiw7/n9+n
+	 0r4R1jpo5lBCzjeZWnRZckkJFYB1/kQPmKyfm6gTXChaojhQAIIorZMOiZWnAuB4si
+	 sDGJqoMif12BUbg5WOEakHgMJ+HUzGb99ab0ekb5DGK6vMTWihwPqzlTkArlbasQ4W
+	 aMaeQuKXZ9zvnGgTxMWUyWHNznYP/SZyr1rmWYTuS7q0FL1YkdvBbw3SE4X2t84L41
+	 wiSU4oFljp/xQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aloyoga.com;
+	s=mandrill; t=1705120472; x=1705380972; i=no-reply@aloyoga.com;
+	bh=7WF0qi96ncV71QRdaQM3frAnHWUZkmjZ5THWKuzJoj8=;
+	h=From:Subject:To:Feedback-ID:Message-Id:Date:MIME-Version:
+	 Content-Type:Content-Transfer-Encoding:CC:Date:Subject:From;
+	b=jxPHryUs4+yrP8QxhjS3AaQrdF0pnD6Tl3H7/YMjIm2j3VXWULoZpB9iJxoXhRQWU
+	 vbsuoiwIiTAV7lcfsGY8sZcYh4SmedIOz4ulo5FUZgP0VMXt+njjvkTOylUpsUnZP1
+	 YCtQsy8YxvMrGjuQchNy14gVC8+vdYTA9YfwKEGI=
+Received: from pmta13.mandrill.prod.suw01.rsglab.com (localhost [127.0.0.1])
+	by mail178-22.suw51.mandrillapp.com (Mailchimp) with ESMTP id
+ 4TBltJ3RvrzGlss4j	for <johndoe@gmail.com>; Sat, 13 Jan 2024 04:34:32 +0000
+ (GMT)
+From: Alo Yoga <no-reply@aloyoga.com>
+Subject: =?utf-8?Q?We=20Got=20It!=20Your=20Alo=20Order=20GE5300803427US?=
+Received: from [54.77.196.122] by mandrillapp.com id
+ 9875ec66482b4040b8ece45aaa6ce51a; Sat, 13 Jan 2024 04:34:32 +0000
+To: Jieon Kim <johndoe@gmail.com>
+X-Native-Encoded: 1
+X-Report-Abuse: Please forward a copy of this message, including all headers,
+ to abuse@mandrill.com. You can also report abuse here: =?utf-8?q?https=3A//?=
+ =?utf-8?q?mandrillapp=2Ecom/contact/abuse=3Fid=3D30080988=2E9875ec66482b404?=
+ =?utf-8?q?0b8ece45aaa6ce51a?=
+X-Mandrill-User: md_30080988
+Feedback-ID: 30080988:30080988.20240113:md
+Message-Id: <30080988.20240113043432.65a212d8487809.22418350@mail178-22.suw51.mandrillapp.com>
+Date: Sat, 13 Jan 2024 04:34:32 +0000
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+```html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- customized merchant style -->
+    <style type="text/css">
+        .PreHeader { font-size: 12px; color: #999999; } .Titles { font-size: 50px; line-height: 70px; } .Content { font-size: 22px; line-height: 30px; } .OrderDetailsTitles { font-size: 14px; color: #333333; font-weight: 700; } .OrderDetailsContent { font-size: 16px; color: #020202; font-weight: 900; } .ShipmentItems { font-size: 30px; line-height: 40px; } .OrderLines { font-size: 14px; } .OrderSummary { font-size: 14px; } .Total { font-size: 20px; color: #ffffff; font-weight: 700; } .GEfooter { font-size: 12px; color: #000000; } .PreHeader, .OrderDetailsTitles, .OrderDetailsContent, .OrderLines, .OrderSummary, .Total { font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif; } .Titles, .Content, .ShipmentItems { font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif; } .GEfooter { font-family: Arial; }.PreHeaderWrapper {
+  display: none;
+}
+
+.PreContentSpacer{ 
+  display:none;
+}
+
+.fullInnerTable tr {
+  background-color: #fff !important;
+}
+
+.Titles {
+  display:none;
+}
+
+.Content {
+  font-size:10.5pt;
+  font-family:Arial;
+  font-weight: 300;
+  line-height: 100% !important;
+}
+
+.OrderDetailsTitles {
+  font-family: 'Roboto','Helvetica Neue',sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+.OrderDetailsContent {
+  color: #777;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: normal;
+}
+
+.ShipmentItems {
+  font-family: 'Roboto','Helvetica Neue',sans-serif;
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 20px;
+  color: #000000;
+  letter-spacing: 1.5px;
+}
+
+.OrderLines {
+  font-size:10.5pt;
+  font-family:Arial;
+  font-weight: 300;
+}
+
+.Total {
+  font-size:16px;
+  font-family: 'Roboto','Helvetica Neue',sans-serif;
+  font-weight: 600;
+  color:#000;
+}
+
+.OrderLines a {
+  font-weight: bold;
+  font-family:Arial;
+  text-transform: uppercase;
+  font-size: 12pt;
+}
+
+.OrderSummary {
+  font-family: 'Roboto','Helvetica Neue',sans-serif;
+  letter-spacing: .5px;
+  line-height: 1;
+  font-size: 16px;
+  color: #000000;
+}
+
+
+.Titles a , .Content span a , .OrderDetailsTitles a, .OrderDetailsContent a, .ShipmentItems a, .OrderLines a, .OrderSummary a, .Content a {
+  color:#000;
+  text-decoration:none;
+}
+
+.GEfooterWrapper td {
+  display: none;
+}
+
+.GEfooter {
+  display: none;
+}
+
+.GEfooterWrapper{
+  display: none;
+}
+
+.Titles + br{
+  display:none;
+}
+
+td.lrgMblSpacer {
+  display: none;
+}
+
+table.fullInnerTable{
+  border: 0 none !important;
+}
+
+.FullLocalDelivery {
+  font-size: 14px;
+  font-family: 'Roboto','Helvetica Neue',sans-serif;
+  font-weight: 300;
+  text-align: center;
+  line-height:1.5;
+  color:#000;
+}
+
+tr[bgcolor="#ffffff"] {
+  border-top: 0 none !important;
+  border-bottom: 0 none !important;
+}
+    </style>
+
+</head>
+
+<body width="100%" bgcolor="#FFFFFF" style="padding:0; margin:0; -webkit-font-smoothing: antialiased;width:100% !important;-webkit-text-size-adjust:none;" dir="LTR">
+
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0" class="Custom-OrderConfirmation-V2-DynamicLanguages" dir="LTR">
+
+        <!-- preheader -->
+        <!-- preheader -->
+        
+        <!-- END preheader -->
+        <!-- header -->
+        <tr bgcolor="#FFFFFF"><table align="center" border="0" cellpadding="0" cellspacing="0" style="max-width: 600px;" width="100%" "border-bottom: 1px solid #cccccc;">
+              <tbody><tr align="center">
+                <td colspan="6">
+                  <a href="https://www.aloyoga.com/">
+                  </a>
+                </td>
+              </tr>
+            </tbody></table></tr>
+        <!-- END header -->
+        <!-- content -->
+        <tr bgcolor="#FFFFFF">
+            <td align="center" width="100%" class="outerTableCellWrap" style="min-width:640px;">
+                <table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="innerTable" style="min-width:600px;">
+                    <tr>
+                        <td height="15" class="lrgMblSpacer">
+                            <!-- spacer -->
+                        </td>
+                    </tr>
+                    <tr><td></td></tr>
+                    <tr>
+                        <td height="25" class="lrgMblSpacer PreContentSpacer">
+                            <!-- spacer -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <font face="">
+                                <span class="Titles"> <span><span></span></span></span><br><br>
+                                <span class="Content">
+                                    <span><div class="NicePicks" style="color:#000;font-size: 18px;text-transform:uppercase;font-family: 'Roboto','Helvetica Neue',sans-serif;letter-spacing: 2.5px;font-weight: 400;">Nice Picks!</div>
+<br/>
+<br/>
+<div class="HedaerOfSentence" style="color:#000;font-size: 30px;text-transform:uppercase;line-height: 1.4;letter-spacing: 3px;font-family: 'Futura','Roboto','Helvetica Neue',sans-serif;font-weight: 800;">We received your order GE5300803427US</div>
+<br/>
+<div style="color:#000;font-family: 'Roboto','Helvetica Neue',sans-serif;letter-spacing: 1.5px;line-height: 2;font-size: 18px;  font-weight: 400; padding: 10px 0; "> Thanks for your order! Here are all the deets.<br/>
+We'll let you know as soon as your order ships.</div>
+<div style="font-family: 'Roboto','Helvetica Neue',sans-serif;font-weight: 400;line-height: 2;font-size: 14px;letter-spacing: 1px; color: #222;">*Shipping estimates are provided by DHL. We have been advised that some customers may experience delays due to COVID-19 safety protocols.</div>
+<br/>
+<a style="font-family:'Roboto','Helvetica Neue',sans-serif;text-decoration:none;color:#000000;font-weight:400;line-height:2;letter-spacing:1px;font-size:14px" href="https://www.aloyoga.com/pages/contact-us" target="_blank"><span style="font-family:'Roboto','Helvetica Neue',sans-serif;font-weight:600;letter-spacing:1px;font-size:14px">Need to contact us?</span> You can chat with us <span style="font-family:'Roboto','Helvetica Neue',sans-serif;color:#000000;font-weight:400;line-height:2;letter-spacing:1px;font-size:14px;text-decoration:underline">here</span></a>
+
+<div style="border-top: 1px solid #cccccc;margin-top: 25px;margin-bottom: 25px;">&nbsp;</div></span>
+                                </span>
+                            </font>
+                        </td>
+                    </tr>
+					<tr>
+                        <td align="center">
+                            <font face="">
+                                
+                                <span class="Content">
+								   <br>
+                                    <span></span>
+                                </span>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <font face="">
+                                
+                                <span class="Content">
+								   <br>
+                                    <span></span>
+                                </span>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="60" class="lrgMblSpacer">
+                            <!-- spacer -->
+                        </td>
+                    </tr>
+
+                    <!-- Order number and delivery method -->
+                    <tr>
+                        <td>
+                            <table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="fullInnerTable" style="min-width:600px;">
+                                <tr>
+                                    <td>
+                                        <table width="298" cellpadding="5" cellspacing="0" border="0" align="Left" class="fullInnerTable" style="min-width:298px;border:1px solid transparent">
+                                            <tr>
+                                                <td align="Left" valign="top" class="halfWidth" style="mso-table-lspace:0;mso-table-rspace:0;">
+                                                    <font face="" class="OrderDetailsTitles">Order Number:</font>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="Left" valign="top" class="halfWidth">
+                                                    <font face="" class="OrderDetailsContent">GE5300803427US</font>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table width="298" cellpadding="5" cellspacing="0" border="0" align="Left" class="fullInnerTable" style="min-width:298px;1px solid #ffffff;">
+                                            <tr>
+                                                <td align="Left" valign="top" class="halfWidth" style="mso-table-lspace:0;mso-table-rspace:0;">
+                                                    <font face="" class="OrderDetailsTitles">Order Placed:</font>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="Left" valign="top" class="halfWidth">
+                                                    <font face="" class="OrderDetailsContent">13/01/2024</font>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="40" class="lrgMblSpacer">
+                            <!-- spacer -->
+                        </td>
+                    </tr>
+                    <!-- END Order number and delivery method -->
+                    <!-- Billing address and Payment type -->
+                    <tr>
+                        <td>
+                            <table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="fullInnerTable" style="min-width:600px;">
+                                <tr>
+                                    <td>
+                                        <table width="298" cellpadding="5" cellspacing="0" border="0" align="Left" class="fullInnerTable" style="min-width:298px;1px solid #ffffff;">
+                                            <tr>
+                                                <td align="Left" valign="top" class="halfWidth" style="mso-table-lspace:0;mso-table-rspace:0;">
+                                                    <font face="" class="OrderDetailsTitles">Billed to:</font>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="Left" valign="top" class="halfWidth">
+                                                    <font face="" class="OrderDetailsContent">John Doe</font><br>
+                                                    
+                                                    
+                                                    <font face="" class="OrderDetailsContent">10347 S Ewing Ave</font><br> 
+                                                    <font face="" class="OrderDetailsContent">Chicago</font><br> 
+                                                    <font face="" class="OrderDetailsContent">IL </font>
+                                                    
+                                                    <font face="" class="OrderDetailsContent">60617</font>
+                                                    <font face="" class="OrderDetailsContent"></font><br> 
+                                                    <font face="" class="OrderDetailsContent">USA</font><br>
+                                                    <font face="" class="OrderDetailsContent">123-456-7890</font>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table width="298" cellpadding="5" cellspacing="0" border="0" align="Left" class="fullInnerTable" style="min-width:298px;1px solid #ffffff;">
+                                            <tr>
+                                                <td align="Left" valign="top" class="halfWidth" style="mso-table-lspace:0;mso-table-rspace:0;">
+                                                    <font face="" class="OrderDetailsTitles">Shipped to:</font>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="Left" valign="top" class="halfWidth">
+                                                    <font face="" class="OrderDetailsContent">John Doe</font><br>
+                                                    
+                                                    
+                                                    <font face="" class="OrderDetailsContent">10347 S Ewing Ave</font><br> 
+                                                    <font face="" class="OrderDetailsContent">Chicago</font><br> 
+                                                    <font face="" class="OrderDetailsContent">IL</font>
+                                                    
+                                                    <font face="" class="OrderDetailsContent">60617</font>
+                                                    <font face="" class="OrderDetailsContent"></font><br> 
+                                                    <font face="" class="OrderDetailsContent">USA</font><br>
+                                                    <font face="" class="OrderDetailsContent">123-456-7890</font>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="40" class="lrgMblSpacer">
+                            <!-- spacer -->
+                        </td>
+                    </tr>
+                    <!-- END Delivery address and delivery date -->
+                    <!-- Your order -->
+                    <tr>
+                        <td align="center">
+                            
+                            <table width="600" cellpadding="10" cellspacing="0" border="0" align="center" class="fullInnerTable" style="min-width:600px;">
+                                <tr>
+                                    <td align="Left" valign="top" style="mso-table-lspace:0;mso-table-rspace:0;">
+                                        <font face="">
+                                            <span class="Titles">You Ordered</span>
+                                        </font>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Shipment number -->
+                            <table width="600" cellpadding="10" cellspacing="0" border="0" align="center" class="fullInnerTable" style="min-width:600px;border-bottom: 1px solid #cccccc;border-top: 1px solid #cccccc;">
+                                <tr>
+                                    <td align="Left" valign="top" style="mso-table-lspace:0;mso-table-rspace:0;">
+                                        <font face="">
+                                            <span class="ShipmentItems">ORDER SUMMARY
+</span>
+                                        </font>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Order Lines -->
+                            <table width="600" cellpadding="10" cellspacing="0" border="0" align="center" class="fullInnerTable" style="min-width:600px;border-bottom: 1px solid #cccccc;"><tr style="border-bottom-width:1px;border-bottom-color:#ffffff;border-bottom-style:solid;width:100%"> <td style="font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;padding-bottom:15px"> <table style="border-spacing:0;border-collapse:collapse;border:none"> <tbody> <tr> <td style="font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif"> </td> <td style="font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;width:100%"> <span style="font-family:'Roboto','Helvetica Neue',sans-serif;color:#000000;text-transform:uppercase;letter-spacing:.5px;font-size:16px;line-height:1.5;font-weight:600">30 Days Of Alo Moves&nbsp;×&nbsp;1</span><br> <span style="font-family:'Roboto','Helvetica Neue',sans-serif;color:#605e5c;letter-spacing:.5px;font-size:14px;line-height:1.5">Size:  /Color: </span><br> </td> <td style="font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;white-space:nowrap"> <p style="color:#555;line-height:150%;font-size:16px;font-weight:600;margin:0 0 0 15px" align="right"> <strong style="font-size:16px;color:#555"><span style="font-family:'Roboto','Helvetica Neue',sans-serif;color:#000000;text-transform:uppercase;letter-spacing:.5px;font-size:14px;line-height:1.5">$0</span></strong> </p> </td> </tr> </tbody> </table> </td> </tr><tr style="border-bottom-width:1px;border-bottom-color:#ffffff;border-bottom-style:solid;width:100%"> <td style="font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;padding-bottom:15px"> <table style="border-spacing:0;border-collapse:collapse;border:none"> <tbody> <tr> <td style="font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif"> </td> <td style="font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;width:100%"> <span style="font-family:'Roboto','Helvetica Neue',sans-serif;color:#000000;text-transform:uppercase;letter-spacing:.5px;font-size:16px;line-height:1.5;font-weight:600">Ribbed Stardust Jacket - White&nbsp;×&nbsp;1</span><br> <span style="font-family:'Roboto','Helvetica Neue',sans-serif;color:#605e5c;letter-spacing:.5px;font-size:14px;line-height:1.5">Size: M /Color: White</span><br> </td> <td style="font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;white-space:nowrap"> <p style="color:#555;line-height:150%;font-size:16px;font-weight:600;margin:0 0 0 15px" align="right"> <strong style="font-size:16px;color:#555"><span style="font-family:'Roboto','Helvetica Neue',sans-serif;color:#000000;text-transform:uppercase;letter-spacing:.5px;font-size:14px;line-height:1.5">$100</span></strong> </p> </td> </tr> </tbody> </table> </td> </tr></table>
+
+                            <!-- Shipment details -->
+                            <table width="600" cellpadding="10" cellspacing="0" border="0" align="center" class="fullInnerTable" style="min-width:600px;">
+                                <tr bgcolor="#f5f5f5">
+                                    <td width="33%" align="Left" valign="top" class="halfWidth" style="mso-table-lspace:0;mso-table-rspace:0;">
+                                        <font face="" class="OrderSummary">Shipping Method</font>
+                                    </td>
+                                    <td width="66%" align="Right" valign="top" class="halfWidth">
+                                        <font face="" class="OrderSummary">Express Courier</font>
+                                    </td>
+                                </tr>
+                                <tr bgcolor="#f5f5f5">
+                                    <td width="33%" align="Left" valign="top" class="halfWidth" style="mso-table-lspace:0;mso-table-rspace:0;">
+                                        <font face="" class="OrderSummary">Payment Details</font>
+                                    </td>
+                                    <td width="66%" align="Right" valign="top" class="halfWidth">
+                                        <font face="" class="OrderSummary">Mastercard</font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="20">
+                                        <!-- spacer -->
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Totals and discounts -->
+                            <table width="600" cellpadding="10" cellspacing="0" border="0" align="center" class="fullInnerTable" style="min-width:600px;border-bottom: 1px solid #cccccc;border-top: 1px solid #cccccc;">
+    <tr>
+        <td align="left" valign="top" style="mso-table-lspace:0;mso-table-rspace:0;">
+            <font face="'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14px" color="#333333" font-weight="700" class="OrderSummary"> Subtotal</font>
+        </td>
+        <td align="right" valign="top">
+            <font face="'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14px" color="#333333" font-weight="900" class="OrderSummary">$100</font>
+        </td>
+    </tr>
+    <tr>
+        <td align="left" valign="top">
+            <font face="'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14px" color="#333333" font-weight="700" class="OrderSummary"> Shipping</font>
+        </td>
+        <td align="right" valign="top">
+            <font face="'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14px" color="#333333" font-weight="900" class="OrderSummary">Free</font>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div class="col-sm-12 col-xs-12" style="border-top: 1px solid rgba(0, 0, 0, 0.3); margin-top: 10px; margin-bottom: 10px;"></div>
+        </td>
+    </tr>
+    <tr bgcolor="#ffffff" style="border-top: 1px solid #cccccc; background-color: #ffffff !important; ">
+        <td align="left" valign="top">
+            <font face="'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="20px" color="#000000" font-weight="700" class="Total"> Total</font>
+        </td>
+        <td align="right" valign="top">
+            <font face="'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="20px" color="#000000" font-weight="900" class="Total">$100</font>
+        </td>
+    </tr>
+</table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <font face="">
+                                <span>
+                                    <br><br>
+                                    <span><div class="FullLocalDelivery" style="text-align:left; font-size: 10.5pt; font-family: "Helvetica Neue", Helvetica, Helvetica, Arial, sans-serif, serif, EmojiFont; font-weight: 300;" align="left">
+Your order will be processed by Global-e, our global fulfilment partner as Merchant of Record. It usually takes up to 1 business day to prepare an order made with Alo Yoga for delivery. Once your order has been shipped, we will send you an email, which will include the shipment tracking number for your reference.
+</div></span>
+                                <span> &nbsp;</span>
+                                <br><br>
+                                <!--Please note that your order cannot be changed or cancelled.-->
+                                </span>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="0" class="lrgMblSpacer">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- END content -->
+        <!-- Merchant Footer -->
+        <tr bgcolor="#FFFFFF"><center>
+   <table
+     class="row section"
+     style="max-width: 600px; border-top: 1px solid #cccccc"
+     align="center"
+     width="100%"
+     border="0"
+     cellpadding="0"
+     cellspacing="0"
+   >
+     <tbody>
+       <tr align="center">
+         <td width="600" height="50" bgcolor="#FFFFFF">&nbsp;</td>
+       </tr>
+       <tr align="center">
+         <td colspan="6">
+           <div
+             style="
+               font-family: 'Futura', 'Roboto', 'Helvetica Neue', sans-serif;
+               text-align: center;
+               letter-spacing: 1.5px;
+               line-height: 2;
+               text-transform: uppercase;
+               font-size: 18px;
+               color: #000000;
+               font-weight: 800;
+             "
+           >
+             30 Days of Alo Moves
+           </div>
+         </td>
+       </tr>
+       <tr align="center">
+         <td colspan="6">
+           <div>
+             <a
+               style="
+                 font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+                 text-align: center;
+                 letter-spacing: 0.5px;
+                 line-height: 2;
+                 font-size: 14px;
+                 color: #605e5c;
+                 font-weight: 400;
+                 text-decoration: none;
+               "
+               href="mailto:1234@gmail.com"
+               target="_blank"
+               >Your Alo Moves free 30-day trial offer code will be sent <br />to this email address. If you do not
+               receive a code,<br />please email
+               <span style="font-weight: 600; letter-spacing: 0.5px; font-size: 14px">1234@gmail.com </span>for
+               assistance.</a
+             >
+           </div>
+         </td>
+       </tr>
+       <tr align="center">
+         <td width="600" height="50" bgcolor="#FFFFFF">&nbsp;</td>
+       </tr>
+     </tbody>
+   </table>
+ 
+   <table
+     id="Table_01"
+     style="max-width: 600px; border-top: 1px solid #cccccc"
+     align="center"
+     width="100%"
+     border="0"
+     cellpadding="0"
+     cellspacing="0"
+   >
+     <tbody>
+       <tr align="center">
+         <td width="600" height="50" bgcolor="#FFFFFF">&nbsp;</td>
+       </tr>
+     </tbody>
+   </table>
+   <table
+     class="row section"
+     id="Table_01"
+     style="max-width: 600px"
+     align="center"
+     width="100%"
+     border="0"
+     cellpadding="0"
+     cellspacing="0"
+   >
+     <tbody>
+       <tr>
+         <td colspan="2">
+           <a href="https://www.aloyoga.com/pages/alo-gives" alias="EM_OrderConfirmation_AloGives">
+           </a>
+         </td>
+       </tr>
+       <tr>
+         <td colspan="2">
+           <a href="https://www.aloyoga.com/collections/new-arrivals" alias="EM_OrderConfirmation_NEWIN">
+           </a>
+         </td>
+       </tr>
+       <tr>
+         <td>
+           <a
+             href="https://www.aloyoga.com/collections/new-arrivals?utm_source=Alo%20Yoga&amp;utm_medium=Shopify&amp;utm_campaign=Order%20Confirmation"
+             alias="EM_OrderConfirmation_ShopWomens"
+           >
+           </a>
+         </td>
+         <td>
+           <a
+             href="https://www.aloyoga.com/collections/mens-new-arrivals?utm_source=Alo%20Yoga&amp;utm_medium=Shopify&amp;utm_campaign=Order%20Confirmation"
+             alias="EM_OrderConfirmation_ShopMens"
+           >
+           </a>
+         </td>
+       </tr>
+     </tbody>
+   </table>
+ 
+   <!-- Pixlee photo gallery -->
+   <center>
+     <table border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto">
+       <tbody>
+         <tr>
+           <td width="600" align="center" border="0" style="margin: 0 auto; border: none">
+             <table id="email_header_section" width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+               <tbody>
+                 <tr>
+                   <td
+                     colspan="4"
+                     align="center"
+                     width="100%"
+                     border="0"
+                     cellpadding="0"
+                     cellspacing="0"
+                     style="padding-bottom: 7px"
+                   >
+                     <a
+                       href="https://email.pixlee.com/redirect?api_key=OkN5hpqghnzVy3VfJXWd&amp;photo_count=3&amp;cta_type=email_gallery_button&amp;cta_link=https%3A%2F%2Fwww.aloyoga.com%2Fpages%2Finstagram&amp;email_type=campaign&amp;widgetType=Photowall&amp;filter_id=2244083&amp;esp_user_id=%%subscriberid%%&amp;esp_campaign_id=%%emailname_%%"
+                       ></a>
+                   </td>
+                 </tr>
+               </tbody>
+             </table>
+ 
+             <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+               <tbody>
+                 <tr>
+                   <td style="padding: 5px; border: none" width="33%" border="0">
+                     <a
+                       href="https://email.pixlee.com/redirect?api_key=OkN5hpqghnzVy3VfJXWd&amp;photo_number=1&amp;photo_size=square_medium&amp;photo_count=6&amp;cta_type=product&amp;cta_link=https%3A%2F%2Fwww.aloyoga.com%2Fpages%2Finstagram&amp;email_type=campaign&amp;widgetType=Photowall&amp;filter_id=2244083&amp;esp_user_id=%%subscriberid%%&amp;esp_campaign_id=%%emailname_%%"
+                       width="190"
+                     >
+                     </a>
+                   </td>
+ 
+                   <td style="padding: 5px; border: none" width="33%" border="0">
+                     <a
+                       href="https://email.pixlee.com/redirect?api_key=OkN5hpqghnzVy3VfJXWd&amp;photo_number=2&amp;photo_size=square_medium&amp;photo_count=6&amp;cta_type=product&amp;cta_link=https%3A%2F%2Fwww.aloyoga.com%2Fpages%2Finstagram&amp;email_type=campaign&amp;widgetType=Photowall&amp;filter_id=2244083&amp;esp_user_id=%%subscriberid%%&amp;esp_campaign_id=%%emailname_%%"
+                       width="190"
+                     >
+                     </a>
+                   </td>
+ 
+                   <td style="padding: 5px; border: none" width="33%" border="0">
+                     <a
+                       href="https://email.pixlee.com/redirect?api_key=OkN5hpqghnzVy3VfJXWd&amp;photo_number=3&amp;photo_size=square_medium&amp;photo_count=6&amp;cta_type=product&amp;cta_link=https%3A%2F%2Fwww.aloyoga.com%2Fpages%2Finstagram&amp;email_type=campaign&amp;widgetType=Photowall&amp;filter_id=2244083&amp;esp_user_id=%%subscriberid%%&amp;esp_campaign_id=%%emailname_%%"
+                       width="190"
+                     >
+                     </a>
+                   </td>
+                 </tr>
+               </tbody>
+             </table>
+ 
+             <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+               <tbody>
+                 <tr>
+                   <td style="padding: 5px; border: none" width="33%" border="0">
+                     <a
+                       href="https://email.pixlee.com/redirect?api_key=OkN5hpqghnzVy3VfJXWd&amp;photo_number=4&amp;photo_size=square_medium&amp;photo_count=6&amp;cta_type=product&amp;cta_link=https%3A%2F%2Fwww.aloyoga.com%2Fpages%2Finstagram&amp;email_type=campaign&amp;widgetType=Photowall&amp;filter_id=2244083&amp;esp_user_id=%%subscriberid%%&amp;esp_campaign_id=%%emailname_%%"
+                       width="190"
+                     >
+                     </a>
+                   </td>
+ 
+                   <td style="padding: 5px; border: none" width="33%" border="0">
+                     <a
+                       href="https://email.pixlee.com/redirect?api_key=OkN5hpqghnzVy3VfJXWd&amp;photo_number=5&amp;photo_size=square_medium&amp;photo_count=6&amp;cta_type=product&amp;cta_link=https%3A%2F%2Fwww.aloyoga.com%2Fpages%2Finstagram&amp;email_type=campaign&amp;widgetType=Photowall&amp;filter_id=2244083&amp;esp_user_id=%%subscriberid%%&amp;esp_campaign_id=%%emailname_%%"
+                       width="190"
+                     >
+                     </a>
+                   </td>
+ 
+                   <td style="padding: 5px; border: none" width="33%" border="0">
+                     <a
+                       href="https://email.pixlee.com/redirect?api_key=OkN5hpqghnzVy3VfJXWd&amp;photo_number=6&amp;photo_size=square_medium&amp;photo_count=6&amp;cta_type=product&amp;cta_link=https%3A%2F%2Fwww.aloyoga.com%2Fpages%2Finstagram&amp;email_type=campaign&amp;widgetType=Photowall&amp;filter_id=2244083&amp;esp_user_id=%%subscriberid%%&amp;esp_campaign_id=%%emailname_%%"
+                       width="190"
+                     >
+                     </a>
+                   </td>
+                 </tr>
+               </tbody>
+             </table>
+ 
+             <table
+               id="email_footer_section"
+               width="100%"
+               border="0"
+               cellpadding="0"
+               cellspacing="0"
+               align="center"
+             ></table>
+           </td>
+         </tr>
+       </tbody>
+     </table>
+   </center>
+   <!-- end of Pixlee photo gallery -->
+ 
+   <!-- Pixlee analytics tracking pixel -->
+   <img
+     src="https://email.pixlee.com/emailOpen?api_key=OkN5hpqghnzVy3VfJXWd&amp;photo_count=6&amp;widgetType=Photowall&amp;email_type=campaign&amp;rows=2&amp;columns=3&amp;width=600&amp;filter_id=2244083&amp;esp_user_id=%%subscriberid%%&amp;esp_campaign_id=%%emailname_%%"
+     width="0"
+     height="0"
+     border="0"
+     style="margin: 0; overflow: hidden; float: left; display: none; line-height: 0px"
+   />
+   <!-- end of Pixlee analytics tracking pixel -->
+ 
+   <!-- FOOTER SECTION (RESPONSIVE) -->
+   <!--[if (gte mso 9)|(IE)]>
+ <table width="600" align="center"><tr><td style="padding-top:0; padding-bottom:0; padding-right:0; padding-left:0; margin:0px;">
+ <![endif]-->
+   <table cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%" class="stylingblock-content-wrapper">
+     <tbody>
+       <tr>
+         <td class="stylingblock-content-wrapper camarker-inner">
+           <table
+             style="max-width: 600px; max-height: 154px"
+             align="center"
+             width="100%"
+             border="0"
+             cellpadding="0"
+             cellspacing="0"
+           >
+             <tbody>
+               <tr>
+                 <td width="600" style="height: 44px" colspan="2" bgcolor="#FFFFFF">&nbsp;</td>
+               </tr>
+               <tr>
+                 <td>
+                   <a
+                     href="https://www.aloyoga.com/collections/new-arrivals?utm_source=Alo%20Yoga&amp;utm_medium=Email&amp;utm_campaign=Order%20Confirmation"
+                     alias="EM_FOOTER_NEWARRIVALS"
+                   >
+                   </a>
+                 </td>
+                 <td>
+                   <a
+                     href="https://www.aloyoga.com/pages/beauty?utm_source=Alo%20Yoga&amp;utm_medium=Email&amp;utm_campaign=Order%20Confirmation"
+                     alias="EM_FOOTER_BEAUTY"
+                   >
+                   </a>
+                 </td>
+               </tr>
+               <tr>
+                 <td>
+                   <a
+                     href="https://www.aloyoga.com/collections/mens-new-arrivals?utm_source=Alo%20Yoga&amp;utm_medium=Email&amp;utm_campaign=Order%20Confirmation"
+                     alias="EM_FOOTER_MENS"
+                   >
+                   </a>
+                 </td>
+                 <td>
+                   <a
+                     href="https://www.aloyoga.com/collections/yoga-gear?utm_source=Alo%20Yoga&amp;utm_medium=Email&amp;utm_campaign=Order%20Confirmation"
+                     alias="EM_FOOTER_GEAR"
+                   >
+                   </a>
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+           <table
+             id="Table_01"
+             style="max-width: 600px; max-height: 18px"
+             align="center"
+             width="100%"
+             border="0"
+             cellpadding="0"
+             cellspacing="0"
+           >
+             <tbody>
+               <tr>
+                 <td colspan="6">
+                   <img
+                     style="display: block; max-width: 100%; max-height: 18px"
+                     src="http://image.email.aloyoga.com/lib/fe8b13727c65037577/m/44/53675c03-5999-46fe-bb97-50da22ec7738.jpg"
+                     width="600"
+                     border="0"
+                     alt="whitespace"
+                   />
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+           <table
+             id="Table_01"
+             style="max-width: 600px; background-color: #000000; max-height: 133px"
+             align="center"
+             width="100%"
+             border="0"
+             cellpadding="0"
+             cellspacing="0"
+           >
+             <tbody>
+               <tr>
+                 <td>
+                   <a href="https://www.aloyoga.com/pages/shipping-info" alias="EM_FOOTER_SHIPPINGBOTTOM">
+                   </a>
+                 </td>
+                 <td colspan="4">
+                   <a href="https://www.aloyoga.com/pages/returns-exchanges" alias="EM_FOOTER_RETURNS">
+                   </a>
+                 </td>
+                 <td>
+                   <a href="https://www.aloyoga.com" alias="EM_FOOTER_AFTERPAY">
+                   </a>
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+           <table
+             id="Table_01"
+             style="max-width: 600px; max-height: 110px"
+             align="center"
+             width="100%"
+             border="0"
+             cellpadding="0"
+             cellspacing="0"
+           >
+             <tbody>
+               <tr>
+                 <td colspan="6">
+                   <img
+                     style="display: block; max-width: 100%; max-height: 18px"
+                     src="http://image.email.aloyoga.com/lib/fe8b13727c65037577/m/44/53675c03-5999-46fe-bb97-50da22ec7738.jpg"
+                     width="600"
+                     border="0"
+                     alt="whitespace"
+                   />
+                 </td>
+               </tr>
+               <tr>
+                 <td colspan="6">
+                   <a href="https://www.aloyoga.com/pages/app" alias="EM_FOOTER_APP">
+                   </a>
+                 </td>
+               </tr>
+               <tr>
+                 <td colspan="6">
+                   <img
+                     style="display: block; max-width: 100%; max-height: 18px"
+                     src="http://image.email.aloyoga.com/lib/fe8b13727c65037577/m/44/53675c03-5999-46fe-bb97-50da22ec7738.jpg"
+                     width="600"
+                     border="0"
+                     alt="whitespace"
+                   />
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+           <table
+             id="Table_01"
+             style="max-width: 600px; background-color: #dddddd; max-height: 247px"
+             align="center"
+             width="100%"
+             border="0"
+             cellpadding="0"
+             cellspacing="0"
+           >
+             <tbody>
+               <tr>
+                 <td colspan="3">
+                   <a href="https://www.aloyoga.com/pages/alo-gives" alias="EM_FOOTER_ALOGIVES">
+                   </a>
+                 </td>
+                 <td colspan="3">
+                   <a href="https://www.aloyoga.com/pages/alo-moves" alias="EM_FOOTER_ALOMOVES">
+                   </a>
+                 </td>
+               </tr>
+               <tr>
+                 <td>
+                   <img
+                     style="display: block; max-width: 100%; max-height: 85px"
+                     src="http://image.email.aloyoga.com/lib/fe8b13727c65037577/m/44/e94a8892-0f61-4670-99b3-4d29da7592f2.jpg"
+                     width="200"
+                     alt="grayspace"
+                   />
+                 </td>
+                 <td>
+                   <a href="https://www.instagram.com/aloyoga/" alias="EM_FOOTER_INSTAGRAM">
+                   </a>
+                 </td>
+                 <td>
+                   <a href="https://www.facebook.com/aloclothing/" alias="EM_FOOTER_FACEBOOK">
+                   </a>
+                 </td>
+                 <td>
+                   <a href="https://www.youtube.com/channel/UCJEi1foUiGObzzQM3QA2H5A" alias="EM_FOOTER_YOUTUBE">
+                   </a>
+                 </td>
+                 <td>
+                   <a href="https://www.tiktok.com/@aloyoga" alias="EM_FOOTER_TIKTOK">
+                   </a>
+                 </td>
+                 <td>
+                   <img
+                     style="display: block; max-width: 100%; max-height: 85px"
+                     src="http://image.email.aloyoga.com/lib/fe8b13727c65037577/m/44/57e3bd88-60ce-4c62-9d39-8790a5c56067.jpg"
+                     width="200"
+                     alt="grayspace"
+                   />
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+           <table
+             id="Table_01"
+             style="max-width: 600px; max-height: 92px"
+             align="center"
+             width="100%"
+             border="0"
+             cellpadding="0"
+             cellspacing="0"
+           >
+             <tbody>
+               <tr>
+                 <td colspan="6">
+                   <img
+                     style="display: block; max-width: 100%; max-height: 18px"
+                     src="http://image.email.aloyoga.com/lib/fe8b13727c65037577/m/44/53675c03-5999-46fe-bb97-50da22ec7738.jpg"
+                     width="600"
+                     border="0"
+                     alt="whitespace"
+                   />
+                 </td>
+               </tr>
+               <tr>
+                 <td colspan="6">
+                   <a href="https://www.aloyoga.com/pages/sweatshop-free-eco-aware" alias="EM_FOOTER_SWEATSHOPFREE">
+                   </a>
+                 </td>
+               </tr>
+               <tr>
+                 <td width="600" style="height: 20px" colspan="2" bgcolor="#FFFFFF">&nbsp;</td>
+               </tr>
+               <tr>
+                 <td>
+                   <p style="font-size: 10px; color: #605e5c; font-family: Arial, Helvetica, sans-serif">
+                     <b>*Alo Beauty Shipping Information: </b>Alo Beauty is not able to be shipped to Brunei, Cambodia,
+                     Timor-Leste, Indonesia, Lao PDR, Malaysia, Myanmar, Philippines, Singapore, Thailand and Vietnam.
+                   </p>
+                 </td>
+               </tr>
+               <tr>
+                 <td width="600" style="height: 20px" colspan="2" bgcolor="#FFFFFF">&nbsp;</td>
+               </tr>
+             </tbody>
+           </table>
+         </td>
+       </tr>
+     </tbody>
+   </table>
+   <!--[if (gte mso 9)|(IE)]>
+           </td></tr></table><![endif]-->
+ </center>
+ </tr>
+        <!-- END Merchant Footer -->
+        <!-- Globale Footer -->
+        
+        <!-- End Globale Footer -->
+    
+
+</body>
+
+</html>
+```

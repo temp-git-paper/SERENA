@@ -1,0 +1,553 @@
+Delivered-To: johndoe@gmail.com
+Received: by 10.80.146.114 with SMTP id j47csp739865eda;
+        Thu, 5 Oct 2017 10:41:00 -0700 (PDT)
+X-Google-Smtp-Source: AOwi7QBcYaIoB6kWaukbuTPlHpF4HiaAzrfHhaoSKLpD9xgfp/lINg0sS62trbM7+DkbsWb21Tds
+X-Received: by 10.98.73.67 with SMTP id w64mr10881592pfa.338.1507225260704;
+        Thu, 05 Oct 2017 10:41:00 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1507225260; cv=none;
+        d=google.com; s=arc-20160816;
+        b=d7xGyQtxgtDprGDCP4ZJYcnJj7RMgV4T1U+ee+KHCWdpsXz2jxoA1mubTHKBdJ71tw
+         sPwtb9BHZPT/clnhwpoEGmiZlR1uEwejLdw7gv84AtIMzwo58GBTRqCU+tOxVk7iPCWD
+         Hhnc5GMUXf6tOcho6G4s2AfJ01A1DkVS9DhgDBdFwQeIppOF5c2Tyl+CYURx1ia4i9jL
+         8ao85KYUsN1GXRUmp66pjFKEWv8Yo2H2icdWCb2VOgZBfgePyMzalrHdAxMgXDDbrTUS
+         0ptchhqwyohxC1xkscS+p5oMOeaFhHzU43EVlV6YAo6NTukDDjPCSPFuAFe29KznNRFb
+         uetg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=date:mime-version:subject:message-id:to:reply-to:from
+         :dkim-signature:dkim-signature:arc-authentication-results;
+        bh=bnx7956nGvq2rgGImZdMVDp+goSbNY8YwBAxJRtIqGc=;
+        b=WyJb+HT/zYqIPmOxIdcH/CXEIqdqP/+bKTpIt+2t7Ux35v4uo0AmAU0ZDfUh+WUsdA
+         WFB5EWdqGIIP0HdHqnWt9x784H2ZJDp/gV1Xy52n4dPDW3rBA4Ul4mqfgyulhjhTpct6
+         ch7ufzfowVnAdBoUsm+aW0C8AZg1HOr8iaSNp0LOxbaNBqo8sB+vk/UekmzriEKdO9Pd
+         eewYsEwP2dL5Dvn/R4DkCg1hEFafdxpR7elPYtOYsA7UaTsBHL0TaN2fAKrzr412w1LI
+         HLbcfAYFQcYPqrp+8RXjdOCB3K8LKToT+0kDix0dJwV6TVzGhGaTjL+RjwD+AX1mHQfn
+         Yl4w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@squarespace.info header.s=s1 header.b=La4VPH4v;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=EDeJEXVO;
+       spf=pass (google.com: domain of bounces+1706182-d2d2-johndoe=gmail.com@sg-email.squarespace.info designates 167.89.18.111 as permitted sender) smtp.mailfrom=bounces+1706182-d2d2-johndoe=gmail.com@sg-email.squarespace.info;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=squarespace.info
+Return-Path: <bounces+1706182-d2d2-johndoe=gmail.com@sg-email.squarespace.info>
+Received: from o1678918x111.outbound-mail.sendgrid.net (o1678918x111.outbound-mail.sendgrid.net. [167.89.18.111])
+        by mx.google.com with ESMTPS id y84si2830014pfk.616.2017.10.05.10.41.00
+        for <johndoe@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 05 Oct 2017 10:41:00 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+1706182-d2d2-johndoe=gmail.com@sg-email.squarespace.info designates 167.89.18.111 as permitted sender) client-ip=167.89.18.111;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@squarespace.info header.s=s1 header.b=La4VPH4v;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=EDeJEXVO;
+       spf=pass (google.com: domain of bounces+1706182-d2d2-johndoe=gmail.com@sg-email.squarespace.info designates 167.89.18.111 as permitted sender) smtp.mailfrom=bounces+1706182-d2d2-johndoe=gmail.com@sg-email.squarespace.info;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=squarespace.info
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; 
+	d=squarespace.info; 
+	h=from:reply-to:to:subject:mime-version:content-type; s=s1; 
+	bh=hWY4SetH09olbVNQJK5T9+bPFh0=; b=La4VPH4vaJQzUlrga0Zr8+eHAfYxG
+	bnN4ZoDa/z9br8FuTYUiAuWqhqdk+BVADXIc37ressHMub2gCy7UDJPTCVTMJlMl
+	eo7n7nVxUyW0h+BmUgBTJErqixdw2sGFXJlLDv8Mkx9m1JnpUxAttIuB4GplOQyk
+	cp9mdugNBIvLQ0=
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; d=sendgrid.info; 
+	h=from:reply-to:to:subject:mime-version:content-type:x-feedback-id; 
+	s=smtpapi; bh=hWY4SetH09olbVNQJK5T9+bPFh0=; b=EDeJEXVOrETRAvu/hH
+	6akKBHZiIwN65EfYsR1Zp2LXvN1qUGk5j4QOPJGojm5AVmU16LvKUfz312bWmDIC
+	ScpeZgMqvnjvUdNODumIc8WnAF5aacvvnF0FFxAcepB0N7plFHirMlO4z24zPAHP
+	1Zjxk/rCSeB7/88BIUA+WH3Mg=
+Received: by filter0474p1las1.sendgrid.net with SMTP id filter0474p1las1-12233-59D66EAA-3F
+        2017-10-05 17:40:58.537342469 +0000 UTC
+Received: from aux036.eqx.dal.prod.squarespace.net (unknown [8.36.86.112])
+	by ismtpd0011p1las1.sendgrid.net (SG) with ESMTP id Z6u3bm32SF2BoCjhICkoBA
+	for <johndoe@gmail.com>; Thu, 05 Oct 2017 17:40:58.442 +0000 (UTC)
+From: V H T S <no-reply@squarespace.info>
+Reply-To: no-reply@squarespace.info
+To: johndoe@gmail.com
+Message-ID: <414490969.989.1507225258016.JavaMail.root@aux036.eqx.dal.prod.squarespace.net>
+Subject: V H T S: New Order Confirmed #02314
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_987_1675609571.1507225258014"
+X-Mailer: Squarespace Mail
+Date: Thu, 05 Oct 2017 17:40:58 +0000 (UTC)
+X-SG-EID: 6GyC4igiTRiUhLopc8KjV1oJqkYNG5nSBy8OgfYuMZd9/eTyF6FIFk7d818tOde+kdANUVKgRzxx72
+ t+s5dv3QkINzlgLh4EYb2Nxy6Bhpo08AX15nzalgbXi0jOe46IFrgZZRbQs02LtjGjL743ofseuR5X
+ j6XBTd55V8Htl1YpcO0jUBgBw63R+cj+gkJkCR8EbiDlDvunzwdhfkJAssRrxETLg9csw+84jMOBqy
+ k=
+X-SG-ID: NMHL7tc+AxXN/stbBh9h7GAVQVhbjgUrIx93owyncaabXpedlbhcImpaJIgb9EyDKtB9MZB+Dt/BG4
+ XT+eGdaDX5qMwA/OJqH7la3O1GaY8NjuVqPCNHLybRe2FNgbCIFZC10VuNJ/B5OrIeEQM9X1q92sPK
+ XFMajVawTinoxtdxSexQgufttBtRuLxjgEnAqwh6VdgEorrGu9o2ddz43QXoaF67d2xWKHa/W3AX9O
+ 90x8fH79LI/DfqzxDW+IRyxDlWhPYswvxVwlu5O3btDnBx7wCeX0BMmxRF8eIZ2dQHbLl/Fsv0KegP
+ hwrxqC/QOmyT37vsQBMqNDpcSxtBKQ==
+X-Feedback-ID: 1706182:QN+DYzEK2RIhzFGTTDUzpH0+/rLTsn/g3oI5KNznnS4=:4ChfpDm1ycc/sgCeMJqHyP9lO+7I4GTj5T+0Cgp07CI=:SG
+
+------=_Part_987_1675609571.1507225258014
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_988_1605378533.1507225258014"
+
+------=_Part_988_1605378533.1507225258014
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+=20
+=20=20=09
+VHTS - VERY HARD TO SUBMIT Thrive and Flourish!
+=20
+Order Confirmed: #02314
+=20
+
+Thank you for your order at . Once your package ships we will send you a=20
+notification email. Your order confirmation is below.
+
+Order Number: #02314 (placed on October 5, 2017 01:40PM EDT)
+=20
+BILLED TO:=20=09
+ SHIPPING TO:
+ John Doe
+3900 Chestnut Street
+Apt 322
+Philadelphia, PA, 19104
+United States
+CC: XXXX-1038
+johndoe@gmail.com
+7347470319
+ John Doe
+ 3900 Chestnut Street
+ Apt 322
+ Philadelphia, PA, 19104
+ United States
+ 7347470319
+ FedEx Ground Home Delivery=C2=AE (1 to 5 days)
+=20
+Order Summary
+=20
+ITEM=20=09
+ QTY
+ UNIT PRICE
+ SUBTOTAL
+=20
+"BLUE MOON" Light weight COMP kimono pre order (waiting time 3 weeks)
+SQ2355454
+A0
+
+ 1
+
+ $180.00
+
+ $180.00
+
+=20
+=20=20
+ Item Subtotal
+ Shipping & Handling
+ Tax
+ TOTAL
+=20=20
+ $180.00
+ $12.79
+ $0.00
+ $192.79
+=20
+Additional Information
+=20
+Note / Additional Info:
+
+Thank You,
+V H T S
+<http://www.vhtsny.com>
+
+=20
+=20
+
+------=_Part_988_1605378533.1507225258014
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html><head></head><body style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;height: 100% !important;margin: 0;padding: 0;width: 100% !important;background: #F0F0F0; padding: 0px;">
+<table style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;margin-left: auto; margin-right: auto; margin-top: 0px; width: 600px; border-collapse: collapse; background: #ffffff;" cellspacing="0" cellpadding="0" align="center">
+  <tbody><tr>
+    <td colspan="3" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;height: 60px; background: #ffffff;">
+      &nbsp;
+    </td>
+  </tr>
+  <tr>
+    <td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 30px; background: #ffffff;">
+      &nbsp;
+    </td>
+    <td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 540px;">
+      <div style="background: #ffffff; color: #3E3E3E; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; font-size: 14px; line-height:20px; font-weight: 400; letter-spacing: 0px;">
+        
+        <div class="squarespace-header editable" style="width: 540px;">
+          VHTS - VERY HARD TO SUBMIT
+Thrive and Flourish!
+          <div style="clear:both;"></div>
+        </div>
+        <div style="height: 20px; background: #ffffff;">
+          &nbsp;
+        </div>
+        
+
+        <div class="squarespace-title editable" style="font-size: 28px; line-height: 28px; color: #3E3E3E; font-weight: 200; margin: 0;">
+          Order Confirmed: #02314
+        </div>
+
+        <div style="height: 20px;">
+          &nbsp;
+        </div>
+
+        <table style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;border-collapse: collapse" cellpadding="0" cellspacing="0">
+          <tbody><tr>
+            <td class="squarespace-message editable" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-webkit-text-size-adjust: none; background: #ffffff; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; font-size: 14px; line-height:20px; font-weight: 400; color: #3E3E3E;">
+              <p style="-webkit-margin-before: 0;-webkit-margin-after: 0;-webkit-margin-start: 0;-webkit-margin-end: 0;">Thank you for your order at .
+
+
+Once your package ships we will send you a notification email.
+
+
+
+
+
+
+Your order confirmation is below.</p>
+
+Order Number: <span style="font-weight:bold; color:#000;">#02314</span> (placed on October  5, 2017 01:40PM EDT)
+              
+                
+
+              
+            </td>
+          </tr>
+        </tbody></table>
+
+        
+        <div style="height: 20px">
+          &nbsp;
+        </div>
+        <div style="-webkit-text-size-adjust: none; background: #ffffff;">
+          <div style="width: 540px; line-height: 18px; font-weight: 200; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;" class="sqs-order-summary-rendered-content">
+
+
+  <div class="page-break-section">
+    
+  </div>
+
+
+  <div class="page-break-section">
+    <table style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;border-collapse: collapse; width: 540px; background: #ffffff;" class="order-summary" cellpadding="0" cellspacing="0">
+      <tbody><tr>
+        <th style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; color:#3E3E3E; font-weight: 600; font-size: 11px; width: 230px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; text-align: left">
+          BILLED TO:
+        </th>
+        
+        <th style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; color:#3E3E3E; font-weight: 600; font-size: 11px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; text-align: left;">
+          <div style="padding-left: 10px;">
+            SHIPPING TO:
+          </div>
+        </th>
+        
+      </tr>
+      <tr>
+        <td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;">
+          <div style="line-height: 18px; color:#3E3E3E; font-size:11px; -webkit-text-size-adjust: none; font-weight: 400;">
+            
+              John Doe<br />
+              
+                
+                  3900 Chestnut Street<br />
+                
+                
+                  Apt 322<br />
+                
+              
+              
+                
+                  Philadelphia, PA, 19104<br />
+                
+                United States<br />
+              
+
+              
+                
+                
+                  
+                    CC: XXXX-1038<br />
+                  
+                  
+                  
+                
+              
+
+              <span style="color: #3E3E3E!important; text-decoration: none;">
+                johndoe@gmail.com
+              </span>
+              <br />
+             
+               <span style="color: #3E3E3E!important; text-decoration: none;">
+                 7347470319
+               </span>
+               <br />
+             
+           
+          </div>
+        </td>
+        
+          <td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;">
+              <div style="line-height: 18px; color:#3E3E3E; font-size:11px; padding-left: 10px; -webkit-text-size-adjust: none; font-weight: 400;">
+                
+                  John Doe<br />
+                  
+                     3900 Chestnut Street<br />
+                     
+                       Apt 322<br />
+                     
+                  
+                  
+                    Philadelphia, PA, 19104<br />
+                  
+                  United States
+
+                  
+                    <br />
+                    <span style="color: #3E3E3E!important; text-decoration: none;">
+                      7347470319
+                    </span>
+                  
+                
+                <div style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
+                  
+                    FedEx Ground Home Delivery&reg; (1 to 5 days)
+                  
+                </div>
+              </div>
+          </td>
+        
+      </tr>
+    </tbody></table>
+  </div>
+
+
+  <div style="height: 20px">
+    &nbsp;
+  </div>
+
+  <div style="color:#3E3E3E; font-weight: 200; font-size: 20px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;">
+    Order Summary
+  </div>
+
+  <div style="height: 20px">
+    &nbsp;
+  </div>
+
+  <table style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;border-collapse:collapse; font-size:11px; line-height: 18px; color: #3E3E3E; width: 540px; background: #ffffff;" class="order-summary order-rows" cellpadding="0" cellspacing="0">
+      <tbody><tr style="color:#3E3E3E; font-weight: 600;">
+          <td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;">
+              ITEM
+          </td>
+          <td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width:90px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;">
+              <div style="padding-left:10px;">
+                  QTY
+              </div>
+          </td>
+          <td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width:130px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;">
+              <div style="padding-left:10px;">
+                  UNIT PRICE
+              </div>
+          </td>
+          <td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width:90px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;">
+              <div style="padding-left:10px;">
+                  SUBTOTAL
+              </div>
+          </td>
+          
+            
+          
+      </tr>
+      <tr>
+        <td colspan="4" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;line-height:10px">
+            &nbsp;
+        </td>
+      </tr>
+      
+        
+          <tr valign="top">
+            <td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;">
+              <div style="padding-bottom: 10px;">
+                  <span style="font-weight:600; color:#3E3E3E;">
+                    &quot;BLUE MOON&quot; Light weight COMP kimono pre order (waiting time 3 weeks)
+                  </span>
+                  <span style="font-weight: 400">
+                    <br />SQ2355454
+                    <br />
+                    
+                      A0 
+                  </span>
+                  
+              </div>
+            </td>
+            <td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; font-weight: 400;">
+                <div style="padding-left: 10px; padding-bottom: 10px;">
+                    1
+                </div>
+            </td>
+            <td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; font-weight: 400;">
+              <div style="padding-left: 10px; padding-bottom: 10px;">
+                
+                  $180.00
+                
+              </div>
+            </td>
+            <td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; font-weight: 400;">
+              <div style="padding-left: 10px; padding-bottom: 10px;">
+                $180.00
+              </div>
+            </td>
+            
+          </tr>
+        
+        
+      
+      <tr><td colspan="4" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;line-height:5px">
+          &nbsp;
+      </td>
+      </tr><tr>
+        <td colspan="1" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-top: 1px solid #797979;">
+        </td>
+
+
+        <td colspan="2" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; border-top: 1px solid #797979; font-weight: 400;">
+          <div style="padding-left: 10px; " class="page-break-section">
+            <div style="height: 10px">
+                &nbsp;
+            </div>
+            Item Subtotal<br />
+            
+            
+              Shipping &amp; Handling<br />
+            
+            
+            
+            
+              
+                Tax<br />
+              
+            
+            <span style="font-weight: bold;">
+              TOTAL
+            </span>
+            
+            
+            
+            
+          </div>
+        </td>
+        <td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; border-top: 1px solid #797979; font-weight: 400;">
+          <div style="padding-left: 10px;" class="page-break-section">
+            <div style="height: 10px">
+                &nbsp;
+            </div>
+            $180.00<br />
+            
+              $12.79<br />
+            
+            
+            
+            
+              
+                $0.00<br />
+              
+            
+            <span style="font-weight: bold;">
+              $192.79
+            </span>
+
+
+            
+
+
+
+            
+          </div>
+        </td>
+      </tr>
+  </tbody></table>
+
+  
+  <div class="page-break-section" style="background: #ffffff;">
+    
+  </div>
+
+  
+  <div class="page-break-section">
+    
+  </div>
+
+  
+  <div class="page-break-section">
+    
+  </div>
+
+  
+  <div class="page-break-section">
+    
+      <div style="height: 44px;">
+        &nbsp;
+      </div>
+      <div style="color:#3E3E3E; font-weight: 200; font-size: 20px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;">
+        Additional Information
+      </div>
+      <div style="height: 20px;">
+        &nbsp;
+      </div>
+      
+        <div style="font-size: 11px; color: #3E3E3E; font-weight: 400;">Note / Additional Info:</div>
+          
+      
+    
+  </div>
+
+</div>
+
+        </div>
+        
+
+        
+        <br />
+        <div class="squarespace-footer editable" style="font-size: 14px; background: #ffffff; -webkit-text-size-adjust: none;">
+          Thank You,<br />
+V H T S<br />
+<a style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;color: #000000;color: #111; text-decoration: none;" href="http://www.vhtsny.com">http://www.vhtsny.com</a><br />
+          <div style="clear:both;"></div>
+        </div>
+        
+
+        
+        <div class="page-break-section">
+          <div style="height: 20px; background: #ffffff;">
+            &nbsp;
+          </div>
+          <div style="background: #ffffff;">
+            <div style="font-size: 12px;">
+  
+  
+  
+  
+</div>
+          </div>
+        </div>
+        
+
+      </div>
+    </td>
+    <td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 30px; background: #ffffff;">
+      &nbsp;
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;height: 60px; background: #ffffff;">
+      &nbsp;
+    </td>
+  </tr>
+</tbody></table>
+
+
+</body></html>
+------=_Part_988_1605378533.1507225258014--
+
+------=_Part_987_1675609571.1507225258014--

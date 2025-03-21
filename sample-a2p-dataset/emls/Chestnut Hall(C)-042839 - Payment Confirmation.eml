@@ -1,0 +1,163 @@
+Delivered-To: johndoe@gmail.com
+Received: by 10.80.152.43 with SMTP id g40csp966453edb;
+        Mon, 7 Aug 2017 22:30:28 -0700 (PDT)
+X-Received: by 10.202.214.3 with SMTP id n3mr3032091oig.35.1502170228253;
+        Mon, 07 Aug 2017 22:30:28 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1502170228; cv=none;
+        d=google.com; s=arc-20160816;
+        b=M9v6uOJFt9Aw9fePTSnLPUasPK3ukLIOza8fo1K2bp+x2W5mwlBU06tE9BgdyEP9aF
+         a3+n+cboFSzKeMAN0aJ21RlW3F5K7FV0qLmgCxf+Ybn50bEDNpJPsHO2TGh0XqzTonpS
+         LolLvFVbP4g3A40IKgFi2O4vZ60K0wr/lQ4Hl4pfZC14ngy5wB1dA6QUSmpoMWs7CCzN
+         fUPtu8Yb3lc9G6T/ZaojVl5CIIIAmH8MXlzpVS1wFCs/R1pji04FHZI2aAo9AKBiDJFQ
+         cNLtVWbEYgVfjinpOw3xSsmiambukGF5vUgmJ37NZwfnV/uOaqcDSm9nEwzwKfitdX7t
+         rFhg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;       
+ h=date:list-unsubscribe:content-transfer-encoding:mime-version        
+ :subject:message-id:to:reply-to:from:domainkey-signature        
+ :dkim-signature:arc-authentication-results;       
+ bh=XhUf5D1caPy8FT1nZmMTkxQ2X3N8+PHNRjTGcdndFR8=;       
+ b=T0VURzdw4OZwaT3x17iSU8VIie2C5LD3hD+lLfPDrcxktj5u9axHjFUKB4YHgOh9OA        
+ D7FB9n9zKZNNI5T2ZwZ2PKFwgmPxVDu6bAMZWFS2JZuKMF3x+NePHa+7tDWYBuBNwBXH        
+ +7iwHLi0VbceuWc6js0SB6TIo5lwn08Ry5dcpvDv3S3Ct+kM+joWLkok4zPqG+Na2MtJ        
+ OFaailpyGPBfhnuE5yAv5GBANpOeaEbm4VlgrcQHQhGmHewVbcnyqOcvlUSi+xRlHzGE        
+ lLVgDH1tBBvNK4v4At03mXsQtkZgPN3FBcRsLFYt3rtzWBDKgQp2pIL6PRc9/6MhoOgd        
+ gqNQ==
+ARC-Authentication-Results: i=1; mx.google.com;       dkim=pass
+ header.i=@mail.welcomehome.com header.s=class header.b=LOUogLkG;      
+ spf=pass (google.com: domain of =?utf-8?q?bounce-gccylgnnkrldnckcndfsnqrwwj?=
+ =?utf-8?q?wlsmkcfwspgfhkrsrrgpgpmj=40mail=2Ewelcomehome=2Ecom?= designates
+ 96.46.133.49 as permitted sender) =?utf-8?q?smtp=2Emailfrom=3Dbounce-gccylg?=
+ =?utf-8?q?nnkrldnckcndfsnqrwwjwlsmkcfwspgfhkrsrrgpgpmj=40mail=2Ewelcomehome?=
+ =?utf-8?q?=2Ecom?=
+Return-Path: =?utf-8?q?=3Cbounce-gccylgnnkrldnckcndfsnqrwwjwlsmkcfwspgfhkrsr?=
+ =?utf-8?q?rgpgpmj=40mail=2Ewelcomehome=2Ecom=3E?=
+Received: from mail1.mail.welcomehome.com (mail1.mail.welcomehome.com.
+ [96.46.133.49])        by mx.google.com with ESMTPS id
+ u10si345496oig.172.2017.08.07.22.30.27        for <johndoe@gmail.com>       
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);        Mon,
+ 07 Aug 2017 22:30:28 -0700 (PDT)
+Received-SPF: pass (google.com: domain of =?utf-8?q?bounce-gccylgnnkrldnckcn?=
+ =?utf-8?q?dfsnqrwwjwlsmkcfwspgfhkrsrrgpgpmj=40mail=2Ewelcomehome=2Ecom?=
+ designates 96.46.133.49 as permitted sender) client-ip=96.46.133.49;
+Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@mail.welcomehome.com header.s=class header.b=LOUogLkG;      
+ spf=pass (google.com: domain of =?utf-8?q?bounce-gccylgnnkrldnckcndfsnqrwwj?=
+ =?utf-8?q?wlsmkcfwspgfhkrsrrgpgpmj=40mail=2Ewelcomehome=2Ecom?= designates
+ 96.46.133.49 as permitted sender) =?utf-8?q?smtp=2Emailfrom=3Dbounce-gccylg?=
+ =?utf-8?q?nnkrldnckcndfsnqrwwjwlsmkcfwspgfhkrsrrgpgpmj=40mail=2Ewelcomehome?=
+ =?utf-8?q?=2Ecom?=
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=class;
+ d=mail.welcomehome.com; =?utf-8?q?h=3DFrom=3AReply-To=3ATo=3AMessage-ID=3AS?=
+ =?utf-8?q?ubject=3AMIME-Version=3AContent-Type=3AContent-Transfer-Encoding?=
+ =?utf-8?q?=3Alist-unsubscribe=3ADate=3B?=
+ i=Chestnut_Hall-042839@mail.welcomehome.com; bh=qjIvXQWoGzf3yWrJHKMQ2Khw0vk=;
+ =?utf-8?q?b=3DLOUogLkGQN4rd9U+f59mOvgLmS9lrspANzDN6dOeESmY91SqokqiQfDDvvZij?=
+ =?utf-8?q?hFSTSL6E7qAaI1V?=  
+ YAwKsteQJQ7pS8H5WsWllX/zyqyVZDg36BYaEYyKTrm3lZ8BlrRdxOjCVfGUiW0FgU77gPad2Cgf
+   Qkk1HkgP2QeINF5h4Qw=
+DomainKey-Signature: a=rsa-sha1; c=nofws; q=dns; s=class;
+ d=mail.welcomehome.com; =?utf-8?q?b=3DccWvL94Zd5sn8NaRJ9zmX88sTLUK3RvV4rwN6?=
+ =?utf-8?q?ZHi9+elo30XMexeLK3aepYd7Q58EcktnoaWmyxz?=  
+ HuFrdENi5/eb4vT3fHDElH+xUmY3myp83aeZKiNZWH3sZh6KFH0aQ6z38ictxiDBfYc7+QyulNFW
+   7SW8eCXeXNi4apXllLk=;
+Received: by mail1.mail.welcomehome.com id hh5678282akq for
+ <johndoe@gmail.com>; Tue, 8 Aug 2017 00:30:26 -0500 (envelope-from 
+ =?utf-8?q?=3Cbounce-gccylgnnkrldnckcndfsnqrwwjwlsmkcfwspgfhkrsrrgpgpmj=40ma?=
+ =?utf-8?q?il=2Ewelcomehome=2Ecom=3E=29?=
+From: "Chestnut Hall(C)-042839" <Chestnut_Hall(C)-042839@mail.welcomehome.com>
+Reply-To: "Chestnut Hall(C)-042839"
+ <r-rccrtnwwkgtpwckcwpsywfgjjhjtylkcsjybnsqkgyggnbnblh@mail.welcomehome.com>
+To: Jieon Kim <johndoe@gmail.com>
+Message-ID:
+ <2032593742.6192477.1502170226978.JavaMail.root@mail.welcomehome.com>
+Subject: Chestnut Hall(C)-042839 - Payment Confirmation
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-REALPAGE: zrbsrlzbprrmkrmrkbbwrldmmm
+ cvdjszzgzwvfbrczvqpctbsvsspqpqfgkmwpddbswkdrbrd flpmrrppb
+list-unsubscribe: =?utf-8?q?=3Cmailto=3Aunsub-27388457-81418-EB8D500A07B941E?=
+ =?utf-8?q?0BC3EF45B553C3C9A=40mail=2Ewelcomehome=2Ecom=3E?=
+Date: Tue, 8 Aug 2017 00:30:26 -0500
+
+
+<br />
+<table style="width: 700px; font-family: verdana,geneva,sans-serif;">
+	<tbody>
+		<tr>
+			<td style="width: 100%; background-color: #99CC00; font-size: large; color: white; padding: 25px 25px 25px 25px;">
+				<span><b>Payment Confirmation</b></span><br /><span style="font-size: x-small;">Please be sure to keep this email as your receipt confirmation.<br />If you paid from a checking account, please remember to record this in your register.</span></td>
+		</tr>
+		<tr>
+			<td>
+				Dear John Doe,</td>
+		</tr>
+		<tr>
+			<td>
+				<br />Thanks for your payment to Chestnut Hall(C)-042839 for Unit#322 from Bank account ending 1808.</td>
+		</tr>
+		<tr>
+			<td>
+				<br />
+				<table style="width: 100%;">
+					<tbody>
+						<tr>
+							<td>
+								Confirmation#:</td>
+							<td style="color: #616161;">
+								SB5D7Z9HBA3</td>
+							<td>
+								Payment Date:</td>
+							<td style="color: #616161;">
+								8/8/2017</td>
+						</tr>
+						<tr>
+							<td>
+								&nbsp;</td>
+						</tr>
+						<tr>
+							<td>
+								&nbsp;</td>
+						</tr>
+						<tr>
+							<td>
+								Payment Amount:</td>
+							<td style="color: #616161;">
+								$1,207.00</td>
+							<td>
+								Convenience Fee:</td>
+							<td style="color: #616161;">
+								$0.00</td>
+						</tr>
+						<tr>
+							<td>
+								&nbsp;</td>
+						</tr>
+						<tr>
+							<td>
+								&nbsp;</td>
+						</tr>
+						<tr>
+							<td>
+								Total Amount:</td>
+							<td style="color: #616161;">
+								$1,207.00</td>
+							<td>
+								&nbsp;</td>
+							<td>
+								&nbsp;</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+		</tr>
+		<tr>
+			<td style="width: 100%; font-size:x-small; background-color: #EFEFEF;padding-bottom:7px;">
+				<br /><b>Please contact your property if you have questions about this transaction.</b><br /><br /><b>Your Account Payment has been  initiated. Please  allow up to 3 business days, not including bank                                                                holidays, for this transaction  to clear your account. This is confirmation that the transaction has been                                                    initiated and is pending  approval from your bank.</b><br /><br /><b> </b></td>
+		</tr>
+	</tbody>
+</table>
+<br /><span>Sincerely,</span><br /><span>Chestnut Hall(C)-042839</span><br /><br /><br />To unsubscribe, click <a href="http://www.mail.welcomehome.com/Unsub.do?a=u&e=1234@gmail.com&mid=81418&sid=EB8D500A-07B9-41E0-BC3E-F45B553C3C9A&rid=27388457&lid=191">here.</a><br /><br />

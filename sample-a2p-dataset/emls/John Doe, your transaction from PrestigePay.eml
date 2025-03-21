@@ -1,0 +1,303 @@
+ARC-Seal: i=1; a=rsa-sha256; d=everythingretail.com; s=arc-20180730; t=1729861537;
+	cv=none; b=T+G4+6PF4UyoKn3TVl6y2iGUpPQQKRS4bMjpC5J9qCd4LPOhRKvDc2WSRvaq
+	 uZDWq5QMh6V8W+O7TFK3wMBFgg7An3o1U8KXLIcDfZqLYWzTRfilbHcBtH/kshYvJHXyb9
+	 chqNQnIGKXKua5X3/wvW5LZ0oywBBIpcPV/tl4iTDfLpBb67WV+JPxnnxNWg41oZvTdsgv
+	 Bnr0TYFRFqCsiL+PHG9wLgxTeCO0L0uYLyQaU/trBHw3JMRvWzncsa/XGR4MJxHgNfLotx
+	 2k98j0/nj2CMZjR+y1w5x3ZB8xsl3ZDYAWw36HUKYB90ecxQSjI56onnFzQzYC/Ny7R/HG
+	 HQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; d=everythingretail.com; s=arc-20180730;
+	t=1729861537; c=relaxed/relaxed;
+	bh=i9jxCIQDroh3LoLe1LzeXAZdQz2mljy8k2NAfWmSYSw=;
+	h=dkim-signature:from:to:subject:date:message-id; b=HgYHF9YUNV5RUPzkb1l
+	 MY4rGdcgOuD0r5kPEZ1m84AQYzYI1mAhzAyOVo1yKSiuC2kpwJC1ThAyjR7ZDzoooW0R1J
+	 KhOcXs0G8ji9SctFKYhVDQ1m7meWMTjY8Kyu2gvjilelmPEy/uzA8TaEaJC3gKeU5kSSU0
+	 UoaxJ9AscH9zEtuPL9d26hTjJbMT2m9/RFcl1qTgcEjGzoBbDNxNepIwSmOcN8qs8xbqG7
+	 SV45aypFvA8m8mCKFHAZ2mintaOG4LwsCLCTc52mMuc7ESzVOnV5EIQbfc7LtOkKIwrH6I
+	 G+4fYz2Kq3+pyD5Zgy7sc1OiR1V2Fd2KDdc/ndyzduA==
+ARC-Authentication-Results: i=1; mx.everythingretail.com;   spf=pass (mx.everythingretail.com:
+ domain of nice_customer@PrestigePay.com designates 121.133.126.71 as permitted
+ sender) smtp.mailfrom=nice_customer@PrestigePay.com;  dkim=pass
+ header.i=@PrestigePay.com;  dmarc=pass (p=NONE sp=NONE dis=NONE)
+ header.from=PrestigePay.com
+Return-Path: <nice_customer@PrestigePay.com>
+Received-SPF: pass (mx.everythingretail.com: domain of nice_customer@PrestigePay.com
+ designates 121.133.126.71 as permitted sender)  client-ip=121.133.126.71;
+ x-iptype=default;
+Authentication-Results: mx.everythingretail.com;  spf=pass (mx.everythingretail.com: domain of
+ nice_customer@PrestigePay.com designates 121.133.126.71 as permitted sender)
+ smtp.mailfrom=nice_customer@PrestigePay.com;  dkim=pass header.i=@PrestigePay.com;
+  dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=PrestigePay.com
+X-Naver-ESV: wZFn+6J4p63CbHmrKBwdbXFYKxKmFxKXjJ+Y
+X-Session-IP: 121.133.126.71
+Received: from tms1.PrestigePay.com (tms1.PrestigePay.com [121.133.126.71])
+  by crcvmail306.nm.everythingretail.com with ESMTP id aFYRU0ZyTc2cKUioCEAZ4w
+  for <johndoe@everythingretail.com>;
+  Fri, 25 Oct 2024 13:05:37 -0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1729861536;
+	s=sender; d=PrestigePay.com;	=?utf-8?q?h=3DFrom=3ATo=3AReply-to=3ASubject=3ADa?=
+ =?utf-8?q?te=3AMIME-Version=3AContent-Type=3AContent-Transfer-Encoding=3B?=
+	bh=i9jxCIQDroh3LoLe1LzeXAZdQz2mljy8k2NAfWmSYSw=;
+	b=cAEWB6oHmii6FTTvwQTTpkGztvGjV2XvOVT5FzZhzcLuqShmJ3exqL6evWnUqySR
+	GhXVe6oZnm1o4hB2gKKXb1FPAmuF1ojIbww/NlQlcosF43pMQmDWQWGT6pn6Kjl86eZ
+	S00rNfOABeLsdmAGz15nIYKWN5PZ0qb1CDIRDyfw=
+From: "=?utf-8?B?64KY7J207Iqk7Y6Y7J2066i87Lig?=" <nice_customer@PrestigePay.com>
+To: "=?utf-8?B?44ic7L+g7Yyh?=" <johndoe@everythingretail.com>
+Reply-to: <nice_customer@PrestigePay.com>
+Subject: =?utf-8?b?6rmAKuyWuOuLmCwg44ic7L+g7Yyh7JeQ7IScIOqysOygnO2VmOyLoCA=?=
+ =?utf-8?b?64K07Jet7J6F64uI64ukLg==?=
+Date: Fri, 25 Oct 2024 22:05:36 +0900
+X-WORKER_ID: <single.core.sender_Worker_12>
+X-MAIL_ID: <UE9TVF9JRD0yMDI0MTAyNV80>
+X-MEMBER_ID: <TV9JRD03MTU0NjQxMzQzNl80NzEyOTMyMw==>
+X-SEND_TYPE: <U1RZUEU9QVVUTw==>
+X-LIST_TABLE: <TElTVF9UQUJMRT1UTVNfQVVUT19TRU5EX0xJU1RfMDI=>
+X-Mailer: eMsSMTP Ver6.5( PLUTO-build 0322 )
+MIME-Version: 1.0
+Message-ID: <202410252205366436@211.48.18.219>
+Content-Type: text/html;	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html;" />
+<title>Untitled Document</title>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-top:4px solid #0054a6;max-width:679px;margin:auto;width:100%">
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-top:1px solid #eee;border-bottom:1px solid #eee;">
+<tr>
+<td width="39"></td>
+<td width="600" style="font-size:28px;color:#666;padding:25px 0;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">
+<span>john doe</span>,<br/><span style="color:#0054a6;font-weight: bold;">Payment Completed</span>.
+</td>
+<td width="39"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="39"></td>
+<td width="600" style="font-size:15px;color:#666;word-break: keep-all;padding: 25px 0;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">This is the payment details made by the customer at <span style="font-weight:bold">EverythingRetail</span> through PrestigePay payment service.</td>
+<td width="39"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="39"></td>
+<td width="600">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2" style="font-size:15px;color:#000;font-weight: bold;padding-bottom: 10px;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">Payment Information</td>
+</tr>
+<tr>
+<td colspan="2" width="100%" height="1" style="background: #000"></td>
+</tr>
+<tr>
+<td width="100" style="font-size:13px;color:#666;padding-bottom:10px;padding-top:15px;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">Buyer Name</td>
+<td width="500" align="right" style="font-size:13px;color:#666;font-weight: bold;padding-bottom:10px;padding-top:15px;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">john doe</td>
+</tr>
+<tr>
+<td width="100" style="font-size:13px;color:#666;padding-bottom:10px;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">Product Name</td>
+<td width="500" align="right" style="font-size:13px;color:#666;font-weight: bold;padding-bottom:10px;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">Steamed Chicken for One (Including Rice)</td>
+</tr>
+<tr>
+<td width="100" style="font-size:13px;color:#666;padding-bottom:10px;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">Payment Date and Time</td>
+<td width="500" align="right" style="font-size:13px;color:#666;font-weight: bold;padding-bottom:10px;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">October 25, 2024, 18:05</td>
+</tr>
+<tr>
+<td width="100" style="font-size:13px;color:#666;padding-bottom:10px;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">Order Number</td>
+<td width="500" align="right" style="font-size:13px;color:#666;font-weight: bold;padding-bottom:10px;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">STANDARD_DELIVERY_31596872239</td>
+</tr>
+<tr>
+<td width="100" style="font-size:13px;color:#666;padding-bottom:15px;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">Payment Method</td>
+<td width="500" align="right" style="font-size:13px;color:#666;font-weight: bold;padding-bottom:15px;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">Credit Card (GoldCard (Foreign Exchange))</td>
+</tr>
+<tr>
+<td colspan="2" width="100%" height="1" style="background: #ccc"></td>
+</tr>
+<tr>
+<td width="100" style="font-size:19px;color:#666;font-weight: bold;padding:15px 0;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">Payment Amount</td>
+<td width="500" align="right" style="font-size:19px;color:#666;font-weight: bold;color:#0054a6;padding:15px 0;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">
+<span>USD 13.50</span>
+</td>
+</tr>
+<tr>
+<td colspan="2" width="100%" height="1" style="background: #ccc"></td>
+</tr>
+</table>
+</td>
+<td width="39"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td height="20px"></td>
+</tr>
+<tr>
+<td width="39" style=""></td>
+<td width="600" valign="middle" style="height:42px;background: #0054a6;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">
+<a href="https://npg.nicepay.com/issue/IssueLoaderMail.do?TID=coupangeam0101241025180553KOAM&type=0" target="_blank" style="color:#fff;font-size:15px;text-align:center;text-decoration: none;width:600px;display: block;">Check Receipt</a>
+</td>
+<td width="39"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="39"></td>
+<td width="600">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2" style="font-size:15px;color:#000;font-weight: bold;padding-bottom: 10px;padding-top:40px;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">Store Information</td>
+</tr>
+<tr>
+<td colspan="2" width="100%" height="1" style="background: #000"></td>
+</tr>
+<tr>
+<td width="100" style="font-size:13px;color:#666;padding-bottom:10px;padding-top:15px;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">Store Name</td>
+<td width="500" align="right" style="font-size:13px;color:#666;font-weight: bold;padding-bottom:10px;padding-top:15px;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">Coupang</td>
+</tr>
+<tr>
+<td width="100" style="font-size:13px;color:#666;padding-bottom:10px;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">Website Address</td>
+<td width="500" align="right" style="font-size:13px;color:#666;font-weight: bold;padding-bottom:10px;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">http://www.coupang.com</td>
+</tr>
+<tr>
+<td width="100" style="font-size:13px;color:#666;padding-bottom:15px;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">Contact</td>
+<td width="500" align="right" style="font-size:13px;color:#666;font-weight: bold;padding-bottom:15px;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">123-456-7890</td>
+</tr>
+<tr>
+<td colspan="2" width="100%" height="1" style="background: #ccc"></td>
+</tr>
+</table>
+</td>
+<td width="39"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td height="20px"></td>
+</tr>
+<tr>
+<td width="39"></td>
+<td width="600" valign="middle" style="height:42px;background: #0054a6;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">
+<a href="http://www.coupang.com" target="_blank" style="color:#fff;font-size:15px;text-align:center;text-decoration: none;width:600px;display: block;">Go to Store</a>
+</td>
+<td width="39"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-bottom:1px solid #eee;">
+<tr>
+<td width="39"></td>
+<td width="600" valign="middle" style="padding:40px 0;">
+<a href="https://www.nicepay.com" target="_blank" style="width:600px;display: block;">
+</a>
+</td>
+<td width="39"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="39"></td>
+<td width="600" style="padding:30px 0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td valign="middle" style="font-size:15px;color:#666;line-height:15px;font-weight: bold;;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">
+</td>
+</tr>
+<tr height="5"></tr>
+<tr>
+<td width="600" style="font-size:13px;color:#666;;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">- This email is for sending only and is not used for any purpose other than confirming payment details.<br/>- NICEPAY provides electronic payment services and is displayed as 'NICE' on the bill.<br/>- For inquiries about cancellation, delivery, and returns of the purchased goods, please check with the respective store.</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td width="39"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="background:#e6e5e5">
+<tr>
+<td width="39"></td>
+<td width="600">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td align="center" width="600" style="font-size:13px;color:#666;padding:25px 10px 25px;word-break: keep-all;;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">This email is automatically sent by NICEPAY, an electronic payment service of NICE Payments, to notify you of the payment details separately from the respective store in accordance with Article 8, Paragraph 3 of the Consumer Protection Act in Electronic Commerce, etc.</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td width="39"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="39">&nbsp;</td>
+<td width="600">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="20"></td>
+<td width="150">
+</td>
+<td align="left" style="font-size:11px;color:#aaa;padding:30px 0;;font-family: '나눔고딕',NanumGothic,'맑은고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;">Business Registration Number: 815-81-00527 | Payment Deposit Registration Number: 02-006-00041<br/>04117 Credit Center, 5-7th Floor, 217 Mapo-daero, Mapo-gu, Seoul, NICE Payments Co., Ltd.<br/>Copyright@2019 NICEPAY. All rights reserved.</td>
+<td width="20"></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td width="39">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

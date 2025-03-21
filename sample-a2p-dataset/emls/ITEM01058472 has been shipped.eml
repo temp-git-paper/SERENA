@@ -1,0 +1,656 @@
+ARC-Seal: i=1; a=rsa-sha256; d=naver.com; s=arc-20180730; t=1736495832;
+	cv=none; b=kvwWwqlx170GqiZeYX2s7zqp02xmLIX3thsOp01dNMyrsOs8sVoVuGxvlH82
+	 6x88IIaT2dZr39dpi6WmSiCmzeXRzEAZOrortNuQR1SELwIDp+qLCfRiDgdt75M/xUeNUA
+	 VaoCnpjhCEhGXTDr5fKQWkKkPmZv1s0V9hq5jEm5PCypdSxElFXLhbzsSA2bQsI9v5U+g9
+	 QDWmowPSiR5+2qbpArWkDytkSl95/5UQCCLBkAJvKCUZ8zraoQvZUawGNoFair/bH9I84W
+	 hzWXJdDXWkO5vad/rOUqfSQA94L3ol4/TMyEIRCjGBHnjyE98dNAZS6cDy4vc+Nt6IvDvC
+	 jw==
+ARC-Message-Signature: i=1; a=rsa-sha256; d=naver.com; s=arc-20180730;
+	t=1736495832; c=relaxed/relaxed;
+	bh=MhMIrLNjnu+cC4WSCHn25RJPGxcFbuhMv2Qm/LyVZkg=;
+	h=dkim-signature:dkim-signature:from:to:subject:date:message-id; b=VWkA
+	 6mBZHD6JgXPlDN1Jc/eZ/WFvJTy9orCSeIV2jctqZm1cW6Ox86DyOww0SfDAokFmlZrf51
+	 VHE3IDtAjwD8uGEHTTd3q2UbpitTUtJ1zyvnFawE8wj18v22FJTM0/EHObQjFk0C741UeU
+	 UNwWE/i5XsVc7q3PFvr4wC4P1SGujRXFU+d9saY9F85QPjb3qSYVY64vzF9aHvkSkIUwlP
+	 926zAcFf6aLZtpWYmQydo9XoiGAhgaz7B1FkhsWzDyG2cDv8QCobuFLLWP5Ngk52XlIoIi
+	 QxbqxZS6e9V0i/uxt6TcoImQMhsFtzGybvxeiQX+1atBlWdNe3zoScOYbg==
+ARC-Authentication-Results: i=1; mx.naver.com;   spf=pass (mx.naver.com:
+ domain of
+ bounce-23_HTML-45110704-265135-514015369-2479@bounce.e.lululemon.com
+ designates 13.111.139.29 as permitted sender) =?utf-8?q?smtp=2Emailfrom=3Db?=
+ =?utf-8?q?ounce-23=5FHTML-45110704-265135-514015369-2479=40bounce=2Ee=2Elul?=
+ =?utf-8?q?ulemon=2Ecom=3B?=  dkim=pass header.i=@e.lululemon.com;  dkim=pass
+ header.i=@s11.y.mc.salesforce.com;  dmarc=pass (p=REJECT sp=REJECT dis=NONE)
+ header.from=e.lululemon.com
+Return-Path:
+ <bounce-23_HTML-45110704-265135-514015369-2479@bounce.e.lululemon.com>
+Received-SPF: pass (mx.naver.com: domain of
+ bounce-23_HTML-45110704-265135-514015369-2479@bounce.e.lululemon.com
+ designates 13.111.139.29 as permitted sender)  client-ip=13.111.139.29;
+ x-iptype=default;
+Authentication-Results: mx.naver.com;  spf=pass (mx.naver.com: domain of
+ bounce-23_HTML-45110704-265135-514015369-2479@bounce.e.lululemon.com
+ designates 13.111.139.29 as permitted sender) =?utf-8?q?smtp=2Emailfrom=3Db?=
+ =?utf-8?q?ounce-23=5FHTML-45110704-265135-514015369-2479=40bounce=2Ee=2Elul?=
+ =?utf-8?q?ulemon=2Ecom=3B?=  dkim=pass header.i=@e.lululemon.com;  dkim=pass
+ header.i=@s11.y.mc.salesforce.com;  dmarc=pass (p=REJECT sp=REJECT dis=NONE)
+ header.from=e.lululemon.com
+X-Naver-ESV: wZen+6J4p63CbHmrKBwdbXFYKAb9FquZjJ+Y
+X-Session-IP: 13.111.139.29
+Received: from mta5.e.lululemon.com (mta5.e.lululemon.com [13.111.139.29])
+  by crcvmail102.nm.naver.com with ESMTP id wKs63DQyQ5iWiQq6Gwi9fQ
+  for <jqwe100@naver.com>
+  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384);
+  Fri, 10 Jan 2025 07:57:12 -0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=11dkim1;
+ d=e.lululemon.com; =?utf-8?q?h=3DFrom=3ATo=3ASubject=3ADate=3AList-Help=3AM?=
+ =?utf-8?q?IME-Version=3AReply-To=3AMessage-ID=3AContent-Type=3B?=
+ i=hello-asia@e.lululemon.com;
+ bh=MhMIrLNjnu+cC4WSCHn25RJPGxcFbuhMv2Qm/LyVZkg=; =?utf-8?q?b=3DkkbCQPvp4aZj?=
+ =?utf-8?q?URcM7wXukBG07+6TwIin6/iYlL1eoM5UYnFJB6P8jvbGNHccv0+QO2USohmMl69K?=
+  
+ toE1TWElRiyqNqnt92oEAdYABLDf35W3mAImM0VytFh/VTWPMS65HwmQr+JrH77LnEWB07TiPOip
+  
+ tV16aNuR+NrKXKvb7OTNuZbatNrfQT98nrkAit/kwfV4nMnodVnA24RmMseL0i3tKK7B4G3/dP5u
+  
+ CFIfTcgUU5ezt3LxUCz6isbm0WU5yMvZmgI1/l3Zy+SCZQ6ueVxaVOHVMTtSPrUokEWH/3bSi+Q3
+   eVTjKQOH7deE6g5zUHA5keA3aB2F7pGMuVnkZQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=fbldkim11;
+ d=s11.y.mc.salesforce.com; =?utf-8?q?h=3DFrom=3ATo=3ASubject=3ADate=3AList-?=
+ =?utf-8?q?Help=3AMIME-Version=3AReply-To=3AMessage-ID=3AContent-Type=3B?=
+ bh=MhMIrLNjnu+cC4WSCHn25RJPGxcFbuhMv2Qm/LyVZkg=; =?utf-8?q?b=3DVVEtSPnuOMtj?=
+ =?utf-8?q?HkSkFK9ylX3poEFmScnCzkBPnUvtQln31VyvE6i5lLh7iNvGHSw9Ho0YBTerY1Ek?=
+  
+ /cZUMB8PmHiqMmiEm68QObht+jAPYMp8FN3JMlwrxXmVIX05Z/xtOeyn/BfEJBJE7A7v/JcMbHJr
+  
+ +oB+0bWYbyHG1q43iQJyvcyQls9RwRMURQ1ZJ6Lr0HslmwFDXlKQUlmP5GMhZ8ofBAQ3NXa4zz4y
+  
+ EBheMGcBU4J5oum0d+j31KeBhYOw5p+6/kIoXADS5eTkxkEFOxJThlOrmrzlozNhk8rLP/fUKbxr
+   PzW5hjxpiAqrw7xDN7k6YiJcQi9BXu8bS/5pcg==
+Received: by mta5.e.lululemon.com id hg39dg2fmd44 for <jqwe100@naver.com>;
+ Fri, 10 Jan 2025 07:57:10 +0000 (envelope-from
+ <bounce-23_HTML-45110704-265135-514015369-2479@bounce.e.lululemon.com>)
+From: "lululemon" <hello-asia@e.lululemon.com>
+To: <jqwe100@naver.com>
+Subject: =?UTF-8?B?S1IwMTA1ODQ3MuydtCDstpzqs6DrkJjsl4jsirXri4jri6Qu?=
+Date: Fri, 10 Jan 2025 01:57:09 -0600
+List-Help: =?utf-8?q?=3Chttps=3A//click=2Ee=2Elululemon=2Ecom/subscription?=
+ =?utf-8?q?=5Fcenter=2Easpx=3Fjwt=3DeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9=2Ee?=
+ =?utf-8?q?yJtaWQiOiI1MTQwMTUzNjkiLCJzIjoiNDUxMTA3MDQiLCJsaWQiOiIyMyIsImoiOi?=
+ =?utf-8?q?IyNjUxMzUiLCJqYiI6IjI0NzkiLCJkIjoiMTEwMDQ3In0=2Eytav0wq7kAgK4PbEd?=
+ =?utf-8?q?bM9LSGQIMWKDM6lLnqLYKu9ENo=3E?=
+MIME-Version: 1.0
+Reply-To: "lululemon" <reply-fec9167670650778-23_HTML-45110704-514015369-2479@reply.e.lululemon.com>
+x-messageKey: =?utf-8?q?asia=5Fweb=5Ffull=5Fpartial=5Fship=5Fconfirm=5FKR010?=
+ =?utf-8?q?58472=5F651e7a9a-6f2d-43d4-82e1-e14a2adc3ecf=5F2025-01-10T07=3A57?=
+ =?utf-8?q?=3A?=
+X-Delivery: Transactional
+X-SFMC-Stack: 11
+x-job: 514015369_265135
+Message-ID: <14645bff-c025-47b4-a98f-715d2d5c88ee@atl1s11mta748.xt.local>
+Content-Type: multipart/alternative;
+	boundary="iEzjBU2rliwO=_?:"
+
+This is a multi-part message in MIME format.
+
+--iEzjBU2rliwO=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Order Information
+
+Order Number: KR01058472
+
+Your order has been shipped!
+
+Good news has arrived! The product you ordered has been shipped from the logistics center in South Korea. Now, plan your exciting sweat life. For detailed delivery status, please contact the Guest Education Center (GEC).
+
+Track Delivery Status
+
+Tracking Number: 584043683571
+
+Order Details
+
+Order Number: KR01058472
+
+Order Date: January 9, 2025
+
+Delivery: ABC Logistics Free Shipping
+
+Delivery Address: John Doe, 10347 S Ewing Ave, Chicago, IL 60617 USA
+
+Product: Luna New Year Nulu Keyhole Long Sleeve Shirt
+
+Size: US M (KR 66-77)
+Quantity: 1
+
+Price: $81.00 USD
+
+Need Help?: Email | Call
+
+FAQ | Store Locator
+
+Privacy Policy | Terms of Use
+--iEzjBU2rliwO=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html lang="ko_kr" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <style type="text/css">
+        html * {
+            box-sizing: border-box;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        img,
+        a img {
+            border: 0;
+            height: auto;
+            outline: none;
+            text-decoration: none;
+        }
+
+        body {
+            height: 100% !important;
+            margin: 0 auto !important;
+            padding: 0;
+            width: 100% !important;
+        }
+
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+
+        #outlook a {
+            padding: 0;
+        }
+
+        table {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        .ReadMsgBody {
+            width: 100%;
+        }
+
+        .ExternalClass {
+            width: 100%;
+        }
+
+        p,
+        a,
+        td,
+        span {
+            font-family: AvenirLTStdRoman, Verdana, sans-serif;
+        }
+
+        p,
+        a,
+        td {
+            mso-line-height-rule: exactly;
+        }
+
+        p,
+        a,
+        td,
+        body,
+        table {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass td,
+        .ExternalClass div,
+        .ExternalClass span,
+        .ExternalClass font {
+            line-height: 100%;
+        }
+
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        .br-mbl {
+            display: none;
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        @media screen and (max-width:480px) {
+            .mw100 {
+                max-width: 100% !important;
+            }
+
+            .w100 {
+                width: 100% !important;
+            }
+
+            .w95 {
+                width: 95% !important;
+            }
+
+            .w90 {
+                width: 90% !important;
+            }
+
+            .txt14 {
+                font-size: 14px !important;
+                line-height: 20px !important;
+            }
+
+            .pad10 {
+                padding: 10px 0px !important;
+            }
+
+            .txt-cntr {
+                text-align: center !important;
+            }
+
+            .padbtm10 {
+                padding-bottom: 10px !important;
+            }
+
+            .hide {
+                display: none !important;
+                max-height: 0px !important;
+                overflow: hidden !important;
+            }
+
+            .br-mbl {
+                display: block !important;
+            }
+
+            .mbl-center {
+                margin: 0 auto !important;
+                float: none !important;
+            }
+
+            .hideme {
+                display: block !important;
+                max-height: none !important;
+                overflow: visible !important;
+                visibility: visible !important;
+            }
+
+            .two-column .column,
+            .two-column img {
+                max-width: 99% !important;
+            }
+        }
+    </style>
+</head>
+
+<body style="Margin:0; padding:0; background-color:#ffffff;">
+    <style type="text/css">
+        div.preheader {
+            display: none !important;
+        }
+    </style>
+    <div class="preheader" style="font-size: 1px; display: none !important;">Order Information</div>
+    <div align="center" style="width:100%;background-color:#ffffff;">
+        <div data-content-region-name="Country"></div>
+
+        <table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:640px;Margin:0 auto;background-color:#f8f8f8;">
+            <tr>
+                <td align="center" style="padding:25px 0px;" class="pad10">
+                    <table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="width:94%;max-width:600px;Margin:0 auto;">
+                        <tr>
+                            <td align="left" style="width:20px;">
+                                <a href="https://click.e.lululemon.com/?qs=9994c6986285c2ae5958481fac35deeeed4357f56f9ca81da2ba27b79d052734f839816fac5d993fe3e83e2404c40007ef4c057413ec2a8c2190f58f956b1251">
+                                    <!-- Image removed -->
+                                </a>
+                            </td>
+                            <td align="right" width="70%">
+                                <p style="padding:0;margin:0;font-size:12px;font-weight:bold;letter-spacing:2px;line-height:18px;text-align:right;color:#000001;padding-right:10px;">
+                                    Order Number:
+                                    <a href="https://click.e.lululemon.com/?qs=9994c6986285c2aec8ed8651d00274bd3ab39a3a5ea6003ef477fa56437eacd2a03ae7e8048fb633e6fea120ea79cad72904077f9b6f96016f009c5effa373a6" style="color:#000001;">KR01058472</a>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:640px;Margin:0 auto;background-color:#ffffff;">
+            <tr>
+                <td align="center" style="padding:30px 0px;">
+                    <table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="width:78%;max-width:500px;Margin:0 auto;" class="w95">
+                        <tr>
+                            <td>
+                                <p style="padding:0;margin:0;margin-bottom:30px;font-size:30px;letter-spacing:1px;line-height:38px;text-align:left;color:#000001;" class="txt-cntr">Your order has been shipped!</p>
+                                <p style="padding:0;margin:0;font-size:18px;line-height:26px;letter-spacing: 1px;text-align:left;color:#000001;" class="txt16">Good news has arrived! Your ordered product has been shipped from the logistics center in South Korea. Now plan your exciting sweat life.<br/><br/>For detailed delivery status, please contact the Guest Education Centre (GEC).</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:640px;Margin:0 auto;background-color:#ffffff;">
+            <tr>
+                <td align="center" style="padding-bottom:10px;">
+                    <div class="mbl_hide">
+                        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin: 0 auto;" class="hide">
+                            <tr>
+                                <td height="44" style="border-radius: 22px; color: #ffffff; font-size: 16px; font-weight: 600; height: 44px; letter-spacing: 1.5px; text-align: center; ">
+                                    <a href="https://click.e.lululemon.com/?qs=9994c6986285c2ae0902c1cc1f79dcca08c5363636fbf8ad532da8e3282384a20f115f8e4702954d394c8525e7ccfd26a283aed3fef4d91c66fa0e76f357cc26" style="background-color: #000000; border-radius: 22px; color: #ffffff; display: inline-block; line-height: 44px; letter-spacing: 1.5px; text-decoration: none; width: 225px;" valign="middle" target="_blank">Check Delivery Status</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="hideme" style="display:none;max-height:0px;overflow:hidden;">
+                        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin: 0 auto;">
+                            <tr>
+                                <td height="44" style="border-radius: 22px; color: #ffffff; font-size: 16px; font-weight: 600; height: 44px; letter-spacing: 1.5px; text-align: center; ">
+                                    <a href="https://click.e.lululemon.com/?qs=9994c6986285c2ae0902c1cc1f79dcca08c5363636fbf8ad532da8e3282384a20f115f8e4702954d394c8525e7ccfd26a283aed3fef4d91c66fa0e76f357cc26" style="background-color: #000000; border-radius: 22px; color: #ffffff; display: inline-block; line-height: 44px; letter-spacing: 1.5px; text-decoration: none; width: 225px;" valign="middle" target="_blank">Check Delivery Status</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" style="padding-bottom:30px;">
+                    <p style="padding:0;margin:0;font-size:18px;line-height:22px;letter-spacing: 1px;text-align:center;color:#000001;" class="txt16">Tracking Number: 584043683571</p>
+                </td>
+            </tr>
+        </table>
+
+        <table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:640px;Margin:0 auto;background-color:#f8f8f8;">
+            <tr>
+                <td align="center" style="padding:23px 0px;">
+                    <table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="width:78%;max-width:500px;Margin:0 auto;" class="w95">
+                        <tr>
+                            <td align="center">
+                                <p style="padding:0;margin:0;font-size:20px;letter-spacing:1px;line-height:24px;text-align:left;color: #000001;" class="txt-cntr">Order Details</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" style="padding-bottom:23px;">
+                    <table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="width:80%;max-width:500px;Margin:0 auto;" class="w95">
+                        <tr>
+                            <td align="center" style="font-size:0;vertical-align:top;">
+                                <div style="display:inline-block;width:100%;max-width:250px;vertical-align:top;" class="mw100">
+                                    <table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+                                        <tr>
+                                            <td align="left">
+                                                <p style="padding:0;margin:0;margin-bottom:5px;font-size:14px;font-weight:bold;letter-spacing:2px;line-height:28px;text-align:left;color: #000001;">
+                                                    Order Number: <br class="hide" /><a href="https://click.e.lululemon.com/?qs=9994c6986285c2aec8ed8651d00274bd3ab39a3a5ea6003ef477fa56437eacd2a03ae7e8048fb633e6fea120ea79cad72904077f9b6f96016f009c5effa373a6" style="color: #000001; font-weight: normal;">KR01058472</a>
+                                                </p>
+                                                <p style="padding:0;margin:0;margin-bottom:5px;font-size:14px;font-weight:bold;letter-spacing:2px;line-height:28px;text-align:left;color: #000001;">
+                                                    Order Date <br class="hide" /><span style="font-weight: normal;">
+                                                        January 09, 2025
+                                                    </span>
+                                                </p>
+                                                <p style="padding:0;margin:0;font-size:14px;font-weight:bold;letter-spacing:2px;line-height:28px;text-align:left;color: #000001;">
+                                                    Shipping <br class="hide" /><span style="font-weight: normal;">
+                                                        ABC Logistics Free Shipping
+                                                    </span></p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div style="display:inline-block;width:100%;max-width:250px;vertical-align:top;" class="mw100">
+                                    <table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+                                        <tr>
+                                            <td align="left">
+                                                <p style="padding:0;margin:0;font-size:14px;font-weight:bold;letter-spacing:2px;line-height:28px;text-align:left;color: #000001;">
+                                                    Shipping Address</p>
+                                                <p style="padding:0;margin:0;font-size:14px;letter-spacing:2px;line-height:28px;text-align:left;color: #000001;">
+                                                    John Doe<br />
+                                                    165 Seooreung-ro, Eunpyeong-gu, Seoul (Gusan-dong, Gusan Housing)<br />
+                                                    Room 311<br />
+                                                    Seoul, 03411<br />
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" style="padding-bottom:23px;">
+                    <table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="width:80%;max-width:500px;Margin:0 auto;" class="w95">
+                        <tr>
+                            <td height="2" style="height: 2px;border-top:solid 1px #979797;line-height: 2px;mso-line-height-rule:exactly;">
+                                &nbsp;</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" style="padding-bottom:23px;">
+                    <table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="width:78%;max-width:500px;Margin:0 auto;" class="w95">
+                        <tr>
+                            <td align="center">
+                                <p style="padding:0;margin:0;font-size:20px;letter-spacing:1px;line-height:24px;text-align:left;color: #000001;" class="txt-cntr">Product</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" style="padding-bottom:23px;">
+                    <table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="width:80%;max-width:500px;Margin:0 auto;" class="w95">
+                        <tr>
+                            <td align="center" style="font-size:0;vertical-align:top;">
+                                <div style="display:inline-block;width:100%;max-width:150px;vertical-align:top;" class="mw100">
+                                    <table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+                                        <tr>
+                                            <td align="center" class="padbtm10">
+                                                <a href="https://click.e.lululemon.com/?qs=9994c6986285c2aec0759f6a5c3e94ccc0290dbfa03c80e16f04b12ac9c5fc569cee56453af4dc6e972423c5d7c05758a9ad6fec7dff9cf3f5d20ee04d1913f8">
+                                                    <!-- Image removed -->
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div style="display:inline-block;width:100%;max-width:350px;vertical-align:top;" class="mw100">
+                                    <table role="presentation" align="right" cellpadding="0" cellspacing="0" border="0" style="width:95%;" class="w100">
+                                        <tr>
+                                            <td align="left" valign="top" style="width:60%;">
+                                                <p style="padding:0;margin:0;font-size:14px;line-height:22px;text-align:left;color:#000001; font-weight: bold;  letter-spacing: 1px;">
+                                                    <a href="https://click.e.lululemon.com/?qs=9994c6986285c2aec0759f6a5c3e94ccc0290dbfa03c80e16f04b12ac9c5fc569cee56453af4dc6e972423c5d7c05758a9ad6fec7dff9cf3f5d20ee04d1913f8" style="color: #000001; text-decoration: none;">Lunar New Year Nulu Keyhole Long Sleeve Shirt</a>
+                                                </p>
+                                                <p style="padding:0;margin:0;font-size:14px;line-height:22px;text-align:left;color:#000001;font-family: helvetica,arial, sans-serif !important;"></p>
+                                                <p style="padding:0;margin:0;font-size:14px;line-height:22px;text-align:left;color:#000001;font-family: helvetica,arial, sans-serif !important;">
+                                                    41431
+                                                </p>
+                                                <p style="padding:0;margin:0;font-size:14px;line-height:22px;text-align:left;color:#000001;font-family: helvetica,arial, sans-serif !important;">
+                                                    Size: US M (KR 66-77) Quantity: 1
+                                                </p>
+                                                <p style="padding:0;margin:0;font-size:14px;line-height:22px;text-align:left;color:#000001;font-family: helvetica,arial, sans-serif !important;">
+                                                    155000193
+                                                </p>
+                                            </td>
+                                            <td align="right" valign="top" style="width:32%">
+                                                <p style="padding:0;margin:0;font-size:14px;line-height:22px;text-align:right;color:#000001;">
+                                                    $82.00
+                                                </p>
+                                                <p style="padding:0;margin:0;font-size:12px;line-height:22px;text-align:right;color:#000001;">
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:640px;margin:auto; text-align:center;">
+            <tr>
+                <td style="margin:auto; text-align:center;">
+                    <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper">
+                        <tr>
+                            <td class="stylingblock-content-wrapper camarker-inner">
+                                <table class="outer" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse; border-spacing:0; Margin:0 auto; width:100%; max-width:620px;" bgcolor="">
+                                    <tr>
+                                        <td class="one-column" style="padding-top:0;padding-bottom:0;padding-right:15px;padding-left:15px;" align="center">
+                                            <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin: 0 auto; max-width: 390px; width: 100%;">
+                                                <tr>
+                                                    <td width="30" height="40" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="color: #000000; font-family: 'CalibreWeb-Medium', Helvetica, Arial, sans-serif; font-size: 20px; line-height: 24px; letter-spacing: 0.5px; text-align: center; font-weight: normal; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">Just for You</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="15" height="30" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="two-column" style="padding-top:0;padding-bottom:0;padding-right:10px;padding-left:10px;text-align:center;font-size:0;">
+                                            <div class="column full" style="width:100%;max-width:200px;display:inline-block;vertical-align:top; ">
+                                                <table width="100%" style="border-spacing:0;font-family:sans-serif; color:#333333;" class="full">
+                                                    <tr>
+                                                        <td class="inner" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+                                                            <table class="contents" style="border-spacing:0;font-family:sans-serif;color:#333333;width:100%;font-size:14px;text-align:center;">
+                                                                <tr>
+                                                                    <td style="padding-top:0;padding-bottom:0;padding-right:5px;padding-left:5px;" align="center">
+                                                                        <a href="https://click.e.lululemon.com/?qs=9994c6986285c2ae98334c1a0f4df9217eff6d3755e164ec2113020a636ddd9261c2c315c1d5f67de209799bc94476f0f28322f8542e8bd0ef37a30eed750e23" style="font-size: 14px; line-height: 20px; font-weight: normal; font-family: 'CalibriWeb-Regular', Helvetica, Arial, sans-serif; color: #6e6e70; text-decoration:none;">
+                                                                            <!-- Image removed -->
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="10" height="10" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="column" style="width:100%;max-width:400px;display:inline-block;vertical-align:top;;">
+                                                <table width="100%" style="border-spacing:0;font-family:sans-serif;color:#333333;">
+                                                    <tr>
+                                                        <td class="inner" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+                                                            <table class="contents" style="border-spacing:0;font-family:sans-serif;color:#333333;width:100%;font-size:14px;text-align:center;">
+                                                                <tr>
+                                                                    <td style="padding-top:0;padding-bottom:0;padding-right:5px;padding-left:5px;" align="center">
+                                                                        <a href="https://click.e.lululemon.com/?qs=9994c6986285c2ae2725a038911046d9a4c91a10a08eae7cc8b33117c811fc5d4281b6aa9e3881fadf56c9642045f3ceec5d63a0dda28250753d09dc05b35b80" style="font-size: 14px; line-height: 20px; font-weight: normal; font-family: 'CalibriWeb-Regular', Helvetica, Arial, sans-serif; color: #6e6e70; text-decoration:none;">
+                                                                            <!-- Image removed -->
+                                                                        </a>
+                                                                    </td>
+                                                                    <td style="padding-top:0;padding-bottom:0;padding-right:5px;padding-left:5px;" align="center">
+                                                                        <a href="https://click.e.lululemon.com/?qs=9994c6986285c2ae191dd6929b577d5d43f2714ad7b9d08bc8fab7aaac8b1e969e7d528c60d3fc2f319b2ff5967329b51cfbe55899acd66dbebd47ff430d8c17" style="font-size: 14px; line-height: 20px; font-weight: normal; font-family: 'CalibriWeb-Regular', Helvetica, Arial, sans-serif; color: #6e6e70; text-decoration:none;">
+                                                                            <!-- Image removed -->
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="10" height="10" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="10" height="20" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border-collapse:collapse" align="center">
+                                            <table align="center" style="border-collapse:collapse;margin:0 auto;padding:0;border-spacing:0;border-radius:0px;background-color:#FFFFFF" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0">
+                                                <tr>
+                                                    <td style="border-collapse:collapse; padding:0; border: 1px solid #000000; text-align:center; mso-padding-alt:15px 40px; -webkit-text-size-adjust:none; font-family: 'CalibreWeb-Regular', Helvetica, Arial, sans-serif; font-size: 14px; color:#ffffff; font-weight: bold; letter-spacing: 1.5px; text-decoration:none; text-transform: uppercase; -webkit-text-size-adjust:none; -webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;" align="center">
+                                                        <a href="https://click.e.lululemon.com/?qs=9994c6986285c2ae2c466d6f5925edb3f149adeef993fa7071ce579af009b4e9cb4640d0d9eecafc769733b43c8cf5c56959a376b8b55cfc88b333fd21bd2ffe" target="_blank" style="text-decoration:none; line-height:18px; text-align:center;  -webkit-text-size-adjust:none; font-family: 'CalibreWeb-Semibold', Helvetica, Arial, sans-serif; font-size: 14px; color:#000000; font-weight: bold; letter-spacing: 1.5px; text-decoration:none; text-transform: uppercase; -webkit-text-size-adjust:none; -webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;">
+                                                            <span style="padding:12.5px 20.5px;display:block;">
+                                                                View All
+                                                            </span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="10" height="50" style="font-size:1px; line-height:1px; mso-line-height-rule: exactly;">&nbsp;</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:640px;Margin:0 auto;background-color:#d8d8d8;">
+            <tr>
+                <td align="center" style="padding:23px 0px;">
+                    <table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="width:78%;max-width:500px;Margin:0 auto;" class="w95">
+                        <tr>
+                            <td align="center" style="padding-bottom:23px;font-size:13px;">
+                                <a href="https://click.e.lululemon.com/?qs=9994c6986285c2ae574123d3499309052e2c78df306d9e5f48e1932042058463c1ea09fa86ebff61fc6812baddff3d66faa4641f67bbeed4a32374ab7f7ef5fd" style="font-family:helvetica, arial, sans-serif;font-size:13px;font-weight:bold;letter-spacing:2px;line-height:19px;text-align:center;color:#000001;text-decoration: none;">Women</a>&nbsp;&nbsp;<span style="font-weight: normal;">|</span>&nbsp;&nbsp;<a href="https://click.e.lululemon.com/?qs=9994c6986285c2ae1be640a3c4c35e2d510b9c5a0811f812f7bebe6ce6f03acee6cc6905420fe3f817b83d45f9af9661dedb10a6dcfe04d16bd7b96e1b24f4a6" style="font-family:helvetica, arial, sans-serif;font-size:13px;font-weight:bold;letter-spacing:2px;line-height:19px;text-align:center;color:#000001;text-decoration: none;">Men</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="padding-bottom:23px;">
+                                <table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="width:78%;max-width:500px;Margin:0 auto;" class="w95">
+                                    <tr>
+                                        <td align="right">
+                                            <a href="https://click.e.lululemon.com/?qs=9994c6986285c2aef11a5e715a41449c51a0c184651ee5e205a10a545ada2354710796591b5aab298791bca97f3a4f355781e31c2f0fce65a46d1ed3d81b2ab2">
+                                                <!-- Image removed -->
+                                            </a>
+                                        </td>
+                                        <td align="center">
+                                            <a href="https://click.e.lululemon.com/?qs=9994c6986285c2aead87b7b8ef380c25ecd640a26984de1714f60e301bd1ee0e23824b5bf412dc8375b19f47b3ca2354e5c4d048637809fb3605609c82b9c27c">
+                                                <!-- Image removed -->
+                                            </a>
+                                        </td>
+                                        <td align="left">
+                                            <a href="https://click.e.lululemon.com/?qs=9ff2674c80d1025a97d9c463467614bdd095ff8c19eb8ea5fdec11fb0176d56eb4d17544d1d940a6793302667e440deac28904974fb1d3dd491c25c2e9b68ccd">
+                                                <!-- Image removed -->
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <p style="padding:0;margin:0;font-size:13px;font-weight:bold;line-height:19px;text-align:center;color:#000001;"> <br class="br-mbl" /><a href="https://click.e.lululemon.com/?qs=9994c6986285c2ae32536f884c61cd9c256f21f7c3a0573b9aafcc83618c29ddfe030d9d5c4e855211c42d6ae5c679461678c7db8ac39421e8e4cc25937d9ca6" style="color: #000001;text-decoration: underline;">Privacy Policy</a> | <a href="https://click.e.lululemon.com/?qs=9994c6986285c2ae135061d6966e8766423da078e5ccf7896316b375f6a4d816e250e6d2f23004d7252ab226ead0cd37fb487ee3695ffefd9573f5c92427ded3" style="color: #000001;text-decoration: underline;">Terms of Use</a>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
