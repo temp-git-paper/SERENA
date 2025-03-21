@@ -77,6 +77,12 @@ def save_excel_rows_to_txt(input_directory, output_dir):
     """
     os.makedirs(output_dir, exist_ok=True)
 
+    excel_files = [f for f in os.listdir(input_directory) if f.endswith(".xlsx")]
+
+    if not excel_files:
+        print("No .xlsx files found. Skipping.")
+        return
+
     for excel_file in (f for f in os.listdir(input_directory) if f.endswith(".xlsx")):
         try:
             df = pd.read_excel(os.path.join(input_directory, excel_file))

@@ -2,6 +2,7 @@ import os
 import json
 import traceback
 from dotenv import load_dotenv
+from bs4 import BeautifulSoup
 
 load_dotenv()
 import preprocess
