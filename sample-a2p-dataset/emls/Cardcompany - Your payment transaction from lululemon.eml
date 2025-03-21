@@ -44,10 +44,9 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=simple/simple; t=1736424262;
 	3yVzQg3hVwEehE1vxX9Djz0ysRRDY2ot1pl9fQRTdUUJVAVnUUYHQbFCEzbWLGQpNfl
 	jSzHHuyBPg==
 Message-ID: <25259351981750_459336_-63335468>
-From: =?EUC-KR?B?TkhOIEtDUCC5373FwPy/6w==?= <pgadmcust@cardcompany.co.kr>
+From: Cardcompany Receipt <pgadmcust@cardcompany.co.kr>
 To: <johndoe@temp.com>
-Subject: NHN cardcompany - =?utf-8?b?66Ow66Oo66CI66qs7JWg7YuA65287Yuw7Lm07L2U66as?=
- =?utf-8?b?7JWEIOycoO2VnO2ajOyCrOydmCDqsrDsoJwg64K07Jet7J6F64uI64ukLg==?=
+Subject: Cardcompany - Payment from lululemon
 Date: Thu, 09 Jan 2025 21:04:22 +0900
 MIME-Version: 1.0
 Content-Type: text/html; charset="ks_c_5601-1987"
