@@ -1,4 +1,4 @@
-Delivered-To: jqwe100@gmail.com
+Delivered-To: johndoe@gmail.com
 Received: by 2002:a05:6402:120a:0:0:0:0 with SMTP id c10csp3259143edw;
         Mon, 14 Jan 2019 00:58:54 -0800 (PST)
 X-Google-Smtp-Source:
@@ -32,7 +32,7 @@ ARC-Authentication-Results: i=1; mx.google.com;       dkim=pass
 Return-Path: <etickets@amtrak.com>
 Received: from amtrakipphl02.amtrak.com (amtrakipsby02.amtrak.com.
  [12.96.117.25])        by mx.google.com with ESMTPS id
- i130si32302032oib.136.2019.01.14.00.58.53        for <JQWE100@gmail.com>
+ i130si32302032oib.136.2019.01.14.00.58.53        for <johndoe@gmail.com>
         (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
         Mon, 14 Jan 2019 00:58:54 -0800 (PST)
 Received-SPF: pass (google.com: domain of etickets@amtrak.com designates
@@ -56,7 +56,7 @@ Received: from unknown (HELO ussbpet051amtra) ([172.19.70.248])
   by amtrakipphl02.amtrak.com with ESMTP; 14 Jan 2019 03:58:53 -0500
 Date: Mon, 14 Jan 2019 03:58:53 -0500 (EST)
 From: etickets@amtrak.com
-To: JQWE100@GMAIL.COM, JQWE100@NAVER.COM
+To: johndoe@GMAIL.COM, johndoe@NAVER.COM
 Message-ID: <415570117.129951547456333415.JavaMail.TDDServerProd@amtrak.com>
 Subject: Amtrak: eTicket and Receipt for Your 02/03/2019 Trip - JIEON KIM
 MIME-Version: 1.0
